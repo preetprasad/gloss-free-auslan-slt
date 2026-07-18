@@ -52,14 +52,18 @@ def guess_text_col(df: pd.DataFrame) -> Optional[str]:
 
 
 def guess_id_col(df: pd.DataFrame, text_col: Optional[str]) -> Optional[str]:
-    for key in ("name", "video", "clip", "file", "sample", "id"):
-        for c in df.columns:
-            if key in str(c).lower() and c != text_col:
+    # Skip pandas' unnamed index columns — "Unnamed: 0" contains the substring
+    # "name", which previously hijacked the match and produced a row-index id.
+    cols = [c for c in df.columns
+            if c != text_col and not str(c).lower().startswith("unnamed")]
+    # "clip" first: the per-clip id (e.g. Video_Clip_Name) is what pose files are
+    # keyed by; the per-video name is a coarser fallback.
+    for key in ("clip", "video", "name", "file", "sample", "id"):
+        for c in cols:
+            if key in str(c).lower():
                 return c
     # fallback: a mostly-unique, mostly-single-token column
-    for c in df.columns:
-        if c == text_col:
-            continue
+    for c in cols:
         s = df[c].dropna().astype(str)
         if not s.empty and s.nunique() / len(s) > 0.8 and s.str.split().apply(len).mean() < 2:
             return c
