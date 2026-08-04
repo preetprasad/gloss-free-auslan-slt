@@ -78,6 +78,28 @@ def main() -> int:
         dec = model.greedy_decode(src.to(device), src_pad.to(device), max_len=16)
         check("greedy decode returns tokens", dec.dim() == 2 and dec.shape[0] == src.shape[0])
 
+        print("4b) optional visual-feature adapter")
+        adapter_cfg = Config(
+            d_model=64, nhead=4, num_encoder_layers=1, num_decoder_layers=1,
+            dim_feedforward=128, visual_feature_dim=128, dropout=0.0,
+        )
+        adapter_model = PoseSLT(adapter_cfg.feature_dim(), len(vocab), adapter_cfg)
+        check(
+            "raw pose is mapped through the requested visual width",
+            adapter_model.visual_adapter[0].out_features == 128
+            and adapter_model.input_proj[0].in_features == 128,
+        )
+
+        print("4c) gradient accumulation")
+        accum_model = PoseSLT(cfg.feature_dim(), len(vocab), cfg).to(device)
+        accum_opt = torch.optim.Adam(accum_model.parameters(), lr=cfg.lr)
+        accum_sched = WarmupInverseSqrt(accum_opt, cfg.d_model, cfg.warmup_steps)
+        accum_loss = train_one_epoch(
+            accum_model, dl, accum_sched, device,
+            cfg.label_smoothing, cfg.grad_clip, grad_accum_steps=2,
+        )
+        check("accumulated optimiser steps train successfully", np.isfinite(accum_loss))
+
         print("5) train a few epochs (loss should fall)")
         opt = torch.optim.Adam(model.parameters(), lr=cfg.lr, betas=(0.9, 0.98), eps=1e-9)
         sched = WarmupInverseSqrt(opt, cfg.d_model, cfg.warmup_steps)
