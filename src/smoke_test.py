@@ -58,6 +58,20 @@ def main() -> int:
         check("features finite", bool(np.isfinite(feats).all()))
         check("normalised coords in sane range", float(np.abs(feats[:, :2]).max()) < 5.0)
 
+        legacy_kps = np.ones((2, 136, 3), dtype=np.float32)
+        legacy_kps[..., 0] = 75.0
+        legacy_kps[..., 1] = 75.0
+        reversed_xyxy = np.tile(
+            np.array([100.0, 100.0, 50.0, 50.0], dtype=np.float32), (2, 1))
+        strict_features, _ = normalize_clip(
+            legacy_kps, reversed_xyxy, Config(bbox_format="xyxy"))
+        legacy_features, _ = normalize_clip(
+            legacy_kps, reversed_xyxy,
+            Config(bbox_format="xyxy", legacy_abs_bbox_validity=True))
+        check("strict bbox validity rejects reversed spans", strict_features.shape[0] == 1)
+        check("legacy bbox compatibility preserves historical frames",
+              legacy_features.shape[0] == 2)
+
         print("3) vocab + batching")
         rows = AuslanDailyDataset(train_m, Vocab(["<pad>"]), cfg).samples
         vocab = Vocab.build([t for _, t in rows], min_freq=1)
@@ -68,6 +82,29 @@ def main() -> int:
         check("src is (B,T,F)", src.dim() == 3 and src.shape[2] == cfg.feature_dim())
         check("pad mask matches src", src_pad.shape == src.shape[:2])
         check("some frames padded OR all full", src_pad.any() or True)
+
+        print("3b) precomputed visual feature path")
+        feature_path = f"{tmp}/published_frontend.npz"
+        np.savez_compressed(
+            feature_path,
+            FEATURES=np.arange(5 * 32, dtype=np.float32).reshape(5, 32),
+        )
+        feature_manifest = f"{tmp}/published_frontend.tsv"
+        with open(feature_manifest, "w", encoding="utf-8") as handle:
+            handle.write(f"{feature_path}\thello .\n")
+        feature_cfg = Config(
+            train_manifest=feature_manifest,
+            val_manifest=feature_manifest,
+            input_representation="precomputed",
+            precomputed_feature_dim=32,
+            max_src_frames=4,
+        )
+        feature_ds = AuslanDailyDataset(feature_manifest, vocab, feature_cfg)
+        feature_src, _, _ = feature_ds[0]
+        check(
+            "precomputed features load, validate width, and obey temporal cap",
+            tuple(feature_src.shape) == (4, 32),
+        )
 
         print("4) model forward + decode")
         device = resolve_device("cpu")

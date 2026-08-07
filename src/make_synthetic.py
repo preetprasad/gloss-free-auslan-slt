@@ -31,7 +31,8 @@ def make_clip(seed: int):
     for t in range(T):
         cx = x1 + 5 * np.sin(t / 5.0)
         cy = y1 + 5 * np.cos(t / 5.0)
-        bbox[t] = [cx, cy, cx + bw, cy + bh]
+        # Match the released Auslan-Daily tensors: [x, y, width, height].
+        bbox[t] = [cx, cy, bw, bh]
         if t == 0:
             continue  # all-zero frame 0 (real-data quirk)
         pts = rng.uniform(0, 1, size=(136, 2)) * [bw, bh] + [cx, cy]
