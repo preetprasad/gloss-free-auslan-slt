@@ -16,16 +16,18 @@ independent of the exact Google-Drive folder layout.
 """
 from __future__ import annotations
 
+import hashlib
 import os
+import random
 import re
 from collections import Counter
 from typing import List, Sequence, Tuple
 
 import numpy as np
 import torch
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset, Sampler
 
-from config import Config, KP_SUBSETS
+from config import Config, KP_SUBSETS, NUM_KEYPOINTS
 
 PAD, BOS, EOS, UNK = 0, 1, 2, 3
 SPECIALS = ["<pad>", "<bos>", "<eos>", "<unk>"]
@@ -33,32 +35,59 @@ SPECIALS = ["<pad>", "<bos>", "<eos>", "<unk>"]
 _word_re = re.compile(r"[A-Za-z']+|[.,!?;:]")
 
 
-def tokenize(text: str) -> List[str]:
-    return _word_re.findall(text.lower().strip())
+def _load_sentencepiece(model_path: str):
+    if not model_path:
+        raise ValueError("sentencepiece tokenization requires --sentencepiece_model")
+    import sentencepiece as sentencepiece_module
+    return sentencepiece_module.SentencePieceProcessor(model_file=model_path)
+
+
+def tokenize(text: str, mode: str = "regex", sentencepiece=None) -> List[str]:
+    """Tokenize text while keeping legacy checkpoints reproducible."""
+    text = text.lower().strip()
+    if mode == "whitespace":
+        return text.split()
+    if mode == "sentencepiece":
+        if sentencepiece is None:
+            raise ValueError("sentencepiece processor is required")
+        return list(sentencepiece.encode(text, out_type=str))
+    if mode == "regex":
+        return _word_re.findall(text)
+    raise ValueError(f"unknown text_tokenization={mode!r}")
 
 
 # ── vocabulary ──────────────────────────────────────────────────────────────
 class Vocab:
-    def __init__(self, itos: List[str]):
+    def __init__(self, itos: List[str], tokenization: str = "regex",
+                 sentencepiece_model: str = ""):
         self.itos = itos
         self.stoi = {t: i for i, t in enumerate(itos)}
+        self.tokenization = tokenization
+        self.sentencepiece_model = sentencepiece_model
+        self.sentencepiece = (_load_sentencepiece(sentencepiece_model)
+                              if tokenization == "sentencepiece" else None)
 
     def __len__(self) -> int:
         return len(self.itos)
 
     @classmethod
-    def build(cls, texts: Sequence[str], min_freq: int = 1) -> "Vocab":
+    def build(cls, texts: Sequence[str], min_freq: int = 1,
+              tokenization: str = "regex",
+              sentencepiece_model: str = "") -> "Vocab":
+        sentencepiece = (_load_sentencepiece(sentencepiece_model)
+                         if tokenization == "sentencepiece" else None)
         counter: Counter = Counter()
         for t in texts:
-            counter.update(tokenize(t))
+            counter.update(tokenize(t, tokenization, sentencepiece))
         itos = list(SPECIALS)
         for tok, freq in sorted(counter.items(), key=lambda kv: (-kv[1], kv[0])):
             if freq >= min_freq:
                 itos.append(tok)
-        return cls(itos)
+        return cls(itos, tokenization, sentencepiece_model)
 
     def encode(self, text: str, max_len: int) -> List[int]:
-        ids = [self.stoi.get(t, UNK) for t in tokenize(text)]
+        ids = [self.stoi.get(t, UNK) for t in tokenize(
+            text, self.tokenization, self.sentencepiece)]
         ids = ids[: max_len - 2]
         return [BOS] + ids + [EOS]
 
@@ -70,7 +99,56 @@ class Vocab:
             if i == EOS:
                 break
             toks.append(self.itos[i] if 0 <= i < len(self.itos) else "<unk>")
+        if self.tokenization == "sentencepiece":
+            return self.sentencepiece.decode(toks)
         return " ".join(toks)
+
+
+class LengthBucketBatchSampler(Sampler[List[int]]):
+    """Torchtext-style shuffled pools, length sorting, then sentence batches.
+
+    The public GASLT/SignJoey iterator shuffles training examples into pools of
+    100 batches, sorts each pool by source length, creates fixed-size sentence
+    batches, and shuffles those batches. This preserves stochastic training while
+    preventing a single long clip from padding an otherwise short batch.
+    """
+
+    def __init__(self, dataset, batch_size: int, max_src_frames: int, seed: int):
+        self.dataset = dataset
+        self.batch_size = int(batch_size)
+        self.seed = int(seed)
+        self.epoch = 0
+        self.lengths = []
+        for clip, _ in dataset.samples:
+            path = os.path.join(dataset.root, clip) if dataset.root else clip
+            if dataset.cfg.input_representation == "precomputed":
+                with np.load(path) as payload:
+                    length = int(payload[dataset.cfg.precomputed_feature_key].shape[0])
+            elif path.endswith(".npz"):
+                with np.load(path) as payload:
+                    length = int(payload["KPS"].shape[0])
+            else:
+                keypoints, _ = load_pose(path)
+                length = int(keypoints.shape[0])
+            self.lengths.append(min(length, int(max_src_frames)))
+
+    def __len__(self):
+        return (len(self.dataset) + self.batch_size - 1) // self.batch_size
+
+    def __iter__(self):
+        generator = random.Random(self.seed + self.epoch)
+        self.epoch += 1
+        indices = list(range(len(self.dataset)))
+        generator.shuffle(indices)
+        pool_size = self.batch_size * 100
+        batches = []
+        for start in range(0, len(indices), pool_size):
+            pool = indices[start:start + pool_size]
+            pool.sort(key=self.lengths.__getitem__)
+            batches.extend(pool[offset:offset + self.batch_size]
+                           for offset in range(0, len(pool), self.batch_size))
+        generator.shuffle(batches)
+        yield from batches
 
 
 # ── keypoint normalisation ──────────────────────────────────────────────────
@@ -82,8 +160,13 @@ def normalize_clip(kps: np.ndarray, bbox: np.ndarray, cfg: Config
     padded/invalid frame that the encoder should ignore).
     """
     kps = np.asarray(kps, dtype=np.float32)
-    if kps.ndim != 3 or kps.shape[1] != 136 or kps.shape[2] < 3:
-        raise ValueError(f"expected KPS (T,136,3), got {kps.shape}")
+    if kps.ndim != 3 or kps.shape[2] < 3:
+        raise ValueError(f"expected KPS (T,K,3+), got {kps.shape}")
+    if kps.shape[1] != cfg.num_keypoints:
+        raise ValueError(
+            f"KPS has {kps.shape[1]} keypoints but cfg.num_keypoints={cfg.num_keypoints}. "
+            "Set --num_keypoints to the extractor layout size."
+        )
     T = kps.shape[0]
     xy = kps[..., :2].copy()
     conf = kps[..., 2:3].copy()
@@ -98,14 +181,23 @@ def normalize_clip(kps: np.ndarray, bbox: np.ndarray, cfg: Config
         b = np.asarray(bbox, dtype=np.float32).reshape(T, -1)
         if cfg.bbox_format == "xyxy":
             x1, y1, x2, y2 = b[:, 0], b[:, 1], b[:, 2], b[:, 3]
-            w, h = (x2 - x1), (y2 - y1)
-        else:  # xywh
-            x1, y1, w, h = b[:, 0], b[:, 1], b[:, 2], b[:, 3]
-        w = np.where(np.abs(w) < 1e-3, 1.0, w)
-        h = np.where(np.abs(h) < 1e-3, 1.0, h)
-        frame_ok &= (np.abs(x2 - x1) > 1e-3) if cfg.bbox_format == "xyxy" else (np.abs(w) > 1e-3)
-        xy[..., 0] = (xy[..., 0] - x1[:, None]) / w[:, None]
-        xy[..., 1] = (xy[..., 1] - y1[:, None]) / h[:, None]
+            raw_w, raw_h = (x2 - x1), (y2 - y1)
+        elif cfg.bbox_format == "xywh":
+            x1, y1, raw_w, raw_h = b[:, 0], b[:, 1], b[:, 2], b[:, 3]
+        else:
+            raise ValueError(f"bbox_format must be 'xywh' or 'xyxy', got {cfg.bbox_format!r}")
+        # A valid detection box needs positive width *and* height. Checkpoints
+        # produced before the bbox audit can explicitly request their historical
+        # abs() validity rule so evaluation remains bit-for-bit input compatible.
+        if cfg.legacy_abs_bbox_validity:
+            box_ok = (np.abs(raw_w) > 1e-3) & (np.abs(raw_h) > 1e-3)
+        else:
+            box_ok = (raw_w > 1e-3) & (raw_h > 1e-3)
+        frame_ok &= box_ok
+        safe_w = np.where(box_ok, raw_w, 1.0)
+        safe_h = np.where(box_ok, raw_h, 1.0)
+        xy[..., 0] = (xy[..., 0] - x1[:, None]) / safe_w[:, None]
+        xy[..., 1] = (xy[..., 1] - y1[:, None]) / safe_h[:, None]
         if cfg.center_to_unit:
             xy = xy * 2.0 - 1.0
     elif cfg.coord_norm == "frame":
@@ -117,12 +209,99 @@ def normalize_clip(kps: np.ndarray, bbox: np.ndarray, cfg: Config
     if cfg.conf_threshold > 0:
         xy = xy * (conf >= cfg.conf_threshold)
 
+    if cfg.hierarchical_pose_norm:
+        if kps.shape[1] != NUM_KEYPOINTS:
+            raise ValueError(
+                f"hierarchical_pose_norm requires HALPE-{NUM_KEYPOINTS}; "
+                f"got {kps.shape[1]} keypoints"
+            )
+        # Body is made signer-scale invariant around the shoulder midpoint.
+        # Global wrist motion remains in body joints 9/10.  Each detailed hand
+        # is then expressed locally around its wrist and scaled by palm length,
+        # so subtle finger shape is not dwarfed by the full signer box.
+        left_shoulder, right_shoulder = 5, 6
+        shoulder_center = (xy[:, left_shoulder] + xy[:, right_shoulder]) * 0.5
+        shoulder_scale = np.linalg.norm(
+            xy[:, left_shoulder] - xy[:, right_shoulder], axis=-1)
+        shoulder_ok = ((conf[:, left_shoulder, 0] >= max(cfg.conf_threshold, 0.1))
+                       & (conf[:, right_shoulder, 0] >= max(cfg.conf_threshold, 0.1))
+                       & (shoulder_scale > 0.25))
+        # A conservative bbox-coordinate fallback avoids amplifying bad shoulder
+        # detections while keeping every frame finite.
+        safe_shoulder_scale = np.where(shoulder_ok, shoulder_scale, 1.0)
+        body_normalised = np.clip(
+            (xy[:, :26] - shoulder_center[:, None, :])
+            / safe_shoulder_scale[:, None, None], -5.0, 5.0)
+        xy[:, :26] = np.where(shoulder_ok[:, None, None],
+                              body_normalised, xy[:, :26])
+
+        for start in (94, 115):
+            wrist = xy[:, start].copy()
+            middle_mcp = xy[:, start + 9].copy()
+            palm_scale = np.linalg.norm(middle_mcp - wrist, axis=-1)
+            hand_ok = ((conf[:, start, 0] >= max(cfg.conf_threshold, 0.1))
+                       & (conf[:, start + 9, 0] >= max(cfg.conf_threshold, 0.1))
+                       & (palm_scale > 0.03))
+            safe_palm_scale = np.where(hand_ok, palm_scale, 1.0)
+            hand_normalised = np.clip(
+                (xy[:, start:start + 21] - wrist[:, None, :])
+                / safe_palm_scale[:, None, None], -5.0, 5.0)
+            xy[:, start:start + 21] = np.where(
+                hand_ok[:, None, None], hand_normalised,
+                xy[:, start:start + 21]
+            )
+
+    if cfg.hand_local_norm:
+        # COCO-WholeBody-133: 91 = left wrist + 20 pts, 112 = right wrist + 20 pts; within a hand the
+        # order is wrist, thumb, index, MIDDLE(+9), ring, pinky, so wrist->middle-MCP is palm length.
+        #
+        # WHY: under coord_norm="frame" the whole pose is standardised together, so in conversational
+        # signing -- where the signer moves and the hands travel the signing space -- finger detail is a
+        # tiny and highly variable share of the frame's variance. Expressing each hand around its own
+        # wrist at palm scale restores it. This is the hand half of `hierarchical_pose_norm`, which
+        # raises on every current run because it hard-requires HALPE-136.
+        #
+        # Measured before being built (tools/continuous_id_probe.py, 45 glosses, clip-disjoint):
+        # continuous-domain top-1 18.1% -> 24.9%, top-5 34.7% -> 46.9%, stable over 5 seeds
+        # (24.6-25.8%). Isolated-domain top-1 is UNCHANGED/slightly lower (40.0% -> 39.2%), i.e. this
+        # is specifically a continuous-signing fix, which is the domain we translate.
+        if kps.shape[1] < 133:
+            raise ValueError(f"hand_local_norm requires COCO-WholeBody-133; got {kps.shape[1]}")
+        for start in (91, 112):
+            wrist = xy[:, start].copy()
+            palm_scale = np.linalg.norm(xy[:, start + 9] - wrist, axis=-1)
+            hand_ok = ((conf[:, start, 0] >= max(cfg.conf_threshold, 0.1))
+                       & (conf[:, start + 9, 0] >= max(cfg.conf_threshold, 0.1))
+                       & (palm_scale > 1e-3))
+            safe = np.where(hand_ok, palm_scale, 1.0)
+            normalised = np.clip((xy[:, start:start + 21] - wrist[:, None, :])
+                                 / safe[:, None, None], -5.0, 5.0)
+            xy[:, start:start + 21] = np.where(hand_ok[:, None, None], normalised,
+                                               xy[:, start:start + 21])
+
     # zero-out coordinates on invalid frames so padding is clean
     xy[~frame_ok] = 0.0
     conf[~frame_ok] = 0.0
 
-    # keypoint subset
-    idx = KP_SUBSETS[cfg.keypoint_subset]
+    # keypoint subset. Named HALPE subsets are only valid for the canonical
+    # 136-keypoint AlphaPose layout; non-HALPE extractor sweeps should use all.
+    if cfg.keypoint_subset == "all":
+        idx = list(range(kps.shape[1]))
+    elif cfg.keypoint_subset.startswith("cwb_"):
+        # COCO-WholeBody-133 (DWPose/RTMW) subset for the estimator-only ablation.
+        if kps.shape[1] != 133:
+            raise ValueError(
+                f"keypoint_subset={cfg.keypoint_subset!r} requires COCO-WholeBody-133; "
+                f"got {kps.shape[1]} keypoints."
+            )
+        idx = KP_SUBSETS[cfg.keypoint_subset]
+    else:
+        if kps.shape[1] != NUM_KEYPOINTS:
+            raise ValueError(
+                f"keypoint_subset={cfg.keypoint_subset!r} requires HALPE-{NUM_KEYPOINTS}; "
+                f"got {kps.shape[1]} keypoints. Use --keypoint_subset all."
+            )
+        idx = KP_SUBSETS[cfg.keypoint_subset]
     xy = xy[:, idx, :]
     conf = conf[:, idx, :]
 
@@ -136,6 +315,17 @@ def normalize_clip(kps: np.ndarray, bbox: np.ndarray, cfg: Config
     if feats.shape[0] > cfg.max_src_frames:
         sel = np.linspace(0, feats.shape[0] - 1, cfg.max_src_frames).round().astype(int)
         feats = feats[sel]
+    if getattr(cfg, "temporal_pool", 1) > 1 and feats.shape[0] >= cfg.temporal_pool:
+        # Temporal compression: average consecutive frames toward sign rate (~2-4 signs/s vs ~25 fps).
+        # Attacks the frames-per-sign redundancy behind posterior collapse. Interface-preserving:
+        # only the input sequence gets shorter; CTC/decoder plumbing is unchanged.
+        k = int(cfg.temporal_pool)
+        n = (feats.shape[0] // k) * k
+        feats = feats[:n].reshape(n // k, k, feats.shape[1]).mean(axis=1).astype(np.float32)
+    if cfg.use_velocity:                          # motion cue: per-frame temporal delta
+        vel = np.zeros_like(feats)
+        vel[1:] = feats[1:] - feats[:-1]
+        feats = np.concatenate([feats, vel], axis=1)
     mask = np.ones(feats.shape[0], dtype=bool)
     return feats, mask
 
@@ -165,6 +355,21 @@ def load_pose(path: str) -> Tuple[np.ndarray, np.ndarray]:
     return kps, bbox
 
 
+def load_precomputed_features(path: str, key: str = "FEATURES") -> np.ndarray:
+    """Load a finite ``(time, feature)`` sequence from an NPZ artifact."""
+    if not path.endswith(".npz"):
+        raise ValueError(f"precomputed visual features must be NPZ files, got {path}")
+    with np.load(path) as payload:
+        if key not in payload:
+            raise KeyError(f"{path} has keys {payload.files}, not requested {key!r}")
+        features = np.asarray(payload[key], dtype=np.float32)
+    if features.ndim != 2 or features.shape[0] < 1 or features.shape[1] < 1:
+        raise ValueError(f"expected {key} with shape (T,F), got {features.shape} in {path}")
+    if not np.isfinite(features).all():
+        raise ValueError(f"non-finite values in {key} from {path}")
+    return features
+
+
 # ── dataset ─────────────────────────────────────────────────────────────────
 def read_manifest(path: str) -> List[Tuple[str, str]]:
     rows = []
@@ -184,15 +389,55 @@ class AuslanDailyDataset(Dataset):
         self.vocab = vocab
         self.cfg = cfg
         self.root = root
+        # Multi-reference target augmentation (off unless a caller attaches a map).
+        self.paraphrases: dict = {}
+        self.paraphrase_prob: float = 0.0
+        self.epoch: int = 0
+
+    def set_epoch(self, epoch: int) -> None:
+        self.epoch = int(epoch)
+
+    def _augment_text(self, clip: str, text: str) -> str:
+        """Swap in an LLM paraphrase of the reference for this epoch.
+
+        Sampling is a hash of (seed, epoch, clip) rather than RNG state so it is
+        reproducible and worker-independent, matching train_ctc's pseudo_token_drop.
+        """
+        alts = self.paraphrases.get(" ".join(text.lower().split()))
+        if not alts:
+            return text
+        digest = hashlib.blake2b(
+            f"{self.cfg.seed}:{self.epoch}:{clip}".encode("utf-8"), digest_size=16
+        ).digest()
+        draw = int.from_bytes(digest[:8], "big") / float(1 << 64)
+        if draw >= self.paraphrase_prob:
+            return text
+        return alts[int.from_bytes(digest[8:], "big") % len(alts)]
 
     def __len__(self) -> int:
         return len(self.samples)
 
     def __getitem__(self, i: int):
         clip, text = self.samples[i]
+        if self.paraphrase_prob > 0 and self.paraphrases:
+            text = self._augment_text(clip, text)
         path = os.path.join(self.root, clip) if self.root else clip
-        kps, bbox = load_pose(path)
-        feats, _ = normalize_clip(kps, bbox, self.cfg)
+        if self.cfg.input_representation == "precomputed":
+            feats = load_precomputed_features(
+                path, self.cfg.precomputed_feature_key)
+            if feats.shape[1] != self.cfg.feature_dim():
+                raise ValueError(
+                    f"precomputed feature width {feats.shape[1]} != configured "
+                    f"{self.cfg.feature_dim()} in {path}"
+                )
+            if feats.shape[0] > self.cfg.max_src_frames:
+                selected = np.linspace(
+                    0, feats.shape[0] - 1, self.cfg.max_src_frames
+                ).round().astype(int)
+                feats = feats[selected]
+        else:
+            kps, bbox = load_pose(path)
+            feats, _ = normalize_clip(kps, bbox, self.cfg)
         tgt = self.vocab.encode(text, self.cfg.max_tgt_tokens)
         return (
             torch.from_numpy(feats),

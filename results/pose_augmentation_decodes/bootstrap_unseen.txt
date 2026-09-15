@@ -1,0 +1,17 @@
+test n=800  seen-in-train=230  unseen=570
+ctrl_s42     BLEU-4  10.344  seen  31.64  unseen  5.71
+aug_s42      BLEU-4  11.443  seen  32.84  unseen  6.89
+ctrl_s101    BLEU-4  10.926  seen  32.23  unseen  6.28
+aug_s101     BLEU-4  11.375  seen  33.83  unseen  6.65
+ctrl_s202    BLEU-4  10.657  seen  31.92  unseen  5.86
+aug_s202     BLEU-4  11.193  seen  33.16  unseen  6.32
+check: ctrl_s42 reproduces the recorded 10.344
+check: aug_s42 reproduces the recorded 11.443
+check: ctrl_s101 reproduces the recorded 10.926
+check: aug_s101 reproduces the recorded 11.375
+check: ctrl_s202 reproduces the recorded 10.657
+check: aug_s202 reproduces the recorded 11.193
+[unseen n=570] aug_s42 vs ctrl_s42: observed +1.180  95% CI [-0.353, +2.621]  P(aug_s42>ctrl_s42) 93.7%  -> not resolvable
+[unseen n=570] aug_s101 vs ctrl_s101: observed +0.373  95% CI [-1.076, +2.074]  P(aug_s101>ctrl_s101) 67.2%  -> not resolvable
+[unseen n=570] aug_s202 vs ctrl_s202: observed +0.461  95% CI [-0.660, +1.615]  P(aug_s202>ctrl_s202) 78.3%  -> not resolvable
+EXIT 0
