@@ -61,7 +61,10 @@ class Config:
     val_manifest: str = "manifests/val.tsv"
     test_manifest: Optional[str] = None
 
-    num_keypoints: int = NUM_KEYPOINTS     # 136 HALPE by default; override for RTMW/MediaPipe/etc.
+    # DEFAULTS DESCRIBE THE ADOPTED RECIPE (audit 2026-09-24). Until then these fields still described the
+    # pre-August AlphaPose/bbox configuration, which has been dead since the DWPose switch: a reader opening
+    # this file learned the wrong recipe, and any tool that forgot a flag silently ran a dead configuration.
+    num_keypoints: int = 133               # DWPose COCO-WholeBody-133 (was 136 HALPE); override for other extractors
     keypoint_subset: str = "all"        # one of KP_SUBSETS
     use_confidence: bool = True          # keep the AlphaPose confidence channel
     use_velocity: bool = False           # append per-frame temporal deltas (motion) -> doubles feat dim
@@ -72,7 +75,9 @@ class Config:
     pose_graph_layers: int = 2           # number of graph-conv layers when pose_graph is on
     paraphrase_map: str = ""             # TSV (original-text<TAB>paraphrase, repeatable key) of LLM paraphrases; multi-reference target augmentation
     paraphrase_prob: float = 0.0         # per-sample chance of training on a paraphrase instead of the reference (0 = off)
-    coord_norm: str = "bbox"             # "bbox" | "frame" | "none"
+    coord_norm: str = "frame"            # "bbox" | "frame" | "none" -- ADOPTED: per-frame standardisation.
+    # NB "bbox" is unusable on DWPose npz: the extractor writes an all-zero BBOX, so every frame fails the
+    # positive-width/height test and the clip collapses to a single zero frame (now a hard error, see data.py).
     # Audited against 200 real Communication clips on 2026-08-05: the released
     # tensors store [x, y, width, height].  Treating columns 3/4 as x2/y2 put
     # only 14% of confident joints inside the alleged box and produced coordinate
@@ -92,6 +97,12 @@ class Config:
                                         # hands carry the most sign identity and lose the most of it
                                         # (40.0%->18.1% top-1 isolated->continuous), and hand-local
                                         # normalisation recovers +6.8 points of that, top-5 34.7->46.9.
+    pose_aug: bool = False               # TRAINING-ONLY pose augmentation (speed/rotation/x-y scale); eval never augments
+    aug_speed: float = 0.2               # temporal resample factor from [1-x, 1+x] (nearest-frame; 0 = off)
+    aug_rotate_deg: float = 10.0         # global in-plane rotation from [-x, +x] degrees (0 = off)
+    aug_scale: float = 0.1               # independent x / y scale from [1-x, 1+x] (0 = off)
+    aug_hand_drop: float = 0.0           # needs pose_aug: per-frame, per-hand chance of zeroing that hand's features (0 = off)
+    aug_hand_span: float = 0.0           # needs pose_aug: one both-hands zero span of up to this fraction of frames (0 = off)
     drop_zero_frames: bool = True        # mask all-zero frames (frame 0 issue)
     max_src_frames: int = 256            # temporal cap (subsample if longer)
     max_tgt_tokens: int = 64
@@ -159,14 +170,14 @@ class Config:
     semantic_cache: str = ""              # optional .pt text->embedding cache
 
     # ── optimisation ─────────────────────────────────────────────────────────
-    batch_size: int = 16
+    batch_size: int = 64                  # adopted recipe (32 for RGB fusion)
     length_bucket_batches: bool = False  # public SignJoey/GASLT training iterator
     grad_accum_steps: int = 1             # optimiser update every N mini-batches; effective batch = batch_size * N
-    lr: float = 3e-4
+    lr: float = 5e-4                      # adopted recipe
     weight_decay: float = 1e-4
     epochs: int = 40
-    warmup_steps: int = 500
-    lr_schedule: str = "noam"        # "noam" | "cosine" | "plateau" (SignJoey paper setting)
+    warmup_steps: int = 800               # adopted recipe
+    lr_schedule: str = "cosine"      # "noam" | "cosine" | "plateau"; adopted = cosine (noam was the SignJoey setting)
     plateau_patience: int = 8
     plateau_factor: float = 0.7
     lr_min: float = 1e-7
@@ -208,11 +219,16 @@ class Config:
 
     # ── runtime ──────────────────────────────────────────────────────────────
     seed: int = 42
+    deterministic: bool = False   # pin cuDNN/cuBLAS kernels so a seed reproduces a run bit-for-bit
     num_workers: int = 2
     device: str = "auto"                 # "auto" | "cpu" | "cuda"
     out_dir: str = "runs/baseline"
     resume_checkpoint: str = ""            # latest.pt from an interrupted compatible run
     init_encoder: str = ""               # path to a VLP-pretrained checkpoint; loads pose-encoder weights before fine-tuning
+    vocab_file: str = ""                 # JSON itos list: use this fixed vocabulary instead of building one from the train
+                                         # manifest (pre-train -> fine-tune must share index order; see train_ctc.py)
+    save_last: bool = False              # also save the FINAL epoch's model as last.pt (pre-training carries this forward)
+    eval_every: int = 1                  # evaluate validation every N epochs and always at the last epoch
     freeze_encoder: bool = False          # keep the loaded pose encoder fixed; train only decoder/embeddings/generator
 
     # ── LLM decoder (mT5 + LoRA) ─────────────────────────────────────────────

@@ -13,6 +13,9 @@ from slt.metrics import detokenize
 import sacrebleu
 
 
+ROUGE_BETA = 1.2   # SignJoey / GASLT convention (recall-weighted F-measure)
+
+
 def rouge_l(h, r):
     hs, rs = h.split(), r.split()
     if not hs or not rs: return 0.0
@@ -21,7 +24,14 @@ def rouge_l(h, r):
         for j in range(1, len(rs)+1):
             dp[i][j] = dp[i-1][j-1]+1 if hs[i-1]==rs[j-1] else max(dp[i-1][j], dp[i][j-1])
     lcs = dp[len(hs)][len(rs)]; p, rc = lcs/len(hs), lcs/len(rs)
-    return 0.0 if p+rc==0 else 2*p*rc/(p+rc)
+    if p + rc == 0:
+        return 0.0
+    # SignJoey (signjoey/external_metrics/mscoco_rouge.py) and GASLT both use a RECALL-WEIGHTED
+    # F-measure with beta = 1.2, not F1. beta = 1.0 over-scores a model that under-generates
+    # (this one: length ratio 0.79-0.86) because it up-weights the stronger precision term.
+    # Corrected 2026-09-24; the beta=1.0 values previously produced here run ~0.4-0.6 high.
+    b2 = ROUGE_BETA ** 2
+    return (1 + b2) * p * rc / (rc + b2 * p)
 
 
 def corpus(hyps, refs, hyps_tok=None, refs_tok=None):
@@ -61,11 +71,15 @@ def main():
     ap.add_argument("--train_manifest", default="")
     a = ap.parse_args()
     rows = [json.loads(l) for l in open(a.inp) if l.strip()]
-    hyps = [detokenize(r.get(a.field) or "") for r in rows]
-    refs = [detokenize(r["ref"]) for r in rows]
-    b4, b1, chrf, rl = corpus(hyps, refs)
+    raw_h = [(r.get(a.field) or "") for r in rows]
+    raw_r = [r["ref"] for r in rows]
+    hyps = [detokenize(h) for h in raw_h]        # BLEU/chrF: sacreBLEU re-splits punctuation
+    refs = [detokenize(r) for r in raw_r]
+    # ROUGE-L on the WHITESPACE-TOKENISED text -- see corpus() for why detokenising broke it
+    b4, b1, chrf, rl = corpus(hyps, refs, raw_h, raw_r)
     print(f"\n===== {os.path.basename(a.inp)} ({a.field}, n={len(rows)}) =====")
-    print(f"BLEU-4={b4:.2f}  BLEU-1={b1:.2f}  chrF={chrf:.2f}  ROUGE-L={rl:.2f}")
+    print(f"BLEU-4={b4:.2f}  BLEU-1={b1:.2f}  chrF={chrf:.2f}  ROUGE-L={rl:.2f}"
+          "   [BLEU/chrF detokenised; ROUGE-L whitespace-tokenised]")
 
     if a.train_manifest and os.path.exists(a.train_manifest):
         train_t = set(" ".join(detokenize(t).lower().split()) for _, t in read_manifest(a.train_manifest))

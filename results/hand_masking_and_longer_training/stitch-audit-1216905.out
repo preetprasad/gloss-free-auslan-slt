@@ -1,0 +1,24 @@
+mmwl train: 38580 npz
+mmwl valid: 6430 npz
+sentence pool: 20608 lines
+reference corpus clips: 20608
+=== rebuild with sidecar ===
+[stitch2] lexicon: 3215 glosses, 45010 clips, median 14 exemplars/gloss, 3090 surface forms
+[stitch2] 20608 candidate sentences
+[stitch2] wrote 20608 synthetic clips (0 sentences skipped below cov>=0.9) -> /group/pmc099/pprasad/stitch_audit/corpus/posestitch_v2_train.tsv
+[stitch2] example KPS(231, 133, 3) BBOX(231, 4) | frames over first 200: mean 161 min 47 max 331
+=== identity check against the trained corpus + sidecar statistics ===
+manifest rows 20608 | sentence text identical 20608/20608 | clip names identical 20608/20608
+KPS+BBOX arrays identical 20608/20608 (first difference at row None) | file md5 identical 20608/20608
+IDENTICAL: the sidecar describes the trained corpus exactly
+[1.1:1 prefix (trained with pose-aug)] clips 13760 | segments 94428 | signs/sentence 6.86 | whitespace tokens/sentence 9.88 | signs per token 0.695 | distinct glosses 942
+[1.1:1 prefix (trained with pose-aug)] single-letter glosses: 8187 segments = 8.67% | top letters [('i', 5323), ('a', 2172), ('s', 186), ('b', 78), ('m', 64), ('p', 51), ('y', 50), ('j', 48)]
+[1.1:1 prefix (trained with pose-aug)] clips containing gloss 'I': 0 | containing 'A': 0
+[1.1:1 prefix (trained with pose-aug)] top glosses [('i', 5323), ('you', 2546), ('a', 2172), ('to', 2040), ('yummy', 1677), ('look', 1609), ('we', 1579), ('have', 1559), ('it', 1516), ('now', 1370), ('in', 1309), ('hello', 1307), ('are', 1200), ('some', 1074), ('and', 1073), ('my', 1071), ('can (tin)', 991), ('on', 901), ('nice', 833), ('good (no good)', 770), ('need', 763), ('possum', 731), ('me', 724), ('already', 706), ('so', 673)]
+[1.1:1 prefix (trained with pose-aug)] sign output frames mean 23.1 median 20
+[full 1.66:1] clips 20608 | segments 142071 | signs/sentence 6.89 | whitespace tokens/sentence 9.93 | signs per token 0.694 | distinct glosses 981
+[full 1.66:1] single-letter glosses: 12130 segments = 8.54% | top letters [('i', 7944), ('a', 3213), ('s', 260), ('b', 106), ('p', 83), ('m', 79), ('y', 72), ('j', 61)]
+[full 1.66:1] clips containing gloss 'I': 0 | containing 'A': 0
+[full 1.66:1] top glosses [('i', 7944), ('you', 3905), ('a', 3213), ('to', 3079), ('look', 2500), ('yummy', 2492), ('we', 2420), ('have', 2370), ('it', 2289), ('now', 2040), ('in', 1999), ('hello', 1838), ('and', 1690), ('can (tin)', 1658), ('are', 1640), ('my', 1623), ('some', 1587), ('on', 1328), ('nice', 1257), ('need', 1187), ('me', 1134), ('already', 1123), ('good (no good)', 1117), ('what', 1033), ('saturday', 1013)]
+[full 1.66:1] sign output frames mean 23.1 median 20
+STITCH_AUDIT_DONE

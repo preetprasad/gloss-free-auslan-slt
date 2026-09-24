@@ -53,6 +53,10 @@ def main():
     ap.add_argument("--expect", action="append", default=[], help="NAME=BLEU on record; abort on mismatch")
     ap.add_argument("--n", type=int, default=2000)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--ci", type=float, default=95.0,
+                    help="confidence level in percent, e.g. 99 for a Bonferroni-adjusted interval (default 95)")
+    ap.add_argument("--subset", choices=("all", "seen", "unseen"), default="all",
+                    help="bootstrap within this slice; seen/unseen need --train_manifest")
     a = ap.parse_args()
 
     systems, raw_refs = {}, None
@@ -86,18 +90,28 @@ def main():
             sys.exit(f"FATAL: {name} re-scores to {full[name]:.3f}, record says {value} -- not bootstrapping")
         print(f"check: {name} reproduces the recorded {value}")
 
+    if a.subset == "all":
+        pool = np.arange(n)
+    else:
+        if seen is None:
+            sys.exit("FATAL: --subset seen/unseen needs --train_manifest")
+        pool = np.flatnonzero(seen if a.subset == "seen" else ~seen)
     rng = np.random.default_rng(a.seed)
-    draws = rng.integers(0, n, size=(a.n, n))
+    # with --subset all, pool is arange(n) and this draws exactly what the unsliced version drew
+    draws = pool[rng.integers(0, len(pool), size=(a.n, len(pool)))]
+    Rp = [R[i] for i in pool]
     for pair in filter(None, a.pairs.split(",")):
         A, B = pair.split(":")
         HA, HB = systems[A], systems[B]
+        observed = corpus_bleu4([HA[i] for i in pool], Rp, "13a") - corpus_bleu4([HB[i] for i in pool], Rp, "13a")
         deltas = np.empty(a.n)
         for k, ii in enumerate(draws):
             Rk = [R[i] for i in ii]
             deltas[k] = corpus_bleu4([HA[i] for i in ii], Rk, "13a") - corpus_bleu4([HB[i] for i in ii], Rk, "13a")
-        lo, hi = np.percentile(deltas, [2.5, 97.5])
+        half = (100.0 - a.ci) / 2.0
+        lo, hi = np.percentile(deltas, [half, 100.0 - half])
         verdict = "significant" if (lo > 0 or hi < 0) else "not resolvable"
-        print(f"{A} vs {B}: observed {full[A] - full[B]:+.3f}  95% CI [{lo:+.3f}, {hi:+.3f}]  "
+        print(f"[{a.subset} n={len(pool)}] {A} vs {B}: observed {observed:+.3f}  {a.ci:g}% CI [{lo:+.3f}, {hi:+.3f}]  "
               f"P({A}>{B}) {100 * np.mean(deltas > 0):.1f}%  -> {verdict}")
 
 

@@ -1,0 +1,4 @@
+s42: pa_aug 11.443 w1A 10.637 w3C 10.091 r3_111 10.779 a3ctl 10.800 | mean 10.750 sd 0.483 range 1.353
+s101: pa_aug 11.375 w1A 11.296 w3C 11.686 r3_111 12.118 a3ctl 11.223 | mean 11.539 sd 0.368 range 0.894
+s202: pa_aug 11.193 w1A 11.345 w3C 11.483 r3_111 10.486 a3ctl 11.427 | mean 11.187 sd 0.407 range 0.997
+POOLED within-seed cross-batch sd (beam-5 test) 0.422 [95% 0.302, 0.696], df 12 | paired single-run band +-1.17

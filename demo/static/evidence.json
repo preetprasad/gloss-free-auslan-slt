@@ -1,0 +1,18 @@
+{
+  "title": "Gloss-free Auslan translation: evidence snapshot",
+  "updated": "2026-09-24",
+  "author": "Preet Prasad",
+  "dataset": "Auslan-Daily conversational split",
+  "metric": "BLEU-4 (not an accuracy percentage)",
+  "test_clips": 800,
+  "unseen_english_target_clips": 570,
+  "systems": [
+    {"name": "DWPose + CTC", "official": 9.522, "unseen_target": 4.88, "source": "results/semantic_adequacy_grading/hyps_dwpose_ctc.jsonl"},
+    {"name": "VLP-80", "official": 10.272, "unseen_target": 5.31, "source": "results/semantic_adequacy_grading/hyps_vlp.jsonl"},
+    {"name": "RGB fusion", "official": 10.335, "unseen_target": 5.81, "source": "results/semantic_adequacy_grading/hyps_rgbfusion.jsonl"},
+    {"name": "S6 ensemble", "official": 11.802, "unseen_target": 6.60, "seen_target": 35.00, "source": "results/final_ensemble_test_decodes/hyps_LP=0.3.jsonl"}
+  ],
+  "ensemble_vs_rgb": {"delta": 1.467, "paired_bootstrap_95_ci": [0.396, 2.563], "resamples": 2000},
+  "reproduction": {"directory": "src", "command": "python tools/reproduce_headline.py", "protocol": "docs/PROTOCOL.md", "report": "docs/REPORT.md"},
+  "caveats": ["Offline benchmark results do not establish webcam performance.", "The live interface uses one pose-only model, not the six-model ensemble.", "Unseen targets are not necessarily unseen signers.", "The full source repository may require access; datasets and checkpoints are not redistributed."]
+}

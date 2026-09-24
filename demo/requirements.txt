@@ -1,0 +1,16 @@
+# Local translator service requirements.
+# Verified locally on CPython 3.14.3 on 2026-09-24; use the matching CPU/GPU
+# PyTorch wheel for the host rather than downloading model assets at startup.
+fastapi>=0.135,<1
+uvicorn[standard]>=0.41,<1
+onnxruntime>=1.28,<2
+rtmlib>=0.0.16,<1
+opencv-python>=4.13,<5
+numpy>=1.26,<3
+pillow>=12,<13
+torch>=2.11,<3
+# Research decoder and metrics (src/ensemble_decode.py, slt/metrics.py)
+sacrebleu>=2.6,<3
+jiwer>=4,<5
+# DINOv2-small for the ensemble's RGB-fusion members; weights must be pre-cached (the service never downloads)
+transformers>=5.8,<6

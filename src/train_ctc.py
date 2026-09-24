@@ -8,6 +8,7 @@ BLEU + distinct-output count vs the from-scratch control (1.76 greedy / 2.87 bea
 """
 from __future__ import annotations
 import argparse, hashlib, json, os, random, sys, collections
+import numpy as np
 import torch, torch.nn as nn, torch.nn.functional as F
 from torch.utils.data import DataLoader
 
@@ -50,12 +51,60 @@ def build_gloss_vocab(texts):
     return {g: i + 1 for i, g in enumerate(sorted(toks))}   # 0 = CTC blank
 
 
+def _strict_bool(x):
+    """Accept only true/false: the old `x.lower() == "true"` silently turned "1" or "yes" into False."""
+    v = str(x).strip().lower()
+    if v not in ("true", "false"):
+        raise argparse.ArgumentTypeError(f"expected true or false, got {x!r}")
+    return v == "true"
+
+
+# Config fields that nothing on this trainer's path reads (train_ctc.py, slt/data|model|reference_model|rgb_fusion,
+# and the parts of slt/engine it imports) -- found by scanning the source, 2026-09-22. Config is shared with
+# train.py / train_mbart.py / train_llm.py / train_vq*.py, so argparse exposes them all here. If you implement one,
+# delete it from this tuple.
+UNREAD_FIELDS = (
+    "pretrained_target_embeddings", "mbart_name", "mbart_lora_r", "mbart_train_lora", "gaslt_similarity_weight",
+    "semantic_model", "semantic_cache", "length_bucket_batches", "grad_accum_steps", "plateau_patience",
+    "plateau_factor", "lr_min", "loss_normalization", "encoder_lr_scale", "vlp_aux_checkpoint", "vlp_aux_weight",
+    "signcl_weight", "signcl_margin", "signcl_zipf", "reference_bleu4", "gate_fraction", "bleu4_gate",
+    "freeze_encoder", "llm_name", "lora_r", "lora_alpha", "lora_dropout", "lora_target_modules", "llm_lr",
+    "pose_encoder_lr_scale", "max_gen_len") + tuple(n for n in Config().to_dict() if n.startswith("vq_"))
+
+
+def check_flags(cfg):
+    """Refuse flag combinations that would otherwise be silently ignored (research round 2, R2-P0)."""
+    default = Config().to_dict()
+    ignored = [f"--{n}" for n in UNREAD_FIELDS if getattr(cfg, n) != default[n]]
+    if ignored:
+        raise SystemExit(f"train_ctc.py never reads {', '.join(ignored)}; use the trainer that implements it")
+    for name in ("init_encoder", "resume_checkpoint"):
+        path = getattr(cfg, name, "")
+        if path and not os.path.exists(path):
+            raise SystemExit(f"--{name} {path} does not exist (it used to be skipped silently)")
+    hand_mask = cfg.aug_hand_drop > 0 or cfg.aug_hand_span > 0
+    if cfg.eval_every < 1:
+        raise SystemExit("--eval_every must be >= 1")
+    if hand_mask and not cfg.pose_aug:
+        raise SystemExit("--aug_hand_drop/--aug_hand_span need --pose_aug True (hand masking is part of the "
+                         "training augmentation)")
+    if getattr(cfg, "rgb_feat_dir", ""):
+        # slt/rgb_fusion.py builds its own loaders: it never sets pose_augment, calls set_epoch or attaches paraphrases.
+        ignored = [name for name, on in (("--pose_aug", cfg.pose_aug), ("--aug_hand_drop/--aug_hand_span", hand_mask),
+                                         ("--paraphrase_prob", cfg.paraphrase_prob > 0),
+                                         ("--vocab_file", bool(cfg.vocab_file)), ("--save_last", cfg.save_last),
+                                         ("--eval_every", cfg.eval_every != 1)) if on]
+        if ignored:
+            raise SystemExit(f"RGB-fusion training (--rgb_feat_dir) never applies {', '.join(ignored)}; "
+                             "remove the flag(s) or implement them in slt/rgb_fusion.py")
+
+
 def parse():
     cfg = Config()
     p = argparse.ArgumentParser()
     for name, val in cfg.to_dict().items():
         if isinstance(val, bool):
-            p.add_argument(f"--{name}", type=lambda x: x.lower() == "true", default=val)
+            p.add_argument(f"--{name}", type=_strict_bool, default=val)
         elif val is None:
             p.add_argument(f"--{name}", type=str, default=None)
         else:
@@ -75,12 +124,27 @@ def parse():
 
 def main():
     cfg, a = parse()
+    check_flags(cfg)
     if getattr(cfg, "rgb_feat_dir", ""):          # Stage B: two-stream pose+RGB fusion
         from slt.rgb_fusion import train_rgb_fusion
         return train_rgb_fusion(cfg, a)
     dev = resolve_device(cfg.device)
     os.makedirs(cfg.out_dir, exist_ok=True)
     torch.manual_seed(cfg.seed)
+    if getattr(cfg, "deterministic", False):
+        # 2026-09-10ab measured beam-5 gaps up to 1.18 between two runs with everything pinned but cuDNN.
+        # CUBLAS_WORKSPACE_CONFIG must be set before the first cuBLAS handle is created, i.e. here.
+        os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+        random.seed(cfg.seed); np.random.seed(cfg.seed); torch.cuda.manual_seed_all(cfg.seed)
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
+        # warn_only MUST be False. With warn_only=True, torch 2.5.1's memory-efficient attention backward only
+        # warns and keeps split-K accumulation (attention_backward.cu:652-664), so the A/A run 6593 diverged
+        # at epoch 1 (131/132 tensors differ). warn_only=False forces num_splits_key=1 -- deterministic -- and
+        # makes any other non-deterministic op RAISE instead of silently passing. CTC is already on CPU (L265).
+        torch.use_deterministic_algorithms(True, warn_only=False)
+        print(f"[determinism] ON (seed {cfg.seed}, CUBLAS_WORKSPACE_CONFIG="
+              f"{os.environ['CUBLAS_WORKSPACE_CONFIG']}) -- reproducible; A/A job 6952 was not slower")
 
     if getattr(cfg, "gloss_map", "") and os.path.exists(cfg.gloss_map):   # PGG-SLT LLM glosses
         for ln in open(cfg.gloss_map, encoding="utf-8"):
@@ -92,7 +156,19 @@ def main():
         print(f"[pgg] loaded {len(GLOSS_MAP)} LLM pseudo-glosses from {cfg.gloss_map}", flush=True)
 
     train_txt = [ln.rstrip("\n").split("\t")[1] for ln in open(cfg.train_manifest) if ln.strip()]
-    vocab = Vocab.build(train_txt, cfg.min_freq, cfg.text_tokenization, cfg.sentencepiece_model)
+    if cfg.vocab_file:
+        # A fixed vocabulary shared by every stage and arm: Vocab.build orders words by frequency IN THE MANIFEST, so a
+        # pre-train and a fine-tune on different manifests would index the same word differently.
+        vocab = Vocab(json.load(open(cfg.vocab_file)), cfg.text_tokenization, cfg.sentencepiece_model)
+        oov = collections.Counter(w for t in train_txt
+                                  for w in tokenize(t, cfg.text_tokenization, vocab.sentencepiece) if w not in vocab.stoi)
+        if oov:
+            raise SystemExit(f"--vocab_file {cfg.vocab_file}: {sum(oov.values())} training tokens are not in it, "
+                             f"e.g. {oov.most_common(5)}")
+        print(f"[vocab] fixed vocabulary from {cfg.vocab_file}: {len(vocab)} entries, 0 training tokens outside it",
+              flush=True)
+    else:
+        vocab = Vocab.build(train_txt, cfg.min_freq, cfg.text_tokenization, cfg.sentencepiece_model)
     gloss2idx = build_gloss_vocab(train_txt)
     print(f"[ctc] vocab={len(vocab)} gloss_vocab={len(gloss2idx)} device={dev} feat_dim={cfg.feature_dim()}", flush=True)
     # Frequency-aware weighting: upweight pseudo-gloss targets by inverse corpus frequency so the
@@ -127,8 +203,9 @@ def main():
         print(f"[para] {kept} in-vocab paraphrases over {len(PARA_MAP)} sentences "
               f"({dropped} dropped as out-of-vocab), prob={cfg.paraphrase_prob}", flush=True)
 
-    def loader(manifest, shuffle, limit=0, paraphrase=False):
+    def loader(manifest, shuffle, limit=0, paraphrase=False, augment=False):
         ds = AuslanDailyDataset(manifest, vocab, cfg, "")
+        ds.pose_augment = bool(augment)   # pose augmentation touches the TRAIN loader only
         if limit:
             ds.samples = ds.samples[:limit]
         if paraphrase and PARA_MAP and cfg.paraphrase_prob > 0:
@@ -137,8 +214,13 @@ def main():
         return DataLoader(ds, batch_size=cfg.batch_size, shuffle=shuffle,
                           num_workers=cfg.num_workers, collate_fn=collate)
 
-    train_dl = loader(cfg.train_manifest, True, a.limit_samples, paraphrase=True)
+    train_dl = loader(cfg.train_manifest, True, a.limit_samples, paraphrase=True, augment=True)
+    if getattr(cfg, "pose_aug", False):
+        print(f"[aug] pose augmentation ON (train only): speed ±{cfg.aug_speed}, "
+              f"rotation ±{cfg.aug_rotate_deg} deg, x/y scale ±{cfg.aug_scale}, "
+              f"hand drop {cfg.aug_hand_drop}, hand span {cfg.aug_hand_span}", flush=True)
     val_dl = loader(cfg.val_manifest, False)
+    hand_mask = bool(cfg.pose_aug) and (cfg.aug_hand_drop > 0 or cfg.aug_hand_span > 0)
 
     model = build_model(cfg.feature_dim(), len(vocab), cfg).to(dev)
     if cfg.init_encoder and os.path.exists(cfg.init_encoder):   # optional VLP/ISLR pretrained encoder
@@ -147,6 +229,8 @@ def main():
         pref = ("input_proj", "pos_enc", "transformer.encoder", "pose_adapter",
                 "spatial_embedding", "source_position", "encoder_layers", "encoder_norm")
         enc = {k: v for k, v in sd.items() if k.startswith(pref) and k in ref and v.shape == ref[k].shape}
+        if not enc:
+            raise SystemExit(f"--init_encoder {cfg.init_encoder}: 0 tensors match this model (wrong arch/keypoints?)")
         model.load_state_dict(enc, strict=False)
         print(f"[init] loaded {len(enc)} pretrained encoder tensors from {cfg.init_encoder}", flush=True)
     if getattr(cfg, "resume_checkpoint", "") and os.path.exists(cfg.resume_checkpoint):
@@ -154,8 +238,19 @@ def main():
         # pre-training vocab (different decoder embed/output dims) doesn't crash the load: the encoder
         # + vocab-independent decoder body transfer; only the vocab-tied layers re-initialise.
         rk = torch.load(cfg.resume_checkpoint, map_location="cpu", weights_only=False)
+        ck_itos = rk.get("vocab") if isinstance(rk, dict) else None
+        if ck_itos is not None and list(ck_itos) != list(vocab.itos):
+            if len(ck_itos) == len(vocab.itos):
+                raise SystemExit(f"--resume_checkpoint {cfg.resume_checkpoint}: same vocabulary size, different order -- "
+                                 "the word embeddings and output layer would load scrambled. Use one --vocab_file.")
+            print(f"[resume] vocabulary differs ({len(ck_itos)} vs {len(vocab)}): vocab-tied layers re-initialise",
+                  flush=True)
+        elif ck_itos is not None:
+            print(f"[resume] vocabulary identical ({len(vocab)}): vocab-tied layers transfer", flush=True)
         sd = rk.get("model", rk); ref = model.state_dict()
         keep = {k: v for k, v in sd.items() if k in ref and v.shape == ref[k].shape}
+        if not keep:
+            raise SystemExit(f"--resume_checkpoint {cfg.resume_checkpoint}: 0 tensors match this model")
         model.load_state_dict(keep, strict=False)
         print(f"[resume] full-model warm-start: loaded {len(keep)}/{len(sd)} shape-matched tensors "
               f"from {cfg.resume_checkpoint}", flush=True)
@@ -199,9 +294,14 @@ def main():
     best = {"bleu4": -1, "wer": 9, "epoch": 0}; history = []
     for ep in range(1, cfg.epochs + 1):
         model.train(); ctc_head.train(); tot = tce = tctc = n = 0
-        train_dl.dataset.set_epoch(ep)   # re-draws paraphrase targets each epoch (no-op when off)
+        train_dl.dataset.set_epoch(ep)   # re-draws paraphrase targets and pose augmentation each epoch (no-op when off)
+        hand_stats = torch.zeros(2, dtype=torch.long, device=dev)   # [hand-frames kept, hand-frames seen]
         for src, src_pad, tgt, texts in train_dl:
             src, src_pad, tgt = src.to(dev), src_pad.to(dev), tgt.to(dev)
+            if hand_mask:   # realised keep fraction: a masked hand is an all-zero 63-dim block on a valid frame
+                valid = ~src_pad
+                zero = src[..., 273:399].reshape(src.size(0), src.size(1), 2, 63).eq(0).all(-1)
+                hand_stats += torch.stack([(~zero & valid.unsqueeze(-1)).sum(), 2 * valid.sum()])
             tgt_in, tgt_out = tgt[:, :-1], tgt[:, 1:]
             tgt_pad = tgt_in.eq(PAD)
             logits, memory = model(src, src_pad, tgt_in, tgt_pad, return_memory=True)
@@ -230,13 +330,23 @@ def main():
             torch.nn.utils.clip_grad_norm_(params, cfg.grad_clip); sched.step()
             b = src.size(0); tot += loss.item() * b; tce += loss_ce.item() * b
             tctc += float(loss_ctc.detach()) * b; n += b
-        bleu, wer, hyps, _ = evaluate(model, val_dl, vocab, dev, max_len=mx,
-                                      bleu_tokenize=cfg.bleu_tokenize, detok=cfg.detokenize)
-        uniq = len(set(hyps))
-        print(f"[ctc ep {ep:03d}] loss={tot/n:.3f} ce={tce/n:.3f} ctc={tctc/n:.3f} "
-              f"val_bleu4={bleu:.3f} wer={wer:.3f} uniq={uniq}", flush=True)
-        history.append({"epoch": ep, "bleu4": bleu, "wer": wer, "uniq": uniq})
-        if bleu > best["bleu4"]:
+        do_eval = ep % cfg.eval_every == 0 or ep == cfg.epochs
+        if do_eval:
+            bleu, wer, hyps, _ = evaluate(model, val_dl, vocab, dev, max_len=mx,
+                                          bleu_tokenize=cfg.bleu_tokenize, detok=cfg.detokenize)
+            uniq = len(set(hyps))
+            print(f"[ctc ep {ep:03d}] loss={tot/n:.3f} ce={tce/n:.3f} ctc={tctc/n:.3f} "
+                  f"val_bleu4={bleu:.3f} wer={wer:.3f} uniq={uniq}", flush=True)
+            history.append({"epoch": ep, "bleu4": bleu, "wer": wer, "uniq": uniq})
+        else:
+            print(f"[ctc ep {ep:03d}] loss={tot/n:.3f} ce={tce/n:.3f} ctc={tctc/n:.3f} (no validation this epoch)",
+                  flush=True)
+            history.append({"epoch": ep, "loss": tot / n})
+        if hand_mask:
+            keep = hand_stats[0].item() / max(1, hand_stats[1].item())
+            history[-1]["hand_keep"] = keep
+            print(f"[aug ep {ep:03d}] realised hand keep fraction {keep:.4f}", flush=True)
+        if do_eval and bleu > best["bleu4"]:
             best = {"bleu4": bleu, "wer": wer, "epoch": ep}
             torch.save({"model": model.state_dict(), "ctc_head": ctc_head.state_dict(),
                         "vocab": vocab.itos, "cfg": cfg.to_dict(), "gloss2idx": gloss2idx},
@@ -249,6 +359,12 @@ def main():
                    "pseudo_token_drop": a.pseudo_token_drop,
                    "pseudo_target_order": "english_spoken_order"},
                   open(os.path.join(cfg.out_dir, "progress.json"), "w"), indent=2)
+
+    if cfg.save_last:
+        torch.save({"model": model.state_dict(), "ctc_head": ctc_head.state_dict(), "vocab": vocab.itos,
+                    "cfg": cfg.to_dict(), "gloss2idx": gloss2idx, "epoch": cfg.epochs},
+                   os.path.join(cfg.out_dir, "last.pt"))
+        print(f"[save] final epoch {cfg.epochs} model -> last.pt", flush=True)
 
     # test on best
     ck = torch.load(os.path.join(cfg.out_dir, "best.pt"), map_location=dev, weights_only=False)

@@ -1,0 +1,106 @@
+{
+ "real_train": {
+  "sentences": 12439,
+  "unique": 9534,
+  "vocab": 3063,
+  "mean_words": 7.09,
+  "distinct_1": 0.0347,
+  "distinct_2": 0.3047,
+  "distinct_3": 0.6496,
+  "top10_opening_bigrams_share": 0.1751
+ },
+ "syn_13760_adopted": {
+  "sentences": 13760,
+  "unique": 13760,
+  "vocab": 1289,
+  "mean_words": 8.88,
+  "distinct_1": 0.0105,
+  "distinct_2": 0.1743,
+  "distinct_3": 0.4058,
+  "top10_opening_bigrams_share": 0.244,
+  "2grams_unseen_in_real_train": 0.4234,
+  "3grams_unseen_in_real_train": 0.7496,
+  "words_not_in_real_train_vocab": 0,
+  "real_train_vocab_covered": "1289 of 3063",
+  "exact_in_real_train": 0,
+  "exact_in_val": 0,
+  "exact_in_test": 1,
+  "exact_in_test_not_in_train": 1
+ },
+ "syn_20608_pool": {
+  "sentences": 20608,
+  "unique": 20608,
+  "vocab": 1340,
+  "mean_words": 8.93,
+  "distinct_1": 0.0073,
+  "distinct_2": 0.1478,
+  "distinct_3": 0.3704,
+  "top10_opening_bigrams_share": 0.2421,
+  "2grams_unseen_in_real_train": 0.4229,
+  "3grams_unseen_in_real_train": 0.7493,
+  "words_not_in_real_train_vocab": 0,
+  "real_train_vocab_covered": "1340 of 3063",
+  "exact_in_real_train": 0,
+  "exact_in_val": 0,
+  "exact_in_test": 2,
+  "exact_in_test_not_in_train": 2
+ },
+ "visual_supply_adopted": {
+  "mmwl_clips": 45010,
+  "mmwl_glosses": 3215,
+  "mmwl_mean_exemplars_per_gloss": 14.0,
+  "stitched_sign_segments": 94428,
+  "distinct_glosses_used": 942,
+  "distinct_recordings_used": 8581,
+  "segments_per_recording": {
+   "mean": 11.0,
+   "median": 3,
+   "p90": 27,
+   "max": 414
+  },
+  "distinct_recordings_per_used_gloss_median": 11.0,
+  "top10_glosses_share_of_segments": 0.2265,
+  "top10_glosses": [
+   [
+    "i",
+    5323
+   ],
+   [
+    "you",
+    2546
+   ],
+   [
+    "a",
+    2172
+   ],
+   [
+    "to",
+    2040
+   ],
+   [
+    "yummy",
+    1677
+   ],
+   [
+    "look",
+    1609
+   ],
+   [
+    "we",
+    1579
+   ],
+   [
+    "have",
+    1559
+   ],
+   [
+    "it",
+    1516
+   ],
+   [
+    "now",
+    1370
+   ]
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+# Dataset material and temporary browser-test media must never be deployed.
+_e2e_*
+**/_e2e_*
+*.mp4
+*.mov
+*.webm
+*.avi
+*.npz
+*.npy
+*.pkl
+*.pt
+*.onnx
+__pycache__/

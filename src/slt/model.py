@@ -191,8 +191,15 @@ class PoseSLT(nn.Module):
         self.reset_parameters()
 
     def reset_parameters(self):
+        # NOTE: pose_graph.A is a (K, K) matrix (dim=2), so the blanket xavier
+        # pass below used to catch it too and overwrite its anatomical/near-identity
+        # init with random noise -- the graph front-end then started as a
+        # destructive random keypoint-mixer instead of a residual no-op (2026-09-04
+        # job 1171052 regression: layers=2/3 both ~1.3-1.7 BLEU below control).
+        # Exclude it explicitly so its skeleton-aware init survives.
+        graph_A_ids = {id(p) for p in self.pose_graph.A} if self.pose_graph is not None else set()
         for p in self.parameters():
-            if p.dim() > 1:
+            if p.dim() > 1 and id(p) not in graph_A_ids:
                 nn.init.xavier_uniform_(p)
 
     def encode(self, src: torch.Tensor, src_pad: torch.Tensor) -> torch.Tensor:

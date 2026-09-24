@@ -53,8 +53,11 @@ IRREGULAR = {
     "slept": "sleep", "spoke": "speak", "spoken": "speak", "stood": "stand",
     "understood": "understand", "wore": "wear", "worn": "wear", "won": "win",
 }
-# -er/-est/-ly are the risky tier: "teacher"->"teach" drops the PERSON marker that Auslan
-# realises as a separate sign. Kept separate so it can be ablated.
+# -est/-ly are safe-ish (smallest->small, sadly->sad). -er is NOT: it conflates comparatives
+# ("faster"->fast, right) with AGENTIVE nouns ("farmer"->farm, "painter"->paint, "researcher"->
+# research), which in Auslan are VERB+PERSON -- two signs, not one. Without POS tagging the two
+# cannot be told apart, and false supervision costs more than missed coverage, so -er is OFF.
+MORPH_COMPARATIVE_ER = False
 MORPH_AGGRESSIVE = True
 
 
@@ -83,7 +86,7 @@ def _suffix_lemmas(w: str) -> List[str]:
     if MORPH_AGGRESSIVE:
         if w.endswith("est") and len(w) > 4:
             out += [w[:-3], w[:-2]]
-        if w.endswith("er") and len(w) > 4:
+        if MORPH_COMPARATIVE_ER and w.endswith("er") and len(w) > 4:
             out += [w[:-2], w[:-1]]
         if w.endswith("ly") and len(w) > 4:
             out.append(w[:-2])
@@ -127,10 +130,30 @@ def _surface_forms(gloss: str, paren_alias: bool = True) -> List[str]:
     return forms
 
 
-def build_lexicon(label_paths, npz_dirs=None, morphology: bool = False) -> Lexicon:
+# ── fingerspelling-letter fix (OPT-IN via build_lexicon(letter_fix=True)) ──────────────
+# MM-WLAuslan ships the FINGERSPELLING ALPHABET as 24 single-character glosses (A-Z minus O
+# and Q, 12 clips each). Lowercased, those become the phrase keys 'a', 'i', 's', ... so the
+# English pronoun "I" is rendered as the handshape for the LETTER I and the article "a" as the
+# LETTER A. Neither is the Auslan sign: first person is an index point at the chest (the
+# dictionary carries it as ME), and English articles have no Auslan equivalent at all.
+#
+# MEASURED on the corpus that was actually trained (stitch audit, job 1216905): single-letter
+# glosses are 8,187 of 94,428 segments in the 1.1:1 build = 8.67%, of which 'i' is 5,323
+# (5.6%) and 'a' is 2,172 (2.3%). stitch-scram (2026-09-10e) showed the stitch gain comes from
+# showing the CORRECT sign for each word, so those segments are active mis-supervision.
+#
+# letter_fix=True drops every single-character surface form from the phrase index and aliases
+# "i" to the ME gloss when the dictionary has one. DEFAULT OFF, like morphology above: the
+# corpora already trained on must keep rebuilding byte-identically.
+LETTER_PRONOUN_ALIAS = {"i": "me"}
+
+
+def build_lexicon(label_paths, npz_dirs=None, morphology: bool = False,
+                  paren_alias: bool = True, letter_fix: bool = False) -> Lexicon:
     """label_paths: MM-WLAuslan {clip_id: GLOSS} JSONs. npz_dirs (optional, parallel list):
     only keep clips whose .npz actually exists in the matching directory.
-    morphology: allow inflected sentence words to match citation-form glosses (see above)."""
+    morphology: allow inflected sentence words to match citation-form glosses (see above).
+    letter_fix: drop fingerspelled single letters from the phrase index and alias "i" -> ME."""
     gloss2clips = collections.defaultdict(list)
     for i, p in enumerate(label_paths):
         d = npz_dirs[i] if npz_dirs else None
@@ -144,10 +167,17 @@ def build_lexicon(label_paths, npz_dirs=None, morphology: bool = False) -> Lexic
             gloss2clips[str(g).strip().lower()].append((d or "", cid))
     phrase2gloss, vocab = {}, set()
     for g in gloss2clips:
-        for form in _surface_forms(g):
+        for form in _surface_forms(g, paren_alias):
+            if letter_fix and len(form) == 1:
+                continue                               # fingerspelled letter, not an English word
             # first gloss wins; keeps the mapping deterministic
             phrase2gloss.setdefault(form, g)
             vocab.update(form.split())
+    if letter_fix:
+        for word, gloss in LETTER_PRONOUN_ALIAS.items():
+            if gloss in gloss2clips:
+                phrase2gloss[word] = gloss
+                vocab.add(word)
     return Lexicon(dict(gloss2clips), phrase2gloss, vocab, morphology)
 
 

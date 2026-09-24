@@ -1,0 +1,4 @@
+  from scipy.stats import chi2
+beam5_test n=6 mean 9.745 sd 0.216 [95% 0.135, 0.529] | paired single-run band +-0.60 [0.37, 1.47] | range 9.493-10.119
+beam5_val  n=6 mean 10.131 sd 0.587 [95% 0.367, 1.440] | paired single-run band +-1.63 [1.02, 3.99] | range 9.172-10.597
+val_best   n=6 mean 9.393 sd 0.374 [95% 0.234, 0.918] | paired single-run band +-1.04 [0.65, 2.55] | range 8.907-9.998

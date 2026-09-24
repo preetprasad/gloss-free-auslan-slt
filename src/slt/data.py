@@ -310,8 +310,18 @@ def normalize_clip(kps: np.ndarray, bbox: np.ndarray, cfg: Config
 
     # drop fully-invalid frames, then temporal cap by uniform subsample
     feats = feats[frame_ok]
-    if feats.shape[0] == 0:                      # degenerate clip guard
-        feats = np.zeros((1, feats.shape[1] if feats.ndim == 2 else cfg_feat_dim(cfg)), np.float32)
+    if feats.shape[0] == 0:
+        # Every frame failed validity. This is never a recoverable per-clip condition: it means the
+        # normalisation is wrong for this data. The usual cause is coord_norm="bbox" on DWPose npz,
+        # whose BBOX is all zeros by construction, so box_ok is False everywhere. Returning a single
+        # zero frame here (the behaviour before the 2026-09-24 audit) let a whole run train and decode
+        # on no input at all and still print a plausible BLEU.
+        raise ValueError(
+            "normalize_clip: all frames invalid, so this clip carries no input. "
+            f"coord_norm={cfg.coord_norm!r}, bbox_format={cfg.bbox_format!r}, frames={T}. "
+            "If coord_norm='bbox' on DWPose keypoints, that is the cause: the DWPose extractor writes an "
+            "all-zero BBOX and every frame fails the positive width/height test. Use --coord_norm frame."
+        )
     if feats.shape[0] > cfg.max_src_frames:
         sel = np.linspace(0, feats.shape[0] - 1, cfg.max_src_frames).round().astype(int)
         feats = feats[sel]
@@ -370,6 +380,84 @@ def load_precomputed_features(path: str, key: str = "FEATURES") -> np.ndarray:
     return features
 
 
+# ── training-only pose augmentation ────────────────────────────────────────
+def augment_pose(kps: np.ndarray, bbox: np.ndarray, cfg: Config,
+                 rng: np.random.Generator) -> Tuple[np.ndarray, np.ndarray]:
+    """Perturb one TRAINING clip's raw keypoints before normalisation (off unless cfg.pose_aug).
+
+    WHY (2026-09-15): the translation bottleneck is sign identification under conversational
+    production variability, and the stitched synthetic signs are ~7x LESS variable than real
+    signing (E0c). Nothing in this pipeline augmented pose. Three standard label-preserving
+    perturbations, each drawn once per clip from a (seed, epoch, clip) generator:
+      * speed    -- nearest-frame temporal resampling by a factor in [1-aug_speed, 1+aug_speed]
+                    (signing rate varies across signers; nearest-frame keeps all-zero frames exact,
+                    so drop_zero_frames still masks them);
+      * rotation -- one in-plane rotation of every frame about the clip's keypoint centroid;
+      * scale    -- independent x / y scaling (camera aspect / perspective).
+    Under coord_norm="frame" each frame is standardised with ONE pooled mean/std over x and y, which
+    cancels a uniform scale but not a rotation or an anisotropic scale, so both survive into the
+    features. Intended for coord_norm="frame" (the BBOX is resampled in time but not rotated).
+    Only non-zero keypoints move; all-zero frames and keypoints stay exactly zero.
+    """
+    kps = np.array(kps, dtype=np.float32, copy=True)
+    bbox = np.asarray(bbox, dtype=np.float32)
+    T = kps.shape[0]
+    if cfg.aug_speed > 0 and T > 1:
+        factor = rng.uniform(1.0 - cfg.aug_speed, 1.0 + cfg.aug_speed)
+        new_T = max(2, int(round(T * factor)))
+        sel = np.linspace(0, T - 1, new_T).round().astype(int)
+        kps = kps[sel]
+        bbox = bbox.reshape(T, -1)[sel]
+    if cfg.aug_rotate_deg > 0 or cfg.aug_scale > 0:
+        xy = kps[..., :2]
+        live = np.abs(xy).sum(axis=-1) > 1e-6          # (T, K): non-zero keypoints only
+        if live.any():
+            centre = xy[live].mean(axis=0)
+            theta = np.deg2rad(rng.uniform(-cfg.aug_rotate_deg, cfg.aug_rotate_deg))
+            sx = rng.uniform(1.0 - cfg.aug_scale, 1.0 + cfg.aug_scale)
+            sy = rng.uniform(1.0 - cfg.aug_scale, 1.0 + cfg.aug_scale)
+            rot = np.array([[np.cos(theta), -np.sin(theta)],
+                            [np.sin(theta), np.cos(theta)]], dtype=np.float32)
+            affine = (rot @ np.diag([sx, sy])).astype(np.float32)
+            moved = (xy - centre) @ affine.T + centre
+            kps[..., :2] = np.where(live[..., None], moved, xy)
+    return kps, bbox
+
+
+# COCO-WholeBody-133 hands: left 91-111, right 112-132. With keypoint_subset="all" and use_confidence each keypoint is
+# (x, y, conf) in the feature row, so a hand occupies feature dims 3*start .. 3*(start + 21).
+HAND_FEATURE_SLICES = (slice(91 * 3, 112 * 3), slice(112 * 3, 133 * 3))
+
+
+def mask_hands(feats: np.ndarray, cfg: Config, rng: np.random.Generator) -> np.ndarray:
+    """Zero hand features on random frames and in one random span of one TRAINING clip (off unless aug_hand_* > 0).
+
+    WHY (2026-09-16, research round 2 "R2-HM"): of the label-safe perturbations probed on trained checkpoints, only
+    hand loss moves validation CE (both hands dropped on 20% of frames: +0.017 to +0.043 nats); jitter, frame drop and
+    time warp do not. Applied AFTER normalize_clip because zeroing raw pixels would shift every body coordinate through
+    the pooled frame mean/std. Under coord_norm="frame" x = y = 0 is the frame's pooled mean and conf = 0 is how a
+    missing detection already looks. Each hand is dropped on each frame with probability aug_hand_drop, then one
+    contiguous both-hands span of floor(U(0, aug_hand_span) * T) frames is zeroed. Frames stay valid (no padding).
+    """
+    if not (cfg.keypoint_subset == "all" and cfg.num_keypoints == 133 and cfg.use_confidence
+            and not cfg.use_velocity and int(getattr(cfg, "temporal_pool", 1)) == 1):
+        raise ValueError("hand masking needs keypoint_subset='all', num_keypoints=133, use_confidence=True, "
+                         "use_velocity=False and temporal_pool=1")
+    if feats.ndim != 2 or feats.shape[1] != 399:
+        raise ValueError(f"hand masking expects (T, 399) features, got {feats.shape}")
+    if not (0.0 <= cfg.aug_hand_drop <= 0.5 and 0.0 <= cfg.aug_hand_span <= 0.5):
+        raise ValueError("aug_hand_drop and aug_hand_span must lie in [0, 0.5]")
+    feats = feats.copy()
+    T = feats.shape[0]
+    for dims in HAND_FEATURE_SLICES:
+        feats[rng.random(T) < cfg.aug_hand_drop, dims] = 0.0
+    span = int(np.floor(rng.uniform(0.0, cfg.aug_hand_span) * T))
+    if span > 0:
+        start = int(rng.integers(0, T - span + 1))
+        feats[start:start + span, HAND_FEATURE_SLICES[0].start:HAND_FEATURE_SLICES[1].stop] = 0.0
+    return feats
+
+
 # ── dataset ─────────────────────────────────────────────────────────────────
 def read_manifest(path: str) -> List[Tuple[str, str]]:
     rows = []
@@ -392,6 +480,9 @@ class AuslanDailyDataset(Dataset):
         # Multi-reference target augmentation (off unless a caller attaches a map).
         self.paraphrases: dict = {}
         self.paraphrase_prob: float = 0.0
+        # Training-only pose augmentation: train_ctc sets this on the TRAIN loader only, so val/test
+        # and every eval tool construct datasets with it False and never augment.
+        self.pose_augment: bool = False
         self.epoch: int = 0
 
     def set_epoch(self, epoch: int) -> None:
@@ -413,6 +504,20 @@ class AuslanDailyDataset(Dataset):
         if draw >= self.paraphrase_prob:
             return text
         return alts[int.from_bytes(digest[8:], "big") % len(alts)]
+
+    def _pose_rng(self, clip: str) -> np.random.Generator:
+        """Per-(seed, epoch, clip) generator: reproducible and identical across DataLoader workers."""
+        digest = hashlib.blake2b(
+            f"{self.cfg.seed}:{self.epoch}:{clip}:pose_aug".encode("utf-8"), digest_size=8
+        ).digest()
+        return np.random.default_rng(int.from_bytes(digest, "big"))
+
+    def _mask_rng(self, clip: str) -> np.random.Generator:
+        """Separate generator for hand masking, so the augment_pose draws are identical with or without it."""
+        digest = hashlib.blake2b(
+            f"{self.cfg.seed}:{self.epoch}:{clip}:mask".encode("utf-8"), digest_size=8
+        ).digest()
+        return np.random.default_rng(int.from_bytes(digest, "big"))
 
     def __len__(self) -> int:
         return len(self.samples)
@@ -437,7 +542,12 @@ class AuslanDailyDataset(Dataset):
                 feats = feats[selected]
         else:
             kps, bbox = load_pose(path)
+            if self.pose_augment and getattr(self.cfg, "pose_aug", False):
+                kps, bbox = augment_pose(kps, bbox, self.cfg, self._pose_rng(clip))
             feats, _ = normalize_clip(kps, bbox, self.cfg)
+            if (self.pose_augment and getattr(self.cfg, "pose_aug", False)
+                    and (getattr(self.cfg, "aug_hand_drop", 0.0) > 0 or getattr(self.cfg, "aug_hand_span", 0.0) > 0)):
+                feats = mask_hands(feats, self.cfg, self._mask_rng(clip))
         tgt = self.vocab.encode(text, self.cfg.max_tgt_tokens)
         return (
             torch.from_numpy(feats),
