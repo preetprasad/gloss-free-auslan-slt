@@ -203,6 +203,21 @@ def create_app(settings=None, service=None):
     @app.get('/studio')
     async def studio(): return FileResponse(STATIC / 'studio.html')
 
+    @app.get('/privacy')
+    async def privacy(): return FileResponse(STATIC / 'privacy.html')
+
+    @app.get('/terms')
+    async def terms(): return FileResponse(STATIC / 'terms.html')
+
+    @app.get('/research-notes')
+    async def research_notes(): return FileResponse(STATIC / 'research-notes.html')
+
+    @app.get('/credits')
+    async def credits(): return FileResponse(STATIC / 'credits.html')
+
+    @app.get('/accessibility')
+    async def accessibility(): return FileResponse(STATIC / 'accessibility.html')
+
     @app.get('/health')
     async def health():
         return {'status': 'ok', 'mode': config.mode, 'translator': runtime.service is not None,

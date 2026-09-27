@@ -152,7 +152,7 @@ def main() -> None:
     a = ap.parse_args()
     dumped = []
 
-    d = pd.read_csv(a.spot_csv)
+    d = pd.read_csv(a.spot_csv, dtype={"Video_Name_Clip": str})   # MM-WLAuslan ids are zero-padded ('05841')
     index = {}
     for cd in a.clip_dirs:
         if os.path.isdir(cd):

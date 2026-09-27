@@ -81,7 +81,8 @@ def utterance(client, stack, model=None, times=(0, 40)):
 
 def test_pages_security_and_no_model_fallback():
     with TestClient(create_app(Settings())) as client:
-        for path in ['/', '/studio', '/static/app.js', '/static/research.css']:
+        for path in ['/', '/studio', '/privacy', '/terms', '/research-notes', '/credits', '/accessibility',
+                     '/static/app.js', '/static/research.css', '/static/documents.css', '/static/research-notes.js']:
             response = client.get(path)
             assert response.status_code == 200
             assert "frame-ancestors 'none'" in response.headers['content-security-policy']

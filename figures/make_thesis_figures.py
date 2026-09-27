@@ -407,7 +407,7 @@ plt.close(fig)
 # 8 exemplars per class, clip-disjoint folds, nearest centroid, chance 2.2%).
 # =====================================================================
 arts = ["face", "body", "hands", "body + hands"]
-iso = [11.1, 27.8, 40.0, 41.1]
+iso = [13.6, 32.5, 42.8, 41.9]   # all 630 citation clips (id-parsing fix, 2026-09-26; was 564)
 cont = [3.3, 15.4, 18.1, 18.7]
 x = np.arange(len(arts)); w = 0.36
 fig, ax = plt.subplots(figsize=(TARGET_W, 3.78))

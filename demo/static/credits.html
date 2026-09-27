@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sources, attribution and reuse information."><meta name="theme-color" content="#183c35">
+<title>Credits &amp; Licensing — Auslan / English</title>
+<link rel="stylesheet" href="/static/research.css"><link rel="stylesheet" href="/static/documents.css">
+
+</head>
+<body class="document-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="header wrap"><a class="brand" href="/" aria-label="Auslan English home"><span class="brand-symbol" aria-hidden="true">a↗</span> Auslan <span class="slash">/</span> English</a><a class="back-link" href="/">← Back to overview</a></header>
+<main id="main" class="wrap">
+<div class="document-heading"><p class="eyebrow">Project documents · <time datetime="2026-09-26">Updated 26 September 2026</time></p><h1>Credits &amp; Licensing</h1><p class="document-lede">Sources, attribution and reuse information.</p></div>
+<div class="document-layout">
+<nav class="document-contents" aria-label="On this page"><p>On this page</p><ol><li><a href="#project">The project</a></li><li><a href="#examples">Recorded signing examples</a></li><li><a href="#changes">What was changed</a></li><li><a href="#methods">Research components</a></li><li><a href="#corrections">Credit or rights concerns</a></li></ol></nav>
+<article class="document-body" aria-label="Credits &amp; Licensing">
+<section id="project" aria-labelledby="heading-project"><h2 id="heading-project"><span aria-hidden="true">01</span>The project</h2><p>Research and showcase by <strong>Preet Prasad</strong>, University of Western Australia Honours, supervised by <strong>Dr Atif Mansoor</strong>. The site presents ongoing research; no endorsement by dataset authors, programme creators or performers is implied.</p><p>Project code and its licence are available in the <a href="https://github.com/preetprasad/auslan-slt-honours">research repository</a>. The code licence does not replace separate licences for datasets, model weights or third-party dependencies.</p></section>
+
+<section id="examples" aria-labelledby="heading-examples"><h2 id="heading-examples"><span aria-hidden="true">02</span>Recorded signing examples</h2><p>The four example clips are from the official validation split of <cite>Auslan-Daily: Australian Sign Language Translation for Daily Communication and News</cite>, by Xin Shen, Shaozu Yuan, Hongwei Sheng, Heming Du and Xin Yu (NeurIPS 2023). The conversational material includes the programme <cite>Sally &amp; Possum</cite>.</p><p>The current <a href="https://uq-cvlab.github.io/Auslan-Daily-Dataset/docs/en/dataset-download">dataset download page</a> states <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>, checked on 25 September 2026. The showcase relies on that statement. The 2023 paper’s footnote 8 instead names CC BY-NC-ND 4.0; these sources are not consistent. Consult the dataset maintainers before relying on this page for a different reuse.</p><p>This is a noncommercial academic research showcase. The linked licence gives no warranties, and other rights may apply.</p><ul class="manifest-list"><li><a href="/static/examples/video_75_27/manifest.json">video_75_27 — clip and model manifest</a></li><li><a href="/static/examples/video_42_71/manifest.json">video_42_71 — clip and model manifest</a></li><li><a href="/static/examples/video_19_77/manifest.json">video_19_77 — clip and model manifest</a></li><li><a href="/static/examples/video_89_193/manifest.json">video_89_193 — clip and model manifest</a></li></ul></section>
+
+<section id="changes" aria-labelledby="heading-changes"><h2 id="heading-changes"><span aria-hidden="true">03</span>What was changed</h2><p>The display videos are silent H.264 copies for browser compatibility, with no additional crop. Source frame counts and the 25-frame-per-second timing are preserved. Each poster is the first source frame.</p><p>DWPose tracking, normalised coordinates, encoder features, self-attention and model predictions were produced by this project. Overlays are drawn separately in the browser. These added outputs are not annotations endorsed by the dataset authors.</p><p>Each manifest records source and display hashes, processing and model provenance. The <a href="/static/examples/ATTRIBUTION.md">downloadable attribution record</a> provides further details.</p></section>
+
+<section id="methods" aria-labelledby="heading-methods"><h2 id="heading-methods"><span aria-hidden="true">04</span>Research components</h2><p>The research uses or evaluates DWPose movement tracking, Transformer translation models and, in image-based systems, DINOv2 image features. Isolated-sign material used in training experiments comes from <a href="https://uq-cvlab.github.io/MM-WLAuslan-Dataset/">MM-WLAuslan</a>. See the repository for versioned dependencies, component licences and experiment configurations.</p><p>Browser speech uses an available local English voice supplied by the visitor’s device. Voice availability varies; research timing measurements used macOS Karen.</p></section>
+
+<section id="corrections" aria-labelledby="heading-corrections"><h2 id="heading-corrections"><span aria-hidden="true">05</span>Credit or rights concerns</h2><p>If an attribution is incomplete or you have a concern about material shown here, contact <a href="mailto:<contact>@example.org"><contact>@example.org</a> with the page URL and clip identifier. Please describe the correction or action you are requesting.</p></section>
+</article>
+</div>
+</main>
+<footer class="footer wrap site-footer"><div class="footer-identity"><a class="brand" href="/">Auslan <span class="slash">/</span> English</a><p>Preet Prasad · UWA Honours · 2026</p></div><nav aria-label="Project documents"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/research-notes">Research Notes</a><a href="/credits" aria-current="page">Credits</a><a href="/accessibility">Accessibility</a></nav></footer>
+</body>
+</html>

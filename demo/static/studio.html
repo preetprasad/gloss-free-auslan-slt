@@ -6,6 +6,7 @@
   <meta name="color-scheme" content="light">
   <title>Auslan to English · Research translator</title>
   <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/documents.css">
   <script src="/static/app.js" defer></script>
 </head>
 <body>
@@ -94,7 +95,7 @@
         <details class="disclosure"><summary>Session details<svg class="icon"><use href="#i-chevron"/></svg></summary><dl class="diagnostics"><div><dt>Models loaded</dt><dd id="engineDetail">Checking…</dd></div><div><dt>Camera</dt><dd id="cameraDetail">Off</dd></div><div><dt>Model used</dt><dd id="modelUsedDetail">—</dd></div><div><dt>Threshold · target answer rate</dt><dd id="thresholdDetail">—</dd></div><div><dt>Frames captured</dt><dd id="capturedDetail">0</dd></div><div><dt>Frames processed</dt><dd id="framesDetail">0</dd></div><div><dt>Backlog</dt><dd id="backlogDetail">0</dd></div><div><dt>Capture frames skipped</dt><dd id="skippedDetail">0</dd></div><div><dt>Capture rate</dt><dd id="captureRateDetail">—</dd></div><div><dt>Pose time p50 / p95</dt><dd id="poseDetail">—</dd></div><div><dt>Queue age p50 / p95</dt><dd id="queueDetail">—</dd></div><div><dt>Finish → text</dt><dd id="latencyDetail">—</dd></div><div><dt>Read aloud → speech start</dt><dd id="speechDetail">—</dd></div><div><dt>Translation</dt><dd id="translateDetail">—</dd></div><div><dt>Image features</dt><dd id="rgbDetail">—</dd></div><div><dt>Model score (lower is better)</dt><dd id="scoreDetail">—</dd></div></dl><p>The score is a model diagnostic, not a percentage of accuracy. Each model has its own threshold, fitted on stored validation clips; thresholds do not transfer between models. Live-camera translation quality has not been validated. These details stay on this page and reset when you start the next utterance.</p></details>
       </div>
     </main>
-    <footer><span>Auslan-to-speech · UWA Honours</span><a href="https://github.com/preetprasad/auslan-slt-honours" target="_blank" rel="noopener noreferrer">Project repository <span aria-hidden="true">↗</span></a></footer>
+    <footer class="project-footer"><span>Auslan-to-speech · UWA Honours</span><nav aria-label="Project documents"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/research-notes">Research Notes</a><a href="/credits">Credits</a><a href="/accessibility">Accessibility</a></nav></footer>
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
