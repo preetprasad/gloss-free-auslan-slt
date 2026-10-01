@@ -140,6 +140,12 @@ def main():
                          "grounding, and stitcher-fidelity work has no lexical headroom. If it falls "
                          "back to the real-only control, grounding is real and fidelity is worth "
                          "pursuing. Uses its OWN rng stream so durations/transitions are bit-matched.")
+    ap.add_argument("--shuffle_order", action="store_true",
+                    help="WAVE-10 CONTROL. Lay each sentence's signs out in a random (non-identity) order. "
+                         "The English target, the exemplar drawn for each word, its duration, the number of "
+                         "signs and the transition budget at each position are identical to the unshuffled "
+                         "build; only the ORDER of the signs changes (default output is in English word order). "
+                         "Uses its OWN rng stream.")
     ap.add_argument("--motion_resample", action="store_true",
                     help="with --sign_dur, resample each sign on a CUMULATIVE-MOTION timeline "
                          "rather than uniformly, so still frames compress and articulation is "
@@ -191,6 +197,7 @@ def main():
     # separate stream: the main `random` gets exactly one choice() per sign either way, and numpy
     # `rng` is untouched, so durations and transition budgets are identical to the unscrambled build.
     scram = random.Random(a.seed + 1)
+    shuf = random.Random(a.seed + 2)     # --shuffle_order's own stream, same reasoning
     all_glosses = sorted(lex.gloss2clips)
 
     rows, n_written, skipped = [], 0, 0
@@ -220,8 +227,9 @@ def main():
             total_signs_before += len(spans)
             spans = kept
         for _ in range(a.realizations):
-            kps_parts, bbox_parts, segments = [], [], []
-            cursor = 0
+            # pass 1: every random draw, in sentence order (exemplar, duration, transition budget), so
+            # --shuffle_order changes nothing but the order the drawn signs are laid out in.
+            drawn, budgets = [], []
             for si, (_, _, gloss) in enumerate(spans):
                 if a.scramble_glosses:
                     gloss = scram.choice(all_glosses)
@@ -234,22 +242,35 @@ def main():
                             else resample_clip(k, b, _n))
                 elif a.fps_scale != 1.0:             # frame-rate correction only
                     k, b = resample_clip(k, b, max(4, int(round(k.shape[0] * a.fps_scale))))
+                # transition BUDGET (sampled), not a smoothness objective: linear blend of the
+                # two boundary poses. Robotka et al. (2026, arXiv:2606.11925) found that
+                # optimising boundaries for L2 smoothness hurt SLT, so this stays short and randomised.
+                budgets.append(int(rng.integers(0, a.max_transition + 1))
+                               if si > 0 and a.max_transition > 0 else 0)
+                drawn.append((gloss, source_dir, source_id, source_frames_original,
+                              source_frames_after_trim, k, b))
+            order = list(range(len(drawn)))
+            if a.shuffle_order and len(order) > 1:   # uniform over the non-identity permutations
+                while order == sorted(order):
+                    shuf.shuffle(order)
+            # pass 2: lay the signs out; a transition keeps its POSITION's budget and blends the new neighbours
+            kps_parts, bbox_parts, segments = [], [], []
+            cursor = 0
+            for pos, oi in enumerate(order):
+                (gloss, source_dir, source_id, source_frames_original,
+                 source_frames_after_trim, k, b) = drawn[oi]
                 transition_before = 0
-                if si > 0 and a.max_transition > 0 and kps_parts:
-                    # transition BUDGET (sampled), not a smoothness objective: linear blend of the
-                    # two boundary poses. Robotka et al. (2026, arXiv:2606.11925) found that
-                    # optimising boundaries for L2 smoothness hurt SLT, so this stays short and randomised.
-                    n_t = int(rng.integers(0, a.max_transition + 1))
-                    if n_t:
-                        prev, nxt = kps_parts[-1][-1], k[0]
-                        w = np.linspace(0, 1, n_t + 2)[1:-1][:, None, None]
-                        kps_parts.append((1 - w) * prev[None] + w * nxt[None])
-                        bbox_parts.append(np.repeat(bbox_parts[-1][-1][None], n_t, axis=0))
-                        transition_before = n_t
-                        cursor += n_t
+                n_t = budgets[pos]
+                if n_t and kps_parts:
+                    prev, nxt = kps_parts[-1][-1], k[0]
+                    w = np.linspace(0, 1, n_t + 2)[1:-1][:, None, None]
+                    kps_parts.append((1 - w) * prev[None] + w * nxt[None])
+                    bbox_parts.append(np.repeat(bbox_parts[-1][-1][None], n_t, axis=0))
+                    transition_before = n_t
+                    cursor += n_t
                 seg_start = cursor
                 cursor += int(k.shape[0])
-                segments.append({
+                seg = {
                     "gloss": gloss,
                     "source_dir": source_dir,
                     "source_id": source_id,
@@ -259,7 +280,10 @@ def main():
                     "start_frame": seg_start,
                     "end_frame": cursor - 1,
                     "transition_frames_before": transition_before,
-                })
+                }
+                if a.shuffle_order:
+                    seg["english_position"] = oi
+                segments.append(seg)
                 kps_parts.append(k)
                 bbox_parts.append(b)
             KPS = np.concatenate(kps_parts, 0).astype(np.float32)
