@@ -6,9 +6,13 @@
                                                  row-for-row, same clip length, each sign's frames identical, the same
                                                  transition budget at each position, a non-identity permutation in
                                                  every clip. Needs both audit sidecars (audit.jsonl in each dir).
+  shuffle_order_check.py match A_DIR D_DIR DL_DIR   DL (--match_frames A) has D's signs, exemplars and transition
+                                                 budgets, A's clip length, and sign lengths that are the exact
+                                                 largest-remainder rescale of D's sampled lengths (wave 7 Stage 2,
+                                                 results/PREREG_WAVE7_DENSITY_2026-09-23.md section 10).
 Each DIR holds posestitch_v2_train.tsv (and audit.jsonl). Exits non-zero on the first failure.
 Verified locally on 300 production-flag sentences over 6,430 MM-WLAuslan valid clips: inert 300/300; order 300/300,
-48.3% of sign pairs still in English relative order; both modes fail when handed the wrong corpus."""
+48.3% of sign pairs still in English relative order; match 300/300; every mode fails when handed the wrong corpus."""
 import itertools, json, os, sys
 import numpy as np
 
@@ -82,5 +86,63 @@ def order(off_d, on_d):
           f"order {kept}/{total} = {kept / total:.1%}")
 
 
+def _alloc(lengths, total):
+    """Independent re-implementation of the builder's largest-remainder allocation (exact sum, ties by position)."""
+    from fractions import Fraction
+    s = sum(lengths)
+    raw = [Fraction(n * total, s) for n in lengths]
+    out = [int(r) for r in raw]                      # floor (all positive)
+    rest = sorted(range(len(raw)), key=lambda i: (-(raw[i] - out[i]), i))
+    for i in rest[:total - sum(out)]:
+        out[i] += 1
+    return out
+
+
+def match(a_d, d_d, dl_d):
+    """DL (--match_frames A) against D (same flags, no --match_frames) and A (the reference): same English row for row,
+    every DL clip exactly as long as its A clip, the same signs/exemplars/transition budgets as D, sign lengths rescaled
+    from D's sampled lengths by the exact largest-remainder rule, contiguous segments, transitions that blend the
+    laid-out neighbours. Needs audit.jsonl in D_DIR and DL_DIR."""
+    A, D, L, da, la = rows(a_d), rows(d_d), rows(dl_d), audit(d_d), audit(dl_d)
+    assert da is not None and la is not None, "D and DL dirs need audit.jsonl"
+    assert len(A) == len(D) == len(L) == len(da) == len(la) > 0, (len(A), len(D), len(L))
+    ratios, longer = [], 0
+    for (pa, ta), (pd, td), (pl, tl), ad, al in zip(A, D, L, da, la):
+        assert ta == td == tl == ad["text"] == al["text"], "English text differs"
+        ka, _ = arrays(pa)
+        kd, _ = arrays(pd)
+        kl, bl = arrays(pl)
+        assert kl.shape[0] == ka.shape[0] == al["match_frames_total"], f"DL length != A length: {pl}"
+        sd, sl = ad["segments"], al["segments"]
+        assert len(sd) == len(sl) > 0, pl
+        trans = 0
+        for s, r in zip(sl, sd):
+            for key in ("gloss", "source_id", "transition_frames_before"):
+                assert s[key] == r[key], (pl, key)
+            trans += s["transition_frames_before"]
+        assert al["sampled_frames"] == [r["output_frames"] for r in sd], f"DL's sampled lengths are not D's: {pl}"
+        want = _alloc(al["sampled_frames"], kl.shape[0] - trans)
+        assert [s["output_frames"] for s in sl] == want, f"sign lengths are not the exact proportional allocation: {pl}"
+        prev_end = -1
+        for s in sl:
+            n_t = s["transition_frames_before"]
+            assert s["start_frame"] == prev_end + 1 + n_t, f"segments not contiguous: {pl}"
+            if n_t:
+                w = np.linspace(0, 1, n_t + 2)[1:-1][:, None, None]
+                blend = (1 - w) * kl[prev_end][None] + w * kl[s["start_frame"]][None]
+                assert np.allclose(kl[prev_end + 1:s["start_frame"]], blend, atol=1e-5), f"transition frames: {pl}"
+                assert np.array_equal(bl[prev_end + 1:s["start_frame"]], np.repeat(bl[prev_end][None], n_t, 0)), pl
+            prev_end = s["end_frame"]
+        assert prev_end + 1 == kl.shape[0], f"frames after the last sign: {pl}"
+        ratios.append(sum(want) / sum(al["sampled_frames"]))
+        longer += kl.shape[0] > kd.shape[0]
+    r = np.array(ratios)
+    print(f"MATCH OK: {len(L)}/{len(A)} DL clips as long as their A clip; same signs, exemplars and transition budgets as D; "
+          f"sign lengths = exact proportional rescale of D's sampled lengths; contiguous; transitions blend neighbours. "
+          f"Sign-length scale factor median {np.median(r):.3f} (p10 {np.percentile(r, 10):.3f}, p90 {np.percentile(r, 90):.3f}); "
+          f"DL longer than D in {longer}/{len(L)} clips")
+
+
 if __name__ == "__main__":
-    {"inert": inert, "order": order}[sys.argv[1]](*sys.argv[2:4])
+    mode = sys.argv[1]
+    {"inert": inert, "order": order, "match": match}[mode](*sys.argv[2:5 if mode == "match" else 4])

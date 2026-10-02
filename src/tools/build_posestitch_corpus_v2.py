@@ -100,6 +100,20 @@ def motion_resample_clip(k, b, n_out: int):
     return k2.astype(np.float32), b2.astype(np.float32)
 
 
+def scale_to_total(lengths, total: int):
+    """Integer lengths proportional to `lengths` that sum EXACTLY to `total` (largest remainder; ties by position).
+    Used by --match_frames. Every length must stay >= 1. Integer arithmetic: float remainders broke exact ties
+    (e.g. 8/19 vs 8/19) arbitrarily on 44 of 13,760 clips in prep job 66604, which its gate caught."""
+    s = sum(lengths)
+    out = [n * total // s for n in lengths]
+    rem = [n * total % s for n in lengths]
+    for i in sorted(range(len(rem)), key=lambda i: (-rem[i], i))[:total - sum(out)]:
+        out[i] += 1
+    if sum(out) != total or min(out) < 1:
+        raise SystemExit(f"--match_frames cannot allocate {total} frames over sign lengths {lengths}")
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--labels", nargs="+", required=True, help="MM-WLAuslan label JSONs")
@@ -146,6 +160,13 @@ def main():
                          "signs and the transition budget at each position are identical to the unshuffled "
                          "build; only the ORDER of the signs changes (default output is in English word order). "
                          "Uses its OWN rng stream.")
+    ap.add_argument("--match_frames", default="",
+                    help="WAVE-7 STAGE-2 DL ARM. A reference manifest (posestitch_v2_train.tsv of the arm-A corpus). Each "
+                         "output clip's per-sign lengths are scaled, in proportion to the lengths --sign_dur sampled, so the "
+                         "clip's TOTAL frame count (signs + transitions) equals the clip in the SAME row of the reference. "
+                         "The English text must match row for row. No extra randomness is drawn, so the exemplars, transition "
+                         "budgets and sign order are those of the same build without this flag; only per-sign lengths change. "
+                         "Needs --sign_dur and --realizations 1.")
     ap.add_argument("--motion_resample", action="store_true",
                     help="with --sign_dur, resample each sign on a CUMULATIVE-MOTION timeline "
                          "rather than uniformly, so still frames compress and articulation is "
@@ -166,6 +187,11 @@ def main():
     a = ap.parse_args()
     if len(a.labels) != len(a.npz_dirs):
         raise SystemExit("--labels and --npz_dirs must be parallel lists")
+    ref_rows = None
+    if a.match_frames:
+        if not a.sign_dur or a.realizations != 1 or a.shuffle_order or a.scramble_glosses:
+            raise SystemExit("--match_frames needs --sign_dur and --realizations 1, without --shuffle_order/--scramble_glosses")
+        ref_rows = [ln.rstrip("\n").split("\t", 1) for ln in open(a.match_frames, encoding="utf-8") if "\t" in ln]
     random.seed(a.seed)
     rng = np.random.default_rng(a.seed)
     clips_out = os.path.join(a.out_dir, "clips")
@@ -229,7 +255,7 @@ def main():
         for _ in range(a.realizations):
             # pass 1: every random draw, in sentence order (exemplar, duration, transition budget), so
             # --shuffle_order changes nothing but the order the drawn signs are laid out in.
-            drawn, budgets = [], []
+            drawn, budgets, sampled = [], [], []
             for si, (_, _, gloss) in enumerate(spans):
                 if a.scramble_glosses:
                     gloss = scram.choice(all_glosses)
@@ -238,8 +264,10 @@ def main():
                 source_frames_after_trim = int(k.shape[0])
                 if a.sign_dur:                       # match the real continuous duration
                     _n = sample_sign_duration(rng)
-                    k, b = (motion_resample_clip(k, b, _n) if a.motion_resample
-                            else resample_clip(k, b, _n))
+                    sampled.append(_n)
+                    if not a.match_frames:           # with --match_frames: resampled after pass 1, once rescaled
+                        k, b = (motion_resample_clip(k, b, _n) if a.motion_resample
+                                else resample_clip(k, b, _n))
                 elif a.fps_scale != 1.0:             # frame-rate correction only
                     k, b = resample_clip(k, b, max(4, int(round(k.shape[0] * a.fps_scale))))
                 # transition BUDGET (sampled), not a smoothness objective: linear blend of the
@@ -249,6 +277,15 @@ def main():
                                if si > 0 and a.max_transition > 0 else 0)
                 drawn.append((gloss, source_dir, source_id, source_frames_original,
                               source_frames_after_trim, k, b))
+            ref_total = None
+            if a.match_frames:                       # DL arm: same draws, sign lengths rescaled to the reference row
+                ref_path, ref_text = ref_rows[n_written]
+                if ref_text != text:
+                    raise SystemExit(f"--match_frames row {n_written}: reference text {ref_text!r} != {text!r}")
+                ref_total = int(np.load(ref_path)["KPS"].shape[0])
+                lens = scale_to_total(sampled, ref_total - sum(budgets))
+                rs = motion_resample_clip if a.motion_resample else resample_clip
+                drawn = [d[:5] + rs(d[5], d[6], n) for d, n in zip(drawn, lens)]
             order = list(range(len(drawn)))
             if a.shuffle_order and len(order) > 1:   # uniform over the non-identity permutations
                 while order == sorted(order):
@@ -293,7 +330,7 @@ def main():
             clip_path = os.path.join(clips_out, name)
             rows.append(f"{clip_path}\t{text}")
             if audit_fh is not None:
-                audit_fh.write(json.dumps({
+                rec = {
                     "clip_path": clip_path,
                     "text": text,
                     "seed": a.seed,
@@ -304,7 +341,11 @@ def main():
                     "trim_frac": a.trim_frac,
                     "max_transition": a.max_transition,
                     "segments": segments,
-                }, sort_keys=True) + "\n")
+                }
+                if a.match_frames:
+                    rec["match_frames_total"] = ref_total
+                    rec["sampled_frames"] = sampled
+                audit_fh.write(json.dumps(rec, sort_keys=True) + "\n")
             n_written += 1
             if a.max_clips and n_written >= a.max_clips:
                 break
