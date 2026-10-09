@@ -6,7 +6,7 @@ verbatim in the TRAIN targets (memorisation vs generalisation) and reports BLEU-
 the 22.7% train-test target overlap means the 'unseen' number is the honest generalisation score.
 """
 from __future__ import annotations
-import argparse, json, os, sys
+import hashlib, argparse, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from slt.data import read_manifest
 from slt.metrics import detokenize
@@ -69,6 +69,9 @@ def main():
     ap.add_argument("--in", dest="inp", required=True)
     ap.add_argument("--field", default="hyp_beam")
     ap.add_argument("--train_manifest", default="")
+    ap.add_argument("--train_hashes", default="",
+                    help="SHA-1 digests of the training targets (tools/train_target_hashes.py); used for the "
+                         "seen/unseen split when the training manifest is not on disk")
     a = ap.parse_args()
     rows = [json.loads(l) for l in open(a.inp) if l.strip()]
     raw_h = [(r.get(a.field) or "") for r in rows]
@@ -81,13 +84,19 @@ def main():
     print(f"BLEU-4={b4:.2f}  BLEU-1={b1:.2f}  chrF={chrf:.2f}  ROUGE-L={rl:.2f}"
           "   [BLEU/chrF detokenised; ROUGE-L whitespace-tokenised]")
 
+    in_train = None
     if a.train_manifest and os.path.exists(a.train_manifest):
         train_t = set(" ".join(detokenize(t).lower().split()) for _, t in read_manifest(a.train_manifest))
+        in_train = train_t.__contains__
+    elif a.train_hashes and os.path.exists(a.train_hashes):
+        digests = set(open(a.train_hashes).read().split())
+        in_train = lambda key: hashlib.sha1(key.encode("utf-8")).hexdigest() in digests
+    if in_train is not None:
         seen_h, seen_r, uns_h, uns_r = [], [], [], []
         for h, r in zip(hyps, refs):
             key = " ".join(r.lower().split())
-            (seen_h if key in train_t else uns_h).append(h)
-            (seen_r if key in train_t else uns_r).append(r)
+            (seen_h if in_train(key) else uns_h).append(h)
+            (seen_r if in_train(key) else uns_r).append(r)
         if seen_h:
             sb = sacrebleu.corpus_bleu(seen_h, [seen_r], tokenize="13a").score
             print(f"  seen-in-train targets:   n={len(seen_h):3d}  BLEU-4={sb:.2f}")

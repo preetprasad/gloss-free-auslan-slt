@@ -23,6 +23,8 @@ def headline():
     if not os.path.exists(DUMP):
         pytest.skip(f"decode dump absent: {DUMP}")
     rows = [json.loads(l) for l in open(DUMP)]
+    if rows and str(rows[0]["ref"]).startswith("sha1:"):
+        pytest.skip("reference sentences not restored: run `make data`")
     return [r["hyp_beam"] for r in rows], [r["ref"] for r in rows]
 
 

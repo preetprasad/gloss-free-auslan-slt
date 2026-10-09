@@ -17,7 +17,7 @@ Usage:
 Dumps: jsonl rows {"idx", "ref", "hyp_beam"} as written by ensemble_mbr_wer.py --dump_dir.
 "seen" = the reference occurs verbatim (lowercased, whitespace-collapsed) among training targets.
 """
-import argparse
+import hashlib, argparse
 import json
 import os
 import sys
@@ -50,6 +50,9 @@ def main():
     ap.add_argument("--system", action="append", required=True, help="NAME=path/to/hyps.jsonl (repeatable)")
     ap.add_argument("--pairs", default="", help="comma-separated A:B pairs to bootstrap")
     ap.add_argument("--train_manifest", default="", help="train TSV for the seen/unseen split")
+    ap.add_argument("--train_hashes", default="",
+                    help="SHA-1 digests of the training targets (tools/train_target_hashes.py), for the "
+                         "seen/unseen split when the subtitles themselves are not on disk")
     ap.add_argument("--expect", action="append", default=[], help="NAME=BLEU on record; abort on mismatch")
     ap.add_argument("--n", type=int, default=2000)
     ap.add_argument("--seed", type=int, default=0)
@@ -74,6 +77,10 @@ def main():
     if a.train_manifest:
         train = {norm(line.split("\t", 1)[1]) for line in open(a.train_manifest, encoding="utf-8") if "\t" in line}
         seen = np.array([norm(r) in train for r in raw_refs])
+    elif a.train_hashes:
+        digests = set(open(a.train_hashes).read().split())
+        seen = np.array([hashlib.sha1(norm(r).encode("utf-8")).hexdigest() in digests for r in raw_refs])
+    if seen is not None:
         print(f"test n={n}  seen-in-train={int(seen.sum())}  unseen={int((~seen).sum())}")
 
     full = {}
@@ -94,7 +101,7 @@ def main():
         pool = np.arange(n)
     else:
         if seen is None:
-            sys.exit("FATAL: --subset seen/unseen needs --train_manifest")
+            sys.exit("FATAL: --subset seen/unseen needs --train_manifest or --train_hashes")
         pool = np.flatnonzero(seen if a.subset == "seen" else ~seen)
     rng = np.random.default_rng(a.seed)
     # with --subset all, pool is arange(n) and this draws exactly what the unsliced version drew

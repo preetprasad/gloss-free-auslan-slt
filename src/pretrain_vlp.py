@@ -13,7 +13,9 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import random
 
+import numpy as np
 import torch
 from torch.utils.data import DataLoader
 
@@ -44,6 +46,11 @@ def parse():
 def main():
     cfg, proj, temp = parse()
     device = resolve_device(cfg.device)
+    # Seed every generator. Until 9 Oct 2026 this program set no seed, so --seed changed nothing here and
+    # pretraining was not repeatable; the loader's shuffle and the model initialisation now follow cfg.seed.
+    random.seed(cfg.seed); np.random.seed(cfg.seed)
+    torch.manual_seed(cfg.seed); torch.cuda.manual_seed_all(cfg.seed)
+    print(f"[vlp-seed] seed={cfg.seed}", flush=True)
     os.makedirs(cfg.out_dir, exist_ok=True)
 
     rows = read_manifest(cfg.train_manifest)

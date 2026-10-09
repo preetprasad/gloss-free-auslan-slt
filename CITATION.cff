@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "Investigating Gloss-Free Auslan Sign Language to Speech Translation"
+message: "If you use this software, please cite the dissertation below."
+type: software
+authors:
+  - family-names: Prasad
+    given-names: Preet
+    affiliation: The University of Western Australia
+repository-code: "https://github.com/preetprasad/gloss-free-auslan-slt"
+license: MIT
+keywords:
+  - sign language translation
+  - Auslan
+  - gloss-free
+  - pose estimation
+preferred-citation:
+  type: thesis
+  title: "Investigating Gloss-Free Auslan Sign Language to Speech Translation"
+  authors:
+    - family-names: Prasad
+      given-names: Preet
+  thesis-type: "Honours dissertation"
+  institution:
+    name: The University of Western Australia
+  year: 2026

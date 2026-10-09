@@ -19,6 +19,18 @@ sys.path.insert(0, os.path.join(PHASE2, "tools"))
 import reproduce_headline as rh  # noqa: E402
 
 
+def _restored():
+    """False while the saved outputs hold digests in place of the reference sentences (before `make data`)."""
+    first = os.path.join(REPO, rh.CASES[0][1])
+    return not os.path.exists(first) or '"ref": "sha1:' not in open(first, encoding="utf-8").readline()
+
+
+@pytest.fixture(autouse=True)
+def _need_references():
+    if not _restored():
+        pytest.skip("reference sentences not restored: run `make data`")
+
+
 def _dump(path):
     full = os.path.join(REPO, path)
     if not os.path.exists(full):
@@ -49,7 +61,7 @@ def test_seen_unseen_decomposition():
     hyps, refs = _dump(rh.CASES[0][1])
     su = rh.seen_unseen(hyps, refs)
     if su is None:
-        pytest.skip(f"training manifest absent ({rh.TRAIN_MANIFEST}); see docs/DATA.md")
+        pytest.skip(f"training manifest absent ({rh.TRAIN_MANIFEST}); run `make data`")
     assert su["seen"][0] == 230 and su["unseen"][0] == 570
     assert su["seen"][1] == pytest.approx(35.00, abs=0.05)
     assert su["unseen"][1] == pytest.approx(6.60, abs=0.05)

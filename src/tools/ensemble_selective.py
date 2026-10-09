@@ -10,7 +10,7 @@ row-for-row and the recorded test BLEU-4; seen-in-train counts must match the re
 """
 from __future__ import annotations
 
-import argparse, json, random, sys
+import hashlib, argparse, json, random, sys
 from pathlib import Path
 
 import numpy as np
@@ -45,16 +45,26 @@ def main():
     ap.add_argument("--val_dump", required=True)
     ap.add_argument("--test_dump", required=True)
     ap.add_argument("--lp", type=float, required=True)
-    ap.add_argument("--train_manifest", required=True)
+    ap.add_argument("--train_manifest", default="")
+    ap.add_argument("--train_hashes", default="",
+                    help="SHA-1 digests of the training targets (tools/train_target_hashes.py), used when the "
+                         "training manifest is not on disk")
     ap.add_argument("--expect_test_bleu", type=float, required=True)
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
 
-    train = {l.rstrip("\n").split("\t", 1)[1].strip() for l in open(a.train_manifest) if "\t" in l}
+    if a.train_manifest:
+        train = {l.rstrip("\n").split("\t", 1)[1].strip() for l in open(a.train_manifest) if "\t" in l}
+        in_train = train.__contains__
+    elif a.train_hashes:
+        digests = set(open(a.train_hashes).read().split())
+        in_train = lambda x: hashlib.sha1(x.encode("utf-8")).hexdigest() in digests
+    else:
+        raise SystemExit("FATAL: give --train_manifest or --train_hashes")
     S = {}
     for name, dump in (("val", a.val_dump), ("test", a.test_dump)):
         r, h, c = load(dump, a.lp)
-        S[name] = dict(refs=r, hyps=h, conf=c, seen=np.array([x.strip() in train for x in r]))
+        S[name] = dict(refs=r, hyps=h, conf=c, seen=np.array([in_train(x.strip()) for x in r]))
 
     # ---- harness gate ----
     lpfile = Path(a.test_dump) / f"hyps_LP={a.lp}.jsonl"

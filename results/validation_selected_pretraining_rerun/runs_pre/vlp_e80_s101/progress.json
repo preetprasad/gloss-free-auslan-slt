@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "epoch": 80,
+  "epochs": 80,
+  "best_training_in_batch_retrieval_accuracy": 0.8977126288659794,
+  "best_held_out_caption_r1": 0.08375,
+  "device": "cuda",
+  "architecture": "generic",
+  "bbox_format": "xywh"
+}

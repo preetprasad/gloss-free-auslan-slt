@@ -36,6 +36,11 @@ def check(name, cond):
         raise AssertionError(name)
 
 
+# The synthetic clips use the dataset's shipped layout (HALPE-136 keypoints with a bounding box), not the
+# 133-keypoint DWPose layout that config.py now defaults to.
+HALPE = dict(num_keypoints=136, coord_norm="bbox")
+
+
 def main() -> int:
     tmp = tempfile.mkdtemp(prefix="slt_smoke_")
     try:
@@ -43,7 +48,7 @@ def main() -> int:
         train_m, val_m = build(tmp, n_train=48, n_val=16)
 
         cfg = Config(
-            train_manifest=train_m, val_manifest=val_m,
+            train_manifest=train_m, val_manifest=val_m, **HALPE,
             d_model=64, nhead=4, num_encoder_layers=2, num_decoder_layers=2,
             dim_feedforward=128, batch_size=8, epochs=8, warmup_steps=40,
             max_src_frames=64, max_tgt_tokens=16, num_workers=0,
@@ -63,12 +68,15 @@ def main() -> int:
         legacy_kps[..., 1] = 75.0
         reversed_xyxy = np.tile(
             np.array([100.0, 100.0, 50.0, 50.0], dtype=np.float32), (2, 1))
-        strict_features, _ = normalize_clip(
-            legacy_kps, reversed_xyxy, Config(bbox_format="xyxy"))
+        try:                                  # every frame invalid -> normalize_clip refuses the clip
+            normalize_clip(legacy_kps, reversed_xyxy, Config(bbox_format="xyxy", **HALPE))
+            rejected = False
+        except ValueError:
+            rejected = True
         legacy_features, _ = normalize_clip(
             legacy_kps, reversed_xyxy,
-            Config(bbox_format="xyxy", legacy_abs_bbox_validity=True))
-        check("strict bbox validity rejects reversed spans", strict_features.shape[0] == 1)
+            Config(bbox_format="xyxy", legacy_abs_bbox_validity=True, **HALPE))
+        check("strict bbox validity rejects reversed spans", rejected)
         check("legacy bbox compatibility preserves historical frames",
               legacy_features.shape[0] == 2)
 

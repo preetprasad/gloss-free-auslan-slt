@@ -10,7 +10,7 @@ own metric code. This is the check that the reported numbers are what the reposi
 Exits non-zero on ANY mismatch, so it is usable as a CI gate.
 """
 from __future__ import annotations
-import argparse, json, os, sys
+import argparse, hashlib, json, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from slt.metrics import corpus_bleu4, corpus_wer, detokenize          # noqa: E402
@@ -42,6 +42,8 @@ CASES = [
 
 # Reference subsets for the seen/unseen decomposition of the reported system.
 TRAIN_MANIFEST = "comm_run/manifests/train.tsv"
+# SHA-1 of every training target (tools/train_target_hashes.py): used when the subtitles are not on disk.
+TRAIN_HASHES = "results/train_target_hashes.txt"
 
 
 def load(path):
@@ -52,12 +54,17 @@ def load(path):
 
 def seen_unseen(hyps, refs):
     """Split by whether the reference appears verbatim among the training targets."""
-    mp = os.path.join(REPO, TRAIN_MANIFEST)
-    if not os.path.exists(mp):
+    mp, hp = os.path.join(REPO, TRAIN_MANIFEST), os.path.join(REPO, TRAIN_HASHES)
+    if os.path.exists(mp):
+        train = {detokenize(l.rstrip("\n").split("\t", 1)[1]) for l in open(mp) if "\t" in l}
+        is_seen = lambda r: r in train
+    elif os.path.exists(hp):
+        digests = set(open(hp).read().split())
+        is_seen = lambda r: hashlib.sha1(r.encode("utf-8")).hexdigest() in digests
+    else:
         return None
-    train = {detokenize(l.rstrip("\n").split("\t", 1)[1]) for l in open(mp) if "\t" in l}
-    s = [(h, r) for h, r in zip(hyps, refs) if r in train]
-    u = [(h, r) for h, r in zip(hyps, refs) if r not in train]
+    s = [(h, r) for h, r in zip(hyps, refs) if is_seen(r)]
+    u = [(h, r) for h, r in zip(hyps, refs) if not is_seen(r)]
     out = {}
     for name, pairs in (("seen", s), ("unseen", u)):
         out[name] = (len(pairs),
