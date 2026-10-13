@@ -103,6 +103,10 @@ class Config:
     aug_scale: float = 0.1               # independent x / y scale from [1-x, 1+x] (0 = off)
     aug_hand_drop: float = 0.0           # needs pose_aug: per-frame, per-hand chance of zeroing that hand's features (0 = off)
     aug_hand_span: float = 0.0           # needs pose_aug: one both-hands zero span of up to this fraction of frames (0 = off)
+    aug_segment_speed: float = 0.0       # wave 12c "ST": per-SIGN tempo on stitched TRAIN rows, each sign resampled by its own
+                                         # factor from [1-x, 1+x] (nearest-frame; transitions untouched; 0 = off)
+    aug_segment_file: str = ""           # JSON {clip path as in the manifest: [[start_frame, end_frame], ...]} written by
+                                         # tools/w12c_stitch_sidecar.py from the stitcher's --audit_jsonl sidecar
     drop_zero_frames: bool = True        # mask all-zero frames (frame 0 issue)
     max_src_frames: int = 256            # temporal cap (subsample if longer)
     max_tgt_tokens: int = 64
@@ -229,6 +233,11 @@ class Config:
                                          # manifest (pre-train -> fine-tune must share index order; see train_ctc.py)
     save_last: bool = False              # also save the FINAL epoch's model as last.pt (pre-training carries this forward)
     eval_every: int = 1                  # evaluate validation every N epochs and always at the last epoch
+    resume_ctc_head: bool = False        # with --resume_checkpoint: also restore the CTC head (a continuation, not a fine-tune)
+    cf_pref_weight: float = 0.0          # wave 12c "CPO": weight of the counterfactual-pose preference term (0 = off); needs
+                                         # --resume_checkpoint, whose model is also the frozen reference
+    cf_beta: float = 0.1                 # CPO: sharpness of the preference sigmoid
+    cf_stop_ce: float = 0.0              # CPO: stop if validation CE has risen by more than this (nats) after epoch 3 (0 = off)
     freeze_encoder: bool = False          # keep the loaded pose encoder fixed; train only decoder/embeddings/generator
 
     # ── LLM decoder (mT5 + LoRA) ─────────────────────────────────────────────

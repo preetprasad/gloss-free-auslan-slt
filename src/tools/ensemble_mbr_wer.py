@@ -18,7 +18,7 @@ config. Reuses ensemble_decode's Member (same heterogeneous pose+fusion handling
       --beam 10 --device cpu
 """
 from __future__ import annotations
-import argparse, json, os, re, sys
+import argparse, json, math, os, re, sys
 import torch, torch.nn.functional as F
 from torch.utils.data import DataLoader
 
@@ -33,12 +33,26 @@ from ensemble_decode import Member                    # reuse identical member h
 import sacrebleu, jiwer
 
 
+def power_mean_logp(lps, w, power):
+    """Log of the weighted POWER mean of the members' probabilities: (sum_i w_i q_i**p / sum_i w_i)**(1/p).
+
+    p = 1 is the arithmetic mean (a mixture of the members), p = -1 the harmonic mean; as p -> 0 it tends to the
+    geometric mean. The geometric mean itself (p = 0, the rule of every recorded ensemble: the mean of the members'
+    log-probabilities) is NOT computed here: with power == 0 ensemble_nbest keeps its original arithmetic.
+    Like that default, the result is not renormalised over the vocabulary (it sums to 1 only for p = 1).
+    Wave 12d, results/PREREG_WAVE12D_POWERMEAN_2026-10-13.md."""
+    assert power != 0 and all(wi > 0 for wi in w), "power mean needs p != 0 and positive weights"
+    x = torch.stack([power * l + math.log(wi) for wi, l in zip(w, lps)])
+    return (torch.logsumexp(x, 0) - math.log(sum(w))) / power
+
+
 @torch.no_grad()
-def ensemble_nbest(members, mems, max_len, beam, dev, weights=None):
+def ensemble_nbest(members, mems, max_len, beam, dev, weights=None, power=0.0):
     """Like ensemble_beam but returns the FULL n-best per sample as (raw_logprob, seq).
 
     raw_logprob is the un-length-normalised summed weighted-mean log-prob, so any LP
-    can be applied afterwards as raw/(len**LP)."""
+    can be applied afterwards as raw/(len**LP).
+    power (default 0 = off): combine the members with power_mean_logp instead of the mean log-prob."""
     w = weights if weights is not None else [1.0] * len(members)
     wsum = sum(w)
     B = mems[0][0].size(0)
@@ -50,11 +64,15 @@ def ensemble_nbest(members, mems, max_len, beam, dev, weights=None):
         scores = torch.full((beam,), float("-inf"), device=dev); scores[0] = 0.0
         fin = []
         for _ in range(max_len - 1):
-            lp_sum = None
-            for wi, (mem, (mm, pp)) in zip(w, zip(members, mem_b)):
-                l = wi * mem.step_logp(ys, mm, pp)
-                lp_sum = l if lp_sum is None else lp_sum + l
-            logp = lp_sum / wsum
+            lps = [mem.step_logp(ys, mm, pp) for mem, (mm, pp) in zip(members, mem_b)]
+            if power:                                   # default off (wave 12d)
+                logp = power_mean_logp(lps, w, power)
+            else:                                       # the recorded rule: same operations, same order as before
+                lp_sum = None
+                for wi, l in zip(w, lps):
+                    l = wi * l
+                    lp_sum = l if lp_sum is None else lp_sum + l
+                logp = lp_sum / wsum
             V = logp.size(-1)
             cand = (scores.unsqueeze(1) + logp).view(-1)
             top, idx = cand.topk(beam)
@@ -187,6 +205,9 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--eval_manifest", default="")
     ap.add_argument("--weights", default="")
+    ap.add_argument("--power_mean", type=float, default=0.0,
+                    help="0 (default) = the recorded rule, mean of the members' log-probabilities (geometric mean); "
+                         "p != 0 = power mean of their probabilities (1 arithmetic, -1 harmonic). Wave 12d.")
     ap.add_argument("--lps", default="0.6,0.8,1.0,1.2,1.4,1.6,1.8,2.0")
     ap.add_argument("--mbr_lp", type=float, default=1.0, help="LP used to weight candidates in MBR")
     ap.add_argument("--mbr_temp", type=float, default=1.0)
@@ -216,6 +237,8 @@ def main():
     weights = [float(x) for x in a.weights.split(",")] if a.weights else None
     print(f"[mbr] {len(members)} members fusion={[m.fusion for m in members]} "
           f"beam={a.beam} manifest={os.path.basename(cfg.test_manifest)} dev={dev}", flush=True)
+    if a.power_mean:
+        print(f"[mbr] POWER MEAN p={a.power_mean:g} instead of the geometric mean (wave 12d)", flush=True)
 
     if any_fusion:
         # A fusion member with no RGB directory is NOT an error inside RGBDataset: _load_rgb
@@ -252,7 +275,7 @@ def main():
             src, src_pad, _t, texts = batch; rgb = rgb_pad = None
         src, src_pad = src.to(dev), src_pad.to(dev)
         mems = [m.memory(src, src_pad, rgb, rgb_pad) for m in members]
-        nb = ensemble_nbest(members, mems, mx, a.beam, dev, weights)
+        nb = ensemble_nbest(members, mems, mx, a.beam, dev, weights, a.power_mean)
         for cand_list, ref in zip(nb, texts):
             cands = [(raw, vocab.decode(seq)) for raw, seq in cand_list]
             all_nbest.append(cands); refs.append(ref)

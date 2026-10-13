@@ -31,7 +31,6 @@ import os
 import re
 
 import numpy as np
-import pandas as pd
 
 # COCO-WholeBody-133 layout
 GROUPS = {
@@ -138,7 +137,21 @@ def clip_disjoint_eval(X, y, clips, rng, folds=5, per=None):
     return correct / total, top5 / total, total
 
 
+def select_rows(y, max_per_class: int, min_per_class: int, seed: int) -> np.ndarray:
+    """Row indices kept by the per-class subsample, then by the minimum class size (the rule main() applies)."""
+    sel = np.arange(len(y))
+    if max_per_class:
+        srng = np.random.default_rng(seed); sel = []
+        for c in np.unique(y):
+            ix = np.flatnonzero(y == c); srng.shuffle(ix); sel.extend(ix[:max_per_class])
+        sel = np.sort(np.array(sel))
+    u, n = np.unique(y[sel], return_counts=True)
+    return sel[np.isin(y[sel], u[n >= min_per_class])]
+
+
 def main() -> None:
+    import pandas as pd      # only the command line needs pandas; the functions above import without it
+
     ap = argparse.ArgumentParser()
     ap.add_argument("--spot_csv", required=True, help="safe spotting spans (Comm TRAIN only)")
     ap.add_argument("--clip_dirs", nargs="+", required=True)
@@ -189,14 +202,8 @@ def main() -> None:
                     continue
                 X.append(v); y.append(gloss); cl.append(cid); ln.append(len(seg)); ky.append(f"{cid}:{b}:{e}")
             X = np.array(X); y = np.array(y); cl = np.array(cl); ln = np.array(ln, float); ky = np.array(ky)
-            if a.max_per_class:
-                srng = np.random.default_rng(a.seed); sel = []
-                for c in np.unique(y):
-                    ix = np.flatnonzero(y == c); srng.shuffle(ix); sel.extend(ix[:a.max_per_class])
-                sel = np.sort(np.array(sel)); X, y, cl, ln, ky = X[sel], y[sel], cl[sel], ln[sel], ky[sel]
-            vc = pd.Series(y).value_counts()
-            keep = np.isin(y, vc[vc >= a.min_per_class].index)
-            X, y, cl, ln, ky = X[keep], y[keep], cl[keep], ln[keep], ky[keep]
+            sel = select_rows(y, a.max_per_class, a.min_per_class, a.seed)
+            X, y, cl, ln, ky = X[sel], y[sel], cl[sel], ln[sel], ky[sel]
             n_cls = len(np.unique(y))
             rng = np.random.default_rng(a.seed)
             per = {}

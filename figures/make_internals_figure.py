@@ -22,6 +22,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
+from matplotlib.transforms import offset_copy
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
@@ -89,11 +90,11 @@ for f in show:
                        int(max(0, cx - side/2)):int(min(W, cx + side/2))]
 cap.release()
 
-fig = plt.figure(figsize=(TARGET_W, 4.15))
+fig = plt.figure(figsize=(TARGET_W, 4.95))
 # Two rows, one narrow column for the colourbar, so the frame strip and the heatmap share
 # exactly one time axis -- the alignment-ribbon idiom this literature expects.
 gs = fig.add_gridspec(2, 2, height_ratios=[0.78, 1.55], width_ratios=[1, 0.022],
-                      hspace=0.10, wspace=0.02)
+                      hspace=0.38, wspace=0.02)
 
 axf = fig.add_subplot(gs[0, 0]); axf.set_xlim(0, T - 1); axf.set_yticks([]); axf.grid(False)
 for _sp in axf.spines.values(): _sp.set_visible(False)
@@ -102,6 +103,10 @@ strip = np.concatenate([frames[f] for f in show], axis=1)
 axf.imshow(strip, extent=[0, T - 1, 0, 1], aspect="auto")
 for k in range(1, NF):
     axf.axvline((T - 1) * k / NF, color="white", lw=1.0)
+# number each tile and give its frame index, so it can be found on the frame axis of (b)
+for k, f in enumerate(show):
+    axf.text((T - 1) * (k + 0.5) / NF, -0.03, f"({k + 1})  frame {int(f)}",
+             ha="center", va="top", fontsize=FS["sub"], color=C["ink"], clip_on=False)
 axf.set_title("(a) the clip, six frames evenly spaced", fontsize=FS["sub"], loc="left", pad=3,
               color=C["ink"])
 
@@ -109,27 +114,39 @@ axh = fig.add_subplot(gs[1, 0], sharex=axf)
 im = axh.imshow(rows, aspect="auto", cmap="magma_r", vmin=0, vmax=rows.max(),
                 extent=[0, T - 1, len(WORDS) - 0.5, -0.5], interpolation="nearest")
 axh.set_yticks(range(len(WORDS)))
-axh.set_yticklabels([f"{w}   (rank {r})" for w, r in zip(WORDS, ranks)], fontsize=FS["sub"])
+axh.set_yticklabels([f"{w}   (rank {r})" for w, r in zip(WORDS, ranks)], fontsize=FS["label"])
+# leave a fixed gutter between the tick labels and the heatmap for the status markers
+axh.tick_params(axis="y", length=0, pad=15)
 for i, w in enumerate(WORDS):
     got = w in produced
     # Latin Modern has no U+25CB; mathtext supplies both marks from the CM symbol font
-    axh.text(-0.012, i, r"$\bullet$" if got else r"$\circ$", transform=axh.get_yaxis_transform(),
-             ha="right", va="center", fontsize=FS["sub"],
-             color=C["good"] if got else C["warn"])
+    axh.annotate(r"$\bullet$" if got else r"$\circ$", xy=(0, i), xycoords=axh.get_yaxis_transform(),
+                 xytext=(-7, 0), textcoords="offset points", ha="center", va="center",
+                 fontsize=FS["label"], color=C["good"] if got else C["warn"],
+                 annotation_clip=False)
     if not got:
-        axh.add_patch(Rectangle((0, i - 0.5), T - 1, 1.0, fill=False, ec=C["warn"],
-                                lw=1.1, ls=(0, (3, 2)), zorder=5))
-axh.set_xlabel(f"frame  ({T} frames, 25\u2009fps)", fontsize=FS["label"])
+        inset = (T - 1) * 0.004
+        axh.add_patch(Rectangle((inset, i - 0.42), T - 1 - 2 * inset, 0.84, fill=False,
+                                ec=C["warn"], lw=1.1, ls=(0, (3, 2)), zorder=5))
+# the six frames shown in (a): ticks on the frame axis, numbered as in (a), and a mark on top
+axh.set_xticks(show)
+axh.set_xticklabels([f"{int(f)}\n({k + 1})" for k, f in enumerate(show)], fontsize=FS["sub"])
+axh.plot(show, np.full(NF, 1.0), ls="none", marker="v", ms=4.5, color=C["ink"],
+         clip_on=False, zorder=6,
+         transform=offset_copy(axh.get_xaxis_transform(), fig=fig, y=4.5, units="points"))
+axh.set_xlabel(f"frame  ({T} frames, 25\u2009fps); ticks mark the frames shown in (a)",
+               fontsize=FS["label"])
 axh.grid(False)
 axh.set_title("(b) probability the auxiliary CTC head gives each reference content word, per frame",
-              fontsize=FS["sub"], loc="left", pad=3, color=C["ink"])
+              fontsize=FS["sub"], loc="left", pad=13, color=C["ink"])
 axc = fig.add_subplot(gs[1, 1])
 cb = fig.colorbar(im, cax=axc)
-cb.set_label("probability", fontsize=FS["tiny"]); cb.ax.tick_params(labelsize=FS["tiny"])
+cb.set_label("probability", fontsize=FS["sub"]); cb.ax.tick_params(labelsize=FS["sub"])
 
-fig.text(0.0, -0.055,
-         f"signed:  “{REF}”\nmodel:   “{HYP}”",
-         fontsize=FS["sub"], color=C["ink"], va="top", linespacing=1.5)
+axh.annotate(f"signed:  “{REF}”\nmodel:   “{HYP}”",
+             xy=(0, 0), xycoords="axes fraction", xytext=(0, -58), textcoords="offset points",
+             fontsize=FS["label"], color=C["ink"], ha="left", va="top", linespacing=1.4,
+             annotation_clip=False)
 fig.savefig(os.path.join(HERE, "figC8_inside_the_pipeline.png"), dpi=300, bbox_inches="tight")
 fig.savefig(os.path.join(HERE, "figC8_inside_the_pipeline.pdf"), bbox_inches="tight")
 print("figC8 written |", {w: r for w, r in zip(WORDS, ranks)})

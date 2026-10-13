@@ -21,7 +21,7 @@ import argparse, json, os, random, sys
 import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from tools.stitch_lexicon import build_lexicon, coverage, content_words, words, STOP
+from tools.stitch_lexicon import build_lexicon, coverage, content_words, words, STOP, WRONG_SENSE_GLOSSES
 
 
 # ── temporal fidelity (2026-09-05 audit) ────────────────────────────────────
@@ -181,12 +181,24 @@ def main():
                          "the article \"a\" as the LETTER A (8.67%% of segments in the trained 1.1:1 corpus).")
     ap.add_argument("--morphology", action="store_true",
                     help="let inflected words match citation-form glosses (must match Stage A)")
+    ap.add_argument("--drop_wrong_sense", action="store_true",
+                    help="WAVE-12b W ARM. Do not RENDER a sign whose gloss is one of the 14 in "
+                         "stitch_lexicon.WRONG_SENSE_GLOSSES (\"be\" -> BE (NOT BE), \"can\" -> CAN (TIN), ...: 3,257 of "
+                         "94,428 signs of the adopted corpus). The sentence list, the English text and EVERY random draw "
+                         "are those of the same build without the flag, so each sign that stays is the same exemplar at the "
+                         "same length; a transition keeps the budget drawn for the sign it precedes. A clip whose signs are "
+                         "all wrong-sense is left as built. Needs --no_paren_alias (with aliases on, \"not be\" is a "
+                         "correct match for the same gloss).")
     ap.add_argument("--audit_jsonl", default="",
                     help="optional per-clip segment provenance for a motion-fidelity audit; this does "
                          "not change generated poses or the training manifest")
     a = ap.parse_args()
     if len(a.labels) != len(a.npz_dirs):
         raise SystemExit("--labels and --npz_dirs must be parallel lists")
+    if a.drop_wrong_sense and (not a.no_paren_alias or a.scramble_glosses or a.shuffle_order or a.match_frames
+                               or a.drop_function_signs):
+        raise SystemExit("--drop_wrong_sense needs --no_paren_alias and is not built to combine with "
+                         "--scramble_glosses/--shuffle_order/--match_frames/--drop_function_signs")
     ref_rows = None
     if a.match_frames:
         if not a.sign_dur or a.realizations != 1 or a.shuffle_order or a.scramble_glosses:
@@ -228,6 +240,7 @@ def main():
 
     rows, n_written, skipped = [], 0, 0
     dropped_signs = total_signs_before = floored = 0   # --drop_function_signs bookkeeping
+    ws_removed = ws_total = ws_whole = 0               # --drop_wrong_sense bookkeeping
     audit_fh = None
     if a.audit_jsonl:
         audit_dir = os.path.dirname(os.path.abspath(a.audit_jsonl))
@@ -286,6 +299,14 @@ def main():
                 lens = scale_to_total(sampled, ref_total - sum(budgets))
                 rs = motion_resample_clip if a.motion_resample else resample_clip
                 drawn = [d[:5] + rs(d[5], d[6], n) for d, n in zip(drawn, lens)]
+            if a.drop_wrong_sense:                   # after pass 1, so no draw above depends on the flag
+                keep = [i for i, d in enumerate(drawn) if d[0] not in WRONG_SENSE_GLOSSES]
+                ws_total += len(drawn)
+                if keep:
+                    ws_removed += len(drawn) - len(keep)
+                    drawn, budgets = [drawn[i] for i in keep], [budgets[i] for i in keep]
+                else:                                # every sign is wrong-sense: an empty clip cannot be written
+                    ws_whole += 1
             order = list(range(len(drawn)))
             if a.shuffle_order and len(order) > 1:   # uniform over the non-identity permutations
                 while order == sorted(order):
@@ -359,6 +380,10 @@ def main():
     if a.drop_function_signs:
         print(f"[stitch2] drop_function_signs: removed {dropped_signs} of {total_signs_before} spans "
               f"({100 * dropped_signs / max(total_signs_before, 1):.1f}%); {floored} sentences hit the min_signs floor",
+              flush=True)
+    if a.drop_wrong_sense:
+        print(f"[stitch2] drop_wrong_sense: removed {ws_removed} of {ws_total} signs "
+              f"({100 * ws_removed / max(ws_total, 1):.2f}%); {ws_whole} clips left as built (all signs wrong-sense)",
               flush=True)
     print(f"[stitch2] wrote {n_written} synthetic clips ({skipped} sentences skipped below "
           f"cov>={a.min_cov}) -> {man}", flush=True)

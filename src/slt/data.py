@@ -458,6 +458,36 @@ def mask_hands(feats: np.ndarray, cfg: Config, rng: np.random.Generator) -> np.n
     return feats
 
 
+def segment_tempo(kps: np.ndarray, bbox: np.ndarray, segs, x: float,
+                  rng: np.random.Generator) -> Tuple[np.ndarray, np.ndarray]:
+    """Resample each SIGN of one stitched TRAINING clip by its own tempo factor (off unless aug_segment_speed > 0).
+
+    WHY (wave 12c "ST", from research round 2 "R2-ST"): a stitched sign has one fixed duration in every epoch, and the
+    clip-level aug_speed changes all signs of a clip together, so nothing varies tempo WITHIN a clip. `segs` holds the
+    [start_frame, end_frame] (inclusive) of every sign, from the stitcher's sidecar. Each sign of n frames becomes
+    max(min(n, 4), round(n * U[1-x, 1+x])) frames by nearest-frame selection that keeps its first and last frame, so
+    the joins are exactly the stored ones; frames outside the signs (the blended transitions) are copied unchanged.
+    A sidecar that does not describe this clip (last sign not ending on the last frame) is a hard error.
+    """
+    T = kps.shape[0]
+    if not 0.0 < x <= 0.5:
+        raise ValueError(f"aug_segment_speed must lie in (0, 0.5], got {x}")
+    if not segs or segs[-1][1] != T - 1:
+        raise ValueError(f"segment bounds do not describe this clip: {T} frames, last sign ends at "
+                         f"{segs[-1][1] if segs else None}")
+    idx, prev = [], 0
+    for s, e in segs:
+        if s < prev or e < s:
+            raise ValueError(f"segment bounds are not increasing: {segs}")
+        idx.extend(range(prev, s))                       # transition frames, unchanged
+        n = e - s + 1
+        m = max(min(n, 4), int(round(n * rng.uniform(1.0 - x, 1.0 + x))))
+        idx.extend(np.linspace(s, e, m).round().astype(int).tolist())
+        prev = e + 1
+    sel = np.asarray(idx, dtype=int)
+    return np.asarray(kps)[sel], np.asarray(bbox).reshape(T, -1)[sel]
+
+
 # ── dataset ─────────────────────────────────────────────────────────────────
 def read_manifest(path: str) -> List[Tuple[str, str]]:
     rows = []
@@ -484,6 +514,8 @@ class AuslanDailyDataset(Dataset):
         # and every eval tool construct datasets with it False and never augment.
         self.pose_augment: bool = False
         self.epoch: int = 0
+        # Per-sign tempo (wave 12c): empty unless a caller attaches segment bounds to the TRAIN dataset.
+        self.segments: dict = {}
 
     def set_epoch(self, epoch: int) -> None:
         self.epoch = int(epoch)
@@ -519,6 +551,25 @@ class AuslanDailyDataset(Dataset):
         ).digest()
         return np.random.default_rng(int.from_bytes(digest, "big"))
 
+    def attach_segments(self, path: str) -> int:
+        """Load sign bounds for the stitched rows of THIS manifest; returns how many rows have them (0 is an error)."""
+        import json
+        with open(path, encoding="utf-8") as f:
+            table = json.load(f)
+        clips = {clip for clip, _ in self.samples}
+        self.segments = {c: [(int(s), int(e)) for s, e in v] for c, v in table.items() if c in clips}
+        if not self.segments:
+            raise ValueError(f"{path}: none of its {len(table)} clips is in this manifest (keys must be the manifest's "
+                             "clip paths)")
+        return sum(clip in self.segments for clip, _ in self.samples)
+
+    def _tempo_rng(self, clip: str) -> np.random.Generator:
+        """Separate generator for per-sign tempo, so the augment_pose and mask draws are identical with or without it."""
+        digest = hashlib.blake2b(
+            f"{self.cfg.seed}:{self.epoch}:{clip}:segspeed".encode("utf-8"), digest_size=8
+        ).digest()
+        return np.random.default_rng(int.from_bytes(digest, "big"))
+
     def __len__(self) -> int:
         return len(self.samples)
 
@@ -542,6 +593,9 @@ class AuslanDailyDataset(Dataset):
                 feats = feats[selected]
         else:
             kps, bbox = load_pose(path)
+            if self.pose_augment and self.segments and clip in self.segments:
+                kps, bbox = segment_tempo(kps, bbox, self.segments[clip],
+                                          float(getattr(self.cfg, "aug_segment_speed", 0.0)), self._tempo_rng(clip))
             if self.pose_augment and getattr(self.cfg, "pose_aug", False):
                 kps, bbox = augment_pose(kps, bbox, self.cfg, self._pose_rng(clip))
             feats, _ = normalize_clip(kps, bbox, self.cfg)

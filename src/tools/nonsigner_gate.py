@@ -241,8 +241,11 @@ def fingerprint(p):
     return hashlib.md5(open(p, "rb").read()).hexdigest()
 
 
-def analyse():
-    D = json.load(open(NS / "decodes.json"))
+def analyse(decodes=None, out=None):
+    """decodes / out default to the single-model files. Wave 12e (tools/w12e_nonsigner_s6.py) passes the six-member
+    ensemble's decodes in the same format (ce = -confidence) so that every statistic is computed by this one function."""
+    decodes, out = Path(decodes or NS / "decodes.json"), Path(out or NS / "nonsigner_gate_results.json")
+    D = json.load(open(decodes))
     sd = pd.read_excel(DS / "Signer Detection/Signer_Detection.xlsx")
     neg = negatives().copy()
     neg["cid"] = neg.Person_Video_Clip.str[:-4]
@@ -310,7 +313,7 @@ def analyse():
             why[c] = "no_confident_frames"; continue
         flag[c] = usable and d < thr
     rep["B3"] = {"null_p1_threshold": thr, "null_median": float(np.median(null)), "positive_control_below": pos_ok,
-                 "test_usable": usable,
+                 "test_usable": usable, "flagged_ids": sorted(c for c in flag if flag[c]),
                  "per_split": {s: {"flagged_same_person": sum(flag.get(c, False) for c in neg[neg.Split == s].cid),
                                    "untestable": dict(Counter(why[c] for c in neg[neg.Split == s].cid if c in why))}
                                for s in ("test", "dev")},
@@ -350,7 +353,8 @@ def analyse():
             wrong = [c for c in test_ids if content(refs[c], stop)
                      and not set(content(refs[c], stop)) & set(content(D[sig_t][c]["hyp"], stop))]
             res["C_err"] = float(np.mean([D[sig_t][c]["ce"] <= tau for c in wrong])); res["n_err"] = len(wrong)
-            if arm == "i_production":      # B7 frozen-frame control
+            if arm == "i_production" and all("frozen" in D[k][c] for k, ids in (("sig_test", test_ids), ("sig_val", val_ids))
+                                             for c in ids):      # B7 frozen-frame control (absent from the ensemble decodes)
                 res["frozen_pass"] = {s: float(np.mean([D[k][c]["frozen"] <= tau for c in ids]))
                                       for s, k, ids in (("test", "sig_test", test_ids), ("val", "sig_val", val_ids))}
             # R within valid-length quartiles (§6 + B2): signer coverage and negative FV in the same bucket
@@ -397,14 +401,14 @@ def analyse():
         A["auroc"] = cluster_boot(list(ts), lambda vs: auroc([x for v in vs for x in ts[v]], [x for v in vs for x in tn[v]])
                                   if any(tn[v] for v in vs) else None)
     rep["final_reading"] = min((rep[a]["q0.5"]["reading"] for a in ("i_production", "ii_tracked") if a in rep), key=RANK.index)
-    json.dump(rep, open(NS / "nonsigner_gate_results.json", "w"), indent=1, default=str)   # before anything that can fail
+    json.dump(rep, open(out, "w"), indent=1, default=str)   # before anything that can fail
     # B4 audit lists (rendering is done separately, by eye); a short pool is reported, never a crash
     tau = rep["i_production"]["q0.5"]["tau"]
     pt = prim("test")
     pools = {"passing": [c for c in pt if G[c]["ce"] <= tau], "declined": [c for c in pt if G[c]["ce"] > tau]}
     rep["B4_audit"] = {k: random.Random(0).sample(v, min(30, len(v))) for k, v in pools.items()}
     rep["B4_audit_shortfall"] = {k: max(0, 30 - len(v)) for k, v in pools.items()}
-    json.dump(rep, open(NS / "nonsigner_gate_results.json", "w"), indent=1, default=str)
+    json.dump(rep, open(out, "w"), indent=1, default=str)
     print(json.dumps({k: rep[k] for k in ("zero_person_input", "no_person_detected", "G4_length_mismatch", "B3",
                                           "final_reading")}, indent=1, default=str))
     for arm in ("i_production", "ii_tracked"):
@@ -413,6 +417,7 @@ def analyse():
                 r = rep[arm][f"q{q}"]
                 print(arm, q, {s: {k: r[s][k] for k in ("C", "FV", "R", "R_lo", "R_hi", "reading")} for s in ("test", "dev")},
                       "C_err", r["C_err"])
+    return rep
 
 
 def selftest():

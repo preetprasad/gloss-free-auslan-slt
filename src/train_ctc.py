@@ -7,7 +7,7 @@ the encoder (the posterior-collapse failure diagnosed in the deep-dive). Reports
 BLEU + distinct-output count vs the from-scratch control (1.76 greedy / 2.87 beam, 53 unique).
 """
 from __future__ import annotations
-import argparse, hashlib, json, os, random, sys, collections
+import argparse, copy, hashlib, json, os, random, sys, collections
 import numpy as np
 import torch, torch.nn as nn, torch.nn.functional as F
 from torch.utils.data import DataLoader
@@ -51,6 +51,78 @@ def build_gloss_vocab(texts):
     return {g: i + 1 for i, g in enumerate(sorted(toks))}   # 0 = CTC blank
 
 
+# ── wave 12c "CPO": counterfactual-pose preference (off unless --cf_pref_weight > 0) ─────────────────────────────
+HAND_DIMS = slice(273, 399)   # both hands in the 399-D feature row (slt/data.py HAND_FEATURE_SLICES)
+
+
+def seq_logp(logits, tgt_out):
+    """(B,) mean log-probability per reference token, teacher forced, no label smoothing.
+
+    Element-wise on purpose: F.cross_entropy on a (B, V, L) input runs the 2-D NLL kernel, which on CUDA is one of the
+    operations torch.use_deterministic_algorithms(True) can refuse; a comparison, a product and a sum cannot be."""
+    lp = F.log_softmax(logits, -1)
+    hit = tgt_out.unsqueeze(-1) == torch.arange(lp.size(-1), device=lp.device)
+    keep = tgt_out.ne(PAD)
+    return ((lp * hit).sum(-1) * keep).sum(1) / keep.sum(1).clamp_min(1)
+
+
+def cf_negatives(src, src_pad, texts):
+    """Three counterfactual inputs per row, as (src, src_pad, usable) with usable a (B,) bool:
+    (a) the batch neighbour's pose (rolled by one row, mask rolled with it);
+    (b) the row's own pose reversed in time within its valid frames;
+    (c) the row's own pose with the neighbour's hand track, resampled to the row's length.
+    (a) and (c) are unusable where the neighbour has the same target sentence (its pose is then a correct input)."""
+    B, T, _ = src.shape
+    L = (~src_pad).sum(1)
+    ar = torch.arange(T, device=src.device)[None]
+    key = [_normkey(t) for t in texts]
+    other = torch.tensor([key[i] != key[i - 1] for i in range(B)], device=src.device)
+    nb_src, nb_pad, nb_L = torch.roll(src, 1, 0), torch.roll(src_pad, 1, 0), torch.roll(L, 1, 0)
+    rev = (L[:, None] - 1 - ar).clamp_min(0)
+    src_rev = torch.where(src_pad[..., None], src, src.gather(1, rev[..., None].expand_as(src)))
+    pos = (ar * (nb_L - 1).clamp_min(0)[:, None].float() / (L - 1).clamp_min(1)[:, None].float()).round().long()
+    pos = torch.minimum(pos, (nb_L - 1).clamp_min(0)[:, None])
+    hands = nb_src[..., HAND_DIMS].gather(1, pos[..., None].expand(B, T, HAND_DIMS.stop - HAND_DIMS.start))
+    src_hand = src.clone()
+    src_hand[..., HAND_DIMS] = torch.where(src_pad[..., None], src[..., HAND_DIMS], hands)
+    return [(nb_src, nb_pad, other), (src_rev, src_pad, L > 1), (src_hand, src_pad, other)]
+
+
+def cf_preference(model, ref_model, src, src_pad, tgt_in, tgt_out, tgt_pad, logits, texts, beta):
+    """-log sigmoid(beta * margin), margin = (lp - ref)(true pose) - mean over usable negatives of (lp - ref)(negative).
+
+    lp is the model's and ref the frozen starting checkpoint's per-token log-probability of the REFERENCE sentence.
+    Nothing is sampled, so the term cannot be raised by producing shorter or more generic output."""
+    with torch.no_grad():
+        ref_true = seq_logp(ref_model(src, src_pad, tgt_in, tgt_pad, return_memory=True)[0], tgt_out)
+    d_true = seq_logp(logits, tgt_out) - ref_true
+    d_neg, n_neg = torch.zeros_like(d_true), torch.zeros_like(d_true)
+    for s, sp, ok in cf_negatives(src, src_pad, texts):
+        with torch.no_grad():
+            r = seq_logp(ref_model(s, sp, tgt_in, tgt_pad, return_memory=True)[0], tgt_out)
+        d = seq_logp(model(s, sp, tgt_in, tgt_pad, return_memory=True)[0], tgt_out) - r
+        d_neg = d_neg + torch.where(ok, d, torch.zeros_like(d))
+        n_neg = n_neg + ok.float()
+    margin = d_true - d_neg / n_neg.clamp_min(1.0)
+    use = (n_neg > 0).float()
+    n_use = use.sum().clamp_min(1.0)
+    return (F.softplus(-beta * margin) * use).sum() / n_use, float((margin.detach() * use).sum() / n_use)
+
+
+@torch.no_grad()
+def val_ce(model, dl, dev):
+    """Teacher-forced cross-entropy per reference token over a loader (leaves the model in eval mode)."""
+    model.eval()
+    tot = n = 0
+    for src, src_pad, tgt, _ in dl:
+        src, src_pad, tgt = src.to(dev), src_pad.to(dev), tgt.to(dev)
+        logits = model(src, src_pad, tgt[:, :-1], tgt[:, :-1].eq(PAD), return_memory=True)[0]
+        tot += float(F.cross_entropy(logits.reshape(-1, logits.size(-1)), tgt[:, 1:].reshape(-1),
+                                     ignore_index=PAD, reduction="sum"))
+        n += int(tgt[:, 1:].ne(PAD).sum())
+    return tot / max(n, 1)
+
+
 def _strict_bool(x):
     """Accept only true/false: the old `x.lower() == "true"` silently turned "1" or "yes" into False."""
     v = str(x).strip().lower()
@@ -78,10 +150,27 @@ def check_flags(cfg):
     ignored = [f"--{n}" for n in UNREAD_FIELDS if getattr(cfg, n) != default[n]]
     if ignored:
         raise SystemExit(f"train_ctc.py never reads {', '.join(ignored)}; use the trainer that implements it")
-    for name in ("init_encoder", "resume_checkpoint"):
+    for name in ("init_encoder", "resume_checkpoint", "gloss_map", "aug_segment_file"):
         path = getattr(cfg, name, "")
         if path and not os.path.exists(path):
             raise SystemExit(f"--{name} {path} does not exist (it used to be skipped silently)")
+    if not 0.0 <= cfg.aug_segment_speed <= 0.5:
+        raise SystemExit("--aug_segment_speed must lie in [0, 0.5]")
+    if (cfg.aug_segment_speed > 0) != bool(cfg.aug_segment_file):
+        raise SystemExit("--aug_segment_speed and --aug_segment_file go together (per-sign tempo needs the sign bounds)")
+    if cfg.resume_ctc_head and not cfg.resume_checkpoint:
+        raise SystemExit("--resume_ctc_head needs --resume_checkpoint")
+    if cfg.cf_pref_weight < 0 or cfg.cf_stop_ce < 0:
+        raise SystemExit("--cf_pref_weight and --cf_stop_ce must be >= 0")
+    if cfg.cf_pref_weight > 0:
+        if cfg.cf_beta <= 0:
+            raise SystemExit("--cf_beta must be > 0")
+        if not cfg.resume_checkpoint:
+            raise SystemExit("--cf_pref_weight needs --resume_checkpoint (its model is the frozen reference)")
+        if not (cfg.model_arch == "generic" and cfg.keypoint_subset == "all" and cfg.num_keypoints == 133
+                and cfg.use_confidence and not cfg.use_velocity and int(cfg.temporal_pool) == 1):
+            raise SystemExit("--cf_pref_weight needs model_arch generic and the 399-D layout (133 keypoints, subset all, "
+                             "confidence on, no velocity, temporal_pool 1): the hand negative swaps feature dims 273:399")
     hand_mask = cfg.aug_hand_drop > 0 or cfg.aug_hand_span > 0
     if cfg.eval_every < 1:
         raise SystemExit("--eval_every must be >= 1")
@@ -93,7 +182,11 @@ def check_flags(cfg):
         ignored = [name for name, on in (("--pose_aug", cfg.pose_aug), ("--aug_hand_drop/--aug_hand_span", hand_mask),
                                          ("--paraphrase_prob", cfg.paraphrase_prob > 0),
                                          ("--vocab_file", bool(cfg.vocab_file)), ("--save_last", cfg.save_last),
-                                         ("--eval_every", cfg.eval_every != 1)) if on]
+                                         ("--eval_every", cfg.eval_every != 1),
+                                         ("--aug_segment_speed", cfg.aug_segment_speed > 0),
+                                         ("--resume_ctc_head", cfg.resume_ctc_head),
+                                         ("--cf_pref_weight/--cf_stop_ce", cfg.cf_pref_weight > 0 or cfg.cf_stop_ce > 0),
+                                         ) if on]
         if ignored:
             raise SystemExit(f"RGB-fusion training (--rgb_feat_dir) never applies {', '.join(ignored)}; "
                              "remove the flag(s) or implement them in slt/rgb_fusion.py")
@@ -211,6 +304,10 @@ def main():
         if paraphrase and PARA_MAP and cfg.paraphrase_prob > 0:
             ds.paraphrases = PARA_MAP
             ds.paraphrase_prob = float(cfg.paraphrase_prob)
+        if augment and cfg.aug_segment_speed > 0:   # wave 12c ST: per-sign tempo on the stitched TRAIN rows only
+            n_seg = ds.attach_segments(cfg.aug_segment_file)
+            print(f"[aug] per-sign tempo ±{cfg.aug_segment_speed} on {n_seg} stitched rows of {len(ds.samples)} "
+                  f"({cfg.aug_segment_file})", flush=True)
         return DataLoader(ds, batch_size=cfg.batch_size, shuffle=shuffle,
                           num_workers=cfg.num_workers, collate_fn=collate)
 
@@ -233,6 +330,7 @@ def main():
             raise SystemExit(f"--init_encoder {cfg.init_encoder}: 0 tensors match this model (wrong arch/keypoints?)")
         model.load_state_dict(enc, strict=False)
         print(f"[init] loaded {len(enc)} pretrained encoder tensors from {cfg.init_encoder}", flush=True)
+    rk = None
     if getattr(cfg, "resume_checkpoint", "") and os.path.exists(cfg.resume_checkpoint):
         # Full-model warm-start (e.g. PoseStitch pre-train -> fine-tune). Shape-filter so a different
         # pre-training vocab (different decoder embed/output dims) doesn't crash the load: the encoder
@@ -255,6 +353,20 @@ def main():
         print(f"[resume] full-model warm-start: loaded {len(keep)}/{len(sd)} shape-matched tensors "
               f"from {cfg.resume_checkpoint}", flush=True)
     ctc_head = nn.Linear(cfg.d_model, len(gloss2idx) + 1).to(dev)   # +1 blank(0)
+    if cfg.resume_ctc_head:   # a continuation: the head would otherwise restart from random weights
+        if not isinstance(rk, dict) or "ctc_head" not in rk or rk.get("gloss2idx") != gloss2idx \
+                or list(rk.get("vocab", [])) != list(vocab.itos):
+            raise SystemExit(f"--resume_ctc_head: {cfg.resume_checkpoint} has no CTC head for exactly this CTC and "
+                             "word vocabulary")
+        ctc_head.load_state_dict(rk["ctc_head"])
+        print(f"[resume] CTC head restored ({len(gloss2idx)} classes + blank)", flush=True)
+    ref_model = None
+    if cfg.cf_pref_weight > 0:   # frozen reference = the starting checkpoint
+        if len(keep) != len(model.state_dict()):
+            raise SystemExit("--cf_pref_weight: the resume checkpoint must supply every model tensor")
+        ref_model = copy.deepcopy(model).eval().requires_grad_(False)
+        print(f"[cpo] counterfactual-pose preference ON: weight {cfg.cf_pref_weight}, beta {cfg.cf_beta}, frozen "
+              f"reference = {cfg.resume_checkpoint}", flush=True)
     params = list(model.parameters()) + list(ctc_head.parameters())
     opt = torch.optim.Adam(params, lr=cfg.lr, betas=(0.9, 0.98), eps=1e-9, weight_decay=cfg.weight_decay)
     steps = cfg.epochs * max(1, len(train_dl))
@@ -292,8 +404,13 @@ def main():
         return torch.tensor(ids, dtype=torch.long), torch.tensor(lens, dtype=torch.long), W
 
     best = {"bleu4": -1, "wer": 9, "epoch": 0}; history = []
+    ce0 = None
+    if cfg.cf_stop_ce > 0:
+        ce0 = val_ce(model, val_dl, dev)
+        print(f"[cpo] validation CE before training {ce0:.4f}", flush=True)
     for ep in range(1, cfg.epochs + 1):
         model.train(); ctc_head.train(); tot = tce = tctc = n = 0
+        tcf = tmargin = 0.0
         train_dl.dataset.set_epoch(ep)   # re-draws paraphrase targets and pose augmentation each epoch (no-op when off)
         hand_stats = torch.zeros(2, dtype=torch.long, device=dev)   # [hand-frames kept, hand-frames seen]
         for src, src_pad, tgt, texts in train_dl:
@@ -326,6 +443,11 @@ def main():
             else:
                 loss_ctc = ctc(logp, tgt_ids, in_len, tgt_len)
             loss = loss_ce + a.ctc_weight * loss_ctc.to(dev) + cfg.r_drop_alpha * loss_rdrop
+            if ref_model is not None:
+                loss_cf, margin = cf_preference(model, ref_model, src, src_pad, tgt_in, tgt_out, tgt_pad, logits,
+                                                texts, cfg.cf_beta)
+                loss = loss + cfg.cf_pref_weight * loss_cf
+                tcf += float(loss_cf.detach()) * src.size(0); tmargin += margin * src.size(0)
             sched.zero_grad(); loss.backward()
             torch.nn.utils.clip_grad_norm_(params, cfg.grad_clip); sched.step()
             b = src.size(0); tot += loss.item() * b; tce += loss_ce.item() * b
@@ -346,6 +468,18 @@ def main():
             keep = hand_stats[0].item() / max(1, hand_stats[1].item())
             history[-1]["hand_keep"] = keep
             print(f"[aug ep {ep:03d}] realised hand keep fraction {keep:.4f}", flush=True)
+        if ref_model is not None:
+            history[-1]["cf_loss"] = tcf / n; history[-1]["cf_margin"] = tmargin / n
+            peak = torch.cuda.max_memory_allocated() / 2 ** 30 if dev.type == "cuda" else 0.0
+            print(f"[cpo ep {ep:03d}] preference loss {tcf / n:.4f} mean margin {tmargin / n:+.4f} nats/token "
+                  f"peak GPU {peak:.2f} GiB", flush=True)
+        cf_stop = False
+        if ce0 is not None and ep == 3:
+            ce3 = val_ce(model, val_dl, dev)
+            history[-1]["val_ce"] = ce3; history[-1]["val_ce_start"] = ce0
+            cf_stop = ref_model is not None and ce3 - ce0 > cfg.cf_stop_ce
+            print(f"[cpo ep {ep:03d}] validation CE {ce3:.4f} (start {ce0:.4f}, change {ce3 - ce0:+.4f})"
+                  + (" -> STOP: rise above --cf_stop_ce" if cf_stop else ""), flush=True)
         if do_eval and bleu > best["bleu4"]:
             best = {"bleu4": bleu, "wer": wer, "epoch": ep}
             torch.save({"model": model.state_dict(), "ctc_head": ctc_head.state_dict(),
@@ -359,6 +493,8 @@ def main():
                    "pseudo_token_drop": a.pseudo_token_drop,
                    "pseudo_target_order": "english_spoken_order"},
                   open(os.path.join(cfg.out_dir, "progress.json"), "w"), indent=2)
+        if cf_stop:
+            break
 
     if cfg.save_last:
         torch.save({"model": model.state_dict(), "ctc_head": ctc_head.state_dict(), "vocab": vocab.itos,

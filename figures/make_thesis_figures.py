@@ -21,6 +21,30 @@ _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 import figstyle
 figstyle.apply(plt)
 TARGET_W, FS, LADDER = figstyle.TARGET_W, figstyle.FS, figstyle.LADDER
+# Standard 1.2-1.4 on top of the house style (fonts and colours unchanged): one tick size (8 pt),
+# one label/annotation size (9 pt), 0.6 pt spines and outward 3 pt ticks, light value-axis grid.
+FS = dict(FS, label=9.0, sub=8.0, tiny=8.0)
+TICK, PANEL = FS["sub"], 10.0
+REF = figstyle.C["grey"]            # baselines, prior work and reference lines: grey, 0.75 pt
+plt.rcParams.update({
+    "font.size": FS["label"], "axes.labelsize": FS["label"],
+    "xtick.labelsize": TICK, "ytick.labelsize": TICK, "legend.fontsize": TICK,
+    "axes.linewidth": 0.6,
+    "xtick.major.width": 0.6, "ytick.major.width": 0.6,
+    "xtick.major.size": 3.0, "ytick.major.size": 3.0,
+    "xtick.direction": "out", "ytick.direction": "out",
+    "axes.grid": True, "axes.grid.axis": "y", "axes.axisbelow": True,
+    "grid.color": "#DDDDDD", "grid.alpha": 1.0, "grid.linewidth": 0.4,
+    "lines.linewidth": 1.5, "lines.markersize": 4.5,
+    "errorbar.capsize": 2.0, "hatch.linewidth": 0.6, "legend.frameon": False,
+})
+
+
+def panel(ax, s, dx=-30):
+    """Panel label (a), (b): 10 pt bold, top-left, outside the axes."""
+    ax.annotate(s, xy=(0, 1), xycoords="axes fraction", xytext=(dx, 6),
+                textcoords="offset points", fontsize=PANEL, weight="bold",
+                ha="left", va="bottom")
 
 # Local aliases so the existing figure code reads unchanged; the values now come from the shared
 # palette, so a colour cannot mean one thing here and something else in the concept figures.
@@ -41,19 +65,19 @@ C = dict(grey=figstyle.C["grey"], ink=figstyle.C["ink"], pale=figstyle.C["pale"]
 # control at 9.27 and 9.55 in two later batches, so 10.71/10.89 are unreplicated.
 # =====================================================================
 models = [
-    ("AlphaPose control (HALPE-136)",       2.87,   "grey",   False),
-    ("VLP + tuned decode (pre-DWPose best)", 3.87,  "grey",   False),
+    ("AlphaPose keypoints (control)",       2.87,   "grey",   False),
+    ("+ pretraining, tuned decoding",       3.87,  "grey",   False),
     ("DWPose re-extraction",                 8.78,  "pose",   False),
-    ("DWPose + CTC (3-seed)",                9.63,  "pose",   False),
-    ("VLP-on-DWPose",                       10.27,  "pre",    False),
-    ("RGB fusion",                          10.34,  "fusion", False),
-    ("VLP-80 $\\rightarrow$ CTC*",          10.71,  "pre",    True),
-    ("SWA-VLP80*",                          10.89,  "pre",    True),
-    ("Duration-stitch (3-seed mean)",       10.97,  "synth",  False),
-    ("    at 1.1:1 synthetic:real (3-seed)", 11.14, "synth",  False),
+    ("+ CTC loss (3 seeds)",                9.63,  "pose",   False),
+    ("+ pretraining, 40 epochs",           10.27,  "pre",    False),
+    ("+ RGB fusion",                       10.33,  "fusion", False),
+    ("pretraining, 80 epochs*",            10.71,  "pre",    True),
+    ("+ checkpoint averaging*",            10.89,  "pre",    True),
+    ("stitched synthetic data, 0.55:1 (3 seeds)", 10.97,  "synth",  False),
+    ("    at 1.1:1 synthetic:real (3 seeds)", 11.14, "synth",  False),
     ("    + pose augmentation (3 seeds)",   11.34,  "synth",  False),
-    ("6-member ensemble, beam-5",           11.50,  "ens",    False),
-    ("6-member ensemble, beam-10/LP0.3",    11.80,  "ens",    False),
+    ("6-member ensemble, beam width 5",    11.50,  "ens",    False),
+    ("final ensemble: beam 10, length penalty 0.3", 11.80,  "ens",    False),
 ]
 
 # Parse tab:res_ladder's beam-5 column and refuse to draw a stale ladder.
@@ -75,55 +99,55 @@ labels = [m[0] for m in models]
 vals   = [m[1] for m in models]
 cols   = [C[m[2]] for m in models]
 hatch  = ["///" if m[3] else None for m in models]
-y = np.arange(len(models))
+# a gap separates consecutive stages, so the grouping reads without colour
+_gap = np.cumsum([0] + [0.55 if models[i][2] != models[i - 1][2] else 0
+                        for i in range(1, len(models))])
+y = np.arange(len(models)) + _gap
 
-fig, ax = plt.subplots(figsize=(TARGET_W, 4.75))
+fig, ax = plt.subplots(figsize=(TARGET_W, 4.4))
 bars = ax.barh(y, vals, color=cols, edgecolor="white", height=0.68, zorder=3)
 for b, h in zip(bars, hatch):
     if h:
         b.set_hatch(h)
         b.set_edgecolor("white")
 ax.set_yticks(y); ax.set_yticklabels(labels)
+ax.tick_params(axis="both", labelsize=TICK)
+ax.grid(False); ax.grid(True, axis="x")      # value axis only
 ax.invert_yaxis()
 # error bar on the replicated duration-stitch mean (10.74 / 11.08 / 11.08), found by label so
 # a row inserted above it cannot silently move it onto a different bar
-_dur = labels.index("Duration-stitch (3-seed mean)")
-for yi, v in zip(y, vals):
-    # that one row's value label is pushed clear of the whisker at 11.08
-    ax.text(v + (0.32 if yi == _dur else 0.14), yi, f"{v:.2f}", va="center", ha="left",
-            fontsize=FS["label"], color=C["ink"],
-            zorder=8, bbox=dict(fc="white", ec="none", pad=1.0, alpha=0.85))
-# white casing so the range reads over the purple bar as well as over the background: without it
-# the left whisker vanished inside the bar and the figure did not show the range its caption claims
-import matplotlib.patheffects as _pe
-_case = [_pe.withStroke(linewidth=3.4, foreground="white")]
-for xv in (10.74, 11.08):                        # whiskers first: the connector is drawn over
-    ax.plot([xv, xv], [_dur - 0.18, _dur + 0.18], color=C["ink"], lw=1.4, zorder=9,
-            path_effects=_case)                  # their white casing, not erased by it
-ax.plot([10.74, 11.08], [_dur, _dur], color=C["ink"], lw=1.4, zorder=10, path_effects=_case)
-# published Auslan-Daily Communication/Pose baselines
-ax.axvline(9.20, ls="--", lw=1.2, color=C["base"], zorder=2)
-ax.axvline(9.45, ls="-.", lw=1.2, color=C["base"], zorder=2)
-ax.axvline(9.95, ls=":",  lw=1.5, color=C["base"], zorder=2)
-ax.set_ylim(len(models) - 0.3, -0.75)
+_dur = y[labels.index("stitched synthetic data, 0.55:1 (3 seeds)")]
+# min-max range of the three seeds (10.74 / 11.08 / 11.08): 0.75 pt line, 2 pt caps
+for xv in (10.74, 11.08):
+    ax.plot([xv, xv], [_dur - 0.07, _dur + 0.07], color=C["ink"], lw=0.75, zorder=9,
+            solid_capstyle="butt")
+ax.plot([10.74, 11.08], [_dur, _dur], color=C["ink"], lw=0.75, zorder=9, solid_capstyle="butt")
+# published baselines (prior work): grey dashed 0.75 pt, behind the bars, each labelled directly
+# above the axis. Rows are staggered so each leader runs to the left of the labels below it.
+for _v, _n, _h in ((9.20, "SL-Transformer 9.20", 0.16), (9.45, "SL-Luong 9.45", 0.10),
+                   (9.95, "GASLT 9.95", 0.04)):
+    ax.axvline(_v, ls="--", lw=0.75, color=REF, zorder=1)
+    ax.plot([_v, _v], [1.0, 1.0 + _h], ls="-", lw=0.75, color=REF, clip_on=False,
+            transform=ax.get_xaxis_transform())
+    ax.text(_v + 0.08, 1.0 + _h, _n, fontsize=TICK, color=C["ink"], ha="left", va="center",
+            transform=ax.get_xaxis_transform(), clip_on=False)
+ax.set_ylim(y[-1] + 0.6, y[0] - 0.6)
 ax.set_xlabel("Test BLEU-4, official Auslan-Daily Communication split")
-ax.set_xlim(0, 13.0)
-ax.set_title("Fixing the pose representation broke the $\\approx$3 BLEU-4 plateau",
-             fontsize=FS["head"], weight="bold", pad=10)
+ax.set_xlim(0, 12.5)
+ax.set_xticks([0, 3, 6, 9, 12])
 from matplotlib.lines import Line2D
-leg = [Patch(fc=C["grey"], label="pre-DWPose (AlphaPose input)"),
-       Patch(fc=C["pose"], label="DWPose pose fix"),
-       Patch(fc=C["pre"],  label="pretraining (VLP / SWA)"),
+leg = [Patch(fc=C["grey"], label="AlphaPose keypoints"),
+       Patch(fc=C["pose"], label="DWPose keypoints"),
+       Patch(fc=C["pre"],  label="pretraining"),
        Patch(fc=C["fusion"], label="RGB fusion"),
        Patch(fc=C["synth"], label="synthetic data / augmentation"),
-       Patch(fc=C["ens"],  label="ensemble + decode tuning"),
-       Patch(fc="white", ec=C["ink"], hatch="///", label="* unreplicated (see text)"),
-       Line2D([], [], ls="--", lw=1.2, c=C["base"], label="SL-Transformer 9.20"),
-       Line2D([], [], ls="-.", lw=1.2, c=C["base"], label="SL-Luong 9.45"),
-       Line2D([], [], ls=":",  lw=1.5, c=C["base"], label="GASLT 9.95")]
-ax.legend(handles=leg, loc="upper left", bbox_to_anchor=(1.01, 1.0),
-          fontsize=FS["sub"], framealpha=0.95)
-fig.tight_layout()
+       Patch(fc=C["ens"],  label="ensemble"),
+       Patch(fc="white", ec=C["ink"], hatch="///", label="* unreplicated"),
+       Line2D([], [], ls="-", lw=0.75, c=C["ink"], marker="|", ms=4, mew=0.75,
+              label="range of 3 seeds")]
+fig.legend(handles=leg, loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=4,
+           fontsize=TICK, frameon=False)
+fig.tight_layout(rect=(0, 0.11, 1, 1))
 fig.savefig("fig1_results_ladder.png", dpi=300, bbox_inches="tight")
 fig.savefig("fig1_results_ladder.pdf", bbox_inches="tight")
 plt.close(fig)
@@ -134,23 +158,17 @@ plt.close(fig)
 # =====================================================================
 ep = [40, 80, 128, 256]
 bl = [10.27, 10.71, 9.69, 9.66]
-fig, ax = plt.subplots(figsize=(TARGET_W, 3.96))
-ax.axvspan(80, 256, color=C["base"], alpha=0.06, zorder=0)
-ax.plot(ep, bl, "-o", color=C["pre"], lw=2.2, ms=8, zorder=3)
-for x, v in zip(ep, bl):
-    ax.annotate(f"{v:.2f}", (x, v), textcoords="offset points",
-                xytext=(0, 10), ha="center", fontsize=FS["label"])
-ax.plot(80, 10.71, "o", ms=15, mfc="none", mec=C["ens"], mew=2.4, zorder=4)
-ax.annotate("peak (80 ep)", (80, 10.71), textcoords="offset points", xytext=(14, -16),
-            fontsize=FS["label"], color=C["ink"], weight="bold")
-ax.text(168, 9.55, "over-pretraining\n(encoder over-specialises)",
-        fontsize=FS["sub"], color=C["base"], ha="center")
+fig, ax = plt.subplots(figsize=(TARGET_W, 2.4))
+ax.plot(ep, bl, "-o", color=C["pre"], lw=1.5, ms=4.5, zorder=3)
+# label only the peak; the other values are read off the axis (no value label on every point)
+ax.annotate(f"{bl[1]:.2f}", (ep[1], bl[1]), textcoords="offset points",
+            xytext=(0, 5), ha="center", va="bottom", fontsize=TICK, color=C["ink"])
 ax.set_xticks(ep)
+ax.set_xlim(20, 270)
 ax.set_xlabel("VLP pretraining epochs")
 ax.set_ylabel("Test BLEU-4 (beam-5)")
 ax.set_ylim(9.3, 11.0)
-ax.set_title("VLP pretraining follows an inverted-U; the optimum is $\\approx$80 epochs",
-             fontsize=FS["head"], weight="bold", pad=10)
+ax.set_yticks([9.5, 10.0, 10.5, 11.0])
 fig.tight_layout()
 fig.savefig("fig2_vlp_scaling.png", dpi=300, bbox_inches="tight")
 fig.savefig("fig2_vlp_scaling.pdf", bbox_inches="tight")
@@ -165,28 +183,32 @@ mods = ["DWPose+CTC", "VLP (40 ep)", "RGB fusion"]  # the saved VLP decodes are 
 official = [9.52, 10.27, 10.33]
 seen     = [29.7, 29.9, 30.2]
 unseen   = [4.88, 5.31, 5.81]
-x = np.arange(len(mods)); w = 0.26
-fig, ax = plt.subplots(figsize=(TARGET_W, 3.88))
-b1 = ax.bar(x - w, official, w, label="Official split (blended)", color=C["grey"], zorder=3)
-b2 = ax.bar(x,      seen,     w, label="Seen target (230 / 800)", color=C["fusion"], zorder=3)
-b3 = ax.bar(x + w,  unseen,   w, label="Unseen target (570 / 800)", color=C["base"], zorder=3)
-for bars_ in (b1, b2, b3):
-    for r in bars_:
-        ax.text(r.get_x()+r.get_width()/2, r.get_height()+0.4, f"{r.get_height():.1f}",
-                ha="center", va="bottom", fontsize=FS["sub"])
-ax.axhline(6.39, ls="--", lw=1.4, color=C["ink"], zorder=4)
-ax.text(-1.02, 6.39, "video-disjoint\nretrain 6.39", fontsize=FS["sub"], color=C["ink"],
-        ha="left", va="center")
-ax.set_xlim(-1.08, 2.52)
-ax.set_xticks(x); ax.set_xticklabels(mods)
-ax.set_ylabel("BLEU-4 (beam-5)")
-ax.set_ylim(0, 34)
-ax.set_title("The official score is a blend: true generalisation is $\\approx$5–6 BLEU-4",
-             fontsize=FS["head"], weight="bold", pad=10)
-ax.legend(loc="upper center", fontsize=FS["sub"], ncol=3, framealpha=0.9)
-ax.text(1.5, 15.8, "the order is preserved on unseen targets:\nRGB fusion > VLP > CTC (gaps not significant)",
-        fontsize=FS["sub"], color=C["ink"], ha="center", style="italic",
-        bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="none", alpha=0.9), zorder=5)
+x = np.arange(len(mods)); w = 0.28
+fig, ax = plt.subplots(figsize=(TARGET_W, 2.7))
+# reference line (a separate retrain): grey dashed 0.75 pt, behind the bars
+ax.axhline(6.39, ls="--", lw=0.75, color=REF, zorder=0.5)
+# colour = method (the global mapping of fig1); split = fill: solid official, pale seen,
+# hatched unseen, so the split survives greyscale and never borrows a method colour
+_mc = [C["pose"], C["pre"], C["fusion"]]
+b1 = ax.bar(x - w, official, w, color=_mc, edgecolor=_mc, linewidth=0.6, zorder=3)
+b2 = ax.bar(x,      seen,     w, color=[matplotlib.colors.to_rgba(c, 0.30) for c in _mc],
+            edgecolor=_mc, linewidth=0.6, zorder=3)
+b3 = ax.bar(x + w,  unseen,   w, color="white", edgecolor=_mc, linewidth=0.6,
+            hatch="////", zorder=3)
+ax.text(1.008, 6.39, "video-disjoint\nretrain 6.39", fontsize=TICK, color=C["ink"],
+        ha="left", va="center", transform=ax.get_yaxis_transform(), clip_on=False)
+ax.set_xlim(-0.48, 2.48)
+# direct labels: each bar is named on the axis, the model on a second line below
+_pos = np.concatenate([x - w, x, x + w])
+ax.set_xticks(_pos)
+ax.set_xticklabels(["official"] * len(mods) + ["seen"] * len(mods) + ["unseen"] * len(mods))
+for _xi, _m in zip(x, mods):
+    ax.annotate(_m, xy=(_xi, 0), xycoords=("data", "axes fraction"), xytext=(0, -17),
+                textcoords="offset points", ha="center", va="top", fontsize=FS["label"],
+                color=C["ink"])
+ax.set_ylabel("Test BLEU-4 (beam-5)")
+ax.set_ylim(0, 32)
+ax.set_yticks([0, 10, 20, 30])
 fig.tight_layout()
 fig.savefig("fig3_seen_vs_unseen.png", dpi=300, bbox_inches="tight")
 fig.savefig("fig3_seen_vs_unseen.pdf", bbox_inches="tight")
@@ -197,36 +219,36 @@ plt.close(fig)
 # Source: the project log 2026-08-22, jobs 1101249 (stage) -> 1101250 (ablation).
 # Matched articulator set (body+hands) and matched normalisation; beam-5.
 # =====================================================================
-fig, ax = plt.subplots(figsize=(TARGET_W, 4.09))
+fig, ax = plt.subplots(figsize=(TARGET_W, 2.7))
 groups = ["bbox normalisation", "frame normalisation"]
 alpha_v = [4.60, 5.58]
 dw_v    = [1.45, 10.03]
 x = np.arange(2); w = 0.32
-b1 = ax.bar(x - w/2, alpha_v, w, label="AlphaPose HALPE-136 (shipped with the dataset)",
-            color=C["grey"], zorder=3)
-b2 = ax.bar(x + w/2, dw_v, w, label="DWPose RTMW-DW-x (re-extracted here)",
-            color=C["pose"], zorder=3)
-for bars_ in (b1, b2):
-    for r in bars_:
-        ax.text(r.get_x()+r.get_width()/2, r.get_height()+0.18, f"{r.get_height():.2f}",
-                ha="center", va="bottom", fontsize=FS["label"])
-# the isolated estimator effect, drawn clear of the bars
-xa = 1 + w/2 + 0.20
+b1 = ax.bar(x - w/2, alpha_v, w, color=C["grey"], edgecolor="white", linewidth=0.6,
+            hatch="...", zorder=3)
+b2 = ax.bar(x + w/2, dw_v, w, color=C["pose"], edgecolor=C["ink"], linewidth=0.6, zorder=3)
+b2[0].set_hatch("///")          # the degenerate DWPose / bbox cell
+ax.text(b2[0].get_x() + w/2, b2[0].get_height() + 0.3, "degenerate\n(1 unique output)",
+        ha="center", va="bottom", fontsize=TICK, color=C["ink"])
+# the isolated estimator effect, drawn in the gap between the two groups
+xa = 1 - w - 0.06
 ax.annotate("", xy=(xa, 10.03), xytext=(xa, 5.58),
-            arrowprops=dict(arrowstyle="<->", lw=1.8, color=C["base"]), zorder=5)
-ax.plot([1 - w/2, xa], [5.58, 5.58], ls=":", lw=1.1, color=C["base"], zorder=4)
-ax.plot([1 + w/2, xa], [10.03, 10.03], ls=":", lw=1.1, color=C["base"], zorder=4)
-ax.text(xa + 0.04, 7.8, "+4.45\npurely from the\npose estimator", fontsize=FS["head"],
-        color=C["base"], ha="left", va="center", weight="bold")
-ax.text(0 + w/2, 2.35, "degenerate\n(1 unique output)", fontsize=FS["sub"], color=C["ink"],
-        ha="center", va="bottom", style="italic")
-ax.set_xticks(x); ax.set_xticklabels(groups)
+            arrowprops=dict(arrowstyle="<->", lw=0.75, color=C["ink"]), zorder=5)
+ax.plot([xa, 1 - w/2], [5.58, 5.58], ls=":", lw=0.75, color=REF, zorder=4)
+ax.plot([xa, 1 + w/2], [10.03, 10.03], ls=":", lw=0.75, color=REF, zorder=4)
+ax.text(xa - 0.04, 7.8, "+4.45", fontsize=FS["label"], color=C["ink"], ha="right",
+        va="center")
+# direct labels: estimator under each bar, normalisation on a second line
+ax.set_xticks([x[0] - w/2, x[0] + w/2, x[1] - w/2, x[1] + w/2])
+ax.set_xticklabels(["AlphaPose", "DWPose", "AlphaPose", "DWPose"])
+for _xi, _g in zip(x, groups):
+    ax.annotate(_g, xy=(_xi, 0), xycoords=("data", "axes fraction"), xytext=(0, -17),
+                textcoords="offset points", ha="center", va="top", fontsize=FS["label"],
+                color=C["ink"])
 ax.set_ylabel("Test BLEU-4 (beam-5)")
-ax.set_xlim(-0.55, 1.95)
-ax.set_ylim(0, 13.6)
-ax.set_title("Matched 2$\\times$2: the pose estimator, not normalisation, broke the plateau",
-             fontsize=FS["head"], weight="bold", pad=10)
-ax.legend(loc="upper left", fontsize=FS["sub"], framealpha=0.95)
+ax.set_xlim(-0.45, 1.45)
+ax.set_ylim(0, 12)
+ax.set_yticks([0, 4, 8, 12])
 fig.tight_layout()
 fig.savefig("fig4_estimator_2x2.png", dpi=300, bbox_inches="tight")
 fig.savefig("fig4_estimator_2x2.pdf", bbox_inches="tight")
@@ -246,37 +268,40 @@ ticklab = ["246\nno\nresampling", "206\n+ frame-rate\nfix (30$\\rightarrow$25)",
            "108\n+ per-sign\nduration model"]
 ctrl_val, real_frames = 9.908, 73.1
 
-fig, ax = plt.subplots(figsize=(TARGET_W, 4.04))
-ax.axvline(real_frames, ls="--", lw=1.6, color=C["fusion"], zorder=2)
-ax.text(real_frames + 4, 10.30, "real Auslan-Daily\nclips: 73.1 frames",
-        fontsize=FS["sub"], color="#0B7D7D", ha="right", va="top")
+# two panels, because validation (greedy) and test (beam-5) are not on a comparable level;
+# both y-ranges span the same 1.5 BLEU-4 so their slopes can be compared honestly
+fig, (axv, axt) = plt.subplots(2, 1, figsize=(TARGET_W, 3.5), sharex=True)
+for a in (axv, axt):
+    a.axvline(real_frames, ls="--", lw=0.75, color=REF, zorder=1)
+# the reference is labelled once, above panel (a), outside the data region
+axv.plot([real_frames, real_frames], [1.0, 1.10], ls="--", lw=0.75, color=REF, clip_on=False,
+         transform=axv.get_xaxis_transform())
+axv.text(real_frames + 2, 1.10, "real clips, 73.1 frames", fontsize=TICK, color=C["ink"],
+         ha="right", va="center", transform=axv.get_xaxis_transform(), clip_on=False)
 
-ax.plot(frames, testb, "-s", color=C["synth"], lw=1.8, ms=8, zorder=4,
-        label="test BLEU-4 (beam-5)")
-ax.plot(frames, valb, "-o", color=C["pre"], lw=2.4, ms=9, zorder=5,
-        label="validation BLEU-4 (the selection metric)")
-ax.axhline(ctrl_val, ls=":", lw=1.6, color=C["grey"], zorder=2)
-ax.text(150, ctrl_val - 0.04, "real-only control, validation 9.908", fontsize=FS["sub"],
-        color="#5f6368", ha="center", va="top")
+axv.plot(frames, valb, "-o", color=C["synth"], lw=1.5, ms=4.5, zorder=5)
+axv.axhline(ctrl_val, ls=":", lw=0.75, color=REF, zorder=1)
+axv.text(150, ctrl_val - 0.04, "real-only control 9.91", fontsize=TICK,
+         color=C["ink"], ha="center", va="top")
+axv.annotate(f"{valb[-1]:.2f}", (frames[-1], valb[-1]), textcoords="offset points",
+             xytext=(0, 5), ha="center", va="bottom", fontsize=TICK, color=C["ink"])
+axv.set_ylabel("Validation BLEU-4\n(greedy)")
+axv.set_ylim(9.6, 11.1)
+axv.set_yticks([10.0, 10.5, 11.0])
 
-for f, v in zip(frames, valb):
-    ax.annotate(f"{v:.3f}", (f, v), textcoords="offset points", xytext=(0, -18),
-                ha="center", fontsize=FS["label"], color=C["pre"], weight="bold")
-for f, t in zip(frames, testb):
-    ax.annotate(f"{t:.2f}", (f, t), textcoords="offset points", xytext=(0, 11),
-                ha="center", fontsize=FS["label"], color=C["synth"])
+axt.plot(frames, testb, "-s", color=C["synth"], lw=1.5, ms=4.5, zorder=4)
+axt.annotate(f"{testb[-1]:.2f}", (frames[-1], testb[-1]), textcoords="offset points",
+             xytext=(0, 5), ha="center", va="bottom", fontsize=TICK, color=C["ink"])
+axt.set_ylabel("Test BLEU-4\n(beam-5)")
+axt.set_ylim(10.2, 11.7)
+axt.set_yticks([10.5, 11.0, 11.5])
+panel(axv, "(a)", dx=-46); panel(axt, "(b)", dx=-46)
 
-ax.invert_xaxis()
-ax.set_xticks(frames)
-ax.set_xticklabels(ticklab, fontsize=FS["sub"])
-ax.set_xlabel("Mean synthetic clip length (frames) $\\longrightarrow$ closer to real signing",
-              labelpad=6)
-ax.set_ylabel("BLEU-4")
-ax.set_xlim(262, 70)
-ax.set_ylim(9.65, 11.62)
-ax.set_title("Validation orders the arms monotonically with temporal fidelity",
-             fontsize=FS["head"], weight="bold", pad=10)
-ax.legend(loc="upper left", fontsize=FS["sub"], framealpha=0.95)
+axt.set_xticks(frames)
+axt.set_xticklabels(ticklab, fontsize=TICK)
+axt.set_xlabel("Mean synthetic clip length (frames), decreasing $\\longrightarrow$", labelpad=6)
+axt.set_xlim(262, 70)
+fig.align_ylabels((axv, axt))
 fig.tight_layout()
 fig.savefig("fig5_temporal_fidelity.png", dpi=300, bbox_inches="tight")
 fig.savefig("fig5_temporal_fidelity.pdf", bbox_inches="tight")
@@ -291,65 +316,74 @@ plt.close(fig)
 rows = [
     ("empty output (all deletions)",              1.0000, 0.00,   "null"),
     ('constant "hello ."',                        0.9988, 0.00,   "null"),
-    ("S6 ensemble, beam-5 / LP 1.0",              0.976,  11.50,  "model"),
-    ("S6 ensemble, MBR-WER decode",               0.956,  10.69,  "model"),
+    ("6-member ensemble, beam 5, LP 1.0",              0.976,  11.50,  "model"),
+    ("6-member ensemble, MBR decoding",               0.956,  10.69,  "model"),
     ('constant "it is sally ." (video ignored)',  0.9504, 0.38,   "null"),
-    ("RGB fusion, beam-5 (best single model)",    0.9497, 10.33,  "model"),
-    ("S6 ensemble, beam-10 / LP 0.3",             0.9069, 11.802, "best"),
-    ("S6 ensemble, beam-10 / LP 0.2",             0.9064, 11.616, "model"),
-    ("RGB fusion, blindly cut to 3 words",        0.8999, 4.87,   "degenerate"),
-    ("per-sentence oracle over 6 configurations", 0.807,  14.33,  "oracle"),
+    ("RGB-fusion model, beam 5",    0.9497, 10.33,  "model"),
+    ("final ensemble (beam 10, LP 0.3)",             0.9069, 11.802, "best"),
+    ("6-member ensemble, beam 10, LP 0.2",             0.9064, 11.616, "model"),
+    ("RGB-fusion output cut to 3 words",        0.8999, 4.87,   "degenerate"),
+    ("per-sentence oracle over 6 outputs", 0.807,  14.33,  "oracle"),
 ]
-style = {"null":   dict(c=C["base"],   m="X", s=105),
-         "model":  dict(c=C["pre"],    m="o", s=85),
-         "best":   dict(c=C["ens"],    m="*", s=340),
-         "oracle": dict(c=C["fusion"], m="D", s=75),
-         "degenerate": dict(c=C["synth"], m="v", s=105)}
+# marker areas in pt^2: diameters of 4-5 pt (the star slightly larger, it is the reported point)
+# shape = kind of row; fill colour = the method (global mapping of fig1: ensemble yellow,
+# RGB fusion teal); null models in the warn colour; the oracle hollow (it is not a method).
+# Every marker has a dark edge so the yellow stays visible on white and in greyscale.
+style = {"null":   dict(c=C["base"],   m="X", s=28),
+         "model":  dict(c=C["grey"],   m="o", s=24),
+         "best":   dict(c=C["ens"],    m="*", s=110),
+         "oracle": dict(c="white",     m="D", s=20),
+         "degenerate": dict(c=C["grey"], m="v", s=26)}
+
+
+def _row_colour(lab, kind):
+    if kind in ("null", "oracle"):
+        return style[kind]["c"]
+    if "ensemble" in lab:
+        return C["ens"]
+    if lab.startswith("RGB-fusion"):
+        return C["fusion"]
+    return style[kind]["c"]
 
 y = np.arange(len(rows))
-fig, ax = plt.subplots(figsize=(TARGET_W, 3.62))
-ax.axvspan(0.9504, 1.02, color=C["base"], alpha=0.08, zorder=0)
-ax.axvline(0.9504, ls="--", lw=1.6, color=C["base"], zorder=2)
-ax.axvline(1.0000, ls="-",  lw=1.3, color=C["grey"], zorder=2)
+fig, ax = plt.subplots(figsize=(TARGET_W, 3.8))
+ax.axvline(0.9504, ls="--", lw=0.75, color=REF, zorder=1)
+ax.axvline(1.0000, ls=":",  lw=0.75, color=REF, zorder=1)
 
 for yi, (lab, wer, bleu, kind) in zip(y, rows):
     st = style[kind]
-    ax.plot([1.02, wer], [yi, yi], lw=0.9, color="#D6D8DA", zorder=1)
-    ax.scatter(wer, yi, c=st["c"], marker=st["m"], s=st["s"], zorder=5,
-               edgecolors="white", linewidths=0.9)
-    ax.text(0.7860, yi, f"{bleu:5.2f}", va="center", ha="right",
-            fontsize=FS["label"], color=C["ink"],
-            weight="bold" if kind == "best" else "normal")
+    ax.plot([1.02, wer], [yi, yi], lw=0.75, color="#DDDDDD", zorder=1)
+    ax.scatter(wer, yi, c=[_row_colour(lab, kind)], marker=st["m"], s=st["s"], zorder=5,
+               edgecolors=C["ink"], linewidths=0.8 if kind == "best" else 0.5)
+    ax.text(1.11, yi, f"{bleu:5.2f}", va="center", ha="right",
+            fontsize=TICK, color=C["ink"], transform=ax.get_yaxis_transform(),
+            clip_on=False, weight="bold" if kind == "best" else "normal")
 
-# the 0.0007 gap that makes the point
-ax.annotate("", xy=(0.9497, 5), xytext=(0.9504, 4),
-            arrowprops=dict(arrowstyle="-", lw=1.4, color=C["ink"]), zorder=6)
-ax.text(0.947, 4.5, "  0.0007 apart on WER,\n  9.95 apart on BLEU-4",
-        fontsize=FS["sub"], color=C["ink"], va="center", ha="left", style="italic")
-ax.text(0.9497, -0.95, "null-model floor 0.950", fontsize=FS["sub"], color=C["base"],
-        ha="left", va="bottom", weight="bold")
-ax.text(1.0005, -0.95, "silence\n1.000", fontsize=FS["sub"], color="#5f6368",
-        ha="right", va="bottom")
-ax.text(0.7860, -0.95, "BLEU-4", fontsize=FS["label"], color=C["ink"], ha="right",
-        va="bottom", weight="bold")
+# column header for the BLEU-4 values printed beside each row
+ax.text(1.11, -0.95, "BLEU-4", fontsize=FS["label"], color=C["ink"], ha="right",
+        va="bottom", transform=ax.get_yaxis_transform(), clip_on=False)
 
-ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=FS["label"])
+ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=TICK)
 ax.invert_yaxis()
-ax.set_xlim(1.021, 0.7745)
+ax.set_xlim(1.021, 0.795)
 ax.set_ylim(len(rows) - 0.4, -1.25)
-ax.set_xlabel("WER $\\longleftarrow$ better")
-ax.grid(axis="y", visible=False)
-ax.set_title("WER is nearly uninformative here: silence scores 1.000 and a constant\n"
-             "string scores 0.950, leaving 0.093 of usable range",
-             fontsize=FS["head"], weight="bold", pad=10)
-leg = [Patch(fc=C["base"],   label="input-blind null model"),
-       Patch(fc=C["pre"],    label="trained system"),
-       Patch(fc=C["synth"],  label="trained system, output blindly truncated"),
-       Patch(fc=C["ens"],    label="reported operating point"),
-       Patch(fc=C["fusion"], label="oracle upper bound")]
-ax.legend(handles=leg, loc="lower left", fontsize=FS["sub"], framealpha=0.96,
-          borderpad=0.5)
-fig.tight_layout()
+ax.set_xlabel("WER (axis reversed: lower, i.e. better, to the right)")
+ax.grid(False); ax.grid(True, axis="x")      # value axis only
+_mk = lambda kind, lab, fc: Line2D([], [], ls="none", marker=style[kind]["m"],
+                                   ms=np.sqrt(style[kind]["s"]), mfc=fc,
+                                   mec=C["ink"], mew=0.5, label=lab)
+leg = [_mk("null", "null model (ignores the video)", C["base"]),
+       _mk("model", "trained system", "white"),
+       _mk("degenerate", "trained system, output cut short", "white"),
+       _mk("best", "reported operating point", C["ens"]),
+       _mk("oracle", "oracle upper bound", "white"),
+       Patch(fc=C["ens"], ec=C["ink"], lw=0.5, label="6-member ensemble"),
+       Patch(fc=C["fusion"], ec=C["ink"], lw=0.5, label="RGB fusion"),
+       Line2D([], [], ls="--", lw=0.75, c=REF, label="lowest null-model WER, 0.950"),
+       Line2D([], [], ls=":", lw=0.75, c=REF, label="empty output, WER 1.000")]
+fig.legend(handles=leg, loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=3,
+           fontsize=TICK, frameon=False)
+fig.tight_layout(rect=(0, 0.19, 1, 1))
 fig.savefig("fig6_bleu_wer_tradeoff.png", dpi=300, bbox_inches="tight")
 fig.savefig("fig6_bleu_wer_tradeoff.pdf", bbox_inches="tight")
 plt.close(fig)
@@ -361,42 +395,48 @@ plt.close(fig)
 # 50% is omitted: §5 shows the retained sets there are too small to replicate.
 # =====================================================================
 cov = [100, 90, 75, 50]
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(TARGET_W, 2.63), gridspec_kw={"width_ratios": [1.35, 1]})
-ax1.plot(cov, [9.52, 10.37, 12.05, 17.42], "-o", color=C["ens"], lw=2.4, ms=7, zorder=5,
-         label="confidence ranking, test")
-ax1.plot(cov, [9.64, 10.37, 12.44, 18.42], "--o", color=C["synth"], lw=1.8, ms=6, zorder=4,
-         label="confidence ranking, validation")
-ax1.plot(cov, [9.52, 10.21, 11.54, 16.16], ":D", color=C["fusion"], lw=1.6, ms=5, zorder=3,
-         label="oracle: true per-clip chrF, test")
-ax1.plot(cov, [9.52, 9.90, 10.39, 10.48], "-s", color=C["grey"], lw=1.4, ms=5, zorder=3,
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(TARGET_W, 2.9), gridspec_kw={"width_ratios": [1.35, 1]})
+# baselines first, grey, 0.75 pt; the confidence ranking (the method) last, saturated
+ax1.plot(cov, [9.52, 9.90, 10.39, 10.48], "--s", color=REF, lw=0.75, ms=3.5, zorder=3,
          label="keep the longest outputs, test")
-ax1.plot(cov, [9.52, 9.50, 9.37, 9.34], "-x", color=C["base"], lw=1.4, ms=6, zorder=3,
+ax1.plot(cov, [9.52, 9.50, 9.37, 9.34], "-.x", color=REF, lw=0.75, ms=4, zorder=3,
          label="random abstention, test")
-ax1.annotate("17.42", (50, 17.42), textcoords="offset points", xytext=(9, -1), ha="left", va="center",
-             fontsize=FS["label"], color=C["ens"], weight="bold")
-ax1.set_xlim(104, 43); ax1.set_xticks(cov); ax1.set_xticklabels([f"{c}%" for c in cov])
-ax1.set_xlabel("Coverage (share of clips the model answers)")
-ax1.set_ylabel("Corpus BLEU-4 on the answered clips")
-ax1.set_ylim(8.5, 19.5)
-ax1.set_title("All 800 clips", fontsize=FS["head"], weight="bold")
-ax1.legend(loc="upper left", fontsize=FS["sub"], framealpha=0.95)
-covu = [100, 75, 50]
-ax2.plot(covu, [4.88, 5.83, 7.92], "-o", color=C["ens"], lw=2.4, ms=7, zorder=5,
+ax1.plot(cov, [9.52, 10.21, 11.54, 16.16], ":D", color=C["fusion"], lw=1.25, ms=3.5, zorder=4,
+         label="oracle: true per-clip chrF, test")
+ax1.plot(cov, [9.64, 10.37, 12.44, 18.42], "--o", color=C["pre"], lw=1.25, ms=4, mfc="white",
+         zorder=5, label="confidence ranking, validation")
+ax1.plot(cov, [9.52, 10.37, 12.05, 17.42], "-o", color=C["pre"], lw=1.5, ms=4.5, zorder=6,
          label="confidence ranking, test")
-ax2.plot(covu, [4.27, 5.33, 7.24], "--o", color=C["synth"], lw=1.8, ms=6, zorder=4,
-         label="confidence ranking, validation")
-ax2.plot(covu, [4.88, 4.88, 4.68], "-x", color=C["base"], lw=1.4, ms=6, zorder=3,
+ax1.annotate("17.42", (50, 17.42), textcoords="offset points", xytext=(6, -1), ha="left",
+             va="center", fontsize=TICK, color=C["ink"])
+ax1.set_xlim(104, 43); ax1.set_xticks(cov); ax1.set_xticklabels([f"{c}%" for c in cov])
+ax1.set_xlabel("Coverage (% of clips answered)")
+ax1.set_ylabel("BLEU-4, answered clips\n(all clips)")
+ax1.set_ylim(8.5, 19.5)
+ax1.set_yticks([10, 14, 18])
+covu = [100, 75, 50]
+ax2.plot(covu, [4.88, 4.88, 4.68], "-.x", color=REF, lw=0.75, ms=4, zorder=3,
          label="random abstention, test")
-ax2.plot(covu, [4.27, 4.34, 4.20], ":x", color=C["base"], lw=1.2, ms=6, zorder=3,
+ax2.plot(covu, [4.27, 4.34, 4.20], ":x", color=REF, lw=0.75, ms=4, zorder=3,
          label="random abstention, validation")
+ax2.plot(covu, [4.27, 5.33, 7.24], "--o", color=C["pre"], lw=1.25, ms=4, mfc="white", zorder=5,
+         label="confidence ranking, validation")
+ax2.plot(covu, [4.88, 5.83, 7.92], "-o", color=C["pre"], lw=1.5, ms=4.5, zorder=6,
+         label="confidence ranking, test")
 ax2.invert_xaxis(); ax2.set_xticks(covu); ax2.set_xticklabels([f"{c}%" for c in covu])
-ax2.set_xlabel("Coverage")
+ax2.set_xlabel("Coverage (% of clips answered)")
+ax2.set_ylabel("BLEU-4, answered clips\n(unseen-target clips)")
 ax2.set_ylim(3.5, 9.0)
-ax2.set_title("Unseen target sentences only", fontsize=FS["head"], weight="bold")
-ax2.legend(loc="upper left", fontsize=FS["sub"], framealpha=0.95)
-fig.suptitle("Declining the least-confident clips roughly doubles BLEU-4 at half coverage",
-             fontsize=FS["head"], weight="bold")
-fig.tight_layout()
+ax2.set_yticks([4, 6, 8])
+panel(ax1, "(a)", dx=-40); panel(ax2, "(b)", dx=-34)
+# one shared legend below both panels (identical series appear once)
+_h1, _l1 = ax1.get_legend_handles_labels()
+_h2, _l2 = ax2.get_legend_handles_labels()
+_h = _h1 + [h for h, l in zip(_h2, _l2) if l not in _l1]
+_l = _l1 + [l for l in _l2 if l not in _l1]
+fig.legend(_h, _l, loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=3,
+           fontsize=TICK, frameon=False)
+fig.tight_layout(rect=(0, 0.15, 1, 1))
 fig.savefig("fig7_selective_prediction.png", dpi=300, bbox_inches="tight")
 fig.savefig("fig7_selective_prediction.pdf", bbox_inches="tight")
 plt.close(fig)
@@ -409,25 +449,35 @@ plt.close(fig)
 arts = ["face", "body", "hands", "body + hands"]
 iso = [13.6, 32.5, 42.8, 41.9]   # all 630 citation clips (id-parsing fix, 2026-09-26; was 564)
 cont = [3.3, 15.4, 18.1, 18.7]
-x = np.arange(len(arts)); w = 0.36
-fig, ax = plt.subplots(figsize=(TARGET_W, 3.78))
-b1 = ax.bar(x - w/2, iso, w, color=C["pre"], zorder=3,
-            label="isolated signs (citation form, MM-WLAuslan)")
-b2 = ax.bar(x + w/2, cont, w, color=C["base"], zorder=3,
-            label="continuous signing (conversational, Auslan-Daily)")
-for bars_ in (b1, b2):
-    for r in bars_:
-        ax.text(r.get_x()+r.get_width()/2, r.get_height()+0.6, f"{r.get_height():.1f}%",
-                ha="center", va="bottom", fontsize=FS["label"])
-ax.plot([x[2] + w/2], [24.9], marker="*", ms=16, color=C["ens"], mec="white", ls="none", zorder=6,
-        label="continuous hands, hand-local normalisation (24.9%)")
-ax.axhline(2.2, ls=":", lw=1.4, color=C["grey"], zorder=2, label="chance (1 in 45 = 2.2%)")
-ax.set_xticks(x); ax.set_xticklabels(arts)
+w = 0.30
+# per-group positions: groups hold 2, 2, 3, 2 bars and every gap between groups is the same
+_nb = [2, 2, 3, 2]; _ggap = 0.45
+_gstart = np.concatenate([[0.0], np.cumsum([n * w + _ggap for n in _nb[:-1]])])
+x = _gstart + w                 # x - w/2 and x + w/2 are the first two bars of each group
+fig, ax = plt.subplots(figsize=(TARGET_W, 2.8))
+_ch = ax.axhline(2.2, ls=":", lw=0.75, color=REF, zorder=1)
+# conditions, not methods: neutral fills only (solid grey isolated, hatched continuous,
+# cross-hatched hand-local), so no method colour is reused for a condition
+b1 = ax.bar(x - w/2, iso, w, color=C["grey"], edgecolor=C["ink"], linewidth=0.6, zorder=3)
+b2 = ax.bar(x + w/2, cont, w, color="white", edgecolor=C["ink"], linewidth=0.6, hatch="///",
+            zorder=3)
+# the hand-local-normalisation result is a third bar in the hands group, not a floating marker
+b3 = ax.bar([x[2] + 1.5 * w], [24.9], w, color="white", edgecolor=C["ink"], linewidth=0.6,
+            hatch="xxx", zorder=3)
+# horizontal direct labels on the first bar of each series (replaces the legend)
+ax.text(b1[0].get_x() + w / 2, b1[0].get_height() + 1.0, "isolated", color=C["ink"],
+        fontsize=TICK, ha="center", va="bottom")
+ax.text(b2[0].get_x(), b2[0].get_height() + 1.0, "continuous", color=C["ink"],
+        fontsize=TICK, ha="left", va="bottom")
+ax.text(b3[0].get_x() + w / 2, b3[0].get_height() + 1.0, "hand-local", color=C["ink"],
+        fontsize=TICK, ha="center", va="bottom")
+_tx = x.astype(float); _tx[2] += w / 2          # centre the hands tick under its three bars
+ax.set_xticks(_tx); ax.set_xticklabels(arts)
+ax.set_xlim(-0.2, 4.25)
+ax.text(1.008, 2.2, "chance 2.2%", fontsize=TICK, color=C["ink"], ha="left", va="center",
+        transform=ax.get_yaxis_transform(), clip_on=False)
 ax.set_ylabel("Top-1 identification of 45 glosses (%)")
 ax.set_ylim(0, 50)
-ax.set_title("Pose carries sign identity in citation form;\n"
-             "conversational signing loses more than half of it", fontsize=FS["head"], weight="bold", pad=10)
-ax.legend(loc="upper left", fontsize=FS["sub"], framealpha=0.95, markerscale=0.7)
 fig.tight_layout()
 fig.savefig("fig8_identification_probe.png", dpi=300, bbox_inches="tight")
 fig.savefig("fig8_identification_probe.pdf", bbox_inches="tight")
@@ -443,31 +493,34 @@ test_b = {42: [9.89, 10.90, 11.52, 10.67], 101: [10.10, 10.80, 11.03, 10.46], 20
 # The real-only controls' validation scores are not in the project record, so they are missing here.
 val_b = {42: [np.nan, 10.268, 10.271, 10.109], 101: [np.nan, 9.643, 10.912, 10.346],
          202: [np.nan, 11.091, 9.969, 10.399]}
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(TARGET_W, 2.62), sharey=True)
+_seed_mk = {42: "o", 101: "s", 202: "^"}        # one marker shape per seed, named in the caption
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(TARGET_W, 2.6), sharey=False)
 for ax, data, name in ((ax1, test_b, "Test BLEU-4 (beam-5)"),
-                       (ax2, val_b, "Validation BLEU-4 (the selection metric)")):
+                       (ax2, val_b, "Validation BLEU-4 (greedy)")):
     for s, v in data.items():
-        ax.plot(ratios, v, "-o", color=C["grey"], lw=1.1, ms=4, alpha=0.9, zorder=3)
-    placed = []  # seed labels at the line ends, nudged apart so close endpoints stay legible
-    for y, s in sorted((v[-1], s) for s, v in data.items()):
-        y_lab = max(y, placed[-1] + 0.13) if placed else y
-        placed.append(y_lab)
-        ax.text(ratios[-1] + 0.07, y_lab, f"s{s}", fontsize=FS["tiny"], color="#5f6368", va="center")
-    ax.set_xlim(-0.12, 1.92)
+        ax.plot(ratios, v, "-", marker=_seed_mk[s], color=C["grey"], mfc="white", mec=C["ink"],
+                mew=0.6, lw=0.75, ms=4, zorder=3)
+    ax.set_xlim(-0.15, 2.05)
     arr = np.array(list(data.values()), dtype=float)
     mean = [np.nan if np.isnan(col).all() else float(np.nanmean(col)) for col in arr.T]
-    ax.plot(ratios, mean, "-o", color=C["synth"], lw=2.6, ms=7, zorder=5, label="mean of 3 seeds")
+    ax.plot(ratios, mean, "-D", color=C["synth"], lw=1.5, ms=4, zorder=5)
+    ax.text(ratios[-1] + 0.09, mean[-1], "mean", color=C["synth"], fontsize=TICK,
+            ha="left", va="center")
     ax.set_xticks(ratios); ax.set_xticklabels(["real only", "0.55:1", "1.1:1", "1.66:1"])
     ax.set_xlabel("Synthetic : real training clips")
-    ax.set_title(name, fontsize=FS["head"], weight="bold")
-ax1.plot([1.66], [8.54], "X", ms=11, color=C["base"], zorder=6,
-         label="compute-matched control (real data repeated), s42")
-ax2.text(0, 9.1, "control validation\nnot recorded", fontsize=FS["tiny"], color="#5f6368", ha="center")
-ax1.set_ylabel("BLEU-4")
+    ax.set_ylabel(name)
+# (b) has no real-only validation scores, so its empty category is dropped; test and validation
+# are not on a comparable level, so (b) gets its own labelled y-axis
+ax2.set_xlim(0.40, 2.05)
+ax2.set_xticks(ratios[1:]); ax2.set_xticklabels(["0.55:1", "1.1:1", "1.66:1"])
+ax2.set_ylim(9.4, 11.3)
+ax2.set_yticks([9.5, 10.0, 10.5, 11.0])
+ax1.plot([1.66], [8.54], "X", ms=5, color=C["base"], ls="none", zorder=6)
+ax1.text(1.56, 8.54, "compute-matched\ncontrol", color=C["base"], fontsize=TICK,
+         ha="right", va="center")
 ax1.set_ylim(8.2, 11.9)
-ax1.legend(loc="lower right", fontsize=FS["sub"], framealpha=0.95)
-fig.suptitle("More correctly-timed synthetic data helps beyond 0.55:1 on test; "
-             "validation does not separate the ratios", fontsize=FS["head"], weight="bold")
+ax1.set_yticks([9, 10, 11])
+panel(ax1, "(a)", dx=-34); panel(ax2, "(b)", dx=-40)
 fig.tight_layout()
 fig.savefig("fig9_synthetic_ratio.png", dpi=300, bbox_inches="tight")
 fig.savefig("fig9_synthetic_ratio.pdf", bbox_inches="tight")
@@ -485,16 +538,16 @@ pat = re.compile(r"\[all n=800\] (\w+) vs (\w+): observed ([+-][\d.]+)\s+95% CI 
                  r"([+-][\d.]+)\]\s+P\(\w+>\w+\) ([\d.]+)%")
 boot = {(m.group(1), m.group(2)): tuple(float(m.group(i)) for i in (3, 4, 5, 6))
         for m in pat.finditer(open(src).read())}
-order = [("VLP", "CTC", "VLP pretraining vs DWPose + CTC"),
-         ("RGBF", "CTC", "RGB fusion vs DWPose + CTC"),
-         ("S6", "RGBF", "6-member ensemble vs RGB fusion"),
-         ("F", "S6", "3 duration + 2 fusion (0.55:1) vs 6-member"),
-         ("G1", "S6", "6 duration + 2 fusion (validation-best) vs 6-member"),
-         ("Fprime", "S6", "3 duration + 2 fusion (1.1:1) vs 6-member"),
-         ("Fprime", "F", "1.1:1 vs 0.55:1 duration members")]
+order = [("VLP", "CTC", "40-epoch pre-trained $-$ baseline"),
+         ("RGBF", "CTC", "RGB-fusion $-$ baseline"),
+         ("S6", "RGBF", "final ensemble $-$ its RGB-fusion member"),
+         ("F", "S6", "stitched-data ensemble (0.55:1) $-$ final ensemble"),
+         ("G1", "S6", "8-member stitched-data ensemble $-$ final ensemble"),
+         ("Fprime", "S6", "stitched-data ensemble (1.1:1) $-$ final ensemble"),
+         ("Fprime", "F", "stitched-data ensemble: 1.1:1 $-$ 0.55:1")]
 missing = [f"{a}:{b}" for a, b, _ in order if (a, b) not in boot]
 assert not missing, f"bootstrap output lacks {missing}"
-fig, ax = plt.subplots(figsize=(TARGET_W, 3.15))
+fig, ax = plt.subplots(figsize=(TARGET_W, 2.6))
 n_sig, sig_pairs = 0, []
 for yi, (a, b, lab) in enumerate(order):
     obs, lo, hi, p = boot[(a, b)]
@@ -502,24 +555,22 @@ for yi, (a, b, lab) in enumerate(order):
     n_sig += sig
     if sig:
         sig_pairs.append((a, b))
-    col = C["ens"] if sig else C["pre"]
-    ax.plot([lo, hi], [yi, yi], color=col, lw=2.6, solid_capstyle="round", zorder=3)
-    ax.plot(obs, yi, "o", ms=8, color=col, mec="white", zorder=4)
-    ax.text(2.95, yi, f"{obs:+.2f}  [{lo:+.2f}, {hi:+.2f}]", va="center", ha="left", fontsize=FS["sub"],
-            color=C["ink"])
-ax.axvline(0, color=C["ink"], lw=1.2, zorder=2)
-ax.set_yticks(range(len(order))); ax.set_yticklabels([o[2] for o in order], fontsize=FS["label"])
+    # excludes zero: accent, diamond, bold numbers; otherwise grey circle (colour + shape + weight)
+    col = C["pre"] if sig else C["grey"]
+    ax.plot([lo, hi], [yi, yi], color=col, lw=1.5, solid_capstyle="butt", zorder=3)
+    ax.plot(obs, yi, "D" if sig else "o", ms=5 if sig else 4.5, color=col, mec="white",
+            mew=0.6, zorder=4)
+    ax.text(1.03, yi, f"{obs:+.2f}  [{lo:+.2f}, {hi:+.2f}]", va="center", ha="left",
+            fontsize=TICK, color=C["ink"], transform=ax.get_yaxis_transform(),
+            clip_on=False, weight="bold" if sig else "normal")
+ax.text(1.03, 1.0, "$\\Delta$  [95% CI]", va="bottom", ha="left", fontsize=TICK,
+        color=C["ink"], transform=ax.transAxes, clip_on=False)
+ax.axvline(0, color=C["ink"], lw=0.75, zorder=2)
+ax.set_yticks(range(len(order))); ax.set_yticklabels([o[2] for o in order], fontsize=TICK)
 ax.invert_yaxis()
-ax.set_xlim(-2.0, 4.6)
+ax.set_xlim(-2.0, 3.0)
 ax.set_xlabel("Difference in test BLEU-4 (95% paired-bootstrap interval)")
-ax.grid(axis="y", visible=False)
-ax.legend(handles=[Patch(fc=C["ens"], label="interval excludes zero"),
-                   Patch(fc=C["pre"], label="not resolvable")], loc="upper center",
-          bbox_to_anchor=(0.5, -0.17), ncol=2, fontsize=FS["sub"], framealpha=0.95)
-title = ("Only the ensembling step is resolvable on an 800-sentence test split"
-         if sig_pairs == [("S6", "RGBF")] else
-         f"Paired-bootstrap resolution: {n_sig} of {len(order)} comparisons exclude zero")
-ax.set_title(title, fontsize=FS["head"], weight="bold", pad=10)
+ax.grid(False); ax.grid(True, axis="x")      # value axis only
 fig.tight_layout()
 fig.savefig("fig10_bootstrap_resolution.png", dpi=300, bbox_inches="tight")
 fig.savefig("fig10_bootstrap_resolution.pdf", bbox_inches="tight")

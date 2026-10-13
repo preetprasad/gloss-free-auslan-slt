@@ -147,6 +147,21 @@ def _surface_forms(gloss: str, paren_alias: bool = True) -> List[str]:
 # corpora already trained on must keep rebuilding byte-identically.
 LETTER_PRONOUN_ALIAS = {"i": "me"}
 
+# ── wrong-sense glosses (OPT-IN via build_posestitch_corpus_v2.py --drop_wrong_sense; wave 12b) ──────────
+# With paren_alias=False a gloss is indexed by its label MINUS the bracket, and in these 14 labels the bracket negates
+# the base or names another sense. So the English word "good" is rendered as GOOD (NO GOOD) (Dictionary.json keywords:
+# "unsatisfactory"), "be" as BE (NOT BE) ("have none"), and the modal "can" as CAN (TIN). MM-WLAuslan has no
+# positive-sense gloss for nine of the 14 base forms (be, believe, can, enough, good, know, responsible, want, yet).
+# MEASURED on the adopted 13,760-clip corpus (audit sidecar of its array-identical rebuild, wave-4 corpus A): 3,257 of
+# 94,428 rendered signs = 3.45%, in 2,890 clips; 11 of the 14 glosses occur. The other four negated glosses of the
+# dictionary (clever, like, my, your) never win their base form, because a plain gloss comes first, so they are not here.
+# This constant changes nothing by itself: build_lexicon and match_signs do not read it.
+WRONG_SENSE_GLOSSES = frozenset({
+    "be (not be)", "before that (not before that)", "believe (not believe)", "bother (no bother)", "can (tin)",
+    "enough (not enough)", "good (no good)", "know (not know)", "matter (not matter)", "mind (not mind)",
+    "prior to (not prior to)", "responsible (not responsible)", "want (not want)", "yet (not yet)",
+})
+
 
 def build_lexicon(label_paths, npz_dirs=None, morphology: bool = False,
                   paren_alias: bool = True, letter_fix: bool = False) -> Lexicon:
