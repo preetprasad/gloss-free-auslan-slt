@@ -29,6 +29,14 @@ set -eo pipefail
 source /group/pmc099/pprasad/code/phase2_baseline/kaya/_w11lib.sh   # module and venv set-up are not nounset-safe
 set -u
 
+# --- gate 0: the recipe is the pre-registered one. POSE and DET can be overridden from the submitting shell's
+# environment (sbatch exports it), and the library sits in the shared tree, so the values are asserted, not assumed.
+[ "$POSE" = "--num_keypoints 133 --keypoint_subset all --coord_norm frame" ] && [ "$DET" = "--deterministic True" ] \
+  && [ "$AUG_DEF" = "--pose_aug True --aug_speed 0.2 --aug_rotate_deg 10.0 --aug_scale 0.1" ] \
+  && [ "$(echo $REC)" = "--batch_size 64 --ctc_weight 0.3 --lr 5e-4 --lr_schedule cosine --warmup_steps 800 --bleu_tokenize 13a --detokenize True --device cuda --num_workers 8" ] \
+  || { echo "FAIL: POSE / DET / AUG_DEF / REC differ from the pre-registered recipe (an exported variable or an edited library)"; exit 1; }
+echo "gate 0 OK: recipe variables"
+
 T=$SLURM_ARRAY_TASK_ID
 ARMS=(nA nS nSA nRA); SEEDS=(42 101 202)
 if [ "$T" -lt 0 ] || [ "$T" -gt 11 ]; then echo "FAIL: task $T is outside 0-11"; exit 1; fi
@@ -63,6 +71,12 @@ md5sum -c --quiet - <<MD5 || { echo "FAIL: a News manifest changed"; exit 1; }
 fd31d79eef3a5d6dde5b9f0839d05dbd  $M/news_val.tsv
 c11da128f6c46844ff6ce4f3352d894f  $M/news_test.tsv
 80eb65dd8fc036afc453ca47e0dc1afd  $SA
+MD5
+# pin_pose pins a Communication clip that no News manifest reads. These two are inputs of THIS job: the first real
+# News training clip and the first stitched clip (its md5 is the one recorded on 10 Sep 2026, the project log 09-10ab).
+md5sum -c --quiet - <<MD5 || { echo "FAIL: a pinned News or stitched clip changed"; exit 1; }
+057c38a5d21ae29e4318c4f746799ca0  $G/scratch_backup/news/dwpose_clips/16_10_2022_0.npz
+a765ab81fd219c7c5a123e284c793dff  $G/stitch_scale2/corpus/clips/stitch2_000000.npz
 MD5
 assert_group "$M/news_train.tsv" "$SA" "$M/news_val.tsv" "$M/news_test.tsv"
 echo "gate 2 OK: manifests pinned, every clip on /group"

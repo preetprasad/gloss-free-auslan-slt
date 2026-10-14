@@ -19,6 +19,12 @@
 set -euo pipefail
 # The wave-5 snapshot is the one wave 9 ran from. `module` and `activate` are not written for nounset.
 set +u; source /group/pmc099/pprasad/code/phase2_baseline/kaya/_w5lib.sh; set -u
+# The harness library is the file wave 9 sourced (dated 22 Sep on Kaya), and neither of its two variables that the
+# submitting shell's environment can override (sbatch exports the environment) was overridden.
+echo "c641eb329187d3bf3ca4ce8656e54709  /group/pmc099/pprasad/code/phase2_baseline/kaya/_w5lib.sh" | md5sum -c --quiet - \
+    || { echo "FAIL: kaya/_w5lib.sh is not the library wave 9 sourced"; exit 1; }
+[ "$DET" = "--deterministic True" ] && [ "$POSE" = "--num_keypoints 133 --keypoint_subset all --coord_norm frame" ] \
+    || { echo "FAIL: DET or POSE was overridden from the environment (DET='$DET' POSE='$POSE')"; exit 1; }
 pin_pose
 T=$SLURM_ARRAY_TASK_ID; SEEDS=(303 404 505 606 707); ARMS=(c0 v2)
 arm=${ARMS[$((T / 5))]}; s=${SEEDS[$((T % 5))]}
@@ -106,6 +112,9 @@ PY
 w4run "$arm" "$RUNS" "$MW/joint_$arm.tsv" "$MW/${arm}_val.tsv" "$MW/${arm}_test.tsv" "$s" 40 -- \
     $AUG_DEF --vocab_file "$W5/manifests/vocab.json" || { echo "[FAIL] train ${arm}"; exit 1; }
 for f in beam5_val_best beam5_test_best; do [ -s "$DIR/$f.json" ] || { echo "FAIL: $f.json missing"; exit 1; }; done
+# The run counts from here: everything the pre-registered statistic reads exists. DONE is written BEFORE the secondary
+# decodes, so a node failure or a time-out during them cannot void a finished run and force it to be trained again.
+touch "$DIR/DONE"
 
 # Secondary read-out only: the same best.pt decoded on the OTHER arm's pose (separates the pose at decoding time from
 # the pose at training time). A failure here does not fail the arm.
@@ -114,4 +123,4 @@ for split in val test; do
       --output_json "$DIR/beam5_${split}_best_on_${other}.json" > "$DIR/beam5_${split}_best_on_${other}.log" 2>&1 \
       || echo "[WARN] cross-pose decode ${split} failed (secondary read-out only)"
 done
-touch "$DIR/DONE"; echo "W12I_DONE ${arm} seed ${s}"
+echo "W12I_DONE ${arm} seed ${s}"

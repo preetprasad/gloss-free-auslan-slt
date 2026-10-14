@@ -3,8 +3,10 @@
 # (geometric mean of their probabilities); does a power mean (p = -1, 0.5, 1, 2) decode VALIDATION better?
 # One array task per rule (0: p = 0 control, 1: p = -1, 2: p = 0.5, 3: p = 1, 4: p = 2), then one read-out task.
 # CPU only, no training, NO TEST DECODE. Pre-registration: results/PREREG_WAVE12D_POWERMEAN_2026-10-13.md
-#   decode:    sbatch kaya/w12d_powermean.sbatch
-#   read-out:  sbatch --array=0 --dependency=afterok:<decode job> --export=ALL,MODE=report kaya/w12d_powermean.sbatch
+#   decode:    J=$(sbatch --parsable --export=ALL,MODE=decode kaya/w12d_powermean.sbatch)
+#              (MODE is set explicitly: sbatch passes the submitting shell's environment on, and an exported
+#               MODE=report would send all five tasks into the read-out branch)
+#   read-out:  sbatch --array=0 --dependency=afterok:$J --export=ALL,MODE=report kaya/w12d_powermean.sbatch
 # Code: the wave-12 snapshot ($G/wave12/code); the three files of this experiment are md5-pinned below.
 #SBATCH --job-name=w12d-powermean
 #SBATCH --partition=work
@@ -27,7 +29,7 @@ echo "mode $MODE  task $T  snapshot $(pwd)"
 # ---- code gates ----
 md5sum -c - <<'EOF' || { echo "FAIL: the experiment's code differs from the files that were verified locally"; exit 1; }
 eb92e7a581d6c3acb51eb01746c16a48  tools/ensemble_mbr_wer.py
-7737bbc077616e8811c0b7b8270bf4fd  tools/w12d_powermean.py
+40168aac538c679fbfd1fb17fefde51e  tools/w12d_powermean.py
 1016182f87254a707a3eeb275ea62975  ensemble_decode.py
 EOF
 if [ -f "$W12/code.md5" ]; then

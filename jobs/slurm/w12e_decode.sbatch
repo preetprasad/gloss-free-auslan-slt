@@ -14,6 +14,8 @@
 #   on a GPU instead:  add  --partition=gpu --gres=gpu:1 --export=ALL,DEV=cuda
 #   steps 1-2 only (minutes; nothing is decoded):  add  --export=ALL,GATES_ONLY=1
 # A run that stops (time limit, node failure) is resubmitted unchanged: finished decode sets carry a DONE marker.
+# The marker holds the device. A resubmission on the OTHER device decodes every set again, so the five sets of one
+# result always come from one device (e.g. after a harness-gate failure on the CPU: resubmit with DEV=cuda).
 #SBATCH --job-name=w12e-decode
 #SBATCH --partition=work
 #SBATCH --account=pmc099
@@ -64,7 +66,9 @@ python "$TOOL" featcheck --manifest "$M/test.tsv"       --rgb_dir "$RGBP" --n 80
 python "$TOOL" featcheck --manifest "$W/negatives.tsv"  --rgb_dir "$RGBN" --n 1678 --name feat_neg      --gates "$GATES"
 python "$TOOL" featcheck --manifest "$MT/val.tsv"       --rgb_dir "$RGBT" --n 800  --name feat_trk_val  --gates "$GATES"
 python "$TOOL" featcheck --manifest "$MT/test.tsv"      --rgb_dir "$RGBT" --n 800  --name feat_trk_test --gates "$GATES"
-[ "$(find "$RGBN" -maxdepth 1 -name 'rgb_*.npz' | wc -l)" -eq 1678 ] && [ "$(find "$RGBT" -maxdepth 1 -name 'rgb_*.npz' | wc -l)" -eq 1600 ] \
+# (rgb_<clip>.writing.npz is the extractor's temporary name: a task killed mid-write leaves one behind; the loader never reads it)
+[ "$(find "$RGBN" -maxdepth 1 -name 'rgb_*.npz' ! -name '*.writing.npz' | wc -l)" -eq 1678 ] \
+  && [ "$(find "$RGBT" -maxdepth 1 -name 'rgb_*.npz' ! -name '*.writing.npz' | wc -l)" -eq 1600 ] \
   || { echo "FAIL: unexpected files in the new feature folders"; exit 1; }
 # G-RGB: today's extraction of 100 signer clips on the production pose must equal the stored August features
 python "$TOOL" rgbgate --list "$W/ext_gate.tsv" --new "$W/rgb_gate" --stored "$RGBP" --gates "$GATES"
@@ -75,15 +79,15 @@ fi
 
 decode () {   # <name> <manifest> <rgb feature dir> <rows>
   local d=$DUMPS/$1
-  if [ -e "$d/DONE" ]; then echo "decode $1: already done"; return 0; fi
-  mkdir -p "$d"
+  if [ "$(cat "$d/DONE" 2>/dev/null)" = "$DEV" ]; then echo "decode $1: already done on $DEV"; return 0; fi
+  mkdir -p "$d"; rm -f "$d/DONE"
   python tools/ensemble_mbr_wer.py --ckpts "$CK" --num_keypoints 133 --keypoint_subset all --coord_norm frame \
     --rgb_feat_dir "$3" --rgb_feature_dim 1152 --device "$DEV" --beam 10 \
     --eval_manifest "$2" --lps 0.3 --dump_dir "$d" > "$d/decode.log" 2>&1 \
     || { tail -n 25 "$d/decode.log"; echo "FAIL: decode $1"; exit 1; }
   grep -E "^\[(mbr|preproc)\]" "$d/decode.log" | grep -v "===" || true
   [ "$(grep -c . "$d/nbest.jsonl")" = "$4" ] || { echo "FAIL: decode $1 wrote the wrong number of rows"; exit 1; }
-  touch "$d/DONE"
+  echo "$DEV" > "$d/DONE"
 }
 
 # ---- (3) harness gate: the recorded validation and test decodes, before any non-signer crop is decoded

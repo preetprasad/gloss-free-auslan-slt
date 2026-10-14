@@ -42,7 +42,7 @@ def decode(a):
     from config import Config
     from slt.data import Vocab
     from slt.preproc_guard import assert_preproc_matches_checkpoints
-    from slt.rgb_fusion import RGBDataset, collate_rgb
+    from slt.rgb_fusion import RGBDataset, _rgb_path, collate_rgb
     from ensemble_decode import Member
     from ensemble_mbr_wer import _align_vocabs, ensemble_nbest
 
@@ -61,6 +61,9 @@ def decode(a):
                             list(cks[0]["vocab"]), dev, False)
     ds = RGBDataset(a.manifest, vocab, cfg, "")
     if a.limit: ds.samples = ds.samples[:a.limit]
+    # the loader replaces a missing or unreadable RGB file by one zero frame without a word: refuse instead
+    bad = [c for c, _ in ds.samples if ds._load_feature(_rgb_path(c, ds.rgb_dir), ds.rgb_dim) is None]
+    assert not bad, f"{len(bad)} clips have no usable RGB feature file (a fusion member would see a zero frame): {bad[:3]}"
     dl = DataLoader(ds, batch_size=8, shuffle=False, collate_fn=collate_rgb)
     mx = cfg.decode_max_len or cfg.max_tgt_tokens
     print(f"[w12d] p = {a.power:g} | members {len(members)} fusion={[m.fusion for m in members]} | clips {len(ds)} "
@@ -79,7 +82,10 @@ def decode(a):
 
     os.makedirs(a.out, exist_ok=True)
     f = nbest_file(a.out, a.power)
-    json.dump({"power": a.power, "ckpts": paths, "ckpt_md5": [hashlib.md5(open(p, "rb").read()).hexdigest() for p in paths],
+    md5 = lambda p: hashlib.md5(open(p, "rb").read()).hexdigest()
+    json.dump({"power": a.power, "ckpts": paths, "ckpt_md5": [md5(p) for p in paths],
+               # the read-out refuses rules decoded by different code (a partial re-run after a code change)
+               "code_md5": [md5(ROOT / f) for f in ("tools/ensemble_mbr_wer.py", "ensemble_decode.py", "tools/w12d_powermean.py")],
                "manifest": a.manifest, "beam": a.beam, "limit": a.limit, "refs": refs, "nbest": nbest}, open(f, "w"))
     print(f"[w12d] wrote {f} ({len(nbest)} clips, {sum(map(len, nbest)) / len(nbest):.1f} candidates per clip)", flush=True)
 
@@ -138,7 +144,8 @@ def criteria(ST, n_boot, n_halv, seed=0):
                     "half_agree": agree, "half_ahead": float(np.mean(hd > 0)),
                     "delta_fixed": float(full[r, i03] - full[0, i03]),
                     "ci95_fixed": [float(x) for x in np.percentile(fixed, [2.5, 97.5])],
-                    "different": bool((lo > 0 or hi < 0) and agree >= 0.95)})
+                    # the interval must exclude zero on D_p's own side (pre-registration, section 5)
+                    "different": bool(((lo > 0 and d > 0) or (hi < 0 and d < 0)) and agree >= 0.95)})
     return full, out, CH
 
 
@@ -153,7 +160,7 @@ def report(a):
         assert os.path.exists(nbest_file(a.out, p)), f"missing decode for p = {p:g}: {nbest_file(a.out, p)}"
         D[p] = json.load(open(nbest_file(a.out, p)))
         assert D[p]["power"] == p and not D[p]["limit"], f"p = {p:g}: wrong or truncated decode file"
-        for k in ("refs", "ckpt_md5", "beam", "manifest"):
+        for k in ("refs", "ckpt_md5", "code_md5", "beam", "manifest"):
             assert D[p][k] == D[0.0][k], f"p = {p:g}: {k} differs from the control's"
     refs = D[0.0]["refs"]; n = len(refs)
     assert "val" in os.path.basename(D[0.0]["manifest"]) and "test" not in os.path.basename(D[0.0]["manifest"])
@@ -308,6 +315,8 @@ def self_test(_):
     assert crit[0]["delta"] == 0 and crit[0]["bonf"] == [0.0, 0.0] and not crit[0]["different"]     # same rule: no difference
     assert crit[1]["delta"] > 0 and crit[1]["bonf"][0] > 0 and crit[1]["half_agree"] == 1.0 and crit[1]["different"]
     assert abs(full[2, 0] - 100.0) < 1e-9
+    _, neg, _ = criteria(np.array([[st(refs)] * 2, [st(worse)] * 2], float), 200, 100)
+    assert neg[0]["delta"] < 0 and neg[0]["bonf"][1] < 0 and neg[0]["different"]                    # a worse rule is found too
     print("self-test passed")
 
 

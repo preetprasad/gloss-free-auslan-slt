@@ -32,6 +32,8 @@ RUNS=$W/runs; D=$RUNS/${arm}_s${s}; mkdir -p "$RUNS"
 TR=$MAN/w12g_${arm}_train.tsv; VA=$MAN/w12g_val.tsv; TE=$MAN/w12g_${arm}_test.tsv
 echo "task $T -> arm $arm seed $s | manifests $MAN"
 [ "$DET" = "--deterministic True" ] || { echo "FAIL: this wave runs every arm with deterministic kernels"; exit 1; }
+# the library takes POSE from the environment if it is set, and --export=ALL passes the submitting shell's variables on
+[ "$POSE" = "--num_keypoints 133 --keypoint_subset all --coord_norm frame" ] || { echo "FAIL: POSE is not the P0 setting ($POSE)"; exit 1; }
 [ ! -e "$RUNS/DONE_${arm}_s${s}" ] || { echo "FAIL: ${arm}_s${s} already finished; a result is never overwritten"; exit 1; }
 
 # ---- gates: prep passed; manifests unchanged since then; the code is the wave-11 snapshot read on 13 Oct 2026 ----
@@ -85,6 +87,10 @@ assert ck["vocab"] == want, "the checkpoint vocabulary is not the one built from
 assert not c.get("vocab_file") and not c.get("init_encoder") and not c.get("resume_checkpoint"), "an outside vocabulary or checkpoint was used"
 print(f"vocabulary: {len(want)} entries, built from the training manifest only (OK)")
 PY
-for f in beam5_val_best beam5_test_best; do [ -s "$D/$f.json" ] || { echo "FAIL: $f.json missing"; exit 1; }; done
+# w4run only prints a line when a decode fails, so a decode left by an earlier attempt could stand in for it:
+# both decodes of best.pt must exist and be newer than the best.pt they decode
+for f in beam5_val_best beam5_test_best; do
+  if [ ! -s "$D/$f.json" ] || [ ! "$D/$f.json" -nt "$D/best.pt" ]; then echo "FAIL: $f.json missing or older than best.pt"; exit 1; fi
+done
 touch "$RUNS/DONE_${arm}_s${s}"
 echo "W12G_DONE ${arm} seed ${s}"

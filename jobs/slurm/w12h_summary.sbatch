@@ -36,7 +36,8 @@ done
 for pair in "C PJ" "C PS" "PJ PS"; do
   set -- $pair
   echo "===== $2 - $1 ====="
-  python tools/seed_decision.py --control "$1" --arm "$2" "${F[@]}"
+  # seed_decision.py raises when a contrast has no complete pair (e.g. every run of one arm failed): Part B must still run
+  python tools/seed_decision.py --control "$1" --arm "$2" "${F[@]}" || echo "[WARN] $2 - $1: no seed-level read-out (no complete pair?)"
 done
 
 echo "##### Part B: pre-registered read-out (wave-12 snapshot) #####"

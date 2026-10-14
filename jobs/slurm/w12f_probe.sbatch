@@ -4,7 +4,9 @@
 #                  (gates H, E, T first; then the arms; MM-WLAuslan citation recordings as a second reference set)
 #   measurement 2  estimated depth: x/y, x/y/z and z alone (only if step 2 wrote DONE_pose3d)
 # Rules and readings: results/PREREG_WAVE12F_POSE_MEASUREMENTS_2026-10-13.md
-#   sbatch --dependency=afterok:<extract job> kaya/w12f_probe.sbatch
+#   sbatch --dependency=afterany:<extract job> kaya/w12f_probe.sbatch
+# afterany, not afterok: a failure of the 3-D task (measurement 2) must not block measurement 1. This script itself
+# refuses to run without task 0's marker (DONE_dwpose) and runs measurement 2 only with task 1's marker (DONE_pose3d).
 #SBATCH --job-name=w12f-probe
 #SBATCH --partition=work
 #SBATCH --account=pmc099
@@ -15,7 +17,7 @@
 #SBATCH --output=/group/pmc099/pprasad/code/logs/%x-%j.out
 set -eo pipefail
 source /group/pmc099/pprasad/code/phase2_baseline/kaya/_w12lib.sh   # modules, environment, cd into the snapshot
-source kaya/_w12flib.sh
+source /group/pmc099/pprasad/code/phase2_baseline/kaya/_w12flib.sh      # paths, code pins, gates (the snapshot holds no job scripts)
 set -u
 w12f_code_gate
 [ -f "$OUT/DONE_stage" ] || fail "step 1 (kaya/w12f_stage.sbatch) has not finished"
@@ -59,5 +61,6 @@ if [ -f "$OUT/DONE_pose3d" ]; then
   touch "$OUT/DONE_depth"
   echo "W12F_DEPTH_DONE"
 else
-  echo "W12F_DEPTH_NOT_RUN: step 2 wrote no 3-D poses (the weights were absent and their download was not approved)"
+  echo "W12F_DEPTH_NOT_RUN: step 2, task 1 left no DONE_pose3d marker (the weights were absent and their download was"
+  echo "  not approved, or the task failed: see its log w12f-extract-<job>_1.out). Measurement 2 was not computed."
 fi

@@ -1,6 +1,7 @@
 """Wave 12f: two measurements of sign identity in conversational Auslan poses.  No model is trained.
 
   spans   leak-safe Sign_Spotting spans (Communication TRAIN clips only), in the CSV form the recorded probe reads
+  facts   what the located table says about the isolated set (pixels and labels only; no pose, no accuracy)
   iso     measurement 1: Auslan-Daily's own isolated-sign clips as the reference set
   depth   measurement 2: does an estimated third coordinate carry sign identity?
   self_test
@@ -39,6 +40,7 @@ PRIMARY = "hands"
 N_T, MIN_CONF, MAX_PER, MIN_PER, FOLDS, SEED = 8, 0.10, 8, 4, 5, 42   # the recorded settings
 SAFE_SET, SPAN_SET, N_RECORDED = (1008, 929, 120), (382, 361, 45), 337   # spans / clips / glosses; scored spans of the recorded run
 MMWL_CLIPS = 630                                                         # MM-WLAuslan Train+Valid recordings of the 45 glosses (14 each)
+SENS_SEEDS = (1, 7, 101, 202)                                            # the other seeds of the September run: sensitivity only, no reading
 
 
 # ---------------------------------------------------------------- small pieces
@@ -187,8 +189,96 @@ def cmd_spans(a):
     assert all_ == SAFE_SET and s45 == SPAN_SET, "not the span set of the recorded run"
 
 
+# ---------------------------------------------------------------- the two rules (pre-registration, sections 5.2 and 6)
+def reading_iso(t, tm, t2m, sens):
+    """t: A2 against A0, tm: A2m against A0, t2m: A2 against A2m (dicts with p and diff), sens: A2 against A0 at the other seeds."""
+    if t["p"] >= 0.05:
+        reading = "R1: no measurable difference from the conversational reference"
+    elif t["diff"] > 0:
+        if tm["p"] < 0.05 and tm["diff"] > 0:
+            reading = "R2a: better already with the query set's own twins as references (A2m): leave-one-clip-out against five folds"
+        elif t2m["p"] < 0.05 and t2m["diff"] > 0:      # the direct test: absence of a gain in A2m alone attributes nothing
+            reading = "R2b: better than A0 and better than the twins alone (A2 against A2m): the further isolated clips of these signs add references per sign"
+        else:
+            reading = "R2u: better than A0, gain not attributed (A2m is not measurably better than A0, and A2 is not measurably better than A2m)"
+    else:
+        reading = "R3: worse than the conversational reference"
+    same_sign = sum(x["diff"] * t["diff"] > 0 for x in sens)
+    if not reading.startswith("R1") and same_sign < 3:
+        reading += f" [not stable across subsamples: {same_sign} of {len(SENS_SEEDS)} other seeds share the sign]"
+    return reading, same_sign
+
+
+def reading_depth(p_z, test, valid, sens):
+    """p_z: permutation p of z alone, test: x/y/z against x/y (p and diff), valid: both validity checks hold."""
+    if p_z >= 0.05:
+        reading = "C1: the estimated depth carries no measurable sign identity; closed"
+    elif not (test["p"] < 0.05 and test["diff"] > 0):
+        reading = "C2: depth carries sign identity but adds nothing measurable to x/y; closed"
+    else:
+        reading = "C3: depth adds identity to x/y in this probe; a re-proposal, not a training run"
+        pos = sum(x["diff"] > 0 for x in sens)
+        if pos < 3:
+            reading += f" [not stable across subsamples: {pos} of {len(SENS_SEEDS)} other seeds are positive]"
+    if not valid:
+        reading += " [VALIDITY CHECK FAILED: report as not interpretable, see the pre-registration, section 6]"
+    return reading
+
+
+# ---------------------------------------------------------------- facts (no pose)
+def cmd_facts(a):
+    """Dataset facts the design rests on, from the located table and the span table alone.  Stops the chain before
+    the GPU step if the isolated clips of the spotting glosses are not the spotting spans (pre-registration, section 2)."""
+    with open(a.located, newline="") as f:
+        loc = list(csv.DictReader(f))
+    spans = read_spans(a.spans)
+    tally = {}
+    for r in loc:
+        tally[(r["status"], r["comm_split"])] = tally.get((r["status"], r["comm_split"]), 0) + 1
+    ok = [r for r in loc if r["status"] == "located"]
+    exact0 = sum(r["d_min"] != "" and float(r["d_min"]) == 0.0 for r in loc)
+    at = {(r["Video_Name_Clip"], r["Query_Gloss"].strip().lower(), int(r["Begin_Frame"])): int(r["frames"])
+          for r in ok if r["comm_split"] == "train"}
+    twins = sum((c, g, max(0, b)) in at for c, g, b, _ in spans)
+    same_len = sum(at.get((c, g, max(0, b))) == e - b for c, g, b, e in spans)      # the whole range [Begin, End), not only its first frame
+    s45 = [s for s in spans if s[1] in GLOSSES45]
+    tw45 = sum((c, g, max(0, b)) in at for c, g, b, _ in s45)
+    len45 = sum(at.get((c, g, max(0, b))) == e - b for c, g, b, e in s45)
+    ref45 = [r for r in ok if r["comm_split"] == "train" and r["Query_Gloss"].strip().lower() in GLOSSES45]
+    print(f"isolated clips {len(loc)}, glosses {len({r['Query_Gloss'].strip().lower() for r in loc})}; thumbnail distance exactly 0: {exact0}")
+    print("status and split of the source clip: " + ", ".join(f"{s} {c or '-'} {k}" for (s, c), k in sorted(tally.items())))
+    print(f"leak-safe spotting spans {len(spans)}; with an isolated clip at the same clip, gloss and first frame: {twins}; "
+          f"of these with exactly End - Begin frames: {same_len}")
+    print(f"45-gloss set: spans {len(s45)}, with such a twin {tw45} (exactly End - Begin frames: {len45}); "
+          f"isolated clips of these glosses located on a TRAIN clip: {len(ref45)}")
+    res = dict(isolated=len(loc), tally={f"{s}|{c}": k for (s, c), k in tally.items()}, distance_exactly_0=exact0, safe_spans=len(spans),
+               safe_spans_with_twin=twins, safe_spans_with_twin_of_equal_length=same_len, spans45=len(s45), spans45_with_twin=tw45, spans45_with_twin_of_equal_length=len45,
+               isolated45_on_train=len(ref45))
+    if a.out:
+        with open(a.out, "w") as f:
+            json.dump(res, f, indent=1)
+    assert len(ok) >= 0.9 * len(loc), "fewer than 90% of the isolated clips were located in a signer clip"
+    assert twins >= 0.95 * len(spans) and tw45 >= 0.95 * len(s45), "the isolated clips of the spotting glosses are not the spotting spans"
+    print("FACTS OK: the isolated clips of the spotting glosses are the spotting spans (same clip, same first frame)")
+    if a.prod_dir:
+        harness_gate(s45, Clips(a.prod_dir))
+
+
+def harness_gate(spans45, prod):
+    """Gate H: on this machine the probe reproduces the recorded run (correct spans of 337, every variant), from the
+    production poses alone.  Run in the CPU staging step, so a platform difference stops the chain before the GPU step."""
+    for name, grp, hloc in VARIANTS:
+        Xq, yq, clq, _, _ = query_set(spans45, prod, GROUPS[grp], hloc)
+        per = {}
+        _, _, n = clip_disjoint_eval(Xq, yq, clq, np.random.default_rng(SEED), FOLDS, per)
+        assert (int(sum(per.values())), n) == (RECORDED[name], N_RECORDED), \
+            f"gate H FAILED for {name}: {sum(per.values())}/{n}, recorded {RECORDED[name]}/{N_RECORDED}"
+    print("GATE H PASSED: the recorded run is reproduced here for all six variants " +
+          ", ".join(f"{k} {v}/{N_RECORDED}" for k, v in RECORDED.items()))
+
+
 # ---------------------------------------------------------------- measurement 1
-def query_set(spans, prod, idx, hloc):
+def query_set(spans, prod, idx, hloc, seed=SEED):
     """Descriptors of the conversational spans from the production DWPose clips, then the recorded row selection."""
     X, y, cl, ln, key = [], [], [], [], []
     for cid, g, b, e in spans:
@@ -199,7 +289,7 @@ def query_set(spans, prod, idx, hloc):
             continue
         X.append(v); y.append(g); cl.append(cid); ln.append(e2 - b2); key.append((cid, b))
     X, y, cl, ln = np.array(X), np.array(y), np.array(cl), np.array(ln, float)
-    sel = select_rows(y, MAX_PER, MIN_PER, SEED)
+    sel = select_rows(y, MAX_PER, MIN_PER, seed)
     return X[sel], y[sel], cl[sel], ln[sel], [key[i] for i in sel]
 
 
@@ -225,11 +315,13 @@ def arm_line(name, per, top5, extra=""):
 
 
 def keypoint_agreement(loc, bank, prod):
-    """Median |dxy| (pixels, keypoints confident in both) between the DWPose of each located isolated clip and the
-    production DWPose of the frame range it was cut from."""
+    """Median |dxy| (pixels, keypoints confident in both) between the DWPose of each isolated clip located on a TRAIN
+    clip and the production DWPose of the frame range it was cut from.  share_under_1px is a share of ALL checked
+    clips: a clip whose frame count differs, or that has no keypoint confident in both poses (an all-zero pose from a
+    failed extraction, for example), counts as not under 1 pixel."""
     med, checked, bad_len = [], 0, 0
     for r in loc:
-        if r["status"] != "located" or not bank.has(r["Video_ID"]) or not prod.has(r["Video_Name_Clip"]):
+        if r["status"] != "located" or r["comm_split"] != "train" or not bank.has(r["Video_ID"]) or not prod.has(r["Video_Name_Clip"]):
             continue
         kb, kp = bank.get(r["Video_ID"]), prod.get(r["Video_Name_Clip"])[int(r["Begin_Frame"]):int(r["End_Frame"])]
         checked += 1
@@ -242,7 +334,7 @@ def keypoint_agreement(loc, bank, prod):
     med = np.array(med)
     return dict(checked=checked, frame_count_differs=bad_len, compared=int(len(med)),
                 median_px=float(np.median(med)) if len(med) else float("nan"),
-                share_under_1px=float((med < 1.0).mean()) if len(med) else float("nan"))
+                share_under_1px=float((med < 1.0).sum() / checked) if checked else float("nan"))
 
 
 def cmd_iso(a):
@@ -297,8 +389,12 @@ def cmd_iso(a):
         # reference rows: isolated clips of the query classes
         classes = set(yq.tolist())
         Xb, yb, cb, vb, lb, st, sp_, bg = [], [], [], [], [], [], [], []
-        for r in loc:
-            if r["g"] not in classes or not bank.has(r["Video_ID"]):
+        cand = 0           # reference clips that SHOULD give a descriptor: located on a TRAIN clip, at least 3 frames
+        for r in loc:      # only clips located on a TRAIN clip: no pose of a clip cut from validation or test footage is read
+            if r["g"] not in classes or r["status"] != "located" or r["comm_split"] != "train":
+                continue
+            cand += int(r["frames"]) >= 3
+            if not bank.has(r["Video_ID"]):
                 continue
             v = span_descriptor(bank.get(r["Video_ID"]), idx, N_T, MIN_CONF, True, hloc)
             if v is None:
@@ -306,6 +402,9 @@ def cmd_iso(a):
             Xb.append(v); yb.append(r["g"]); cb.append(r["Video_Name_Clip"]); lb.append(float(r["frames"]))
             st.append(r["status"]); sp_.append(r["comm_split"]); bg.append(int(r["Begin_Frame"]))
         Xb, yb, cb, lb, st, sp_ = np.array(Xb), np.array(yb), np.array(cb), np.array(lb), np.array(st), np.array(sp_)
+        # a reference clip without a pose file, or whose pose gives no descriptor (an all-zero pose from a failed
+        # extraction), is dropped above without a word: the reference set must not shrink that way
+        assert len(yb) >= 0.95 * cand, f"reference set FAILED for {name}: {len(yb)} of {cand} reference clips gave a descriptor"
         vb = np.array([video_of(c) if c else "" for c in cb])
         safe = (st == "located") & (sp_ == "train")
         twin_of = {(c, g, b): j for j, (c, g, b) in enumerate(zip(cb, yb, bg)) if safe[j]}
@@ -320,11 +419,11 @@ def cmd_iso(a):
         clip_disjoint_eval(X1, yq, clq, np.random.default_rng(SEED), FOLDS, A1)
         agree = float(np.mean([A1[k] == A0[k] for k in A0 if k in A1]))
         out = dict(queries=int(len(yq)), queries_with_twin=int((tw >= 0).sum()), A1_agreement_with_A0=agree,
-                   reference_rows=int(len(yb)), reference_rows_safe=int(safe.sum()),
+                   reference_candidates=int(cand), reference_rows=int(len(yb)), reference_rows_safe=int(safe.sum()),
                    A0=dict(n=n0, correct=int(sum(A0.values())), top1=acc0, top5=acc0_5))
-        print(f"\n=== {name}: {len(yq)} query spans, {len(classes)} classes | isolated clips of these classes {len(yb)} "
-              f"(located on a TRAIN clip {int(safe.sum())}) | queries with an isolated twin {int((tw >= 0).sum())} | "
-              f"A1 agrees with A0 on {agree:.1%} of spans")
+        print(f"\n=== {name}: {len(yq)} query spans, {len(classes)} classes | reference clips (isolated clips of these classes "
+              f"located on a TRAIN clip, at least 3 frames) {cand}, with a descriptor {len(yb)} | "
+              f"queries with an isolated twin {int((tw >= 0).sum())} | A1 agrees with A0 on {agree:.1%} of spans")
         if a.gate_only:
             assert (tw >= 0).mean() >= 0.95 and agree >= 0.95, "gate T FAILED: the isolated clips are not the query spans"
             res["variants"][name] = out
@@ -335,10 +434,13 @@ def cmd_iso(a):
             "A2 isolated, own clip excluded [PRIMARY]": (safe, lambda i: cb == clq[i]),
             "A3 isolated, own video excluded": (safe, lambda i: vb == qv[i]),
             "A2m isolated twins of the query set only, own clip excluded": (safe & is_twin, lambda i: cb == clq[i]),
-            "A4 isolated, nothing excluded (self-match; leak size only)": (np.ones(len(yb), bool), lambda i: np.zeros(len(yb), bool)),
+            "A4 isolated, nothing excluded (self-match; leak size only)": (safe, lambda i: np.zeros(len(yb), bool)),
         }
+        # length-only control for A0 with a feature the cosine rule can use (the recorded probe's own column cannot: see length_feature)
+        len0 = clip_disjoint_eval(length_feature(lnq), yq, clq, np.random.default_rng(SEED), FOLDS)[0]
+        out["A0"]["length_only"] = len0
         print(f"  {'A0 conversational spans, 5 clip-disjoint folds (recorded)':<58} n {n0:>4}  top-1 {acc0:6.1%} "
-              f"({sum(A0.values())})  top-5 {acc0_5:6.1%}")
+              f"({sum(A0.values())})  top-5 {acc0_5:6.1%}   length only {len0:.2%}")
         per = {"A0": A0}
         for arm, (ok, drop) in arms.items():
             p, t5 = reference_arm(Xq, yq, Xb, yb, ok, drop)
@@ -360,7 +462,17 @@ def cmd_iso(a):
               f"length only {out['A2_controls']['length_only']:.2%}")
         print("  paired comparisons on the spans scored in both:")
         out["tests"] = {k: report_pair(f"{k} against A0", per[k], A0, clq) for k in ("A2", "A3", "A2m", "A4")}
+        out["tests"]["A2_vs_A2m"] = report_pair("A2 against A2m", per["A2"], per["A2m"], clq)
         out["tests"]["A1"] = report_pair("A1 (twin descriptors, A0 protocol) against A0", A1, A0, clq)
+        if name == PRIMARY:
+            print("  sensitivity (other 8-per-sign subsamples and folds; no reading is taken from these):")
+            out["seed_sensitivity"] = {}
+            for sd in SENS_SEEDS:
+                Xs, ys, cs, _, _ = query_set(spans, prod, idx, hloc, sd)
+                a0 = {}
+                clip_disjoint_eval(Xs, ys, cs, np.random.default_rng(sd), FOLDS, a0)
+                p2, _ = reference_arm(Xs, ys, Xb, yb, safe & np.isin(yb, ys), lambda i: cb == cs[i])
+                out["seed_sensitivity"][str(sd)] = report_pair(f"seed {sd}: A2 against A0", p2, a0, cs)
         if mmwl:
             Xm = [(g, span_descriptor(mm.get(i), idx, N_T, MIN_CONF, True, hloc)) for i, g in mmwl if g in classes]
             ym = np.array([g for g, v in Xm if v is not None]); Xm = np.array([v for _, v in Xm if v is not None])
@@ -377,15 +489,8 @@ def cmd_iso(a):
         v = res["variants"][PRIMARY]
         t, tm = v["tests"]["A2"], v["tests"]["A2m"]
         same_footage = v["queries_with_twin"] >= 0.95 * v["queries"]
-        if t["p"] >= 0.05:
-            reading = "R1: no measurable difference from the conversational reference"
-        elif t["diff"] > 0:
-            reading = ("R2a: better already with the query set's own twins as references (A2m): leave-one-clip-out against five folds"
-                       if tm["p"] < 0.05 and tm["diff"] > 0
-                       else "R2b: better only with the further isolated clips of these signs (A2m is not better): more references per sign")
-        else:
-            reading = "R3: worse than the conversational reference"
-        res["reading"] = dict(same_footage=bool(same_footage), reading=reading)
+        reading, same_sign = reading_iso(t, tm, v["tests"]["A2_vs_A2m"], v["seed_sensitivity"].values())
+        res["reading"] = dict(same_footage=bool(same_footage), reading=reading, other_seeds_same_sign=int(same_sign))
         print(f"\nREADING ({PRIMARY}): isolated clips are the query spans' own footage: {same_footage} | {reading}")
 
         # ---- secondary, descriptive: the recorded protocol inside the isolated set (source clips on TRAIN only)
@@ -440,7 +545,7 @@ def cmd_depth(a):
         for name, grp, _ in VARIANTS[:3] + VARIANTS[4:5]:        # hands (primary), body+hands, body, all
             idx = GROUPS[grp]
             F = {n: [] for n in names}
-            y, cl, ln, differ, flat = [], [], [], 0, []
+            y, cl, ln, differ, flat, zin, zt = [], [], [], 0, [], [], []
             for cid, g, b, e in spans:
                 kp, k3, z3 = prod.get(cid), d3.get(cid), d3.get(cid, "Z")
                 differ += len(kp) != len(k3)
@@ -450,7 +555,8 @@ def cmd_depth(a):
                 fz = z_descriptor(z3[b2:e2], k3[b2:e2, :, 2], idx)
                 if fp is None or fx is None or fz is None:
                     continue
-                flat.append(float((z3[b2:e2][:, GROUPS["hands"]].std(1) < 1e-6).mean()))
+                zh = z3[b2:e2][:, GROUPS["hands"]]          # depth of the 42 hand keypoints, in the model's root-relative units
+                flat.append(float((zh.std(1) < 1e-6).mean())); zin.append(float(np.median(zh.std(1)))); zt.append(float(np.median(zh.std(0))))
                 F[names[0]].append(fp); F[names[1]].append(fx); F[names[2]].append(np.concatenate([fx, fz])); F[names[3]].append(fz)
                 y.append(g); cl.append(cid); ln.append(e2 - b2)
             y, cl, ln = np.array(y), np.array(cl), np.array(ln, float)
@@ -458,17 +564,21 @@ def cmd_depth(a):
             feats = {n: np.array(v)[sel] for n, v in F.items()}
             t = fold_table(feats, y[sel], cl[sel], ln[sel])
             show(f"{title} | {name} | spans whose frame count differs between the two extractions: {differ} | "
-                 f"frames with constant hand depth: {np.mean(flat):.2%}", t, names)
+                 f"frames with constant hand depth: {np.mean(flat):.2%} | hand depth spread (median over spans): "
+                 f"across the hand's keypoints {np.median(zin):.3f}, over time {np.median(zt):.3f}", t, names)
             out = strip(t)
             out["frame_count_differs"], out["constant_hand_depth_frames"] = int(differ), float(np.mean(flat))
-            if title.startswith("45") and name == PRIMARY:
-                # gate H: the production x/y on these rows is the recorded run, unless the 3-D extraction dropped a span
+            out["hand_depth_spread_across_keypoints"], out["hand_depth_spread_over_time"] = float(np.median(zin)), float(np.median(zt))
+            if name == PRIMARY:
+                primary = title.startswith("45")       # the reading comes from the 45-gloss set; the 120-gloss set is secondary
                 h = t[names[0]]
-                print(f"  harness: production x/y {h['correct']}/{h['n']} (recorded {RECORDED[PRIMARY]}/{N_RECORDED})")
                 rows_recorded = (h["correct"], h["n"]) == (RECORDED[PRIMARY], N_RECORDED)
-                if not rows_recorded:
-                    print("  WARNING: these are not the rows of the recorded run (a span has no 3-D descriptor); "
-                          "the comparison below is still paired on identical rows")
+                if primary:
+                    # gate H: the production x/y on these rows is the recorded run, unless the 3-D extraction dropped a span
+                    print(f"  harness: production x/y {h['correct']}/{h['n']} (recorded {RECORDED[PRIMARY]}/{N_RECORDED})")
+                    if not rows_recorded:
+                        print("  WARNING: these are not the rows of the recorded run (a span has no 3-D descriptor); "
+                              "the comparison below is still paired on identical rows")
                 obs, p_z, null95 = perm_p(feats[names[3]], y[sel], cl[sel], a.n_perm)
                 print(f"  z only: top-1 {obs:.1%}; label-permutation null ({a.n_perm} permutations) 95th percentile {null95:.1%}; p = {p_z:.4f}")
                 test = report_pair("x/y/z against x/y (3-D model)", t[names[2]]["per"], t[names[1]]["per"], cl[sel])
@@ -476,16 +586,27 @@ def cmd_depth(a):
                 comparable = abs(gap) <= 0.06
                 print(f"  validity: 3-D model x/y minus production x/y = {gap:+.1%} (comparable if within 6 points: {comparable}); "
                       f"constant hand depth in {np.mean(flat):.2%} of frames (valid if under 1%: {np.mean(flat) < 0.01})")
-                if p_z >= 0.05:
-                    reading = "C1: the estimated depth carries no measurable sign identity; closed"
-                elif not (test["p"] < 0.05 and test["diff"] > 0):
-                    reading = "C2: depth carries sign identity but adds nothing measurable to x/y; closed"
+                d = dict(z_only_top1=obs, z_only_p=p_z, z_null95=null95, xyz_vs_xy=test, xy_model_minus_production=gap,
+                         xy_comparable=bool(comparable), depth_not_constant=bool(np.mean(flat) < 0.01))
+                if primary:
+                    print("  sensitivity (other 8-per-sign subsamples and folds; no reading is taken from these):")
+                    d["seed_sensitivity"] = {}
+                    for sd in SENS_SEEDS:
+                        ss = select_rows(y, MAX_PER, MIN_PER, sd)
+                        pers = []
+                        for n_ in names[1:]:
+                            pr = {}
+                            acc = clip_disjoint_eval(np.array(F[n_])[ss], y[ss], cl[ss], np.random.default_rng(sd), FOLDS, pr)[0]
+                            pers.append((acc, pr))
+                        r_ = report_pair(f"seed {sd}: x/y/z against x/y", pers[1][1], pers[0][1], cl[ss])
+                        print(f"    seed {sd}: z only top-1 {pers[2][0]:.1%}")
+                        d["seed_sensitivity"][str(sd)] = dict(r_, z_only_top1=pers[2][0])
+                if primary:
+                    reading = reading_depth(p_z, test, comparable and np.mean(flat) < 0.01, d["seed_sensitivity"].values())
+                    print(f"READING ({PRIMARY}, 45 glosses): {reading}")
+                    out["primary"] = dict(d, rows_are_the_recorded_run=bool(rows_recorded), reading=reading)
                 else:
-                    reading = "C3: depth adds identity to x/y in this probe; a re-proposal, not a training run"
-                print(f"READING ({PRIMARY}, 45 glosses): {reading}")
-                out["primary"] = dict(z_only_top1=obs, z_only_p=p_z, z_null95=null95, xyz_vs_xy=test, xy_model_minus_production=gap,
-                                      xy_comparable=bool(comparable), depth_not_constant=bool(np.mean(flat) < 0.01),
-                                      rows_are_the_recorded_run=bool(rows_recorded), reading=reading)
+                    out["secondary"] = d
             res[title][name] = out
     if a.out:
         with open(a.out, "w") as f:
@@ -545,6 +666,34 @@ def self_test():
     assert np.array_equal(nearest_centroid(A[:20], yy[:20], A[20:])[0], nearest_centroid(B[:20], yy[:20], B[20:])[0])
     # one coordinate's weight: |z part|^2 equals the single-channel norm
     assert np.allclose((A ** 2).sum(1), (B ** 2).sum(1), rtol=1e-5)
+    # the two rules, on hand-made test results
+    T = lambda p, d: dict(p=p, diff=d)
+    up, down, flat4 = [T(1, .01)] * 4, [T(1, -.01)] * 4, [T(1, 0.0)] * 4
+    yes, no = T(.01, .03), T(.2, .01)                                               # A2 against A2m: measurably higher / not
+    assert reading_iso(T(.2, .05), T(.01, .05), yes, up)[0].startswith("R1")
+    assert reading_iso(T(.01, .05), T(.01, .04), no, up)[0].startswith("R2a") and reading_iso(T(.01, .05), T(.01, .04), yes, up)[0].startswith("R2a")
+    assert reading_iso(T(.01, .05), T(.2, .04), yes, up)[0].startswith("R2b")
+    assert reading_iso(T(.01, .05), T(.2, .04), no, up)[0].startswith("R2u")        # A2m not better AND A2 not better than A2m: no attribution
+    assert reading_iso(T(.01, .05), T(.2, .04), T(.01, -.03), up)[0].startswith("R2u")
+    assert reading_iso(T(.01, .05), T(.01, -.04), yes, up)[0].startswith("R2b")     # A2m significantly LOWER is not R2a
+    assert reading_iso(T(.01, -.05), T(.01, -.04), no, down) == ("R3: worse than the conversational reference", 4)
+    assert "not stable" in reading_iso(T(.01, .05), T(.2, 0), no, [T(1, .01)] * 2 + [T(1, -.01)] * 2)[0]
+    assert "not stable" in reading_iso(T(.01, .05), T(.2, 0), no, flat4)[0] and "not stable" not in reading_iso(T(.2, .05), T(.2, 0), no, down)[0]
+    # gate E counts over ALL checked clips: a zero pose (failed extraction) and a wrong frame count are not "under 1 pixel"
+    class _C:
+        def __init__(self, d): self.d = d
+        def has(self, c): return c in self.d
+        def get(self, c, key="KPS"): return self.d[c]
+    kp = np.concatenate([rng.normal(300, 50, (30, 133, 2)), np.full((30, 133, 1), 0.9)], -1).astype(np.float32)
+    row = lambda i, b, e: dict(status="located", comm_split="train", Video_ID=str(i), Video_Name_Clip="video_1_1", Begin_Frame=str(b), End_Frame=str(e))
+    ka = keypoint_agreement([row(1, 0, 10), row(2, 10, 20), row(3, 20, 30), row(4, 0, 9)],
+                            _C({"1": kp[0:10], "2": np.zeros((10, 133, 3), np.float32), "3": kp[20:30] + np.float32([5, 5, 0]), "4": kp[0:10]}),
+                            _C({"video_1_1": kp}))
+    assert (ka["checked"], ka["frame_count_differs"], ka["compared"]) == (4, 1, 2) and ka["share_under_1px"] == 0.25, ka
+    assert reading_depth(.2, T(.01, .05), True, up).startswith("C1") and reading_depth(.05, T(.01, .05), True, up).startswith("C1")
+    assert reading_depth(.01, T(.2, .05), True, up).startswith("C2") and reading_depth(.01, T(.01, -.05), True, up).startswith("C2")
+    assert reading_depth(.01, T(.01, .05), True, up) == "C3: depth adds identity to x/y in this probe; a re-proposal, not a training run"
+    assert "not stable" in reading_depth(.01, T(.01, .05), True, down) and "VALIDITY CHECK FAILED" in reading_depth(.2, T(1, 0), False, up)
     print("w12f_probe self-test passed")
 
 
@@ -562,9 +711,12 @@ def main():
     for k in ("spans", "prod_dir", "d3_dir"):
         d.add_argument("--" + k, required=True)
     d.add_argument("--out", default=""); d.add_argument("--n_perm", type=int, default=200)
+    fa = sub.add_parser("facts")
+    fa.add_argument("--located", required=True); fa.add_argument("--spans", required=True); fa.add_argument("--out", default="")
+    fa.add_argument("--prod_dir", default="", help="production DWPose clips: also run gate H (the recorded run is reproduced)")
     sub.add_parser("self_test")
     a = ap.parse_args()
-    {"spans": cmd_spans, "iso": cmd_iso, "depth": cmd_depth, "self_test": lambda _: self_test()}[a.cmd](a)
+    {"spans": cmd_spans, "facts": cmd_facts, "iso": cmd_iso, "depth": cmd_depth, "self_test": lambda _: self_test()}[a.cmd](a)
 
 
 if __name__ == "__main__":

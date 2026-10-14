@@ -1,6 +1,6 @@
 # Wave 12f (two pose measurements, no training): paths, code pins and gates shared by
 #   kaya/w12f_stage.sbatch -> kaya/w12f_extract.sbatch -> kaya/w12f_probe.sbatch
-# Sourced from the wave-12 snapshot AFTER kaya/_w12lib.sh (which sets G, W12, M, pin_pose and cds into $W12/code).
+# Sourced by absolute path from the shared tree AFTER kaya/_w12lib.sh (which sets G, W12, M, pin_pose and cds into $W12/code).
 # Pre-registration: results/PREREG_WAVE12F_POSE_MEASUREMENTS_2026-10-13.md
 B=$G/scratch_backup/dwpose                      # production DWPose (dwpose_clips), signer videos (rgb_signer), on /group
 MM=$G/scratch_backup/mmwl                       # MM-WLAuslan DWPose and labels (used by wave 7, job 31219)
@@ -23,13 +23,13 @@ fail () { echo "FAIL: $*"; exit 1; }
 w12f_code_gate () {
   md5sum -c - <<'EOF' || fail "the experiment's code differs from the files that were verified locally"
 8bb68543b3393965f9614138b4c3a523  tools/continuous_id_probe.py
-00eb07900ba84a152605e2be23e113cb  tools/w12f_probe.py
-ac5388e64a5af87b617e2708cadd317a  tools/w12f_locate.py
-dadea487a737be1ed6c12a35ee1996dc  tools/w12f_extract3d.py
+d99bc83156b1c1367bc5ba863dc0b740  tools/w12f_probe.py
+54ec8e25b62a6b1f7fc3dc5962f23323  tools/w12f_locate.py
+93d4470117f34a7b7129da980607bfd6  tools/w12f_extract3d.py
 EOF
   echo "69d8bd99cd79758fd0399c378ae25c3d  $WK" | md5sum -c - || fail "the production DWPose worker changed"
-  if [ -f "$W12/code.md5" ]; then
-    md5sum --quiet -c "$W12/code.md5" || fail "snapshot differs from $W12/code.md5"
+  if [ -f "$W12/code.md5" ]; then      # compiled files are not code: a .pyc that Python rewrites must not stop the chain
+    grep -v '__pycache__' "$W12/code.md5" | md5sum --quiet -c - || fail "snapshot differs from $W12/code.md5"
     echo "snapshot matches $W12/code.md5"
   fi
   python tools/w12f_locate.py self_test && python tools/w12f_probe.py self_test && python tools/w12f_extract3d.py --self_test \

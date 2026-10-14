@@ -9,6 +9,7 @@
 #           without a DONE marker, and step 3 runs measurement 1 alone.
 #   sbatch --dependency=afterok:<stage job> kaya/w12f_extract.sbatch
 #   with the download approved:  sbatch --dependency=afterok:<stage job> --export=ALL,W12F_ALLOW_DOWNLOAD=1 kaya/w12f_extract.sbatch
+# The two tasks are independent: step 3 is submitted with afterany and needs only task 0's marker for measurement 1.
 # Pre-registration: results/PREREG_WAVE12F_POSE_MEASUREMENTS_2026-10-13.md
 #SBATCH --job-name=w12f-extract
 #SBATCH --partition=gpu
@@ -22,7 +23,7 @@
 #SBATCH --output=/group/pmc099/pprasad/code/logs/%x-%A_%a.out
 set -eo pipefail
 source /group/pmc099/pprasad/code/phase2_baseline/kaya/_w12lib.sh   # modules, environment, cd into the snapshot
-source kaya/_w12flib.sh
+source /group/pmc099/pprasad/code/phase2_baseline/kaya/_w12flib.sh      # paths, code pins, gates (the snapshot holds no job scripts)
 set -u
 T=$SLURM_ARRAY_TASK_ID
 w12f_code_gate
@@ -35,6 +36,7 @@ if [ "$T" = 0 ]; then
   rm -f "$OUT/DONE_dwpose"
   [ "$(find "$ISO" -maxdepth 1 -name '*.mp4' | wc -l)" = "$N_ISO" ] || fail "isolated clip count"
   mkdir -p "$DW_ISO"
+  find "$DW_ISO" -maxdepth 1 -name '*.writing.npz' -delete      # half-written file of a killed earlier run: it would break the count below
   RGB_DIR="$ISO" OUT_DIR="$DW_ISO" CLIP_SUFFIX=.mp4 DWPOSE_DEVICE=cuda \
       python -u "$WK" --shard 0 --nshards 1 --mode balanced --device cuda
   n=$(find "$DW_ISO" -maxdepth 1 -name '*.npz' | wc -l)
@@ -58,8 +60,9 @@ if [ ! -f "$POSE3D_ONNX" ]; then
   curl -L --fail --retry 3 -o "$POSE3D_ONNX.part" "$POSE3D_URL" || fail "download of the 3-D pose weights"
   mv "$POSE3D_ONNX.part" "$POSE3D_ONNX"
 fi
-echo "$POSE3D_SHA256  $POSE3D_ONNX" | sha256sum -c - || fail "sha256 of the 3-D pose weights"
+echo "$POSE3D_SHA256  $POSE3D_ONNX" | sha256sum -c - || { rm -f "$POSE3D_ONNX"; fail "sha256 of the 3-D pose weights (the file was removed)"; }
 mkdir -p "$P3D"
+find "$P3D" -maxdepth 1 -name '*.writing.npz' -delete
 python -u tools/w12f_extract3d.py --rgb_dir "$B/rgb_signer/Signer" --list "$OUT/pose3d_ids.txt" --out_dir "$P3D" \
     --pose "$POSE3D_ONNX" --device cuda
 n=$(find "$P3D" -maxdepth 1 -name '*.npz' | wc -l)

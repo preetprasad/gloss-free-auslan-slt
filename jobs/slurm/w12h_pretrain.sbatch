@@ -59,6 +59,8 @@ JOINT=$G/stitch_scale2/joint_13760.tsv; SYN=$G/stitch_scale2/syn_13760.tsv
 LOG=$LOGDIR/${SLURM_JOB_NAME}-${SLURM_ARRAY_JOB_ID}_${T}.out
 echo "stage $STAGE task $T -> arm $arm seed $s | out $D | log $LOG"
 [ "${DET}" = "--deterministic True" ] || { echo "FAIL: this wave runs every arm with deterministic kernels (DET='${DET}')"; exit 1; }
+# the library takes POSE from the submitting shell when it is set there (sbatch exports the environment): refuse that
+[ "${POSE}" = "--num_keypoints 133 --keypoint_subset all --coord_norm frame" ] || { echo "FAIL: POSE is not the adopted pose setting (POSE='${POSE}'); unset it in the submitting shell"; exit 1; }
 [ ! -e "$D/DONE" ] || { echo "FAIL: $D is already DONE; a finished arm is never run again"; exit 1; }
 [ -f "$LOG" ] || { echo "FAIL: this job's log is not at $LOG (the transfer gate reads it)"; exit 1; }
 
@@ -168,6 +170,7 @@ else:
     print(f"G-transfer OK: {m[0][0]}/{m[0][1]} tensors, vocabulary identical (the CTC head is re-initialised by design)")
 PY
 echo "${SLURM_ARRAY_JOB_ID}_${T} $(hostname) stage $STAGE" > "$D/JOB"
-cp "$0" "$D/w12h_pretrain.sbatch.ran"   # the script exactly as SLURM ran it
+# the script exactly as SLURM ran it; a record only, so a failed copy must not cost a finished arm its DONE marker
+cp "$0" "$D/w12h_pretrain.sbatch.ran" || echo "[WARN] could not copy the job script ($0) into $D"
 touch "$D/DONE"   # the read-out uses only arms carrying this marker
 echo "W12H_DONE ${arm} seed ${s}"

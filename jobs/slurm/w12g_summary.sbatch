@@ -26,12 +26,21 @@ c33b312359b5dac0f28305865f41dd39  $TOOLS/w12g_signer_split.py
 e0a95aa351a0950d9b2af13e8bea4240  $TOOLS/seed_decision.py
 1a2ff663b374e0e4ce5c9dd3badf3b02  $TOOLS/../slt/metrics.py
 MD5
-for s in 42 101 202; do for arm in SD EXPa EXPb; do
-  [ -f "$RUNS/DONE_${arm}_s${s}" ] || echo "MISSING: ${arm}_s${s} (no DONE marker)"
-done; done
+# A seed is complete only if all three arms have their DONE marker (written after the vocabulary gate and both
+# decodes). Decodes of an arm without one are not read; with fewer than three complete seeds the read-out prints
+# its tables and "NO READING".
+OK=()
+for s in 42 101 202; do n=0
+  for arm in SD EXPa EXPb; do
+    if [ -f "$RUNS/DONE_${arm}_s${s}" ]; then n=$((n + 1)); else echo "MISSING: ${arm}_s${s} (no DONE marker)"; fi
+  done
+  if [ "$n" = 3 ]; then OK+=("$s"); fi
+done
+[ "${#OK[@]}" -gt 0 ] || { echo "FAIL: no seed has all three DONE markers"; exit 1; }
+echo "complete seeds: ${OK[*]}"
 python "$TOOLS/w12g_readout.py" selftest | tail -1
-python -u "$TOOLS/w12g_readout.py" readout --runs "$RUNS" --manifests "$MAN" --seeds 42 101 202 --boot 1000
+python -u "$TOOLS/w12g_readout.py" readout --runs "$RUNS" --manifests "$MAN" --seeds "${OK[@]}" --boot 1000
 echo "===== primary contrast through tools/seed_decision.py (must equal the 'all held-out signers' lines above) ====="
-F=(); for s in 42 101 202; do if [ -f "$RUNS/summary_w12g_s$s.json" ]; then F+=("$RUNS/summary_w12g_s$s.json"); fi; done
+F=(); for s in "${OK[@]}"; do F+=("$RUNS/summary_w12g_s$s.json"); done   # written by the read-out just above
 python "$TOOLS/seed_decision.py" --control SD --arm EXP "${F[@]}"
 echo "W12G_SUMMARY_DONE"

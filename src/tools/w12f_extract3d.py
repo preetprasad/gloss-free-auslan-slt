@@ -6,6 +6,7 @@ As in the production worker (results/dwpose_experiment/dwpose_extract_worker.py)
 is kept, a frame without output is all zeros, and every decoded frame gives one row.
 
   <out>/<clip>.npz   KPS (T, 133, 3) float32 = x, y (pixels), confidence      Z (T, 133) float32 = estimated depth
+                     FAILED int32 = frames on which the model raised (written as zeros); a resumed run counts them again
 
 The pose weights are third-party and are NOT fetched here: --pose must be an existing file (the job script holds the
 download switch).  Pre-registration: results/PREREG_WAVE12F_POSE_MEASUREMENTS_2026-10-13.md.
@@ -53,6 +54,12 @@ def extract(frames, model):
     return np.stack(kps), np.stack(zs), failed
 
 
+def prior(path):
+    """(frames, failed frames) of a clip written by an earlier run, so that the 1% limit holds across resumed runs."""
+    with np.load(path) as z:
+        return len(z["KPS"]), int(z["FAILED"])
+
+
 def read_frames(path):
     import cv2
     cap = cv2.VideoCapture(path)
@@ -85,6 +92,11 @@ def self_test():
     assert np.all(z[3] == 7.0)
     kps, z, failed = extract([], Fake())
     assert kps.shape == (1, K, 3) and z.shape == (1, K) and not kps.any()
+    import tempfile
+    with tempfile.TemporaryDirectory() as tmp:    # what a resumed run reads back from a file written by an earlier run
+        p = os.path.join(tmp, "c.npz")
+        np.savez_compressed(p, KPS=np.zeros((7, K, 3), np.float32), Z=np.zeros((7, K), np.float32), FAILED=np.int32(2))
+        assert prior(p) == (7, 2)
     print("w12f_extract3d self-test passed")
 
 
@@ -113,12 +125,13 @@ def main():
     done = skip = frames = failed = 0
     for cid in ids:
         outp = os.path.join(a.out_dir, cid + ".npz")
-        if os.path.exists(outp):
-            skip += 1
+        if os.path.exists(outp):                    # a resumed run: its failed frames still count (they are zero poses on disk)
+            n0, f0 = prior(outp)
+            skip += 1; frames += n0; failed += f0
             continue
         kps, z, f = extract(read_frames(video[cid]), model)
         tmp = os.path.join(a.out_dir, cid + ".writing")
-        np.savez_compressed(tmp, KPS=kps, Z=z)
+        np.savez_compressed(tmp, KPS=kps, Z=z, FAILED=np.int32(f))
         os.replace(tmp + ".npz", outp)
         done += 1; frames += len(kps); failed += f
         if done % 50 == 0:

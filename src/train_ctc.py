@@ -68,16 +68,21 @@ def seq_logp(logits, tgt_out):
 
 def cf_negatives(src, src_pad, texts):
     """Three counterfactual inputs per row, as (src, src_pad, usable) with usable a (B,) bool:
-    (a) the batch neighbour's pose (rolled by one row, mask rolled with it);
+    (a) the pose of the row's neighbour, with the neighbour's mask;
     (b) the row's own pose reversed in time within its valid frames;
     (c) the row's own pose with the neighbour's hand track, resampled to the row's length.
+    The neighbour is the next-shorter clip of the batch (the longest clip for the shortest; ties in batch order), so a
+    negative differs from the true input in what is signed and as little as possible in how long the clip is.
     (a) and (c) are unusable where the neighbour has the same target sentence (its pose is then a correct input)."""
     B, T, _ = src.shape
     L = (~src_pad).sum(1)
     ar = torch.arange(T, device=src.device)[None]
+    order = torch.argsort(L, stable=True)
+    rank = torch.empty_like(order); rank[order] = torch.arange(B, device=src.device)
+    nb = order[(rank - 1) % B]
     key = [_normkey(t) for t in texts]
-    other = torch.tensor([key[i] != key[i - 1] for i in range(B)], device=src.device)
-    nb_src, nb_pad, nb_L = torch.roll(src, 1, 0), torch.roll(src_pad, 1, 0), torch.roll(L, 1, 0)
+    other = torch.tensor([key[i] != key[j] for i, j in enumerate(nb.tolist())], device=src.device)
+    nb_src, nb_pad, nb_L = src[nb], src_pad[nb], L[nb]
     rev = (L[:, None] - 1 - ar).clamp_min(0)
     src_rev = torch.where(src_pad[..., None], src, src.gather(1, rev[..., None].expand_as(src)))
     pos = (ar * (nb_L - 1).clamp_min(0)[:, None].float() / (L - 1).clamp_min(1)[:, None].float()).round().long()

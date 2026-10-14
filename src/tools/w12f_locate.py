@@ -2,7 +2,7 @@
 
 Auslan-Daily ships 3,209 "isolated" sign clips (`New_Gloss_RGB_Data.zip`, index
 `Isolated_Sign_Language_Recognition.xlsx` with Gloss / Split / Video_ID only: no source clip, no frame
-bounds).  The paper says they were annotated as temporal boundaries inside the continuous videos, and four
+bounds).  The paper says they were annotated as temporal boundaries inside the continuous videos, and three
 clips compared by hand on 13 Oct 2026 were frame ranges of `<clip>_signer.mp4` with identical pixels.  If a
 reference clip is cut from the query's own footage, matching against it is a self-match, so the probe needs
 the source clip of every isolated clip.  This tool finds it from the pixels alone:
@@ -63,10 +63,11 @@ def save_thumbs(path, res, size):
 
 
 def load_thumbs(path):
-    z = np.load(path)
-    off = np.concatenate([[0], np.cumsum(np.maximum(z["n"], 0))])
-    return {str(i): (tuple(int(v) for v in wh), z["thumbs"][off[k]:off[k + 1]] if n >= 0 else None)
-            for k, (i, wh, n) in enumerate(zip(z["ids"], z["wh"], z["n"]))}
+    with np.load(path) as z:
+        ids, whs, ns, th = z["ids"], z["wh"], z["n"], z["thumbs"]   # read ONCE: every z[...] decompresses the whole array again
+    off = np.concatenate([[0], np.cumsum(np.maximum(ns, 0))])
+    return {str(i): (tuple(int(v) for v in wh), th[off[k]:off[k + 1]] if n >= 0 else None)
+            for k, (i, wh, n) in enumerate(zip(ids, whs, ns))}
 
 
 def cmd_thumbs(a):

@@ -3,6 +3,7 @@
 It builds a small world in a temporary folder (6 signs, 10 conversational spans each, isolated clips cut from the
 same frames, citation recordings, 3-D poses), points the probe's constants at it and runs both measurements through
 the same functions the Kaya job calls.  It checks the plumbing and the direction of every arm:
+  * the facts gate passes, and fails when the located first frames are off by one
   * gates H, E and T pass; gate E fails when the isolated poses are not the production poses
   * A4 (self-match allowed) is near 100%, far above A2 (own clip excluded): the leak the exclusion removes
   * depth that carries the sign gives reading C3, depth that is noise gives C1
@@ -98,6 +99,20 @@ def main():
             P.RECORDED[name], P.N_RECORDED = int(sum(per.values())), n
         kw = dict(spans=os.path.join(root, "spans.csv"), prod_dir=d["prod"], bank_dir=d["bank"], located=os.path.join(root, "located.csv"),
                   mmwl_labels=[os.path.join(root, "Train.json"), os.path.join(root, "Valid.json")], mmwl_dirs=[d["mm_train"], d["mm_valid"]])
+        # the located table alone: the isolated clips are the spans; a table whose first frames are off by one must stop the chain
+        txt = run(P.cmd_facts, located=kw["located"], spans=kw["spans"], out=os.path.join(root, "facts.json"), prod_dir=d["prod"])
+        assert "FACTS OK" in txt and "GATE H PASSED" in txt, txt
+        fj = json.load(open(os.path.join(root, "facts.json")))
+        assert fj["safe_spans_with_twin"] == fj["safe_spans_with_twin_of_equal_length"] == G * PER, fj
+        rows = list(csv.reader(open(kw["located"])))
+        with open(os.path.join(root, "shifted.csv"), "w", newline="") as f:
+            csv.writer(f).writerows([rows[0]] + [r[:7] + [int(r[7]) + 1] + r[8:] for r in rows[1:]])
+        try:
+            run(P.cmd_facts, located=os.path.join(root, "shifted.csv"), spans=kw["spans"], out="", prod_dir="")
+        except AssertionError as e:
+            assert "not the spotting spans" in str(e), e
+        else:
+            raise SystemExit("the facts gate did not fire")
         txt = run(P.cmd_iso, out="", gate_only=True, **kw)
         assert "GATES PASSED" in txt, txt
         txt = run(P.cmd_iso, out=os.path.join(root, "iso.json"), gate_only=False, **kw)
@@ -105,19 +120,23 @@ def main():
         v = r["variants"][P.PRIMARY]
         a2, a4 = v["A2 isolated, own clip excluded [PRIMARY]"], v["A4 isolated, nothing excluded (self-match; leak size only)"]
         assert r["gate_E"]["median_px"] < 1e-3 and v["queries_with_twin"] == v["queries"] and v["A1_agreement_with_A0"] == 1.0
-        assert v["reference_rows"] == G * (PER + 2) + 3 - 1 and v["reference_rows_safe"] == G * (PER + 2), v   # the empty clip has no descriptor
+        assert v["reference_candidates"] == v["reference_rows"] == v["reference_rows_safe"] == G * (PER + 2), v   # the validation-sourced, unlocated and empty clips are never read
         assert a4["top1"] > 0.95 and a4["n"] == a2["n"] == v["queries"], (a2, a4)
         vb = r["variants"]["body"]                     # the body carries no sign here: only a self-match can score
         assert vb["A4 isolated, nothing excluded (self-match; leak size only)"]["top1"] > 0.8 > 0.4 > vb["A2 isolated, own clip excluded [PRIMARY]"]["top1"], vb
         assert vb["tests"]["A4"]["p"] < 1e-6 and vb["tests"]["A2"]["p"] > 0.05 and "A5" in v and v["A5"]["n"] == v["queries"]
-        assert set(v["tests"]) == {"A2", "A3", "A2m", "A4", "A1", "A5", "A5_vs_A2"} and r["reading"]["same_footage"] is True
+        assert set(v["tests"]) == {"A2", "A3", "A2m", "A2_vs_A2m", "A4", "A1", "A5", "A5_vs_A2"} and r["reading"]["same_footage"] is True
         assert r["reading"]["reading"][:2] in ("R1", "R2", "R3") and set(r["within"]) == {"120 spotting glosses", "all glosses of the isolated set"}
-        assert "READING" in txt and "length only" in txt
+        assert "READING" in txt and "length only" in txt and set(v["seed_sensitivity"]) == {str(x) for x in P.SENS_SEEDS}
+        assert all(t["n"] == v["queries"] for t in v["seed_sensitivity"].values()), v["seed_sensitivity"]
 
         txt = run(P.cmd_depth, spans=os.path.join(root, "spans.csv"), prod_dir=d["prod"], d3_dir=d["d3"], out=os.path.join(root, "depth.json"), n_perm=60)
         pr = json.load(open(os.path.join(root, "depth.json")))["45 glosses of the recorded run"][P.PRIMARY]["primary"]
         assert pr["rows_are_the_recorded_run"] and pr["xy_comparable"] and pr["depth_not_constant"] and pr["z_only_p"] < 0.05, pr
         assert pr["reading"].startswith(("C2", "C3")), pr["reading"]
+        assert set(pr["seed_sensitivity"]) == {str(x) for x in P.SENS_SEEDS} and all(t["z_only_top1"] > 0.5 for t in pr["seed_sensitivity"].values())
+        sec = json.load(open(os.path.join(root, "depth.json")))["all 120 spotting glosses"][P.PRIMARY]["secondary"]
+        assert sec["z_only_p"] < 0.05 and "reading" not in sec
 
     with tempfile.TemporaryDirectory() as root:        # depth that is noise: no identity
         d = build(root, z_signal=False)
@@ -134,7 +153,19 @@ def main():
             assert "gate E FAILED" in str(e), e
         else:
             raise SystemExit("gate E did not fire")
-    print("w12f_synth_test passed (invented data: gates, arms, readings, depth)")
+
+    with tempfile.TemporaryDirectory() as root:        # reference clips that silently give no descriptor: the run must stop
+        d = build(root, z_signal=True)
+        for vid in range(1, 9):                        # 8 of the 72 reference clips lose their pose file (gate E cannot see them)
+            os.remove(os.path.join(d["bank"], f"{vid}.npz"))
+        try:
+            run(P.cmd_iso, out="", gate_only=True, spans=os.path.join(root, "spans.csv"), prod_dir=d["prod"], bank_dir=d["bank"],
+                located=os.path.join(root, "located.csv"), mmwl_labels=[], mmwl_dirs=[])
+        except AssertionError as e:
+            assert "reference set FAILED" in str(e), e
+        else:
+            raise SystemExit("the reference-set guard did not fire")
+    print("w12f_synth_test passed (invented data: facts, gates, arms, readings, depth)")
 
 
 if __name__ == "__main__":

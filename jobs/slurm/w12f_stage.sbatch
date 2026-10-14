@@ -6,6 +6,7 @@
 #   2. unzip, require 3,209 clips
 #   3. tools/w12f_locate.py: for every isolated clip, the Communication signer clip and frame range with the same pixels
 #   4. tools/w12f_probe.py spans: the leak-safe spotting spans (Communication TRAIN clips only)
+#   5. tools/w12f_probe.py facts: the isolated clips of the spotting glosses must be the spotting spans (gate)
 # No pose is read and no accuracy is computed here. Pre-registration: results/PREREG_WAVE12F_POSE_MEASUREMENTS_2026-10-13.md
 #   sbatch kaya/w12f_stage.sbatch
 #SBATCH --job-name=w12f-stage
@@ -18,7 +19,7 @@
 #SBATCH --output=/group/pmc099/pprasad/code/logs/%x-%j.out
 set -eo pipefail
 source /group/pmc099/pprasad/code/phase2_baseline/kaya/_w12lib.sh   # modules, environment, cd into the snapshot
-source kaya/_w12flib.sh
+source /group/pmc099/pprasad/code/phase2_baseline/kaya/_w12flib.sh      # paths, code pins, gates (the snapshot holds no job scripts)
 set -u                                                              # only now: module and activate read unset variables
 w12f_code_gate
 mkdir -p "$RAW" "$OUT" "$W12F/rgb_isolated"
@@ -86,5 +87,11 @@ assert len(ids) == int(n) and not set(ids) & held, f"{len(ids)} span clips, {len
 open(out, "w").write("\n".join(ids) + "\n")
 print(f"span clips {len(ids)}, none in validation or test -> {out}")
 PY
+
+# ---- 5. what the located table says (no pose): stop here, before the GPU step, if the isolated clips are not the spans ----
+#         and gate H: with the production poses on /group the probe reproduces the recorded run on this cluster
+pin_pose
+python -u tools/w12f_probe.py facts --located "$OUT/located.csv" --spans "$OUT/spans_safe.csv" --out "$OUT/facts.json" \
+    --prod_dir "$B/dwpose_clips" | tee "$OUT/facts.txt"
 touch "$OUT/DONE_stage"
 echo "W12F_STAGE_DONE"
