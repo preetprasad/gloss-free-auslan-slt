@@ -598,7 +598,11 @@ class AuslanDailyDataset(Dataset):
                                           float(getattr(self.cfg, "aug_segment_speed", 0.0)), self._tempo_rng(clip))
             if self.pose_augment and getattr(self.cfg, "pose_aug", False):
                 kps, bbox = augment_pose(kps, bbox, self.cfg, self._pose_rng(clip))
-            feats, _ = normalize_clip(kps, bbox, self.cfg)
+            if getattr(self.cfg, "w13_input", ""):          # wave 13 clip-level transforms (off by default)
+                from .w13_input import transform as w13_transform
+                feats = w13_transform(kps, self.cfg)
+            else:
+                feats, _ = normalize_clip(kps, bbox, self.cfg)
             if (self.pose_augment and getattr(self.cfg, "pose_aug", False)
                     and (getattr(self.cfg, "aug_hand_drop", 0.0) > 0 or getattr(self.cfg, "aug_hand_span", 0.0) > 0)):
                 feats = mask_hands(feats, self.cfg, self._mask_rng(clip))

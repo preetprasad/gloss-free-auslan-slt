@@ -176,6 +176,20 @@ def check_flags(cfg):
                 and cfg.use_confidence and not cfg.use_velocity and int(cfg.temporal_pool) == 1):
             raise SystemExit("--cf_pref_weight needs model_arch generic and the 399-D layout (133 keypoints, subset all, "
                              "confidence on, no velocity, temporal_pool 1): the hand negative swaps feature dims 273:399")
+    if cfg.w13_input not in ("", "b133", "u69") or cfg.w13_frontend not in ("", "tc", "sg"):
+        raise SystemExit("--w13_input must be '', 'b133' or 'u69' and --w13_frontend '', 'tc' or 'sg'")
+    if cfg.w13_frontend and cfg.w13_input != "u69":
+        raise SystemExit("--w13_frontend needs --w13_input u69 (the front end reads the 69-point layout)")
+    if cfg.w13_input:
+        want = dict(model_arch="generic", num_keypoints=133, keypoint_subset="all", input_representation="pose",
+                    use_confidence=True, use_velocity=False, temporal_pool=1, coord_norm="frame", conf_threshold=0.0,
+                    hand_local_norm=False, hierarchical_pose_norm=False, pose_graph=False, visual_feature_dim=0,
+                    drop_zero_frames=True, rgb_feat_dir="", aug_hand_drop=0.0, aug_hand_span=0.0, aug_segment_speed=0.0,
+                    cf_pref_weight=0.0, init_encoder="", resume_checkpoint="")
+        bad = {k: getattr(cfg, k) for k, v in want.items() if getattr(cfg, k) != v}
+        if bad:
+            raise SystemExit(f"--w13_input is only defined for the adopted 399-D layout; these settings differ: {bad} "
+                             "(coord_norm stays 'frame' so the saved cfg names the adopted setting; the transform ignores it)")
     hand_mask = cfg.aug_hand_drop > 0 or cfg.aug_hand_span > 0
     if cfg.eval_every < 1:
         raise SystemExit("--eval_every must be >= 1")

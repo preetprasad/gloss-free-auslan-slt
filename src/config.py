@@ -107,6 +107,10 @@ class Config:
                                          # factor from [1-x, 1+x] (nearest-frame; transitions untouched; 0 = off)
     aug_segment_file: str = ""           # JSON {clip path as in the manifest: [[start_frame, end_frame], ...]} written by
                                          # tools/w12c_stitch_sidecar.py from the stitcher's --audit_jsonl sidecar
+    w13_input: str = ""                  # wave 13: "" = the adopted per-frame standardisation; "b133" = all 133 points with clip-level body
+                                         # scaling; "u69" = the 69-point set with clip-level part scaling (slt/w13_input.py)
+    w13_frontend: str = ""               # wave 13: "" = flat encoder input; "tc" / "sg" = part-wise temporal-conv / ST-GCN front end
+                                         # (slt/w13_frontend.py); needs w13_input="u69"
     drop_zero_frames: bool = True        # mask all-zero frames (frame 0 issue)
     max_src_frames: int = 256            # temporal cap (subsample if longer)
     max_tgt_tokens: int = 64
@@ -290,6 +294,8 @@ class Config:
                 f"input_representation must be 'pose' or 'precomputed', "
                 f"got {self.input_representation!r}"
             )
+        if self.w13_input in ("b133", "u69"):                 # wave 13: fixed layouts (x, y, confidence per point)
+            return 3 * (133 if self.w13_input == "b133" else 69)
         if self.keypoint_subset == "all":
             k = int(self.num_keypoints)
         else:

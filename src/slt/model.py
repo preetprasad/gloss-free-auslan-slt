@@ -149,6 +149,12 @@ class PoseSLT(nn.Module):
                     nk, feat_dim // nk,
                     int(getattr(cfg, "pose_graph_layers", 2)), cfg.dropout,
                 )
+        # Wave 13 part-wise front end (off by default): replaces the flat per-frame vector by 4 x 256 pooled part features.
+        self.w13 = None
+        if getattr(cfg, "w13_frontend", ""):
+            from .w13_frontend import W13Front
+            self.w13 = W13Front("skeleton" if cfg.w13_frontend == "sg" else "identity", cfg.dropout)
+            feat_dim = self.w13.out_dim
         visual_d = int(getattr(cfg, "visual_feature_dim", 0))
         if visual_d > 0:
             self.visual_adapter = nn.Sequential(
@@ -203,6 +209,8 @@ class PoseSLT(nn.Module):
                 nn.init.xavier_uniform_(p)
 
     def encode(self, src: torch.Tensor, src_pad: torch.Tensor) -> torch.Tensor:
+        if self.w13 is not None:
+            src = self.w13(src, src_pad)
         if self.pose_graph is not None:
             src = self.pose_graph(src)
         visual = self.visual_adapter(src)
