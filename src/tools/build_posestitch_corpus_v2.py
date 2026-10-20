@@ -17,11 +17,12 @@ here; downstream coord_norm=frame standardises each frame independently, which a
 inter-signer scale/position variation.
 """
 from __future__ import annotations
-import argparse, json, os, random, sys
+import argparse, csv, json, os, random, sys
 import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from tools.stitch_lexicon import build_lexicon, coverage, content_words, words, STOP, WRONG_SENSE_GLOSSES
+CUT_THR = 0.8    # wave 16 default of --w16_cut_thr (equals tools/w16_posture.CUT_THR, asserted when the flag is used); tools.w16_posture is imported only with --w16_restcut
 
 
 # ── temporal fidelity (2026-09-05 audit) ────────────────────────────────────
@@ -114,6 +115,42 @@ def scale_to_total(lengths, total: int):
     return out
 
 
+def _manifest_clips(path):
+    """Clip names (file name without .npz) of a train/val/test manifest (`path<TAB>text` rows)."""
+    return {os.path.basename(l.split("\t", 1)[0])[:-4] for l in open(path, encoding="utf-8") if "\t" in l}
+
+
+def load_inreg(csv_path, npz_dir, train_manifest, exclude_manifests, min_frames=4):
+    """WAVE-15 in-register exemplars: {gloss: [(npz_dir, str(Video_ID)), ...]} (sorted by Video_ID) and a stats dict.
+
+    Source: results/wave12f_out/located.csv = Auslan-Daily's isolated-sign clips, each located by pixels inside ONE Communication
+    signer clip (wave 12f). Kept: status == located (the 24 ambiguous and 2 empty ones go), comm_split == train, the source clip is
+    in the TRAIN manifest and in none of the exclude manifests (validation, test), and the clip has >= min_frames frames (the builder
+    floors a sign at 4). The pose files of the kept exemplars of glosses the lexicon also has must exist (checked in main): a missing file stops the build."""
+    train, held = _manifest_clips(train_manifest), set()
+    for m in exclude_manifests:
+        held |= _manifest_clips(m)
+    st = dict(rows=0, located=0, not_located=0, comm_split_not_train=0, in_held=0, not_in_train=0, short=0, kept=0)
+    out = {}
+    for r in csv.DictReader(open(csv_path, encoding="utf-8")):
+        st["rows"] += 1
+        if r["status"] != "located":
+            st["not_located"] += 1; continue
+        st["located"] += 1
+        clip = r["Video_Name_Clip"]
+        if clip in held:
+            st["in_held"] += 1; continue
+        if r["comm_split"] != "train":
+            st["comm_split_not_train"] += 1; continue
+        if clip not in train:
+            st["not_in_train"] += 1; continue
+        if int(r["frames"]) < min_frames:
+            st["short"] += 1; continue
+        out.setdefault(r["Query_Gloss"].strip().lower(), []).append((npz_dir, r["Video_ID"]))
+        st["kept"] += 1
+    return {g: sorted(v, key=lambda e: int(e[1])) for g, v in out.items()}, st
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--labels", nargs="+", required=True, help="MM-WLAuslan label JSONs")
@@ -189,6 +226,29 @@ def main():
                          "same length; a transition keeps the budget drawn for the sign it precedes. A clip whose signs are "
                          "all wrong-sense is left as built. Needs --no_paren_alias (with aliases on, \"not be\" is a "
                          "correct match for the same gloss).")
+    ap.add_argument("--inreg_csv", default="",
+                    help="WAVE-15 IN-REGISTER ARM. results/wave12f_out/located.csv. For every sign whose gloss label equals a gloss that has "
+                         "in-register exemplars (Auslan-Daily isolated clips located inside a TRAIN clip, wave 12f), the exemplar is drawn "
+                         "from those instead of MM-WLAuslan, with a SEPARATE random.Random(seed + 3). The main exemplar draw (one "
+                         "random.choice per sign), the sampled durations and the transition budgets are exactly those of the build without "
+                         "the flag; the in-register source is not end-trimmed (it already is the sign span) but IS resampled to the same "
+                         "sampled length, so every clip and segment has the length it has without the flag. Needs --sign_dur, "
+                         "--inreg_npz_dir and --inreg_train_manifest.")
+    ap.add_argument("--inreg_npz_dir", default="", help="dwpose_isolated/ (<Video_ID>.npz, identical to the production DWPose frames)")
+    ap.add_argument("--inreg_train_manifest", default="", help="the real Communication TRAIN manifest")
+    ap.add_argument("--inreg_exclude_manifests", nargs="*", default=[],
+                    help="validation and test manifests: an exemplar whose source clip is in one of them is dropped")
+    ap.add_argument("--w16_restcut", action="store_true",
+                    help="WAVE-16 REST-RETURN ARM. Before an exemplar (after the --trim_frac trim, exactly as in the build without the flag) is "
+                         "resampled to its sampled length, cut its leading and trailing frames in which BOTH hands are down (tools/w16_posture.py: wrist "
+                         "more than --w16_cut_thr shoulder widths below the shoulder midpoint, or wrist confidence under 0.3), unless fewer than 4 frames would "
+                         "remain or no frame has a hand up (then the sign is left as it is). The remaining frames are resampled to the SAME sampled "
+                         "length, so every segment and clip has the length it has without the flag. No random number is drawn: exemplars, durations and "
+                         "transition budgets are those of the build without the flag. Needs --sign_dur. The audit sidecar gains restcut_lead, "
+                         "restcut_trail and source_frames_after_restcut per segment (only with the flag).")
+    ap.add_argument("--w16_cut_thr", type=float, default=CUT_THR,
+                    help="with --w16_restcut: a frame is cut at a sign edge if both wrists are more than this many shoulder widths below the shoulder "
+                         "midpoint (or low-confidence). Default 0.8 (a margin of 0.2 under the 1.0 of the measurement, see tools/w16_posture.edge_cut); 1.0 is the literal definition.")
     ap.add_argument("--audit_jsonl", default="",
                     help="optional per-clip segment provenance for a motion-fidelity audit; this does "
                          "not change generated poses or the training manifest")
@@ -199,6 +259,20 @@ def main():
                                or a.drop_function_signs):
         raise SystemExit("--drop_wrong_sense needs --no_paren_alias and is not built to combine with "
                          "--scramble_glosses/--shuffle_order/--match_frames/--drop_function_signs")
+    if a.inreg_csv:
+        if not (a.inreg_npz_dir and a.inreg_train_manifest and a.sign_dur):
+            raise SystemExit("--inreg_csv needs --inreg_npz_dir, --inreg_train_manifest and --sign_dur (lengths must equal the build without it)")
+        if a.scramble_glosses or a.shuffle_order or a.match_frames or a.drop_function_signs or a.drop_wrong_sense or a.motion_resample:
+            raise SystemExit("--inreg_csv is not built to combine with --scramble_glosses/--shuffle_order/--match_frames/"
+                             "--drop_function_signs/--drop_wrong_sense/--motion_resample")
+    if a.w16_restcut:
+        if not a.sign_dur:
+            raise SystemExit("--w16_restcut needs --sign_dur (lengths must equal the build without it)")
+        if a.inreg_csv or a.scramble_glosses or a.shuffle_order or a.match_frames or a.drop_function_signs or a.drop_wrong_sense or a.motion_resample:
+            raise SystemExit("--w16_restcut is not built to combine with --inreg_csv/--scramble_glosses/--shuffle_order/--match_frames/"
+                             "--drop_function_signs/--drop_wrong_sense/--motion_resample")
+        from tools.w16_posture import edge_cut, CUT_THR as _CT      # imported only with the flag: a snapshot without w16_posture.py still runs every other build
+        assert _CT == CUT_THR, "builder CUT_THR default differs from tools/w16_posture.CUT_THR"
     ref_rows = None
     if a.match_frames:
         if not a.sign_dur or a.realizations != 1 or a.shuffle_order or a.scramble_glosses:
@@ -216,6 +290,16 @@ def main():
           f"median {int(np.median(n_ex))} exemplars/gloss, {len(lex.phrase2gloss)} surface forms",
           flush=True)
 
+    inreg, n_inreg_signs = {}, 0
+    if a.inreg_csv:
+        inreg, ist = load_inreg(a.inreg_csv, a.inreg_npz_dir, a.inreg_train_manifest, a.inreg_exclude_manifests)
+        inreg = {g: v for g, v in inreg.items() if g in lex.gloss2clips}       # only glosses the MM lexicon also has
+        miss = [e[1] for v in inreg.values() for e in v if not os.path.isfile(os.path.join(e[0], e[1] + ".npz"))]
+        if miss:                                                               # a missing pose file stops the build instead of shrinking it
+            raise SystemExit(f"--inreg_npz_dir: {len(miss)} pose files are missing, e.g. {miss[:3]}")
+        print(f"[stitch2] in-register table: {ist} -> {len(inreg)} glosses shared with the lexicon, "
+              f"{sum(len(v) for v in inreg.values())} exemplars", flush=True)
+
     cache = {}
 
     def load(entry):
@@ -224,7 +308,7 @@ def main():
             z = np.load(os.path.join(d, cid + ".npz"))
             k, b = z["KPS"].astype(np.float32), z["BBOX"].astype(np.float32)
             source_frames_original = int(k.shape[0])
-            if a.trim_frac > 0 and k.shape[0] > 8:          # drop rest pose at both ends
+            if a.trim_frac > 0 and k.shape[0] > 8 and not (a.inreg_csv and d == a.inreg_npz_dir):   # drop rest pose at both ends (not for an in-register span)
                 cut = int(k.shape[0] * a.trim_frac)
                 k, b = k[cut:k.shape[0] - cut], b[cut:b.shape[0] - cut]
             if len(cache) < 20000:                           # bounded LRU-ish cache
@@ -236,6 +320,7 @@ def main():
     # `rng` is untouched, so durations and transition budgets are identical to the unscrambled build.
     scram = random.Random(a.seed + 1)
     shuf = random.Random(a.seed + 2)     # --shuffle_order's own stream, same reasoning
+    inreg_rng = random.Random(a.seed + 3)   # --inreg_csv's own stream: the main `random` is untouched by the swap
     all_glosses = sorted(lex.gloss2clips)
 
     rows, n_written, skipped = [], 0, 0
@@ -268,13 +353,21 @@ def main():
         for _ in range(a.realizations):
             # pass 1: every random draw, in sentence order (exemplar, duration, transition budget), so
             # --shuffle_order changes nothing but the order the drawn signs are laid out in.
-            drawn, budgets, sampled = [], [], []
+            drawn, budgets, sampled, cuts = [], [], [], []
             for si, (_, _, gloss) in enumerate(spans):
                 if a.scramble_glosses:
                     gloss = scram.choice(all_glosses)
                 source_dir, source_id = random.choice(lex.gloss2clips[gloss])
+                if gloss in inreg:                   # --inreg_csv: same draw as above, then the source is replaced
+                    source_dir, source_id = inreg_rng.choice(inreg[gloss])
+                    n_inreg_signs += 1
                 k, b, source_frames_original = load((source_dir, source_id))
                 source_frames_after_trim = int(k.shape[0])
+                if a.w16_restcut:                    # posture cut on the trimmed exemplar; deterministic, no random draw
+                    lead, trail = edge_cut(k, thr=a.w16_cut_thr)
+                    if lead or trail:
+                        k, b = k[lead:k.shape[0] - trail], b[lead:b.shape[0] - trail]
+                    cuts.append((lead, trail, int(k.shape[0])))
                 if a.sign_dur:                       # match the real continuous duration
                     _n = sample_sign_duration(rng)
                     sampled.append(_n)
@@ -339,6 +432,10 @@ def main():
                     "end_frame": cursor - 1,
                     "transition_frames_before": transition_before,
                 }
+                if a.inreg_csv:
+                    seg["inreg"] = source_dir == a.inreg_npz_dir
+                if a.w16_restcut:                    # order is the identity here (not combined with --shuffle_order / --drop_wrong_sense)
+                    seg["restcut_lead"], seg["restcut_trail"], seg["source_frames_after_restcut"] = cuts[oi]
                 if a.shuffle_order:
                     seg["english_position"] = oi
                 segments.append(seg)
@@ -385,6 +482,8 @@ def main():
         print(f"[stitch2] drop_wrong_sense: removed {ws_removed} of {ws_total} signs "
               f"({100 * ws_removed / max(ws_total, 1):.2f}%); {ws_whole} clips left as built (all signs wrong-sense)",
               flush=True)
+    if a.inreg_csv:
+        print(f"[stitch2] inreg: {n_inreg_signs} signs drew an in-register exemplar", flush=True)
     print(f"[stitch2] wrote {n_written} synthetic clips ({skipped} sentences skipped below "
           f"cov>={a.min_cov}) -> {man}", flush=True)
     if rows:

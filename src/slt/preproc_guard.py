@@ -5,7 +5,12 @@
 # members on input they were never trained on, and still prints a plausible BLEU. Only `rgb_feat_dir`
 # was ever guarded. These are the fields that change what the model SEES.
 _PREPROC_FIELDS = ("coord_norm", "num_keypoints", "keypoint_subset", "bbox_format", "use_confidence",
-                   "use_velocity", "conf_threshold", "max_src_frames", "temporal_pool", "hand_local_norm")
+                   "use_velocity", "conf_threshold", "max_src_frames", "temporal_pool", "hand_local_norm",
+                   "w13_input", "w13_frontend")
+# Wave 13 (21 Oct 2026): a C133 checkpoint has the same 399-D shape as a frame-normalised model, so decoding it under a Config that
+# does not carry its w13_input printed a plausible BLEU on the wrong input. A checkpoint saved before the fields existed has no such
+# key and means "" (the default): it is compared with the decode Config like any other field, so it still passes under the default Config.
+_DEFAULT_WHEN_ABSENT = {"w13_input": "", "w13_frontend": ""}
 
 
 def assert_preproc_matches_checkpoints(cfg, cks, override=False):
@@ -19,9 +24,10 @@ def assert_preproc_matches_checkpoints(cfg, cks, override=False):
     for i, c in enumerate(cks):
         saved = c.get("cfg", {}) or {}
         for f in _PREPROC_FIELDS:
-            if f not in saved:
+            if f not in saved and f not in _DEFAULT_WHEN_ABSENT:
                 continue
-            want, got = saved[f], getattr(cfg, f, None)
+            want = saved[f] if f in saved else _DEFAULT_WHEN_ABSENT[f]
+            got = getattr(cfg, f, _DEFAULT_WHEN_ABSENT.get(f))
             if want != got:
                 bad.append(f"  member {i}: {f} checkpoint={want!r} decode={got!r}")
     if not bad:
