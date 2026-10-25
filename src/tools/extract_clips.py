@@ -109,7 +109,12 @@ def main():
             if os.path.exists(out) and not a.overwrite:
                 n_clip += 1
                 continue
-            kps, bbox = find_pose_arrays(clip, a.num_kp)
+            # Each clip's Annotation holds every person in the scene ({1: ..., 2: ..., 'Signer': ...}); a shape-based
+            # walk takes the first person, a non-signer in 88.4% of Communication clips (found 25 Oct 2026). Take 'Signer'.
+            ann = clip.get("Annotation") if isinstance(clip, dict) else None
+            if not (isinstance(ann, dict) and "Signer" in ann):
+                raise SystemExit(f"{clip_name}: no Annotation['Signer'] entry (keys {list(ann) if isinstance(ann, dict) else type(clip)})")
+            kps, bbox = find_pose_arrays(ann["Signer"], a.num_kp)
             if kps is None:
                 n_skip += 1
                 continue

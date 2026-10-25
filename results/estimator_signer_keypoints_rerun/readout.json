@@ -1,0 +1,64 @@
+{
+ "job": 196407,
+ "script": "w5_estrep with signer manifests",
+ "beam": 5,
+ "seeds": [
+  42,
+  101,
+  202
+ ],
+ "bleu_definition": "sacreBLEU 4-gram, tokenize=13a, detokenised hyps and refs (slt.metrics.corpus_bleu4 + detokenize), beam 5, length penalty 0.6, best checkpoint",
+ "bleu_note": "sacreBLEU 13a on detokenised text (thesis convention, slt/metrics.py); recomputed values equal the logged beam5 values and the per-seed summary JSONs to 1e-6",
+ "val": {
+  "eap": [
+   10.179867593981102,
+   10.41591467194172,
+   11.124344814063976
+  ],
+  "edw": [
+   10.811817848358734,
+   10.64059365411465,
+   10.970119761991867
+  ]
+ },
+ "test": {
+  "eap": [
+   10.282091585310226,
+   10.245566819589145,
+   9.71009250143691
+  ],
+  "edw": [
+   10.439157536986984,
+   10.06205622263855,
+   10.553536317225475
+  ]
+ },
+ "unseen_test": {
+  "n_clips": 570,
+  "eap": [
+   5.382392950954486,
+   4.8272493287729725,
+   4.953223759867013
+  ],
+  "edw": [
+   5.58931282677996,
+   5.9011232043921185,
+   5.612373374514176
+  ],
+  "note": "unseen = reference (lowercased, whitespace-collapsed) not among training targets, via results/train_target_hashes.txt; definition of tools/arm_readouts.py"
+ },
+ "distinct_outputs_test": {
+  "eap": [
+   310,
+   327,
+   272
+  ],
+  "edw": [
+   349,
+   345,
+   351
+  ]
+ },
+ "recomputed_by": "agent A: tools/arm_readouts.readouts + tools/seed_decision.interval (twin python)",
+ "recomputed_from": "results/estimator_signer_keypoints_rerun/runs/{Eap,Edw}_s{42,101,202}/beam5_{val,test}_best.json"
+}
