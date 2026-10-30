@@ -1,0 +1,24 @@
+{
+ "gid": "cleanroom_w25_w27",
+ "covered": [
+  "c11-053",
+  "c11-056",
+  "c19-008",
+  "c19-022",
+  "c19-025",
+  "c19-028",
+  "c19-040",
+  "c19-041",
+  "c19-042"
+ ],
+ "not_covered": [
+  {
+   "id": "c19-007",
+   "reason": "the ten-point behavioural description is a document written from the original authors' code; it is not published, so the count of ten cannot be recomputed here"
+  },
+  {
+   "id": "c19-010",
+   "reason": "DISAGREES (partly): dissertation says 82 to 85% of outputs identical; saved decodes give 80.6% to 85.2% over the ten seed x split comparisons (645/800 for seed 42 on test). The two means (test 17.86 ours, 18.21 port) do agree and are printed"
+  }
+ ]
+}

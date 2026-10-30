@@ -1,0 +1,35 @@
+{
+ "gid": "keypoints_69_w13",
+ "covered": [
+  "c10-002",
+  "c17-024",
+  "c17-025",
+  "c17-026",
+  "c17-027",
+  "c17-028",
+  "c17-029",
+  "c17-030",
+  "c17-031",
+  "c17-032",
+  "c17-033",
+  "c17-034",
+  "c17-035",
+  "c17-036",
+  "c17-037",
+  "c17-038",
+  "c17-039",
+  "c17-040",
+  "c17-042",
+  "c17-043",
+  "c17-044",
+  "c17-045",
+  "c17-046",
+  "c17-047"
+ ],
+ "not_covered": [
+  {
+   "id": "c17-023",
+   "reason": "PARTLY: the 69 keypoints are recomputed (input width 207 = 3 x 69 against 399 = 3 x 133 in every training log), but the split 9 body + 21 per hand + 18 face is defined in training code that is not published and no saved output lists the indices"
+  }
+ ]
+}

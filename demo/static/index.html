@@ -1,75 +1,101 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Investigating gloss-free Auslan to English and speech: reproducible research, honest evaluation and an experimental translation interface.">
-  <meta name="theme-color" content="#203d35">
-  <title>Auslan / English — From signing to understanding</title>
-  <link rel="stylesheet" href="/static/research.css">
-  <script src="/static/research.js" defer></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Follow a real Auslan signing clip from video to English text and speech. Explore what helps translation, what still fails, and the research behind it at UWA.">
+<meta name="theme-color" content="#183c35"><title>Auslan / English — Inside the translation</title>
+<link rel="stylesheet" href="/static/research.css"><link rel="stylesheet" href="/static/documents.css"><script src="/static/research.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="header wrap">
-  <a class="brand" href="/" aria-label="Auslan English home"><span class="brand-mark" aria-hidden="true">a<span>↗</span></span> Auslan <span class="brand-slash">/</span> English</a>
-  <nav aria-label="Main navigation"><a href="#findings">Findings</a><a href="#approach">Approach</a><a href="#reproduce">Research materials</a></nav>
-  <a class="button small" href="/studio">Open translator <span aria-hidden="true">↗</span></a>
+<a class="brand" href="/" aria-label="Auslan English home"><span class="brand-symbol" aria-hidden="true">a↗</span> Auslan <span class="slash">/</span> English</a>
+<nav aria-label="Main navigation"><a href="#pipeline">How it works</a><a href="#findings">What we found</a><a href="/research-notes">Research notes</a></nav>
+<a class="button small" href="/studio">Open translator <span aria-hidden="true">↗</span></a>
 </header>
 <main id="main">
 <section class="hero wrap" aria-labelledby="hero-title">
-  <div class="hero-copy">
-    <p class="eyebrow"><span class="status-dot"></span> UWA Honours research · In progress</p>
-    <h1 id="hero-title">From signing<br>to <em>understanding.</em></h1>
-    <p class="standfirst">Investigating gloss-free Auslan sign language to speech translation.</p>
-    <p class="hero-detail">How far can better visual representations and carefully constructed training examples take translation when annotated data is scarce?</p>
-    <div class="actions"><a class="button" href="/studio">Explore the translator <span aria-hidden="true">↗</span></a><a class="text-link" href="#findings">Read the findings <span aria-hidden="true">↓</span></a></div>
-    <div class="byline"><strong>Preet Prasad</strong><span>The University of Western Australia</span><span>Supervised by Dr Atif Mansoor</span></div>
-  </div>
-  <figure class="hero-figure">
-    <div class="figure-top"><span>01 / THE RESEARCH QUESTION</span><span class="pill">Gloss-free translation</span></div>
-    <svg class="pose-figure" viewBox="0 0 490 340" role="img" aria-labelledby="pose-title pose-desc">
-      <title id="pose-title">A representation of signing as tracked movement</title><desc id="pose-desc">A schematic of a face, upper body and two hands, connected by movement coordinates. This is an illustration, not recorded signing.</desc>
-      <defs><pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#b1c3b8"/></pattern></defs>
-      <rect width="490" height="340" fill="url(#grid)"/>
-      <g fill="none" stroke="#aac2b1" stroke-width="1"><path d="M30 45v-17h17m396 0h17v17M30 295v17h17m396 0h17v-17"/><ellipse cx="245" cy="100" rx="36" ry="45"/><path d="M218 94q27-14 54 0m-49 29q22 10 44 0m-24-29-5 17h12"/></g>
-      <g fill="none" stroke="#325d4a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m245 145 0 48m-68-27 68 27 68-27M177 166l-37 76 49-25m124-51 38 76-50-25m-56-24-48 93m48-93 48 93"/><path d="m189 217-21-24-8-28 8-3 13 29-5-49 9-1 11 47 2-55 9 1 1 53 11-45 9 3-9 49 16-21 7 6-23 39zM301 217l21-24 8-28-8-3-13 29 5-49-9-1-11 47-2-55-9 1-1 53-11-45-9 3 9 49-16-21-7 6 23 39z"/></g>
-      <g fill="#325d4a" stroke="#e9eee5" stroke-width="2"><circle cx="245" cy="145" r="5"/><circle cx="245" cy="193" r="5"/><circle cx="177" cy="166" r="5"/><circle cx="313" cy="166" r="5"/><circle cx="140" cy="242" r="5"/><circle cx="351" cy="242" r="5"/><circle cx="189" cy="217" r="5"/><circle cx="301" cy="217" r="5"/><circle cx="197" cy="286" r="5"/><circle cx="293" cy="286" r="5"/></g>
-      <g font-family="system-ui, sans-serif" font-size="11" fill="#4e6d5d"><text x="51" y="104">FACE</text><text x="359" y="137">HANDS</text><text x="48" y="281">MOVEMENT</text></g>
-      <g stroke="#a3b7a9" fill="none"><path d="M88 100h112M349 133h-20M125 277h56"/></g>
-    </svg>
-    <div class="figure-pipeline"><span>Signing</span><span aria-hidden="true">→</span><span>Movement</span><span aria-hidden="true">→</span><span>English</span><span aria-hidden="true">→</span><span>Speech</span></div>
-    <figcaption>A visual language, without an intermediate sequence of gloss labels. Schematic illustration; live translation is experimental.</figcaption>
-  </figure>
+<p class="eyebrow"><span class="status-dot"></span> University of Western Australia · Honours research</p>
+<h1 id="hero-title">From Auslan<br>to English <em>speech.</em></h1>
+<p class="standfirst">Auslan is the language of the Australian Deaf community.<br> Our research explores translating it into English text and speech for people who do not sign.</p>
+<p class="byline">Preet Prasad <span>·</span> Supervised by Dr Atif Mansoor</p>
 </section>
-<div class="context-strip"><div class="wrap context-inner"><p><strong>One language. A distinct challenge.</strong> Auslan is the language of the Australian Deaf community, with its own grammar and rich visual expression.</p><p>Our focus is translation from conversational signing, using movement coordinates paired with English sentences.</p></div></div>
+<section class="walkthrough wrap" id="pipeline" aria-labelledby="pipeline-title">
+<div class="exhibit-heading"><div><h2 id="pipeline-title">Follow one signed sentence.</h2><p class="exhibit-instruction">Play the clip. Choose a step to see what happens next.</p></div><span id="exampleBadge" class="quiet-tag">Interactive schematic</span></div>
+<div class="exhibit" id="exhibit" data-stage="0">
+<div class="stage-tabs" role="tablist" aria-label="Pipeline stages">
+<button id="tab-0" role="tab" aria-selected="true" aria-controls="stage-panel" data-stage="0"><span>01</span> Video</button>
+<button id="tab-1" role="tab" aria-selected="false" aria-controls="stage-panel" tabindex="-1" data-stage="1"><span>02</span> Movement</button>
+<button id="tab-2" role="tab" aria-selected="false" aria-controls="stage-panel" tabindex="-1" data-stage="2"><span>03</span> Patterns</button>
+<button id="tab-3" role="tab" aria-selected="false" aria-controls="stage-panel" tabindex="-1" data-stage="3"><span>04</span> English</button>
+<button id="tab-4" role="tab" aria-selected="false" aria-controls="stage-panel" tabindex="-1" data-stage="4"><span>05</span> Speech</button>
+</div>
+<div class="exhibit-body" id="stage-panel" role="tabpanel" aria-labelledby="tab-0" tabindex="0">
+<div class="visual-stage">
+<div class="visual-topline"><span id="visualLabel">WATCH / THE COMPLETE RECORDING</span><span id="frameLabel">SCHEMATIC</span></div>
+<div class="capture-view" id="captureView">
+<div class="video-pane" id="videoPane" hidden><video id="exampleVideo" muted playsinline preload="metadata" aria-label="Recorded Auslan validation clip"></video><canvas id="poseOverlay" aria-hidden="true"></canvas><span class="pane-label">SOURCE VIDEO</span></div>
+<div class="pose-pane"><canvas id="poseCanvas" role="img" aria-label="Illustrated body, face and hand coordinates. Not recorded signing."></canvas><span class="pane-label" id="poseLabel">ILLUSTRATED MOVEMENT COORDINATES</span></div>
+</div>
+<div class="feature-view" id="featureView" hidden>
+<div class="layer-buttons" role="group" aria-label="Choose an encoder layer"><button data-layer="0" aria-pressed="true">Input</button><button data-layer="1" aria-pressed="false">Projection</button><button data-layer="2" aria-pressed="false">Layer 1</button><button data-layer="3" aria-pressed="false">Layer 2</button><button data-layer="4" aria-pressed="false">Layer 3</button><button data-layer="5" aria-pressed="false">Layer 4</button></div>
+<div class="feature-toolbar"><span id="featureModeLabel">FOLLOW ONE FRAME</span><div class="feature-modes" role="group" aria-label="Feature view"><button id="featureExplain" aria-pressed="true">How it works</button><button id="featureInspect" aria-pressed="false" disabled>Inspect values</button></div></div>
+<div id="featureExplanation">
+<div class="feature-focus">
+<figure class="feature-frame"><img id="featurePoster" alt="" hidden><canvas id="featureFrame" role="img" aria-label="Selected frame, linked to the timeline"></canvas><figcaption id="featureFrameLabel">ILLUSTRATION</figcaption></figure>
+<div class="feature-operation"><span class="feature-kicker" id="featureOperationLabel">01 / REPRESENT</span><h4 id="featureHeading">Turn a frame into numbers.</h4><p id="featureSummary">Each tracked point contributes two coordinates and a detection confidence.</p><div class="feature-equation" id="featureEquation">133 × 3 <span>→</span> 399</div></div>
+</div>
+<div id="coordinatePanel" class="coordinate-panel"><label for="featurePoint">Inspect a point <select id="featurePoint"><option value="91">Left wrist</option><option value="112">Right wrist</option><option value="0">Nose</option><option value="5">Left shoulder</option></select></label><div class="coordinate-values"><div><span>x · normalised</span><output id="coordinateX">normalised</output></div><div><span>y · normalised</span><output id="coordinateY">normalised</output></div><div><span>confidence</span><output id="coordinateConfidence">0–1</output></div></div><p id="coordinateNote">Coordinates are centred and scaled within each frame.</p></div>
+<div id="featureDiagram" class="feature-diagram" hidden><div class="diagram-heading"><span id="featureDiagramLabel">LEARNED FEATURE VECTOR</span><span id="featureDiagramScale"></span></div><canvas id="featureFlowCanvas" role="img" aria-label="Representation diagram"></canvas><p id="featureFlowCaption"></p></div>
+</div>
+<div id="featureInspection" hidden>
+<div class="matrix-wrap"><span class="matrix-y">FEATURE CHANNELS</span><canvas id="featureCanvas" role="img" aria-label="Measured feature matrix"></canvas></div>
+<div class="matrix-axis"><span>0 s</span><span>Time →</span><span id="matrixEnd">End</span></div>
+<div class="feature-key"><span><i></i><output id="featureMin">−1</output></span><span>0</span><span><output id="featureMax">+1</output><i></i></span></div>
+<div class="channel-inspector"><label for="featureChannel">Channel <output id="featureChannelLabel">1</output></label><input id="featureChannel" type="range" min="0" max="398" value="0"><output id="featureValue"></output></div>
+</div>
+<p id="featureNote" class="feature-note">Scrub the timeline to follow the same frame through every layer.</p>
+</div>
+<div class="language-view" id="languageView" hidden>
+<div class="language-heading"><span id="predictionLabel">ENGLISH DECODER</span><span class="mini-tag" id="decodeMode">After the utterance</span></div>
+<p class="prediction" id="predictionText">A sentence, from a sequence.</p>
+<div class="reference" id="referenceBlock" hidden><span>REFERENCE TRANSLATION · FROM THE DATASET</span><p id="referenceText"></p></div>
+<div class="decision" id="decisionBlock"><span class="decision-light"></span><span id="decisionText">Review the English before choosing to speak.</span></div>
+<div class="speech-controls" id="speechControls" hidden><button class="button light" id="speakButton" disabled>Read this result aloud <span aria-hidden="true">↗</span></button><button class="stop-speech" id="stopSpeech" hidden>Stop</button><p id="speechStatus" role="status">Speech becomes available with a recorded example.</p></div>
+</div>
+<div class="visual-bottomline"><div class="legend" id="poseLegend"><span class="legend-body">Body</span><span class="legend-face">Face</span><span class="legend-hands">Hands</span></div><span id="visualContext">Diagram, not an Auslan recording</span></div>
+</div>
+<aside class="stage-copy"><span class="stage-counter" id="stageCounter">01 / 05</span>
+<div class="stage-description"><h3 id="stageTitle">Watch the whole sentence.</h3><p id="stageDescription">Hands, face and body work together. The translator waits for the recording to finish before producing English.</p></div>
+<div class="stage-measure"><span id="stageMetric">25 <small>frames / second</small></span><p id="stageMetricLabel">Still images that make up the video</p></div>
+<p class="stage-footnote" id="stageFootnote">Auslan has its own grammar and ways of expressing meaning.</p>
+<button class="next-stage" id="nextStage">Next: track the movement <span aria-hidden="true">→</span></button>
+</aside></div>
+<div class="transport" id="transport"><button class="play-button" id="playButton" aria-label="Play illustration"><span id="playIcon" aria-hidden="true">▶</span></button>
+<label class="sr-only" for="timeline">Example timeline</label><input type="range" id="timeline" min="0" max="1000" step="1" value="0" aria-valuetext="Start of illustration">
+<output id="timeLabel" for="timeline">0.00 / 3.00 s</output><button class="tour-button" id="tourButton">Play walkthrough <span aria-hidden="true">↗</span></button></div>
+</div>
+<div class="exhibit-caption"><p id="exampleCaption">An illustrated guide to the translation steps. A recording loads here when available.</p><a href="/studio">Try the translator ↗</a></div>
+<p class="example-credit" id="exampleCredit" hidden>Example: <cite id="exampleCreditClip">Auslan-Daily validation clip</cite>, via <a href="https://uq-cvlab.github.io/Auslan-Daily-Dataset/docs/en/dataset-download">Auslan-Daily</a> · Shen et al. (2023) · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · <a href="/credits#changes">Source &amp; modifications</a></p>
+<p id="exampleError" class="example-error" role="status" hidden></p>
+<details class="provenance" id="provenance"><summary>How this example was made</summary><div id="provenanceText"><p>The recorded example synchronises video and extracted pose, displays measured encoder features and self-attention, and compares the saved prediction with the dataset reference. A labelled schematic appears if the recording cannot be loaded.</p><p>The feature matrix shows activation values; a separate diagram shows self-attention. Neither establishes causal importance or sign-to-word alignment. Speech requires a separate, explicit action.</p></div></details>
+<noscript><p>Enable JavaScript for the walkthrough. The pipeline is: video → DWPose coordinates → Transformer features → English → optional speech. Results remain available below.</p></noscript>
+</section>
 <section class="section wrap" id="findings" aria-labelledby="findings-title">
-  <div class="section-heading"><div><p class="eyebrow">01 / Evidence, with context</p><h2 id="findings-title">Progress is measurable.<br>Generalisability is the test.</h2></div><p>The official benchmark tells only part of the story. Explore performance on all test sentences and on sentences whose English targets were absent from training.</p></div>
-  <div class="findings-grid">
-    <figure class="results-panel">
-      <div class="chart-heading"><div><h3>Conversational translation</h3><p>BLEU-4 · higher is better · not an accuracy percentage</p></div><span class="pill">Offline evaluation</span></div>
-      <fieldset class="segmented"><legend class="sr-only">Choose evaluation subset</legend><label><input type="radio" name="subset" value="official" checked><span>Official test · 800</span></label><label><input type="radio" name="subset" value="unseen"><span>Unseen targets · 570</span></label></fieldset>
-      <div class="chart" role="img" id="resultsChart" aria-label="Official test BLEU-4: DWPose plus CTC 9.52, longer pretraining 10.27, image fusion 10.34, six-model ensemble 11.80.">
-        <div class="chart-axis"><span>0</span><span>4</span><span>8</span><span>12</span></div>
-        <div class="chart-row"><span>DWPose + CTC</span><div class="track"><div class="bar" data-model="0"><b>9.52</b></div></div></div>
-        <div class="chart-row"><span>Longer pretraining</span><div class="track"><div class="bar" data-model="1"><b>10.27</b></div></div></div>
-        <div class="chart-row"><span>Image fusion</span><div class="track"><div class="bar" data-model="2"><b>10.34</b></div></div></div>
-        <div class="chart-row highlight"><span>Six-model ensemble</span><div class="track"><div class="bar" data-model="3"><b>11.80</b></div></div></div>
-      </div>
-      <figcaption id="chartCaption" aria-live="polite">Official conversational test set. The six-model ensemble combines three pose-only and three image-fusion translators, without synthetic training sequences.</figcaption>
-      <details class="table-details"><summary>View exact values and evaluation notes</summary><div class="table-scroll"><table><caption>Saved test decodes, Auslan-Daily conversational split</caption><thead><tr><th scope="col">System</th><th scope="col">Official</th><th scope="col">Unseen targets</th></tr></thead><tbody><tr><th scope="row">DWPose + CTC</th><td>9.522</td><td>4.88</td></tr><tr><th scope="row">VLP-80</th><td>10.272</td><td>5.31</td></tr><tr><th scope="row">RGB fusion</th><td>10.335</td><td>5.81</td></tr><tr><th scope="row">S6 ensemble</th><td>11.802</td><td>6.60</td></tr></tbody></table></div><p>Unseen refers to the English reference sentence, not necessarily an unseen signer. These subsets are descriptive and differ in composition; they are not separate controlled experiments.</p></details>
-    </figure>
-    <aside class="evidence-notes" aria-label="Interpreting the results"><div class="number-note"><span class="big-number">28.75<span>%</span></span><h3>of test targets also occur in training.</h3><p>230 of 800 English reference sentences are familiar. The ensemble scores 35.00 on these targets and 6.60 on unseen targets.</p></div><div class="evidence-note"><span class="mini-label">What the evidence supports</span><p>The ensemble improves on image fusion by <strong>1.467 BLEU-4</strong>, with a paired-bootstrap 95% interval of <strong>+0.396 to +2.563</strong>.</p><p>The two earlier single-model increments are not individually distinguishable from zero under the same analysis.</p></div></aside>
-  </div>
-  <div class="research-takeaways"><article><span class="index">01</span><h3>Visual input matters.</h3><p>Controlled comparisons identify movement tracking as a major source of improvement. The translator can only learn from the visual signal it receives.</p></article><article><span class="index">02</span><h3>More data is not enough.</h3><p>Synthetic sequences connect isolated signs to words. Matching their timing to conversational signing improved the mean gain to 1.48 BLEU-4 across three paired runs.</p></article><article><span class="index">03</span><h3>Recognition remains difficult.</h3><p>Word-level analysis found no correct content words in about 70% of clips across three single models. A higher benchmark score does not imply reliable conversation.</p></article></div>
+<div class="section-heading"><div><p class="eyebrow">What we found</p><h2 id="findings-title">What helps translation?<br>What still holds it back?</h2></div><p>Tested on 800 conversational video clips from Auslan-Daily, a research dataset.</p></div>
+<p class="score-guide"><strong>Reading the scores</strong><span>BLEU-4 measures overlap with reference translations. Higher is better; it is not a percentage of correct translations.</span></p>
+<div class="insights">
+<article><span class="insight-index">01 / TRACKING</span><h3>Better tracking helps.</h3><p>Changing the movement tracker improved the English translation.</p><div class="score-pair" aria-label="Mean translation BLEU-4: AlphaPose 4.97, DWPose 9.94"><div><span>AlphaPose</span><strong>4.97</strong></div><span class="score-arrow" aria-hidden="true">→</span><div><span>DWPose</span><strong>9.94</strong></div></div><p class="score-context"><b>+4.97 BLEU-4 points</b> · mean of 3 runs</p><a class="insight-link" href="/research-notes#tracking">See the tracking comparison <span aria-hidden="true">↗</span></a></article>
+<article><span class="insight-index">02 / TRAINING EXAMPLES</span><h3>Extra examples need the right timing.</h3><p>Joining recordings of individual signs helped when their speed matched conversation.</p><div class="score-gain"><strong>+1.48</strong><span>BLEU-4 points<br>vs real clips alone</span></div><p class="score-context">Mean improvement across <b>3 paired runs</b></p><a class="insight-link" href="/research-notes#training">Read about the training examples <span aria-hidden="true">↗</span></a></article>
+<article><span class="insight-index">03 / UNFAMILIAR SENTENCES</span><h3>New sentences are harder.</h3><p>The same six-model system scored lower on English sentences absent from training.</p><div class="score-pair" aria-label="Six-model system translation BLEU-4: all test clips 11.80, new English sentences 6.60"><div><span>All test clips</span><strong>11.80</strong></div><span class="score-arrow" aria-hidden="true">→</span><div><span>New sentences</span><strong>6.60</strong></div></div><p class="score-context">BLEU-4 · <b>800 clips → 570-clip subset</b></p><a class="insight-link" href="/research-notes#comparison">Explore the sentence comparison <span aria-hidden="true">↗</span></a></article>
+</div>
+<p class="findings-link"><a href="/research-notes#scores">Methods, exact scores and limitations <span aria-hidden="true">↗</span></a></p>
 </section>
-<section class="method-band" id="approach" aria-labelledby="approach-title"><div class="wrap section">
-  <div class="section-heading"><div><p class="eyebrow">02 / From evidence to interaction</p><h2 id="approach-title">A complete utterance.<br>A considered response.</h2></div><p>The interface follows the model’s actual capabilities: capture a short utterance, translate after Finish, review the English, then choose whether to speak it.</p></div>
-  <ol class="method-flow"><li><span class="index">01 / CAPTURE</span><h3>Signing video</h3><p>Camera enabled by the user. One signer, hands and upper body in view.</p></li><li><span class="index">02 / REPRESENT</span><h3>Tracked movement</h3><p>DWPose extracts 133 body, face and hand points for each captured frame.</p></li><li><span class="index">03 / TRANSLATE</span><h3>English text</h3><p>A pose-only Transformer generates a sentence after the utterance ends.</p></li><li><span class="index">04 / RESPOND</span><h3>Optional speech</h3><p>Review, copy or read aloud using an available local English voice.</p></li></ol>
-  <div class="method-bottom"><p><strong>Confidence guides whether to respond.</strong> An experimental threshold can withhold uncertain output and request repetition. It is not a calibrated measure of correctness.</p><a class="button" href="/studio">Try the translation interface <span aria-hidden="true">↗</span></a></div>
+<section class="research-next" id="research"><div class="wrap">
+<div><p class="eyebrow">Research in progress</p><h2>A step towards translation.<br>Still a research prototype.</h2></div>
+<div><p>Reliable translation for new webcam users remains unproven. This system cannot replace an Auslan interpreter.</p><a href="/research-notes#limitations">Understand the limits <span aria-hidden="true">↗</span></a></div>
 </div></section>
-<section class="section wrap limits" aria-labelledby="limits-title"><div><p class="eyebrow">03 / Scope & responsibility</p><h2 id="limits-title">Make the limits<br>as visible as the results.</h2><p class="section-intro">This is an active research system. The interface is designed for public access; the model’s live translation quality still requires evaluation with Auslan signers.</p></div><div class="limits-list"><article><h3>Offline results ≠ webcam performance</h3><p>The headline result uses six models on stored benchmark clips. The live interface uses one pose-only model. New signers, camera conditions and capture timing can change its behaviour.</p></article><article><h3>People remain in control</h3><p>Camera access is explicit. Recording ends when you select Finish or reach the ten-second limit. Uncertain translations may be withheld. This system cannot replace an Auslan interpreter.</p></article><article><h3>Temporary data, by design</h3><p>Captured frames are sent to the server during recording and processing. Images are not saved. Capture buffers are released after completion, cancellation or disconnection; an in-flight computation may finish first. Conversation text stays in the current browser page.</p></article><article><h3>Evaluation includes the interaction</h3><p>The next study needs new webcam recordings and signer feedback, measuring translation quality, the proportion of utterances answered, capture timing and delay before speech.</p></article></div></section>
-<section class="materials wrap" id="reproduce" aria-labelledby="materials-title"><div><p class="eyebrow">04 / Inspect the work</p><h2 id="materials-title">Research you can trace.</h2><p>The evidence snapshot contains the displayed values and their source paths. The full artifact includes saved decodes, evaluation scripts, uncertainty analysis and negative results.</p></div><div class="material-links"><a href="/static/evidence.json" download><span><strong>Download the evidence snapshot</strong><small>JSON · metrics, source paths and caveats</small></span><span aria-hidden="true">↓</span></a><a href="https://github.com/preetprasad/auslan-slt-honours"><span><strong>Explore the research repository</strong><small>Code, decodes and protocol · access may be required</small></span><span aria-hidden="true">↗</span></a><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/feb34ce77fc8b94c85d12e608b23ce67-Abstract-Datasets_and_Benchmarks.html"><span><strong>Auslan-Daily dataset paper</strong><small>Shen et al. · NeurIPS 2023 Datasets and Benchmarks</small></span><span aria-hidden="true">↗</span></a></div></section>
 </main>
-<footer class="wrap footer"><div class="brand">Auslan <span class="brand-slash">/</span> English</div><p>Preet Prasad · UWA Honours research · 2026</p><a href="/studio">Open translator ↗</a></footer>
-</body></html>
+<footer class="footer wrap site-footer"><div class="footer-identity"><a class="brand" href="/">Auslan <span class="slash">/</span> English</a><p>Preet Prasad · UWA Honours · 2026</p></div><nav aria-label="Project documents"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/research-notes">Research Notes</a><a href="/credits">Credits</a><a href="/accessibility">Accessibility</a></nav></footer>
+</body>
+</html>
