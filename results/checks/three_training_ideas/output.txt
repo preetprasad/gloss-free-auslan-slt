@@ -1,0 +1,21 @@
+GATE: all 42 decodes re-score to the BLEU-4 stored by their jobs; A seed 42 test = 11.715239 (recorded 11.715239)
+
+Setup: 15 Stage-1 runs (5 arms x 3 seeds) all marked done by job ['144831']; E1/ST/P seeds [42, 101, 202] -> three seeds each, one job
+Epochs: P (preference stage) 10/10/10 ; AC (continuation control) 10/10/10 -> ten-epoch stage and ten-epoch continuation
+
+Stage 1, beam-5, seed-level 95% t-interval over seeds 42/101/202 (df 2), paired against the in-job control
+Sign targets      validation +0.28 [-0.65, +1.20] (2/3 seeds higher) | test -0.31 [-1.80, +1.18] (1/3) | test content-word recall +0.82 [-1.56, +3.19] points | output length ratio val +0.013 (2/3 longer)
+Re-timing         validation +0.26 [-1.81, +2.33] (1/3 seeds higher) | test +0.15 [-0.61, +0.92] (2/3) | test content-word recall +1.27 [-1.16, +3.70] points | output length ratio val +0.026 (3/3 longer)
+Preference stage  validation -0.31 [-2.07, +1.44] (1/3 seeds higher) | test -0.15 [-1.36, +1.06] (1/3) | test content-word recall -0.34 [-2.47, +1.79] points | output length ratio val -0.000 (2/3 longer)
+Sign targets: validation mean +0.28 > 0 -> passes the futility screen (stopped only if <= 0)
+Re-timing: exploratory rule (validation, test and test recall means all > 0): POSITIVE  (val +0.26, test +0.15, recall +1.27)
+Preference stage: exploratory rule (validation, test and test recall means all > 0): NOT POSITIVE  (val -0.31, test -0.15, recall -0.34)
+
+Stage 2, five seeds 42/101/202/303/404 (df 4), paired against A
+Sign targets  with five seeds, validation +0.19 [-0.18, +0.56], test +0.33 [-1.02, +1.68]; fresh seeds 303/404 test +0.60 +1.98 (2/2 positive)
+Re-timing     with five seeds, validation +0.21 [-0.56, +0.98], test +0.24 [-0.48, +0.97]; fresh seeds 303/404 test -0.37 +1.12 (1/2 positive)
+E1: one-sided t(4) on the five test differences = 0.681 (p = 0.267); Holm level 0.0100 needs t >= 3.747 -> not rejected, not adopted  [levels from the pre-registration: E1 0.01, ST 0.05/6]
+ST: one-sided t(4) on the five test differences = 0.933 (p = 0.202); Holm level 0.0083 needs t >= 3.961 -> not rejected, not adopted  [levels from the pre-registration: E1 0.01, ST 0.05/6]
+
+Alignment of the adopted CTC head (read from the saved job summary g1_alignment_summary.json; needs the checkpoints): 603 annotated sign spans: 47.3% hit against 26.2% for random placement
+Gate rule: hit >= 0.50 and hit >= 2 x random and hit > shuffled, on both sets, means over checkpoints; hit >= 0.50: False; hit >= 2 x random: False -> gate failed (saved verdict FAIL)

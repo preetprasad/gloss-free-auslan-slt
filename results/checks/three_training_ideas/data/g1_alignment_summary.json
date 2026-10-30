@@ -1,0 +1,19 @@
+{
+ "verdict": "FAIL",
+ "mean_over_checkpoints": {
+  "all": {
+   "hit": 0.47263681592039797,
+   "random": 0.26243781094527363,
+   "shuffled": 0.24322830292979547
+  },
+  "multi": {
+   "hit": 0.4516317016317017,
+   "random": 0.23937354312354317,
+   "shuffled": 0.2097902097902098
+  }
+ },
+ "n_all": 603,
+ "n_multi": 572,
+ "min_spans": 100,
+ "rule": "hit >= 0.50 and hit >= 2 x random and hit > shuffled, on both sets, means over checkpoints"
+}

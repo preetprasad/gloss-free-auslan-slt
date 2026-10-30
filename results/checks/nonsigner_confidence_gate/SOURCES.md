@@ -1,0 +1,7 @@
+# Sources of the saved files (all copied or derived from the private tree; no subtitles, no pose arrays)
+- decodes_single.json: results/nonsigner/decodes.json (local decode of the 40-epoch pre-trained model, beam 5, length penalty 0.6, 22 Sep 2026), reduced to per-clip confidence (ce), frozen-frame ce (signers), and [ce, hypothesis] for non-signer crops. Made by prep_data.py.
+- decodes_ens.json: results/nonsigner_s6/decodes.json (six-member ensemble, wave 12e: Kaya jobs 138384 extract, 138385 decode, assembled locally 13 Oct 2026), same reduction, plus tracked-pose ce.
+- ground_single.json, ground_ens.json: results/wave18_171529/kaya/scores_single.json and scores_ens.json (Kaya array job 171529 rows, built by the wave-18 read-out build step), reduced to the primary grounding score G (and the true-versus-mismatched log ratio for test signers and crops). Made by prep_data.py.
+- b3.json: flagged_ids of results/nonsigner_s6/nonsigner_gate_s6_results.json (same-person contamination test, 42 crops).
+- wrist_speed.csv: per-clip median wrist speed (shoulder widths per frame) of the 800 validation signer clips (results/val_clips_dwpose) and the 1,678 crops (results/nonsigner/npz), computed by prep_features.py with the function of tools/nonsigner_gate.py.
+- prep_data.py, prep_features.py: the one-off reduction scripts (not run by make; they take the private results directory as an argument).

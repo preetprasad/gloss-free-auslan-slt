@@ -1,0 +1,55 @@
+{
+ "alpha": 1,
+ "beam": 3,
+ "best_iteration": 6700,
+ "cell": "slt__ap53_frame",
+ "dev_greedy_authors_bleu4": 9.311377430580496,
+ "epochs_started": 200,
+ "seed": 42,
+ "splits": {
+  "dev": {
+   "authors": {
+    "bleu1": 29.15061724046237,
+    "bleu2": 15.996329935835778,
+    "bleu3": 11.813503236642061,
+    "bleu4": 9.764973382669586,
+    "chrf": 17.77338735531928,
+    "rouge": 34.68378667472567
+   },
+   "project": {
+    "bleu4": 9.668965289346177,
+    "distinct_hypotheses": 238,
+    "length_ratio": 0.7937474624441738,
+    "n": 800,
+    "ref_authors_differs": 0,
+    "signature": "sacreBLEU|4-gram|tokenize=13a|detok=True|smooth=exp",
+    "wer": 0.9643722733882695
+   }
+  },
+  "test": {
+   "authors": {
+    "bleu1": 28.00011232404987,
+    "bleu2": 14.320355427624252,
+    "bleu3": 9.975500380079433,
+    "bleu4": 8.035516094378014,
+    "chrf": 16.636304480408654,
+    "rouge": 34.809273954338195
+   },
+   "project": {
+    "bleu4": 8.006379506827,
+    "bleu4_seen": 29.137413910106172,
+    "bleu4_unseen": 2.840759145559144,
+    "distinct_hypotheses": 234,
+    "length_ratio": 0.7507629704984741,
+    "n": 800,
+    "n_seen": 230,
+    "n_unseen": 570,
+    "ref_authors_differs": 0,
+    "signature": "sacreBLEU|4-gram|tokenize=13a|detok=True|smooth=exp",
+    "wer": 0.9509113001215067
+   }
+  }
+ },
+ "stop": "Training ended after 200 epochs.",
+ "validations": 390
+}

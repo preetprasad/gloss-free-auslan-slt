@@ -1,0 +1,170 @@
+{
+ "A_s42": {
+  "job": "144831",
+  "epochs": 40,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 10.655855818238159,
+  "stored_test": 11.715239196360335
+ },
+ "A_s101": {
+  "job": "144831",
+  "epochs": 40,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 10.999434039119784,
+  "stored_test": 10.482107603236926
+ },
+ "A_s202": {
+  "job": "144831",
+  "epochs": 40,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 11.707886897585665,
+  "stored_test": 11.105226075857853
+ },
+ "E1_s42": {
+  "job": "144831",
+  "epochs": 40,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 11.347583739940054,
+  "stored_test": 10.731696578772553
+ },
+ "E1_s101": {
+  "job": "144831",
+  "epochs": 40,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 11.163811949859543,
+  "stored_test": 10.388251682509226
+ },
+ "E1_s202": {
+  "job": "144831",
+  "epochs": 40,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 11.68145613586855,
+  "stored_test": 11.263117289106749
+ },
+ "ST_s42": {
+  "job": "144831",
+  "epochs": 40,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 11.849260285264071,
+  "stored_test": 11.635071807212444
+ },
+ "ST_s101": {
+  "job": "144831",
+  "epochs": 40,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 10.99502769850621,
+  "stored_test": 10.98477533979894
+ },
+ "ST_s202": {
+  "job": "144831",
+  "epochs": 40,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 11.302501793042389,
+  "stored_test": 11.145156063043533
+ },
+ "AC_s42": {
+  "job": "144831",
+  "epochs": 10,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 11.2569355526157,
+  "stored_test": 11.441965703112906
+ },
+ "AC_s101": {
+  "job": "144831",
+  "epochs": 10,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 11.005335551822638,
+  "stored_test": 11.56831144916422
+ },
+ "AC_s202": {
+  "job": "144831",
+  "epochs": 10,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 11.692058724520553,
+  "stored_test": 11.25397769705216
+ },
+ "P_s42": {
+  "job": "144831",
+  "epochs": 10,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 10.464323653467817,
+  "stored_test": 11.700341190266924
+ },
+ "P_s101": {
+  "job": "144831",
+  "epochs": 10,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 11.504357978473442,
+  "stored_test": 10.881651514537483
+ },
+ "P_s202": {
+  "job": "144831",
+  "epochs": 10,
+  "status": "done",
+  "stage": 1,
+  "stored_val": 11.05091535419426,
+  "stored_test": 11.231223766821495
+ },
+ "A_s303": {
+  "job": "152915",
+  "epochs": 40,
+  "status": "done",
+  "stage": 2,
+  "stored_val": 11.024706475119364,
+  "stored_test": 10.658836034425775
+ },
+ "A_s404": {
+  "job": "152915",
+  "epochs": 40,
+  "status": "done",
+  "stage": 2,
+  "stored_val": 10.924311038334183,
+  "stored_test": 9.953564733452477
+ },
+ "E1_s303": {
+  "job": "152915",
+  "epochs": 40,
+  "status": "done",
+  "stage": 2,
+  "stored_val": 10.977970161611413,
+  "stored_test": 11.255094136227735
+ },
+ "E1_s404": {
+  "job": "152915",
+  "epochs": 40,
+  "status": "done",
+  "stage": 2,
+  "stored_val": 11.087509259526595,
+  "stored_test": 11.93166095124823
+ },
+ "ST_s303": {
+  "job": "152915",
+  "epochs": 40,
+  "status": "done",
+  "stage": 2,
+  "stored_val": 10.893229584352145,
+  "stored_test": 10.29054193400377
+ },
+ "ST_s404": {
+  "job": "152915",
+  "epochs": 40,
+  "status": "done",
+  "stage": 2,
+  "stored_val": 11.323808132029418,
+  "stored_test": 11.077739747853583
+ }
+}

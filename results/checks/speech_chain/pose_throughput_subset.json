@@ -1,0 +1,46 @@
+{
+ "machine": {
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "mac_ver": "27.0",
+  "cpu_count": 16,
+  "onnxruntime": "1.28.0",
+  "available_providers": [
+   "CoreMLExecutionProvider",
+   "AzureExecutionProvider",
+   "CPUExecutionProvider"
+  ]
+ },
+ "full_pipeline_cpu": {
+  "n": 839,
+  "mean_ms": 191.89476660275594,
+  "p50_ms": 201.60075000603683,
+  "p95_ms": 233.38865479454387,
+  "fps_from_mean": 5.211189537389074,
+  "frames_without_person": 0
+ },
+ "pose_only_cpu": {
+  "n": 839,
+  "mean_ms": 39.36417352841641,
+  "p50_ms": 38.876375008840114,
+  "p95_ms": 41.589566704351455,
+  "fps_from_mean": 25.40381037793452
+ },
+ "translator_cpu": {
+  "greedy": {
+   "n": 100,
+   "mean_ms": 20.918083791038953,
+   "p50_ms": 18.02095799939707,
+   "p95_ms": 40.01964826456969,
+   "fps_from_mean": 47.805526069667415
+  },
+  "beam5": {
+   "n": 100,
+   "mean_ms": 36.160002118267585,
+   "p50_ms": 32.55733349942602,
+   "p95_ms": 67.53370865480973,
+   "fps_from_mean": 27.654865636603834
+  },
+  "mean_input_frames": 50.57
+ }
+}
