@@ -1,0 +1,12 @@
+# Versions used for the analyses and tests on the laptop (CPython 3.14.3, macOS, Apple M3 Max).
+# Training on the cluster used PyTorch 2.5.1 with CUDA 12 (see the job scripts in jobs/slurm/).
+torch==2.11.0
+numpy==2.5.3
+scipy==1.17.1
+sacrebleu==2.6.0     # BLEU-4
+jiwer==4.0.0         # word error rate
+matplotlib==3.10.8   # figures
+pytest==9.0.3        # tests
+pandas==2.3.3        # two checks that read the dataset spreadsheet
+openpyxl==3.1.5      # reading the dataset spreadsheet (make data)
+# The live demonstrator has its own list: demo/requirements.txt and demo/package.json.

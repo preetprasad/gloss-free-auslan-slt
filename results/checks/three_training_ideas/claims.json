@@ -1,0 +1,24 @@
+{
+ "gid": "three_ideas_12c",
+ "covered": [
+  "c17-065",
+  "c17-067",
+  "c17-068",
+  "c17-069",
+  "c17-070",
+  "c17-071",
+  "c17-072",
+  "c17-073",
+  "c17-074",
+  "c17-075",
+  "c17-076",
+  "c17-077",
+  "c17-078"
+ ],
+ "not_covered": [
+  {
+   "id": "c17-066",
+   "reason": "the 0.7 to 1.3 re-timing range is set in unpublished training code (and in the pre-registration); no saved output records it, so it cannot be recomputed from data"
+  }
+ ]
+}

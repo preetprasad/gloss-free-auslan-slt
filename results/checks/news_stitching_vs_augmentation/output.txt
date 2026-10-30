@@ -1,0 +1,18 @@
+gate: all 24 beam-5 BLEU-4 (13a, detokenised) recomputed from per-sentence n-gram counts equal the values recorded by the jobs
+control nA seed 42 re-run in job 172449_0: 700/700 identical hypotheses on val, BLEU 2.00944 vs 2.00944
+control nA seed 42 re-run in job 172449_0: 699/699 identical hypotheses on test, BLEU 1.87272 vs 1.87272
+nRA jobs: s42 172449_9, s101 172449_10, s202 172449_11 | controls nA jobs: s42 138377_0, s101 138377_1, s202 138377_2
+nRA seeds 101 and 202 are compared with controls from an earlier job submission (138377); seed 42's control was reproduced above
+seeds per arm: {'nA': 3, 'nS': 3, 'nSA': 3, 'nRA': 3}
+nA   beam-5 BLEU-4 mean  val 1.97  test 1.70
+nS   beam-5 BLEU-4 mean  val 2.26  test 1.92
+nSA  beam-5 BLEU-4 mean  val 2.15  test 2.23
+nRA  beam-5 BLEU-4 mean  val 2.16  test 1.89
+both together (B) = nSA - nA  test: per seed +0.23 +0.95 +0.40  positive 3/3  mean +0.53 (+0.525) [-0.40, +1.45]
+both together (B) = nSA - nA  val: per seed -0.19 +0.35 +0.35  positive 2/3  mean +0.17 (+0.172) [-0.60, +0.95]
+stitched alone (S) = nS - nA  test: per seed +0.25 +0.62 -0.23  positive 2/3  mean +0.21 (+0.215) [-0.84, +1.27]
+stitched alone (S) = nS - nA  val: per seed +0.39 +0.47 -0.00  positive 2/3  mean +0.29 (+0.286) [-0.35, +0.92]
+augmentation added (A) = nSA - nS  test: per seed -0.02 +0.33 +0.63  positive 2/3  mean +0.31 (+0.310) [-0.50, +1.12]
+augmentation added (A) = nSA - nS  val: per seed -0.58 -0.12 +0.36  positive 1/3  mean -0.11 (-0.114) [-1.28, +1.05]
+augmentation alone (R) = nRA - nA  test: per seed +0.00 +0.51 +0.07  positive 3/3  mean +0.19 (+0.193) [-0.50, +0.88]
+augmentation alone (R) = nRA - nA  val: per seed +0.29 +0.11 +0.16  positive 3/3  mean +0.19 (+0.186) [-0.05, +0.42]

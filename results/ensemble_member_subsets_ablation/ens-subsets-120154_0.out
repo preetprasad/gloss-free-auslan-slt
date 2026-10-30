@@ -1,0 +1,138 @@
+node k005.hpc.uwa.edu.au  mode report  task 0
+config.py: OK
+ensemble_decode.py: OK
+slt/__init__.py: OK
+slt/cli.py: OK
+slt/data.py: OK
+slt/engine.py: OK
+slt/gated_temporal_rgb_fusion.py: OK
+slt/llm_decoder.py: OK
+slt/llm_vq_decoder.py: OK
+slt/mbart_decoder.py: OK
+slt/metrics.py: OK
+slt/model.py: OK
+slt/pose_mae.py: OK
+slt/preproc_guard.py: OK
+slt/pretrained.py: OK
+slt/pseudo_labels.py: OK
+slt/reference_model.py: OK
+slt/rgb_fusion.py: OK
+slt/rgb_vlp.py: OK
+slt/semantic.py: OK
+slt/sign_vq.py: OK
+slt/speech.py: OK
+slt/temporal_pyramid.py: OK
+slt/temporal_rgb_fusion.py: OK
+slt/vlp.py: OK
+tools/ensemble_mbr_wer.py: OK
+tools/ensemble_subsets.py: OK
+self-test passed
+GATE PASSED: full set BLEU-4 12.470 WER 0.9164 | recorded 12.47 0.9164 | clips 800 | beam 10 LP 0.3
+
+subset                                                       size  BLEU-4     WER  uniq
+VLP40                                                           1  10.686  0.9629   352
+RGBfus                                                          1  10.629  0.9392   387
+fus202                                                          1  10.431  0.9489   440
+fus101                                                          1  10.304  0.9588   476
+VLP40s202                                                       1   9.998  0.9576   306
+VLP80                                                           1   9.782  0.9748   317
+VLP40+fus202                                                    2  12.682  0.9237   363
+VLP40+fus101                                                    2  11.719  0.9287   378
+VLP80+fus202                                                    2  11.575  0.9363   350
+RGBfus+fus202                                                   2  11.488  0.9161   374
+VLP40s202+fus101                                                2  11.442  0.9307   385
+fus101+fus202                                                   2  11.402  0.9341   420
+VLP40s202+fus202                                                2  11.287  0.9353   349
+RGBfus+fus101                                                   2  11.226  0.9295   393
+VLP80+fus101                                                    2  11.149  0.9375   349
+RGBfus+VLP40s202                                                2  11.134  0.9258   316
+VLP80+VLP40                                                     2  11.133  0.9518   316
+VLP80+RGBfus                                                    2  11.077  0.9326   327
+VLP40+VLP40s202                                                 2  10.934  0.9413   308
+RGBfus+VLP40                                                    2  10.926  0.9304   342
+VLP80+VLP40s202                                                 2  10.590  0.9520   283
+VLP40+VLP40s202+fus202                                          3  12.222  0.9198   335
+RGBfus+VLP40+fus202                                             3  12.160  0.9164   346
+VLP40+fus101+fus202                                             3  12.049  0.9275   366
+RGBfus+VLP40s202+fus202                                         3  11.994  0.9157   333
+VLP40+VLP40s202+fus101                                          3  11.991  0.9275   344
+VLP80+VLP40s202+fus202                                          3  11.849  0.9326   309
+VLP80+VLP40+fus202                                              3  11.821  0.9275   327
+VLP40s202+fus101+fus202                                         3  11.705  0.9331   366
+VLP80+RGBfus+fus202                                             3  11.571  0.9210   336
+RGBfus+VLP40+fus101                                             3  11.549  0.9292   374
+VLP80+fus101+fus202                                             3  11.537  0.9321   349
+RGBfus+VLP40s202+fus101                                         3  11.500  0.9249   358
+VLP80+RGBfus+VLP40                                              3  11.472  0.9268   313
+VLP80+RGBfus+fus101                                             3  11.440  0.9302   345
+RGBfus+fus101+fus202                                            3  11.418  0.9244   405
+VLP80+VLP40+fus101                                              3  11.408  0.9338   327
+RGBfus+VLP40+VLP40s202                                          3  11.267  0.9363   313
+VLP80+RGBfus+VLP40s202                                          3  11.254  0.9333   299
+VLP80+VLP40+VLP40s202                                           3  11.218  0.9377   285
+VLP80+VLP40s202+fus101                                          3  10.771  0.9464   337
+VLP80+RGBfus+fus101+fus202                                      4  12.346  0.9152   349
+RGBfus+VLP40+VLP40s202+fus202                                   4  12.297  0.9125   326
+VLP80+RGBfus+VLP40+fus202                                       4  12.287  0.9190   319
+VLP80+VLP40+fus101+fus202                                       4  12.254  0.9241   328
+VLP80+VLP40+VLP40s202+fus202                                    4  11.985  0.9319   317
+VLP80+RGBfus+VLP40s202+fus202                                   4  11.972  0.9215   316
+VLP80+RGBfus+VLP40+fus101                                       4  11.921  0.9256   339
+RGBfus+VLP40s202+fus101+fus202                                  4  11.860  0.9217   361
+RGBfus+VLP40+VLP40s202+fus101                                   4  11.816  0.9270   335
+VLP40+VLP40s202+fus101+fus202                                   4  11.772  0.9251   341
+RGBfus+VLP40+fus101+fus202                                      4  11.754  0.9237   364
+VLP80+VLP40s202+fus101+fus202                                   4  11.718  0.9324   329
+VLP80+VLP40+VLP40s202+fus101                                    4  11.578  0.9312   310
+VLP80+RGBfus+VLP40+VLP40s202                                    4  11.565  0.9295   303
+VLP80+RGBfus+VLP40s202+fus101                                   4  11.551  0.9346   333
+VLP80+RGBfus+VLP40s202+fus101+fus202                            5  12.279  0.9164   335
+VLP80+VLP40+VLP40s202+fus101+fus202                             5  12.137  0.9261   326
+VLP80+RGBfus+VLP40+fus101+fus202                                5  12.122  0.9205   341
+VLP80+RGBfus+VLP40+VLP40s202+fus202                             5  12.111  0.9188   314
+RGBfus+VLP40+VLP40s202+fus101+fus202                            5  12.032  0.9176   337
+VLP80+RGBfus+VLP40+VLP40s202+fus101                             5  11.783  0.9283   323
+VLP80+RGBfus+VLP40+VLP40s202+fus101+fus202                      6  12.470  0.9164   322
+
+mean BLEU-4 by number of members (min, max):
+  1: 10.305  (9.782, 10.686)  over 6 subsets
+  2: 11.318  (10.590, 12.682)  over 15 subsets
+  3: 11.610  (10.771, 12.222)  over 20 subsets
+  4: 11.912  (11.551, 12.346)  over 15 subsets
+  5: 12.077  (11.783, 12.279)  over 6 subsets
+  6: 12.470  (12.470, 12.470)  over 1 subsets
+
+per member: alone | leave-one-out loss | mean gain when added to a non-empty subset | Shapley (empty set = 0)
+  VLP80          9.782 | +0.438 | +0.202 |  1.874
+  RGBfus        10.629 | +0.333 | +0.339 |  2.091
+  VLP40         10.686 | +0.191 | +0.521 |  2.195
+  VLP40s202      9.998 | +0.348 | +0.218 |  1.887
+  fus101        10.304 | +0.359 | +0.332 |  2.037
+  fus202        10.431 | +0.687 | +0.753 |  2.385
+
+by type:
+  all fusion members (RGBfus+fus101+fus202): BLEU-4 11.418 WER 0.9244
+  Shapley sum of fusion members: 6.513
+  all pose members (VLP80+VLP40+VLP40s202): BLEU-4 11.218 WER 0.9377
+  Shapley sum of pose members: 5.956
+[boot] 0/500
+[boot] 50/500
+[boot] 100/500
+[boot] 150/500
+[boot] 200/500
+[boot] 250/500
+[boot] 300/500
+[boot] 350/500
+[boot] 400/500
+[boot] 450/500
+
+fusion minus pose, 95% interval: Shapley sums [-0.566, +1.965] | type-only ensembles [-0.986, +1.330]
+
+95% intervals, 500 sentence resamples: leave-one-out loss | mean gain | Shapley
+  VLP80        [+0.018, +0.912] | [-0.084, +0.484] | [+1.508, +2.291]
+  RGBfus       [-0.153, +0.835] | [-0.010, +0.733] | [+1.640, +2.585]
+  VLP40        [-0.041, +0.424] | [+0.258, +0.877] | [+1.818, +2.632]
+  VLP40s202    [-0.104, +0.820] | [-0.044, +0.510] | [+1.486, +2.359]
+  fus101       [-0.192, +0.984] | [-0.135, +0.897] | [+1.459, +2.667]
+  fus202       [+0.122, +1.357] | [+0.374, +1.158] | [+1.868, +2.898]
+ENS_SUBSETS_REPORT_DONE

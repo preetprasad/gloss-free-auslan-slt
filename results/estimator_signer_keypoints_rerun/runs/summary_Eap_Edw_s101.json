@@ -1,0 +1,22 @@
+{
+ "Eap": {
+  "val_best": 9.174235637734494,
+  "best_epoch": 38,
+  "greedy_test": 8.954340779479216,
+  "beam5_val": 10.41591467194172,
+  "beam5_test": 10.245566819589145,
+  "beam5_test_unique": 327,
+  "soup_beam5_val": 9.857399569865612,
+  "soup_beam5_test": 10.219240964675643
+ },
+ "Edw": {
+  "val_best": 9.621452604472912,
+  "best_epoch": 32,
+  "greedy_test": 9.426010923134124,
+  "beam5_val": 10.64059365411465,
+  "beam5_test": 10.06205622263855,
+  "beam5_test_unique": 345,
+  "soup_beam5_val": 10.91303501423673,
+  "soup_beam5_test": 10.280388531726214
+ }
+}

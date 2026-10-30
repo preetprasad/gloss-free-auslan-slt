@@ -1,0 +1,32 @@
+{
+ "w1A": {
+  "val_best": 10.61345628119416,
+  "best_epoch": 37,
+  "greedy_test": 10.704480858444079,
+  "beam5_val": 10.919179262878913,
+  "beam5_test": 11.295527203219565,
+  "soup_beam5_val": 10.96102497469006,
+  "soup_beam5_test": 11.15490252499099,
+  "hand_keep_mean": null
+ },
+ "w1H": {
+  "val_best": 10.541121560458137,
+  "best_epoch": 35,
+  "greedy_test": 10.137499853042844,
+  "beam5_val": 10.258747600570985,
+  "beam5_test": 11.226077238760082,
+  "soup_beam5_val": 10.68440241027062,
+  "soup_beam5_test": 11.531691867570075,
+  "hand_keep_mean": 0.854717147842677
+ },
+ "w1L60": {
+  "val_best": 10.60929423642048,
+  "best_epoch": 57,
+  "greedy_test": 9.818487885850205,
+  "beam5_val": 10.572533709230452,
+  "beam5_test": 11.151664527236548,
+  "soup_beam5_val": 11.000256606678992,
+  "soup_beam5_test": 11.113635602580917,
+  "hand_keep_mean": null
+ }
+}

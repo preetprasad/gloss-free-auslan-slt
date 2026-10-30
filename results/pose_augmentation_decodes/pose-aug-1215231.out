@@ -1,0 +1,658 @@
+train 26199 (13760 synthetic) | val 800 | test 800 | missing 0 | val/test overlap 0
+config pose_aug fields: True 0.2 10.0 0.1
+=== SMOKE (32 real + 32 synthetic clips, 1 epoch, aug on) ===
+[ctc] vocab=163 gloss_vocab=114 device=cuda feat_dim=399
+[aug] pose augmentation ON (train only): speed ±0.2, rotation ±10.0 deg, x/y scale ±0.1
+[ctc] params=7.59M train_batches=4 pseudo_token_drop=0.000
+[ctc ep 001] loss=45.652 ce=5.623 ctc=133.429 val_bleu4=0.000 wer=12.293 uniq=20
+=== ARM pa_ctrl_s42 (seed 42) ===
+[ctc] vocab=3063 gloss_vocab=2988 device=cuda feat_dim=399
+[ctc] params=9.82M train_batches=410 pseudo_token_drop=0.000
+[ctc ep 001] loss=12.735 ce=5.609 ctc=23.753 val_bleu4=1.746 wer=1.282 uniq=10
+[ctc ep 002] loss=6.051 ce=4.159 ctc=6.309 val_bleu4=1.128 wer=1.870 uniq=67
+[ctc ep 003] loss=5.497 ce=3.765 ctc=5.773 val_bleu4=2.841 wer=1.182 uniq=139
+[ctc ep 004] loss=5.001 ce=3.431 ctc=5.234 val_bleu4=3.684 wer=1.199 uniq=135
+[ctc ep 005] loss=4.597 ce=3.160 ctc=4.790 val_bleu4=3.904 wer=1.060 uniq=206
+[ctc ep 006] loss=4.304 ce=2.959 ctc=4.483 val_bleu4=5.323 wer=1.199 uniq=246
+[ctc ep 007] loss=4.104 ce=2.822 ctc=4.273 val_bleu4=6.543 wer=1.104 uniq=227
+[ctc ep 008] loss=3.954 ce=2.723 ctc=4.104 val_bleu4=6.065 wer=1.170 uniq=288
+[ctc ep 009] loss=3.840 ce=2.648 ctc=3.973 val_bleu4=8.244 wer=1.089 uniq=282
+[ctc ep 010] loss=3.742 ce=2.586 ctc=3.856 val_bleu4=7.232 wer=1.104 uniq=308
+[ctc ep 011] loss=3.663 ce=2.535 ctc=3.760 val_bleu4=7.542 wer=1.081 uniq=316
+[ctc ep 012] loss=3.594 ce=2.490 ctc=3.680 val_bleu4=6.839 wer=1.153 uniq=369
+[ctc ep 013] loss=3.529 ce=2.447 ctc=3.605 val_bleu4=7.652 wer=1.128 uniq=369
+[ctc ep 014] loss=3.470 ce=2.409 ctc=3.537 val_bleu4=8.077 wer=1.077 uniq=345
+[ctc ep 015] loss=3.417 ce=2.375 ctc=3.471 val_bleu4=8.866 wer=1.109 uniq=372
+[ctc ep 016] loss=3.366 ce=2.342 ctc=3.414 val_bleu4=9.090 wer=1.068 uniq=352
+[ctc ep 017] loss=3.320 ce=2.313 ctc=3.358 val_bleu4=7.949 wer=1.096 uniq=402
+[ctc ep 018] loss=3.274 ce=2.284 ctc=3.303 val_bleu4=7.367 wer=1.200 uniq=419
+[ctc ep 019] loss=3.230 ce=2.255 ctc=3.251 val_bleu4=9.782 wer=1.019 uniq=412
+[ctc ep 020] loss=3.185 ce=2.226 ctc=3.198 val_bleu4=8.717 wer=1.069 uniq=445
+[ctc ep 021] loss=3.149 ce=2.202 ctc=3.157 val_bleu4=9.080 wer=1.073 uniq=436
+[ctc ep 022] loss=3.111 ce=2.178 ctc=3.110 val_bleu4=8.736 wer=1.114 uniq=477
+[ctc ep 023] loss=3.070 ce=2.152 ctc=3.061 val_bleu4=9.453 wer=1.027 uniq=352
+[ctc ep 024] loss=3.034 ce=2.129 ctc=3.016 val_bleu4=9.755 wer=1.036 uniq=402
+[ctc ep 025] loss=3.000 ce=2.107 ctc=2.977 val_bleu4=9.586 wer=1.072 uniq=441
+[ctc ep 026] loss=2.967 ce=2.084 ctc=2.941 val_bleu4=10.241 wer=1.070 uniq=457
+[ctc ep 027] loss=2.935 ce=2.065 ctc=2.900 val_bleu4=9.870 wer=1.074 uniq=464
+[ctc ep 028] loss=2.903 ce=2.043 ctc=2.866 val_bleu4=9.648 wer=1.054 uniq=430
+[ctc ep 029] loss=2.875 ce=2.027 ctc=2.827 val_bleu4=9.524 wer=1.081 uniq=471
+[ctc ep 030] loss=2.849 ce=2.009 ctc=2.800 val_bleu4=9.554 wer=1.033 uniq=469
+[ctc ep 031] loss=2.823 ce=1.992 ctc=2.769 val_bleu4=9.611 wer=1.057 uniq=506
+[ctc ep 032] loss=2.800 ce=1.977 ctc=2.741 val_bleu4=9.664 wer=1.085 uniq=488
+[ctc ep 033] loss=2.778 ce=1.964 ctc=2.716 val_bleu4=9.298 wer=1.064 uniq=501
+[ctc ep 034] loss=2.757 ce=1.950 ctc=2.691 val_bleu4=9.979 wer=1.063 uniq=501
+[ctc ep 035] loss=2.743 ce=1.941 ctc=2.673 val_bleu4=10.108 wer=1.047 uniq=493
+[ctc ep 036] loss=2.729 ce=1.931 ctc=2.661 val_bleu4=9.602 wer=1.086 uniq=515
+[ctc ep 037] loss=2.716 ce=1.923 ctc=2.642 val_bleu4=9.506 wer=1.081 uniq=513
+[ctc ep 038] loss=2.705 ce=1.916 ctc=2.629 val_bleu4=9.820 wer=1.038 uniq=481
+[ctc ep 039] loss=2.697 ce=1.911 ctc=2.620 val_bleu4=10.132 wer=1.084 uniq=505
+[ctc ep 040] loss=2.692 ce=1.907 ctc=2.614 val_bleu4=9.638 wer=1.085 uniq=526
+[ctc TEST] bleu4=9.516 wer=1.062 distinct_outputs=437
+  ...16
+  ...32
+  ...48
+  ...64
+  ...80
+  ...96
+  ...112
+  ...128
+  ...144
+  ...160
+  ...176
+  ...192
+  ...208
+  ...224
+  ...240
+  ...256
+  ...272
+  ...288
+  ...304
+  ...320
+  ...336
+  ...352
+  ...368
+  ...384
+  ...400
+  ...416
+  ...432
+  ...448
+  ...464
+  ...480
+  ...496
+  ...512
+  ...528
+  ...544
+  ...560
+  ...576
+  ...592
+  ...608
+  ...624
+  ...640
+  ...656
+  ...672
+  ...688
+  ...704
+  ...720
+  ...736
+  ...752
+  ...768
+  ...784
+  ...800
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+
+[greedy] n=800  unique=437 (54.6%)
+    tokenize=13a  detok=True   BLEU-4= 9.52
+    tokenize=none detok=False  BLEU-4= 9.52
+[beam5] n=800  unique=320 (40.0%)
+    tokenize=13a  detok=True   BLEU-4=10.34
+    tokenize=none detok=False  BLEU-4=10.34
+=== ARM pa_aug_s42 (seed 42) ===
+[ctc] vocab=3063 gloss_vocab=2988 device=cuda feat_dim=399
+[aug] pose augmentation ON (train only): speed ±0.2, rotation ±10.0 deg, x/y scale ±0.1
+[ctc] params=9.82M train_batches=410 pseudo_token_drop=0.000
+[ctc ep 001] loss=12.736 ce=5.607 ctc=23.764 val_bleu4=1.452 wer=1.348 uniq=8
+[ctc ep 002] loss=6.065 ce=4.164 ctc=6.334 val_bleu4=0.929 wer=2.472 uniq=42
+[ctc ep 003] loss=5.528 ce=3.779 ctc=5.830 val_bleu4=4.025 wer=1.184 uniq=120
+[ctc ep 004] loss=5.049 ce=3.456 ctc=5.310 val_bleu4=3.187 wer=1.318 uniq=129
+[ctc ep 005] loss=4.653 ce=3.190 ctc=4.876 val_bleu4=4.632 wer=1.023 uniq=158
+[ctc ep 006] loss=4.353 ce=2.985 ctc=4.557 val_bleu4=4.516 wer=1.230 uniq=258
+[ctc ep 007] loss=4.153 ce=2.848 ctc=4.351 val_bleu4=6.668 wer=1.095 uniq=270
+[ctc ep 008] loss=4.001 ce=2.747 ctc=4.182 val_bleu4=7.232 wer=1.133 uniq=287
+[ctc ep 009] loss=3.884 ce=2.668 ctc=4.053 val_bleu4=8.079 wer=1.089 uniq=313
+[ctc ep 010] loss=3.787 ce=2.605 ctc=3.940 val_bleu4=6.742 wer=1.152 uniq=288
+[ctc ep 011] loss=3.706 ce=2.554 ctc=3.843 val_bleu4=7.705 wer=1.114 uniq=315
+[ctc ep 012] loss=3.636 ce=2.509 ctc=3.756 val_bleu4=8.030 wer=1.124 uniq=341
+[ctc ep 013] loss=3.571 ce=2.466 ctc=3.681 val_bleu4=7.745 wer=1.103 uniq=327
+[ctc ep 014] loss=3.513 ce=2.431 ctc=3.608 val_bleu4=7.613 wer=1.140 uniq=384
+[ctc ep 015] loss=3.458 ce=2.395 ctc=3.544 val_bleu4=8.528 wer=1.072 uniq=320
+[ctc ep 016] loss=3.406 ce=2.362 ctc=3.482 val_bleu4=8.571 wer=1.104 uniq=387
+[ctc ep 017] loss=3.361 ce=2.331 ctc=3.432 val_bleu4=8.245 wer=1.052 uniq=359
+[ctc ep 018] loss=3.317 ce=2.303 ctc=3.379 val_bleu4=7.838 wer=1.170 uniq=439
+[ctc ep 019] loss=3.275 ce=2.277 ctc=3.326 val_bleu4=9.347 wer=1.037 uniq=384
+[ctc ep 020] loss=3.234 ce=2.250 ctc=3.280 val_bleu4=9.283 wer=1.080 uniq=419
+[ctc ep 021] loss=3.198 ce=2.225 ctc=3.242 val_bleu4=9.283 wer=1.045 uniq=379
+[ctc ep 022] loss=3.160 ce=2.202 ctc=3.194 val_bleu4=9.301 wer=1.083 uniq=400
+[ctc ep 023] loss=3.123 ce=2.178 ctc=3.148 val_bleu4=9.365 wer=1.067 uniq=393
+[ctc ep 024] loss=3.087 ce=2.155 ctc=3.108 val_bleu4=9.530 wer=1.076 uniq=440
+[ctc ep 025] loss=3.058 ce=2.135 ctc=3.078 val_bleu4=9.381 wer=1.067 uniq=453
+[ctc ep 026] loss=3.022 ce=2.113 ctc=3.032 val_bleu4=9.467 wer=1.070 uniq=452
+[ctc ep 027] loss=2.993 ce=2.094 ctc=2.998 val_bleu4=9.958 wer=1.061 uniq=429
+[ctc ep 028] loss=2.965 ce=2.074 ctc=2.970 val_bleu4=9.713 wer=1.045 uniq=424
+[ctc ep 029] loss=2.936 ce=2.055 ctc=2.936 val_bleu4=9.748 wer=1.056 uniq=437
+[ctc ep 030] loss=2.911 ce=2.039 ctc=2.904 val_bleu4=9.541 wer=1.072 uniq=457
+[ctc ep 031] loss=2.888 ce=2.024 ctc=2.878 val_bleu4=9.344 wer=1.094 uniq=488
+[ctc ep 032] loss=2.866 ce=2.010 ctc=2.854 val_bleu4=10.130 wer=1.041 uniq=456
+[ctc ep 033] loss=2.844 ce=1.996 ctc=2.827 val_bleu4=9.785 wer=1.041 uniq=466
+[ctc ep 034] loss=2.826 ce=1.984 ctc=2.807 val_bleu4=10.429 wer=1.071 uniq=477
+[ctc ep 035] loss=2.811 ce=1.974 ctc=2.790 val_bleu4=10.270 wer=1.028 uniq=446
+[ctc ep 036] loss=2.796 ce=1.963 ctc=2.776 val_bleu4=9.728 wer=1.074 uniq=489
+[ctc ep 037] loss=2.786 ce=1.956 ctc=2.764 val_bleu4=10.393 wer=1.050 uniq=465
+[ctc ep 038] loss=2.775 ce=1.951 ctc=2.748 val_bleu4=10.427 wer=1.029 uniq=469
+[ctc ep 039] loss=2.768 ce=1.946 ctc=2.738 val_bleu4=10.339 wer=1.066 uniq=472
+[ctc ep 040] loss=2.761 ce=1.941 ctc=2.733 val_bleu4=10.140 wer=1.034 uniq=480
+[ctc TEST] bleu4=9.865 wer=1.043 distinct_outputs=468
+  ...16
+  ...32
+  ...48
+  ...64
+  ...80
+  ...96
+  ...112
+  ...128
+  ...144
+  ...160
+  ...176
+  ...192
+  ...208
+  ...224
+  ...240
+  ...256
+  ...272
+  ...288
+  ...304
+  ...320
+  ...336
+  ...352
+  ...368
+  ...384
+  ...400
+  ...416
+  ...432
+  ...448
+  ...464
+  ...480
+  ...496
+  ...512
+  ...528
+  ...544
+  ...560
+  ...576
+  ...592
+  ...608
+  ...624
+  ...640
+  ...656
+  ...672
+  ...688
+  ...704
+  ...720
+  ...736
+  ...752
+  ...768
+  ...784
+  ...800
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+
+[greedy] n=800  unique=468 (58.5%)
+    tokenize=13a  detok=True   BLEU-4= 9.86
+    tokenize=none detok=False  BLEU-4= 9.86
+[beam5] n=800  unique=349 (43.6%)
+    tokenize=13a  detok=True   BLEU-4=11.44
+    tokenize=none detok=False  BLEU-4=11.44
+=== ARM pa_ctrl_s101 (seed 101) ===
+[ctc] vocab=3063 gloss_vocab=2988 device=cuda feat_dim=399
+[ctc] params=9.82M train_batches=410 pseudo_token_drop=0.000
+[ctc ep 001] loss=12.747 ce=5.605 ctc=23.807 val_bleu4=0.447 wer=1.205 uniq=24
+[ctc ep 002] loss=6.065 ce=4.163 ctc=6.338 val_bleu4=1.972 wer=1.265 uniq=23
+[ctc ep 003] loss=5.521 ce=3.777 ctc=5.816 val_bleu4=2.519 wer=1.138 uniq=73
+[ctc ep 004] loss=5.051 ce=3.462 ctc=5.297 val_bleu4=1.847 wer=1.918 uniq=220
+[ctc ep 005] loss=4.639 ce=3.187 ctc=4.841 val_bleu4=4.907 wer=1.169 uniq=199
+[ctc ep 006] loss=4.333 ce=2.978 ctc=4.517 val_bleu4=5.104 wer=1.189 uniq=244
+[ctc ep 007] loss=4.118 ce=2.832 ctc=4.287 val_bleu4=6.968 wer=1.089 uniq=262
+[ctc ep 008] loss=3.968 ce=2.732 ctc=4.120 val_bleu4=4.609 wer=1.129 uniq=286
+[ctc ep 009] loss=3.844 ce=2.652 ctc=3.974 val_bleu4=6.787 wer=1.167 uniq=336
+[ctc ep 010] loss=3.752 ce=2.592 ctc=3.864 val_bleu4=6.509 wer=1.030 uniq=231
+[ctc ep 011] loss=3.672 ce=2.539 ctc=3.774 val_bleu4=7.049 wer=1.116 uniq=381
+[ctc ep 012] loss=3.601 ce=2.493 ctc=3.691 val_bleu4=7.956 wer=1.106 uniq=326
+[ctc ep 013] loss=3.534 ce=2.452 ctc=3.608 val_bleu4=8.398 wer=1.066 uniq=345
+[ctc ep 014] loss=3.475 ce=2.414 ctc=3.537 val_bleu4=7.645 wer=1.114 uniq=391
+[ctc ep 015] loss=3.424 ce=2.381 ctc=3.479 val_bleu4=8.150 wer=1.155 uniq=420
+[ctc ep 016] loss=3.378 ce=2.353 ctc=3.419 val_bleu4=8.777 wer=1.029 uniq=326
+[ctc ep 017] loss=3.330 ce=2.319 ctc=3.368 val_bleu4=8.569 wer=1.095 uniq=409
+[ctc ep 018] loss=3.285 ce=2.293 ctc=3.308 val_bleu4=8.503 wer=1.029 uniq=392
+[ctc ep 019] loss=3.247 ce=2.268 ctc=3.264 val_bleu4=8.699 wer=1.036 uniq=375
+[ctc ep 020] loss=3.210 ce=2.243 ctc=3.222 val_bleu4=9.135 wer=1.056 uniq=354
+[ctc ep 021] loss=3.168 ce=2.218 ctc=3.167 val_bleu4=9.206 wer=1.024 uniq=388
+[ctc ep 022] loss=3.134 ce=2.195 ctc=3.130 val_bleu4=8.836 wer=1.124 uniq=397
+[ctc ep 023] loss=3.098 ce=2.171 ctc=3.091 val_bleu4=8.920 wer=1.119 uniq=451
+[ctc ep 024] loss=3.066 ce=2.151 ctc=3.049 val_bleu4=8.838 wer=1.046 uniq=409
+[ctc ep 025] loss=3.030 ce=2.128 ctc=3.008 val_bleu4=9.303 wer=1.055 uniq=429
+[ctc ep 026] loss=2.999 ce=2.107 ctc=2.972 val_bleu4=9.636 wer=1.073 uniq=484
+[ctc ep 027] loss=2.969 ce=2.088 ctc=2.935 val_bleu4=9.640 wer=1.004 uniq=366
+[ctc ep 028] loss=2.940 ce=2.069 ctc=2.902 val_bleu4=9.501 wer=1.056 uniq=441
+[ctc ep 029] loss=2.915 ce=2.053 ctc=2.875 val_bleu4=9.043 wer=1.121 uniq=488
+[ctc ep 030] loss=2.888 ce=2.035 ctc=2.845 val_bleu4=9.768 wer=1.066 uniq=475
+[ctc ep 031] loss=2.864 ce=2.019 ctc=2.815 val_bleu4=10.151 wer=1.056 uniq=466
+[ctc ep 032] loss=2.841 ce=2.005 ctc=2.787 val_bleu4=9.905 wer=1.065 uniq=455
+[ctc ep 033] loss=2.819 ce=1.990 ctc=2.764 val_bleu4=9.969 wer=1.062 uniq=475
+[ctc ep 034] loss=2.802 ce=1.980 ctc=2.743 val_bleu4=9.721 wer=1.080 uniq=486
+[ctc ep 035] loss=2.783 ce=1.966 ctc=2.721 val_bleu4=9.395 wer=1.086 uniq=483
+[ctc ep 036] loss=2.771 ce=1.958 ctc=2.708 val_bleu4=9.633 wer=1.059 uniq=486
+[ctc ep 037] loss=2.759 ce=1.951 ctc=2.692 val_bleu4=9.904 wer=1.055 uniq=479
+[ctc ep 038] loss=2.750 ce=1.946 ctc=2.681 val_bleu4=10.082 wer=1.065 uniq=473
+[ctc ep 039] loss=2.742 ce=1.940 ctc=2.675 val_bleu4=9.430 wer=1.101 uniq=482
+[ctc ep 040] loss=2.737 ce=1.937 ctc=2.666 val_bleu4=9.493 wer=1.096 uniq=492
+[ctc TEST] bleu4=9.869 wer=1.055 distinct_outputs=461
+  ...16
+  ...32
+  ...48
+  ...64
+  ...80
+  ...96
+  ...112
+  ...128
+  ...144
+  ...160
+  ...176
+  ...192
+  ...208
+  ...224
+  ...240
+  ...256
+  ...272
+  ...288
+  ...304
+  ...320
+  ...336
+  ...352
+  ...368
+  ...384
+  ...400
+  ...416
+  ...432
+  ...448
+  ...464
+  ...480
+  ...496
+  ...512
+  ...528
+  ...544
+  ...560
+  ...576
+  ...592
+  ...608
+  ...624
+  ...640
+  ...656
+  ...672
+  ...688
+  ...704
+  ...720
+  ...736
+  ...752
+  ...768
+  ...784
+  ...800
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+
+[greedy] n=800  unique=461 (57.6%)
+    tokenize=13a  detok=True   BLEU-4= 9.87
+    tokenize=none detok=False  BLEU-4= 9.87
+[beam5] n=800  unique=332 (41.5%)
+    tokenize=13a  detok=True   BLEU-4=10.93
+    tokenize=none detok=False  BLEU-4=10.93
+=== ARM pa_aug_s101 (seed 101) ===
+[ctc] vocab=3063 gloss_vocab=2988 device=cuda feat_dim=399
+[aug] pose augmentation ON (train only): speed ±0.2, rotation ±10.0 deg, x/y scale ±0.1
+[ctc] params=9.82M train_batches=410 pseudo_token_drop=0.000
+[ctc ep 001] loss=12.730 ce=5.604 ctc=23.753 val_bleu4=0.811 wer=1.074 uniq=13
+[ctc ep 002] loss=6.080 ce=4.171 ctc=6.363 val_bleu4=2.057 wer=1.198 uniq=27
+[ctc ep 003] loss=5.548 ce=3.791 ctc=5.856 val_bleu4=2.081 wer=1.147 uniq=61
+[ctc ep 004] loss=5.094 ce=3.486 ctc=5.358 val_bleu4=2.363 wer=1.471 uniq=160
+[ctc ep 005] loss=4.690 ce=3.217 ctc=4.912 val_bleu4=3.548 wer=1.306 uniq=257
+[ctc ep 006] loss=4.381 ce=3.006 ctc=4.580 val_bleu4=5.555 wer=1.191 uniq=261
+[ctc ep 007] loss=4.169 ce=2.864 ctc=4.351 val_bleu4=7.351 wer=1.109 uniq=260
+[ctc ep 008] loss=4.013 ce=2.758 ctc=4.183 val_bleu4=5.601 wer=1.184 uniq=331
+[ctc ep 009] loss=3.890 ce=2.677 ctc=4.044 val_bleu4=6.922 wer=1.054 uniq=280
+[ctc ep 010] loss=3.789 ce=2.610 ctc=3.931 val_bleu4=6.400 wer=1.044 uniq=242
+[ctc ep 011] loss=3.704 ce=2.555 ctc=3.832 val_bleu4=7.367 wer=1.089 uniq=321
+[ctc ep 012] loss=3.629 ce=2.507 ctc=3.740 val_bleu4=7.414 wer=1.173 uniq=337
+[ctc ep 013] loss=3.569 ce=2.467 ctc=3.673 val_bleu4=8.176 wer=1.112 uniq=370
+[ctc ep 014] loss=3.508 ce=2.426 ctc=3.605 val_bleu4=7.511 wer=1.103 uniq=355
+[ctc ep 015] loss=3.454 ce=2.393 ctc=3.536 val_bleu4=7.379 wer=1.204 uniq=400
+[ctc ep 016] loss=3.407 ce=2.363 ctc=3.479 val_bleu4=8.666 wer=1.040 uniq=366
+[ctc ep 017] loss=3.359 ce=2.331 ctc=3.428 val_bleu4=8.906 wer=1.052 uniq=374
+[ctc ep 018] loss=3.314 ce=2.302 ctc=3.373 val_bleu4=8.929 wer=1.047 uniq=364
+[ctc ep 019] loss=3.271 ce=2.274 ctc=3.325 val_bleu4=8.835 wer=1.034 uniq=361
+[ctc ep 020] loss=3.229 ce=2.247 ctc=3.273 val_bleu4=9.309 wer=1.084 uniq=383
+[ctc ep 021] loss=3.191 ce=2.222 ctc=3.229 val_bleu4=9.081 wer=1.110 uniq=434
+[ctc ep 022] loss=3.154 ce=2.197 ctc=3.189 val_bleu4=9.689 wer=1.034 uniq=407
+[ctc ep 023] loss=3.120 ce=2.176 ctc=3.145 val_bleu4=8.877 wer=1.141 uniq=471
+[ctc ep 024] loss=3.085 ce=2.153 ctc=3.106 val_bleu4=10.244 wer=1.036 uniq=385
+[ctc ep 025] loss=3.052 ce=2.131 ctc=3.070 val_bleu4=9.641 wer=1.071 uniq=421
+[ctc ep 026] loss=3.019 ce=2.110 ctc=3.028 val_bleu4=10.181 wer=1.054 uniq=444
+[ctc ep 027] loss=2.987 ce=2.091 ctc=2.989 val_bleu4=10.168 wer=1.004 uniq=397
+[ctc ep 028] loss=2.959 ce=2.071 ctc=2.959 val_bleu4=9.594 wer=1.110 uniq=450
+[ctc ep 029] loss=2.933 ce=2.054 ctc=2.929 val_bleu4=9.754 wer=1.097 uniq=445
+[ctc ep 030] loss=2.904 ce=2.035 ctc=2.896 val_bleu4=10.295 wer=1.058 uniq=447
+[ctc ep 031] loss=2.882 ce=2.021 ctc=2.869 val_bleu4=10.605 wer=1.062 uniq=468
+[ctc ep 032] loss=2.860 ce=2.006 ctc=2.846 val_bleu4=9.976 wer=1.047 uniq=427
+[ctc ep 033] loss=2.838 ce=1.991 ctc=2.822 val_bleu4=10.563 wer=1.035 uniq=468
+[ctc ep 034] loss=2.819 ce=1.979 ctc=2.800 val_bleu4=10.382 wer=1.059 uniq=467
+[ctc ep 035] loss=2.803 ce=1.969 ctc=2.781 val_bleu4=10.948 wer=1.048 uniq=498
+[ctc ep 036] loss=2.788 ce=1.957 ctc=2.767 val_bleu4=10.485 wer=1.046 uniq=464
+[ctc ep 037] loss=2.777 ce=1.952 ctc=2.751 val_bleu4=10.395 wer=1.055 uniq=474
+[ctc ep 038] loss=2.769 ce=1.946 ctc=2.744 val_bleu4=10.578 wer=1.039 uniq=450
+[ctc ep 039] loss=2.759 ce=1.940 ctc=2.732 val_bleu4=10.346 wer=1.048 uniq=474
+[ctc ep 040] loss=2.756 ce=1.938 ctc=2.729 val_bleu4=10.847 wer=1.049 uniq=480
+[ctc TEST] bleu4=10.258 wer=1.035 distinct_outputs=472
+  ...16
+  ...32
+  ...48
+  ...64
+  ...80
+  ...96
+  ...112
+  ...128
+  ...144
+  ...160
+  ...176
+  ...192
+  ...208
+  ...224
+  ...240
+  ...256
+  ...272
+  ...288
+  ...304
+  ...320
+  ...336
+  ...352
+  ...368
+  ...384
+  ...400
+  ...416
+  ...432
+  ...448
+  ...464
+  ...480
+  ...496
+  ...512
+  ...528
+  ...544
+  ...560
+  ...576
+  ...592
+  ...608
+  ...624
+  ...640
+  ...656
+  ...672
+  ...688
+  ...704
+  ...720
+  ...736
+  ...752
+  ...768
+  ...784
+  ...800
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+
+[greedy] n=800  unique=472 (59.0%)
+    tokenize=13a  detok=True   BLEU-4=10.26
+    tokenize=none detok=False  BLEU-4=10.26
+[beam5] n=800  unique=369 (46.1%)
+    tokenize=13a  detok=True   BLEU-4=11.37
+    tokenize=none detok=False  BLEU-4=11.37
+=== ARM pa_ctrl_s202 (seed 202) ===
+[ctc] vocab=3063 gloss_vocab=2988 device=cuda feat_dim=399
+[ctc] params=9.82M train_batches=410 pseudo_token_drop=0.000
+[ctc ep 001] loss=13.112 ce=5.606 ctc=25.018 val_bleu4=1.296 wer=1.631 uniq=15
+[ctc ep 002] loss=6.063 ce=4.163 ctc=6.331 val_bleu4=2.020 wer=1.173 uniq=33
+[ctc ep 003] loss=5.510 ce=3.770 ctc=5.801 val_bleu4=1.996 wer=1.232 uniq=61
+[ctc ep 004] loss=5.007 ce=3.432 ctc=5.251 val_bleu4=5.153 wer=1.147 uniq=154
+[ctc ep 005] loss=4.598 ce=3.159 ctc=4.795 val_bleu4=4.120 wer=1.258 uniq=198
+[ctc ep 006] loss=4.311 ce=2.963 ctc=4.491 val_bleu4=6.846 wer=1.144 uniq=270
+[ctc ep 007] loss=4.109 ce=2.826 ctc=4.275 val_bleu4=6.398 wer=1.179 uniq=237
+[ctc ep 008] loss=3.961 ce=2.727 ctc=4.112 val_bleu4=6.240 wer=1.090 uniq=232
+[ctc ep 009] loss=3.846 ce=2.653 ctc=3.977 val_bleu4=5.649 wer=1.265 uniq=335
+[ctc ep 010] loss=3.747 ce=2.590 ctc=3.859 val_bleu4=7.925 wer=1.059 uniq=255
+[ctc ep 011] loss=3.665 ce=2.538 ctc=3.759 val_bleu4=7.131 wer=1.138 uniq=345
+[ctc ep 012] loss=3.593 ce=2.492 ctc=3.671 val_bleu4=7.608 wer=1.056 uniq=272
+[ctc ep 013] loss=3.535 ce=2.453 ctc=3.607 val_bleu4=8.072 wer=1.103 uniq=376
+[ctc ep 014] loss=3.474 ce=2.415 ctc=3.530 val_bleu4=8.105 wer=1.048 uniq=324
+[ctc ep 015] loss=3.421 ce=2.381 ctc=3.467 val_bleu4=8.622 wer=1.070 uniq=360
+[ctc ep 016] loss=3.370 ce=2.349 ctc=3.406 val_bleu4=7.669 wer=1.106 uniq=343
+[ctc ep 017] loss=3.325 ce=2.320 ctc=3.349 val_bleu4=8.326 wer=1.069 uniq=336
+[ctc ep 018] loss=3.280 ce=2.290 ctc=3.300 val_bleu4=7.562 wer=1.173 uniq=455
+[ctc ep 019] loss=3.242 ce=2.265 ctc=3.258 val_bleu4=8.770 wer=1.095 uniq=426
+[ctc ep 020] loss=3.198 ce=2.236 ctc=3.205 val_bleu4=8.769 wer=1.106 uniq=461
+[ctc ep 021] loss=3.164 ce=2.213 ctc=3.169 val_bleu4=8.339 wer=1.097 uniq=379
+[ctc ep 022] loss=3.127 ce=2.189 ctc=3.127 val_bleu4=8.657 wer=1.134 uniq=457
+[ctc ep 023] loss=3.091 ce=2.165 ctc=3.086 val_bleu4=9.321 wer=1.045 uniq=434
+[ctc ep 024] loss=3.055 ce=2.142 ctc=3.043 val_bleu4=9.590 wer=1.041 uniq=420
+[ctc ep 025] loss=3.022 ce=2.120 ctc=3.006 val_bleu4=9.105 wer=1.070 uniq=420
+[ctc ep 026] loss=2.988 ce=2.098 ctc=2.967 val_bleu4=10.207 wer=1.059 uniq=448
+[ctc ep 027] loss=2.956 ce=2.078 ctc=2.928 val_bleu4=10.389 wer=1.065 uniq=455
+[ctc ep 028] loss=2.926 ce=2.057 ctc=2.897 val_bleu4=10.000 wer=1.036 uniq=450
+[ctc ep 029] loss=2.899 ce=2.039 ctc=2.868 val_bleu4=9.860 wer=1.047 uniq=447
+[ctc ep 030] loss=2.872 ce=2.022 ctc=2.833 val_bleu4=9.950 wer=1.054 uniq=474
+[ctc ep 031] loss=2.847 ce=2.006 ctc=2.804 val_bleu4=9.467 wer=1.088 uniq=507
+[ctc ep 032] loss=2.824 ce=1.990 ctc=2.780 val_bleu4=10.079 wer=1.074 uniq=513
+[ctc ep 033] loss=2.804 ce=1.978 ctc=2.754 val_bleu4=10.256 wer=1.044 uniq=455
+[ctc ep 034] loss=2.783 ce=1.964 ctc=2.730 val_bleu4=9.379 wer=1.116 uniq=526
+[ctc ep 035] loss=2.765 ce=1.952 ctc=2.712 val_bleu4=10.501 wer=1.054 uniq=486
+[ctc ep 036] loss=2.751 ce=1.942 ctc=2.695 val_bleu4=10.498 wer=1.050 uniq=491
+[ctc ep 037] loss=2.738 ce=1.934 ctc=2.680 val_bleu4=9.702 wer=1.063 uniq=499
+[ctc ep 038] loss=2.729 ce=1.928 ctc=2.670 val_bleu4=9.914 wer=1.077 uniq=505
+[ctc ep 039] loss=2.721 ce=1.922 ctc=2.663 val_bleu4=9.939 wer=1.052 uniq=479
+[ctc ep 040] loss=2.716 ce=1.919 ctc=2.655 val_bleu4=10.292 wer=1.055 uniq=501
+[ctc TEST] bleu4=9.945 wer=1.040 distinct_outputs=452
+  ...16
+  ...32
+  ...48
+  ...64
+  ...80
+  ...96
+  ...112
+  ...128
+  ...144
+  ...160
+  ...176
+  ...192
+  ...208
+  ...224
+  ...240
+  ...256
+  ...272
+  ...288
+  ...304
+  ...320
+  ...336
+  ...352
+  ...368
+  ...384
+  ...400
+  ...416
+  ...432
+  ...448
+  ...464
+  ...480
+  ...496
+  ...512
+  ...528
+  ...544
+  ...560
+  ...576
+  ...592
+  ...608
+  ...624
+  ...640
+  ...656
+  ...672
+  ...688
+  ...704
+  ...720
+  ...736
+  ...752
+  ...768
+  ...784
+  ...800
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+
+[greedy] n=800  unique=452 (56.5%)
+    tokenize=13a  detok=True   BLEU-4= 9.95
+    tokenize=none detok=False  BLEU-4= 9.95
+[beam5] n=800  unique=341 (42.6%)
+    tokenize=13a  detok=True   BLEU-4=10.66
+    tokenize=none detok=False  BLEU-4=10.66
+=== ARM pa_aug_s202 (seed 202) ===
+[ctc] vocab=3063 gloss_vocab=2988 device=cuda feat_dim=399
+[aug] pose augmentation ON (train only): speed ±0.2, rotation ±10.0 deg, x/y scale ±0.1
+[ctc] params=9.82M train_batches=410 pseudo_token_drop=0.000
+[ctc ep 001] loss=13.088 ce=5.606 ctc=24.937 val_bleu4=1.430 wer=1.453 uniq=19
+[ctc ep 002] loss=6.066 ce=4.164 ctc=6.341 val_bleu4=1.848 wer=1.133 uniq=66
+[ctc ep 003] loss=5.514 ce=3.771 ctc=5.809 val_bleu4=1.921 wer=1.265 uniq=52
+[ctc ep 004] loss=5.025 ce=3.439 ctc=5.287 val_bleu4=5.228 wer=1.091 uniq=131
+[ctc ep 005] loss=4.624 ce=3.171 ctc=4.844 val_bleu4=5.057 wer=1.209 uniq=220
+[ctc ep 006] loss=4.339 ce=2.978 ctc=4.536 val_bleu4=4.416 wer=1.184 uniq=262
+[ctc ep 007] loss=4.145 ce=2.845 ctc=4.333 val_bleu4=6.239 wer=1.200 uniq=214
+[ctc ep 008] loss=3.994 ce=2.745 ctc=4.163 val_bleu4=5.602 wer=1.100 uniq=247
+[ctc ep 009] loss=3.874 ce=2.665 ctc=4.031 val_bleu4=5.810 wer=1.174 uniq=277
+[ctc ep 010] loss=3.779 ce=2.604 ctc=3.918 val_bleu4=7.937 wer=1.033 uniq=237
+[ctc ep 011] loss=3.698 ce=2.552 ctc=3.820 val_bleu4=7.971 wer=1.123 uniq=321
+[ctc ep 012] loss=3.626 ce=2.503 ctc=3.742 val_bleu4=8.355 wer=1.009 uniq=237
+[ctc ep 013] loss=3.561 ce=2.464 ctc=3.657 val_bleu4=8.182 wer=1.067 uniq=386
+[ctc ep 014] loss=3.502 ce=2.426 ctc=3.586 val_bleu4=8.710 wer=1.088 uniq=322
+[ctc ep 015] loss=3.449 ce=2.392 ctc=3.524 val_bleu4=7.921 wer=1.067 uniq=343
+[ctc ep 016] loss=3.400 ce=2.360 ctc=3.467 val_bleu4=8.617 wer=1.058 uniq=310
+[ctc ep 017] loss=3.353 ce=2.329 ctc=3.413 val_bleu4=8.556 wer=1.039 uniq=329
+[ctc ep 018] loss=3.313 ce=2.302 ctc=3.368 val_bleu4=7.784 wer=1.124 uniq=426
+[ctc ep 019] loss=3.270 ce=2.275 ctc=3.315 val_bleu4=8.368 wer=1.101 uniq=416
+[ctc ep 020] loss=3.230 ce=2.249 ctc=3.268 val_bleu4=8.331 wer=1.133 uniq=454
+[ctc ep 021] loss=3.190 ce=2.224 ctc=3.223 val_bleu4=8.839 wer=1.108 uniq=416
+[ctc ep 022] loss=3.154 ce=2.200 ctc=3.182 val_bleu4=8.751 wer=1.136 uniq=438
+[ctc ep 023] loss=3.118 ce=2.177 ctc=3.136 val_bleu4=9.431 wer=1.065 uniq=450
+[ctc ep 024] loss=3.084 ce=2.155 ctc=3.098 val_bleu4=9.056 wer=1.100 uniq=434
+[ctc ep 025] loss=3.053 ce=2.135 ctc=3.059 val_bleu4=10.067 wer=1.058 uniq=435
+[ctc ep 026] loss=3.020 ce=2.113 ctc=3.023 val_bleu4=9.574 wer=1.089 uniq=429
+[ctc ep 027] loss=2.992 ce=2.095 ctc=2.992 val_bleu4=9.965 wer=1.063 uniq=454
+[ctc ep 028] loss=2.961 ce=2.074 ctc=2.957 val_bleu4=10.169 wer=1.024 uniq=427
+[ctc ep 029] loss=2.932 ce=2.055 ctc=2.923 val_bleu4=9.854 wer=1.085 uniq=448
+[ctc ep 030] loss=2.908 ce=2.040 ctc=2.893 val_bleu4=9.767 wer=1.075 uniq=464
+[ctc ep 031] loss=2.883 ce=2.025 ctc=2.862 val_bleu4=9.732 wer=1.086 uniq=500
+[ctc ep 032] loss=2.863 ce=2.010 ctc=2.844 val_bleu4=10.553 wer=1.054 uniq=459
+[ctc ep 033] loss=2.843 ce=1.997 ctc=2.820 val_bleu4=10.691 wer=0.999 uniq=412
+[ctc ep 034] loss=2.823 ce=1.984 ctc=2.797 val_bleu4=9.964 wer=1.072 uniq=493
+[ctc ep 035] loss=2.810 ce=1.975 ctc=2.782 val_bleu4=10.086 wer=1.034 uniq=474
+[ctc ep 036] loss=2.793 ce=1.965 ctc=2.762 val_bleu4=10.580 wer=1.053 uniq=483
+[ctc ep 037] loss=2.782 ce=1.958 ctc=2.747 val_bleu4=9.947 wer=1.038 uniq=470
+[ctc ep 038] loss=2.774 ce=1.952 ctc=2.740 val_bleu4=10.271 wer=1.043 uniq=471
+[ctc ep 039] loss=2.765 ce=1.946 ctc=2.730 val_bleu4=10.333 wer=1.042 uniq=457
+[ctc ep 040] loss=2.760 ce=1.943 ctc=2.722 val_bleu4=10.086 wer=1.061 uniq=479
+[ctc TEST] bleu4=10.369 wer=0.990 distinct_outputs=383
+  ...16
+  ...32
+  ...48
+  ...64
+  ...80
+  ...96
+  ...112
+  ...128
+  ...144
+  ...160
+  ...176
+  ...192
+  ...208
+  ...224
+  ...240
+  ...256
+  ...272
+  ...288
+  ...304
+  ...320
+  ...336
+  ...352
+  ...368
+  ...384
+  ...400
+  ...416
+  ...432
+  ...448
+  ...464
+  ...480
+  ...496
+  ...512
+  ...528
+  ...544
+  ...560
+  ...576
+  ...592
+  ...608
+  ...624
+  ...640
+  ...656
+  ...672
+  ...688
+  ...704
+  ...720
+  ...736
+  ...752
+  ...768
+  ...784
+  ...800
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+
+[greedy] n=800  unique=383 (47.9%)
+    tokenize=13a  detok=True   BLEU-4=10.37
+    tokenize=none detok=False  BLEU-4=10.37
+[beam5] n=800  unique=278 (34.8%)
+    tokenize=13a  detok=True   BLEU-4=11.19
+    tokenize=none detok=False  BLEU-4=11.19
+=== SUMMARY (pre-registered: aug beats its own same-seed ctrl on validation AND beam-5 test, 3/3) ===
+s42: val 10.241 -> 10.429 (+0.188) | greedy  9.516 ->  9.865 (+0.349) | beam5 10.34 -> 11.44 (+1.10) | WIN
+s101: val 10.151 -> 10.948 (+0.796) | greedy  9.869 -> 10.258 (+0.389) | beam5 10.93 -> 11.37 (+0.45) | WIN
+s202: val 10.501 -> 10.691 (+0.190) | greedy  9.945 -> 10.369 (+0.423) | beam5 10.66 -> 11.19 (+0.54) | WIN
+pre-registered rule met in 3/3 seeds -> ADOPT
+POSE_AUG_DONE

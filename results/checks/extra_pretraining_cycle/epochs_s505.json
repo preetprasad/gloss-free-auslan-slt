@@ -1,0 +1,15 @@
+{
+ "C": {
+  "main_epochs": 40
+ },
+ "PJ": {
+  "main_epochs": 40,
+  "pre_epochs": 92,
+  "pre_status": "done"
+ },
+ "PS": {
+  "main_epochs": 40,
+  "pre_epochs": 175,
+  "pre_status": "done"
+ }
+}

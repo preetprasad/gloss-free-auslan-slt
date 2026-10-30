@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Auslan to English · Research translator</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/documents.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7h4l2-3h4l2 3h4v13H4z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M15 8V3H3v12h5"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5zm4 4c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2 9M3 4v6h6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-11v2"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m8 4 8 8-8 8"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v2"/></symbol>
+  </svg>
+  <a class="skip-link" href="#workspace">Skip to translator</a>
+  <div class="shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Auslan research home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Auslan <span class="brand-divider">/</span> English</span>
+      </a>
+      <div class="header-meta"><a class="research-label" href="/">Research overview</a><span id="connectionBadge" class="connection"><i></i><span id="connectionText">Connecting</span></span></div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="pageTitle">
+        <div><p class="eyebrow">SIGN LANGUAGE TO SPEECH</p><h1 id="pageTitle">Your signing. In words.</h1><p class="intro-copy">Sign a short Auslan utterance, then review the English translation.</p></div>
+        <a class="help-link" href="#guide"><svg class="icon"><use href="#i-info"/></svg>How it works</a>
+      </section>
+      <div id="modeNotice" class="notice sample-notice" hidden><svg class="icon"><use href="#i-info"/></svg><p><strong>Interface preview</strong><span>Sample phrases will be shown. A trained translation model is not loaded.</span></p><button id="retryButton" class="text-button" type="button" hidden>Try again</button></div>
+      <ol class="steps" aria-label="Translation steps">
+        <li id="stepCamera" aria-current="step"><span class="step-number">01</span><span>Set up your camera</span></li>
+        <li id="stepSign"><span class="step-number">02</span><span>Sign, then finish</span></li>
+        <li id="stepReview"><span class="step-number">03</span><span>Review and listen</span></li>
+      </ol>
+
+      <div id="workspace" class="workspace">
+        <section class="card capture-card" aria-labelledby="captureTitle">
+          <div class="card-heading"><div><span class="eyebrow">CAPTURE</span><h2 id="captureTitle">Your signing space</h2></div><button id="cameraOffButton" class="text-button" disabled>Turn camera off</button></div>
+          <div id="cameraStage" class="camera-stage">
+            <video id="videoElement" autoplay playsinline muted aria-label="Mirrored camera preview"></video>
+            <div id="framingGuide" class="framing-guide" hidden aria-hidden="true"><span></span><span></span><span></span><span></span><div class="head-guide"></div></div>
+            <div class="stage-top"><span id="cameraBadge" class="camera-badge"><span class="dot"></span><span id="cameraBadgeText">Camera off</span></span><span id="timer" class="timer" aria-label="Recording duration">00:00 <span>/ 00:10</span></span></div>
+            <div id="cameraPlaceholder" class="camera-placeholder">
+              <div class="camera-emblem" aria-hidden="true"><svg class="icon"><use href="#i-camera"/></svg></div>
+              <h3 id="cameraPlaceholderTitle">A little room to sign.</h3>
+              <p id="cameraPlaceholderText">Keep your face, hands and upper body in view.<br>Your camera starts when you choose.</p>
+              <button id="enableCameraButton" class="button button-light"><svg class="icon"><use href="#i-camera"/></svg>Enable camera</button>
+            </div>
+            <p id="framingHint" class="framing-hint" hidden>Keep your face, hands and upper body in view</p>
+            <div class="capture-progress"><div id="captureProgress"></div></div>
+          </div>
+          <div class="capture-message"><span id="captureIndicator" class="indicator"></span><p id="captureMessage" tabindex="-1" role="status" aria-live="polite">Enable your camera to get started.</p></div>
+          <p id="captureWarning" class="inline-warning" role="status" hidden></p>
+          <section id="consentCard" class="consent-card" aria-labelledby="consentTitle" hidden>
+            <h3 id="consentTitle">Start live translation</h3>
+            <p>Live translation runs in this browser after a one-time download of about 400 MB from Hugging Face (huggingface.co) and jsDelivr (cdn.jsdelivr.net), kept in this browser for later visits. Camera frames stay on this device.</p>
+            <p id="consentWarning" class="inline-warning" hidden>This browser does not offer WebGPU, so pose estimation may be too slow here. That is checked after the download, and if it is too slow the downloaded files are removed again.</p>
+            <button id="consentButton" class="button button-primary" type="button">Download and start</button>
+          </section>
+          <fieldset id="modelChoice" class="model-choice" aria-describedby="modelDetail" hidden>
+            <legend>Translation model</legend>
+            <div class="model-options"><label id="modelSingleOption"><input id="modelSingle" type="radio" name="model" value="single" checked>Single best model</label><label id="modelEnsembleOption"><input id="modelEnsemble" type="radio" name="model" value="ensemble">Six-model ensemble</label><span id="modelFixed" hidden></span></div>
+            <p id="modelDetail" class="model-detail"></p>
+            <div id="engineStatus" class="engine-status" hidden><p id="engineStatusText"></p><progress id="engineProgress" aria-label="Model download" max="1" value="0" hidden></progress><button id="downloadButton" class="button button-outline" type="button" hidden><span id="downloadLabel">Download</span></button></div>
+          </fieldset>
+          <div class="capture-controls"><button id="recordButton" class="button button-primary" disabled><span id="recordIcon" class="record-icon"></span><span id="recordLabel">Start signing</span></button><button id="clearButton" class="button button-quiet" disabled><svg class="icon"><use href="#i-reset"/></svg><span id="clearLabel">Clear</span></button></div>
+          <div class="capture-bottom"><label class="check-label"><input id="guideToggle" type="checkbox" checked>Framing guide</label><span>Short utterances · up to 10 seconds</span></div>
+        </section>
+
+        <section class="card translation-card" aria-labelledby="translationTitle">
+          <div class="card-heading"><div><span class="eyebrow">OUTPUT</span><h2 id="translationTitle">English translation</h2></div><span id="resultBadge" class="result-badge">Waiting</span></div>
+          <div id="resultArea" class="result-area" aria-live="polite" aria-atomic="true">
+            <div id="resultEmpty" class="result-empty"><span class="quote-mark" aria-hidden="true">“</span><h3 id="resultHeading">A place for your words.</h3><p id="resultHint">Your translation will appear here<br>after you finish signing.</p></div>
+            <div id="resultContent" hidden><p id="resultText" class="result-text" tabindex="-1"></p><p id="resultNote" class="result-note">Review the wording before sharing.</p></div>
+          </div>
+          <div id="personBox" class="person-box" role="status" aria-live="polite" hidden><p id="personText" class="person-text"></p><div id="personSwitch" class="person-switch" role="group" aria-label="Translate someone else from this utterance"></div></div>
+          <div class="result-actions"><button id="speakButton" class="button button-primary" disabled><svg class="icon"><use href="#i-sound"/></svg><span id="speakLabel">Read aloud</span></button><button id="copyButton" class="button button-outline" disabled><svg class="icon"><use href="#i-copy"/></svg>Copy text</button></div>
+          <p id="audioMessage" class="audio-message" role="status"></p>
+          <div class="playback-setting"><div><label for="autoSpeak">Read new translations aloud</label><p>Off by default. Review each result first: the same kind of confidence check, tested on another research model, answered people who were not signing about as often as signers.</p></div><label class="switch"><input id="autoSpeak" type="checkbox" aria-label="Read new translations aloud"><span></span></label></div>
+          <div class="prototype-note"><svg class="icon"><use href="#i-info"/></svg><p>Experimental translations may be wrong. Review each result. This system does not replace an Auslan interpreter.</p></div>
+        </section>
+      </div>
+
+      <section class="card session-card" aria-labelledby="sessionTitle">
+        <div class="session-heading"><div><span class="eyebrow">THIS SESSION</span><h2 id="sessionTitle" tabindex="-1">Conversation <span id="historyCount" class="count">0</span></h2></div><div class="session-actions"><button id="copySessionButton" class="text-button" disabled>Copy all</button><button id="clearSessionButton" class="text-button" disabled>Clear conversation</button></div></div>
+        <p id="historyEmpty" class="history-empty">Finished translations stay here for this session. They aren’t used to change the next translation.</p>
+        <ol id="historyList" class="history-list" aria-label="Previous translations"></ol>
+      </section>
+
+      <div class="lower-grid">
+        <details id="guide" class="disclosure"><summary>How it works<svg class="icon"><use href="#i-chevron"/></svg></summary><ol class="help-steps"><li><strong>Make room.</strong> Enable the camera and keep your upper body and both hands in the frame.</li><li><strong>Sign one thought.</strong> Choose a model, select Start signing, then Finish &amp; translate when you’re done. Recording ends at 10 seconds. <span id="latencyHelp">On a laptop, the translation arrives about 4–5 seconds after Finish for every second signed; the six-model ensemble adds about a second for image features.</span></li><li><strong>Review the result.</strong> Read the English text, play it aloud or copy it. If asked, try signing again.</li></ol><p id="peopleNote" hidden>More than one person in view? The translator follows each person by where their shoulders are, calls them Person A, Person B and so on, and translates the one moving most like a signer. That choice is a guess, so the result says who was translated and, when someone else was in view for most of the utterance, offers a switch. Nobody is recognised by their face or appearance.</p><p id="privacyNote">Captured frames are sent to the server during recording and processing. Images are not saved. Capture buffers are released after completion, cancellation or disconnection; an in-flight computation may finish first. Turning the camera off stops its live feed. Use Clear to discard the current utterance.</p></details>
+        <details class="disclosure"><summary>Session details<svg class="icon"><use href="#i-chevron"/></svg></summary><dl class="diagnostics"><div><dt>Models loaded</dt><dd id="engineDetail">Checking…</dd></div><div><dt>Engine</dt><dd id="runtimeDetail">—</dd></div><div><dt>Camera</dt><dd id="cameraDetail">Off</dd></div><div><dt>Model used</dt><dd id="modelUsedDetail">—</dd></div><div><dt>People in view</dt><dd id="personsDetail">—</dd></div><div><dt>Threshold · target answer rate</dt><dd id="thresholdDetail">—</dd></div><div><dt>Frames captured</dt><dd id="capturedDetail">0</dd></div><div><dt>Frames processed</dt><dd id="framesDetail">0</dd></div><div><dt>Backlog</dt><dd id="backlogDetail">0</dd></div><div><dt>Capture frames skipped</dt><dd id="skippedDetail">0</dd></div><div><dt>Capture rate</dt><dd id="captureRateDetail">—</dd></div><div><dt>Pose time p50 / p95</dt><dd id="poseDetail">—</dd></div><div><dt>Queue age p50 / p95</dt><dd id="queueDetail">—</dd></div><div><dt>Finish → text</dt><dd id="latencyDetail">—</dd></div><div><dt>Read aloud → speech start</dt><dd id="speechDetail">—</dd></div><div><dt>Translation</dt><dd id="translateDetail">—</dd></div><div><dt>Image features</dt><dd id="rgbDetail">—</dd></div><div><dt>Model score (lower is better)</dt><dd id="scoreDetail">—</dd></div></dl><button id="forgetButton" class="text-button" type="button" hidden>Remove downloaded models</button><p>The score is a model diagnostic, not a percentage of accuracy. Each model has its own threshold, fitted on stored validation clips; thresholds do not transfer between models. Live-camera translation quality has not been validated. These details stay on this page and reset when you start the next utterance.</p></details>
+      </div>
+    </main>
+    <footer class="project-footer"><span>Auslan-to-speech · UWA Honours</span><nav aria-label="Project documents"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/research-notes">Research Notes</a><a href="/credits">Credits</a><a href="/accessibility">Accessibility</a></nav></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

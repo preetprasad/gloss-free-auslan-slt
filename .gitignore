@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+.pytest_cache/
+.DS_Store
+# data, features and checkpoints are never committed
+*.npz
+*.pt
+*.pth
+*.onnx
+*.mp4
+# dataset files fetched or rebuilt by `make data` are never committed
+/data/
+/comm_run/
+results/.references_restored

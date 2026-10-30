@@ -1,0 +1,7 @@
+#   PJ = pre-train 92 epochs on the adopted joint corpus (12,439 real + 13,760 synthetic clips = 26,199;
+#        2,410,308 clip-passes, 37,720 steps), then the adopted recipe from the FINAL pre-training checkpoint
+#   PS = pre-train 175 epochs on the 13,760 synthetic clips of that corpus only (2,408,000 clip-passes,
+#        37,625 steps: the whole number of epochs closest to PJ's steps and clip-passes), then the same
+# Task = (arm, seed).  Stage 1 (default):                     seeds 505/606/707 -> 0-2 C | 3-5 PJ | 6-8 PS
+N_TRAIN=12439; N_SYN=13760; N_VAL=800; N_TEST=800
+EP_PJ=92; EP_PS=175; EP_FT=40

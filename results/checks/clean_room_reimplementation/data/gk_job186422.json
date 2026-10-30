@@ -1,0 +1,66 @@
+{
+ "tolerances": {
+  "emb_rel": 0.001,
+  "logits_abs": 0.001,
+  "adapter_abs": 0.001
+ },
+ "tiny": false,
+ "standin": false,
+ "names_ok": true,
+ "strict_load": true,
+ "port_has": {
+  "inp": true,
+  "emb": true,
+  "logits": true
+ },
+ "adapter_max_abs_vs_port_input": {
+  "paper69": 1.2695789337158203e-05,
+  "u69": 7.176486015319824,
+  "body69": 4.3812055587768555
+ },
+ "k_adapter": "paper69",
+ "k_adapter_matched": true,
+ "prompt": {
+  "ids": [
+   89349,
+   11329,
+   17896,
+   1552,
+   288,
+   5413,
+   267,
+   1
+  ],
+  "text": "Translate sign language video to English:</s>",
+  "source": "recovered from the port's embeddings"
+ },
+ "scan_metric": "emb_rel_max_abs",
+ "scan_best5": [
+  [
+   "res0=1,fus_res=1,act_out=1,fus_mid=1,pp=add",
+   5.333455987965863e-07
+  ],
+  [
+   "res0=0,fus_res=1,act_out=1,fus_mid=1,pp=add",
+   0.0364832803606987
+  ],
+  [
+   "res0=1,fus_res=1,act_out=1,fus_mid=1,pp=none",
+   0.13586190342903137
+  ],
+  [
+   "res0=0,fus_res=1,act_out=1,fus_mid=1,pp=none",
+   0.14629201591014862
+  ],
+  [
+   "res0=1,fus_res=1,act_out=1,fus_mid=1,pp=mul",
+   0.21539939939975739
+  ]
+ ],
+ "scan_n_variants": 48,
+ "variant_selected": "res0=1,fus_res=1,act_out=1,fus_mid=1,pp=add",
+ "emb_dev": 5.333455987965863e-07,
+ "logits_dev": 1.9073486328125e-05,
+ "reasons": [],
+ "passed": true
+}

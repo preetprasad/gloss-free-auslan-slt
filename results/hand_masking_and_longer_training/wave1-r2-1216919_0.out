@@ -1,0 +1,221 @@
+array task 0 -> seed 42 on k038.hpc.uwa.edu.au
+24266634ff537f9abd480f383ee4688f  config.py
+1187c9ff21c8de97b6ba98dfedf3897f  slt/data.py
+fce49fff1372b93d45f0328b199cfbf9  train_ctc.py
+6553f52a3f0fbeb57feef6510289d66c  tools/eval_beam.py
+2fd20e3989b8e20a9857f6d90106da42  weight_average.py
+train 26199 (13760 synthetic) | val 800 | test 800 | missing 0 | val/test overlap 0
+config fields OK
+[ctc] vocab=163 gloss_vocab=114 device=cuda feat_dim=399
+[aug] pose augmentation ON (train only): speed ±0.2, rotation ±10.0 deg, x/y scale ±0.1, hand drop 0.08, hand span 0.15
+[ctc] params=7.59M train_batches=4 pseudo_token_drop=0.000
+[ctc ep 001] loss=45.553 ce=5.612 ctc=133.136 val_bleu4=0.000 wer=12.293 uniq=20
+[aug ep 001] realised hand keep fraction 0.8565
+=== ARM w1A (seed 42, epochs 40, hand drop 0.0, hand span 0.0) ===
+[ctc] vocab=3063 gloss_vocab=2988 device=cuda feat_dim=399
+[aug] pose augmentation ON (train only): speed ±0.2, rotation ±10.0 deg, x/y scale ±0.1, hand drop 0.0, hand span 0.0
+[ctc] params=9.82M train_batches=410 pseudo_token_drop=0.000
+[ctc ep 001] loss=12.736 ce=5.607 ctc=23.765 val_bleu4=1.451 wer=1.350 uniq=9
+[ctc ep 002] loss=6.065 ce=4.164 ctc=6.337 val_bleu4=1.094 wer=2.060 uniq=56
+[ctc ep 003] loss=5.523 ce=3.776 ctc=5.823 val_bleu4=4.541 wer=1.183 uniq=117
+[ctc ep 004] loss=5.041 ce=3.450 ctc=5.303 val_bleu4=3.359 wer=1.275 uniq=129
+[ctc ep 005] loss=4.640 ce=3.182 ctc=4.859 val_bleu4=5.582 wer=1.058 uniq=181
+[ctc ep 006] loss=4.345 ce=2.982 ctc=4.543 val_bleu4=4.650 wer=1.276 uniq=272
+[ctc ep 007] loss=4.142 ce=2.843 ctc=4.329 val_bleu4=6.987 wer=1.083 uniq=214
+[ctc ep 008] loss=3.990 ce=2.742 ctc=4.160 val_bleu4=6.635 wer=1.185 uniq=328
+[ctc ep 009] loss=3.873 ce=2.666 ctc=4.025 val_bleu4=8.231 wer=1.087 uniq=303
+[ctc ep 010] loss=3.775 ce=2.602 ctc=3.910 val_bleu4=6.395 wer=1.204 uniq=323
+[ctc ep 011] loss=3.693 ce=2.549 ctc=3.811 val_bleu4=8.379 wer=1.080 uniq=286
+[ctc ep 012] loss=3.620 ce=2.503 ctc=3.721 val_bleu4=8.450 wer=1.053 uniq=305
+[ctc ep 013] loss=3.555 ce=2.462 ctc=3.642 val_bleu4=8.261 wer=1.135 uniq=378
+[ctc ep 014] loss=3.500 ce=2.427 ctc=3.577 val_bleu4=7.821 wer=1.118 uniq=389
+[ctc ep 015] loss=3.445 ce=2.391 ctc=3.514 val_bleu4=8.292 wer=1.130 uniq=377
+[ctc ep 016] loss=3.394 ce=2.359 ctc=3.451 val_bleu4=8.982 wer=1.077 uniq=340
+[ctc ep 017] loss=3.350 ce=2.331 ctc=3.397 val_bleu4=8.964 wer=1.081 uniq=368
+[ctc ep 018] loss=3.307 ce=2.304 ctc=3.341 val_bleu4=8.224 wer=1.122 uniq=369
+[ctc ep 019] loss=3.266 ce=2.278 ctc=3.293 val_bleu4=9.287 wer=1.017 uniq=383
+[ctc ep 020] loss=3.224 ce=2.250 ctc=3.248 val_bleu4=8.305 wer=1.116 uniq=485
+[ctc ep 021] loss=3.191 ce=2.229 ctc=3.207 val_bleu4=8.596 wer=1.145 uniq=391
+[ctc ep 022] loss=3.156 ce=2.207 ctc=3.164 val_bleu4=9.888 wer=1.045 uniq=403
+[ctc ep 023] loss=3.120 ce=2.184 ctc=3.122 val_bleu4=9.535 wer=1.070 uniq=377
+[ctc ep 024] loss=3.084 ce=2.160 ctc=3.081 val_bleu4=9.603 wer=1.028 uniq=415
+[ctc ep 025] loss=3.059 ce=2.142 ctc=3.055 val_bleu4=10.072 wer=1.066 uniq=451
+[ctc ep 026] loss=3.026 ce=2.121 ctc=3.018 val_bleu4=9.097 wer=1.107 uniq=469
+[ctc ep 027] loss=2.998 ce=2.103 ctc=2.983 val_bleu4=10.305 wer=1.044 uniq=428
+[ctc ep 028] loss=2.971 ce=2.083 ctc=2.957 val_bleu4=9.710 wer=1.053 uniq=422
+[ctc ep 029] loss=2.942 ce=2.065 ctc=2.921 val_bleu4=9.830 wer=1.054 uniq=449
+[ctc ep 030] loss=2.917 ce=2.050 ctc=2.890 val_bleu4=9.779 wer=1.066 uniq=467
+[ctc ep 031] loss=2.893 ce=2.033 ctc=2.864 val_bleu4=10.400 wer=1.065 uniq=476
+[ctc ep 032] loss=2.872 ce=2.020 ctc=2.842 val_bleu4=10.194 wer=1.039 uniq=426
+[ctc ep 033] loss=2.853 ce=2.007 ctc=2.820 val_bleu4=10.246 wer=1.041 uniq=477
+[ctc ep 034] loss=2.834 ce=1.995 ctc=2.797 val_bleu4=10.515 wer=1.056 uniq=477
+[ctc ep 035] loss=2.820 ce=1.985 ctc=2.781 val_bleu4=10.345 wer=1.041 uniq=467
+[ctc ep 036] loss=2.806 ce=1.975 ctc=2.767 val_bleu4=10.491 wer=1.046 uniq=497
+[ctc ep 037] loss=2.792 ce=1.967 ctc=2.750 val_bleu4=10.757 wer=1.035 uniq=485
+[ctc ep 038] loss=2.785 ce=1.963 ctc=2.741 val_bleu4=11.103 wer=1.014 uniq=468
+[ctc ep 039] loss=2.778 ce=1.958 ctc=2.734 val_bleu4=10.427 wer=1.061 uniq=456
+[ctc ep 040] loss=2.771 ce=1.954 ctc=2.723 val_bleu4=10.573 wer=1.023 uniq=474
+[ctc TEST] bleu4=10.305 wer=1.013 distinct_outputs=459
+checkpoint cfg OK
+[soup] averaged 5 checkpoints -> /group/pmc099/pprasad/wave1_r2/runs/w1A_s42/soup_last5.pt
+=== ARM w1H (seed 42, epochs 40, hand drop 0.08, hand span 0.15) ===
+[ctc] vocab=3063 gloss_vocab=2988 device=cuda feat_dim=399
+[aug] pose augmentation ON (train only): speed ±0.2, rotation ±10.0 deg, x/y scale ±0.1, hand drop 0.08, hand span 0.15
+[ctc] params=9.82M train_batches=410 pseudo_token_drop=0.000
+[ctc ep 001] loss=12.801 ce=5.609 ctc=23.973 val_bleu4=1.480 wer=1.336 uniq=6
+[aug ep 001] realised hand keep fraction 0.8543
+[ctc ep 002] loss=6.081 ce=4.169 ctc=6.371 val_bleu4=1.174 wer=1.885 uniq=22
+[aug ep 002] realised hand keep fraction 0.8547
+[ctc ep 003] loss=5.588 ce=3.809 ctc=5.929 val_bleu4=2.414 wer=1.291 uniq=97
+[aug ep 003] realised hand keep fraction 0.8543
+[ctc ep 004] loss=5.157 ce=3.516 ctc=5.470 val_bleu4=3.173 wer=1.205 uniq=82
+[aug ep 004] realised hand keep fraction 0.8546
+[ctc ep 005] loss=4.773 ce=3.259 ctc=5.044 val_bleu4=3.777 wer=1.115 uniq=140
+[aug ep 005] realised hand keep fraction 0.8545
+[ctc ep 006] loss=4.467 ce=3.052 ctc=4.714 val_bleu4=4.328 wer=1.248 uniq=256
+[aug ep 006] realised hand keep fraction 0.8550
+[ctc ep 007] loss=4.253 ce=2.906 ctc=4.489 val_bleu4=6.165 wer=1.057 uniq=195
+[aug ep 007] realised hand keep fraction 0.8548
+[ctc ep 008] loss=4.096 ce=2.801 ctc=4.314 val_bleu4=6.182 wer=1.152 uniq=277
+[aug ep 008] realised hand keep fraction 0.8549
+[ctc ep 009] loss=3.976 ce=2.722 ctc=4.179 val_bleu4=7.746 wer=1.085 uniq=299
+[aug ep 009] realised hand keep fraction 0.8546
+[ctc ep 010] loss=3.874 ce=2.657 ctc=4.055 val_bleu4=5.629 wer=1.272 uniq=331
+[aug ep 010] realised hand keep fraction 0.8548
+[ctc ep 011] loss=3.787 ce=2.601 ctc=3.952 val_bleu4=7.122 wer=1.053 uniq=268
+[aug ep 011] realised hand keep fraction 0.8542
+[ctc ep 012] loss=3.711 ce=2.552 ctc=3.862 val_bleu4=6.839 wer=1.188 uniq=356
+[aug ep 012] realised hand keep fraction 0.8544
+[ctc ep 013] loss=3.643 ce=2.509 ctc=3.781 val_bleu4=7.056 wer=1.184 uniq=386
+[aug ep 013] realised hand keep fraction 0.8547
+[ctc ep 014] loss=3.584 ce=2.471 ctc=3.710 val_bleu4=7.281 wer=1.103 uniq=344
+[aug ep 014] realised hand keep fraction 0.8547
+[ctc ep 015] loss=3.530 ce=2.436 ctc=3.646 val_bleu4=7.660 wer=1.111 uniq=340
+[aug ep 015] realised hand keep fraction 0.8553
+[ctc ep 016] loss=3.483 ce=2.404 ctc=3.597 val_bleu4=8.142 wer=1.124 uniq=374
+[aug ep 016] realised hand keep fraction 0.8548
+[ctc ep 017] loss=3.436 ce=2.373 ctc=3.542 val_bleu4=7.585 wer=1.065 uniq=357
+[aug ep 017] realised hand keep fraction 0.8542
+[ctc ep 018] loss=3.395 ce=2.348 ctc=3.489 val_bleu4=8.819 wer=1.095 uniq=363
+[aug ep 018] realised hand keep fraction 0.8546
+[ctc ep 019] loss=3.350 ce=2.319 ctc=3.435 val_bleu4=8.835 wer=1.000 uniq=356
+[aug ep 019] realised hand keep fraction 0.8547
+[ctc ep 020] loss=3.311 ce=2.293 ctc=3.394 val_bleu4=9.116 wer=1.084 uniq=401
+[aug ep 020] realised hand keep fraction 0.8549
+[ctc ep 021] loss=3.277 ce=2.270 ctc=3.358 val_bleu4=9.173 wer=1.093 uniq=369
+[aug ep 021] realised hand keep fraction 0.8547
+[ctc ep 022] loss=3.243 ce=2.248 ctc=3.316 val_bleu4=8.550 wer=1.112 uniq=388
+[aug ep 022] realised hand keep fraction 0.8546
+[ctc ep 023] loss=3.211 ce=2.227 ctc=3.277 val_bleu4=9.419 wer=1.029 uniq=325
+[aug ep 023] realised hand keep fraction 0.8548
+[ctc ep 024] loss=3.174 ce=2.202 ctc=3.240 val_bleu4=8.433 wer=1.070 uniq=415
+[aug ep 024] realised hand keep fraction 0.8546
+[ctc ep 025] loss=3.144 ce=2.183 ctc=3.205 val_bleu4=8.787 wer=1.099 uniq=443
+[aug ep 025] realised hand keep fraction 0.8548
+[ctc ep 026] loss=3.113 ce=2.162 ctc=3.170 val_bleu4=9.012 wer=1.085 uniq=464
+[aug ep 026] realised hand keep fraction 0.8544
+[ctc ep 027] loss=3.086 ce=2.144 ctc=3.140 val_bleu4=9.203 wer=1.048 uniq=417
+[aug ep 027] realised hand keep fraction 0.8549
+[ctc ep 028] loss=3.057 ce=2.124 ctc=3.110 val_bleu4=9.508 wer=1.048 uniq=390
+[aug ep 028] realised hand keep fraction 0.8545
+[ctc ep 029] loss=3.030 ce=2.107 ctc=3.077 val_bleu4=9.754 wer=1.067 uniq=445
+[aug ep 029] realised hand keep fraction 0.8545
+[ctc ep 030] loss=3.007 ce=2.092 ctc=3.048 val_bleu4=10.311 wer=1.047 uniq=435
+[aug ep 030] realised hand keep fraction 0.8546
+[ctc ep 031] loss=2.984 ce=2.077 ctc=3.023 val_bleu4=9.619 wer=1.064 uniq=459
+[aug ep 031] realised hand keep fraction 0.8548
+[ctc ep 032] loss=2.963 ce=2.063 ctc=3.000 val_bleu4=10.601 wer=1.021 uniq=400
+[aug ep 032] realised hand keep fraction 0.8545
+[ctc ep 033] loss=2.942 ce=2.050 ctc=2.975 val_bleu4=10.093 wer=1.048 uniq=446
+[aug ep 033] realised hand keep fraction 0.8536
+[ctc ep 034] loss=2.926 ce=2.038 ctc=2.958 val_bleu4=10.455 wer=1.041 uniq=472
+[aug ep 034] realised hand keep fraction 0.8549
+[ctc ep 035] loss=2.910 ce=2.028 ctc=2.941 val_bleu4=10.185 wer=1.024 uniq=425
+[aug ep 035] realised hand keep fraction 0.8547
+[ctc ep 036] loss=2.896 ce=2.018 ctc=2.926 val_bleu4=9.734 wer=1.079 uniq=474
+[aug ep 036] realised hand keep fraction 0.8545
+[ctc ep 037] loss=2.886 ce=2.012 ctc=2.911 val_bleu4=9.937 wer=1.064 uniq=457
+[aug ep 037] realised hand keep fraction 0.8546
+[ctc ep 038] loss=2.875 ce=2.006 ctc=2.899 val_bleu4=10.243 wer=1.034 uniq=442
+[aug ep 038] realised hand keep fraction 0.8549
+[ctc ep 039] loss=2.872 ce=2.003 ctc=2.896 val_bleu4=10.198 wer=1.054 uniq=455
+[aug ep 039] realised hand keep fraction 0.8541
+[ctc ep 040] loss=2.866 ce=1.999 ctc=2.890 val_bleu4=9.871 wer=1.045 uniq=463
+[aug ep 040] realised hand keep fraction 0.8545
+[ctc TEST] bleu4=9.820 wer=1.006 distinct_outputs=397
+checkpoint cfg OK
+[soup] averaged 5 checkpoints -> /group/pmc099/pprasad/wave1_r2/runs/w1H_s42/soup_last5.pt
+=== ARM w1L60 (seed 42, epochs 60, hand drop 0.0, hand span 0.0) ===
+[ctc] vocab=3063 gloss_vocab=2988 device=cuda feat_dim=399
+[aug] pose augmentation ON (train only): speed ±0.2, rotation ±10.0 deg, x/y scale ±0.1, hand drop 0.0, hand span 0.0
+[ctc] params=9.82M train_batches=410 pseudo_token_drop=0.000
+[ctc ep 001] loss=12.736 ce=5.607 ctc=23.765 val_bleu4=1.441 wer=1.352 uniq=8
+[ctc ep 002] loss=6.068 ce=4.167 ctc=6.338 val_bleu4=1.241 wer=1.671 uniq=33
+[ctc ep 003] loss=5.536 ce=3.785 ctc=5.838 val_bleu4=4.602 wer=1.218 uniq=133
+[ctc ep 004] loss=5.057 ce=3.461 ctc=5.319 val_bleu4=2.667 wer=1.402 uniq=121
+[ctc ep 005] loss=4.661 ce=3.197 ctc=4.880 val_bleu4=5.481 wer=1.032 uniq=157
+[ctc ep 006] loss=4.361 ce=2.992 ctc=4.564 val_bleu4=4.163 wer=1.351 uniq=290
+[ctc ep 007] loss=4.163 ce=2.855 ctc=4.360 val_bleu4=6.693 wer=1.120 uniq=254
+[ctc ep 008] loss=4.007 ce=2.751 ctc=4.187 val_bleu4=7.520 wer=1.076 uniq=265
+[ctc ep 009] loss=3.895 ce=2.676 ctc=4.063 val_bleu4=8.087 wer=1.067 uniq=289
+[ctc ep 010] loss=3.799 ce=2.615 ctc=3.946 val_bleu4=6.578 wer=1.204 uniq=312
+[ctc ep 011] loss=3.722 ce=2.566 ctc=3.855 val_bleu4=7.641 wer=1.090 uniq=328
+[ctc ep 012] loss=3.652 ce=2.521 ctc=3.768 val_bleu4=8.275 wer=1.101 uniq=355
+[ctc ep 013] loss=3.593 ce=2.485 ctc=3.693 val_bleu4=7.530 wer=1.167 uniq=367
+[ctc ep 014] loss=3.540 ce=2.450 ctc=3.632 val_bleu4=7.720 wer=1.096 uniq=332
+[ctc ep 015] loss=3.490 ce=2.420 ctc=3.568 val_bleu4=7.966 wer=1.137 uniq=363
+[ctc ep 016] loss=3.444 ce=2.390 ctc=3.515 val_bleu4=8.604 wer=1.065 uniq=354
+[ctc ep 017] loss=3.409 ce=2.366 ctc=3.475 val_bleu4=8.080 wer=1.103 uniq=365
+[ctc ep 018] loss=3.371 ce=2.343 ctc=3.425 val_bleu4=8.622 wer=1.100 uniq=387
+[ctc ep 019] loss=3.336 ce=2.321 ctc=3.383 val_bleu4=8.728 wer=1.042 uniq=415
+[ctc ep 020] loss=3.299 ce=2.298 ctc=3.336 val_bleu4=8.838 wer=1.079 uniq=409
+[ctc ep 021] loss=3.271 ce=2.279 ctc=3.308 val_bleu4=9.574 wer=1.038 uniq=360
+[ctc ep 022] loss=3.242 ce=2.260 ctc=3.275 val_bleu4=8.055 wer=1.092 uniq=421
+[ctc ep 023] loss=3.210 ce=2.241 ctc=3.231 val_bleu4=9.369 wer=1.088 uniq=360
+[ctc ep 024] loss=3.183 ce=2.223 ctc=3.200 val_bleu4=9.967 wer=1.048 uniq=421
+[ctc ep 025] loss=3.160 ce=2.207 ctc=3.175 val_bleu4=9.225 wer=1.029 uniq=424
+[ctc ep 026] loss=3.130 ce=2.189 ctc=3.137 val_bleu4=9.698 wer=1.057 uniq=449
+[ctc ep 027] loss=3.107 ce=2.174 ctc=3.110 val_bleu4=10.306 wer=1.027 uniq=422
+[ctc ep 028] loss=3.080 ce=2.155 ctc=3.082 val_bleu4=9.798 wer=1.067 uniq=390
+[ctc ep 029] loss=3.052 ce=2.139 ctc=3.046 val_bleu4=9.178 wer=1.055 uniq=425
+[ctc ep 030] loss=3.032 ce=2.125 ctc=3.023 val_bleu4=9.090 wer=1.074 uniq=474
+[ctc ep 031] loss=3.007 ce=2.110 ctc=2.989 val_bleu4=10.022 wer=1.067 uniq=457
+[ctc ep 032] loss=2.983 ce=2.094 ctc=2.965 val_bleu4=9.182 wer=1.091 uniq=423
+[ctc ep 033] loss=2.961 ce=2.080 ctc=2.936 val_bleu4=9.540 wer=1.049 uniq=449
+[ctc ep 034] loss=2.936 ce=2.064 ctc=2.905 val_bleu4=9.900 wer=1.078 uniq=522
+[ctc ep 035] loss=2.917 ce=2.051 ctc=2.885 val_bleu4=8.507 wer=1.129 uniq=524
+[ctc ep 036] loss=2.894 ce=2.036 ctc=2.861 val_bleu4=9.732 wer=1.061 uniq=483
+[ctc ep 037] loss=2.872 ce=2.022 ctc=2.834 val_bleu4=10.213 wer=1.037 uniq=441
+[ctc ep 038] loss=2.854 ce=2.010 ctc=2.814 val_bleu4=10.136 wer=1.051 uniq=479
+[ctc ep 039] loss=2.832 ce=1.996 ctc=2.785 val_bleu4=10.179 wer=1.044 uniq=457
+[ctc ep 040] loss=2.812 ce=1.981 ctc=2.769 val_bleu4=10.133 wer=1.068 uniq=503
+[ctc ep 041] loss=2.791 ce=1.968 ctc=2.744 val_bleu4=9.823 wer=1.091 uniq=511
+[ctc ep 042] loss=2.772 ce=1.955 ctc=2.721 val_bleu4=10.946 wer=1.032 uniq=481
+[ctc ep 043] loss=2.753 ce=1.944 ctc=2.695 val_bleu4=10.421 wer=1.059 uniq=512
+[ctc ep 044] loss=2.736 ce=1.933 ctc=2.678 val_bleu4=10.715 wer=1.035 uniq=483
+[ctc ep 045] loss=2.718 ce=1.920 ctc=2.659 val_bleu4=9.754 wer=1.095 uniq=531
+[ctc ep 046] loss=2.703 ce=1.911 ctc=2.640 val_bleu4=11.271 wer=1.041 uniq=516
+[ctc ep 047] loss=2.685 ce=1.899 ctc=2.619 val_bleu4=9.996 wer=1.040 uniq=497
+[ctc ep 048] loss=2.673 ce=1.891 ctc=2.607 val_bleu4=10.278 wer=1.067 uniq=508
+[ctc ep 049] loss=2.658 ce=1.881 ctc=2.592 val_bleu4=10.227 wer=1.010 uniq=472
+[ctc ep 050] loss=2.643 ce=1.872 ctc=2.571 val_bleu4=10.627 wer=1.013 uniq=490
+[ctc ep 051] loss=2.632 ce=1.864 ctc=2.559 val_bleu4=10.547 wer=1.050 uniq=517
+[ctc ep 052] loss=2.622 ce=1.858 ctc=2.546 val_bleu4=11.080 wer=1.040 uniq=510
+[ctc ep 053] loss=2.611 ce=1.851 ctc=2.534 val_bleu4=10.400 wer=1.033 uniq=517
+[ctc ep 054] loss=2.601 ce=1.844 ctc=2.522 val_bleu4=10.483 wer=1.044 uniq=524
+[ctc ep 055] loss=2.594 ce=1.839 ctc=2.517 val_bleu4=10.075 wer=1.045 uniq=523
+[ctc ep 056] loss=2.587 ce=1.834 ctc=2.511 val_bleu4=10.370 wer=1.030 uniq=517
+[ctc ep 057] loss=2.581 ce=1.831 ctc=2.500 val_bleu4=10.629 wer=1.044 uniq=511
+[ctc ep 058] loss=2.575 ce=1.828 ctc=2.492 val_bleu4=10.310 wer=1.051 uniq=518
+[ctc ep 059] loss=2.572 ce=1.826 ctc=2.489 val_bleu4=10.709 wer=1.038 uniq=501
+[ctc ep 060] loss=2.570 ce=1.824 ctc=2.487 val_bleu4=10.552 wer=1.045 uniq=524
+[ctc TEST] bleu4=10.301 wer=1.016 distinct_outputs=479
+checkpoint cfg OK
+[soup] averaged 5 checkpoints -> /group/pmc099/pprasad/wave1_r2/runs/w1L60_s42/soup_last5.pt
+=== TASK SUMMARY seed 42 (readouts only; the futility decision needs all three seeds) ===
+w1A {"val_best": 11.10345909492776, "best_epoch": 38, "greedy_test": 10.305331774060297, "beam5_val": 10.676379991397914, "beam5_test": 10.636807385290949, "soup_beam5_val": 11.250979392014079, "soup_beam5_test": 10.657509239569354, "hand_keep_mean": null}
+w1H {"val_best": 10.60083796717104, "best_epoch": 32, "greedy_test": 9.819889327859066, "beam5_val": 11.08710009014897, "beam5_test": 9.984574315264705, "soup_beam5_val": 10.697578911607586, "soup_beam5_test": 11.0095200894244, "hand_keep_mean": 0.8546106168065668}
+w1L60 {"val_best": 11.271499181284257, "best_epoch": 46, "greedy_test": 10.300664579604407, "beam5_val": 11.561696409799172, "beam5_test": 11.353114008331781, "soup_beam5_val": 11.6297802189521, "soup_beam5_test": 11.642227901033904, "hand_keep_mean": null}
+w1H - w1A (seed 42): beam-5 val +0.411 | beam-5 test -0.652
+w1L60 - w1A (seed 42): beam-5 val +0.885 | beam-5 test +0.716
+WAVE1_TASK_DONE seed 42

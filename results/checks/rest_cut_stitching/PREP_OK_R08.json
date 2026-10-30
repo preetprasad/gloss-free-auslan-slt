@@ -1,0 +1,32 @@
+{
+ "prep_job": "174915",
+ "n": 13760,
+ "n_real": 12439,
+ "joint_R_md5": "5ceb8ccb9ecd87bc91a6c68ae2a8e177",
+ "R_manifest_md5": "9c0944845da44f89f6221d4bb6e2e754",
+ "rname": "R08",
+ "A_manifest_md5": "b7afa2341aa5c7896aa99c481e7e3f8e",
+ "audit_A_md5": "67449aaab4f1afd2bb38ec4c3b743f30",
+ "audit_R_md5": "9cbc9313881ca52f9c93ef618434a4a1",
+ "audit_ok_md5": "492fff99f8780874eba0d40bbe374992",
+ "cut_thr": 0.8,
+ "A_array_identical": 13760,
+ "segments": 94428,
+ "segments_cut": 81532,
+ "clips_with_cut": 13755,
+ "reasons": {
+  "all_down": 340,
+  "cut": 81532,
+  "nothing_at_edges": 12417,
+  "too_short": 139
+ },
+ "mean_lead": 5.075899097725251,
+ "mean_trail": 3.572531452535265,
+ "mean_removed_frac": 0.12599275841334784,
+ "manip_n": 500,
+ "manip_binding": true,
+ "manip_max": 1.0,
+ "manip_A_mean": 4.722,
+ "manip_R_mean": 0.28,
+ "gate": "W16_PREP_GATE_PASSED"
+}

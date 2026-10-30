@@ -1,0 +1,46 @@
+node k005.hpc.uwa.edu.au  mode decode  task 0
+config.py: OK
+ensemble_decode.py: OK
+slt/__init__.py: OK
+slt/cli.py: OK
+slt/data.py: OK
+slt/engine.py: OK
+slt/gated_temporal_rgb_fusion.py: OK
+slt/llm_decoder.py: OK
+slt/llm_vq_decoder.py: OK
+slt/mbart_decoder.py: OK
+slt/metrics.py: OK
+slt/model.py: OK
+slt/pose_mae.py: OK
+slt/preproc_guard.py: OK
+slt/pretrained.py: OK
+slt/pseudo_labels.py: OK
+slt/reference_model.py: OK
+slt/rgb_fusion.py: OK
+slt/rgb_vlp.py: OK
+slt/semantic.py: OK
+slt/sign_vq.py: OK
+slt/speech.py: OK
+slt/temporal_pyramid.py: OK
+slt/temporal_rgb_fusion.py: OK
+slt/vlp.py: OK
+tools/ensemble_mbr_wer.py: OK
+tools/ensemble_subsets.py: OK
+self-test passed
+val 800 clips, all on /group, overlap with test 0
+[preproc] OK: decode Config matches all 6 checkpoints on 10 preprocessing fields
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[subsets] members 6 fusion=[False, True, False, False, True, True] | clips 800 | masks 16 | beam 10 LP 0.3 | threads 16
+[subsets] batch 1/100
+[subsets] batch 11/100
+[subsets] batch 21/100
+[subsets] batch 31/100
+[subsets] batch 41/100
+[subsets] batch 51/100
+[subsets] batch 61/100
+[subsets] batch 71/100
+[subsets] batch 81/100
+[subsets] batch 91/100
+[subsets] wrote /group/pmc099/pprasad/ens_ablation/out/shard0of4.json
+ENS_SUBSETS_DECODE_DONE task 0

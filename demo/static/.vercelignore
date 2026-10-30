@@ -1,0 +1,20 @@
+# Exclude bulk dataset material and temporary browser-test media.
+_e2e_*
+**/_e2e_*
+# Only temporary recordings use the video extension in this static root. The
+# attributed examples are intentionally deployed.
+_e2e_*.mp4
+*.mov
+*.webm
+*.avi
+*.npz
+*.npy
+*.pkl
+*.pt
+*.onnx
+__pycache__/
+
+# The attributed research example is intentionally public.
+!examples/video_75_27/clip.mp4
+# Git deployments filter from the repository root before entering Root Directory.
+!demo/static/examples/video_75_27/clip.mp4
