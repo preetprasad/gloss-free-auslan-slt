@@ -1,0 +1,9 @@
+  self.rgb_encoder = nn.TransformerEncoder(layer, num_layers=n_rgb)
+torch threads 12 | clips 800 | members 6 fusion=[False, True, False, False, True, True]
+beam 10 | members 6 | BLEU-4 12.470 WER 0.9164 | per clip median  269.0 ms  p95  612.7 ms  mean  319.5 ms
+HARNESS GATE PASSED: 12.470 vs recorded 12.47
+beam 10 | members 3 | BLEU-4 11.472 WER 0.9268 | per clip median  132.7 ms  p95  310.5 ms  mean  156.5 ms
+beam 10 | members 1 | BLEU-4  9.782 WER 0.9748 | per clip median   44.0 ms  p95  101.1 ms  mean   51.5 ms
+beam  5 | members 6 | BLEU-4 12.188 WER 0.9341 | per clip median  206.5 ms  p95  460.4 ms  mean  239.6 ms
+beam  5 | members 3 | BLEU-4 11.314 WER 0.9416 | per clip median  103.4 ms  p95  228.2 ms  mean  120.4 ms
+beam  5 | members 1 | BLEU-4  9.527 WER 0.9838 | per clip median   34.9 ms  p95   76.4 ms  mean   40.2 ms

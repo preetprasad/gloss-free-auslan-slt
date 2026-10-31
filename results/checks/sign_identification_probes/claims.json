@@ -1,0 +1,74 @@
+{
+ "gid": "identification_probes",
+ "tagged": true,
+ "covered": [
+  "c01-018",
+  "c02-021",
+  "c04-039",
+  "c08-046",
+  "c10-040",
+  "c10-041",
+  "c10-051",
+  "c14-047",
+  "c14-052",
+  "c14-070",
+  "c14-071",
+  "c14-072",
+  "c18-077",
+  "c18-078",
+  "c18-079",
+  "c18-080"
+ ],
+ "not_covered": [
+  {
+   "id": "c01-017",
+   "code": "no_saved_output",
+   "reason": "The 42.8% isolated (citation-form) top-1 comes from the probe run on the 630 MM-WLAuslan recordings; only the 2026-09 write-up (results/CONTINUOUS_ID_PROBE_2026-09-09.md) records it. The per-recording predictions and the log were not kept locally and the probe needs pose arrays, which are not shipped."
+  },
+  {
+   "id": "c02-020",
+   "code": "no_saved_output",
+   "reason": "The 42.8% isolated (citation-form) top-1 comes from the probe run on the 630 MM-WLAuslan recordings; only the 2026-09 write-up (results/CONTINUOUS_ID_PROBE_2026-09-09.md) records it. The per-recording predictions and the log were not kept locally and the probe needs pose arrays, which are not shipped."
+  },
+  {
+   "id": "c10-039",
+   "code": "no_saved_output",
+   "reason": "The 42.8% isolated (citation-form) top-1 comes from the probe run on the 630 MM-WLAuslan recordings; only the 2026-09 write-up (results/CONTINUOUS_ID_PROBE_2026-09-09.md) records it. The per-recording predictions and the log were not kept locally and the probe needs pose arrays, which are not shipped."
+  },
+  {
+   "id": "c14-008",
+   "code": "no_saved_output",
+   "reason": "The 42.8% isolated (citation-form) top-1 comes from the probe run on the 630 MM-WLAuslan recordings; only the 2026-09 write-up (results/CONTINUOUS_ID_PROBE_2026-09-09.md) records it. The per-recording predictions and the log were not kept locally and the probe needs pose arrays, which are not shipped. The 18.1%/45/2.2 parts are recomputed under c01-018 etc."
+  },
+  {
+   "id": "c14-043",
+   "code": "no_saved_output",
+   "reason": "The 42.8% isolated (citation-form) top-1 comes from the probe run on the 630 MM-WLAuslan recordings; only the 2026-09 write-up (results/CONTINUOUS_ID_PROBE_2026-09-09.md) records it. The per-recording predictions and the log were not kept locally and the probe needs pose arrays, which are not shipped. The 18.1%/45/2.2 parts are recomputed under c01-018 etc."
+  },
+  {
+   "id": "c05-034",
+   "code": "not_own_number",
+   "reason": "SignCL 21.97 to 22.35 on PHOENIX14T are values published by Sincan et al.; 0.38 is their difference."
+  },
+  {
+   "id": "c10-042",
+   "code": "no_saved_output",
+   "reason": "Hand keypoint confidence 0.814 vs 0.816 on correct/incorrect spans: only the write-up results/HAND_CV_ANALYSIS_2026-09-09.md records it; no per-span output was kept locally."
+  },
+  {
+   "id": "c20-005",
+   "code": "needs_kaya",
+   "reason": "SignCL density probe (tools/sdr_probe.py), job 1174747: distant/adjacent distance ratios 3.4 to 6.6; the output and checkpoints are on Kaya, none local; VPN down."
+  },
+  {
+   "id": "c20-006",
+   "code": "needs_kaya",
+   "reason": "spotting probe (tools/spotting_probe.py), job 1171035: recall 0.05; the output and checkpoints are on Kaya, none local; VPN down."
+  },
+  {
+   "id": "c20-007",
+   "code": "needs_kaya",
+   "reason": "spotting probe (tools/spotting_probe.py), job 1171035: precision 0.01; the output and checkpoints are on Kaya, none local; VPN down."
+  }
+ ]
+}

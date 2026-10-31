@@ -11,6 +11,7 @@ gates passed: every run re-scores to the BLEU-4 recorded by its own job (toleran
 [1] Independent implementation vs the private port, released checkpoint (read from the saved job summary gk_job186422.json)
   clips compared: 20; all in the validation manifest: True
   max |logit difference| = 1.9e-05  (rounds to 2e-05; tolerance 1e-03)
+  exponent form: 1.9 x 10^-5; tolerance exponent -3
   max relative embedding difference = 5.3e-07; passed = True
 
 [2] The five fine-tuned models decoded with our own code (beam 5, LP 1.0) vs the port's decodes
@@ -28,7 +29,7 @@ gates passed: every run re-scores to the BLEU-4 recorded by its own job (toleran
   val: port mean 17.37 / our code 17.35; unseen-570 11.95 / 11.92
   test: port mean 18.21 / our code 17.86; unseen-570 13.73 / 13.49
   identical hypotheses over the ten seed x split comparisons: 80.6% to 85.2%
-  (dissertation text: 'test mean of 17.86 against the port's 18.21, with 82 to 85% identical')
+  rounded as in the dissertation: 81 to 85% of outputs identical
 
 [3] Fine-tuning with our own code, 3 seeds (42/101/202): K = plain, KSA = + stitched data and pose augmentation
   system | split | mean BLEU-4 | unseen-570 (test only)

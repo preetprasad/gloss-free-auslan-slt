@@ -1,0 +1,82 @@
+GATES PASSED: readout BLEU = summary BLEU for all 48 dumps (Stage 1 24 + Stage 2 24); unseen n = 570 on every test dump
+
+== Stage 2 absolute values, seeds 303 / 404
+  beam5_val        A  11.085  10.584 | D  11.211  11.054 | DL  11.073  10.588
+  beam5_test       A  11.831  11.587 | D  11.387  11.072 | DL  11.759  10.981
+  soup_beam5_val   A  11.490  10.852 | D  11.229  11.199 | DL  10.928  11.034
+  soup_beam5_test  A  11.573  11.725 | D  11.270  11.189 | DL  11.576  11.084
+  val_best         A  11.105  10.978 | D  10.400  10.375 | DL  10.426  10.606
+  greedy_test      A  10.429  10.059 | D  10.318  10.353 | DL  10.614  10.124
+  best_epoch       A  39.000  33.000 | D  27.000  37.000 | DL  38.000  36.000
+
+== Stage 2 paired deltas, seeds 303 404 | positive | mean [95% t, df 1 not shown: n = 2]
+  D  - A  beam5_val        +0.126 +0.470 | 2/2 + | mean +0.298
+  D  - A  beam5_test       -0.444 -0.515 | 0/2 + | mean -0.479
+  D  - A  soup_beam5_val   -0.261 +0.347 | 1/2 + | mean +0.043
+  D  - A  soup_beam5_test  -0.303 -0.536 | 0/2 + | mean -0.419
+  DL - A  beam5_val        -0.012 +0.004 | 1/2 + | mean -0.004
+  DL - A  beam5_test       -0.072 -0.606 | 0/2 + | mean -0.339
+  DL - A  soup_beam5_val   -0.562 +0.182 | 1/2 + | mean -0.190
+  DL - A  soup_beam5_test  +0.003 -0.641 | 1/2 + | mean -0.319
+  D  - DL beam5_val        +0.138 +0.466 | 2/2 + | mean +0.302
+  D  - DL beam5_test       -0.372 +0.091 | 1/2 + | mean -0.141
+  D  - DL soup_beam5_val   +0.301 +0.165 | 2/2 + | mean +0.233
+  D  - DL soup_beam5_test  -0.306 +0.105 | 1/2 + | mean -0.101
+
+== D - A, all five seeds 42 101 202 303 404 (beam-5 best.pt) | positive | mean [two-sided 95% t, df 4]
+  VALIDATION +0.319 -0.218 +0.195 +0.126 +0.470 | 4/5 + | mean +0.179 [-0.141, +0.498]
+  TEST       +0.774 +0.122 -0.374 -0.444 -0.515 | 2/5 + | mean -0.087 [-0.761, +0.587]
+
+== tools/holm_decision.py --family family_D.json (family {D}, m = 1)
+  Stage 1 (futility, beam-5 VALIDATION, first 3 seeds)
+    D        mean val delta +0.0987  -> CONTINUE; 5-seed test t=-0.360 one-sided p=0.631
+  
+  Holm-Bonferroni step-down, m = 1, alpha = 0.05
+    rank arm          raw p  Holm level   verdict
+    1    D            0.631      0.0500   retain
+  
+  Adoption rule (Holm reject AND 5-seed val mean > 0 AND both fresh seeds positive on test)
+    D        holm_reject=N val_mean_positive=Y fresh_seeds_positive=N  ->  NOT adopted
+
+  cross-check (same functions, imported): t = -0.360, one-sided p = 0.6314, Holm reject = False; {'holm_reject': False, 'val_mean_positive': True, 'fresh_seeds_positive': False, 'adopt': False}
+
+== Pooled secondaries D - A over five seeds (best.pt) | positive | mean [two-sided 95% t, df 4]
+  -- test
+     bleu4                  +0.774 +0.122 -0.374 -0.444 -0.515 | 2/5 + | mean -0.087 [-0.761, +0.587]
+     bleu4_unseen (n=570)   +0.842 +0.208 -0.686 -0.462 -0.511 | 2/5 + | mean -0.122 [-0.913, +0.669]
+     content_precision      -0.963 -0.456 -0.401 -1.899 -1.011 | 0/5 + | mean -0.946 [-1.693, -0.199]
+     content_recall         -0.147 +0.049 -0.098 -1.419 +0.147 | 2/5 + | mean -0.294 [-1.088, +0.501]
+     wer                    +0.018 +0.009 +0.035 +0.015 +0.037 | 5/5 + | mean +0.023 [+0.007, +0.039]
+     len_ratio              +0.047 +0.017 +0.053 +0.032 +0.035 | 5/5 + | mean +0.037 [+0.019, +0.055]
+     distinct               +14.000 -6.000 +20.000 -70.000 +47.000 | 3/5 + | mean +1.000 [-53.596, +55.596]
+  -- val
+     bleu4                  +0.319 -0.218 +0.195 +0.126 +0.470 | 4/5 + | mean +0.179 [-0.141, +0.498]
+     bleu4_unseen (n=549)   +0.603 -0.339 +0.690 +0.066 +0.503 | 4/5 + | mean +0.304 [-0.232, +0.841]
+     content_precision      -1.426 -0.287 +0.341 -0.175 +0.498 | 2/5 + | mean -0.210 [-1.149, +0.730]
+     content_recall         -0.891 +0.297 +0.049 -0.495 -0.346 | 2/5 + | mean -0.277 [-0.854, +0.300]
+     wer                    +0.010 +0.017 -0.003 -0.006 -0.010 | 2/5 + | mean +0.002 [-0.012, +0.016]
+     len_ratio              +0.035 +0.016 +0.011 -0.002 -0.027 | 3/5 + | mean +0.006 [-0.022, +0.035]
+     distinct               +35.000 -4.000 +17.000 -86.000 +10.000 | 3/5 + | mean -5.600 [-64.058, +52.858]
+  -- soup_last5 (NEVER a criterion), test
+     bleu4                  +0.525 +0.076 +0.776 -0.303 -0.536 | 3/5 + | mean +0.108 [-0.574, +0.789]
+     bleu4_unseen           +0.186 +0.695 +0.381 -0.245 -0.595 | 3/5 + | mean +0.084 [-0.549, +0.718]
+
+== DL secondaries, seeds 303 404 (best.pt): DL - A and D - DL
+  test bleu4              DL-A -0.072 -0.606 (mean -0.339) | D-DL -0.372 +0.091 (mean -0.141)
+  test bleu4_unseen       DL-A +0.361 -1.113 (mean -0.376) | D-DL -0.822 +0.602 (mean -0.110)
+  test content_precision  DL-A -1.203 -0.837 (mean -1.020) | D-DL -0.696 -0.174 (mean -0.435)
+  test content_recall     DL-A -1.615 -0.979 (mean -1.297) | D-DL +0.196 +1.126 (mean +0.661)
+  test wer                DL-A -0.001 +0.020 (mean +0.009) | D-DL +0.016 +0.018 (mean +0.017)
+  test len_ratio          DL-A -0.039 +0.010 (mean -0.015) | D-DL +0.071 +0.026 (mean +0.048)
+  test distinct           DL-A -47.000 +18.000 (mean -14.500) | D-DL -23.000 +29.000 (mean +3.000)
+  val  bleu4              DL-A -0.012 +0.004 (mean -0.004) | D-DL +0.138 +0.466 (mean +0.302)
+  val  bleu4_unseen       DL-A +0.463 -0.340 (mean +0.061) | D-DL -0.398 +0.843 (mean +0.223)
+  val  content_precision  DL-A -0.555 +1.364 (mean +0.405) | D-DL +0.380 -0.866 (mean -0.243)
+  val  content_recall     DL-A -0.742 +0.198 (mean -0.272) | D-DL +0.247 -0.544 (mean -0.148)
+  val  wer                DL-A +0.013 -0.014 (mean -0.001) | D-DL -0.019 +0.005 (mean -0.007)
+  val  len_ratio          DL-A -0.015 -0.016 (mean -0.016) | D-DL +0.013 -0.010 (mean +0.001)
+  val  distinct           DL-A -42.000 +2.000 (mean -20.000) | D-DL -44.000 +8.000 (mean -18.000)
+
+== Pre-registered reading (section 10)
+  D adoption: (a) Holm reject on test = False; (b) 5-seed val mean > 0 = True; (c) both fresh seeds positive on test = False -> NOT ADOPTED
+  DL: D not adopted -> no attribution; DL reported as an estimate only

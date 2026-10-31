@@ -1,6 +1,6 @@
 """Configuration for the Phase 2 gloss-free Auslan-Daily SLT baseline.
 
-Phase 2 framing (see CLAUDE.md): this is the *first* gloss-free continuous
+Phase 2 framing (see the project log): this is the *first* gloss-free continuous
 Sign Language Translation (SLT) baseline on Auslan-Daily, evaluated against a
 BLEU-4 decision gate. Nothing here is a final architecture — it is the minimal,
 correct pipeline needed to produce a first WER/BLEU number (research gap G3) and

@@ -23,7 +23,7 @@ sys.path.insert(0, str(HERE.parent))
 import tracker_v2 as v2  # noqa: E402
 import score_gt  # noqa: E402
 
-SRC = Path("/private/tmp/claude-501/-Users-preet-Honours/c69cfc0c-6e97-4020-b91d-72bcf24d0e82/scratchpad/gt/npz")
+SRC = Path("<local working folder>/gt/npz")
 KEY, LABELS = HERE.parent / "gt_key.json", HERE.parent / "gt_labels.json"
 FROZEN = HERE / "V21_FROZEN.json"
 PROXY_IOU = 0.5             # a detection "is the signer" if its box overlaps the path box interpolated at t this much

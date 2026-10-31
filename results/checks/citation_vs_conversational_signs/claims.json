@@ -1,0 +1,12 @@
+{"gid":"citation_vs_conv_signs","tagged":true,
+"covered":["c07-034","c09-037","c09-045"],
+"not_covered":[
+{"id":"c07-030","code":"no_saved_output","reason":"recipe setting (stitched clip at 25 fps); no measurement saved. The 25 fps rate of the real clips is checked under c10-044 but the builder output rate is a code setting."},
+{"id":"c07-031","code":"disagrees","reason":"DISAGREES: dissertation says citation mean 79.4 frames; the shipped MM-WLAuslan pose (45,010 Train+Valid clips) gives 80.27. 73.1 for Auslan-Daily is reproduced (73.12). 79.4 may come from the DWPose re-extraction, which is not saved locally (the project log lists its provenance as open)."},
+{"id":"c07-032","code":"disagrees","reason":"DISAGREES: dissertation says 72% shorter (3.60 times) over 45 shared glosses; pooled spans give 65% (2.89 times). The original paired per-gloss computation is not saved."},
+{"id":"c07-033","code":"no_saved_output","reason":"recipe setting (builder resamples 30 fps source to 25 fps); only the code flag exists, no saved output."},
+{"id":"c07-038","code":"disagrees","reason":"DISAGREES on n only: medians 3.08 s and 0.48 s and the ratio 6.4 reproduce, but the saved data give n=14 citation clips and n=10 spotted spans, the dissertation says n=12 and n=6."},
+{"id":"c10-044","code":"no_saved_output","reason":"25 fps for Auslan-Daily reproduced (25.00 from the alignment table); the MM-WLAuslan 30 fps has no local saved output (pose pickle stores no frame rate)."},
+{"id":"c18-092","code":"no_saved_output","reason":"E0c within-sign variability (0.6319 vs 0.0872): scripts and the 700-clip synthetic corpora were not saved; only the results/E0_MOTION_FIDELITY write-up exists."},
+{"id":"c21-010","code":"no_saved_output","reason":"same E0c measurement as c18-092; only the write-up exists."}
+]}

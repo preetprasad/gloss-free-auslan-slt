@@ -4,7 +4,7 @@
 # The stitch lever was measured to saturate immediately at ~0.5:1 (2026-09-05): ratio 0.5:1, 1:1,
 # k=1 and k=2 all landed in 10.3-10.6. That measurement was made on the OLD corpus, whose clips
 # averaged 246 frames against a real 91.2 -- roughly 3x too long. The duration fix then nearly
-# TRIPLED the lever (+0.56 -> +1.48 mean, replicated 3/3), and CLAUDE.md's 2026-09-06 entry records
+# TRIPLED the lever (+0.56 -> +1.48 mean, replicated 3/3), and the project log's 2026-09-06 entry records
 # the open question verbatim: "re-check whether the ratio/sentence-count saturation still holds now
 # that the temporal statistics are correct -- the earlier flat result may have been an artefact of
 # the wrong durations." THAT HAS NEVER BEEN RUN. It is the strongest untested lever on the board and

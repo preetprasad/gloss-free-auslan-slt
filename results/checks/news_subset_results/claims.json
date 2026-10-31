@@ -1,0 +1,74 @@
+{
+ "gid": "news_wave4_news",
+ "tagged": true,
+ "covered": [
+  "c04-024",
+  "c11-017",
+  "c11-035",
+  "c11-037",
+  "c11-038",
+  "c11-039",
+  "c11-040",
+  "c14-104",
+  "c18-072",
+  "c18-073",
+  "c18-074",
+  "c18-075",
+  "c18-076",
+  "c18-098",
+  "c18-099",
+  "c20-001"
+ ],
+ "not_covered": [
+  {
+   "id": "c11-016",
+   "code": "needs_kaya",
+   "reason": "News-only 1.99 (beam 5, 512 frames): output of Kaya jobs 1196181/1200443 (news_long_512 / nb_word) under /group/pmc099/pprasad/news_long and news_bpe; not copied locally"
+  },
+  {
+   "id": "c11-030",
+   "code": "needs_kaya",
+   "reason": "same News-only run as c11-016 (jobs 1196181/1200443); output on Kaya only"
+  },
+  {
+   "id": "c11-036",
+   "code": "needs_kaya",
+   "reason": "95% of missed News content words are in-vocabulary: news-oov job 1200443 output on Kaya only; local write-ups only"
+  },
+  {
+   "id": "c14-048",
+   "code": "needs_kaya",
+   "reason": "joint Communication+News run 8.89 (job 1140711, comm_dwpose joint output on Kaya); not saved locally"
+  },
+  {
+   "id": "c16-035",
+   "code": "needs_kaya",
+   "reason": "news-xfer job 1196575 (-0.72, -2.08): per-run output on Kaya only"
+  },
+  {
+   "id": "c16-036",
+   "code": "needs_kaya",
+   "reason": "joint training 8.89 vs 10.27 (job 1140711): output on Kaya only"
+  },
+  {
+   "id": "c18-071",
+   "code": "needs_kaya",
+   "reason": "three unseen words in 699 clips (news-oov job 1200443): output on Kaya only"
+  },
+  {
+   "id": "c20-002",
+   "code": "needs_kaya",
+   "reason": "joint VLP+CTC 8.89 on Communication test (job 1140711): output on Kaya only"
+  },
+  {
+   "id": "c20-003",
+   "code": "needs_kaya",
+   "reason": "the -1.38 difference needs the joint run's 8.89 (job 1140711), on Kaya only"
+  },
+  {
+   "id": "c20-004",
+   "code": "needs_kaya",
+   "reason": "news-xfer job 1196575 two seeds: output on Kaya only"
+  }
+ ]
+}

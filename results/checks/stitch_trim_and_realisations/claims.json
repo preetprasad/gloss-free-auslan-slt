@@ -1,0 +1,24 @@
+{
+ "gid": "wave4_trim_realisations",
+ "tagged": true,
+ "covered": [
+  "c07-035",
+  "c15-016",
+  "c17-050",
+  "c17-051",
+  "c17-059",
+  "c17-060"
+ ],
+ "not_covered": [
+  {
+   "id": "c16-024",
+   "code": "needs_kaya",
+   "reason": "stitch-mot3 (job 1197043) summaries/logs are on Kaya only (code/logs/); no local copy; the tool-wise record exists only in the project log"
+  },
+  {
+   "id": "c17-062",
+   "code": "needs_kaya",
+   "reason": "pose-reliance probe (job 1174944, tools/pose_reliance_probe.py) output with CE 0.906/0.931 vs 0.785 is on Kaya logs only; the local per_clip_reliance_*.json are other models"
+  }
+ ]
+}

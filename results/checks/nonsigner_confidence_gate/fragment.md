@@ -18,6 +18,7 @@ Test videos: signers 800 clips, crops 831; threshold fitted on the 800 validatio
 == Final six-member ensemble, production pose, threshold for 50% coverage
   voiced: test signers 51.9% ; non-signers 43.8% ; ratio 0.84 (95% CI 0.75 to 0.94)
   more than four non-signing people in ten still voiced: True
+  non-signers voiced, whole percent: 44%; whole non-signers per ten voiced: 4 of 10
   AUROC 0.56 [0.53, 0.60]
   validation videos (805 crops): ratio 0.85 (0.77 to 0.93)
   threshold for 75% coverage, test: ratio 0.91 (0.85 to 0.98)

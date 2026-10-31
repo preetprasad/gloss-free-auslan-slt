@@ -22,22 +22,22 @@ REPO = os.path.dirname(ROOT)
 CASES = [
     ("S6 ensemble (reported operating point, beam 10 / LP 0.3)",
      "results/final_ensemble_test_decodes/hyps_LP=0.3.jsonl", 11.802, 0.9069,
-     "CLAUDE.md headline; re-decoded 2026-09-22 jobs 6806/7921 to +-0.002"),
+     "the project log headline; re-decoded 2026-09-22 jobs 6806/7921 to +-0.002"),
     ("S6 ensemble, validation split",
      "results/final_ensemble_validation_decodes/hyps_LP=0.3.jsonl", 12.470, 0.9164,
-     "CLAUDE.md 2026-09-22k; the LP was selected on this split"),
+     "the project log 2026-09-22k; the LP was selected on this split"),
     ("F' = 1.1:1 duration members + 2 RGB-fusion (NOT CLAIMED: CI vs S6 includes zero)",
      "results/ensemble_one_to_one_duration_members_decodes/hyps_LP=0.6.jsonl", 12.836, 0.9213,
      "results/PREREG_ENSEMBLE_R111_2026-09-15.md"),
     ("F = duration members + 2 RGB-fusion (RETRACTED 2026-09-10: not resolvable)",
      "results/ensemble_three_duration_two_fusion_decodes/hyps_LP=0.7.jsonl", 12.114, 0.9526,
-     "results/ENSEMBLE_F_RESULT_2026-09-10.md; retraction in CLAUDE.md 2026-09-10t"),
+     "results/ENSEMBLE_F_RESULT_2026-09-10.md; retraction in the project log 2026-09-10t"),
     ("G1 = 6 duration + 2 fusion (best on VALIDATION, worse on test -- the val/test divergence)",
      "results/ensemble_six_duration_two_fusion_decodes/hyps_LP=0.7.jsonl", 11.562, 0.9706,
-     "CLAUDE.md 2026-09-10t"),
+     "the project log 2026-09-10t"),
     ("E = 3 duration members, pose-only",
      "results/ensemble_three_duration_members_decodes/hyps_LP=0.8.jsonl", 11.537, 0.9988,
-     "CLAUDE.md 2026-09-10h"),
+     "the project log 2026-09-10h"),
 ]
 
 # Reference subsets for the seen/unseen decomposition of the reported system.

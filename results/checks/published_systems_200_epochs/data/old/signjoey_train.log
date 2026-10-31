@@ -1,0 +1,11 @@
+[setup] device=mps | arch=signjoey_slt | vocab=3064 | params=25.95M trainable=25.95M | raw_feat_dim=204 | visual_feature_dim=1024 | batch=16 accum=2 effective_batch=32 | train=12441 val=800
+[ep 001] loss=35.9940  BLEU-4=0.95  WER=0.993
+[ep 002] loss=31.7435  BLEU-4=0.82  WER=1.509
+[ep 003] loss=31.0083  BLEU-4=0.40  WER=1.181
+[ep 004] loss=30.6517  BLEU-4=0.88  WER=0.976
+[ep 005] loss=30.3641  BLEU-4=1.06  WER=1.222
+[ep 006] loss=30.1395  BLEU-4=0.61  WER=0.995
+[ep 007] loss=29.8756  BLEU-4=1.48  WER=1.374
+[ep 008] loss=29.6742  BLEU-4=1.57  WER=1.444
+[ep 009] loss=29.5146  BLEU-4=1.39  WER=1.150
+[ep 010] loss=29.3902  BLEU-4=1.49  WER=1.271

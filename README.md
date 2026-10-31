@@ -96,6 +96,42 @@ Each folder holds the check script, the saved data it reads and the dissertation
 | `results/checks/ensemble_averaging_rule` | A44 | Power-mean averaging of ensemble members against the geometric mean. | tab:app_additional; sec:res_bootstrap | 120153, 138382, 138383 |
 | `results/checks/speech_chain` | A46 | Latency by stage and voiced output by coverage for the speech chain. | sec:res_speech, tab:res_speech_latency, fig:res_latency_plot, tab:res_speech_coverage | none (local) |
 | `results/checks/rouge_convention` | A47 | ROUGE-L tokenisation convention table. | tab:res_rouge_tokenisation | none (local) |
+| `results/checks/citation_vs_conversational_signs` | A48 | Citation versus conversational signs: clip lengths and durations | Method, Results | none (local) |
+| `results/checks/dataset_statistics` | A49 | Dataset statistics | tab:datasets | 21734 |
+| `results/checks/duration_and_frame_rates` | A50 | Real-clip lengths and frame rates behind the temporal-fidelity argument | Appendix B | 117539, 121690 |
+| `results/checks/ensemble_member_subsets` | A51 | Ensemble member-set ablation and member-set selection | Results, Discussion, Appendix B | 120153, 120154, 31204, 31205, 10674, 121523, 119656 |
+| `results/checks/ensemble_cost_and_latency` | A52 | Ensemble and translator decoding cost, pose front-end speed, GPU set-up | Introduction, Method, Results, Discussion | 108179 |
+| `results/checks/ensemble_mechanism` | A53 | Why ensembling works: members, bootstrap, mechanism, MBR, seed ensembles | Results, Appendix B | 21736, 110182, 107570 |
+| `results/checks/estimator_first_listed_runs` | A54 | Early AlphaPose runs and the DWPose re-extraction | Introduction, Results, Appendix B | 110125 |
+| `results/checks/estimator_signer_rerun` | A55 | Estimator comparison on the signer's keypoints | Method, Results, Discussion, Appendix B | 196407 |
+| `results/checks/extraction_error_audit` | A56 | Extraction-error audit: signer entry, keypoint layouts, registration, bounding boxes | Method | 110062 |
+| `results/checks/content_word_failure_analysis` | A57 | Content-word failure analysis | Results, Discussion | 6806 |
+| `results/checks/figure_settings` | A58 | Figure settings and speed verdict | Results, Discussion | none (local) |
+| `results/checks/hand_speed_dwpose_frontend` | A59 | DWPose front end: counts, hand confidence and hand speed | fig:res_pose_estimators | none (local) |
+| `results/checks/sign_identification_probes` | A60 | Sign-identification probes and isolated-sign references | tab:app_additional | 140892, 117474, 140890 |
+| `results/checks/input_blind_baselines` | A61 | Input-blind constant baseline | Introduction, Results, Discussion, Abstract | 107570, 112506 |
+| `results/checks/input_side_predictors` | A62 | Input-side predictors of translation quality | Results | none (local) |
+| `results/checks/learning_curve_with_real_data` | A63 | Real-data learning curve (wave 8) | Results | 21734 |
+| `results/checks/news_subset_results` | A64 | News: five-seed stitched data and pose augmentation, validation length penalty, signable recall, ensemble gate (wave 4) | Results, Discussion, Appendix B | 7950, 16398, 21744, 21734, 27382 |
+| `results/checks/paired_bootstrap_ladder` | A65 | Paired bootstrap, development ladder and the final ensemble against the published system | Results, Discussion | 10288, 6806, 7921, 110182 |
+| `results/checks/pose_augmentation_replication` | A66 | Pose augmentation replication, recipe and the 1.1:1 baseline | Method, Results, Discussion | 121523, 119656, 6612, 119939 |
+| `results/checks/stitching_side_experiments` | A67 | PoseStitch side experiments (sign order, wider vocabulary, function signs, letters, wrong-sense signs) | Appendix B | 49135, 31220, 66644, 16435, 25863, 5403, 138380, 119323, 117372, 16397 |
+| `results/checks/pretrained_transfer` | A68 | Transfer from a pre-trained sign-language model | Results | 167035, 167036, 195361, 175088 |
+| `results/checks/pretraining_length_rerun` | A69 | Pre-training length and News frame limit chosen on validation alone | Method, Results, Discussion | 116619, 119618, 116620 |
+| `results/checks/pseudo_gloss_pretraining` | A70 | CTC-only pseudo-gloss first stage against a compute-matched control (wave 23) | Appendix B | 179456, 179457, 174916, 16435, 12629 |
+| `results/checks/published_systems_200_epochs` | A71 | Published systems' own code and the project's translator with the published recipe | tab:app_ownccode | 167758, 239443, 138567, 179411 |
+| `results/checks/recipe_and_settings` | A72 | Training recipe, model size and decoding defaults | Method, Appendix B | 121523 |
+| `results/checks/run_to_run_noise_bands` | A73 | Run-to-run noise bands | fig:seed_spread | 121523, 7952, 6952, 119656, 16435, 174916, 6592, 6612, 6613 |
+| `results/checks/seen_unseen_decomposition` | A74 | Seen- and unseen-target decomposition, split definition and per-signer gap | Method, Results, Discussion | none (local) |
+| `results/checks/selective_prediction` | A75 | Selective prediction: answering only the confident clips | Results | 110182, 6806 |
+| `results/checks/semantic_adequacy_grades` | A76 | Semantic adequacy grading | Appendix B | 10288 |
+| `results/checks/signer_disjoint_split` | A77 | Signer-disjoint split | Method, Results, Discussion, Appendix B | 138387, 138388, 138386 |
+| `results/checks/speech_round_trip` | A78 | Speech round trip with Whisper small.en | Results | none (local) |
+| `results/checks/tracker_v2_heavy_switch` | A79 | Person tracking and the heavy-switch clips | Results, Discussion | 6592, 43506, 138391, 138392, 6591 |
+| `results/checks/video_disjoint_split` | A80 | Video-disjoint split and VD-CONFIRM | Method, Results | 6596, 7965, 10674, 21736 |
+| `results/checks/masked_pose_pretraining` | A81 | Masked keypoint pre-training (wave 28): checks that ran, no scores quoted | Results | 239450, 239449 |
+| `results/checks/stitch_trim_and_realisations` | A82 | Wave 4: stitched data without boundary trim, and two realisations of half the sentences | Method, Appendix B | 7949, 119704, 117494, 7948 |
+| `results/checks/wer_bleu_null_models` | A83 | WER null floor, brevity trade and error decomposition | Method, Results | 6806, 107570, 112506 |
 
 ## File-name prefixes
 
@@ -141,11 +177,12 @@ The following material is not included:
 - **Material derived from the datasets.** This covers extracted pose files, RGB features, clip-to-reference manifests, example clips and test fixtures. Derived files carry the same signer and licence considerations as the source data. `demo/tests/fixtures/` therefore contains only the scripts that generate the fixtures.
 - **Code that stays private.** The code that fine-tuned a released pre-trained model, the authors' own code of the published systems that were re-run, and an independent re-implementation of the pre-trained model are not published here. Their saved hypotheses, logits and per-seed summaries are included under `results/checks/`, and the checks A36 to A38 re-score them with this repository's own code.
 - **Model checkpoints.** They are not included because of their size. The weights used by the live demonstrator are published separately (see Licence).
-- **The project's private laboratory notebook.** Comments in the code that cite dated entries such as "09-10m", or that cite `CLAUDE.md`, refer to this notebook. References to pre-registration documents, and to result folders that are absent from `results/`, also point to material that is not part of this repository.
+- **The project's private laboratory notebook.** Comments in the code that cite dated entries such as "09-10m", or that cite "the project log", refer to this notebook. References to pre-registration documents, and to result folders that are absent from `results/`, also point to material that is not part of this repository.
 
 Some paths in the code refer to machines rather than to this repository:
 
 - Paths beginning `/group/pmc099` or `/scratch/pmc099` are locations on the UWA Kaya cluster.
+- `<local working folder>` stands for a folder on the author's laptop in a few exploratory scripts under `pose/tracker_v2/research/`. Those scripts do not run outside that machine, and no check uses them.
 - Paths beginning `/Users/` were on the author's laptop; the build replaces them with repository-relative paths, so a few scripts that read the dissertation source (the figure scripts) expect it in a folder named `SignLanguage_Preet` beside this repository.
 - Where a job script calls an extraction worker under `results/dwpose_experiment/` on the cluster, the same script is in `pose/extraction/` in this repository.
 
@@ -173,14 +210,16 @@ On the cluster, each run used one NVIDIA V100 GPU of the University of Western A
 
 The reported numbers fall into two groups, which `REPRODUCING.md` sets out check by check.
 
-- **From the saved outputs and the dataset spreadsheet, with no GPU.** `make reproduce` runs all 47 checks of this kind (A1 to A47) and compares each output with the output recorded in `REPRODUCING.md`. Not every number of the dissertation has a check: `make reproduce` passes when every existing check reproduces, and does not fail because a claim has none. The checks cover the reported system's 11.80 BLEU-4 and 0.907 word error rate, its seen-target and unseen-target scores (35.00 and 6.60), the single models, the paired-bootstrap intervals, the multi-seed decisions, the selective-prediction results, the analysis of the ensemble and the dataset statistics. A full run on a laptop took about 37 minutes (30 October 2026: 47 reproduced, 0 failed).
-- **By decoding or training.** Numbers that need pose files, checkpoints or training runs are listed at the end of `REPRODUCING.md` with the script or job script that produces each.
+- **From the saved outputs and the dataset spreadsheet, with no GPU.** `make reproduce` runs all 83 checks of this kind (A1 to A83) and compares each output with the output recorded in `REPRODUCING.md`. Not every number of the dissertation has a check: `make reproduce` passes when every existing check reproduces, and does not fail because a claim has none. The checks cover the reported system's 11.80 BLEU-4 and 0.907 word error rate, its seen-target and unseen-target scores (35.00 and 6.60), the single models, the paired-bootstrap intervals, the multi-seed decisions, the selective-prediction results, the analysis of the ensemble and the dataset statistics. A full run on a laptop took about 42 minutes (31 October 2026, from a fresh clone after `make setup`, with the spreadsheet in place; Python 3.14.3, numpy 2.5.3: 83 reproduced, 0 failed).
+- **By decoding or training.** Examples of numbers that need pose files, checkpoints or training runs are at the end of `REPRODUCING.md`, with the script or job script that produces each; `CLAIM_INDEX.md` gives the status of every claim.
+
+**What the checks do not cover.** Of the 1069 claims listed in `CLAIM_INDEX.md`, 644 have a check that was read claim by claim, and 143 more are mapped to one of the older checks A1 to A35 without a claim-by-claim review. 87 claims need the cluster (a job has to be re-run), 60 have no saved output (the output that produced the number was not kept), and 26 disagree with the saved data (the reason is given for each in the claim index). 7 are not measurements of this work, 8 no longer appear in the dissertation, and 94 do not have a check yet. Literature figures and document metadata are left out of these counts. [`CLAIM_INDEX.md`](CLAIM_INDEX.md) lists every claim with its check or the reason it has none. A passing `make reproduce` shows that the saved outputs give the recorded numbers; it does not show that the unchecked claims are right.
 
 ```bash
 make setup                  # creates .venv and installs requirements.txt
 make data REMOTE=gdrive     # fetches the Auslan-Daily spreadsheet with rclone and restores the reference sentences
 make headline               # the reported system's scores and the decision rule (seconds)
-make reproduce              # all 47 checks
+make reproduce              # all 83 checks
 make test                   # runs the tests
 make smoke                  # trains and decodes on synthetic clips
 ```
@@ -407,7 +446,7 @@ All paths under `tools/`, `jobs/slurm/`, `slt/` and the trainers are relative to
 
 This section follows the dissertation's Results, Discussion and Appendix B. For each table, figure or claim it names the script in this repository that produces it and the check in `REPRODUCING.md` that re-derives it. "Dataset" means the Auslan-Daily files fetched by `make data` or the official release; "GPU" and "cluster" are as defined in `REPRODUCING.md`. Paths are relative to `src/` unless they begin with `results/`, `figures/` or `pose/`. The figure scripts expect the dissertation source in a folder named `SignLanguage_Preet` beside this repository, because several of them read the numbers they plot from its tables.
 
-The dissertation also reports experiments of later waves. Where the code that produced them is public it is named below. For the transfer from a pre-trained model, the comparison with the published systems' own code and the independent re-implementation, the generating code is not in this release; the saved outputs and this repository's own scoring are, in `results/checks/`, and the rows below point to them. Three experiments of Appendix B (CTC-only pre-training, a masked pose autoencoder, a second tracker test) have neither code nor saved outputs in this release and are marked "not in this release".
+The dissertation also reports experiments of later waves. Where the code that produced them is public it is named below. For the transfer from a pre-trained model, the comparison with the published systems' own code and the independent re-implementation, the generating code is not in this release; the saved outputs and this repository's own scoring are, in `results/checks/`, and the rows below point to them.
 
 ### Results
 
@@ -457,7 +496,7 @@ The dissertation also reports experiments of later waves. Where the code that pr
 | Seed spread (`fig:seed_spread`) | `figures/make_uncertainty_figure.py` | A25 |
 | Further results (`tab:app_additional`), rows for the wave-12 follow-ups | News decomposition `tools/w12a_news_decomp_readout.py`; wrong-sense signs `tools/w12b_readout.py`; power-mean averaging `tools/w12d_powermean.py`; non-signer gate on the ensemble `tools/w12e_nonsigner_s6.py`; pose measurements `tools/w12f_probe.py`; signer-disjoint split `tools/w12g_signer_split.py`, `tools/w12g_readout.py`; extra pre-training `tools/w12h_readout.py`; tracker-v2 retest `tools/w12i_heavy_did.py`; the `w12*` job scripts in `jobs/slurm/`; saved outputs and checks in `results/checks/news_stitching_vs_augmentation/` (News decomposition), `results/checks/ensemble_averaging_rule/`, `results/checks/nonsigner_confidence_gate/` and `results/checks/extra_pretraining_cycle/` | A43, A44, A45, A42; the rest on the cluster |
 | Further results, rows of the other later waves: a 69-keypoint input and its graph front ends, rest-cut stitching, three training ideas (sign targets, re-timing, preference stage) | saved outputs and checks only, in `results/checks/keypoints_69_input/`, `results/checks/rest_cut_stitching/` and `results/checks/three_training_ideas/`; the training code of these waves is not in this release | A40, A39, A41 |
-| Further results, rows of the other later waves: CTC-only pre-training, a masked pose autoencoder, a second tracker test | not in this release | not in this release |
+| Further results, rows of the other later waves: CTC-only pre-training, a masked pose autoencoder, a second tracker test | saved outputs and checks only: `results/checks/pseudo_gloss_pretraining/`, `results/checks/masked_pose_pretraining/`, `results/checks/keypoints_69_input/`; the generating code is not in this release | A70, A81, A40 |
 | Transfer from a pre-trained model; the published systems run with their own code (`app:transfer`, `tab:app_transfer`, `tab:app_ownccode`) | saved outputs and checks only: `results/checks/pretrained_ensemble/`, `results/checks/clean_room_reimplementation/`, `results/checks/published_systems_own_code/`; the code that produced them is not in this release | A36, A37, A38 |
 
 ## Tests

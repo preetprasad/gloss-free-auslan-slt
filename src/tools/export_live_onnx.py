@@ -1,6 +1,5 @@
 """Export the live demo's translators to ONNX for the in-browser engine, copy the pose ONNX files, write manifest.json.
 
-Contract: scratchpad browser_engine_contract.md (graph interfaces, file layout, manifest schema, gate G1).
 Every value in the manifest is read from its source (demo/service.py MODELS, the checkpoints' saved cfg, the installed
 rtmlib), never retyped. Members are built exactly as demo/service.py::Translator builds them.
 

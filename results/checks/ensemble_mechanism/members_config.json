@@ -1,0 +1,95 @@
+[
+ {
+  "member": "comm_dwpose_ctc_vlplong80",
+  "epochs": 40,
+  "seed": 101,
+  "batch_size": 64,
+  "model_arch": "generic",
+  "init_encoder_tail": "runs/vlp_vlplong80/vlp_encoder_best.pt",
+  "rgb_feat_dir_set": false,
+  "n_tensors": 132,
+  "state_dict_numel": 10096631,
+  "position_table_buffers": {
+   "pos_enc.pe": 1048576
+  },
+  "parameters_without_position_tables": 9048055
+ },
+ {
+  "member": "comm_dwpose_rgb_fusion",
+  "epochs": 40,
+  "seed": 42,
+  "batch_size": 32,
+  "model_arch": "generic",
+  "init_encoder_tail": "comm_dwpose_vlp_ctc/best.pt",
+  "rgb_feat_dir_set": true,
+  "n_tensors": 162,
+  "state_dict_numel": 13020919,
+  "position_table_buffers": {
+   "base.pos_enc.pe": 1048576,
+   "rgb_pos.pe": 1048576
+  },
+  "parameters_without_position_tables": 10923767
+ },
+ {
+  "member": "comm_dwpose_vlp_ctc",
+  "epochs": 40,
+  "seed": 42,
+  "batch_size": 64,
+  "model_arch": "generic",
+  "init_encoder_tail": "runs/vlp_dwpose/vlp_encoder_best.pt",
+  "rgb_feat_dir_set": false,
+  "n_tensors": 132,
+  "state_dict_numel": 10096631,
+  "position_table_buffers": {
+   "pos_enc.pe": 1048576
+  },
+  "parameters_without_position_tables": 9048055
+ },
+ {
+  "member": "comm_dwpose_ctc_s202",
+  "epochs": 40,
+  "seed": 202,
+  "batch_size": 64,
+  "model_arch": "generic",
+  "init_encoder_tail": "runs/vlp_s202/vlp_encoder_best.pt",
+  "rgb_feat_dir_set": false,
+  "n_tensors": 132,
+  "state_dict_numel": 10096631,
+  "position_table_buffers": {
+   "pos_enc.pe": 1048576
+  },
+  "parameters_without_position_tables": 9048055
+ },
+ {
+  "member": "comm_dwpose_fus_s101",
+  "epochs": 40,
+  "seed": 101,
+  "batch_size": 32,
+  "model_arch": "generic",
+  "init_encoder_tail": "runs/ctc_s101/best.pt",
+  "rgb_feat_dir_set": true,
+  "n_tensors": 162,
+  "state_dict_numel": 13020919,
+  "position_table_buffers": {
+   "base.pos_enc.pe": 1048576,
+   "rgb_pos.pe": 1048576
+  },
+  "parameters_without_position_tables": 10923767
+ },
+ {
+  "member": "comm_dwpose_fus_s202",
+  "epochs": 40,
+  "seed": 202,
+  "batch_size": 32,
+  "model_arch": "generic",
+  "init_encoder_tail": "runs/ctc_s202/best.pt",
+  "rgb_feat_dir_set": true,
+  "n_tensors": 162,
+  "state_dict_numel": 13020919,
+  "position_table_buffers": {
+   "base.pos_enc.pe": 1048576,
+   "rgb_pos.pe": 1048576
+  },
+  "parameters_without_position_tables": 10923767
+ }
+]

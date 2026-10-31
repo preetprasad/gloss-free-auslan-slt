@@ -5,7 +5,7 @@ offset into a deterministic byte pool and the first 16 hex digits of sha256(outp
 over POOL_TAG) is rebuilt by the test, so no image is stored.
 
 Run with the interpreter the Python service uses (cv2 is only there): ~/.pyenv/versions/3.14.3/bin/python.
-numpy is used for views only (frombuffer / reshape), never for arithmetic (numpy 1.26.3 on Python 3.14: see CLAUDE.md).
+numpy is used for views only (frombuffer / reshape), never for arithmetic (numpy 1.26.3 on Python 3.14: see the project log).
 """
 import hashlib
 import json

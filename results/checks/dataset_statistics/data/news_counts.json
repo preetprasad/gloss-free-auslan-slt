@@ -1,0 +1,17 @@
+{
+ "rows": 11069,
+ "videos": 67,
+ "train": {
+  "clips": 9669,
+  "signers": 22
+ },
+ "dev": {
+  "clips": 700,
+  "signers": 21
+ },
+ "test": {
+  "clips": 700,
+  "signers": 21
+ },
+ "train_vocab_lower_whitespace": 18893
+}

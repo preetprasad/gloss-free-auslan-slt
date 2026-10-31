@@ -1,0 +1,15 @@
+{
+ "gid": "input_blind_baselines",
+ "tagged": true,
+ "covered": [
+  "c01-025",
+  "c02-023",
+  "c02-024",
+  "c07-063",
+  "c11-079",
+  "c11-081",
+  "c14-011",
+  "c14-077"
+ ],
+ "not_covered": []
+}

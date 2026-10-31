@@ -1,0 +1,39 @@
+{
+ "gid": "ensemble_cost_latency",
+ "tagged": true,
+ "covered": [
+  "c02-027",
+  "c02-028",
+  "c07-069",
+  "c13-021",
+  "c13-022",
+  "c13-023",
+  "c13-024",
+  "c13-025",
+  "c13-026",
+  "c14-086",
+  "c14-089",
+  "c16-049",
+  "c16-050",
+  "c16-051",
+  "c16-052",
+  "c16-053",
+  "c16-054",
+  "c16-055",
+  "c18-055",
+  "c18-056",
+  "c18-057"
+ ],
+ "not_covered": [
+  {
+   "id": "c07-071",
+   "code": "needs_kaya",
+   "reason": "Wall time of a 40-epoch Communication run (35-45 minutes) is in the per-run training logs on Kaya; the local progress files of the pose-only 40-epoch runs hold no timing field (only the pre-trained-model fine-tuning runs record seconds). No local copy."
+  },
+  {
+   "id": "c13-020",
+   "code": "needs_kaya",
+   "reason": "The 21.7 frames per second on one V100 is the printed output of Kaya job 1081793 (script jobs/slurm/dwpose_fps.sbatch, log /group/pmc099/pprasad/code/logs/dwpose-fps-1081793.out); no copy of that log exists locally (searched the repository), so it cannot be recomputed here. The job script requests one V100 (gpu:v100-32gb:1) but the measured rate is only in the log and in write-ups. The 25 frames per second source rate is covered under c14-086."
+  }
+ ]
+}

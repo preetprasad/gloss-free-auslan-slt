@@ -1,0 +1,248 @@
+node k010.hpc.uwa.edu.au | DET='--deterministic True'
+fac385cfe1c9d79736053c278e0d337b  config.py
+924f93b37b4b4150030e31c66d2e9d6f  slt/data.py
+2f8d4866f4633577864147ba4222374c  slt/model.py
+74078f8f543251da47bc7a7fc715a48b  train_ctc.py
+6553f52a3f0fbeb57feef6510289d66c  tools/eval_beam.py
+94ded6621d5717673cc35dc2a7d032ed  tools/w23_ctc_pretrain.py
+08e27e6130c69060e436e7c436a4f3c0  tools/w28_pose_mae.py
+MD1_s101
+MD1_s202
+MD1_s42
+MDA1_s101
+MDA1_s202
+MDA1_s42
+MDA_s101
+MDA_s202
+MDA_s42
+MDR1_s101
+MDR1_s202
+MDR1_s42
+MDR_s101
+MDR_s202
+MDR_s42
+MD_s101
+MD_s202
+MD_s42
+S_s101
+S_s202
+S_s42
+w28_train.sbatch.ran_task0
+w28_train.sbatch.ran_task1
+w28_train.sbatch.ran_task10
+w28_train.sbatch.ran_task11
+w28_train.sbatch.ran_task3
+w28_train.sbatch.ran_task4
+w28_train.sbatch.ran_task5
+w28_train.sbatch.ran_task6
+w28_train.sbatch.ran_task7
+w28_train.sbatch.ran_task8
+w28_train.sbatch.ran_task9
+selftest passed
+  S_s202: no DONE marker (failed or unfinished) -- excluded
+GATE: control S has seeds [42, 101]; the gate needs 42, 101 and 202: HARNESS NOT REPRODUCED (not checkable); in-batch contrasts are printed and labelled
+WER reference points (test, 2026-09-09l): the best input-blind constant string scores 0.9526 and silence 1.000, so a WER change smaller than the change in output length that comes with it is not evidence. Brevity penalty (bp) is printed beside the length ratio for the same reason.
+--- pre-training (G-stage1: TRAINED only if the FINAL held-out reconstruction loss <= 0.50 x the first evaluation (after 700 updates), or <= 0.50 x the untrained loss, or at or below linear interpolation; MDA is judged on a fixed AUGMENTED copy of the held-out clips, the others on the plain clips); loss = weighted squared error on masked frames
+  MD1_s42: TRAINED: FINAL held-out loss 0.0300 (lowest 0.0300 at update 16800) is 0.179 of the first evaluation 0.1678 (line 0.5: met); untrained 1.1341 (line 0.5 x untrained: met); at or below the linear-interpolation baseline 0.0334 | held-out loss (plain H) untrained/first/lowest/final 1.134/0.168/0.030/0.030 | baselines: zero 1.075, linear interpolation 0.033 | frames per training item 65.9 | 0.43 h
+  MD1_s101: TRAINED: FINAL held-out loss 0.0304 (lowest 0.0303 at update 15400) is 0.203 of the first evaluation 0.1499 (line 0.5: met); untrained 1.1230 (line 0.5 x untrained: met); at or below the linear-interpolation baseline 0.0334 | held-out loss (plain H) untrained/first/lowest/final 1.123/0.150/0.030/0.030 | baselines: zero 1.075, linear interpolation 0.033 | frames per training item 65.5 | 0.43 h
+  MD1_s202: TRAINED: FINAL held-out loss 0.0299 (lowest 0.0298 at update 16100) is 0.209 of the first evaluation 0.1434 (line 0.5: met); untrained 1.1416 (line 0.5 x untrained: met); at or below the linear-interpolation baseline 0.0334 | held-out loss (plain H) untrained/first/lowest/final 1.142/0.143/0.030/0.030 | baselines: zero 1.075, linear interpolation 0.033 | frames per training item 66.4 | 0.41 h
+  MDA1_s42: TRAINED: FINAL held-out loss 0.0468 (lowest 0.0466 at update 16100) is 0.449 of the first evaluation 0.1040 (line 0.5: met); untrained 1.1028 (line 0.5 x untrained: met); at or below the linear-interpolation baseline 0.0686 | held-out loss (augmented H) untrained/first/lowest/final 1.103/0.104/0.047/0.047 (plain H final 0.090) | baselines: zero 1.041, linear interpolation 0.069 | frames per training item 21.4 | 0.52 h
+  MDA1_s101: TRAINED: FINAL held-out loss 0.0469 (lowest 0.0469 at update 16800) is 0.449 of the first evaluation 0.1045 (line 0.5: met); untrained 1.0879 (line 0.5 x untrained: met); at or below the linear-interpolation baseline 0.0686 | held-out loss (augmented H) untrained/first/lowest/final 1.088/0.104/0.047/0.047 (plain H final 0.082) | baselines: zero 1.041, linear interpolation 0.069 | frames per training item 22.9 | 0.54 h
+  MDA1_s202: TRAINED: FINAL held-out loss 0.0468 (lowest 0.0467 at update 16100) is 0.447 of the first evaluation 0.1048 (line 0.5: met); untrained 1.1086 (line 0.5 x untrained: met); at or below the linear-interpolation baseline 0.0686 | held-out loss (augmented H) untrained/first/lowest/final 1.109/0.105/0.047/0.047 (plain H final 0.087) | baselines: zero 1.041, linear interpolation 0.069 | frames per training item 21.9 | 0.47 h
+  MDR1_s42: TRAINED: FINAL held-out loss 0.0311 (lowest 0.0311 at update 16100) is 0.186 of the first evaluation 0.1674 (line 0.5: met); untrained 1.1341 (line 0.5 x untrained: met); at or below the linear-interpolation baseline 0.0334 | held-out loss (plain H) untrained/first/lowest/final 1.134/0.167/0.031/0.031 | baselines: zero 1.075, linear interpolation 0.033 | frames per training item 67.3 | 0.36 h
+  MDR1_s101: TRAINED: FINAL held-out loss 0.0314 (lowest 0.0309 at update 15400) is 0.182 of the first evaluation 0.1724 (line 0.5: met); untrained 1.1230 (line 0.5 x untrained: met); at or below the linear-interpolation baseline 0.0334 | held-out loss (plain H) untrained/first/lowest/final 1.123/0.172/0.031/0.031 | baselines: zero 1.075, linear interpolation 0.033 | frames per training item 68.8 | 0.35 h
+  MDR1_s202: TRAINED: FINAL held-out loss 0.0313 (lowest 0.0311 at update 16100) is 0.182 of the first evaluation 0.1723 (line 0.5: met); untrained 1.1416 (line 0.5 x untrained: met); at or below the linear-interpolation baseline 0.0334 | held-out loss (plain H) untrained/first/lowest/final 1.142/0.172/0.031/0.031 | baselines: zero 1.075, linear interpolation 0.033 | frames per training item 69.0 | 0.46 h
+  S beam-5 val/test s42 11.307/11.711  s101 10.522/10.745 | means 10.915 / 11.228 | best epoch 38 33 | job set 239449 | array_task 239449_0 239449_1
+  MD beam-5 val/test s42 10.442/10.092  s101 10.244/9.896  s202 10.180/9.597 | means 10.289 / 9.862 | best epoch 38 38 33 | job set 239449 | array_task 239449_3 239449_4 239449_5
+  MDA beam-5 val/test s42 9.956/9.890  s101 9.784/9.304  s202 9.344/9.281 | means 9.695 / 9.492 | best epoch 40 38 27 | job set 239449 | array_task 239449_6 239449_7 239449_8
+  MDR beam-5 val/test s42 10.256/10.304  s101 10.680/10.299  s202 10.856/9.772 | means 10.597 / 10.125 | best epoch 38 34 38 | job set 239449 | array_task 239449_9 239449_10 239449_11
+=== MD - S: PRIMARY, Q1: plain dictionary MAE then the recipe vs the recipe from scratch. THIS CONTRAST MEASURES THE BUNDLE (pre-training + 16,800 extra encoder updates + the encoder start); a CONTINUES here is not evidence that masked pre-training helps, and a null means no help under this fine-tuning protocol (every encoder tensor fine-tuned at the recipe's learning rate) [HARNESS NOT REPRODUCED] ===
+  beam5_val          NO VERDICT (S seed 202 missing, failed or not trained)
+  beam5_test         NO VERDICT (S seed 202 missing, failed or not trained)
+  beam5_val_unseen   NO VERDICT (S seed 202 missing, failed or not trained)
+  beam5_test_unseen  NO VERDICT (S seed 202 missing, failed or not trained)
+  content_precision  NO VERDICT (S seed 202 missing, failed or not trained)
+  content_recall     NO VERDICT (S seed 202 missing, failed or not trained)
+  len_ratio          NO VERDICT (S seed 202 missing, failed or not trained)
+  bp                 NO VERDICT (S seed 202 missing, failed or not trained)
+  wer                NO VERDICT (S seed 202 missing, failed or not trained)
+  distinct           NO VERDICT (S seed 202 missing, failed or not trained)
+  val_best           NO VERDICT (S seed 202 missing, failed or not trained)
+  greedy_test        NO VERDICT (S seed 202 missing, failed or not trained)
+  RULE (pre-registration section 5): HARNESS NOT REPRODUCED NO VERDICT (needs seeds 42, 101, 202 of both arms in one job set, both trained)
+  READING (descriptive): no reading
+=== MDA - MD: PRIMARY, Q2: conversational-augmented vs plain dictionary clips, matched updates (confounds the transforms with pose augmentation and sequence length; MD gets none; MDA's amplitude shrink moves hand and same-side wrist only, so the arm is kinematically incoherent) [HARNESS NOT REPRODUCED] ===
+  beam5_val          n=3 per-seed -0.485 -0.459 -0.836 | positive 0/3 | mean -0.594 | 95% t [-1.116, -0.071]
+  beam5_test         n=3 per-seed -0.203 -0.592 -0.316 | positive 0/3 | mean -0.370 | 95% t [-0.868, +0.128]
+  beam5_val_unseen   n=3 per-seed -0.074 +0.232 -0.875 | positive 1/3 | mean -0.239 | 95% t [-1.659, +1.182]
+  beam5_test_unseen  n=3 per-seed -0.080 -0.675 -0.095 | positive 0/3 | mean -0.283 | 95% t [-1.126, +0.560]
+  content_precision  n=3 per-seed -0.186 +1.110 -0.629 | positive 1/3 | mean +0.098 | 95% t [-2.147, +2.344]
+  content_recall     n=3 per-seed -0.538 -0.294 -0.587 | positive 0/3 | mean -0.473 | 95% t [-0.864, -0.082]
+  len_ratio          n=3 per-seed -0.012 -0.049 +0.013 | positive 1/3 | mean -0.016 | 95% t [-0.093, +0.061]
+  bp                 n=3 per-seed -0.012 -0.050 +0.013 | positive 1/3 | mean -0.017 | 95% t [-0.095, +0.062]
+  wer                n=3 per-seed -0.011 -0.012 -0.011 | positive 0/3 | mean -0.011 | 95% t [-0.012, -0.010]
+  distinct           n=3 per-seed +0.000 -11.000 -21.000 | positive 0/3 | mean -10.667 | 95% t [-36.762, +15.429]
+  val_best           n=3 per-seed -0.024 -0.476 +0.364 | positive 1/3 | mean -0.045 | 95% t [-1.090, +1.000]
+  greedy_test        n=3 per-seed -0.283 -0.647 -0.874 | positive 0/3 | mean -0.601 | 95% t [-1.343, +0.140]
+  [val] column: MDA mean | MD mean | per-seed difference | mean | sign
+    D1 brevity penalty                       0.779 |     0.805 |   -0.024   -0.038   -0.016 |   -0.026 | 0/3
+    D1 length ratio                          0.800 |     0.822 |   -0.020   -0.031   -0.013 |   -0.021 | 0/3
+    D2 BP-free geometric precision          12.463 |    12.787 |   -0.232   +0.054   -0.795 |   -0.324 | 1/3
+    D3 verbatim-training %                  81.458 |    80.042 |   -2.125   +1.375   +5.000 |   +1.417 | 2/3
+    D4 precision, 2-grams                   11.214 |    11.438 |   -0.085   -0.038   -0.548 |   -0.224 | 0/3
+    D4 precision, 3-grams                    8.004 |     8.461 |   -0.327   -0.035   -1.007 |   -0.456 | 0/3
+    D4 matched 2-grams                     352.000 |   371.333 |  -14.000  -19.000  -25.000 |  -19.333 | 0/3
+    D4 matched 3-grams                     187.000 |   207.000 |  -16.000  -14.000  -30.000 |  -20.000 | 0/3
+    D4 matched 1-grams                    1541.000 |  1555.000 |  -26.000  -26.000  +10.000 |  -14.000 | 1/3
+    D4 matched 4-grams                     115.333 |   127.667 |  -10.000   -8.000  -19.000 |  -12.333 | 0/3
+    D5 content recall %                     15.194 |    15.634 |   -0.878   +0.049   -0.488 |   -0.439 | 1/3
+    D5 content precision %                  19.719 |    19.387 |   +0.061   +0.694   +0.241 |   +0.332 | 3/3
+    D5 recall, frequency 0                   0.000 |     0.000 |   +0.000   +0.000   +0.000 |   +0.000 | 0/3
+    D5 recall, frequency 1-10                0.271 |     0.271 |   +0.813   +0.000   -0.813 |   +0.000 | 1/3
+    D5 recall, frequency 11-50               1.181 |     1.544 |   -0.272   +0.000   -0.817 |   -0.363 | 0/3
+    D5 recall, frequency 51-200             10.498 |    11.684 |   -2.669   +0.534   -1.423 |   -1.186 | 1/3
+    D5 recall, frequency >200               25.042 |    25.143 |   -0.303   -0.202   +0.202 |   -0.101 | 1/3
+    D5 recall, frequency 11-200              6.817 |     7.679 |   -1.722   +0.323   -1.184 |   -0.861 | 1/3
+    D6 recall, switch clean                 15.247 |    15.634 |   -0.452   -0.323   -0.387 |   -0.387 | 0/3
+    D6 recall, switch light                 14.230 |    15.205 |   -2.632   -1.754   +1.462 |   -0.975 | 1/3
+    D6 recall, switch heavy                 16.773 |    16.561 |   -1.274   +7.643   -5.732 |   +0.212 | 1/3
+    D6 BLEU, switch clean                   10.152 |    10.894 |   -0.626   -0.606   -0.994 |   -0.742 | 0/3
+    D6 BLEU, switch light                    7.965 |     8.137 |   +0.022   -0.939   +0.399 |   -0.173 | 2/3
+    D6 BLEU, switch heavy                    8.417 |     8.355 |   +0.177   +1.853   -1.842 |   +0.063 | 2/3
+    D7 distinct hypotheses                 226.667 |   240.333 |   +4.000   -9.000  -36.000 |  -13.667 | 1/3
+    D7 exact-match %                         5.125 |     5.542 |   -0.125   -0.875   -0.250 |   -0.417 | 0/3
+    D2b BLEU at the control's brevity penalty     10.023 |    10.289 |   -0.188   +0.042   -0.651 |   -0.266  (arithmetic, not a decode)
+  [test] column: MDA mean | MD mean | per-seed difference | mean | sign
+    D1 brevity penalty                       0.777 |     0.794 |   -0.012   -0.050   +0.013 |   -0.017 | 1/3
+    D1 length ratio                          0.799 |     0.813 |   -0.010   -0.041   +0.011 |   -0.013 | 1/3
+    D2 BP-free geometric precision          12.224 |    12.421 |   -0.068   +0.062   -0.584 |   -0.197 | 1/3
+    D3 verbatim-training %                  81.750 |    81.042 |   -2.500   +2.250   +2.375 |   +0.708 | 2/3
+    D4 precision, 2-grams                   11.371 |    11.760 |   -0.159   -0.209   -0.801 |   -0.389 | 0/3
+    D4 precision, 3-grams                    7.711 |     7.924 |   -0.129   +0.107   -0.616 |   -0.213 | 1/3
+    D4 matched 2-grams                     355.333 |   375.667 |  -11.000  -30.000  -20.000 |  -20.333 | 0/3
+    D4 matched 3-grams                     179.000 |   189.667 |   -7.000  -14.000  -11.000 |  -10.667 | 0/3
+    D4 matched 1-grams                    1550.333 |  1565.333 |  -19.000  -38.000  +12.000 |  -15.000 | 1/3
+    D4 matched 4-grams                     106.333 |   112.333 |   -3.000  -12.000   -3.000 |   -6.000 | 0/3
+    D5 content recall %                     15.506 |    15.941 |   -0.532   -0.242   -0.532 |   -0.435 | 0/3
+    D5 content precision %                  20.092 |    20.002 |   -0.236   +1.117   -0.612 |   +0.090 | 1/3
+    D5 recall, frequency 0                   0.000 |     0.000 |   +0.000   +0.000   +0.000 |   +0.000 | 0/3
+    D5 recall, frequency 1-10                0.590 |     0.885 |   -1.770   +0.000   +0.885 |   -0.295 | 1/3
+    D5 recall, frequency 11-50               1.937 |     2.956 |   -1.529   -1.835   +0.306 |   -1.019 | 1/3
+    D5 recall, frequency 51-200              9.730 |    11.299 |   -1.695   -0.942   -2.072 |   -1.569 | 0/3
+    D5 recall, frequency >200               24.125 |    23.849 |   +0.460   +0.552   -0.184 |   +0.276 | 2/3
+    D5 recall, frequency 11-200              6.760 |     8.120 |   -1.632   -1.282   -1.166 |   -1.360 | 0/3
+    D6 recall, switch clean                 16.026 |    16.113 |   -0.065   +0.651   -0.847 |   -0.087 | 1/3
+    D6 recall, switch light                 14.986 |    17.075 |   -2.180   -2.997   -1.090 |   -2.089 | 0/3
+    D6 recall, switch heavy                 11.847 |    11.847 |   -1.205   -2.410   +3.614 |   +0.000 | 1/3
+    D6 BLEU, switch clean                    9.915 |    10.074 |   -0.115   +0.150   -0.511 |   -0.159 | 1/3
+    D6 BLEU, switch light                    9.419 |    10.361 |   +0.611   -2.132   -1.305 |   -0.942 | 1/3
+    D6 BLEU, switch heavy                    5.123 |     6.423 |   -3.052   -5.236   +4.386 |   -1.301 | 1/3
+    D7 distinct hypotheses                 220.667 |   231.333 |   +0.000  -11.000  -21.000 |  -10.667 | 0/3
+    D7 exact-match %                         4.417 |     4.708 |   -0.125   -0.375   -0.375 |   -0.292 | 0/3
+    D2b BLEU at the control's brevity penalty      9.706 |     9.862 |   -0.055   +0.048   -0.462 |   -0.156  (arithmetic, not a decode)
+  R-B (validation): prec2: -0.020 rel (0/3 seeds) -> no; prec3: -0.054 rel (0/3 seeds) -> no; verbatim: +1.417 (1/3 seeds) -> no  => NO movement
+  RULE (pre-registration section 5): HARNESS NOT REPRODUCED STOPPED (3-seed mean beam-5 validation difference -0.594 <= 0)
+  READING (descriptive): R-stopped
+=== MDR - MD: PRIMARY, Q3: dictionary + Auslan-Daily train clips vs the dictionary alone, matched updates [HARNESS NOT REPRODUCED] ===
+  beam5_val          n=3 per-seed -0.185 +0.436 +0.675 | positive 2/3 | mean +0.309 | 95% t [-0.795, +1.412]
+  beam5_test         n=3 per-seed +0.212 +0.403 +0.175 | positive 3/3 | mean +0.263 | 95% t [-0.041, +0.568]
+  beam5_val_unseen   n=3 per-seed -0.058 +0.835 +0.789 | positive 2/3 | mean +0.522 | 95% t [-0.727, +1.771]
+  beam5_test_unseen  n=3 per-seed +0.089 +0.124 -0.319 | positive 2/3 | mean -0.035 | 95% t [-0.647, +0.576]
+  content_precision  n=3 per-seed -0.277 +1.137 +0.856 | positive 2/3 | mean +0.572 | 95% t [-1.288, +2.432]
+  content_recall     n=3 per-seed -0.245 +0.832 +0.685 | positive 2/3 | mean +0.424 | 95% t [-1.027, +1.875]
+  len_ratio          n=3 per-seed -0.004 +0.005 +0.013 | positive 2/3 | mean +0.004 | 95% t [-0.017, +0.026]
+  bp                 n=3 per-seed -0.004 +0.005 +0.013 | positive 2/3 | mean +0.005 | 95% t [-0.017, +0.026]
+  wer                n=3 per-seed -0.007 -0.020 -0.005 | positive 0/3 | mean -0.011 | 95% t [-0.032, +0.010]
+  distinct           n=3 per-seed +17.000 +15.000 +24.000 | positive 3/3 | mean +18.667 | 95% t [+6.926, +30.407]
+  val_best           n=3 per-seed -0.233 +0.190 +0.511 | positive 2/3 | mean +0.156 | 95% t [-0.772, +1.084]
+  greedy_test        n=3 per-seed -0.396 +0.128 -0.215 | positive 1/3 | mean -0.161 | 95% t [-0.822, +0.500]
+  [val] column: MDR mean | MD mean | per-seed difference | mean | sign
+    D1 brevity penalty                       0.809 |     0.805 |   +0.000   +0.007   +0.005 |   +0.004 | 2/3
+    D1 length ratio                          0.825 |     0.822 |   +0.000   +0.006   +0.004 |   +0.003 | 2/3
+    D2 BP-free geometric precision          13.103 |    12.787 |   -0.228   +0.434   +0.740 |   +0.315 | 2/3
+    D3 verbatim-training %                  78.125 |    80.042 |   -2.750   -1.625   -1.375 |   -1.917 | 0/3
+    D4 precision, 2-grams                   12.048 |    11.438 |   +0.122   +0.458   +1.251 |   +0.610 | 3/3
+    D4 precision, 3-grams                    8.619 |     8.461 |   -0.282   +0.355   +0.403 |   +0.159 | 2/3
+    D4 matched 2-grams                     393.333 |   371.333 |   +4.000  +18.000  +44.000 |  +22.000 | 3/3
+    D4 matched 3-grams                     212.333 |   207.000 |   -7.000  +11.000  +12.000 |   +5.333 | 2/3
+    D4 matched 1-grams                    1591.000 |  1555.000 |   +6.000  +18.000  +84.000 |  +36.000 | 3/3
+    D4 matched 4-grams                     129.333 |   127.667 |   -6.000   +7.000   +4.000 |   +1.667 | 2/3
+    D5 content recall %                     16.008 |    15.634 |   -0.683   -0.488   +2.294 |   +0.374 | 1/3
+    D5 content precision %                  20.007 |    19.387 |   -0.303   -0.850   +3.012 |   +0.620 | 1/3
+    D5 recall, frequency 0                   0.000 |     0.000 |   +0.000   +0.000   +0.000 |   +0.000 | 0/3
+    D5 recall, frequency 1-10                0.271 |     0.271 |   +0.813   +0.000   -0.813 |   +0.000 | 1/3
+    D5 recall, frequency 11-50               2.089 |     1.544 |   -0.272   +1.907   +0.000 |   +0.545 | 1/3
+    D5 recall, frequency 51-200             12.989 |    11.684 |   -0.712   -1.246   +5.872 |   +1.305 | 1/3
+    D5 recall, frequency >200               24.975 |    25.143 |   -1.011   -1.011   +1.517 |   -0.169 | 1/3
+    D5 recall, frequency 11-200              8.683 |     7.679 |   -0.538   +0.000   +3.552 |   +1.005 | 1/3
+    D6 recall, switch clean                 16.387 |    15.634 |   -0.387   +0.903   +1.742 |   +0.753 | 2/3
+    D6 recall, switch light                 13.840 |    15.205 |   -1.462   -7.018   +4.386 |   -1.365 | 1/3
+    D6 recall, switch heavy                 16.985 |    16.561 |   -1.911   +0.000   +3.185 |   +0.425 | 1/3
+    D6 BLEU, switch clean                   11.263 |    10.894 |   -0.175   +0.880   +0.401 |   +0.369 | 2/3
+    D6 BLEU, switch light                    8.182 |     8.137 |   +0.120   -2.184   +2.198 |   +0.044 | 2/3
+    D6 BLEU, switch heavy                    8.494 |     8.355 |   -0.690   +0.814   +0.295 |   +0.139 | 2/3
+    D7 distinct hypotheses                 262.333 |   240.333 |  +17.000   +2.000  +47.000 |  +22.000 | 3/3
+    D7 exact-match %                         5.667 |     5.542 |   +0.125   -0.375   +0.625 |   +0.125 | 2/3
+    D2b BLEU at the control's brevity penalty     10.542 |    10.289 |   -0.185   +0.340   +0.606 |   +0.254  (arithmetic, not a decode)
+  [test] column: MDR mean | MD mean | per-seed difference | mean | sign
+    D1 brevity penalty                       0.799 |     0.794 |   -0.004   +0.005   +0.013 |   +0.005 | 2/3
+    D1 length ratio                          0.816 |     0.813 |   -0.004   +0.004   +0.011 |   +0.004 | 2/3
+    D2 BP-free geometric precision          12.683 |    12.421 |   +0.330   +0.429   +0.026 |   +0.262 | 3/3
+    D3 verbatim-training %                  79.875 |    81.042 |   -1.125   -0.750   -1.625 |   -1.167 | 0/3
+    D4 precision, 2-grams                   11.966 |    11.760 |   +0.190   +0.237   +0.189 |   +0.205 | 3/3
+    D4 precision, 3-grams                    8.142 |     7.924 |   +0.346   +0.393   -0.082 |   +0.219 | 2/3
+    D4 matched 2-grams                     384.333 |   375.667 |   +4.000  +10.000  +12.000 |   +8.667 | 3/3
+    D4 matched 3-grams                     196.333 |   189.667 |   +7.000  +11.000   +2.000 |   +6.667 | 3/3
+    D4 matched 1-grams                    1585.667 |  1565.333 |   +0.000  +26.000  +35.000 |  +20.333 | 2/3
+    D4 matched 4-grams                     116.000 |   112.333 |   +4.000   +6.000   +1.000 |   +3.667 | 3/3
+    D5 content recall %                     16.377 |    15.941 |   -0.242   +0.822   +0.725 |   +0.435 | 2/3
+    D5 content precision %                  20.575 |    20.002 |   -0.238   +1.129   +0.826 |   +0.572 | 2/3
+    D5 recall, frequency 0                   0.000 |     0.000 |   +0.000   +0.000   +0.000 |   +0.000 | 0/3
+    D5 recall, frequency 1-10                1.180 |     0.885 |   +0.000   +1.770   -0.885 |   +0.295 | 1/3
+    D5 recall, frequency 11-50               3.874 |     2.956 |   +0.306   +1.529   +0.917 |   +0.917 | 3/3
+    D5 recall, frequency 51-200             12.116 |    11.299 |   +0.377   +1.695   +0.377 |   +0.816 | 3/3
+    D5 recall, frequency >200               23.972 |    23.849 |   -0.737   +0.092   +1.013 |   +0.123 | 2/3
+    D5 recall, frequency 11-200              8.974 |     8.120 |   +0.350   +1.632   +0.583 |   +0.855 | 3/3
+    D6 recall, switch clean                 16.851 |    16.113 |   -0.130   +1.629   +0.717 |   +0.738 | 2/3
+    D6 recall, switch light                 15.895 |    17.075 |   -0.817   -2.452   -0.272 |   -1.181 | 0/3
+    D6 recall, switch heavy                 13.052 |    11.847 |   +0.000   +0.602   +3.012 |   +1.205 | 2/3
+    D6 BLEU, switch clean                   10.482 |    10.074 |   +0.148   +0.832   +0.245 |   +0.408 | 3/3
+    D6 BLEU, switch light                    9.939 |    10.361 |   +0.323   -1.120   -0.468 |   -0.422 | 1/3
+    D6 BLEU, switch heavy                    6.926 |     6.423 |   +0.554   -0.383   +1.336 |   +0.502 | 2/3
+    D7 distinct hypotheses                 250.000 |   231.333 |  +17.000  +15.000  +24.000 |  +18.667 | 3/3
+    D7 exact-match %                         4.667 |     4.708 |   -0.125   -0.375   +0.375 |   -0.042 | 1/3
+    D2b BLEU at the control's brevity penalty     10.070 |     9.862 |   +0.267   +0.335   +0.021 |   +0.208  (arithmetic, not a decode)
+  R-B (validation): prec2: +0.053 rel (3/3 seeds) -> MOVES; prec3: +0.019 rel (2/3 seeds) -> no; verbatim: -1.917 (3/3 seeds) -> no  => movement
+  RULE (pre-registration section 5): HARNESS NOT REPRODUCED CONTINUES (3-seed mean beam-5 validation difference +0.309 > 0). Nothing is adopted at three seeds or in this wave; Stage 2 (seeds 303/404) only by a dated addendum
+  READING (descriptive): R-continues-noise-compatible
+  LENGTH: the n-gram precision / verbatim columns move with the difference (not by itself an attribution to the pre-training)
+  NOISE-COMPATIBLE: the 3-seed validation interval includes zero; with a paired sd of about 0.55 the half-width at three seeds is about 1.4
+=== MDA - S: descriptive [HARNESS NOT REPRODUCED] ===
+  beam5_val          NO VERDICT (S seed 202 missing, failed or not trained)
+  beam5_test         NO VERDICT (S seed 202 missing, failed or not trained)
+  beam5_val_unseen   NO VERDICT (S seed 202 missing, failed or not trained)
+  beam5_test_unseen  NO VERDICT (S seed 202 missing, failed or not trained)
+  content_precision  NO VERDICT (S seed 202 missing, failed or not trained)
+  content_recall     NO VERDICT (S seed 202 missing, failed or not trained)
+  len_ratio          NO VERDICT (S seed 202 missing, failed or not trained)
+  bp                 NO VERDICT (S seed 202 missing, failed or not trained)
+  wer                NO VERDICT (S seed 202 missing, failed or not trained)
+  distinct           NO VERDICT (S seed 202 missing, failed or not trained)
+  val_best           NO VERDICT (S seed 202 missing, failed or not trained)
+  greedy_test        NO VERDICT (S seed 202 missing, failed or not trained)
+=== MDR - S: descriptive [HARNESS NOT REPRODUCED] ===
+  beam5_val          NO VERDICT (S seed 202 missing, failed or not trained)
+  beam5_test         NO VERDICT (S seed 202 missing, failed or not trained)
+  beam5_val_unseen   NO VERDICT (S seed 202 missing, failed or not trained)
+  beam5_test_unseen  NO VERDICT (S seed 202 missing, failed or not trained)
+  content_precision  NO VERDICT (S seed 202 missing, failed or not trained)
+  content_recall     NO VERDICT (S seed 202 missing, failed or not trained)
+  len_ratio          NO VERDICT (S seed 202 missing, failed or not trained)
+  bp                 NO VERDICT (S seed 202 missing, failed or not trained)
+  wer                NO VERDICT (S seed 202 missing, failed or not trained)
+  distinct           NO VERDICT (S seed 202 missing, failed or not trained)
+  val_best           NO VERDICT (S seed 202 missing, failed or not trained)
+  greedy_test        NO VERDICT (S seed 202 missing, failed or not trained)
+  MULTIPLICITY: three primary contrasts are read, each against 'mean > 0'; under pure noise at least one reads CONTINUES with probability about 0.87. The labels are per contrast; there is no family-wise claim and none may be made. With a paired sd that W13 showed can be larger than 0.55 across jobs, futility at <= 0 is close to a coin flip.
+  QUOTING: bounded estimates only (per-seed deltas, sign count, interval); MD - S confounds pre-training with extra encoder updates; the soup files (soup_last5) are never read; no comparison with any the pre-trained sign-language model transfer result.
+W28_SUMMARY_DONE

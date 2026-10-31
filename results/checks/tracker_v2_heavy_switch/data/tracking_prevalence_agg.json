@@ -1,0 +1,30 @@
+{
+ "train": {
+  "clips": 12439,
+  "sw_clips": 2955,
+  "frames": 935938,
+  "sw_frames": 52996,
+  "multi": 491956
+ },
+ "val": {
+  "clips": 800,
+  "sw_clips": 180,
+  "frames": 45760,
+  "sw_frames": 2475,
+  "multi": 21994
+ },
+ "test": {
+  "clips": 800,
+  "sw_clips": 193,
+  "frames": 45510,
+  "sw_frames": 3120,
+  "multi": 23420
+ },
+ "unsplit": {
+  "clips": 2,
+  "sw_clips": 1,
+  "frames": 144,
+  "sw_frames": 18,
+  "multi": 69
+ }
+}

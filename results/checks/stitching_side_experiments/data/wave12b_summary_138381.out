@@ -1,0 +1,51 @@
+node k001.hpc.uwa.edu.au | DET='--deterministic True'
+2e54dd6d2a5e3f99572e74bb086c749e  config.py
+1187c9ff21c8de97b6ba98dfedf3897f  slt/data.py
+75783cd2aaddb8d5822f0c5d1a4f10e5  train_ctc.py
+07bc8171e920aaa9558d4fccd4a57431  pretrain_vlp.py
+6553f52a3f0fbeb57feef6510289d66c  tools/eval_beam.py
+tools/seed_decision.py: OK
+/group/pmc099/pprasad/wave12/code/tools/seed_decision.py: OK
+/group/pmc099/pprasad/wave12/code/tools/arm_readouts.py: OK
+/group/pmc099/pprasad/wave12/code/tools/../slt/metrics.py: OK
+/group/pmc099/pprasad/wave12/code/tools/stitch_lexicon.py: OK
+/group/pmc099/pprasad/wave12/code/tools/w12b_readout.py: OK
+selftest OK
+A {"val_best": 10.414432506479834, "best_epoch": 38, "greedy_test": 10.60173780038854, "beam5_val": 11.307481071650995, "beam5_test": 11.711297948690365, "beam5_test_unique": 360, "soup_beam5_val": 10.728365177306836, "soup_beam5_test": 11.66147069254511}
+W {"val_best": 10.540544032537904, "best_epoch": 38, "greedy_test": 10.300250578335671, "beam5_val": 10.650707181195665, "beam5_test": 11.068722517843904, "beam5_test_unique": 314, "soup_beam5_val": 10.951038454112703, "soup_beam5_test": 11.603784318796992}
+W - A (seed 42): beam-5 val -0.657 | beam-5 test -0.643
+A {"val_best": 10.480812473554463, "best_epoch": 33, "greedy_test": 9.781324599253947, "beam5_val": 10.52201490279211, "beam5_test": 10.745316470042773, "beam5_test_unique": 307, "soup_beam5_val": 10.857030783094958, "soup_beam5_test": 10.78230738137836}
+W {"val_best": 10.717239055815385, "best_epoch": 34, "greedy_test": 10.533009346812342, "beam5_val": 11.14869503844307, "beam5_test": 11.270197519986583, "beam5_test_unique": 325, "soup_beam5_val": 11.15646612888587, "soup_beam5_test": 11.00773912827643}
+W - A (seed 101): beam-5 val +0.627 | beam-5 test +0.525
+A {"val_best": 10.97225693791061, "best_epoch": 39, "greedy_test": 9.977162017860595, "beam5_val": 11.337647976146986, "beam5_test": 10.411214073314126, "beam5_test_unique": 350, "soup_beam5_val": 11.686976944439321, "soup_beam5_test": 10.349844400570154}
+W {"val_best": 10.53315497824276, "best_epoch": 40, "greedy_test": 9.760448368884612, "beam5_val": 11.711408495639528, "beam5_test": 10.445386098572923, "beam5_test_unique": 350, "soup_beam5_val": 11.349240651477785, "soup_beam5_test": 10.776499621665337}
+W - A (seed 202): beam-5 val +0.374 | beam-5 test +0.034
+===== W - A (seed_decision.py) =====
+W - A beam5_val  n=3 per-seed -0.657 +0.627 +0.374 | positive 2/3 | mean +0.115 | 95% t [-1.574, +1.804]
+W - A beam5_test n=3 per-seed -0.643 +0.525 +0.034 | positive 2/3 | mean -0.028 | 95% t [-1.484, +1.428]
+  A        beam-5 val 11.307 10.522 11.338 | test 11.711 10.745 10.411
+  W        beam-5 val 10.651 11.149 11.711 | test 11.069 11.270 10.445
+===== W - A, secondaries and verdict (w12b_readout.py) =====
+== val: n 800, unseen n 549, affected-word tokens in the references 123
+  bleu4              A   11.307   10.522   11.338 | W   10.651   11.149   11.711 | W - A -0.657 +0.627 +0.374 | positive 2/3 | mean +0.115 [-1.574, +1.804]
+  bleu4_unseen       A    5.605    4.876    5.220 | W    4.826    5.237    5.902 | W - A -0.779 +0.361 +0.682 | positive 2/3 | mean +0.088 [-1.819, +1.995]
+  content_precision  A   21.658   22.006   24.113 | W   22.481   24.242   24.571 | W - A +0.823 +2.236 +0.458 | positive 3/3 | mean +1.172 [-1.161, +3.505]
+  content_recall     A   17.714   17.368   19.495 | W   17.219   19.792   20.534 | W - A -0.495 +2.425 +1.039 | positive 2/3 | mean +0.990 [-2.638, +4.617]
+  len_ratio          A    0.824    0.746    0.786 | W    0.753    0.800    0.779 | W - A -0.071 +0.054 -0.007 | positive 1/3 | mean -0.008 [-0.163, +0.148]
+  wer                A    0.955    0.937    0.949 | W    0.936    0.944    0.927 | W - A -0.019 +0.007 -0.022 | positive 1/3 | mean -0.011 [-0.051, +0.029]
+  distinct           A  378.000  307.000  364.000 | W  320.000  354.000  365.000 | W - A -58.000 +47.000 +1.000 | positive 2/3 | mean -3.333 [-134.094, +127.427]
+  affected_precision A   17.857   11.818   17.284 | W   15.730   12.500   17.476 | W - A -2.127 +0.682 +0.192 | positive 2/3 | mean -0.418 [-4.145, +3.309]
+  affected_recall    A   12.195   10.569   11.382 | W   11.382    8.130   14.634 | W - A -0.813 -2.439 +3.252 | positive 1/3 | mean +0.000 [-7.282, +7.282]
+== test: n 800, unseen n 570, affected-word tokens in the references 139
+  bleu4              A   11.711   10.745   10.411 | W   11.069   11.270   10.445 | W - A -0.643 +0.525 +0.034 | positive 2/3 | mean -0.028 [-1.484, +1.428]
+  bleu4_unseen       A    6.690    6.222    6.001 | W    6.207    6.507    5.719 | W - A -0.483 +0.285 -0.282 | positive 1/3 | mean -0.160 [-1.149, +0.829]
+  content_precision  A   25.529   25.180   23.063 | W   24.752   25.554   23.952 | W - A -0.777 +0.374 +0.889 | positive 2/3 | mean +0.162 [-1.957, +2.281]
+  content_recall     A   20.069   18.845   18.502 | W   18.355   20.313   19.579 | W - A -1.713 +1.468 +1.077 | positive 2/3 | mean +0.277 [-4.033, +4.588]
+  len_ratio          A    0.779    0.724    0.779 | W    0.730    0.772    0.756 | W - A -0.050 +0.048 -0.023 | positive 1/3 | mean -0.008 [-0.134, +0.117]
+  wer                A    0.916    0.918    0.938 | W    0.917    0.927    0.926 | W - A +0.001 +0.009 -0.012 | positive 2/3 | mean -0.001 [-0.027, +0.026]
+  distinct           A  360.000  307.000  350.000 | W  314.000  325.000  350.000 | W - A -46.000 +18.000 +0.000 | positive 1/3 | mean -9.333 [-91.329, +72.662]
+  affected_precision A   14.286   16.883   21.505 | W   14.286   14.458   14.103 | W - A +0.000 -2.425 -7.403 | positive 0/3 | mean -3.276 [-12.652, +6.100]
+  affected_recall    A    8.633    9.353   14.388 | W    7.914    8.633    7.914 | W - A -0.719 -0.719 -6.475 | positive 0/3 | mean -2.638 [-10.893, +5.617]
+HARNESS CHECK: arm A 3-seed mean beam-5 test BLEU-4 10.956 is within 11.2 +/- 1.2
+VERDICT (W - A beam-5 BLEU-4, 3-seed means: validation +0.115, test -0.028): NOT CLEARLY HARMFUL: W is adopted as a correctness fix for corpora built from now on; no gain is claimed | futility read-out: validation mean > 0, not stopped; still no claim (no Stage 2 is planned)
+W12B_SUMMARY_DONE

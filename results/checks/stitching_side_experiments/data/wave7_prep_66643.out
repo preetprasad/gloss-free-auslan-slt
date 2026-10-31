@@ -1,0 +1,26 @@
+node k008.hpc.uwa.edu.au | DET='--deterministic True'
+2e54dd6d2a5e3f99572e74bb086c749e  config.py
+1187c9ff21c8de97b6ba98dfedf3897f  slt/data.py
+75783cd2aaddb8d5822f0c5d1a4f10e5  train_ctc.py
+6553f52a3f0fbeb57feef6510289d66c  tools/eval_beam.py
+pinned DWPose clip video_1_0.npz md5 OK
+/group/pmc099/pprasad/wave7s2/code/tools/build_posestitch_corpus_v2.py: OK
+/group/pmc099/pprasad/wave7s2/code/tools/stitch_lexicon.py: OK
+/group/pmc099/pprasad/wave7s2/code/tools/shuffle_order_check.py: OK
+/scratch/pmc099/pprasad/wave7/corpora/sent.txt: OK
+/scratch/pmc099/pprasad/wave7/corpora/A/posestitch_v2_train.tsv: OK
+/scratch/pmc099/pprasad/wave7/corpora/D/posestitch_v2_train.tsv: OK
+/group/pmc099/pprasad/wave7/joint_A.tsv: OK
+==> /scratch/pmc099/pprasad/wave7s2/corpora/D.log <==
+[stitch2] drop_function_signs: removed 30247 of 94428 spans (32.0%); 866 sentences hit the min_signs floor
+[stitch2] wrote 13760 synthetic clips (0 sentences skipped below cov>=0.9) -> /scratch/pmc099/pprasad/wave7s2/corpora/D/posestitch_v2_train.tsv
+[stitch2] example KPS(165, 133, 3) BBOX(165, 4) | frames over first 200: mean 110 min 39 max 275
+
+==> /scratch/pmc099/pprasad/wave7s2/corpora/DL.log <==
+[stitch2] drop_function_signs: removed 30247 of 94428 spans (32.0%); 866 sentences hit the min_signs floor
+[stitch2] wrote 13760 synthetic clips (0 sentences skipped below cov>=0.9) -> /scratch/pmc099/pprasad/wave7s2/corpora/DL/posestitch_v2_train.tsv
+[stitch2] example KPS(231, 133, 3) BBOX(231, 4) | frames over first 200: mean 161 min 47 max 331
+INERT OK: 13760/13760 clips byte-identical (arrays + manifest text)
+MATCH OK: 13760/13760 DL clips as long as their A clip; same signs, exemplars and transition budgets as D; sign lengths = exact proportional rescale of D's sampled lengths; contiguous; transitions blend neighbours. Sign-length scale factor median 1.500 (p10 0.880, p90 2.585); DL longer than D in 11483/13760 clips
+GATE OK: joint_DL 26,199 rows; English text identical to joint_A and joint_D row for row; real half identical; DL clip set disjoint from A and D
+W7S2_PREP_DONE gate /group/pmc099/pprasad/wave7s2/PREP_OK_66643

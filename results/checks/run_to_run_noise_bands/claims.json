@@ -1,0 +1,3 @@
+{"gid": "run_to_run_noise", "tagged": true,
+ "covered": ["c02-010", "c14-029", "c14-073", "c20-033", "c20-035", "c20-036"],
+ "not_covered": [{"id": "c20-025", "code": "needs_kaya", "reason": "The determinism A/A (job 6952, two three-epoch runs, same seed, same node, bit-identical weights) was a comparison of checkpoint tensors on Kaya; no log or weight comparison is saved locally. The related deterministic-mode repeats across submissions are recomputed above but are a different statement."}]}

@@ -1,0 +1,221 @@
+{
+ "authors": {
+  "j138567/gaslt__ap56_bbox_s101": 2.129768357405301,
+  "j138567/gaslt__ap56_bbox_s202": 1.8237159516228667,
+  "j138567/gaslt__ap56_bbox_s42": 2.5776501058772436,
+  "j138567/gaslt__ap56_frame_s101": 2.1395245548485193,
+  "j138567/gaslt__ap56_frame_s202": 1.7515564133944843,
+  "j138567/gaslt__ap56_frame_s42": 2.46090283483255,
+  "j138567/gaslt__ap56_raw_s101": 2.907603272153139,
+  "j138567/gaslt__ap56_raw_s202": 2.3206582777375777,
+  "j138567/gaslt__ap56_raw_s42": 2.1585938731500085,
+  "j138567/slt__ap56_bbox_s101": 2.8170588934701537,
+  "j138567/slt__ap56_bbox_s202": 5.262607371605811,
+  "j138567/slt__ap56_bbox_s42": 5.0287191122962955,
+  "j138567/slt__ap56_frame_s101": 1.812319649799422,
+  "j138567/slt__ap56_frame_s202": 4.699699654962222,
+  "j138567/slt__ap56_frame_s42": 4.469350916511827,
+  "j138567/slt__ap56_raw_s101": 4.47525443511685,
+  "j138567/slt__ap56_raw_s202": 1.8692679003920931,
+  "j138567/slt__ap56_raw_s42": 3.6512280125811247,
+  "j167758/gaslt__ap53_frame_s101": 4.369880247850887,
+  "j167758/gaslt__ap53_frame_s202": 5.017095765126985,
+  "j167758/gaslt__ap53_frame_s42": 4.089057280905285,
+  "j167758/gaslt__ap56_frame_s101": 4.541850240287671,
+  "j167758/gaslt__ap56_frame_s202": 4.244335388722468,
+  "j167758/gaslt__ap56_frame_s42": 4.193466901361265,
+  "j167758/gaslt__ap56_raw_s101": 4.855710994025877,
+  "j167758/gaslt__ap56_raw_s202": 4.625734712582521,
+  "j167758/gaslt__ap56_raw_s42": 4.972693628027186,
+  "j167758/gaslt__dw53_frame_s101": 9.690401098350433,
+  "j167758/gaslt__dw53_frame_s202": 8.911863668197332,
+  "j167758/gaslt__dw53_frame_s42": 9.863953837408314,
+  "j167758/slt__ap53_frame_s101": 4.099682392515996,
+  "j167758/slt__ap53_frame_s202": 4.409656656375523,
+  "j167758/slt__ap53_frame_s42": 4.201644176635302,
+  "j167758/slt__ap56_frame_s101": 4.52091059667631,
+  "j167758/slt__ap56_frame_s202": 4.445756976304816,
+  "j167758/slt__ap56_frame_s42": 4.933836966888779,
+  "j167758/slt__ap56_raw_s101": 4.12578944478713,
+  "j167758/slt__ap56_raw_s202": 4.2949828082019135,
+  "j167758/slt__ap56_raw_s42": 4.383417383201577,
+  "j167758/slt__dw53_frame_s101": 8.744310000125118,
+  "j167758/slt__dw53_frame_s202": 8.572030261819489,
+  "j167758/slt__dw53_frame_s42": 7.990810181097275,
+  "j179411/gaslt__ap53_frame_s303": 3.85307231099819,
+  "j179411/gaslt__ap53_frame_s404": 4.312936674921298,
+  "j179411/gaslt__dw53_frame_s303": 9.569428917218042,
+  "j179411/gaslt__dw53_frame_s404": 9.869593356498536,
+  "j179411/slt__ap53_frame_s303": 3.376459663407861,
+  "j179411/slt__ap53_frame_s404": 4.195460460942924,
+  "j179411/slt__dw53_frame_s303": 9.012358550840933,
+  "j179411/slt__dw53_frame_s404": 8.832252384234858,
+  "j239443/gaslt__dw53_frame_s101": 9.522554132400632,
+  "j239443/gaslt__dw53_frame_s202": 9.562431702326915,
+  "j239443/gaslt__dw53_frame_s42": 9.325014221862801,
+  "j239443/slt__dw53_frame_s101": 8.744310000125118,
+  "j239443/slt__dw53_frame_s202": 8.572030261819489,
+  "j239443/slt__dw53_frame_s42": 7.990810181097275
+ },
+ "cfg": {
+  "j239443/O53_s101": {
+   "batch_size": 64,
+   "coord_norm": "frame",
+   "epochs": 200,
+   "keypoint_subset": "cwb_common53",
+   "lr": 5e-05,
+   "lr_schedule": "constant",
+   "num_keypoints": 133,
+   "use_confidence": false
+  },
+  "j239443/O53_s202": {
+   "batch_size": 64,
+   "coord_norm": "frame",
+   "epochs": 200,
+   "keypoint_subset": "cwb_common53",
+   "lr": 5e-05,
+   "lr_schedule": "constant",
+   "num_keypoints": 133,
+   "use_confidence": false
+  },
+  "j239443/O53_s42": {
+   "batch_size": 64,
+   "coord_norm": "frame",
+   "epochs": 200,
+   "keypoint_subset": "cwb_common53",
+   "lr": 5e-05,
+   "lr_schedule": "constant",
+   "num_keypoints": 133,
+   "use_confidence": false
+  },
+  "j239443/Ocwb_s101": {
+   "batch_size": 64,
+   "coord_norm": "frame",
+   "epochs": 200,
+   "keypoint_subset": "cwb_body_hands",
+   "lr": 5e-05,
+   "lr_schedule": "constant",
+   "num_keypoints": 133,
+   "use_confidence": true
+  },
+  "j239443/Ocwb_s202": {
+   "batch_size": 64,
+   "coord_norm": "frame",
+   "epochs": 200,
+   "keypoint_subset": "cwb_body_hands",
+   "lr": 5e-05,
+   "lr_schedule": "constant",
+   "num_keypoints": 133,
+   "use_confidence": true
+  },
+  "j239443/Ocwb_s42": {
+   "batch_size": 64,
+   "coord_norm": "frame",
+   "epochs": 200,
+   "keypoint_subset": "cwb_body_hands",
+   "lr": 5e-05,
+   "lr_schedule": "constant",
+   "num_keypoints": 133,
+   "use_confidence": true
+  }
+ },
+ "edw_epochs": {
+  "j167758/Edw_s101": [
+   40,
+   40
+  ],
+  "j167758/Edw_s202": [
+   40,
+   40
+  ],
+  "j167758/Edw_s42": [
+   40,
+   40
+  ],
+  "j179411/Edw_s303": [
+   40,
+   40
+  ],
+  "j179411/Edw_s404": [
+   40,
+   40
+  ]
+ },
+ "own": {
+  "j167758/Edw_s101.b5": 10.053515524877493,
+  "j167758/Edw_s202.b5": 10.553536317225475,
+  "j167758/Edw_s42.b5": 10.439157536986984,
+  "j179411/Edw_s303.b5": 10.598423314191447,
+  "j179411/Edw_s404.b5": 10.521073599918303,
+  "j239443/Edw_s101.b5": 9.720015120468435,
+  "j239443/Edw_s101.prot": 9.722201917609421,
+  "j239443/Edw_s101.prot_choice": [
+   6,
+   1
+  ],
+  "j239443/Edw_s202.b5": 10.445076721648812,
+  "j239443/Edw_s202.prot": 10.829782006296819,
+  "j239443/Edw_s202.prot_choice": [
+   6,
+   1
+  ],
+  "j239443/Edw_s42.b5": 10.439157536986984,
+  "j239443/Edw_s42.prot": 10.714282988250707,
+  "j239443/Edw_s42.prot_choice": [
+   4,
+   1
+  ],
+  "j239443/O53_s101.b5": 10.13858891855517,
+  "j239443/O53_s101.prot": 10.18556499122784,
+  "j239443/O53_s101.prot_choice": [
+   5,
+   1
+  ],
+  "j239443/O53_s202.b5": 9.355905703436934,
+  "j239443/O53_s202.prot": 9.511304945781799,
+  "j239443/O53_s202.prot_choice": [
+   3,
+   1
+  ],
+  "j239443/O53_s42.b5": 9.914428119477227,
+  "j239443/O53_s42.prot": 10.037882650480597,
+  "j239443/O53_s42.prot_choice": [
+   5,
+   1
+  ],
+  "j239443/Ocwb_s101.b5": 9.165301031618078,
+  "j239443/Ocwb_s101.prot": 9.893018932988005,
+  "j239443/Ocwb_s101.prot_choice": [
+   10,
+   1
+  ],
+  "j239443/Ocwb_s202.b5": 9.66782729296371,
+  "j239443/Ocwb_s202.prot": 9.887989603536727,
+  "j239443/Ocwb_s202.prot_choice": [
+   10,
+   1
+  ],
+  "j239443/Ocwb_s42.b5": 10.0691177241942,
+  "j239443/Ocwb_s42.prot": 10.114366265159644,
+  "j239443/Ocwb_s42.prot_choice": [
+   10,
+   1
+  ]
+ },
+ "own_beam": {
+  "j167758/Edw_s101": 5,
+  "j167758/Edw_s202": 5,
+  "j167758/Edw_s42": 5,
+  "j179411/Edw_s303": 5,
+  "j179411/Edw_s404": 5,
+  "j239443/Edw_s101": 5,
+  "j239443/Edw_s202": 5,
+  "j239443/Edw_s42": 5,
+  "j239443/O53_s101": 5,
+  "j239443/O53_s202": 5,
+  "j239443/O53_s42": 5,
+  "j239443/Ocwb_s101": 5,
+  "j239443/Ocwb_s202": 5,
+  "j239443/Ocwb_s42": 5
+ }
+}

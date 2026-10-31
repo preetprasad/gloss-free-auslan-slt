@@ -23,23 +23,28 @@
  "not_covered": [
   {
    "id": "c11-018",
-   "reason": "partly checked (three seeds and 200 epochs are printed); the 56 points, the constant learning rate 5e-5 and batch size 64 are job settings (recipe file, training logs) that the saved hypotheses and scores files do not carry"
+   "reason": "partly checked (three seeds and 200 epochs are printed); the 56 points, the constant learning rate 5e-5 and batch size 64 are job settings (recipe file, training logs) that the saved hypotheses and scores files do not carry",
+   "code": "no_saved_output"
   },
   {
    "id": "c19-052",
-   "reason": "partly checked (200 epochs are printed from the scores files); the constant learning rate 5e-5 and batch size 64 are in the recipe file and training logs, which were not copied"
+   "reason": "partly checked (200 epochs are printed from the scores files); the constant learning rate 5e-5 and batch size 64 are in the recipe file and training logs, which were not copied",
+   "code": "no_saved_output"
   },
   {
    "id": "c19-060",
-   "reason": "the number of keypoints (53 DWPose points) is a data-packing setting; the saved outputs hold hypotheses only"
+   "reason": "the number of keypoints (53 DWPose points) is a data-packing setting; the saved outputs hold hypotheses only",
+   "code": "no_saved_output"
   },
   {
    "id": "c19-061",
-   "reason": "the 40-epoch length of the translator recipe is a job setting; the saved control outputs hold hypotheses only"
+   "reason": "the 40-epoch length of the translator recipe is a job setting; the saved control outputs hold hypotheses only",
+   "code": "no_saved_output"
   },
   {
    "id": "c19-063",
-   "reason": "the 56-point layout of the signer's AlphaPose input is a data-packing setting; the saved outputs hold hypotheses only"
+   "reason": "the 56-point layout of the signer's AlphaPose input is a data-packing setting; the saved outputs hold hypotheses only",
+   "code": "no_saved_output"
   }
  ]
 }

@@ -1,0 +1,114 @@
+val 800 | test 800 | overlap 0
+rgb features: 14041
+=== CANDIDATE G5_DUR3_FUS2_eqF ===
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ens] remapped 2 member(s) into member 0's vocabulary: [3, 4]
+[mbr] 5 members fusion=[False, False, False, True, True] beam=10 manifest=val.tsv dev=cuda
+[mbr] rgb_feat_dir=/group/pmc099/pprasad/scratch_backup/dwpose/rgb_feats (14041 feature files)
+[mbr] decoded n-best for 800 samples (avg cands=11.3)
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.2           BLEU-4=12.226  WER=0.9018  S=1989 D=1404 I=328  uniq=314
+  LP=0.3           BLEU-4=12.471  WER=0.9067  S=2033 D=1336 I=372  uniq=321
+  LP=0.4           BLEU-4=12.526  WER=0.9154  S=2110 D=1248 I=419  uniq=327
+  LP=0.5           BLEU-4=12.864  WER=0.9251  S=2180 D=1153 I=484  uniq=334
+  LP=0.6           BLEU-4=13.059  WER=0.9411  S=2259 D=1062 I=562  uniq=351
+  LP=0.7           BLEU-4=13.246  WER=0.9639  S=2284 D=998 I=695  uniq=364
+  LP=0.8           BLEU-4=13.041  WER=0.9884  S=2345 D=922 I=811  uniq=379
+  LP=0.9           BLEU-4=12.695  WER=1.0162  S=2405 D=855 I=933  uniq=391
+  LP=1.0           BLEU-4=12.085  WER=1.0419  S=2479 D=774 I=1046  uniq=418
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4=11.849  WER=0.9547  S=2221 D=1092 I=626  uniq=419
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4= 9.961  WER=1.1454  S=2700 D=500 I=1526  uniq=576
+=== CANDIDATE G1_DUR6_FUS2 ===
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ens] remapped 2 member(s) into member 0's vocabulary: [6, 7]
+[mbr] 8 members fusion=[False, False, False, False, False, False, True, True] beam=10 manifest=val.tsv dev=cuda
+[mbr] rgb_feat_dir=/group/pmc099/pprasad/scratch_backup/dwpose/rgb_feats (14041 feature files)
+[mbr] decoded n-best for 800 samples (avg cands=11.3)
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.2           BLEU-4=12.442  WER=0.8994  S=1986 D=1405 I=320  uniq=315
+  LP=0.3           BLEU-4=12.492  WER=0.9048  S=2031 D=1344 I=358  uniq=320
+  LP=0.4           BLEU-4=13.006  WER=0.9074  S=2063 D=1275 I=406  uniq=317
+  LP=0.5           BLEU-4=13.487  WER=0.9195  S=2136 D=1176 I=482  uniq=336
+  LP=0.6           BLEU-4=13.821  WER=0.9363  S=2185 D=1098 I=580  uniq=341
+  LP=0.7           BLEU-4=13.969  WER=0.9510  S=2257 D=1004 I=663  uniq=351
+  LP=0.8           BLEU-4=13.915  WER=0.9804  S=2325 D=917 I=803  uniq=369
+  LP=0.9           BLEU-4=13.377  WER=1.0080  S=2419 D=837 I=903  uniq=382
+  LP=1.0           BLEU-4=12.897  WER=1.0264  S=2472 D=769 I=994  uniq=391
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4=12.344  WER=0.9695  S=2201 D=1111 I=688  uniq=401
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4=10.288  WER=1.1486  S=2697 D=508 I=1534  uniq=553
+=== CANDIDATE G2_DUR6_FUS3 ===
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ens] remapped 3 member(s) into member 0's vocabulary: [6, 7, 8]
+[mbr] 9 members fusion=[False, False, False, False, False, False, True, True, True] beam=10 manifest=val.tsv dev=cuda
+[mbr] rgb_feat_dir=/group/pmc099/pprasad/scratch_backup/dwpose/rgb_feats (14041 feature files)
+[mbr] decoded n-best for 800 samples (avg cands=11.3)
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.2           BLEU-4=12.261  WER=0.9052  S=1984 D=1416 I=335  uniq=312
+  LP=0.3           BLEU-4=12.965  WER=0.9077  S=2026 D=1335 I=384  uniq=316
+  LP=0.4           BLEU-4=13.092  WER=0.9159  S=2075 D=1270 I=434  uniq=324
+  LP=0.5           BLEU-4=13.433  WER=0.9278  S=2145 D=1181 I=502  uniq=320
+  LP=0.6           BLEU-4=13.538  WER=0.9484  S=2233 D=1071 I=609  uniq=336
+  LP=0.7           BLEU-4=13.675  WER=0.9610  S=2313 D=971 I=681  uniq=344
+  LP=0.8           BLEU-4=13.654  WER=0.9862  S=2368 D=902 I=799  uniq=360
+  LP=0.9           BLEU-4=13.340  WER=1.0080  S=2418 D=828 I=913  uniq=379
+  LP=1.0           BLEU-4=12.747  WER=1.0288  S=2489 D=755 I=1001  uniq=392
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4=12.415  WER=0.9634  S=2212 D=1100 I=663  uniq=403
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4=10.248  WER=1.1403  S=2686 D=514 I=1505  uniq=545
+=== CANDIDATE G3_DUR3_FUS3 ===
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ens] remapped 3 member(s) into member 0's vocabulary: [3, 4, 5]
+[mbr] 6 members fusion=[False, False, False, True, True, True] beam=10 manifest=val.tsv dev=cuda
+[mbr] rgb_feat_dir=/group/pmc099/pprasad/scratch_backup/dwpose/rgb_feats (14041 feature files)
+[mbr] decoded n-best for 800 samples (avg cands=11.2)
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.2           BLEU-4=12.789  WER=0.8989  S=1991 D=1389 I=329  uniq=325
+  LP=0.3           BLEU-4=12.514  WER=0.9086  S=2041 D=1337 I=371  uniq=329
+  LP=0.4           BLEU-4=12.894  WER=0.9174  S=2112 D=1237 I=436  uniq=337
+  LP=0.5           BLEU-4=12.938  WER=0.9317  S=2188 D=1149 I=507  uniq=343
+  LP=0.6           BLEU-4=12.854  WER=0.9501  S=2255 D=1070 I=595  uniq=358
+  LP=0.7           BLEU-4=12.897  WER=0.9653  S=2296 D=1000 I=687  uniq=367
+  LP=0.8           BLEU-4=12.975  WER=0.9816  S=2373 D=912 I=765  uniq=381
+  LP=0.9           BLEU-4=12.951  WER=1.0080  S=2440 D=828 I=891  uniq=388
+  LP=1.0           BLEU-4=12.190  WER=1.0298  S=2496 D=764 I=989  uniq=402
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4=11.952  WER=0.9583  S=2235 D=1094 I=625  uniq=416
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4= 9.696  WER=1.1457  S=2697 D=516 I=1514  uniq=549
+=== CANDIDATE G4_DUR6_S6 ===
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ens] remapped 6 member(s) into member 0's vocabulary: [6, 7, 8, 9, 10, 11]
+[mbr] 12 members fusion=[False, False, False, False, False, False, False, True, False, False, True, True] beam=10 manifest=val.tsv dev=cuda
+[mbr] rgb_feat_dir=/group/pmc099/pprasad/scratch_backup/dwpose/rgb_feats (14041 feature files)
+[mbr] decoded n-best for 800 samples (avg cands=11.3)
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.2           BLEU-4=12.508  WER=0.9055  S=1999 D=1385 I=352  uniq=306
+  LP=0.3           BLEU-4=12.527  WER=0.9111  S=2045 D=1324 I=390  uniq=308
+  LP=0.4           BLEU-4=12.599  WER=0.9190  S=2098 D=1256 I=438  uniq=311
+  LP=0.5           BLEU-4=13.127  WER=0.9370  S=2158 D=1170 I=538  uniq=316
+  LP=0.6           BLEU-4=13.011  WER=0.9552  S=2223 D=1093 I=625  uniq=319
+  LP=0.7           BLEU-4=13.046  WER=0.9731  S=2323 D=985 I=707  uniq=328
+  LP=0.8           BLEU-4=13.034  WER=0.9939  S=2371 D=922 I=808  uniq=345
+  LP=0.9           BLEU-4=12.838  WER=1.0133  S=2410 D=852 I=919  uniq=364
+  LP=1.0           BLEU-4=12.395  WER=1.0301  S=2479 D=757 I=1014  uniq=382
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4=11.665  WER=0.9673  S=2234 D=1093 I=664  uniq=402
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4= 9.931  WER=1.1493  S=2711 D=498 I=1533  uniq=533
+
+REFERENCE, measured in-environment on 2026-09-10:
+  F (=G5) validation 13.246 @ LP0.7  ->  official TEST 12.114 / WER 0.9526
+  S6      validation 12.470 @ LP0.3  ->  official TEST 11.802 / WER 0.9069
+G5 MUST land near 13.246; if it does not, something in this batch differs and G1-G4 are not
+comparable to the recorded winner. Stage 2 (one locked test) remains manual.
+ENS_SEARCH_DONE

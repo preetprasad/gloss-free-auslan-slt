@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # Re-extract the released AlphaPose keypoints taking Annotation['Signer'] (the old extraction took the first person,
-# a non-signer in 88.4% of Communication clips; found 25 Oct 2026, CLAUDE.md 2026-10-25g). Writes new clips and
+# a non-signer in 88.4% of Communication clips; found 25 Oct 2026, the project log 2026-10-25g). Writes new clips and
 # manifests beside the old ones; nothing old is changed.
 #SBATCH --job-name=apsig-extract
 #SBATCH --partition=work

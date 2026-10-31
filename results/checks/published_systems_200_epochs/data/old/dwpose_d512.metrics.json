@@ -1,0 +1,340 @@
+{
+  "best": {
+    "bleu4": 7.434782027536122,
+    "wer": 1.1005816771691712,
+    "epoch": 36
+  },
+  "test": {
+    "bleu4": 7.105735037112371,
+    "wer": 1.0845686512758201,
+    "n": 800,
+    "from_epoch": 36
+  },
+  "gate": {
+    "metric": "BLEU-4",
+    "value": 7.106,
+    "threshold": 2.0,
+    "basis": "fixed placeholder 2.0",
+    "passed": true,
+    "verdict": "PASS \u2014 gloss-free pose baseline reached BLEU-4 7.11 (>= 2.00 [fixed placeholder 2.0]); proceed to scale/transfer-learning.",
+    "split": "test"
+  },
+  "bleu_signature": "sacreBLEU|4-gram|tokenize=13a|detok=True|smooth=exp",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 5.3111,
+      "bleu4": 1.56,
+      "wer": 1.1483
+    },
+    {
+      "epoch": 2,
+      "loss": 4.3669,
+      "bleu4": 0.846,
+      "wer": 0.975
+    },
+    {
+      "epoch": 3,
+      "loss": 4.1787,
+      "bleu4": 1.518,
+      "wer": 0.9794
+    },
+    {
+      "epoch": 4,
+      "loss": 4.0166,
+      "bleu4": 1.204,
+      "wer": 0.9932
+    },
+    {
+      "epoch": 5,
+      "loss": 3.8828,
+      "bleu4": 1.172,
+      "wer": 1.0032
+    },
+    {
+      "epoch": 6,
+      "loss": 3.7773,
+      "bleu4": 1.979,
+      "wer": 1.2574
+    },
+    {
+      "epoch": 7,
+      "loss": 3.679,
+      "bleu4": 0.823,
+      "wer": 1.0468
+    },
+    {
+      "epoch": 8,
+      "loss": 3.5943,
+      "bleu4": 2.065,
+      "wer": 1.1081
+    },
+    {
+      "epoch": 9,
+      "loss": 3.5144,
+      "bleu4": 1.777,
+      "wer": 1.1394
+    },
+    {
+      "epoch": 10,
+      "loss": 3.438,
+      "bleu4": 1.718,
+      "wer": 1.0856
+    },
+    {
+      "epoch": 11,
+      "loss": 3.3689,
+      "bleu4": 2.163,
+      "wer": 1.0155
+    },
+    {
+      "epoch": 12,
+      "loss": 3.2988,
+      "bleu4": 2.079,
+      "wer": 1.1721
+    },
+    {
+      "epoch": 13,
+      "loss": 3.2321,
+      "bleu4": 1.684,
+      "wer": 1.3737
+    },
+    {
+      "epoch": 14,
+      "loss": 3.1656,
+      "bleu4": 1.768,
+      "wer": 1.1861
+    },
+    {
+      "epoch": 15,
+      "loss": 3.1096,
+      "bleu4": 2.409,
+      "wer": 1.3013
+    },
+    {
+      "epoch": 16,
+      "loss": 3.0474,
+      "bleu4": 3.843,
+      "wer": 1.1367
+    },
+    {
+      "epoch": 17,
+      "loss": 2.9898,
+      "bleu4": 2.638,
+      "wer": 1.1604
+    },
+    {
+      "epoch": 18,
+      "loss": 2.9359,
+      "bleu4": 4.253,
+      "wer": 1.287
+    },
+    {
+      "epoch": 19,
+      "loss": 2.8831,
+      "bleu4": 6.11,
+      "wer": 1.1076
+    },
+    {
+      "epoch": 20,
+      "loss": 2.8292,
+      "bleu4": 4.817,
+      "wer": 1.1927
+    },
+    {
+      "epoch": 21,
+      "loss": 2.7841,
+      "bleu4": 5.563,
+      "wer": 1.0817
+    },
+    {
+      "epoch": 22,
+      "loss": 2.7364,
+      "bleu4": 5.628,
+      "wer": 1.1905
+    },
+    {
+      "epoch": 23,
+      "loss": 2.6964,
+      "bleu4": 6.076,
+      "wer": 1.0977
+    },
+    {
+      "epoch": 24,
+      "loss": 2.6505,
+      "bleu4": 6.771,
+      "wer": 1.0618
+    },
+    {
+      "epoch": 25,
+      "loss": 2.6145,
+      "bleu4": 6.227,
+      "wer": 1.152
+    },
+    {
+      "epoch": 26,
+      "loss": 2.5758,
+      "bleu4": 6.629,
+      "wer": 1.0994
+    },
+    {
+      "epoch": 27,
+      "loss": 2.5401,
+      "bleu4": 6.893,
+      "wer": 1.1272
+    },
+    {
+      "epoch": 28,
+      "loss": 2.511,
+      "bleu4": 5.734,
+      "wer": 1.15
+    },
+    {
+      "epoch": 29,
+      "loss": 2.4805,
+      "bleu4": 6.923,
+      "wer": 1.1178
+    },
+    {
+      "epoch": 30,
+      "loss": 2.4515,
+      "bleu4": 6.206,
+      "wer": 1.1052
+    },
+    {
+      "epoch": 31,
+      "loss": 2.431,
+      "bleu4": 6.971,
+      "wer": 1.0858
+    },
+    {
+      "epoch": 32,
+      "loss": 2.4062,
+      "bleu4": 6.33,
+      "wer": 1.1619
+    },
+    {
+      "epoch": 33,
+      "loss": 2.3889,
+      "bleu4": 6.973,
+      "wer": 1.1129
+    },
+    {
+      "epoch": 34,
+      "loss": 2.3682,
+      "bleu4": 6.949,
+      "wer": 1.1069
+    },
+    {
+      "epoch": 35,
+      "loss": 2.3565,
+      "bleu4": 6.842,
+      "wer": 1.1391
+    },
+    {
+      "epoch": 36,
+      "loss": 2.3437,
+      "bleu4": 7.435,
+      "wer": 1.1006
+    },
+    {
+      "epoch": 37,
+      "loss": 2.3313,
+      "bleu4": 7.083,
+      "wer": 1.1442
+    },
+    {
+      "epoch": 38,
+      "loss": 2.3224,
+      "bleu4": 7.023,
+      "wer": 1.1238
+    },
+    {
+      "epoch": 39,
+      "loss": 2.3182,
+      "bleu4": 6.586,
+      "wer": 1.152
+    },
+    {
+      "epoch": 40,
+      "loss": 2.3116,
+      "bleu4": 6.961,
+      "wer": 1.1413
+    }
+  ],
+  "config": {
+    "train_manifest": "/scratch/pmc099/pprasad/dwpose/manifests/train.tsv",
+    "val_manifest": "/scratch/pmc099/pprasad/dwpose/manifests/val.tsv",
+    "test_manifest": "/scratch/pmc099/pprasad/dwpose/manifests/test.tsv",
+    "num_keypoints": 133,
+    "keypoint_subset": "all",
+    "use_confidence": true,
+    "use_velocity": false,
+    "coord_norm": "frame",
+    "bbox_format": "xywh",
+    "legacy_abs_bbox_validity": false,
+    "center_to_unit": true,
+    "conf_threshold": 0.0,
+    "hierarchical_pose_norm": false,
+    "drop_zero_frames": true,
+    "max_src_frames": 256,
+    "max_tgt_tokens": 64,
+    "decode_max_len": 0,
+    "text_tokenization": "regex",
+    "sentencepiece_model": "",
+    "pretrained_target_embeddings": "",
+    "input_representation": "pose",
+    "precomputed_feature_key": "FEATURES",
+    "precomputed_feature_dim": 0,
+    "model_arch": "generic",
+    "visual_feature_dim": 0,
+    "d_model": 512,
+    "nhead": 8,
+    "num_encoder_layers": 6,
+    "num_decoder_layers": 6,
+    "dim_feedforward": 2048,
+    "dropout": 0.1,
+    "embedding_dropout": 0.1,
+    "source_embedding_activation": "softsign",
+    "target_embedding_dim": 512,
+    "target_embedding_activation": "softsign",
+    "position_max_len": 4096,
+    "gaslt_num_keys": 7,
+    "gaslt_similarity_weight": 0.0,
+    "semantic_model": "sentence-transformers/distiluse-base-multilingual-cased-v1",
+    "semantic_cache": "",
+    "batch_size": 32,
+    "length_bucket_batches": false,
+    "grad_accum_steps": 1,
+    "lr": 0.0005,
+    "weight_decay": 0.0001,
+    "epochs": 40,
+    "warmup_steps": 800,
+    "lr_schedule": "cosine",
+    "plateau_patience": 8,
+    "plateau_factor": 0.7,
+    "lr_min": 1e-07,
+    "label_smoothing": 0.1,
+    "loss_normalization": "tokens",
+    "grad_clip": 1.0,
+    "min_freq": 1,
+    "encoder_lr_scale": 1.0,
+    "vlp_aux_checkpoint": "",
+    "vlp_aux_weight": 0.0,
+    "signcl_weight": 0.0,
+    "signcl_margin": 1.0,
+    "signcl_zipf": 2.3,
+    "reference_bleu4": null,
+    "gate_fraction": 0.9,
+    "bleu4_gate": 2.0,
+    "bleu_tokenize": "13a",
+    "detokenize": true,
+    "seed": 42,
+    "num_workers": 8,
+    "device": "cuda",
+    "out_dir": "/scratch/pmc099/pprasad/dwpose/runs/comm_dwpose_d512",
+    "resume_checkpoint": "",
+    "init_encoder": "",
+    "freeze_encoder": false
+  }
+}

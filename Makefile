@@ -47,7 +47,7 @@ references: venvcheck
 headline: venvcheck
 	$(PY) $(CODE)/tools/run_claims.py REPRODUCING.md --only A1,A10,A11
 
-# Every check in REPRODUCING.md (A1 to A47; the bootstraps dominate the run time). Run `make data` first.
+# Every check in REPRODUCING.md (A1 to A83; the bootstraps dominate the run time). Run `make data` first.
 # It passes when every check that exists reproduces its recorded output; a claim that has no check does not make it fail.
 reproduce: venvcheck
 	$(PY) $(CODE)/tools/run_claims.py REPRODUCING.md

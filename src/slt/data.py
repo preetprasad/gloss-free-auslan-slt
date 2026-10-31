@@ -5,7 +5,7 @@ The real Auslan-Daily pose files are per-clip tensors with:
                         raw pixel (x, y) + confidence.
     BBOX : (T, 4)       per-frame signer bounding box.
 
-Known quirks handled here (from the dataset audit / CLAUDE.md):
+Known quirks handled here (from the dataset audit / the project log):
   * frame 0 (and occasionally others) can be all-zeros  -> masked out
   * coordinates are raw pixels                           -> bbox-normalised
   * only ~3k/25k clips have gloss                        -> gloss-free: we train

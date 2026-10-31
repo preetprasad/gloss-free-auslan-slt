@@ -14,7 +14,7 @@ a text system reports one number for everything it emits, but a speech system ca
 the user hears is the score of the subset it chose to say.
 
 Pose extraction is NOT timed here; it is a separate stage already measured at 25.4 fps on this CPU
-(CLAUDE.md 2026-09-15e) and is reported alongside rather than re-benchmarked.
+(the project log 2026-09-15e) and is reported alongside rather than re-benchmarked.
 
 Run:  python tools/speech_pipeline_bench.py --n 120
 """

@@ -1,7 +1,7 @@
 """Where do person switches concentrate, and does the translator's error track them? (measurement lens, 2026-09-25)
 
 No training, no new decode. Reads only files already in the repo (plus, optionally, the 60 tracker-v2 ground-truth
-all-detection npz in a session scratchpad, for the proxy check).
+all-detection npz in a local working folder, for the proxy check).
 
 DEFINITIONS (fixed before any number below was computed)
 * switch exposure of a clip = frac_chosen_nonzero in results/ndet_per_clip.csv (job 8050): the fraction of frames on which
@@ -154,7 +154,7 @@ def load():
 
 def gates(df):
     g = {}
-    # bystander figure recorded in CLAUDE.md 09-22k(7): 88.4% of Communication clips have a labelled bystander (12,410)
+    # bystander figure recorded in the project log 09-22k(7): 88.4% of Communication clips have a labelled bystander (12,410)
     d = df.attrs["dropped_byst"]                                      # add back the one dropped clip
     g["clips_with_bystander"] = int((df.byst > 0).sum()) + (d > 0); assert g["clips_with_bystander"] == 12410, g
     g["nonsigner_crops"] = int(df.byst.sum()) + d; assert g["nonsigner_crops"] == 14803, g

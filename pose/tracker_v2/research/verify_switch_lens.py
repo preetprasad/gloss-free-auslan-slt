@@ -30,7 +30,7 @@ sys.path.insert(0, str(ROOT / "src/tools"))
 from stitch_lexicon import STOP                          # noqa: E402  (data constant)
 
 R = ROOT / "results"
-GT_NPZ = Path("/private/tmp/claude-501/-Users-preet-Honours/c69cfc0c-6e97-4020-b91d-72bcf24d0e82/scratchpad/gt/npz")
+GT_NPZ = Path("<local working folder>/gt/npz")
 XLSX = ROOT / "data/raw/Auslan-Daily/Dataset Split Table/Sign Language Translation/Ausan-Daily Communication/Auslan-Daily_Communication.xlsx"
 SDX = ROOT / "data/raw/Auslan-Daily/Dataset Split Table/Signer Detection/Signer_Detection.xlsx"
 W3 = R / "switch_video_89_193/w3_val"
@@ -169,7 +169,7 @@ def load():
     df["sw"] = df.frac > 0
     df["bin"] = pd.cut(df.frac, [-1, 0, 0.1, 0.3, 1.01], labels=["none", "light", "medium", "heavy"]).astype(str)
     df["sgrp"] = np.where(df.signer == 1, "1", np.where(df.signer == 2, "2", "other"))
-    # corpus-wide bystander gate (CLAUDE.md 09-22k(7)): all 14,041 xlsx clips
+    # corpus-wide bystander gate (the project log 09-22k(7)): all 14,041 xlsx clips
     OUT["gate_bystander_all_xlsx"] = [int(sum(byst.get(c, 0) > 0 for c in x.index)), int(sum(byst.get(c, 0) for c in x.index))]
     assert OUT["gate_bystander_all_xlsx"] == [12410, 14803], OUT["gate_bystander_all_xlsx"]
     prev = json.load(open(W3 / "tracking_prevalence.json"))["agg"]

@@ -1,7 +1,7 @@
 #!/bin/bash -l
 # LOW-RESOURCE REGULARISATION SWEEP — the cheapest untested lever on the board.
 #
-# WHY: CLAUDE.md has long asserted "remaining levers are noise-level knobs (LR/depth/dropout)".
+# WHY: the project log has long asserted "remaining levers are noise-level knobs (LR/depth/dropout)".
 # That looks wrong. Araabi & Monz (COLING 2020) sweep IWSLT14 De-En subsampled to EXACTLY our
 # scale; at 10k pairs **dropout 0.1 -> 0.3 alone = +4.3 BLEU** (11.9 -> 17.0), the full recipe
 # gives 11.9 -> 18.7, and the capacity trim is worth only +0.8 of that while the REGULARISATION

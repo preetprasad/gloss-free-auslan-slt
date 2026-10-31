@@ -1,0 +1,9 @@
+spans usable 382 (missing clips 0); clips 361; glosses 45
+  body+vel         dim   544  classes  45  n  336  TOP-1  10.1%  TOP-5  22.6%   [chance 2.22% | shuffled 2.50% | length-only 2.68%]   lift   4.0x
+  face+vel         dim  2176  classes  45  n  336  TOP-1   2.4%  TOP-5  10.1%   [chance 2.22% | shuffled 2.38% | length-only 2.68%]   lift   1.0x
+  hands+vel        dim  1344  classes  45  n  333  TOP-1   4.2%  TOP-5  14.1%   [chance 2.22% | shuffled 2.16% | length-only 2.40%]   lift   1.9x
+  body_hands+vel   dim  1888  classes  45  n  336  TOP-1   6.2%  TOP-5  19.6%   [chance 2.22% | shuffled 2.74% | length-only 2.68%]   lift   2.3x
+  all+vel          dim  4256  classes  45  n  336  TOP-1   7.1%  TOP-5  19.6%   [chance 2.22% | shuffled 2.92% | length-only 2.68%]   lift   2.4x
+  hands [HAND-LOCAL]+vel dim  1344  classes  45  n  333  TOP-1   4.5%  TOP-5  16.8%   [chance 2.22% | shuffled 2.10% | length-only 2.40%]   lift   2.1x
+  body_hands [HAND-LOCAL]+vel dim  1888  classes  45  n  336  TOP-1   7.1%  TOP-5  18.2%   [chance 2.22% | shuffled 2.68% | length-only 2.68%]   lift   2.7x
+  all [HAND-LOCAL]+vel dim  4256  classes  45  n  336  TOP-1   6.2%  TOP-5  19.9%   [chance 2.22% | shuffled 2.86% | length-only 2.68%]   lift   2.2x

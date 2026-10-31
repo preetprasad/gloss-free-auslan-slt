@@ -13,7 +13,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 import tracker_v2 as v2
 
-NPZ = Path("/private/tmp/claude-501/-Users-preet-Honours/c69cfc0c-6e97-4020-b91d-72bcf24d0e82/scratchpad/gt/npz")
+NPZ = Path("<local working folder>/gt/npz")
 MP4 = Path("./results/dwpose_experiment/rgb_clips/Signer")
 KEY = json.load(open(HERE.parent / "gt_key.json"))
 LAB = json.load(open(HERE.parent / "gt_labels.json"))

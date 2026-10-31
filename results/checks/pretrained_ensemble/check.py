@@ -117,12 +117,15 @@ def report(title, res, nseed, meanlab, bestlab):
         print(f"  {lab:9s} {res['obs'][j]:+.2f}  max-T 95% {fmt_iv(res['maxT'][0][j], res['maxT'][1][j])}  (paired-bootstrap 95% {fmt_iv(res['pb'][0][j], res['pb'][1][j])})")
 
 
+POWER_MIN = 0.5
+
+
 def claim_rule(res, power):
     out = {}
     for tag, js in (("E0", (0, 1)), ("E*", (2, 3))):
         ci = all(res["maxT"][0][j] > 0 for j in js)
         pw = min(power[j] for j in js)
-        out[tag] = (ci, pw, ci and pw >= 0.5)
+        out[tag] = (ci, pw, ci and pw >= POWER_MIN)
     return out
 
 
@@ -185,7 +188,7 @@ print(f"  member mean {tmean:.2f}; member best on validation {sc('test', f's{bes
 cl = claim_rule(rt, rv["power"])
 for tag in ("E0", "E*"):
     ci, pw, ok = cl[tag]
-    print(f"claim rule {tag}: both max-T intervals exclude 0 = {ci}; predicted power {pw:.2f} (>= 0.50: {pw >= 0.5}) -> {'CLAIM' if ok else 'NO CLAIM'}")
+    print(f"claim rule {tag}: both max-T intervals exclude 0 = {ci}; predicted power {pw:.2f} (>= {POWER_MIN}: {pw >= POWER_MIN}) -> {'CLAIM' if ok else 'NO CLAIM'}")
 print(f"descriptive, outside the family: E* minus E0 {rt['E_minus_E0'][0]:+.2f} {fmt_iv(*rt['E_minus_E0'][1])}")
 
 print("unseen-570 test BLEU-4 (references absent from training, n = %d):" % int((~SEEN).sum()))
@@ -204,7 +207,7 @@ s6_all = bleu(stats(s6h, REFS["test"]).sum(0))
 s6_un, _ = unseen_bleu(s6h)
 if abs(s6_all - 11.802) > 0.002:
     fail(f"S6 gate: {s6_all}")
-print(f"  11.80-system (S6, beam 10, lp 0.3): test {s6_all:.2f}, unseen {s6_un:.2f}")
+print(f"  {s6_all:.2f}-system (S6, beam 10, lp 0.3): test {s6_all:.2f}, unseen {s6_un:.2f}")
 print(f"  best published score on this subset (GASLT): 9.95 (literature value, not recomputed here)")
 
 # =============================================================== three-model ensemble

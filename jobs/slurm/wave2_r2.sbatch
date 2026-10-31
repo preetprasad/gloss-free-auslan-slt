@@ -1,7 +1,7 @@
 #!/bin/bash -l
 # ROUND 2 — WAVE 2 (fingerspelled-letter fix) + WAVE 1 STAGE 2 (60-epoch budget), one batch.
 # Pre-registration, written before any arm was trained: results/PREREG_WAVE2_R2_2026-09-22.md
-# Protocol: CLAUDE.md §9 "ROUND-2 DECISION PROTOCOL".
+# Protocol: the project log §9 "ROUND-2 DECISION PROTOCOL".
 #
 # ARRAY TASK -> (question, seed):
 #   0,1,2  WAVE 2, seeds 42/101/202

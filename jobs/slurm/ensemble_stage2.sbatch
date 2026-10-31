@@ -20,7 +20,7 @@
 # differently-gridded historical number.
 # STAGE 2 then evaluates the SINGLE overall validation argmax on the official test set ONCE, at that
 # one pinned LP (`--lps`), and dumps hypotheses so the operating point can finally be error-analysed
-# -- CLAUDE.md records that the 11.80 point "cannot be error-analysed at all" because no ensemble
+# -- the project log records that the 11.80 point "cannot be error-analysed at all" because no ensemble
 # decode was ever saved.
 #
 # Checkpoints are read from the /group backup, not /scratch: the duration members live only on

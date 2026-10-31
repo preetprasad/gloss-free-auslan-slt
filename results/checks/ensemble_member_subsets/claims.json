@@ -1,0 +1,30 @@
+{
+ "gid": "ensemble_ablation_subsets",
+ "tagged": true,
+ "covered": [
+  "c01-028",
+  "c08-009",
+  "c12-017",
+  "c12-021",
+  "c12-037",
+  "c12-038",
+  "c12-040",
+  "c12-041",
+  "c14-084",
+  "c18-004",
+  "c18-005",
+  "c18-006",
+  "c18-007",
+  "c18-008",
+  "c18-058",
+  "c18-096",
+  "c18-097"
+ ],
+ "not_covered": [
+  {
+   "id": "c12-011",
+   "code": "no_saved_output",
+   "reason": "The 0.55:1 synthetic-to-real ratio of the older stitched-data ensembles (Table res_bootstrap row, G1 row 5) is recorded only in the pre-registrations and write-ups: the saved decode logs give the member counts (printed under c12-040, c18-096 and c18-004) and the 1.1:1 ratio of the pose-augmented members is recomputed (c12-040), but no saved output holds the corpus size behind 0.55:1."
+  }
+ ]
+}

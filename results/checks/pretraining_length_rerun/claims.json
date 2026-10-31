@@ -1,0 +1,42 @@
+{
+ "gid": "pretraining_wave11",
+ "tagged": true,
+ "covered": [
+  "c06-026",
+  "c07-020",
+  "c07-021",
+  "c09-029",
+  "c09-034",
+  "c11-032",
+  "c11-033",
+  "c11-034",
+  "c18-069"
+ ],
+ "not_covered": [
+  {
+   "id": "c09-027",
+   "code": "needs_kaya",
+   "reason": "Single-run test scores 10.27, 10.71, 9.69, 9.66 (40/80/128/256 pre-training epochs): the 128- and 256-epoch decodes (vlp_scale.sbatch, job 1089144) and the VLP-80 beam-5 decode are on Kaya only; 10.27 is re-scored in ladder check A4."
+  },
+  {
+   "id": "c09-028",
+   "code": "no_saved_output",
+   "reason": "That 80 epochs were chosen with test scores in view is a statement about the process, recorded only in write-ups."
+  },
+  {
+   "id": "c09-033",
+   "code": "not_own_number",
+   "reason": "Figure-caption definition of BLEU-4 (n-gram range, 0 to 100 scale); not a measurement."
+  },
+  {
+   "id": "c14-100",
+   "code": "no_saved_output",
+   "reason": "The count of three test-based choices is a narrative count in write-ups; the re-selected values (40 epochs, 256 frames) are recomputed under c11-034 and the pre-training selection line."
+  },
+  {
+   "id": "c18-070",
+   "code": "needs_kaya",
+   "reason": "News-only 150-epoch runs news_long_256/512 (1.64 vs 2.03 test greedy; 1.94 vs 1.87 validation), job 1196181: outputs on Kaya only, no local copy."
+  }
+ ]
+}

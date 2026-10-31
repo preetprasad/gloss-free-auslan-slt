@@ -1,0 +1,3 @@
+{"gid": "estimator_signer_rerun", "tagged": true,
+ "covered": ["c08-018","c08-029","c08-031","c08-034","c08-035","c08-038","c08-043","c08-044","c08-047","c08-048","c14-018","c14-021","c19-057","c21-022"],
+ "not_covered": [{"id":"c06-020","code":"no_saved_output","reason":"The 95.1% (signer entry) is recomputed from the saved check output, but the 2.2% for the first-listed entry came from the 25 Oct pairing check whose per-clip output was not kept in results/; only the write-up (REPORT.md, dissertation) states it."}]}

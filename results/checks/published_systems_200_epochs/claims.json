@@ -1,0 +1,29 @@
+{
+ "gid": "published_code_12l2_12l4",
+ "tagged": true,
+ "covered": [
+  "c08-016",
+  "c11-022",
+  "c11-023",
+  "c11-024",
+  "c11-025",
+  "c11-026",
+  "c11-027",
+  "c16-021",
+  "c19-056",
+  "c19-062",
+  "c19-073",
+  "c19-074",
+  "c19-075",
+  "c19-076",
+  "c19-077",
+  "c19-078"
+ ],
+ "not_covered": [
+  {
+   "id": "c16-022",
+   "code": "disagrees",
+   "reason": "DISAGREES: the dissertation says the larger model used 60 epochs at learning rate 3e-4 against 40 at 5e-4. The metrics.json written by the job of the 7.11 run (d=512, 6+6 layers, DWPose) records 40 epochs at 5e-4 (cosine, batch 32), the same epochs and learning rate as the 7.92 default-size run (batch 64). 60 epochs at 3e-4 (cosine, batch 16 x 2) is recorded for a different run, the 25.9 M-class 512-d 3+3 model on first-listed AlphaPose keypoints (greedy test 2.29, comm_slt_1024_512_3x3_accum2), not for the 1.03 run (checkpoint settings: plateau schedule, 1e-3, 10 of 60 epochs run) and not for the 7.11 run. A submit script (train_dwpose_scaled.sbatch, 60 epochs, 3e-4) exists but no saved output of a run from it was found, so the sentence may mix two runs; the check prints all four recorded settings."
+  }
+ ]
+}

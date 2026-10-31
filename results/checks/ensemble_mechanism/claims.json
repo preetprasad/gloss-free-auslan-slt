@@ -1,0 +1,44 @@
+{
+ "gid": "ensemble_mechanism_headroom",
+ "tagged": true,
+ "covered": [
+  "c01-006",
+  "c03-006",
+  "c07-025",
+  "c07-026",
+  "c08-004",
+  "c10-037",
+  "c11-002",
+  "c12-002",
+  "c12-004",
+  "c12-005",
+  "c12-013",
+  "c12-014",
+  "c12-015",
+  "c12-016",
+  "c12-052",
+  "c13-019",
+  "c14-101",
+  "c18-001",
+  "c18-002",
+  "c18-003",
+  "c18-009"
+ ],
+ "not_covered": [
+  {
+   "id": "c09-019",
+   "code": "no_saved_output",
+   "reason": "no_saved_output: the 6-member beam-5 / LP 1.0 test score 11.50 (validation-selected ensemble sweep, Aug 2026) has no saved decode or job output locally; only the beam-10 / LP 0.3 dumps exist, and LP 1.0 selected from a beam-10 n-best is not a beam-5 decode."
+  },
+  {
+   "id": "c16-027",
+   "code": "no_saved_output",
+   "reason": "no_saved_output: the learned per-sentence selector (logistic regression, 5-fold, 8.95) was an inline analysis; its script, features and fold assignment were not saved, and only the write-up ENSEMBLE_HEADROOM_2026-09-09.md states the number. Not reconstructed: a re-implementation would not be the original analysis."
+  },
+  {
+   "id": "c18-010",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says +0.73 (-0.43 to +1.96); the saved decodes give +0.7286 [-0.4322, +1.9545] with the original tool's draws (2,000 resamples, seed 0), i.e. +1.95 at two decimals, not +1.96. The point value and lower bound agree."
+  }
+ ]
+}

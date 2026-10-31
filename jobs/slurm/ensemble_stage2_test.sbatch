@@ -15,7 +15,7 @@
 #     in-batch control rather than across batches. Without A_S6 on test, F's test number cannot be
 #     interpreted at all.
 # Each LP is pinned with --lps (no sweeping on test). Hypotheses are dumped so the operating point can
-# finally be error-analysed -- CLAUDE.md has recorded since 2026-09-05 that it cannot be.
+# finally be error-analysed -- the project log has recorded since 2026-09-05 that it cannot be.
 #
 # A local pre-check already showed validation parity does NOT imply test parity for this family:
 # E_dur_x3_only matched S6 on validation (12.472 vs 12.470) and lost by 0.27 on test (11.537 vs 11.802).

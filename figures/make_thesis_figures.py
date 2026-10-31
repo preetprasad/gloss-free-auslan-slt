@@ -1,6 +1,6 @@
 """Thesis Results-chapter figures.
 
-Every number here is traceable to CLAUDE.md §0 (the dated experiment ledger),
+Every number here is traceable to the project log §0 (the dated experiment ledger),
 results/PHASE2_RESEARCH_JOURNEY_LOGBOOK.md §8 (the results ladder), or
 results/FAILURE_ANALYSIS_2026-09-08.md. Sources are given per figure.
 
@@ -61,7 +61,7 @@ C = dict(grey=figstyle.C["grey"], ink=figstyle.C["ink"], pale=figstyle.C["pale"]
 # The rows ARE result.tex's tab:res_ladder. Its beam-5 column is parsed below and
 # asserted against this list, so the figure cannot silently fall behind the table
 # again (it had already missed the 1.1:1 and pose-augmentation rows).
-# VLP-80 / SWA entries are hatched: CLAUDE.md 2026-09-06 records that recipe's
+# VLP-80 / SWA entries are hatched: the project log 2026-09-06 records that recipe's
 # control at 9.27 and 9.55 in two later batches, so 10.71/10.89 are unreplicated.
 # =====================================================================
 models = [
@@ -154,7 +154,7 @@ plt.close(fig)
 
 # =====================================================================
 # FIG 2 — VLP PRETRAINING SCALING (inverted-U)
-# Source: CLAUDE.md 2026-08-14, job 1089144 (single batch, matched recipe).
+# Source: the project log 2026-08-14, job 1089144 (single batch, matched recipe).
 # =====================================================================
 ep = [40, 80, 128, 256]
 bl = [10.27, 10.71, 9.69, 9.66]
@@ -176,7 +176,7 @@ plt.close(fig)
 
 # =====================================================================
 # FIG 3 — SEEN vs UNSEEN TARGETS
-# Source: CLAUDE.md 2026-08-14 (metric suite, job 1081984); the video-disjoint
+# Source: the project log 2026-08-14 (metric suite, job 1081984); the video-disjoint
 # reference line is LOGBOOK §8 row 29 (beam-5 6.39, 1,254 clips, 8 held-out videos).
 # =====================================================================
 mods = ["DWPose+CTC", "VLP (40 ep)", "RGB fusion"]  # the saved VLP decodes are the 40-epoch run (10.27)
@@ -216,7 +216,7 @@ plt.close(fig)
 
 # =====================================================================
 # FIG 4 — ESTIMATOR 2x2 (the cleanest ablation)
-# Source: CLAUDE.md 2026-08-22, jobs 1101249 (stage) -> 1101250 (ablation).
+# Source: the project log 2026-08-22, jobs 1101249 (stage) -> 1101250 (ablation).
 # Matched articulator set (body+hands) and matched normalisation; beam-5.
 # =====================================================================
 fig, ax = plt.subplots(figsize=(TARGET_W, 2.7))
@@ -256,7 +256,7 @@ plt.close(fig)
 
 # =====================================================================
 # FIG 5 — TEMPORAL-FIDELITY DOSE-RESPONSE
-# Source: CLAUDE.md 2026-09-06, job 1175390. One sentence pool, k=1, identical
+# Source: the project log 2026-09-06, job 1175390. One sentence pool, k=1, identical
 # 6,880-clip budget, seed 42; only the temporal treatment moves. Real
 # Auslan-Daily Communication clips average 73.1 frames over all 14,041 shipped tensors
 # (alignment table End-Begin mean 72.7; the earlier 91.2 could not be reproduced).
@@ -309,7 +309,7 @@ plt.close(fig)
 
 # =====================================================================
 # FIG 6 — WER AGAINST ITS NULL-MODEL FLOOR
-# Source: CLAUDE.md 2026-09-05 (WER investigation: null models selected on
+# Source: the project log 2026-09-05 (WER investigation: null models selected on
 # validation, scored once on the 800-clip test split) and 2026-08-23 (LP sweep,
 # MBR decodes). BLEU-4 for the same systems is printed alongside.
 # =====================================================================
@@ -485,7 +485,7 @@ plt.close(fig)
 
 # =====================================================================
 # FIG 9 — SYNTHETIC : REAL RATIO (duration-modelled stitching)
-# Source: CLAUDE.md 2026-09-10x (job 1196567: seed 42, including the compute-matched arm) and
+# Source: the project log 2026-09-10x (job 1196567: seed 42, including the compute-matched arm) and
 # 2026-09-15 (job 1199393: seeds 101, 202). Every point has its own in-batch real-only control.
 # =====================================================================
 ratios = [0, 0.55, 1.11, 1.66]

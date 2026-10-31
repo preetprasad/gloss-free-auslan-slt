@@ -1,0 +1,49 @@
+{
+ "gid": "extraction_error_audit",
+ "tagged": true,
+ "covered": [
+  "c02-002",
+  "c05-005",
+  "c05-007",
+  "c06-018",
+  "c06-019",
+  "c06-022",
+  "c08-012",
+  "c08-026",
+  "c15-003",
+  "c17-005",
+  "c21-015"
+ ],
+ "not_covered": [
+  {
+   "id": "c06-021",
+   "code": "disagrees",
+   "reason": "DISAGREES (not reproduced): the dissertation says normalised coordinates have a standard deviation of 87 under the xyxy reading. The audited sample IS reproduced (200 clips, 15,231 frames, 14,910 / 6,271 valid boxes, 88.9% / 14.4% inside), but the 5 Aug 2026 script that defined 'normalised coordinates' is lost; the natural reading (x/y divided by box size, all 136 keypoints, positive boxes) gives std 52.41 for xyxy and 0.28 for xywh, printed untagged by check.py. About 40 candidate definitions failed to match in the earlier numpy audit and a brute-force search here (valid-frame rule, centring, x/y/confidence pooling, joint subset) did not match either."
+  },
+  {
+   "id": "c06-023",
+   "code": "disagrees",
+   "reason": "DISAGREES (partly): the 14.4% (xyxy, confident joints inside) is reproduced exactly on the identified audit sample (printed under c06-022), but std 87 and extrema -5,036 / +12,912 are not: the natural reading gives std 52.41 and extrema -45.5 / +6252.2. The original definition of the normalised coordinates is not recorded (script lost)."
+  },
+  {
+   "id": "c06-024",
+   "code": "disagrees",
+   "reason": "DISAGREES (partly): the 88.9% (xywh, confident joints inside) is reproduced exactly on the identified audit sample (printed under c06-022), but std 0.60 and extrema -2.1 / +2.6 are not: the natural reading gives std 0.28 and extrema -1.0 / +1.9. The original definition of the normalised coordinates is not recorded (script lost)."
+  },
+  {
+   "id": "c17-006",
+   "code": "no_saved_output",
+   "reason": "The Mac re-extraction with the 384x288 checkpoint (t1-iq0-res, 22 Sep) and its probe predictions were not kept; only the PREREG_WAVE4 outcome text holds 18.4% vs 18.7%, p = 1.0."
+  },
+  {
+   "id": "c17-007",
+   "code": "no_saved_output",
+   "reason": "The 18.7% is the Mac re-extraction (not kept); 18.1% is the production-clip probe, recomputed in the identification_probes check."
+  },
+  {
+   "id": "c17-008",
+   "code": "needs_kaya",
+   "reason": "Output of the HRNet-W48 vs DWPose frame check (Kaya job 1100622, results/mmpose_hrnet_w48_video_1_15_frame0.json) is not present locally; only the write-up holds 0.8% / 8.1 px / 2.5% / 9%."
+  }
+ ]
+}

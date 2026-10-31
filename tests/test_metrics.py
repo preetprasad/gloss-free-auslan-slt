@@ -69,7 +69,7 @@ def test_headline_bleu_reproduces(headline):
 # the reference length, which is the denominator. The project reports the detokenised
 # value; the raw one is 0.16 lower, larger than any modelling gain in the whole ladder.
 # This asymmetry produced a false "a null model beats the ensemble" claim once
-# (retracted, CLAUDE.md 2026-09-09l). Locked so it cannot drift back.
+# (retracted, the project log 2026-09-09l). Locked so it cannot drift back.
 
 def test_wer_detokenised_is_the_reported_value(headline):
     hyps, refs = headline

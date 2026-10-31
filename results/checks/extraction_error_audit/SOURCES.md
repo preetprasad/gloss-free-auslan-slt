@@ -1,0 +1,9 @@
+# Sources (all tables made once by prepare_data.py; not run by make)
+
+- `pt_clip_table.csv`: one row per clip (14,041) built from the released pose files `SP_Annotation_V1/video_*.pt` (Auslan-Daily Communication, pose annotation download): entry keys, array shapes, and comparison with the project's old extraction `full_run/clips/*.npz` (first-listed person) and with `pose/extraction/alldet_local/` (presence of a DWPose file). No text. (section `pt`)
+- `dwpose_layout.json`, `dwpose_k_counts.json`: array shapes of `pose/extraction/alldet_local/video_1_0.npz`, and the number of keypoints per person in every one of the 14,039 files of that folder. (section `dw`)
+- `registration_video_11_6.csv`: the 11 shared body keypoints (x, y, confidence) of `full_run/clips/video_11_6.npz` and `pose/extraction/dwpose_clips/video_11_6.npz` (byte values copied). `registration_identity.json`: whether `full_run/clips_signer/video_11_6.npz` equals the first-listed array. (section `dw`)
+- `extractor_mode_table.txt`: the `MODE = {...}` block of the extraction library's `tools/solution/wholebody.py` (installed rtmlib 0.0.16), copied line by line. (section `modes`)
+- `bbox_audit_sample200.csv`: per-clip counts for the audited sample of the bounding-box format audit: the first 200 clips of `random.Random(42).shuffle` of the rows of `comm_run/manifests/train.tsv` (Communication training manifest), read from `full_run/clips` (old first-listed extraction), rule of `src/tools/audit_bbox_format.py` (confidence above 0.1, positive boxes); plus per-clip sums of box-normalised coordinates (natural definition, informative only). Reproduces the recorded 15,231 frames, 14,910 / 6,271 valid boxes, 88.9% / 14.4%. (section `bbox`)
+
+Original jobs: none on Kaya for these; local measurements (2026-08-05 bounding-box audit, 2026-10-25 signer-entry check).

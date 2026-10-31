@@ -1,0 +1,57 @@
+{
+ "gid": "tracker_v2_12i",
+ "tagged": true,
+ "covered": [
+  "c12-062",
+  "c12-063",
+  "c12-064",
+  "c12-065",
+  "c12-066",
+  "c12-069",
+  "c12-070",
+  "c12-071",
+  "c12-072",
+  "c12-073",
+  "c17-012",
+  "c17-015",
+  "c17-016",
+  "c17-017",
+  "c17-018",
+  "c17-019",
+  "c17-020",
+  "c17-021",
+  "c17-022"
+ ],
+ "not_covered": [
+  {
+   "id": "c10-043",
+   "code": "no_saved_output",
+   "reason": "The tracked per-frame mean (0.143) is recomputed, but the 3.2x and 2.7x ratios divide by the citation-form mean 0.044, whose per-clip outputs are no longer held (MM-WLAuslan clips are not on this machine); only PREREG_HANDSPEED_TRACKED_2026-10-10.md records it."
+  },
+  {
+   "id": "c14-044",
+   "code": "no_saved_output",
+   "reason": "Same as c10-043: the citation-form hand speed (0.044 per frame) exists only in the write-up PREREG_HANDSPEED_TRACKED_2026-10-10.md."
+  },
+  {
+   "id": "c17-013",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says 25.2% of clips and 2.31% of frame transitions; the jump definition of pose/tracker_v2/research/alphapose_identity_check.py applied to the same 2,128 clips gives 25.0% (531 clips) and 2.39% (3116/130353). The original statistic (recorded in the numpy audit; its script was not kept) used the larger of the x and y shift, so the definitions differ."
+  },
+  {
+   "id": "c17-014",
+   "code": "no_saved_output",
+   "reason": "The 552-event cause split (87.5% identity switches, 8.5% camera cuts) came from a scene-difference analysis whose per-event output was not saved; only NUMPY_ELISION_AUDIT_2026-09-26.md and the project log record it."
+  },
+  {
+   "id": "c12-068",
+   "code": "disagrees",
+   "reason": "DISAGREES (rounding): dissertation says the interval is -0.66 to +0.55; the saved five-seed decodes give -0.658 to +0.5447, which prints as +0.54. Mean -0.06, 2 of 5 seeds positive, and the Stage-2 seed result (one of two lower) agree."
+  },
+  {
+   "id": "c14-020",
+   "code": "disagrees",
+   "reason": "DISAGREES (rounding): dissertation says the interval is -0.66 to +0.55; the saved five-seed decodes give -0.658 to +0.5447, which prints as +0.54. Mean -0.06, 2 of 5 seeds positive, and the Stage-2 seed result (one of two lower) agree."
+  }
+ ]
+}

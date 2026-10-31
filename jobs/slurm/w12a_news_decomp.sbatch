@@ -73,7 +73,7 @@ c11da128f6c46844ff6ce4f3352d894f  $M/news_test.tsv
 80eb65dd8fc036afc453ca47e0dc1afd  $SA
 MD5
 # pin_pose pins a Communication clip that no News manifest reads. These two are inputs of THIS job: the first real
-# News training clip and the first stitched clip (its md5 is the one recorded on 10 Sep 2026, CLAUDE.md 09-10ab).
+# News training clip and the first stitched clip (its md5 is the one recorded on 10 Sep 2026, the project log 09-10ab).
 md5sum -c --quiet - <<MD5 || { echo "FAIL: a pinned News or stitched clip changed"; exit 1; }
 057c38a5d21ae29e4318c4f746799ca0  $G/scratch_backup/news/dwpose_clips/16_10_2022_0.npz
 a765ab81fd219c7c5a123e284c793dff  $G/stitch_scale2/corpus/clips/stitch2_000000.npz

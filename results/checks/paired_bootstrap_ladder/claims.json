@@ -1,0 +1,78 @@
+{
+ "gid": "paired_bootstrap_ladder",
+ "tagged": true,
+ "covered": [
+  "c02-015",
+  "c02-025",
+  "c07-052",
+  "c07-054",
+  "c07-055",
+  "c07-057",
+  "c07-058",
+  "c07-064",
+  "c07-066",
+  "c09-005",
+  "c09-012",
+  "c09-013",
+  "c11-004",
+  "c11-028",
+  "c11-029",
+  "c11-088",
+  "c12-001",
+  "c12-003",
+  "c12-006",
+  "c12-007",
+  "c12-012",
+  "c13-053",
+  "c14-005",
+  "c14-031",
+  "c14-033",
+  "c19-017",
+  "c20-010",
+  "c21-007",
+  "c21-023",
+  "c21-025"
+ ],
+ "not_covered": [
+  {
+   "id": "c08-010",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says the 95% paired-bootstrap half-width is about 1.2 BLEU-4; recomputed half-widths of the six rows of Table res_bootstrap are 1.08, 1.12, 1.15, 0.96, 1.19 and 1.13 (mean 1.11, range 0.96 to 1.19); with the two extra rows of Figure res_bootstrap the mean is 1.09. Only the largest (1.19) rounds to 1.2, so 'about 1.2' is the upper end and 'about 1.1' would be the typical value: partially consistent, not exact. The half-width lines are printed without a claim tag so that the claim is not counted as covered."
+  },
+  {
+   "id": "c08-022",
+   "code": "no_saved_output",
+   "reason": "The three-seed mean 9.63 (beam 5) of DWPose + pseudo-gloss CTC: per-seed decodes and logs are on Kaya (not local); only the write-up holds the figure."
+  },
+  {
+   "id": "c09-011",
+   "code": "needs_kaya",
+   "reason": "Three-seed means 8.92 greedy / 9.63 beam 5: per-seed run outputs are on Kaya; 9.20 and 9.95 are published values."
+  },
+  {
+   "id": "c09-014",
+   "code": "needs_kaya",
+   "reason": "80-epoch pre-training single model, beam-5 10.71: only the six-member decoder-setting decode (10.80) is saved locally; the beam-5 decode is from job 6806 on Kaya."
+  },
+  {
+   "id": "c09-022",
+   "code": "no_saved_output",
+   "reason": "2.87 is the first-listed-person AlphaPose run (output collapse); its decode is not saved locally; only write-ups hold it."
+  },
+  {
+   "id": "c09-026",
+   "code": "needs_kaya",
+   "reason": "Whisker range over three seeds of the baseline: per-seed outputs are on Kaya."
+  },
+  {
+   "id": "c20-031",
+   "code": "not_own_number",
+   "reason": "A reporting convention (differences below about one point are treated as noise), not a measurement."
+  },
+  {
+   "id": "c20-032",
+   "code": "needs_kaya",
+   "reason": "Re-decode jobs 6806/7921 logs are on Kaya; local dumps re-score to the table values but are the earlier decodes, not the re-decode."
+  }
+ ]
+}

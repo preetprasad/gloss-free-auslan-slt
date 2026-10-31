@@ -1,0 +1,103 @@
+all checkpoints present
+=== CANDIDATE X1_S6 ===
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[mbr] 6 members fusion=[False, True, False, False, True, True] beam=10 manifest=val.tsv dev=cuda
+[mbr] rgb_feat_dir=/group/pmc099/pprasad/scratch_backup/dwpose/rgb_feats (14041 feature files)
+[mbr] decoded n-best for 800 samples (avg cands=11.3)
+[mbr] wrote n-best -> /group/pmc099/pprasad/ens_ext/hyps_X1_S6/nbest.jsonl
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.6           BLEU-4=12.216  WER=0.9629  S=2305 D=1039 I=629  uniq=350
+  LP=0.8           BLEU-4=12.276  WER=1.0036  S=2439 D=884 I=818  uniq=377
+  LP=1.0           BLEU-4=11.500  WER=1.0441  S=2548 D=743 I=1017  uniq=401
+  LP=1.2           BLEU-4=10.897  WER=1.0965  S=2625 D=638 I=1261  uniq=432
+  LP=1.4           BLEU-4=10.180  WER=1.1297  S=2693 D=573 I=1395  uniq=463
+  LP=1.6           BLEU-4= 9.999  WER=1.1527  S=2738 D=516 I=1502  uniq=481
+  LP=1.8           BLEU-4= 9.933  WER=1.1735  S=2774 D=471 I=1597  uniq=507
+  LP=2.0           BLEU-4= 9.690  WER=1.1835  S=2799 D=442 I=1642  uniq=517
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4=10.691  WER=0.9777  S=2277 D=1108 I=649  uniq=413
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4= 9.329  WER=1.1689  S=2777 D=481 I=1565  uniq=561
+=== CANDIDATE X2_DUR3 ===
+[mbr] 3 members fusion=[False, False, False] beam=10 manifest=val.tsv dev=cuda
+[mbr] decoded n-best for 800 samples (avg cands=11.4)
+[mbr] wrote n-best -> /group/pmc099/pprasad/ens_ext/hyps_X2_DUR3/nbest.jsonl
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.6           BLEU-4=12.280  WER=0.9476  S=2238 D=1093 I=579  uniq=333
+  LP=0.8           BLEU-4=12.472  WER=0.9850  S=2372 D=929 I=763  uniq=360
+  LP=1.0           BLEU-4=11.689  WER=1.0419  S=2528 D=770 I=1001  uniq=394
+  LP=1.2           BLEU-4=10.957  WER=1.0848  S=2622 D=666 I=1188  uniq=426
+  LP=1.4           BLEU-4=10.589  WER=1.1159  S=2680 D=581 I=1343  uniq=455
+  LP=1.6           BLEU-4=10.241  WER=1.1381  S=2704 D=539 I=1453  uniq=467
+  LP=1.8           BLEU-4= 9.979  WER=1.1563  S=2737 D=506 I=1528  uniq=487
+  LP=2.0           BLEU-4= 9.974  WER=1.1636  S=2748 D=484 I=1569  uniq=498
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4=11.426  WER=0.9658  S=2237 D=1122 I=626  uniq=402
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4= 9.399  WER=1.1558  S=2745 D=517 I=1507  uniq=542
+=== CANDIDATE X3_DUR6 ===
+[mbr] 6 members fusion=[False, False, False, False, False, False] beam=10 manifest=val.tsv dev=cuda
+[mbr] decoded n-best for 800 samples (avg cands=11.2)
+[mbr] wrote n-best -> /group/pmc099/pprasad/ens_ext/hyps_X3_DUR6/nbest.jsonl
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.6           BLEU-4=12.185  WER=0.9542  S=2250 D=1104 I=583  uniq=330
+  LP=0.8           BLEU-4=12.779  WER=0.9857  S=2362 D=927 I=778  uniq=363
+  LP=1.0           BLEU-4=11.991  WER=1.0419  S=2498 D=792 I=1009  uniq=389
+  LP=1.2           BLEU-4=11.313  WER=1.0819  S=2605 D=670 I=1189  uniq=410
+  LP=1.4           BLEU-4=10.788  WER=1.1168  S=2669 D=605 I=1334  uniq=439
+  LP=1.6           BLEU-4=10.284  WER=1.1452  S=2721 D=549 I=1455  uniq=467
+  LP=1.8           BLEU-4=10.169  WER=1.1554  S=2747 D=515 I=1505  uniq=478
+  LP=2.0           BLEU-4= 9.907  WER=1.1692  S=2782 D=486 I=1556  uniq=494
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4=11.225  WER=0.9845  S=2249 D=1142 I=671  uniq=389
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4= 9.643  WER=1.1597  S=2753 D=523 I=1509  uniq=537
+=== CANDIDATE X4_S6_plus_DUR3 ===
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ens] remapped 3 member(s) into member 0's vocabulary: [6, 7, 8]
+[mbr] 9 members fusion=[False, True, False, False, True, True, False, False, False] beam=10 manifest=val.tsv dev=cuda
+[mbr] rgb_feat_dir=/group/pmc099/pprasad/scratch_backup/dwpose/rgb_feats (14041 feature files)
+[mbr] decoded n-best for 800 samples (avg cands=11.3)
+[mbr] wrote n-best -> /group/pmc099/pprasad/ens_ext/hyps_X4_S6_plus_DUR3/nbest.jsonl
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.6           BLEU-4=12.582  WER=0.9586  S=2238 D=1095 I=622  uniq=329
+  LP=0.8           BLEU-4=12.497  WER=0.9988  S=2408 D=904 I=809  uniq=351
+  LP=1.0           BLEU-4=11.782  WER=1.0477  S=2528 D=739 I=1056  uniq=388
+  LP=1.2           BLEU-4=11.098  WER=1.0851  S=2596 D=632 I=1249  uniq=432
+  LP=1.4           BLEU-4=10.488  WER=1.1180  S=2664 D=553 I=1396  uniq=447
+  LP=1.6           BLEU-4=10.078  WER=1.1440  S=2725 D=498 I=1497  uniq=469
+  LP=1.8           BLEU-4= 9.795  WER=1.1592  S=2763 D=460 I=1560  uniq=481
+  LP=2.0           BLEU-4= 9.737  WER=1.1767  S=2789 D=432 I=1634  uniq=497
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4=11.540  WER=0.9656  S=2256 D=1075 I=653  uniq=408
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4= 9.843  WER=1.1537  S=2746 D=472 I=1542  uniq=542
+=== CANDIDATE X5_maxdiversity ===
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ens] remapped 1 member(s) into member 0's vocabulary: [3]
+[mbr] 4 members fusion=[False, True, False, False] beam=10 manifest=val.tsv dev=cuda
+[mbr] rgb_feat_dir=/group/pmc099/pprasad/scratch_backup/dwpose/rgb_feats (14041 feature files)
+[mbr] decoded n-best for 800 samples (avg cands=11.2)
+[mbr] wrote n-best -> /group/pmc099/pprasad/ens_ext/hyps_X5_maxdiversity/nbest.jsonl
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.6           BLEU-4=11.762  WER=0.9721  S=2257 D=1124 I=630  uniq=309
+  LP=0.8           BLEU-4=11.797  WER=1.0121  S=2397 D=948 I=831  uniq=340
+  LP=1.0           BLEU-4=11.198  WER=1.0557  S=2536 D=784 I=1036  uniq=364
+  LP=1.2           BLEU-4=10.271  WER=1.1011  S=2657 D=650 I=1236  uniq=401
+  LP=1.4           BLEU-4=10.119  WER=1.1246  S=2687 D=568 I=1385  uniq=427
+  LP=1.6           BLEU-4= 9.841  WER=1.1452  S=2738 D=500 I=1487  uniq=453
+  LP=1.8           BLEU-4= 9.754  WER=1.1597  S=2766 D=465 I=1554  uniq=464
+  LP=2.0           BLEU-4= 9.450  WER=1.1767  S=2797 D=443 I=1615  uniq=473
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4=10.492  WER=0.9789  S=2293 D=1100 I=646  uniq=379
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4= 9.322  WER=1.1539  S=2757 D=479 I=1525  uniq=531
+=== READ THIS FIRST: X3 vs X4 ===
+  X3 adds 3 SAME-RECIPE members to X2; X4 adds a DIFFERENT recipe to X1.
+  If X4-X1 >> X3-X2, diversity is what matters and the ensemble should be built by recipe.
+  If both are ~0, the ensemble is saturated and this line should be closed.
+reference: 1191189 in-batch A_S6 11.707 / E_dur_x3 12.280; historical S6 val 12.470 / test 11.802
+ENS_EXT_DONE

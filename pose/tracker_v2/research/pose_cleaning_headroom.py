@@ -168,7 +168,7 @@ def pixel_jitter(paths):
           f"median shoulder width {s:.1f} px (residual = {100 * np.median(r) / s:.2f}% of shoulder width)")
 
 
-GT_NPZ = "/private/tmp/claude-501/-Users-preet-Honours/c69cfc0c-6e97-4020-b91d-72bcf24d0e82/scratchpad/gt/npz"
+GT_NPZ = "<local working folder>/gt/npz"
 
 
 def v2_masked_runs():

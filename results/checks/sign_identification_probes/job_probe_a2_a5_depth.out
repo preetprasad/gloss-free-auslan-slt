@@ -1,0 +1,239 @@
+node k005.hpc.uwa.edu.au | DET='--deterministic True'
+4e0e84fe133813bdbba331d8c2464f38  config.py
+fab9b3c5c704755bdf2edac013c3ea7d  slt/data.py
+75783cd2aaddb8d5822f0c5d1a4f10e5  train_ctc.py
+07bc8171e920aaa9558d4fccd4a57431  pretrain_vlp.py
+6553f52a3f0fbeb57feef6510289d66c  tools/eval_beam.py
+tools/continuous_id_probe.py: OK
+tools/w12f_probe.py: OK
+tools/w12f_locate.py: OK
+tools/w12f_extract3d.py: OK
+/group/pmc099/pprasad/code/pose/extraction/dwpose_extract_worker.py: OK
+snapshot matches /group/pmc099/pprasad/wave12/code.md5
+w12f_locate self-test passed
+w12f_probe self-test passed
+  frame failed: RuntimeError: boom
+w12f_extract3d self-test passed
+pinned DWPose clip video_1_0.npz md5 OK
+span clips 929: all in TRAIN, none in validation or test, all with a production pose
+=== measurement 1, gates only ===
+isolated clips 3209; by status and split of the source clip: ambiguous - 24, empty - 2, located test 62, located train 3050, located val 71
+leak-safe spotting spans 1008; located isolated clips that ARE one of them (same clip, gloss, first frame): 1006
+gate E (extractor and source): {'checked': 3050, 'frame_count_differs': 0, 'compared': 3050, 'median_px': 0.0, 'share_under_1px': 1.0}
+
+=== hands: 337 query spans, 45 classes | reference clips (isolated clips of these classes located on a TRAIN clip, at least 3 frames) 379, with a descriptor 379 | queries with an isolated twin 334 | A1 agrees with A0 on 100.0% of spans
+
+=== body_hands: 337 query spans, 45 classes | reference clips (isolated clips of these classes located on a TRAIN clip, at least 3 frames) 379, with a descriptor 379 | queries with an isolated twin 334 | A1 agrees with A0 on 100.0% of spans
+
+=== body: 337 query spans, 45 classes | reference clips (isolated clips of these classes located on a TRAIN clip, at least 3 frames) 379, with a descriptor 379 | queries with an isolated twin 334 | A1 agrees with A0 on 100.0% of spans
+
+=== face: 337 query spans, 45 classes | reference clips (isolated clips of these classes located on a TRAIN clip, at least 3 frames) 379, with a descriptor 379 | queries with an isolated twin 334 | A1 agrees with A0 on 100.0% of spans
+
+=== all: 337 query spans, 45 classes | reference clips (isolated clips of these classes located on a TRAIN clip, at least 3 frames) 379, with a descriptor 379 | queries with an isolated twin 334 | A1 agrees with A0 on 100.0% of spans
+
+=== hands [HAND-LOCAL]: 337 query spans, 45 classes | reference clips (isolated clips of these classes located on a TRAIN clip, at least 3 frames) 379, with a descriptor 379 | queries with an isolated twin 334 | A1 agrees with A0 on 100.0% of spans
+
+GATES PASSED (H: recorded run reproduced; E: isolated poses = production poses; T: isolated clips are the query spans)
+=== measurement 1 ===
+isolated clips 3209; by status and split of the source clip: ambiguous - 24, empty - 2, located test 62, located train 3050, located val 71
+leak-safe spotting spans 1008; located isolated clips that ARE one of them (same clip, gloss, first frame): 1006
+gate E (extractor and source): {'checked': 3050, 'frame_count_differs': 0, 'compared': 3050, 'median_px': 0.0, 'share_under_1px': 1.0}
+
+=== hands: 337 query spans, 45 classes | reference clips (isolated clips of these classes located on a TRAIN clip, at least 3 frames) 379, with a descriptor 379 | queries with an isolated twin 334 | A1 agrees with A0 on 100.0% of spans
+  A0 conversational spans, 5 clip-disjoint folds (recorded)  n  337  top-1  18.1% (61)  top-5  34.7%   length only 7.42%
+  A2 isolated, own clip excluded [PRIMARY]                   n  337  top-1  19.9% (67)  top-5  38.3%   same-class references per query: mean 7.5, min 2
+  A3 isolated, own video excluded                            n  321  top-1  16.5% (53)  top-5  30.8%   same-class references per query: mean 4.3, min 0
+  A2m isolated twins of the query set only, own clip excluded n  337  top-1  19.0% (64)  top-5  37.1%   same-class references per query: mean 6.4, min 2
+  A4 isolated, nothing excluded (self-match; leak size only) n  337  top-1  35.6% (120)  top-5  63.8%   same-class references per query: mean 8.5, min 6
+  A2 controls: chance 2.22% | shuffled reference labels 2.26% | length only 7.42%
+  paired comparisons on the spans scored in both:
+  A2 against A0: 67/337 = 19.9% against 61/337 = 18.1% | difference +1.8% (95% interval over clips -1.2% to +4.7%) | only first 16, only second 10, exact McNemar p = 0.327
+  A3 against A0: 53/321 = 16.5% against 58/321 = 18.1% | difference -1.6% (95% interval over clips -5.4% to +2.2%) | only first 18, only second 23, exact McNemar p = 0.533
+  A2m against A0: 64/337 = 19.0% against 61/337 = 18.1% | difference +0.9% (95% interval over clips -1.8% to +3.5%) | only first 12, only second 9, exact McNemar p = 0.664
+  A4 against A0: 120/337 = 35.6% against 61/337 = 18.1% | difference +17.5% (95% interval over clips +13.0% to +22.1%) | only first 63, only second 4, exact McNemar p = 1.11e-14
+  A2 against A2m: 67/337 = 19.9% against 64/337 = 19.0% | difference +0.9% (95% interval over clips -1.2% to +3.0%) | only first 8, only second 5, exact McNemar p = 0.581
+  A1 (twin descriptors, A0 protocol) against A0: 61/337 = 18.1% against 61/337 = 18.1% | difference +0.0% (95% interval over clips +0.0% to +0.0%) | only first 0, only second 0, exact McNemar p = 1
+  sensitivity (other 8-per-sign subsamples and folds; no reading is taken from these):
+  seed 1: A2 against A0: 67/337 = 19.9% against 71/337 = 21.1% | difference -1.2% (95% interval over clips -4.5% to +2.1%) | only first 14, only second 18, exact McNemar p = 0.597
+  seed 7: A2 against A0: 71/337 = 21.1% against 59/337 = 17.5% | difference +3.6% (95% interval over clips +0.6% to +6.6%) | only first 20, only second 8, exact McNemar p = 0.0357
+  seed 101: A2 against A0: 72/330 = 21.8% against 64/330 = 19.4% | difference +2.4% (95% interval over clips -0.9% to +5.6%) | only first 19, only second 11, exact McNemar p = 0.2
+  seed 202: A2 against A0: 70/337 = 20.8% against 69/337 = 20.5% | difference +0.3% (95% interval over clips -3.0% to +3.6%) | only first 17, only second 16, exact McNemar p = 1
+  A5 MM-WLAuslan citation recordings of the same signs       n  337  top-1   4.5% (15)  top-5  16.0%   reference clips 630
+  A5 against A0: 15/337 = 4.5% against 61/337 = 18.1% | difference -13.6% (95% interval over clips -18.3% to -9.2%) | only first 13, only second 59, exact McNemar p = 3.81e-08
+  A5 against A2: 15/337 = 4.5% against 67/337 = 19.9% | difference -15.4% (95% interval over clips -20.1% to -10.8%) | only first 11, only second 63, exact McNemar p = 5.32e-10
+
+=== body_hands: 337 query spans, 45 classes | reference clips (isolated clips of these classes located on a TRAIN clip, at least 3 frames) 379, with a descriptor 379 | queries with an isolated twin 334 | A1 agrees with A0 on 100.0% of spans
+  A0 conversational spans, 5 clip-disjoint folds (recorded)  n  337  top-1  18.7% (63)  top-5  38.6%   length only 7.42%
+  A2 isolated, own clip excluded [PRIMARY]                   n  337  top-1  20.2% (68)  top-5  40.1%   same-class references per query: mean 7.5, min 2
+  A3 isolated, own video excluded                            n  321  top-1  14.3% (46)  top-5  29.3%   same-class references per query: mean 4.3, min 0
+  A2m isolated twins of the query set only, own clip excluded n  337  top-1  19.6% (66)  top-5  39.8%   same-class references per query: mean 6.4, min 2
+  A4 isolated, nothing excluded (self-match; leak size only) n  337  top-1  38.6% (130)  top-5  64.1%   same-class references per query: mean 8.5, min 6
+  A2 controls: chance 2.22% | shuffled reference labels 2.49% | length only 7.42%
+  paired comparisons on the spans scored in both:
+  A2 against A0: 68/337 = 20.2% against 63/337 = 18.7% | difference +1.5% (95% interval over clips -1.7% to +4.6%) | only first 18, only second 13, exact McNemar p = 0.473
+  A3 against A0: 46/321 = 14.3% against 62/321 = 19.3% | difference -5.0% (95% interval over clips -8.5% to -1.6%) | only first 9, only second 25, exact McNemar p = 0.00904
+  A2m against A0: 66/337 = 19.6% against 63/337 = 18.7% | difference +0.9% (95% interval over clips -1.8% to +3.9%) | only first 15, only second 12, exact McNemar p = 0.701
+  A4 against A0: 130/337 = 38.6% against 63/337 = 18.7% | difference +19.9% (95% interval over clips +15.3% to +24.9%) | only first 71, only second 4, exact McNemar p = 6.81e-17
+  A2 against A2m: 68/337 = 20.2% against 66/337 = 19.6% | difference +0.6% (95% interval over clips -1.5% to +2.7%) | only first 8, only second 6, exact McNemar p = 0.791
+  A1 (twin descriptors, A0 protocol) against A0: 63/337 = 18.7% against 63/337 = 18.7% | difference +0.0% (95% interval over clips +0.0% to +0.0%) | only first 0, only second 0, exact McNemar p = 1
+  A5 MM-WLAuslan citation recordings of the same signs       n  337  top-1   4.7% (16)  top-5  18.4%   reference clips 630
+  A5 against A0: 16/337 = 4.7% against 63/337 = 18.7% | difference -13.9% (95% interval over clips -18.8% to -9.5%) | only first 14, only second 61, exact McNemar p = 3.81e-08
+  A5 against A2: 16/337 = 4.7% against 68/337 = 20.2% | difference -15.4% (95% interval over clips -20.6% to -10.5%) | only first 13, only second 65, exact McNemar p = 1.81e-09
+
+=== body: 337 query spans, 45 classes | reference clips (isolated clips of these classes located on a TRAIN clip, at least 3 frames) 379, with a descriptor 379 | queries with an isolated twin 334 | A1 agrees with A0 on 100.0% of spans
+  A0 conversational spans, 5 clip-disjoint folds (recorded)  n  337  top-1  15.4% (52)  top-5  28.2%   length only 7.42%
+  A2 isolated, own clip excluded [PRIMARY]                   n  337  top-1  13.9% (47)  top-5  34.1%   same-class references per query: mean 7.5, min 2
+  A3 isolated, own video excluded                            n  321  top-1  10.6% (34)  top-5  21.8%   same-class references per query: mean 4.3, min 0
+  A2m isolated twins of the query set only, own clip excluded n  337  top-1  15.4% (52)  top-5  32.9%   same-class references per query: mean 6.4, min 2
+  A4 isolated, nothing excluded (self-match; leak size only) n  337  top-1  40.4% (136)  top-5  69.7%   same-class references per query: mean 8.5, min 6
+  A2 controls: chance 2.22% | shuffled reference labels 2.08% | length only 7.42%
+  paired comparisons on the spans scored in both:
+  A2 against A0: 47/337 = 13.9% against 52/337 = 15.4% | difference -1.5% (95% interval over clips -4.7% to +1.5%) | only first 11, only second 16, exact McNemar p = 0.442
+  A3 against A0: 34/321 = 10.6% against 52/321 = 16.2% | difference -5.6% (95% interval over clips -9.0% to -2.5%) | only first 5, only second 23, exact McNemar p = 0.000912
+  A2m against A0: 52/337 = 15.4% against 52/337 = 15.4% | difference +0.0% (95% interval over clips -3.2% to +3.2%) | only first 14, only second 14, exact McNemar p = 1
+  A4 against A0: 136/337 = 40.4% against 52/337 = 15.4% | difference +24.9% (95% interval over clips +20.2% to +29.9%) | only first 86, only second 2, exact McNemar p = 2.53e-23
+  A2 against A2m: 47/337 = 13.9% against 52/337 = 15.4% | difference -1.5% (95% interval over clips -3.2% to +0.0%) | only first 1, only second 6, exact McNemar p = 0.125
+  A1 (twin descriptors, A0 protocol) against A0: 52/337 = 15.4% against 52/337 = 15.4% | difference +0.0% (95% interval over clips +0.0% to +0.0%) | only first 0, only second 0, exact McNemar p = 1
+  A5 MM-WLAuslan citation recordings of the same signs       n  337  top-1   3.9% (13)  top-5  17.2%   reference clips 630
+  A5 against A0: 13/337 = 3.9% against 52/337 = 15.4% | difference -11.6% (95% interval over clips -16.2% to -7.2%) | only first 10, only second 49, exact McNemar p = 2.71e-07
+  A5 against A2: 13/337 = 3.9% against 47/337 = 13.9% | difference -10.1% (95% interval over clips -14.5% to -5.7%) | only first 9, only second 43, exact McNemar p = 2.04e-06
+
+=== face: 337 query spans, 45 classes | reference clips (isolated clips of these classes located on a TRAIN clip, at least 3 frames) 379, with a descriptor 379 | queries with an isolated twin 334 | A1 agrees with A0 on 100.0% of spans
+  A0 conversational spans, 5 clip-disjoint folds (recorded)  n  337  top-1   3.3% (11)  top-5  13.4%   length only 7.42%
+  A2 isolated, own clip excluded [PRIMARY]                   n  337  top-1   5.0% (17)  top-5  14.8%   same-class references per query: mean 7.5, min 2
+  A3 isolated, own video excluded                            n  321  top-1   3.7% (12)  top-5  10.3%   same-class references per query: mean 4.3, min 0
+  A2m isolated twins of the query set only, own clip excluded n  337  top-1   3.9% (13)  top-5  14.2%   same-class references per query: mean 6.4, min 2
+  A4 isolated, nothing excluded (self-match; leak size only) n  337  top-1  14.8% (50)  top-5  37.1%   same-class references per query: mean 8.5, min 6
+  A2 controls: chance 2.22% | shuffled reference labels 2.55% | length only 7.42%
+  paired comparisons on the spans scored in both:
+  A2 against A0: 17/337 = 5.0% against 11/337 = 3.3% | difference +1.8% (95% interval over clips +0.3% to +3.5%) | only first 7, only second 1, exact McNemar p = 0.0703
+  A3 against A0: 12/321 = 3.7% against 11/321 = 3.4% | difference +0.3% (95% interval over clips -1.6% to +2.2%) | only first 5, only second 4, exact McNemar p = 1
+  A2m against A0: 13/337 = 3.9% against 11/337 = 3.3% | difference +0.6% (95% interval over clips -0.6% to +1.8%) | only first 3, only second 1, exact McNemar p = 0.625
+  A4 against A0: 50/337 = 14.8% against 11/337 = 3.3% | difference +11.6% (95% interval over clips +8.2% to +15.7%) | only first 39, only second 0, exact McNemar p = 3.64e-12
+  A2 against A2m: 17/337 = 5.0% against 13/337 = 3.9% | difference +1.2% (95% interval over clips +0.0% to +2.7%) | only first 5, only second 1, exact McNemar p = 0.219
+  A1 (twin descriptors, A0 protocol) against A0: 11/337 = 3.3% against 11/337 = 3.3% | difference +0.0% (95% interval over clips +0.0% to +0.0%) | only first 0, only second 0, exact McNemar p = 1
+  A5 MM-WLAuslan citation recordings of the same signs       n  337  top-1   2.1% (7)  top-5  12.8%   reference clips 630
+  A5 against A0: 7/337 = 2.1% against 11/337 = 3.3% | difference -1.2% (95% interval over clips -3.8% to +1.2%) | only first 7, only second 11, exact McNemar p = 0.481
+  A5 against A2: 7/337 = 2.1% against 17/337 = 5.0% | difference -3.0% (95% interval over clips -5.8% to -0.3%) | only first 7, only second 17, exact McNemar p = 0.0639
+
+=== all: 337 query spans, 45 classes | reference clips (isolated clips of these classes located on a TRAIN clip, at least 3 frames) 379, with a descriptor 379 | queries with an isolated twin 334 | A1 agrees with A0 on 100.0% of spans
+  A0 conversational spans, 5 clip-disjoint folds (recorded)  n  337  top-1  18.1% (61)  top-5  35.6%   length only 7.42%
+  A2 isolated, own clip excluded [PRIMARY]                   n  337  top-1  17.2% (58)  top-5  36.8%   same-class references per query: mean 7.5, min 2
+  A3 isolated, own video excluded                            n  321  top-1  11.5% (37)  top-5  24.9%   same-class references per query: mean 4.3, min 0
+  A2m isolated twins of the query set only, own clip excluded n  337  top-1  16.6% (56)  top-5  36.8%   same-class references per query: mean 6.4, min 2
+  A4 isolated, nothing excluded (self-match; leak size only) n  337  top-1  46.3% (156)  top-5  67.7%   same-class references per query: mean 8.5, min 6
+  A2 controls: chance 2.22% | shuffled reference labels 2.14% | length only 7.42%
+  paired comparisons on the spans scored in both:
+  A2 against A0: 58/337 = 17.2% against 61/337 = 18.1% | difference -0.9% (95% interval over clips -4.0% to +2.4%) | only first 14, only second 17, exact McNemar p = 0.72
+  A3 against A0: 37/321 = 11.5% against 61/321 = 19.0% | difference -7.5% (95% interval over clips -11.6% to -3.5%) | only first 11, only second 35, exact McNemar p = 0.000536
+  A2m against A0: 56/337 = 16.6% against 61/337 = 18.1% | difference -1.5% (95% interval over clips -4.3% to +1.5%) | only first 10, only second 15, exact McNemar p = 0.424
+  A4 against A0: 156/337 = 46.3% against 61/337 = 18.1% | difference +28.2% (95% interval over clips +23.4% to +33.4%) | only first 95, only second 0, exact McNemar p = 5.05e-29
+  A2 against A2m: 58/337 = 17.2% against 56/337 = 16.6% | difference +0.6% (95% interval over clips -1.5% to +2.9%) | only first 8, only second 6, exact McNemar p = 0.791
+  A1 (twin descriptors, A0 protocol) against A0: 61/337 = 18.1% against 61/337 = 18.1% | difference +0.0% (95% interval over clips +0.0% to +0.0%) | only first 0, only second 0, exact McNemar p = 1
+  A5 MM-WLAuslan citation recordings of the same signs       n  337  top-1   3.9% (13)  top-5  18.7%   reference clips 630
+  A5 against A0: 13/337 = 3.9% against 61/337 = 18.1% | difference -14.2% (95% interval over clips -19.0% to -9.7%) | only first 12, only second 60, exact McNemar p = 8.06e-09
+  A5 against A2: 13/337 = 3.9% against 58/337 = 17.2% | difference -13.4% (95% interval over clips -18.0% to -9.1%) | only first 11, only second 56, exact McNemar p = 2.15e-08
+
+=== hands [HAND-LOCAL]: 337 query spans, 45 classes | reference clips (isolated clips of these classes located on a TRAIN clip, at least 3 frames) 379, with a descriptor 379 | queries with an isolated twin 334 | A1 agrees with A0 on 100.0% of spans
+  A0 conversational spans, 5 clip-disjoint folds (recorded)  n  337  top-1  24.6% (83)  top-5  46.9%   length only 7.42%
+  A2 isolated, own clip excluded [PRIMARY]                   n  337  top-1  28.8% (97)  top-5  51.3%   same-class references per query: mean 7.5, min 2
+  A3 isolated, own video excluded                            n  321  top-1  19.0% (61)  top-5  40.8%   same-class references per query: mean 4.3, min 0
+  A2m isolated twins of the query set only, own clip excluded n  337  top-1  26.7% (90)  top-5  48.7%   same-class references per query: mean 6.4, min 2
+  A4 isolated, nothing excluded (self-match; leak size only) n  337  top-1  57.9% (195)  top-5  77.4%   same-class references per query: mean 8.5, min 6
+  A2 controls: chance 2.22% | shuffled reference labels 1.48% | length only 7.42%
+  paired comparisons on the spans scored in both:
+  A2 against A0: 97/337 = 28.8% against 83/337 = 24.6% | difference +4.2% (95% interval over clips +1.2% to +7.2%) | only first 21, only second 7, exact McNemar p = 0.0125
+  A3 against A0: 61/321 = 19.0% against 76/321 = 23.7% | difference -4.7% (95% interval over clips -8.4% to -1.2%) | only first 11, only second 26, exact McNemar p = 0.0201
+  A2m against A0: 90/337 = 26.7% against 83/337 = 24.6% | difference +2.1% (95% interval over clips -0.3% to +4.6%) | only first 12, only second 5, exact McNemar p = 0.143
+  A4 against A0: 195/337 = 57.9% against 83/337 = 24.6% | difference +33.2% (95% interval over clips +27.8% to +38.3%) | only first 112, only second 0, exact McNemar p = 3.85e-34
+  A2 against A2m: 97/337 = 28.8% against 90/337 = 26.7% | difference +2.1% (95% interval over clips +0.0% to +4.4%) | only first 11, only second 4, exact McNemar p = 0.118
+  A1 (twin descriptors, A0 protocol) against A0: 83/337 = 24.6% against 83/337 = 24.6% | difference +0.0% (95% interval over clips +0.0% to +0.0%) | only first 0, only second 0, exact McNemar p = 1
+  A5 MM-WLAuslan citation recordings of the same signs       n  337  top-1   2.4% (8)  top-5  18.1%   reference clips 630
+  A5 against A0: 8/337 = 2.4% against 83/337 = 24.6% | difference -22.3% (95% interval over clips -27.3% to -17.4%) | only first 7, only second 82, exact McNemar p = 2.43e-17
+  A5 against A2: 8/337 = 2.4% against 97/337 = 28.8% | difference -26.4% (95% interval over clips -31.6% to -21.3%) | only first 6, only second 95, exact McNemar p = 1.07e-21
+
+READING (hands): isolated clips are the query spans' own footage: True | R1: no measurable difference from the conversational reference
+
+within the isolated set, 120 spotting glosses, clip-disjoint folds, classes with >= 4 clips   [classes 120, chance 0.83%, length-only 1.80%]
+  hands                              n 1001  top-1  12.3% (123)  top-5  27.7%  shuffled 0.88%
+  body_hands                         n 1001  top-1  13.9% (139)  top-5  28.5%  shuffled 1.08%
+  body                               n 1001  top-1   7.9% (79)  top-5  21.4%  shuffled 1.02%
+  face                               n 1001  top-1   2.1% (21)  top-5   6.3%  shuffled 0.90%
+  all                                n 1001  top-1  12.5% (125)  top-5  27.0%  shuffled 0.90%
+
+within the isolated set, all glosses of the isolated set, clip-disjoint folds, classes with >= 4 clips   [classes 361, chance 0.28%, length-only 0.87%]
+  hands                              n 2301  top-1   8.9% (204)  top-5  18.9%  shuffled 0.28%
+  body_hands                         n 2301  top-1  10.5% (242)  top-5  19.9%  shuffled 0.29%
+  body                               n 2301  top-1   6.9% (159)  top-5  14.8%  shuffled 0.46%
+  face                               n 2301  top-1   2.6% (59)  top-5   5.5%  shuffled 0.28%
+  all                                n 2301  top-1   8.9% (205)  top-5  17.3%  shuffled 0.28%
+wrote /group/pmc099/pprasad/wave12/w12f/out/iso.json
+W12F_ISO_DONE
+=== measurement 2 ===
+
+45 glosses of the recorded run | hands | spans whose frame count differs between the two extractions: 0 | frames with constant hand depth: 0.00% | hand depth spread (median over spans): across the hand's keypoints 0.035, over time 0.034   [classes 45, chance 2.22%, length-only 7.42%]
+  x/y, production DWPose             n  337  top-1  18.1% (61)  top-5  34.7%  shuffled 2.43%
+  x/y, 3-D model                     n  337  top-1  16.3% (55)  top-5  35.6%  shuffled 2.55%
+  x/y/z, 3-D model                   n  337  top-1  11.3% (38)  top-5  31.5%  shuffled 2.55%
+  z only, 3-D model                  n  337  top-1   5.9% (20)  top-5  17.2%  shuffled 1.31%
+  harness: production x/y 61/337 (recorded 61/337)
+  z only: top-1 5.9%; label-permutation null (200 permutations) 95th percentile 3.9%; p = 0.0050
+  x/y/z against x/y (3-D model): 38/337 = 11.3% against 55/337 = 16.3% | difference -5.0% (95% interval over clips -8.9% to -1.5%) | only first 13, only second 30, exact McNemar p = 0.0137
+  validity: 3-D model x/y minus production x/y = -1.8% (comparable if within 6 points: True); constant hand depth in 0.00% of frames (valid if under 1%: True)
+  sensitivity (other 8-per-sign subsamples and folds; no reading is taken from these):
+  seed 1: x/y/z against x/y: 58/337 = 17.2% against 60/337 = 17.8% | difference -0.6% (95% interval over clips -3.9% to +2.9%) | only first 16, only second 18, exact McNemar p = 0.864
+    seed 1: z only top-1 6.8%
+  seed 7: x/y/z against x/y: 46/337 = 13.6% against 58/337 = 17.2% | difference -3.6% (95% interval over clips -6.8% to -0.3%) | only first 9, only second 21, exact McNemar p = 0.0428
+    seed 7: z only top-1 4.7%
+  seed 101: x/y/z against x/y: 54/330 = 16.4% against 60/330 = 18.2% | difference -1.8% (95% interval over clips -5.2% to +1.2%) | only first 12, only second 18, exact McNemar p = 0.362
+    seed 101: z only top-1 5.2%
+  seed 202: x/y/z against x/y: 49/337 = 14.5% against 63/337 = 18.7% | difference -4.2% (95% interval over clips -7.7% to -0.9%) | only first 12, only second 26, exact McNemar p = 0.0336
+    seed 202: z only top-1 3.9%
+READING (hands, 45 glosses): C2: depth carries sign identity but adds nothing measurable to x/y; closed
+
+45 glosses of the recorded run | body_hands | spans whose frame count differs between the two extractions: 0 | frames with constant hand depth: 0.00% | hand depth spread (median over spans): across the hand's keypoints 0.035, over time 0.034   [classes 45, chance 2.22%, length-only 7.42%]
+  x/y, production DWPose             n  337  top-1  18.7% (63)  top-5  38.6%  shuffled 2.61%
+  x/y, 3-D model                     n  337  top-1  17.2% (58)  top-5  37.4%  shuffled 2.26%
+  x/y/z, 3-D model                   n  337  top-1  13.1% (44)  top-5  30.3%  shuffled 2.49%
+  z only, 3-D model                  n  337  top-1   7.1% (24)  top-5  18.4%  shuffled 1.72%
+
+45 glosses of the recorded run | body | spans whose frame count differs between the two extractions: 0 | frames with constant hand depth: 0.00% | hand depth spread (median over spans): across the hand's keypoints 0.035, over time 0.034   [classes 45, chance 2.22%, length-only 7.42%]
+  x/y, production DWPose             n  337  top-1  15.4% (52)  top-5  28.2%  shuffled 2.14%
+  x/y, 3-D model                     n  337  top-1  11.0% (37)  top-5  27.9%  shuffled 2.08%
+  x/y/z, 3-D model                   n  337  top-1   7.4% (25)  top-5  22.3%  shuffled 2.31%
+  z only, 3-D model                  n  337  top-1   5.0% (17)  top-5  19.6%  shuffled 2.20%
+
+45 glosses of the recorded run | all | spans whose frame count differs between the two extractions: 0 | frames with constant hand depth: 0.00% | hand depth spread (median over spans): across the hand's keypoints 0.035, over time 0.034   [classes 45, chance 2.22%, length-only 7.42%]
+  x/y, production DWPose             n  337  top-1  18.1% (61)  top-5  35.6%  shuffled 2.02%
+  x/y, 3-D model                     n  337  top-1  15.4% (52)  top-5  36.8%  shuffled 2.14%
+  x/y/z, 3-D model                   n  337  top-1  10.1% (34)  top-5  28.8%  shuffled 2.02%
+  z only, 3-D model                  n  337  top-1   4.7% (16)  top-5  18.4%  shuffled 2.02%
+
+all 120 spotting glosses | hands | spans whose frame count differs between the two extractions: 0 | frames with constant hand depth: 0.00% | hand depth spread (median over spans): across the hand's keypoints 0.035, over time 0.033   [classes 120, chance 0.83%, length-only 1.82%]
+  x/y, production DWPose             n  880  top-1  11.0% (97)  top-5  25.2%  shuffled 1.10%
+  x/y, 3-D model                     n  880  top-1  10.8% (95)  top-5  24.5%  shuffled 1.04%
+  x/y/z, 3-D model                   n  880  top-1   8.4% (74)  top-5  21.7%  shuffled 0.68%
+  z only, 3-D model                  n  880  top-1   2.2% (19)  top-5   7.2%  shuffled 0.70%
+  z only: top-1 2.2%; label-permutation null (200 permutations) 95th percentile 1.4%; p = 0.0050
+  x/y/z against x/y (3-D model): 74/880 = 8.4% against 95/880 = 10.8% | difference -2.4% (95% interval over clips -4.3% to -0.5%) | only first 27, only second 48, exact McNemar p = 0.0203
+  validity: 3-D model x/y minus production x/y = -0.2% (comparable if within 6 points: True); constant hand depth in 0.00% of frames (valid if under 1%: True)
+
+all 120 spotting glosses | body_hands | spans whose frame count differs between the two extractions: 0 | frames with constant hand depth: 0.00% | hand depth spread (median over spans): across the hand's keypoints 0.035, over time 0.033   [classes 120, chance 0.83%, length-only 1.82%]
+  x/y, production DWPose             n  880  top-1  12.8% (113)  top-5  26.5%  shuffled 0.83%
+  x/y, 3-D model                     n  880  top-1  11.9% (105)  top-5  25.1%  shuffled 0.86%
+  x/y/z, 3-D model                   n  880  top-1   7.4% (65)  top-5  22.8%  shuffled 0.68%
+  z only, 3-D model                  n  880  top-1   1.6% (14)  top-5   8.5%  shuffled 0.77%
+
+all 120 spotting glosses | body | spans whose frame count differs between the two extractions: 0 | frames with constant hand depth: 0.00% | hand depth spread (median over spans): across the hand's keypoints 0.035, over time 0.033   [classes 120, chance 0.83%, length-only 1.82%]
+  x/y, production DWPose             n  880  top-1   8.9% (78)  top-5  23.6%  shuffled 0.74%
+  x/y, 3-D model                     n  880  top-1   7.3% (64)  top-5  19.5%  shuffled 0.88%
+  x/y/z, 3-D model                   n  880  top-1   5.1% (45)  top-5  14.1%  shuffled 0.61%
+  z only, 3-D model                  n  880  top-1   2.0% (18)  top-5   8.9%  shuffled 0.65%
+
+all 120 spotting glosses | all | spans whose frame count differs between the two extractions: 0 | frames with constant hand depth: 0.00% | hand depth spread (median over spans): across the hand's keypoints 0.035, over time 0.033   [classes 120, chance 0.83%, length-only 1.82%]
+  x/y, production DWPose             n  880  top-1  11.4% (100)  top-5  25.2%  shuffled 0.72%
+  x/y, 3-D model                     n  880  top-1  10.7% (94)  top-5  26.5%  shuffled 0.86%
+  x/y/z, 3-D model                   n  880  top-1   6.7% (59)  top-5  17.6%  shuffled 0.65%
+  z only, 3-D model                  n  880  top-1   1.8% (16)  top-5   7.4%  shuffled 0.61%
+wrote /group/pmc099/pprasad/wave12/w12f/out/depth.json
+W12F_DEPTH_DONE

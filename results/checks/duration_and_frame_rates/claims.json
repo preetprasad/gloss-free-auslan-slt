@@ -1,0 +1,175 @@
+{
+ "gid": "duration_stitch_replication",
+ "tagged": true,
+ "covered": [
+  "c15-017",
+  "c15-018"
+ ],
+ "not_covered": [
+  {
+   "id": "c15-014",
+   "code": "needs_kaya",
+   "reason": "Only the Auslan-Daily half (25 fps) is recomputed (printed on the c15-017/c15-018 lines). The MM-WLAuslan 30 fps is a property of the dictionary videos (rgb.zip on Drive/Kaya); they are not in this repository and the pose files carry no timestamps."
+  },
+  {
+   "id": "c15-015",
+   "code": "needs_kaya",
+   "reason": "The 1.2x is 30/25 and rests on the MM-WLAuslan frame rate, which cannot be measured here (dictionary videos are on Drive/Kaya, not local)."
+  },
+  {
+   "id": "c01-013",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c01-015",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c02-017",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c03-005",
+   "code": "no_saved_output",
+   "reason": "Replication over three seeds is a summary of job 1175508; no local output."
+  },
+  {
+   "id": "c07-036",
+   "code": "no_saved_output",
+   "reason": "The 6,880-clip count and seed 42 are in the job script/records only; the corpus and its manifest are on Kaya."
+  },
+  {
+   "id": "c07-037",
+   "code": "no_saved_output",
+   "reason": "Three paired seeds is a design fact recorded in job 1175508's script; no local output."
+  },
+  {
+   "id": "c09-003",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c09-004",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c09-016",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c09-038",
+   "code": "no_saved_output",
+   "reason": "Design statement (two corrections, one seed) of job 1175390."
+  },
+  {
+   "id": "c09-039",
+   "code": "no_saved_output",
+   "reason": "Count of synthetic rows (6,880) is a design fact of job 1175390; corpus on Kaya."
+  },
+  {
+   "id": "c09-040",
+   "code": "no_saved_output",
+   "reason": "Table-note convention (greedy validation, beam 5 test); no output to recompute."
+  },
+  {
+   "id": "c09-041",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c09-042",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c09-043",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c09-044",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c09-046",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c09-047",
+   "code": "no_saved_output",
+   "reason": "One run per point (seed 42) is the design of job 1175390; no local output."
+  },
+  {
+   "id": "c09-048",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c09-049",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c09-050",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c09-051",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c11-008",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c14-004",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c14-022",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c15-019",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says 79.4 mean frames per MM-WLAuslan clip, the shipped pose file gives 80.27 over 45,010 clips; the video-extracted frame counts of 8,581 of those recordings (stitching sidecar) equal the pose-file counts (78.66 vs 78.74), so no local source gives 79.4."
+  },
+  {
+   "id": "c15-020",
+   "code": "needs_kaya",
+   "reason": "Mean synthetic clip length without rate correction (246.1) comes from the corpus built in job 1175390 on Kaya; the corpus is not local."
+  },
+  {
+   "id": "c15-021",
+   "code": "needs_kaya",
+   "reason": "Frame-rate-corrected synthetic corpus of job 1175390 is on Kaya, not local."
+  },
+  {
+   "id": "c15-022",
+   "code": "needs_kaya",
+   "reason": "Duration-modelled synthetic corpus of job 1175390 is on Kaya, not local."
+  },
+  {
+   "id": "c17-061",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  },
+  {
+   "id": "c20-023",
+   "code": "needs_kaya",
+   "reason": "Per-run results of the duration-modelled stitching jobs (1175390 temporal arms, 1175508 three-seed replication, 1175598 VLP x stitch) are in Kaya job logs and run folders, not local; only a checkpoint of the seed-42 duration arm is local, which is not a saved score."
+  }
+ ]
+}

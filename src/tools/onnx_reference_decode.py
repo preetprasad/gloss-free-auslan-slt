@@ -152,7 +152,7 @@ def preprocess_cfg(manifest: dict) -> Config:
 def load_rgb(clip: str, rgb_dir: Path, cfg: Config) -> np.ndarray:
     """slt/rgb_fusion.py::RGBDataset._load_rgb (no face bank): FEATURES, capped at max_src_frames. Its one-zero-row
     fallback for a missing or invalid file is NOT mirrored: it raises instead (all 800 validation files exist, so
-    G2 is unaffected; a silent zero row is how fusion members once ran blind, CLAUDE.md 2026-09-10m)."""
+    G2 is unaffected; a silent zero row is how fusion members once ran blind, the project log 2026-09-10m)."""
     path = rgb_dir / f"rgb_{Path(clip).name.removesuffix('.npz')}.npz"
     with np.load(path) as z:
         f = np.asarray(z['FEATURES'], dtype=np.float32)

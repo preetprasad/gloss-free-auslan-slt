@@ -1,0 +1,800 @@
+{"id": 0, "hyp": "i am possum .", "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f", "self_ce": 0.05863247513771057, "self_rel": 2.4576967179775235}
+{"id": 1, "hyp": "no possum .", "ref": "sha1:fd1905cc929440961c474a6411deecef28be2c63", "self_ce": 0.5935229063034058, "self_rel": 2.716169774532318}
+{"id": 2, "hyp": "yeah let us watch .", "ref": "sha1:13c7f603acbc732858eb4999c9923a83e219ff6c", "self_ce": 0.5848124027252197, "self_rel": 1.6973544557889304}
+{"id": 3, "hyp": "i am possum .", "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f", "self_ce": 0.0638248085975647, "self_rel": 2.714139235019684}
+{"id": 4, "hyp": "i do not think i have got any left .", "ref": "sha1:0580869881cfa0555295bdd2be5956120250be5c", "self_ce": 0.6601478403264825, "self_rel": 0.9827741167762064}
+{"id": 5, "hyp": "what is this .", "ref": "sha1:c8e0066243d1df8c0adcbee85fbb13c094715bbd", "self_ce": 0.647765827178955, "self_rel": 1.724039435386658}
+{"id": 6, "hyp": "no not yet possum .", "ref": "sha1:f37bbed1da12db92ca2b633f91c9894edecaaf82", "self_ce": 0.7932198842366537, "self_rel": 2.003430942694346}
+{"id": 7, "hyp": "possum what is this .", "ref": "sha1:4f040325eb07886f258fdd64f1b1472e76ccbde2", "self_ce": 0.5519524812698364, "self_rel": 1.9260548551877341}
+{"id": 8, "hyp": "it is still a bit too hot day but it is still wet .", "ref": "sha1:5e4106cc75ddb5b94de7b7ff463c449b96571801", "self_ce": 0.8418495178222656, "self_rel": 1.6655276298522945}
+{"id": 9, "hyp": "thank you possum .", "ref": "sha1:5b4946bcb137b868f3891290e81760191cbf6997", "self_ce": 0.5315769195556641, "self_rel": 2.5110052585601803}
+{"id": 10, "hyp": "you have got so many things .", "ref": "sha1:39adb1b2b6e760a4d5dfef0318f2521fe0e23141", "self_ce": 0.8894992470741272, "self_rel": 1.2221948355436325}
+{"id": 11, "hyp": "you have learned so much about fractions .", "ref": "sha1:846b191ba41813119badc55a82fcee6e8cc4df39", "self_ce": 0.707460085550944, "self_rel": 1.4232011636098227}
+{"id": 12, "hyp": "great .", "ref": "sha1:bf6b468fe31e7e05b9dd99f9ad0bcec18d701023", "self_ce": 0.3758660554885864, "self_rel": 2.8091602722803755}
+{"id": 13, "hyp": "that is lovely .", "ref": "sha1:f6cb3b8152243f1c267c957f8124f8995991b935", "self_ce": 0.7045538902282715, "self_rel": 1.408748924732208}
+{"id": 14, "hyp": "can you help me please .", "ref": "sha1:646e6f8717782e83996f92e61f37feb648830885", "self_ce": 0.6457770892551967, "self_rel": 1.4224612372262135}
+{"id": 15, "hyp": "it is not the right tool for the job .", "ref": "sha1:e3099d82beaab3f1458212b4ee588066646df51c", "self_ce": 0.7279468016190962, "self_rel": 0.5228116837414829}
+{"id": 16, "hyp": "look .", "ref": "sha1:b468b75f1e513ad6652366022cb06f2871554220", "self_ce": 0.281550129254659, "self_rel": 3.6689254045486455}
+{"id": 17, "hyp": "i know .", "ref": "sha1:641a83c34d24e7bd7f5ca86b544c934b5171ae16", "self_ce": 0.3000488579273224, "self_rel": 2.3540858179330826}
+{"id": 18, "hyp": "yes .", "ref": "sha1:b12dae20332e41d1e21629a9eb74fb1df839bfa1", "self_ce": 0.4217876195907593, "self_rel": 2.399795154730479}
+{"id": 19, "hyp": "sally what is this .", "ref": "sha1:5294ec8ef8ae492153698430bf6c25a4d6e491d1", "self_ce": 1.0377008120218914, "self_rel": 1.7450831135114033}
+{"id": 20, "hyp": "look at all the way around the house .", "ref": "sha1:0b8209167716b376d8d70f7e088b6adbeea09903", "self_ce": 0.8810049057006836, "self_rel": 1.486160159111023}
+{"id": 21, "hyp": "look it is the butter .", "ref": "sha1:62e4fbdb630486d27681a778a99434d4e9cd5ff3", "self_ce": 0.8654900959559849, "self_rel": 2.057372093200684}
+{"id": 22, "hyp": "that looks lovely .", "ref": "sha1:1355ef1359c03bb3ec820d336218af0f52cf236b", "self_ce": 0.5816132545471191, "self_rel": 2.0909448862075806}
+{"id": 23, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.046352612120764594, "self_rel": 1.5723087069179331}
+{"id": 24, "hyp": "i wonder what he is up to .", "ref": "sha1:97c68113945876a02bcc5e999bccd0f19eb453f0", "self_ce": 0.6842472288343642, "self_rel": 0.8336871200137665}
+{"id": 25, "hyp": "i have had a thought possum .", "ref": "sha1:75df3c4192e1234d626b400a59a85dddd3a76cfd", "self_ce": 0.8449918627738953, "self_rel": 1.3853179067373276}
+{"id": 26, "hyp": "yeah let us watch .", "ref": "sha1:520ad1d794ae5848735e63f016a8a87b7b9a760c", "self_ce": 0.23105104764302573, "self_rel": 1.5782301525274913}
+{"id": 27, "hyp": "i want to learn more things too .", "ref": "sha1:7c3f25c2e679fc6ae0539adaa51d5144a4bf7aa3", "self_ce": 0.9744757546318902, "self_rel": 1.6498161819246078}
+{"id": 28, "hyp": "that is great .", "ref": "sha1:db3a7d49a24f1c0cbb5ececb2e492743d83c79c6", "self_ce": 0.7448724746704102, "self_rel": 0.7503086924552919}
+{"id": 29, "hyp": "why do not we go inside and make some lunch .", "ref": "sha1:1a31c00e09992e20fb15e4128c7e34d2b867c365", "self_ce": 0.4939786195755005, "self_rel": 1.1070880293846133}
+{"id": 30, "hyp": "yes that is right possum .", "ref": "sha1:e69c46e1ba4b9b50c19141e4668cae1ddcdd42c3", "self_ce": 0.45044054303850445, "self_rel": 1.3573405487196788}
+{"id": 31, "hyp": "that is lovely .", "ref": "sha1:4c2bedb3eb0ae14ef5fa61a59e8d72df05f06d14", "self_ce": 0.7286241531372071, "self_rel": 1.4479991197586057}
+{"id": 32, "hyp": "that is great .", "ref": "sha1:8b67b2afd9ca0d8a9d4860e8c5512070aae6d82c", "self_ce": 0.42800149917602537, "self_rel": 0.901546424627304}
+{"id": 33, "hyp": "it is too small .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.8594351609547933, "self_rel": 1.5083621740341182}
+{"id": 34, "hyp": "hello .", "ref": "sha1:07861778a061b79de7d9a38d1961e46ce8c623e9", "self_ce": 1.0032466252644856, "self_rel": 2.274379640817642}
+{"id": 35, "hyp": "thank you .", "ref": "sha1:d52a94c898bb5ae3afbeeec83823ad11c9bab200", "self_ce": 0.39141613245010376, "self_rel": 1.9433134347200394}
+{"id": 36, "hyp": "it is delicious .", "ref": "sha1:2c681c68fdd619f1c51af3ba24c5ed88d61c78b7", "self_ce": 0.8642059326171875, "self_rel": 1.0144352436065671}
+{"id": 37, "hyp": "yes please .", "ref": "sha1:01437fac3f0cbf14331065546d3cf802aa1e75a9", "self_ce": 0.6119810342788696, "self_rel": 1.8153976500034332}
+{"id": 38, "hyp": "hello everyone .", "ref": "sha1:c2228079921e8850860d42869edc11de78bf621f", "self_ce": 0.4417916238307953, "self_rel": 2.8739531338214874}
+{"id": 39, "hyp": "that is a great idea .", "ref": "sha1:1ab2cfb46bc47e3061badf1096b795282ef93cc6", "self_ce": 0.7038594654628209, "self_rel": 0.8237009048461915}
+{"id": 40, "hyp": "we are going to need some help .", "ref": "sha1:9619992743ddfc8a3f2255b7dac71c127c29757d", "self_ce": 0.8949046664767795, "self_rel": 1.0655626323488026}
+{"id": 41, "hyp": "it is a very special thing for us to do .", "ref": "sha1:6b4b9667b56eafa81ab1593d389a879c36cecfbc", "self_ce": 0.7144185702006022, "self_rel": 1.2842803994814553}
+{"id": 42, "hyp": "why do not we watch .", "ref": "sha1:e1caef162e07f7db7b06e53aa99ee4d9e9cd103a", "self_ce": 0.7032461847577777, "self_rel": 1.741688234465463}
+{"id": 43, "hyp": "now put the lid on .", "ref": "sha1:4ed91fdbf1e2ef29fb97fcc94b946b3808680c73", "self_ce": 0.7616514478410993, "self_rel": 2.0653074128287177}
+{"id": 44, "hyp": "what do you think is inside that .", "ref": "sha1:d5a85c390194a486c94f7a759db86b2df8f1b5ce", "self_ce": 0.6157666312323676, "self_rel": 1.317352056503296}
+{"id": 45, "hyp": "i do not know what i want to do .", "ref": "sha1:ef634fc23dc1127168dfa2f1591477f5ceb2f541", "self_ce": 0.5973702344027433, "self_rel": 1.0215792655944824}
+{"id": 46, "hyp": "you are funny .", "ref": "sha1:2b53139bb24b3e47866459434513e224c877dc3c", "self_ce": 1.0177103996276855, "self_rel": 0.970211386680603}
+{"id": 47, "hyp": "alright let us go .", "ref": "sha1:d56694c0402101a742a656471694fecb39c6d969", "self_ce": 0.5525542497634888, "self_rel": 1.4052247802416484}
+{"id": 48, "hyp": "it is such a beautiful day .", "ref": "sha1:74c445c9046755cac3c5b285607488a703274884", "self_ce": 0.7475408911705017, "self_rel": 1.001361921429634}
+{"id": 49, "hyp": "ok .", "ref": "sha1:e234ddee2fa8c02699127244046974902f68e154", "self_ce": 0.7064038117726644, "self_rel": 2.159962316354116}
+{"id": 50, "hyp": "hi everyone .", "ref": "sha1:9e2b228fcac8571fd05c43410f776212a50c05e6", "self_ce": 0.777145504951477, "self_rel": 2.7140669524669647}
+{"id": 51, "hyp": "sally i really enjoyed pushing you in the garden .", "ref": "sha1:1aaed643ff41a50e0fb2b0d2d5daeba76ee96157", "self_ce": 0.7233514785766602, "self_rel": 1.705936063419689}
+{"id": 52, "hyp": "what .", "ref": "sha1:83fcaa04a81781c42c39c74d031481358263ea4b", "self_ce": 0.7187856038411459, "self_rel": 2.947774787743886}
+{"id": 53, "hyp": "that is great .", "ref": "sha1:50a720edab9921dbf1920f672bc3d76ccbf9a9a8", "self_ce": 0.49844655990600584, "self_rel": 1.0895848631858822}
+{"id": 54, "hyp": "hello everyone .", "ref": "sha1:c5db88768664d2a35ee12a26cd3c463b541b11c4", "self_ce": 0.07611262798309326, "self_rel": 3.1305577754974365}
+{"id": 55, "hyp": "what a great idea .", "ref": "sha1:b5e3c69506a21d56d2cd5aec9656ea6c7d0ba116", "self_ce": 0.7254564762115479, "self_rel": 1.0134111245473225}
+{"id": 56, "hyp": "yes you are right possum .", "ref": "sha1:a5bc2a0cccee57fa1ce41f09e131ef6f58e86f71", "self_ce": 0.8354384558541434, "self_rel": 0.9836691617965698}
+{"id": 57, "hyp": "yeah let us watch .", "ref": "sha1:85718fe5395ede5919775f0cb6d1368f78da3bc1", "self_ce": 0.3104405403137207, "self_rel": 1.2761826738715172}
+{"id": 58, "hyp": "yes that is right .", "ref": "sha1:39259a91c764273e9f6b2642aafd24ae9f035bf5", "self_ce": 0.45397361119588214, "self_rel": 1.3299459119637809}
+{"id": 59, "hyp": "bye .", "ref": "sha1:77aa376d525e831a5d84edb6d4e6c3890c7ab8d2", "self_ce": 0.5699419975280762, "self_rel": 2.7040413419405622}
+{"id": 60, "hyp": "that is great .", "ref": "sha1:520ad1d794ae5848735e63f016a8a87b7b9a760c", "self_ce": 0.5893934726715088, "self_rel": 1.230064183473587}
+{"id": 61, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.07949244976043701, "self_rel": 1.6632316623415264}
+{"id": 62, "hyp": "yeah let us watch .", "ref": "sha1:a574271c0143fd7d239f44599d1fd5cade47858e", "self_ce": 0.16932551066080728, "self_rel": 1.8091823856035867}
+{"id": 63, "hyp": "yeah let us watch .", "ref": "sha1:272248731c51727dcc5d1a63dd30fdd1ab07b46b", "self_ce": 0.24506755669911703, "self_rel": 2.0905931393305464}
+{"id": 64, "hyp": "me .", "ref": "sha1:115e7e0eb74f8272dc63def16eb3982cad75b6b1", "self_ce": 0.992189089457194, "self_rel": 2.456692447264989}
+{"id": 65, "hyp": "no i can do that by myself .", "ref": "sha1:5e7227009f385eed48936faaad6ef0dbd21b0fb2", "self_ce": 0.7449595133463541, "self_rel": 1.1867645846472845}
+{"id": 66, "hyp": "bye .", "ref": "sha1:565ce7c5e862a52e67947c49ddf3e217ee36b461", "self_ce": 0.9632500012715658, "self_rel": 2.65118137995402}
+{"id": 67, "hyp": "hi possum .", "ref": "sha1:d331128e1fa8a8ccac592153b1205c11ee6b6346", "self_ce": 0.36074721813201904, "self_rel": 3.096846491098404}
+{"id": 68, "hyp": "that looks lovely .", "ref": "sha1:2742f529f1cd4de40f7676de12364a2260194635", "self_ce": 0.9202936172485352, "self_rel": 1.5497037649154664}
+{"id": 69, "hyp": "that is great .", "ref": "sha1:d8278c918dcf4d28f893072f2bfb5ea8005f6b2e", "self_ce": 0.8271516799926758, "self_rel": 0.3162933707237242}
+{"id": 70, "hyp": "when you are sitting at the top of your tree you can see where everything is .", "ref": "sha1:d33e40c5ef135a33343d7403ecfd1707c1bcc205", "self_ce": 0.7604232364230685, "self_rel": 1.389811078707377}
+{"id": 71, "hyp": "great .", "ref": "sha1:f05b3936ef819ca8c28402eac26d55685968dc01", "self_ce": 0.9332002003987631, "self_rel": 2.016867160797119}
+{"id": 72, "hyp": "what is it .", "ref": "sha1:6efa862b19c8760a4e942ad4a403f950d7aa438e", "self_ce": 0.6630739688873291, "self_rel": 1.2082735776901246}
+{"id": 73, "hyp": "what is next .", "ref": "sha1:178b75bb115ea4864f9607f2f0f73ac2fa17f908", "self_ce": 0.7305231094360352, "self_rel": 1.4372141122817994}
+{"id": 74, "hyp": "ok .", "ref": "sha1:676b2596c3a819129b426cb34af97ff790f573a1", "self_ce": 0.3767225742340088, "self_rel": 2.6361257235209146}
+{"id": 75, "hyp": "well our time is up .", "ref": "sha1:1d441b149b4b0529214e1991d977e7751edaf1d9", "self_ce": 0.07182845899036952, "self_rel": 1.954714051314763}
+{"id": 76, "hyp": "yes .", "ref": "sha1:203ccfdcd5e4bde8d4a05f80d5619f1583a01e45", "self_ce": 0.7551344235738119, "self_rel": 1.8522216926018396}
+{"id": 77, "hyp": "hi sally .", "ref": "sha1:985778992491cf2403eedbf2af6ccf33e009f908", "self_ce": 0.2715316414833069, "self_rel": 2.5099949836730957}
+{"id": 78, "hyp": "i will show you .", "ref": "sha1:0f77e5bc1129a35147bd119ae440da4e165e781b", "self_ce": 0.8717801570892334, "self_rel": 0.9802526235580442}
+{"id": 79, "hyp": "yes .", "ref": "sha1:7b358c946962c7609bff82fd4f996ae16fa48c19", "self_ce": 0.4541662534077962, "self_rel": 2.104242444038391}
+{"id": 80, "hyp": "come on sally .", "ref": "sha1:bf527372464f74ed2dedc0cc862cf032cfb525ca", "self_ce": 0.47371816635131836, "self_rel": 3.106520986557007}
+{"id": 81, "hyp": "thank you .", "ref": "sha1:f0cb9266628ee92e0d0355abf0ba430e3dbd673c", "self_ce": 0.47897055745124817, "self_rel": 2.148484170436859}
+{"id": 82, "hyp": "yes .", "ref": "sha1:15ee673f8eef6ac98393c4a77c6b4bf2ca99f39c", "self_ce": 0.48506633440653485, "self_rel": 2.4408733248710632}
+{"id": 83, "hyp": "thank you skip .", "ref": "sha1:11d4b7e5b5216a26b1d1e3bd946208fe7d8ac641", "self_ce": 0.7740983486175537, "self_rel": 1.6623249292373654}
+{"id": 84, "hyp": "great .", "ref": "sha1:6eeac7aca997bdf349c6adf1c4431312e8706504", "self_ce": 1.0060725212097168, "self_rel": 2.3161575396855674}
+{"id": 85, "hyp": "ok .", "ref": "sha1:bd076cb0d53166b47da7a7b03276631332c086f3", "self_ce": 0.9394914309183756, "self_rel": 2.299295743306478}
+{"id": 86, "hyp": "look sally .", "ref": "sha1:c37aae0fe450870cc307683f6eba5d8a1712126d", "self_ce": 0.5718106031417847, "self_rel": 3.443596601486206}
+{"id": 87, "hyp": "that is great .", "ref": "sha1:444a24267ee4cda1f9d17fda9a182921044b9af0", "self_ce": 0.6918767929077149, "self_rel": 1.25703187584877}
+{"id": 88, "hyp": "yes .", "ref": "sha1:10c31327868c72c20455998b08ecb36a3126e4b5", "self_ce": 0.5111424128214518, "self_rel": 2.7300451000531516}
+{"id": 89, "hyp": "do you remember .", "ref": "sha1:45605e99f0b7479975aa7f1b1218e2cc7b0ff418", "self_ce": 1.0916557312011719, "self_rel": 1.724305510520935}
+{"id": 90, "hyp": "you are right sally .", "ref": "sha1:e74a0b9e9168bceb40ba3a229c024353edc36a64", "self_ce": 0.8467995325724283, "self_rel": 0.9048820137977599}
+{"id": 91, "hyp": "it is a very big day .", "ref": "sha1:538cdacae4f8b3f81b8f2d712ddb35bac590c0d1", "self_ce": 0.6921485662460327, "self_rel": 1.6582509875297546}
+{"id": 92, "hyp": "i know he would love to help .", "ref": "sha1:bec2beaae92403b32437abfdba4e158bfb3e077c", "self_ce": 0.6864565743340386, "self_rel": 1.5556741952896118}
+{"id": 93, "hyp": "yes you are right possum .", "ref": "sha1:5c03cc196249add925559707b0251b793cc297e4", "self_ce": 0.8225969587053571, "self_rel": 1.1179545606885637}
+{"id": 94, "hyp": "let us go .", "ref": "sha1:8fa28b82073e3c4b04da27b1c849c583245bd214", "self_ce": 0.38120241165161134, "self_rel": 1.5992452919483184}
+{"id": 95, "hyp": "now we just need to add the milk .", "ref": "sha1:6742630e1c7db72713313712fc28f9187a6dda9e", "self_ce": 0.7243658065795898, "self_rel": 1.0072160243988035}
+{"id": 96, "hyp": "that is right .", "ref": "sha1:a601538aa80d23eb14a1eb884ee3cada7af7eddd", "self_ce": 1.0006955146789551, "self_rel": 1.0165783166885374}
+{"id": 97, "hyp": "that is right possum .", "ref": "sha1:33f110e4c40fe5626808bb084a3a4cadf3d299e8", "self_ce": 0.850862979888916, "self_rel": 0.6513761579990385}
+{"id": 98, "hyp": "that is great .", "ref": "sha1:f25a164182a199e87a02963f869f12a485c17946", "self_ce": 0.5686218738555908, "self_rel": 1.0075368642807006}
+{"id": 99, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.09571564197540283, "self_rel": 1.5308536120823453}
+{"id": 100, "hyp": "ok .", "ref": "sha1:bd59b2ed098fdf58b8995ce37e2586eb5c317ead", "self_ce": 0.7381210327148438, "self_rel": 1.7147660056749978}
+{"id": 101, "hyp": "what is that .", "ref": "sha1:cef9405048a1eed5e2d70d1846f2ef159fe905fb", "self_ce": 0.6620598793029785, "self_rel": 1.5188572168350216}
+{"id": 102, "hyp": "right .", "ref": "sha1:44afa6c90bc2b7860c64d1e6c4b7bcae7437dc26", "self_ce": 0.3634532690048218, "self_rel": 2.1829094886779785}
+{"id": 103, "hyp": "i know .", "ref": "sha1:8f79d5fa5cf06416008c863890e3e985dd1fb5f9", "self_ce": 0.6085758209228516, "self_rel": 1.3240357115864754}
+{"id": 104, "hyp": "that is great .", "ref": "sha1:9759272241498eb0366c3653d820a7979f7a1ce4", "self_ce": 0.40198192596435545, "self_rel": 0.8563038408756257}
+{"id": 105, "hyp": "yes .", "ref": "sha1:89ede291567dba7ed9c99557f4ff801cb95e32c5", "self_ce": 0.6740225950876871, "self_rel": 2.7590824365615845}
+{"id": 106, "hyp": "that is great .", "ref": "sha1:e59b92a35be799f8f6a831f8ae853a5c28b9ec72", "self_ce": 0.309719443321228, "self_rel": 1.6108336687088012}
+{"id": 107, "hyp": "sally i want to learn more about time .", "ref": "sha1:16b8b1094adcac519f6d599ca5e278175307fcc3", "self_ce": 0.6347249984741211, "self_rel": 1.913764476776123}
+{"id": 108, "hyp": "that was great .", "ref": "sha1:c480a93b4546848d1363d15a1b99b770171bb1e1", "self_ce": 0.44788875579833987, "self_rel": 1.5925862669944766}
+{"id": 109, "hyp": "hello .", "ref": "sha1:9a441098dfdc82bbe9226ed415acab4c07bb2ea3", "self_ce": 0.3752410411834717, "self_rel": 3.4496327638626094}
+{"id": 110, "hyp": "i want to learn more about trains .", "ref": "sha1:d406cd89e233dccb4bb64b3985f8d0a57fffbe83", "self_ce": 0.6504982312520345, "self_rel": 1.80170120133294}
+{"id": 111, "hyp": "good morning possum .", "ref": "sha1:cda37f2ea589fe833fe92d5176af5237d8a85185", "self_ce": 0.8281044006347656, "self_rel": 1.5184602975845336}
+{"id": 112, "hyp": "it is such a beautiful day .", "ref": "sha1:0d62dce2bb9a6c748fba53a293eb229812c6fe69", "self_ce": 0.574300229549408, "self_rel": 1.2028398662805557}
+{"id": 113, "hyp": "it is a very special thing for us to do .", "ref": "sha1:d73d6196d4c0e69f8509a2a090f094d86387b2d7", "self_ce": 0.7901648680369059, "self_rel": 1.2013816237449646}
+{"id": 114, "hyp": "no i am not going to the shops .", "ref": "sha1:9aba900de128a786f030cf956b83aab15326e347", "self_ce": 0.718681526184082, "self_rel": 1.0739522218704225}
+{"id": 115, "hyp": "it is not stretchy or bendy .", "ref": "sha1:4d08688a5ac2e3c513f3c0df323da17e67ffc9af", "self_ce": 0.8223237991333008, "self_rel": 1.0559554398059845}
+{"id": 116, "hyp": "that was fantastic .", "ref": "sha1:b36d789a3966fd5c8132fd295e15cd1243b68691", "self_ce": 0.912529182434082, "self_rel": 0.8940974473953245}
+{"id": 117, "hyp": "can you please put them in the bowl please .", "ref": "sha1:2c147a41a66d9640eeb29a9e2a6ba3a29ca533aa", "self_ce": 0.512794321233576, "self_rel": 1.3182522058486938}
+{"id": 118, "hyp": "that is great .", "ref": "sha1:2484c60d65a23d36047f2c12b4efb4717d4d25a6", "self_ce": 0.3460227966308594, "self_rel": 1.4477705627679827}
+{"id": 119, "hyp": "yes that is right .", "ref": "sha1:9138e03ee5a43dd8d799957fdc4527e47d1b5d17", "self_ce": 0.6375863552093506, "self_rel": 1.3070747156937916}
+{"id": 120, "hyp": "we can make a whole pie .", "ref": "sha1:c6a85ef418c393387700bd67ba54ba73f14f89d2", "self_ce": 0.9992642402648926, "self_rel": 1.459446758031845}
+{"id": 121, "hyp": "now we just need a piece of paper .", "ref": "sha1:fd48cc7f76037b70545fba1ff50cdecd488f8fdc", "self_ce": 0.723505973815918, "self_rel": 1.2872616171836855}
+{"id": 122, "hyp": "that is right possum .", "ref": "sha1:56a6622ecadf3067e408cb92a1041f47a6856e11", "self_ce": 0.9081507523854574, "self_rel": 1.005670209725698}
+{"id": 123, "hyp": "why do not we watch some children going to school .", "ref": "sha1:b7eb49b9c67cd7ec529e125cc6cc005a3d36d8e3", "self_ce": 0.6424651940663656, "self_rel": 1.018168330192566}
+{"id": 124, "hyp": "do not worry possum i have got a problem with it .", "ref": "sha1:df5864df0d3dc54c3761edc7c7b52a97a07f5a4d", "self_ce": 0.8928766984205979, "self_rel": 1.1586747536292443}
+{"id": 125, "hyp": "sally look .", "ref": "sha1:15bb4425bd89af1908aa12227adf077e8e099db1", "self_ce": 0.5094045400619507, "self_rel": 3.0002109706401825}
+{"id": 126, "hyp": "what is this .", "ref": "sha1:af0eaf37c57886407f1960b4d1e8759308087de3", "self_ce": 0.8651581764221191, "self_rel": 1.2870185256004332}
+{"id": 127, "hyp": "what is the matter possum .", "ref": "sha1:2c324448967f92fc01da75757ec4731e75a86e4b", "self_ce": 0.6123755318777901, "self_rel": 1.0978330203465054}
+{"id": 128, "hyp": "hello possum .", "ref": "sha1:5c03cc196249add925559707b0251b793cc297e4", "self_ce": 0.8933575749397278, "self_rel": 2.042374461889267}
+{"id": 129, "hyp": "look at the big box .", "ref": "sha1:205db68443f9e16b911b6127e952551e97805566", "self_ce": 0.8379313605172294, "self_rel": 1.51098792893546}
+{"id": 130, "hyp": "i am sally .", "ref": "sha1:3967146e05036825a653344613261a93917eda90", "self_ce": 0.07171370387077332, "self_rel": 2.7623006403446198}
+{"id": 131, "hyp": "thanks for watching .", "ref": "sha1:e1966880a33d738f87d0145baa3ec9c1772649a3", "self_ce": 0.4461965560913086, "self_rel": 1.7633898973464963}
+{"id": 132, "hyp": "yeah let us watch .", "ref": "sha1:ef12520abde84b685f71ff7adc73b87c55b6fd52", "self_ce": 0.6474556922912598, "self_rel": 1.924554606278737}
+{"id": 133, "hyp": "that is great .", "ref": "sha1:1aa6cc3dfbfa5df7d50e27a90e0dcc52c8faef4a", "self_ce": 0.34267923831939695, "self_rel": 1.1029416024684906}
+{"id": 134, "hyp": "can you get the recipe out of the drawer please .", "ref": "sha1:b250355d6d3be5463a4e53f2e11c530568c8f995", "self_ce": 0.7146999835968018, "self_rel": 0.9608234167099001}
+{"id": 135, "hyp": "now we need to add the milk .", "ref": "sha1:18c515230de535efe7fc4b0bb73c3e0d51c35dd9", "self_ce": 0.7533952924940321, "self_rel": 1.352325373225742}
+{"id": 136, "hyp": "yeah let us watch .", "ref": "sha1:7b698ce83b56506921894fc79a37f08538f7e355", "self_ce": 0.6829531987508138, "self_rel": 0.8560684323310853}
+{"id": 137, "hyp": "why do not we go outside and drink them .", "ref": "sha1:6184ea1983addeabc522ecae617d80e8b80716ad", "self_ce": 0.6635266650806774, "self_rel": 1.2048264633525498}
+{"id": 138, "hyp": "now we need to make the kite and put the wool on them .", "ref": "sha1:53b2976eec1dee58c411a75669384cc09ada840f", "self_ce": 0.9575008392333985, "self_rel": 1.6174869378407797}
+{"id": 139, "hyp": "yes that is right .", "ref": "sha1:ad337158676fddaaef1e5c4cf81f430a4e065e88", "self_ce": 0.9056287606557211, "self_rel": 0.6349801421165465}
+{"id": 140, "hyp": "that is right possum .", "ref": "sha1:e2e5180133232c5ac58786cbebb5d3177634c156", "self_ce": 0.5633514722188314, "self_rel": 1.5719881653785706}
+{"id": 141, "hyp": "that looks lovely .", "ref": "sha1:15029d275ad5ccff6a393dcccef5fafd93b77a46", "self_ce": 0.7579858303070068, "self_rel": 2.0155101299285887}
+{"id": 142, "hyp": "sally look .", "ref": "sha1:45cdbd7ec589f746504f7bfb1f08ec5e28d69890", "self_ce": 0.8291735053062439, "self_rel": 2.692343980073929}
+{"id": 143, "hyp": "let us go inside .", "ref": "sha1:cb9d698038f7b97394ebe573b71e3ecb51d1dba9", "self_ce": 0.6895847320556641, "self_rel": 1.3696561853090925}
+{"id": 144, "hyp": "look .", "ref": "sha1:d276fdf2e07b1f013d7d876d227a95e37854d9b1", "self_ce": 0.7467246850331625, "self_rel": 2.478410204251607}
+{"id": 145, "hyp": "i will show you how to do it .", "ref": "sha1:7cac3f7d5afa82927fc363139531106752c0e6c2", "self_ce": 0.8941987991333008, "self_rel": 0.6123907685279847}
+{"id": 146, "hyp": "yeah and did you see all the different shapes .", "ref": "sha1:c8bbef86fdd3928d2da39e713f53fb360740a012", "self_ce": 0.9785959070379083, "self_rel": 1.3734021186828613}
+{"id": 147, "hyp": "great .", "ref": "sha1:e244945ec039d23b12480bdffd4deb8097c4780e", "self_ce": 0.566108783086141, "self_rel": 2.5312994519869485}
+{"id": 148, "hyp": "well the wheelbarrow is not here .", "ref": "sha1:652cfa805b3a779f77e028eb921ef0c150e79110", "self_ce": 0.713773250579834, "self_rel": 1.3087335377931595}
+{"id": 149, "hyp": "that is right .", "ref": "sha1:50d5255a5a0a2fc743575ac72172af7356df15c0", "self_ce": 0.6112071990966796, "self_rel": 0.9720419645309448}
+{"id": 150, "hyp": "that is great .", "ref": "sha1:a61ce0064cb6c3d97e2755b83a8f2a145e034a35", "self_ce": 0.353790807723999, "self_rel": 1.534195899963379}
+{"id": 151, "hyp": "thank you so much skip .", "ref": "sha1:aee32365af2f1c37db71ceb27827e2a4e49fe79c", "self_ce": 0.8859009742736816, "self_rel": 1.212082837309156}
+{"id": 152, "hyp": "sally can you help me .", "ref": "sha1:24fca701d86c71869fbf5d5fb4eda0896ae248e8", "self_ce": 0.5702410425458636, "self_rel": 1.840486628668649}
+{"id": 153, "hyp": "look sally .", "ref": "sha1:1073d2debfba03eae27d1afde95d363adce17979", "self_ce": 0.9976598024368286, "self_rel": 2.5645450204610825}
+{"id": 154, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.044317420039858134, "self_rel": 1.7672558469431738}
+{"id": 155, "hyp": "would you like to come with me .", "ref": "sha1:73ee5c8419acce638e634caf4efd489642e32c92", "self_ce": 0.698261578877767, "self_rel": 1.008995453516642}
+{"id": 156, "hyp": "hello .", "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "self_ce": 0.061245193084081016, "self_rel": 4.005937268336615}
+{"id": 157, "hyp": "come on .", "ref": "sha1:b857c4199b84a5d1b9bfdf0cc57428de8378129f", "self_ce": 0.6233440637588501, "self_rel": 2.338031828403473}
+{"id": 158, "hyp": "that is right possum .", "ref": "sha1:6cc06616100fbacbab409315f2ce21b4e9542165", "self_ce": 0.568671464920044, "self_rel": 1.2185506125291192}
+{"id": 159, "hyp": "that is lovely .", "ref": "sha1:1b1363068a1dcf33afd0fb95e9384c3a353dc25c", "self_ce": 0.7059447288513183, "self_rel": 1.4999022245407108}
+{"id": 160, "hyp": "no .", "ref": "sha1:631b03a68cf51fcb3e632d3f488152f345ecdfbe", "self_ce": 0.39566659927368164, "self_rel": 2.9680202802022295}
+{"id": 161, "hyp": "right .", "ref": "sha1:89159343da237f64a1aa2802fbd217585b618e2c", "self_ce": 0.282485564549764, "self_rel": 2.26074488957723}
+{"id": 162, "hyp": "i know .", "ref": "sha1:c1f5182f92d052518b8531a84147489fbd72d227", "self_ce": 0.8704785704612732, "self_rel": 1.1309276223182678}
+{"id": 163, "hyp": "great .", "ref": "sha1:c1f5182f92d052518b8531a84147489fbd72d227", "self_ce": 0.3679484923680623, "self_rel": 2.7993816932042437}
+{"id": 164, "hyp": "yes that is right .", "ref": "sha1:e09325b24201dd2978c777e9328ba349d306bed2", "self_ce": 0.5232439835866293, "self_rel": 1.3603536883989968}
+{"id": 165, "hyp": "four .", "ref": "sha1:68e89ad1a8e77262b23537eac5c6a22d6efab7e7", "self_ce": 0.9442752202351888, "self_rel": 2.6320792833964033}
+{"id": 166, "hyp": "sally can i eat one .", "ref": "sha1:13a244b06c21e5db1f1723a7db8592b6ba28bcc0", "self_ce": 0.7801764351981026, "self_rel": 2.3627565758568903}
+{"id": 167, "hyp": "yes .", "ref": "sha1:5b454f3e6fd0f9a775ff03e8df74c20ec6edc22e", "self_ce": 0.8270138104756674, "self_rel": 2.101912995179494}
+{"id": 168, "hyp": "let us go .", "ref": "sha1:3462254f59fbc9680f520b1a5411ae81a8506be7", "self_ce": 0.7230625152587891, "self_rel": 1.179957056045532}
+{"id": 169, "hyp": "that is great .", "ref": "sha1:d9b771df67fc0adcec297393beb3c19d5a9c17f3", "self_ce": 0.8705163955688476, "self_rel": 1.04672349691391}
+{"id": 170, "hyp": "they are all different shapes are not they .", "ref": "sha1:51ab4bbc0ebbd39017115fe21d7238a1fd46a241", "self_ce": 0.7170446872711181, "self_rel": 1.3848932027816776}
+{"id": 171, "hyp": "look .", "ref": "sha1:63996664077d9f37a811298f6ab2dd0b05783940", "self_ce": 1.0207152366638184, "self_rel": 1.9804359277089434}
+{"id": 172, "hyp": "thanks for watching .", "ref": "sha1:5cc11a03e5b2539774c440e19c2bddab269ec671", "self_ce": 0.6256177425384521, "self_rel": 1.8833986520767212}
+{"id": 173, "hyp": "yes .", "ref": "sha1:952ee773387347183323896e3bec2ce16c63c64e", "self_ce": 0.7284010251363119, "self_rel": 2.106796979904175}
+{"id": 174, "hyp": "sally i think it is time for us to go now .", "ref": "sha1:89de78f45c6d212db7f75f1376aceab38e654c7f", "self_ce": 0.7201542487511268, "self_rel": 1.21541061768165}
+{"id": 175, "hyp": "i do not know why .", "ref": "sha1:152022bd686e72c1fa9faa0e9b7cd9cb9beb979c", "self_ce": 0.8303902489798409, "self_rel": 1.023415412221636}
+{"id": 176, "hyp": "see you next time .", "ref": "sha1:013723da0f86ebfa931e2287657406cd71a33271", "self_ce": 0.5754019021987915, "self_rel": 1.0038447082042692}
+{"id": 177, "hyp": "bye .", "ref": "sha1:b918fe1646fd0d07a1da7733be7e28e10fe9f326", "self_ce": 0.9176670710245768, "self_rel": 2.860553046067556}
+{"id": 178, "hyp": "possum what are you doing .", "ref": "sha1:f09ae8a930ef2c6d24289f7ff879de0a5b35661a", "self_ce": 0.5703669616154262, "self_rel": 1.9468371868133545}
+{"id": 179, "hyp": "hi possum .", "ref": "sha1:6e5516caf152e83f6da960a3dda1095bd2206009", "self_ce": 0.30780500173568726, "self_rel": 3.019117459654808}
+{"id": 180, "hyp": "that is great .", "ref": "sha1:0561d156277eb449639263d0ba638d036566058f", "self_ce": 0.5456160068511963, "self_rel": 1.6709081172943114}
+{"id": 181, "hyp": "look .", "ref": "sha1:ce7bf20ef68b66458a737a3f9197d95c5d08f78b", "self_ce": 0.47982776165008545, "self_rel": 2.740825593471527}
+{"id": 182, "hyp": "that is right possum that is what a great idea to do .", "ref": "sha1:babb08bec5a565b758f5718a30026fec29e21d73", "self_ce": 0.8708025387355259, "self_rel": 1.6925087485994612}
+{"id": 183, "hyp": "that looks lovely .", "ref": "sha1:65c1b64d3aa6b71bd6250dc2a2bc39c2968fd7d8", "self_ce": 0.7244855403900147, "self_rel": 1.8353353261947634}
+{"id": 184, "hyp": "it is a very special thing for us to do .", "ref": "sha1:546c0db32a948f1373ba7650bb60a843cdd8aaec", "self_ce": 0.6467684904734293, "self_rel": 0.9645407299200693}
+{"id": 185, "hyp": "look .", "ref": "sha1:041e8e0d0c542800906aef1c56e749e9fe24d54e", "self_ce": 1.1389783223470051, "self_rel": 2.16750830411911}
+{"id": 186, "hyp": "that is a great idea possum .", "ref": "sha1:a46de8d4904e466035e797a66dd67bc8feef8546", "self_ce": 0.8751181364059448, "self_rel": 1.0506371706724167}
+{"id": 187, "hyp": "i am so sorry .", "ref": "sha1:e1378a3b7ee52d844f8d332dda49f6215841eac5", "self_ce": 0.9576293627421061, "self_rel": 1.1226635972658792}
+{"id": 188, "hyp": "possum what are you doing .", "ref": "sha1:5e5912f26882fef19afc3e89a41ea5f203827209", "self_ce": 0.5045554978506905, "self_rel": 1.184249060494559}
+{"id": 189, "hyp": "that is a great idea .", "ref": "sha1:450d43acc93734bdf4725b78a0b74867230fb440", "self_ce": 0.8503238814217704, "self_rel": 0.6830404485974995}
+{"id": 190, "hyp": "i need to go to the shop now .", "ref": "sha1:5066bc1f64cb8be79218e66435f5a0cf5068f56c", "self_ce": 0.7425868034362793, "self_rel": 1.1210035204887392}
+{"id": 191, "hyp": "that looks great .", "ref": "sha1:16d56b6dc9c10879307fc1e8949963a2b17286cb", "self_ce": 0.7556241035461426, "self_rel": 0.7569558024406433}
+{"id": 192, "hyp": "yes that is right .", "ref": "sha1:3ef41c3020c41c00494f08b11864f23bbbca3e16", "self_ce": 0.5141619841257731, "self_rel": 1.8077426155408225}
+{"id": 193, "hyp": "what a great idea .", "ref": "sha1:596bec87fcbf4b873acf861d18daba252ad3d038", "self_ce": 0.6796175638834635, "self_rel": 1.162521868944168}
+{"id": 194, "hyp": "what is next .", "ref": "sha1:b0f9fa27b7b1d79694155577bdf586e4248a8366", "self_ce": 0.8269588470458984, "self_rel": 1.316144680976868}
+{"id": 195, "hyp": "that is right possum it is me .", "ref": "sha1:63f7e90d0faba30b6319287aed52692fecd3e780", "self_ce": 0.8042987187703451, "self_rel": 1.186993810865614}
+{"id": 196, "hyp": "you are funny possum .", "ref": "sha1:febd54fd5f1d4278f4689e92e941dbf02e9b1b8d", "self_ce": 0.827766497929891, "self_rel": 1.5790987610816951}
+{"id": 197, "hyp": "it is a very special thing for us to do .", "ref": "sha1:947a9734dd422debef79ac63abcd11008e236e8a", "self_ce": 0.6290284395217896, "self_rel": 1.2332895199457803}
+{"id": 198, "hyp": "i will show you .", "ref": "sha1:f7427e39e4e0563d65b018cd7c99c464f59fb808", "self_ce": 0.6630423466364542, "self_rel": 1.1554443637530007}
+{"id": 199, "hyp": "look it is amanda .", "ref": "sha1:fc534a2b2d1d6c988a632098438da00962a976a9", "self_ce": 0.7601268291473389, "self_rel": 1.5464735825856524}
+{"id": 200, "hyp": "look at all the trees possum .", "ref": "sha1:562ff6f93a9b24cc45d02b1beba7794cb345a16d", "self_ce": 0.67899489402771, "self_rel": 1.3981824219226837}
+{"id": 201, "hyp": "that is great .", "ref": "sha1:255c5e4252fb8ae98d2b7e387f2d5176de38da3a", "self_ce": 0.6882511138916015, "self_rel": 0.9760457873344422}
+{"id": 202, "hyp": "that is right possum .", "ref": "sha1:2b7e9e1081ce1f3dad2e725120323407575c54eb", "self_ce": 0.7418134212493896, "self_rel": 0.9621924956639607}
+{"id": 203, "hyp": "that is great .", "ref": "sha1:fab66a8cf40a67cc6851b4641187af2f84750294", "self_ce": 0.6562468528747558, "self_rel": 0.6087578773498534}
+{"id": 204, "hyp": "hi sally .", "ref": "sha1:787ab2bef428d20e79a1d2c264c01b31b3914b48", "self_ce": 0.41466236114501953, "self_rel": 3.3726163804531097}
+{"id": 205, "hyp": "thank you .", "ref": "sha1:0a66ec0063b683ad72a2bf82c201746023711c1c", "self_ce": 0.9098861217498779, "self_rel": 1.407040849328041}
+{"id": 206, "hyp": "can you please get the recipe possum .", "ref": "sha1:a5e54943fe031e90c7a5ea6245187628a5733f74", "self_ce": 0.6200362311469184, "self_rel": 1.7929000059763593}
+{"id": 207, "hyp": "that is right it is very big .", "ref": "sha1:3cc39ef4562fa6ed22b10291fc745834f6f0da62", "self_ce": 0.96988402472602, "self_rel": 0.9276481601927015}
+{"id": 208, "hyp": "that is great .", "ref": "sha1:a41a5d55b98b0cc8ad55cc74765497fa475dcd8b", "self_ce": 0.34105634689331055, "self_rel": 1.0207690954208373}
+{"id": 209, "hyp": "look at all the different colors you have made .", "ref": "sha1:05b46410669fc667f9439f3c711566871a732890", "self_ce": 0.7600173950195312, "self_rel": 1.026402018286965}
+{"id": 210, "hyp": "i really enjoyed myself .", "ref": "sha1:e27b7dea458ff0af52956b9b9479c3c7ee16af0b", "self_ce": 0.894526481628418, "self_rel": 1.9171795248985286}
+{"id": 211, "hyp": "what a great idea .", "ref": "sha1:79ca340d240616dc4b3ac3b7dd81610a31b9b79f", "self_ce": 0.6917069753011068, "self_rel": 1.3926917513211565}
+{"id": 212, "hyp": "i know .", "ref": "sha1:b520c37918e5a423572306eeedfa397b45597752", "self_ce": 0.7058889865875244, "self_rel": 2.311911165714264}
+{"id": 213, "hyp": "now what is next .", "ref": "sha1:26224530c247598ed75b48413d44bc2a0ca7d4d7", "self_ce": 1.042690912882487, "self_rel": 1.1075720191001894}
+{"id": 214, "hyp": "look .", "ref": "sha1:53b959bcba7f2d7896944539329936386497b21e", "self_ce": 0.8714960416158041, "self_rel": 3.2330764134724936}
+{"id": 215, "hyp": "yes .", "ref": "sha1:a10d401b8d9d77af1d612a0e893c9dfc4b14949b", "self_ce": 0.7928977012634277, "self_rel": 2.0183637738227844}
+{"id": 216, "hyp": "i am going to go inside and make some lunch .", "ref": "sha1:84d40819b181e73795a42a13369fbf13b96ce956", "self_ce": 0.5656063159306844, "self_rel": 1.6156016985575357}
+{"id": 217, "hyp": "yeah let us watch .", "ref": "sha1:ff1bf56ea08ce9011efc24e9a3a158cd42613f99", "self_ce": 0.30883336067199707, "self_rel": 2.2703431049982705}
+{"id": 218, "hyp": "that looks great .", "ref": "sha1:c250e7168fd3a4eca1d805edb9699b046d8648aa", "self_ce": 0.4915428161621094, "self_rel": 1.3106125950813292}
+{"id": 219, "hyp": "what is it .", "ref": "sha1:40be8d20522a410985a6b27a6d9457ea145d63bc", "self_ce": 0.9743964195251464, "self_rel": 0.7844943523406984}
+{"id": 220, "hyp": "it is a bit different though is not it .", "ref": "sha1:d30085b8e3d7eb3a931bb992f338ea0a5bc8f5e9", "self_ce": 0.6068350185047496, "self_rel": 0.7147151990370316}
+{"id": 221, "hyp": "skip can i show you .", "ref": "sha1:4b3c81fa884cecd20813d4d962ba8523ba7c0ffc", "self_ce": 0.8132893698556083, "self_rel": 1.2774361712591988}
+{"id": 222, "hyp": "yeah let us watch .", "ref": "sha1:db8699f05fe2ec3272d17918afe1a1abd537f700", "self_ce": 0.6167337894439697, "self_rel": 1.131978839635849}
+{"id": 223, "hyp": "it is a bit different .", "ref": "sha1:3e475d66c8de16405f5f36d0ca1ea8a1e59d08bb", "self_ce": 1.006067889077323, "self_rel": 0.9842664173671174}
+{"id": 224, "hyp": "what is it .", "ref": "sha1:667b4b6866088c7e4706d932d43a62d7a0a67f95", "self_ce": 0.7216213703155517, "self_rel": 1.216199791431427}
+{"id": 225, "hyp": "hang on .", "ref": "sha1:41fc2e88cb408b755dfa0fe867f31b73bc20739b", "self_ce": 0.7824174761772156, "self_rel": 2.0578208714723587}
+{"id": 226, "hyp": "yeah that is great .", "ref": "sha1:bd76b50b9f826ed465067711f328dcc63bdb1ffa", "self_ce": 0.5266719659169515, "self_rel": 1.223051885763804}
+{"id": 227, "hyp": "skip what is this .", "ref": "sha1:9d91a9b924149a76801b87a7073b3f62afb8ca69", "self_ce": 0.6343957583109537, "self_rel": 2.326194206873576}
+{"id": 228, "hyp": "hi sally .", "ref": "sha1:8fa28b82073e3c4b04da27b1c849c583245bd214", "self_ce": 0.3284655213356018, "self_rel": 2.5508034229278564}
+{"id": 229, "hyp": "thank you .", "ref": "sha1:af0eaf37c57886407f1960b4d1e8759308087de3", "self_ce": 0.27867066860198975, "self_rel": 2.4604350179433823}
+{"id": 230, "hyp": "let us eat .", "ref": "sha1:199640c253db080309311d10b02bf079914abfef", "self_ce": 0.4817052364349365, "self_rel": 1.9070695638656618}
+{"id": 231, "hyp": "i do love it .", "ref": "sha1:3e4301d51f528c4e6a801a51f034bf7eea045c49", "self_ce": 0.735569953918457, "self_rel": 1.1651172240575156}
+{"id": 232, "hyp": "i know .", "ref": "sha1:503454043355f1148e5d2c0f11a7249faa7ba72c", "self_ce": 0.5014557838439941, "self_rel": 1.8945990353822708}
+{"id": 233, "hyp": "five .", "ref": "sha1:503454043355f1148e5d2c0f11a7249faa7ba72c", "self_ce": 0.6379858255386353, "self_rel": 5.000935832659403}
+{"id": 234, "hyp": "that was great .", "ref": "sha1:7cba39a372fdaec7db5ebbb3aaf50d66121e8f27", "self_ce": 0.5860373020172119, "self_rel": 1.3999371170997619}
+{"id": 235, "hyp": "sally i am here .", "ref": "sha1:a2acad48c1096d7f37bb2a68faee38e81abffd10", "self_ce": 0.9035027027130127, "self_rel": 1.328348239262899}
+{"id": 236, "hyp": "i do like it .", "ref": "sha1:f5aaa155e640c08e517948d8bbe5d95e8796c2b0", "self_ce": 0.8915885289510092, "self_rel": 1.3200920422871905}
+{"id": 237, "hyp": "why do not we go now .", "ref": "sha1:0f09133c55d6bf4e0af68b693c86f2061472fb78", "self_ce": 0.8456434011459351, "self_rel": 0.8849243521690369}
+{"id": 238, "hyp": "where did he go .", "ref": "sha1:fdb19dd035a06f21c48cfe67ede2de7b09c1d719", "self_ce": 0.4366908073425293, "self_rel": 1.4959957102934522}
+{"id": 239, "hyp": "we have made lots of things today .", "ref": "sha1:6c436188477a54b5d5bc1ae7379d4903120c5760", "self_ce": 0.8577839533487955, "self_rel": 1.1059116125106812}
+{"id": 240, "hyp": "that is great .", "ref": "sha1:bd5f03934cd5b72502076ad1b8fc03e4df9a3b1d", "self_ce": 0.6467385292053223, "self_rel": 0.9705094456672667}
+{"id": 241, "hyp": "i know .", "ref": "sha1:f76de17cfb00d34d0deb53fd5db8adda752b29d1", "self_ce": 0.7226555347442627, "self_rel": 1.5515391826629639}
+{"id": 242, "hyp": "sally look .", "ref": "sha1:bce808d6829f75c24ad17926e1c736c2c39e22f0", "self_ce": 0.4716688394546509, "self_rel": 1.9547212347388268}
+{"id": 243, "hyp": "let us watch .", "ref": "sha1:a17af19597971502366d04c2e858f2464415498c", "self_ce": 0.40492863655090333, "self_rel": 1.6880263566970826}
+{"id": 244, "hyp": "yeah let us watch .", "ref": "sha1:db8699f05fe2ec3272d17918afe1a1abd537f700", "self_ce": 0.23759039243062338, "self_rel": 1.9170414606730144}
+{"id": 245, "hyp": "i know .", "ref": "sha1:4ae707b3c3a5e0ebd77da4a8f8ce7112efbf4957", "self_ce": 0.9895786046981812, "self_rel": 0.9801071286201477}
+{"id": 246, "hyp": "can you help me please .", "ref": "sha1:ccdabfdc92dd8ca9553abaec9a233810590d0fd2", "self_ce": 0.7032175064086914, "self_rel": 1.0380881428718565}
+{"id": 247, "hyp": "come on sally .", "ref": "sha1:cfa368d2d01e7c8b49f5f4c28971a383e74ca53c", "self_ce": 0.6655234336853028, "self_rel": 2.79983446598053}
+{"id": 248, "hyp": "i had forgotten because it is so warm in here .", "ref": "sha1:1617c3b9076eb4fd633a337c87d1606aff057278", "self_ce": 0.6458837985992432, "self_rel": 1.5544381737709045}
+{"id": 249, "hyp": "that is great .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.7033478736877441, "self_rel": 1.0218355804681778}
+{"id": 250, "hyp": "that is right .", "ref": "sha1:f027893de1768b8d6db018fc955e1175289311c1", "self_ce": 0.6739484786987304, "self_rel": 0.9398758888244632}
+{"id": 251, "hyp": "i need to go inside and make some lunch .", "ref": "sha1:5afc27344475f37d1ae3373ecae14bde33750344", "self_ce": 0.6579244787042792, "self_rel": 1.199857321652499}
+{"id": 252, "hyp": "ok bye .", "ref": "sha1:24f99375a9c7bfe6da4a8e63ef4f539acea4c959", "self_ce": 0.8999449014663696, "self_rel": 2.063841372728348}
+{"id": 253, "hyp": "sally look .", "ref": "sha1:d147d2a2b2266582fff89db1b88795566192ef50", "self_ce": 0.5385850667953491, "self_rel": 3.022382363677025}
+{"id": 254, "hyp": "that is very kind of you possum .", "ref": "sha1:d9c099d3f930ce53f41258303f3331f4ef19a8c9", "self_ce": 0.72527986102634, "self_rel": 1.063668343755934}
+{"id": 255, "hyp": "why do not we watch some children and see what they do .", "ref": "sha1:684ee21ce58d36b8c98d3d6a6c313c30853dd740", "self_ce": 0.5499540056501117, "self_rel": 0.9815307174410138}
+{"id": 256, "hyp": "i will show you .", "ref": "sha1:b4d3b24b1725072a4ffe801c453b3ef924503bca", "self_ce": 0.5857021808624268, "self_rel": 1.594929814338684}
+{"id": 257, "hyp": "yes .", "ref": "sha1:492631be49f4a65ef2f2ceaeac2d6d8e34312972", "self_ce": 0.8135011196136475, "self_rel": 1.5023044049739838}
+{"id": 258, "hyp": "what a great idea .", "ref": "sha1:f19cf3e6be075fa275391e4bf40124d0659cd6e5", "self_ce": 0.6469988822937012, "self_rel": 1.1884425779183707}
+{"id": 259, "hyp": "i think i could do that too .", "ref": "sha1:329a083167d6de247fa6cbf4a2a43eb7c0dd7701", "self_ce": 0.8817764388190376, "self_rel": 0.6463740534252592}
+{"id": 260, "hyp": "sally why do not you and i pretend that we are both flying to the kitchen .", "ref": "sha1:ed3f97ec2cdd82d77b5211cbb23bc1943c347758", "self_ce": 0.7575238015916612, "self_rel": 1.5312443309360082}
+{"id": 261, "hyp": "why do not we go outside and have a look at the garden .", "ref": "sha1:e034d6461015464b5d8ac9a3540f10a626ebb7f0", "self_ce": 0.4965243657430013, "self_rel": 1.3176514625549318}
+{"id": 262, "hyp": "i am going to go outside too .", "ref": "sha1:28fe75ce0f7f28990cd14ff83089a7cee0c1291b", "self_ce": 0.7327840063307021, "self_rel": 1.0768202675713432}
+{"id": 263, "hyp": "you are funny possum .", "ref": "sha1:b2f47ebd7f54e795abbe594d09d4b3184efe2bed", "self_ce": 0.8715304533640543, "self_rel": 1.1950746029615402}
+{"id": 264, "hyp": "that is a great idea possum .", "ref": "sha1:bae2ebb61feb5cd5f06650018bf483818914c97d", "self_ce": 0.6571839451789856, "self_rel": 0.8548799455165863}
+{"id": 265, "hyp": "yes .", "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "self_ce": 0.6015696128209432, "self_rel": 2.25568276643753}
+{"id": 266, "hyp": "i have not seen him play yet .", "ref": "sha1:a5ef1dd195e38e34ab7e698f51abfc81f8b5c25b", "self_ce": 0.7707736757066515, "self_rel": 1.6338154474894206}
+{"id": 267, "hyp": "i know .", "ref": "sha1:49dcaa623edf821af18a7873a7a1201a37612a2a", "self_ce": 0.35902300477027893, "self_rel": 2.1745409816503525}
+{"id": 268, "hyp": "would you like to help me .", "ref": "sha1:eaa0f58f8e39aed1553adc492c658c34b78913b8", "self_ce": 0.618966281414032, "self_rel": 1.010253831744194}
+{"id": 269, "hyp": "that is great .", "ref": "sha1:17cf858cdf95ed3cea3978b098161a74f8edfb23", "self_ce": 0.4455080032348633, "self_rel": 1.4379523277282715}
+{"id": 270, "hyp": "bye .", "ref": "sha1:30bc12a667b8fb6986be2e6bf20c2b774b760182", "self_ce": 0.1824085513750712, "self_rel": 4.040965457757314}
+{"id": 271, "hyp": "sally are we ready to learn .", "ref": "sha1:9a4125305f4b74c59e7bc61822a53c57a4abcfb7", "self_ce": 0.7494437098503113, "self_rel": 1.6016609072685242}
+{"id": 272, "hyp": "but how do i draw it .", "ref": "sha1:7ce8f2ec9cf7a5077ad92e0ef3e119f8ce4530a4", "self_ce": 0.9401038885116577, "self_rel": 1.3756910413503647}
+{"id": 273, "hyp": "what .", "ref": "sha1:aefc33590b0744b0cbec5601e528d90a94ccfb6e", "self_ce": 0.7766346136728922, "self_rel": 2.252288301785787}
+{"id": 274, "hyp": "yes .", "ref": "sha1:0d7a06a62bf744e203963fb79dca9235e581ba14", "self_ce": 0.2094870408376058, "self_rel": 3.1071300705273943}
+{"id": 275, "hyp": "no not yet possum .", "ref": "sha1:1e94e40c0d04a2fdcf9d11065e9988d36053ac23", "self_ce": 0.678135871887207, "self_rel": 1.9135460257530212}
+{"id": 276, "hyp": "why do not we go inside and have a look .", "ref": "sha1:aaf2ec86be73855a2dcab710cd3ce127dbcb1c61", "self_ce": 0.43036802609761554, "self_rel": 1.326920012633006}
+{"id": 277, "hyp": "it is over there .", "ref": "sha1:cde5e1423e8fa35207c0062091e5144650c4c6ec", "self_ce": 0.9177831013997396, "self_rel": 0.8560548722743987}
+{"id": 278, "hyp": "it is a very big bird .", "ref": "sha1:7b69f380d5d2bc0ca84c5ff9eb645607c316dd70", "self_ce": 0.9753305912017822, "self_rel": 1.3512732833623886}
+{"id": 279, "hyp": "why do not we go inside and make some lunch .", "ref": "sha1:c3ac72e7e6d55cdaf834bc91095d21e31072854a", "self_ce": 0.6508796612421671, "self_rel": 1.1444998681545258}
+{"id": 280, "hyp": "sally skip is going to be here soon .", "ref": "sha1:93371808f0b410fda443787de1a01c0009adf7c7", "self_ce": 1.1364208221435548, "self_rel": 1.1570420503616332}
+{"id": 281, "hyp": "thank you possum .", "ref": "sha1:5e110760c156bd8f7f9c1b5cee8a36e1f763423f", "self_ce": 0.8118179321289063, "self_rel": 1.4898089051246644}
+{"id": 282, "hyp": "what is next .", "ref": "sha1:121be4b5c8f02e6fb46820ec75825a752fc44362", "self_ce": 0.789834451675415, "self_rel": 1.0250195503234865}
+{"id": 283, "hyp": "that is great .", "ref": "sha1:5d86b434901ab6711c340ef4d5fb45286007aece", "self_ce": 1.0016152381896972, "self_rel": 0.9925786137580872}
+{"id": 284, "hyp": "sally i have had so much fun .", "ref": "sha1:94762acc8767752155cd786f44102511c690d81e", "self_ce": 0.8547062344021268, "self_rel": 0.9722328848308988}
+{"id": 285, "hyp": "hi sally .", "ref": "sha1:d02582b24a468ca443f81432cd67b1fad7a0a4b3", "self_ce": 0.5128421187400818, "self_rel": 3.0551888048648834}
+{"id": 286, "hyp": "thank you .", "ref": "sha1:06f7eed09d99a594fd7b97b12e8574046de4506c", "self_ce": 1.1647309064865112, "self_rel": 0.76612838357687}
+{"id": 287, "hyp": "would you like to make one possum .", "ref": "sha1:e20446b96972c6515455e23361de55fa5f7331c9", "self_ce": 0.7495995097690158, "self_rel": 1.3623373111089072}
+{"id": 288, "hyp": "i know .", "ref": "sha1:4eeefb1758012bdec0ca3a461c6dd486594defc6", "self_ce": 0.6177055239677429, "self_rel": 1.1661137640476227}
+{"id": 289, "hyp": "i am possum .", "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f", "self_ce": 0.061187845468521115, "self_rel": 2.713029617071151}
+{"id": 290, "hyp": "i know .", "ref": "sha1:30c2135a452c622cc323ca12ff47c8c8ed479bda", "self_ce": 0.5776453614234924, "self_rel": 1.695209413766861}
+{"id": 291, "hyp": "yes .", "ref": "sha1:e2e5180133232c5ac58786cbebb5d3177634c156", "self_ce": 0.44406572977701825, "self_rel": 1.8911510705947874}
+{"id": 292, "hyp": "yes let us watch .", "ref": "sha1:2e1023851db4c8284194853c36e1bafa595aefe4", "self_ce": 0.4155511061350505, "self_rel": 1.727972646554311}
+{"id": 293, "hyp": "you are funny possum .", "ref": "sha1:68304219748f020e67d0ee74f8967b3054113cca", "self_ce": 0.5377664168675741, "self_rel": 1.64153911670049}
+{"id": 294, "hyp": "yeah let us watch .", "ref": "sha1:43625febae1d116df0dae662a5e509ed9378e52d", "self_ce": 0.18950188159942627, "self_rel": 1.7743422985076907}
+{"id": 295, "hyp": "you are funny .", "ref": "sha1:aa627c8ea2156d47936a94f733ec94ab606f62ab", "self_ce": 0.897122859954834, "self_rel": 1.2358921408653258}
+{"id": 296, "hyp": "why do not we watch some children learning about time .", "ref": "sha1:560b4ec580789cf0c4bb88e9b4a45439585188db", "self_ce": 0.5268175601959229, "self_rel": 1.383428583542506}
+{"id": 297, "hyp": "that is great .", "ref": "sha1:be09d763a57f35ce70160d714ebbc357d15683fa", "self_ce": 0.4155223846435547, "self_rel": 1.362135201692581}
+{"id": 298, "hyp": "that is great .", "ref": "sha1:46d3afd76b20e9611173f82ecbcdc4c27f71e7b6", "self_ce": 0.29895877838134766, "self_rel": 1.5291050136089328}
+{"id": 299, "hyp": "it is very big .", "ref": "sha1:04a50744c547f255e32ad16a768e9d607e4ffb51", "self_ce": 0.8197948137919108, "self_rel": 0.8981201052665709}
+{"id": 300, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.046709299087524414, "self_rel": 1.9372677803039555}
+{"id": 301, "hyp": "no .", "ref": "sha1:e72605cf7d2d9fd43198b2ef65ba7c47490cbdc2", "self_ce": 0.24043436845143637, "self_rel": 3.092592239379883}
+{"id": 302, "hyp": "no .", "ref": "sha1:be61e6d15cd4b5cdab416b37c27057950cef0d9b", "self_ce": 0.508774995803833, "self_rel": 3.0136304895083104}
+{"id": 303, "hyp": "they are going to be tomatoes .", "ref": "sha1:029039dba6a082f67463f52c494186d92ee79bb7", "self_ce": 1.040371298789978, "self_rel": 0.7809589058160782}
+{"id": 304, "hyp": "you are funny possum .", "ref": "sha1:859f0776e925b9840b8af8aa16a47fca22bd31c1", "self_ce": 0.5914819637934366, "self_rel": 1.3554843564828238}
+{"id": 305, "hyp": "you have done such a good job learning about fractions possum .", "ref": "sha1:bb87c0b2fe1c805032ced92681fa06ee53edd3ef", "self_ce": 0.7186846366295447, "self_rel": 1.664907987301166}
+{"id": 306, "hyp": "it is a rectangle .", "ref": "sha1:924647a3b8f13a9f80dff82a58b9183068aed61e", "self_ce": 0.7510806719462076, "self_rel": 1.5914974610010786}
+{"id": 307, "hyp": "that is great .", "ref": "sha1:bd5f03934cd5b72502076ad1b8fc03e4df9a3b1d", "self_ce": 0.5538885116577148, "self_rel": 1.0932246804237367}
+{"id": 308, "hyp": "i know .", "ref": "sha1:77b991f1ca755b127170672de44a5df3615c2ff0", "self_ce": 0.7425368428230286, "self_rel": 1.1642326414585114}
+{"id": 309, "hyp": "it is a very special lunch .", "ref": "sha1:c8c8961d2b38f9fe539264903fc6822a0bb267d2", "self_ce": 0.9203616380691528, "self_rel": 0.9993146508932114}
+{"id": 310, "hyp": "that was great .", "ref": "sha1:28e301b93d73f23cbec7e4f9cae39c4381befa6f", "self_ce": 0.5004202365875244, "self_rel": 1.6846538424491886}
+{"id": 311, "hyp": "no possum .", "ref": "sha1:71e035a62cb5f7ee4fda8c6c8c9e0247c02e25fd", "self_ce": 0.38908952474594116, "self_rel": 2.906815230846405}
+{"id": 312, "hyp": "can you please put them in the bowl please .", "ref": "sha1:3d1c0a39fce2cd2d7a9d345d5661eeeb6eeed23c", "self_ce": 0.7528459375554865, "self_rel": 1.2621338150717993}
+{"id": 313, "hyp": "look it is amanda .", "ref": "sha1:5f4537269660647a3f26555a4b3a983cdaf31e5d", "self_ce": 0.8907349904378256, "self_rel": 1.7386411229769387}
+{"id": 314, "hyp": "what is this .", "ref": "sha1:d3ad117fa0e4bac4f11bfe5b8290060851208763", "self_ce": 0.7788745880126953, "self_rel": 1.5207198977470402}
+{"id": 315, "hyp": "that is right possum .", "ref": "sha1:433ee8cc3d067d58750b23f85871c863b6bcb8f3", "self_ce": 0.7481868267059326, "self_rel": 0.8903219004472094}
+{"id": 316, "hyp": "no it does not matter possum .", "ref": "sha1:1de0c44b37cda2f51a492fe6be60420c45a93289", "self_ce": 0.875678300857544, "self_rel": 1.3544653058052063}
+{"id": 317, "hyp": "can you please get the recipe out .", "ref": "sha1:3d960a2555a454cec346d50a213802ac1e6ef458", "self_ce": 0.7694342401292589, "self_rel": 1.2792730463875663}
+{"id": 318, "hyp": "what is next .", "ref": "sha1:d95943d01d95ff87fd263a7036614cd3d5d2859a", "self_ce": 0.5700156688690186, "self_rel": 1.7846163034439089}
+{"id": 319, "hyp": "why do not we go outside and drink them .", "ref": "sha1:8a32ad73ac754f867ba60e800fc80dd7e35bc4b9", "self_ce": 0.6446762951937589, "self_rel": 1.1542345935648135}
+{"id": 320, "hyp": "yes that is right possum .", "ref": "sha1:3c14e6cd0c28904410cc58021109f31a0ee37aa0", "self_ce": 0.7215386799403599, "self_rel": 0.9528466718537468}
+{"id": 321, "hyp": "you are funny possum .", "ref": "sha1:4e4d7a4dd101305a65a08c60bc06b71fb7bf4769", "self_ce": 0.5264685153961182, "self_rel": 1.7926877935727439}
+{"id": 322, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.05801039934158325, "self_rel": 1.8548900485038757}
+{"id": 323, "hyp": "right .", "ref": "sha1:bd59b2ed098fdf58b8995ce37e2586eb5c317ead", "self_ce": 0.6836725076039633, "self_rel": 2.1733099818229675}
+{"id": 324, "hyp": "look .", "ref": "sha1:47633e3578dba4b5447337f13c82737ec06992fb", "self_ce": 0.9652902285257975, "self_rel": 1.7510500252246857}
+{"id": 325, "hyp": "yes that is right .", "ref": "sha1:1ec3fd60996eb3526fd09542b6c72ad8b3488597", "self_ce": 0.4266503651936849, "self_rel": 1.3406790693600974}
+{"id": 326, "hyp": "that is right .", "ref": "sha1:4187a76525488c3dfa95cfc35ec79b4f085aa09b", "self_ce": 0.7269112586975097, "self_rel": 1.0586907625198365}
+{"id": 327, "hyp": "yeah let us go .", "ref": "sha1:9a795743cbe9e406d2f51fece89ee41fe4188282", "self_ce": 0.39075009028116864, "self_rel": 1.3024538954099019}
+{"id": 328, "hyp": "look .", "ref": "sha1:6814962b7f4a428fdb8c111d0f305d7a7a8c38e1", "self_ce": 0.4348345200220744, "self_rel": 3.6167074044545493}
+{"id": 329, "hyp": "great now we have got everything ready .", "ref": "sha1:80ba34f209b21cb25d3d44fe95eef1ba3f471865", "self_ce": 0.6293316947089301, "self_rel": 2.232388072543674}
+{"id": 330, "hyp": "great .", "ref": "sha1:ee685758c98dcc01743c169fbdd0e75ef1245bcd", "self_ce": 0.3062144120534261, "self_rel": 2.9830331206321716}
+{"id": 331, "hyp": "sally what is this .", "ref": "sha1:fa100e7d27a9d2deb45c2ff7974f134a39b0af32", "self_ce": 1.0738514264424641, "self_rel": 1.3370463848114016}
+{"id": 332, "hyp": "great .", "ref": "sha1:ab48f1944a9984684dd8d385f4ad96ca34e5532c", "self_ce": 1.018080711364746, "self_rel": 1.232365071773529}
+{"id": 333, "hyp": "thank you .", "ref": "sha1:b29480caa2d65e6e72aeedcefeef56af29189be5", "self_ce": 0.48791322112083435, "self_rel": 1.511695671826601}
+{"id": 334, "hyp": "bye .", "ref": "sha1:1a909c26cd47c052d2ade34fb028f24b18735e1a", "self_ce": 0.6286656061808268, "self_rel": 2.8224217891693115}
+{"id": 335, "hyp": "okay .", "ref": "sha1:b29480caa2d65e6e72aeedcefeef56af29189be5", "self_ce": 0.7482294241587321, "self_rel": 3.36847972869873}
+{"id": 336, "hyp": "thank you .", "ref": "sha1:cec9b08a579cb4767fea02b6b4136afa8b80ffc0", "self_ce": 0.4775722920894623, "self_rel": 2.0966373831033707}
+{"id": 337, "hyp": "sally what is this .", "ref": "sha1:63a9da3f0f0a605492bd6e108ad5291eb60b0763", "self_ce": 0.797845204671224, "self_rel": 1.1801793177922564}
+{"id": 338, "hyp": "let us watch .", "ref": "sha1:5f069a06655e9e8f2bfd04e1bec931760b91f967", "self_ce": 0.32579946517944336, "self_rel": 1.550777477025986}
+{"id": 339, "hyp": "what is next .", "ref": "sha1:21c43bef2368cb983a409730cb33a9ee9c6e2651", "self_ce": 0.8028611183166504, "self_rel": 1.4905648708343509}
+{"id": 340, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.04507304089409964, "self_rel": 1.625340223312378}
+{"id": 341, "hyp": "thanks for watching .", "ref": "sha1:b49d27b6673825e0e96a0ef06b599d057dcf7df8", "self_ce": 0.0411566436290741, "self_rel": 2.118596559762955}
+{"id": 342, "hyp": "possum you are funny .", "ref": "sha1:25a60c8c633702e8a59d478bdca34725e00ec08f", "self_ce": 0.7153117656707764, "self_rel": 1.6254349350929265}
+{"id": 343, "hyp": "one two three four people .", "ref": "sha1:d54c825a3c9728a4fabb1e2dca035c7cc98302f2", "self_ce": 0.7032781328473773, "self_rel": 1.7272505078996931}
+{"id": 344, "hyp": "i know .", "ref": "sha1:c99cae4920873a2aea92f96f71e47d00b78c7376", "self_ce": 0.519751787185669, "self_rel": 1.4850481450557709}
+{"id": 345, "hyp": "no .", "ref": "sha1:264929e536594abf0ccbe5704f1be48f3a848b48", "self_ce": 0.703482468922933, "self_rel": 2.4619287649790444}
+{"id": 346, "hyp": "why do not we go outside and have a look .", "ref": "sha1:b0577ddd157ebeaebdb5d872d22e8c3c8d97c3e0", "self_ce": 0.574860413869222, "self_rel": 0.997692475716273}
+{"id": 347, "hyp": "hello sally .", "ref": "sha1:981b97e2746020ec79e0174be27bc00376b2ecc7", "self_ce": 0.6883246302604675, "self_rel": 2.1968041360378265}
+{"id": 348, "hyp": "let us have a look .", "ref": "sha1:057649119c55bac600930a9e1e464a35cfd39b5e", "self_ce": 0.7104078020368304, "self_rel": 0.8053870371409825}
+{"id": 349, "hyp": "can you do that please .", "ref": "sha1:16770b80bd3e36d234686b0f1e513bf958514952", "self_ce": 0.7296463421412877, "self_rel": 1.0194959810801918}
+{"id": 350, "hyp": "yeah let us watch .", "ref": "sha1:641a83c34d24e7bd7f5ca86b544c934b5171ae16", "self_ce": 0.13541507720947266, "self_rel": 1.7073015570640566}
+{"id": 351, "hyp": "one two three .", "ref": "sha1:0735b4df171f48b29e17ef09edb23eac3bf43256", "self_ce": 0.49146275520324706, "self_rel": 2.2354385852813725}
+{"id": 352, "hyp": "see you next time .", "ref": "sha1:fa4b7793efc846eed9b55f855ce2d97c2fca47a7", "self_ce": 0.053098986546198525, "self_rel": 2.0164835353692374}
+{"id": 353, "hyp": "sally what is next .", "ref": "sha1:15abaead3633296eb03b62d3856a651e1e97285c", "self_ce": 0.9455747604370117, "self_rel": 1.558545172214508}
+{"id": 354, "hyp": "what is next .", "ref": "sha1:2cca112c0451da407896da93e68af1199c9b2d2e", "self_ce": 0.6032835483551026, "self_rel": 1.1384714007377625}
+{"id": 355, "hyp": "sally i have had a thought of something .", "ref": "sha1:1c9ff935711f65daad8152ca65615788741a90c2", "self_ce": 0.9353584289550781, "self_rel": 1.9340298414230346}
+{"id": 356, "hyp": "that was a great idea possum that was fun .", "ref": "sha1:e661c487c49cec7e75c0b09cdb5a67131d8080d2", "self_ce": 0.9252354015003551, "self_rel": 1.250597303563898}
+{"id": 357, "hyp": "that is great .", "ref": "sha1:84d3b19946fa98ad48c5dbbcf9c793c44503f2ae", "self_ce": 0.3029921531677246, "self_rel": 1.6247890532016753}
+{"id": 358, "hyp": "now we need to add the milk .", "ref": "sha1:0c31422b4e2ae00f0ca10d2aca07cd402cdfbcbb", "self_ce": 0.7127705150180392, "self_rel": 1.7438193692101374}
+{"id": 359, "hyp": "yes that is right .", "ref": "sha1:9d5e2eafbdb89e132aa5a206ae84527f6c4abca6", "self_ce": 0.4583088556925456, "self_rel": 1.238065093755722}
+{"id": 360, "hyp": "that is right it is round .", "ref": "sha1:7d4e5120dcbdaa2f5a6e6f81526ca1ecddc0af57", "self_ce": 0.9969772100448608, "self_rel": 0.9692353159189224}
+{"id": 361, "hyp": "sally i know what to do .", "ref": "sha1:e90f0404951d9ad158fcef332a31c04ac073764b", "self_ce": 0.7051600813865662, "self_rel": 1.4776346385478973}
+{"id": 362, "hyp": "yeah let us watch .", "ref": "sha1:c2e923ed5928afd0561bc03d2e0cbdef03962670", "self_ce": 0.09078986446062724, "self_rel": 1.7226651857296624}
+{"id": 363, "hyp": "i can see it .", "ref": "sha1:a7a834e548a897e4bb46115ccce6fbeed3d2fffa", "self_ce": 0.9338359038035074, "self_rel": 1.199311395486196}
+{"id": 364, "hyp": "yes .", "ref": "sha1:51b33e1d6929d9180873ab8d8974a25da7e38680", "self_ce": 0.7566022078196207, "self_rel": 2.357704043388367}
+{"id": 365, "hyp": "would you like to do that .", "ref": "sha1:574f426016f4dfd952386a23673117ef8bd91604", "self_ce": 0.6067988276481628, "self_rel": 0.5406877472996712}
+{"id": 366, "hyp": "hi amanda .", "ref": "sha1:f4235faa9a1c415e934ac696c6a12906161e552d", "self_ce": 0.7148714661598206, "self_rel": 2.691825747489929}
+{"id": 367, "hyp": "hello everyone .", "ref": "sha1:9c962373196a28671bae28dd809f6e0526132c93", "self_ce": 0.2920985221862793, "self_rel": 3.162205845117569}
+{"id": 368, "hyp": "i know .", "ref": "sha1:9c37e2a5a9f658bcce7db3b8cc88747b783e5efb", "self_ce": 0.8213369846343994, "self_rel": 1.347980611026287}
+{"id": 369, "hyp": "no possum .", "ref": "sha1:1db17ee1503551f671a2aacb0aa4205319281e58", "self_ce": 0.5224307775497437, "self_rel": 2.7529230415821075}
+{"id": 370, "hyp": "i am going to go outside and hang my washing .", "ref": "sha1:2b12758faad5e64606fd86f019912534e1080118", "self_ce": 1.0542970498402913, "self_rel": 0.7200536131858826}
+{"id": 371, "hyp": "i know .", "ref": "sha1:ed63624617275ea523d5af9cf5a46b194ac34e77", "self_ce": 0.48940449953079224, "self_rel": 1.4504335969686508}
+{"id": 372, "hyp": "would you like to help me .", "ref": "sha1:b954cd5faf5050dcc73203bbbe81eefb497c7132", "self_ce": 0.30496206879615784, "self_rel": 1.4335383921861649}
+{"id": 373, "hyp": "now what would you like to write .", "ref": "sha1:2b62d3ec445c1263eb00d58877a1a97e818f37af", "self_ce": 0.5993189281887479, "self_rel": 1.429644571410285}
+{"id": 374, "hyp": "right .", "ref": "sha1:0e621dc054be0710f65cc38d01be2dcdf8981518", "self_ce": 0.7588905493418375, "self_rel": 1.8417992393175764}
+{"id": 375, "hyp": "i do love it .", "ref": "sha1:8e8ec67169c98427a824abad0409526e6d8d98d9", "self_ce": 0.9167588551839193, "self_rel": 1.2706458568572998}
+{"id": 376, "hyp": "yes .", "ref": "sha1:47410df70a1ce530417c17ffcadcc6c91c2a5705", "self_ce": 0.4656357765197754, "self_rel": 2.5618355870246887}
+{"id": 377, "hyp": "no possum .", "ref": "sha1:a082a21c2b8fd6a0b5eafade1f3b0609f9f7a3ee", "self_ce": 0.6865209937095642, "self_rel": 2.282683551311493}
+{"id": 378, "hyp": "why do not we go and find a picture .", "ref": "sha1:351c924d08527235b6ad3ea035234593d0b4a326", "self_ce": 0.7857356504960493, "self_rel": 1.5423966971310699}
+{"id": 379, "hyp": "yes that is right .", "ref": "sha1:b6dd3d5c9e0268666e534b3c039613105e68917d", "self_ce": 0.587073008219401, "self_rel": 1.2526055971781416}
+{"id": 380, "hyp": "what is it .", "ref": "sha1:8d66fe9f2262cfd2acf38dfe0426c644ae7b933a", "self_ce": 0.8661497116088868, "self_rel": 1.6896145462989807}
+{"id": 381, "hyp": "great .", "ref": "sha1:dfd128b0de37d138974201e419bb19b3708ff797", "self_ce": 0.8923079172770182, "self_rel": 1.6678042809168496}
+{"id": 382, "hyp": "now we need to put the roof on .", "ref": "sha1:cef9405048a1eed5e2d70d1846f2ef159fe905fb", "self_ce": 1.0174739837646485, "self_rel": 1.0075634479522704}
+{"id": 383, "hyp": "let us watch .", "ref": "sha1:c2e923ed5928afd0561bc03d2e0cbdef03962670", "self_ce": 0.3344003200531006, "self_rel": 1.6215911388397215}
+{"id": 384, "hyp": "i am going to go outside too .", "ref": "sha1:45bf46f54078349c489a73571d7737b9aa2a70e9", "self_ce": 0.7457292344835069, "self_rel": 1.0414262347751195}
+{"id": 385, "hyp": "what a great idea possum .", "ref": "sha1:128916035e57fd23fa309723ad08b3bcfcef1b90", "self_ce": 0.5478087152753558, "self_rel": 1.3552441767283847}
+{"id": 386, "hyp": "that is great .", "ref": "sha1:d0c043784e8031ed9a974ca0804ce6bc753547a6", "self_ce": 0.9451910972595214, "self_rel": 0.5595824152231217}
+{"id": 387, "hyp": "thank you possum .", "ref": "sha1:08ace9303a804627cd7368c77c92a1cd685a016e", "self_ce": 0.7249556541442871, "self_rel": 1.9381667017936706}
+{"id": 388, "hyp": "look at all these things .", "ref": "sha1:90a5204b3e6564e84c1422b91196b64c96431419", "self_ce": 1.0692332131522042, "self_rel": 1.501469578061785}
+{"id": 389, "hyp": "i think i could do that too .", "ref": "sha1:3d251efe0c1c5621f70b0d6d7fd2c87381c8e49d", "self_ce": 0.7385060522291396, "self_rel": 0.9656111929151745}
+{"id": 390, "hyp": "yes .", "ref": "sha1:7d39d618281cba0afcb6295090043833ada8315d", "self_ce": 0.5699251890182495, "self_rel": 2.2507204612096148}
+{"id": 391, "hyp": "would you like to do that .", "ref": "sha1:1f3e2360b132d560b732896727cddd648aee6428", "self_ce": 0.5767458081245422, "self_rel": 0.8640733361244202}
+{"id": 392, "hyp": "that is great .", "ref": "sha1:db6657e5502b07a224f4296f8acd0f1e6f4a17c1", "self_ce": 0.4911778450012207, "self_rel": 1.401312494277954}
+{"id": 393, "hyp": "wait wait .", "ref": "sha1:7b848c0e6382160d92f1afbf9c93025dde777241", "self_ce": 0.8616873025894165, "self_rel": 2.606081113219261}
+{"id": 394, "hyp": "okay .", "ref": "sha1:27c480c4319bc169a59c86405c2a426f038074c6", "self_ce": 0.7637441158294678, "self_rel": 2.9336019754409786}
+{"id": 395, "hyp": "orange .", "ref": "sha1:ba353f7cc9d4fd7958f2b4c9c1cea1ee79029c99", "self_ce": 1.18335755666097, "self_rel": 3.4626197020212803}
+{"id": 396, "hyp": "ok .", "ref": "sha1:aa294b675e3d0df6f8e57fab09d0150fada1fdee", "self_ce": 0.5743123690287272, "self_rel": 2.30443682273229}
+{"id": 397, "hyp": "one two three four .", "ref": "sha1:be8afedf3c0f037c3d5ccb28b9438453d48c5ffc", "self_ce": 0.41047151883443195, "self_rel": 2.7215424378712973}
+{"id": 398, "hyp": "hello possum .", "ref": "sha1:9bdbaae5ae4855ced4df0f85ede9867680bf264c", "self_ce": 0.767663836479187, "self_rel": 2.6568230986595154}
+{"id": 399, "hyp": "it is hard work .", "ref": "sha1:ebf1c48cf4bc388533b9a0981b1b4fb63b2193b9", "self_ce": 0.9717580477396647, "self_rel": 1.226825257142385}
+{"id": 400, "hyp": "it is a caterpillar .", "ref": "sha1:5dc1aab0820f444e88b6b8181e2b19ca7ef0c91e", "self_ce": 1.0682839552561443, "self_rel": 1.0310213764508565}
+{"id": 401, "hyp": "look .", "ref": "sha1:cb3f9297682f5ec832245524e522bf83031a635f", "self_ce": 0.597421924273173, "self_rel": 3.180162747701009}
+{"id": 402, "hyp": "ok let us go .", "ref": "sha1:48be0e8135f08ff4f75432921ce5922c0ea1a386", "self_ce": 0.25874412059783936, "self_rel": 1.2962815364201865}
+{"id": 403, "hyp": "what is this .", "ref": "sha1:89f8aea4e4289e4a3dc0069ff9751a33a719999d", "self_ce": 0.9470224380493164, "self_rel": 1.1689281225204469}
+{"id": 404, "hyp": "i know .", "ref": "sha1:98bf02f8ea3cc8177a5a1c654f6a4f86942ee98c", "self_ce": 1.2795119285583496, "self_rel": 0.6485418751835823}
+{"id": 405, "hyp": "see you next time .", "ref": "sha1:b49d27b6673825e0e96a0ef06b599d057dcf7df8", "self_ce": 0.05787270267804464, "self_rel": 1.9344604412714643}
+{"id": 406, "hyp": "sally what is next .", "ref": "sha1:23aaf41a7f0f8f1cb86affcd84d4340a783542ff", "self_ce": 1.0769771734873455, "self_rel": 1.3647130231062572}
+{"id": 407, "hyp": "right .", "ref": "sha1:5745ad42eaf8d5027e68536732fae13f1e49d660", "self_ce": 0.7900740305582682, "self_rel": 2.590032398700714}
+{"id": 408, "hyp": "i have got some soccer ball .", "ref": "sha1:d2f892319c52693f73023d1ebfec46b39d5e70be", "self_ce": 0.8718583583831787, "self_rel": 1.4113480746746063}
+{"id": 409, "hyp": "that was great .", "ref": "sha1:2a8b15badc07ec71aad70f6d9034b8002c4223e5", "self_ce": 0.3634340286254883, "self_rel": 1.7586549699306488}
+{"id": 410, "hyp": "hello everyone .", "ref": "sha1:d47987ecf63ca4c67680dcf943e783fd62a94af2", "self_ce": 0.15628090500831604, "self_rel": 2.706730507314205}
+{"id": 411, "hyp": "that is great .", "ref": "sha1:eb36e367f6028206e65943436b4572936eb2d72e", "self_ce": 0.9315874099731445, "self_rel": 0.867694365978241}
+{"id": 412, "hyp": "it is a very big one is not it .", "ref": "sha1:bee6397dfb6038762d13f80d7fbf02328629560a", "self_ce": 0.6401661092584784, "self_rel": 0.9875000065023248}
+{"id": 413, "hyp": "can you help me please .", "ref": "sha1:473be356ea43902984aba7e1c3c5f52db33537da", "self_ce": 0.7466866629464286, "self_rel": 1.0852270126342773}
+{"id": 414, "hyp": "it is very big .", "ref": "sha1:35c1f7dc795af31b498461aa6921d8423352baf6", "self_ce": 1.001915693283081, "self_rel": 0.7227417727311449}
+{"id": 415, "hyp": "what is this .", "ref": "sha1:016d01d65f32cbe755449c60ea6ad143c34ae280", "self_ce": 0.6043991088867188, "self_rel": 1.2944908738136292}
+{"id": 416, "hyp": "sally can you help me .", "ref": "sha1:b27d60f5ebd3e3a7287768bf72bbacfa2bb8fde3", "self_ce": 0.9226774488176618, "self_rel": 1.4825469085148404}
+{"id": 417, "hyp": "yes you are right .", "ref": "sha1:feed12be78f4b02aec029d83cdc508d9fc75dc98", "self_ce": 0.7378822962443033, "self_rel": 0.8219876488049825}
+{"id": 418, "hyp": "yes you are right .", "ref": "sha1:b2df267822c0187be95269853d88c5377f438c1f", "self_ce": 0.9079798857371012, "self_rel": 0.6382370293140412}
+{"id": 419, "hyp": "me .", "ref": "sha1:2159981ac854abd1f8cfc44b76378dd10d59e178", "self_ce": 0.5055474042892456, "self_rel": 2.8968290487925215}
+{"id": 420, "hyp": "no i am not going to the shops .", "ref": "sha1:2a1a234c41b0c99fdfa3f5a9904cc602dce27d0f", "self_ce": 0.9745885848999023, "self_rel": 1.015941572189331}
+{"id": 421, "hyp": "great .", "ref": "sha1:ef3cbf24a91a41e33f23fe58b51ac4962f3fab3f", "self_ce": 0.8782138824462891, "self_rel": 1.8053433100382485}
+{"id": 422, "hyp": "bye .", "ref": "sha1:9d6589a2ac514aa884daec7b00a92bd5dff2ba2b", "self_ce": 0.4963900645573934, "self_rel": 2.6973633766174316}
+{"id": 423, "hyp": "yes that is a great idea to go to the kitchen .", "ref": "sha1:75f1fe56e16116401beabc778aa90d14f223c170", "self_ce": 0.7011521412776067, "self_rel": 1.600619627879216}
+{"id": 424, "hyp": "yeah let us watch .", "ref": "sha1:0e1970d91bbe061c9818878f1d65e1d318586bcd", "self_ce": 0.6788633664449056, "self_rel": 1.4706854522228237}
+{"id": 425, "hyp": "come on .", "ref": "sha1:10c90bf3b68a04661993085eefa592f3103d0a39", "self_ce": 0.31318774819374084, "self_rel": 2.006385251879692}
+{"id": 426, "hyp": "one two three four .", "ref": "sha1:6e0ee94a77f93a8f4e6e24e136cd0d36bec3fd16", "self_ce": 0.470608909924825, "self_rel": 1.8950268427530925}
+{"id": 427, "hyp": "that is a shadow .", "ref": "sha1:055d64135e4fe85a8a26b0b46809ec1da7be3224", "self_ce": 1.1789762179056804, "self_rel": 1.4710811177889502}
+{"id": 428, "hyp": "skip what are you doing .", "ref": "sha1:5f340b6b7a86534dc8824f3575e812ea4f18e5f9", "self_ce": 0.7784137725830078, "self_rel": 1.6136616468429565}
+{"id": 429, "hyp": "it is a very special day .", "ref": "sha1:b2a0ca6d5f0dbea11a932ee0afdae1a822d5aa5a", "self_ce": 0.835533082485199, "self_rel": 1.674579992890358}
+{"id": 430, "hyp": "i am so happy .", "ref": "sha1:acb608c9754ffe044644af9ec42b04d3923ec80c", "self_ce": 0.8837226231892904, "self_rel": 1.3578935464223223}
+{"id": 431, "hyp": "what .", "ref": "sha1:b4254a4e67e8516483948a3c0192ac06b18bcc1a", "self_ce": 1.0064465204874675, "self_rel": 2.025361369053522}
+{"id": 432, "hyp": "let us go .", "ref": "sha1:a8a32e029173caf6884a20a59403cbc277fcf18f", "self_ce": 0.503786277770996, "self_rel": 1.6004704475402833}
+{"id": 433, "hyp": "what is next .", "ref": "sha1:542490bdf6ce3a663dc6efd483bd36df0b0c6a05", "self_ce": 0.4862384796142578, "self_rel": 1.358792233467102}
+{"id": 434, "hyp": "why do not we go outside and play some soccer .", "ref": "sha1:654ea760fef9ea94f09234226d2bf6707b9cbe9d", "self_ce": 0.630064328511556, "self_rel": 0.9092824558417}
+{"id": 435, "hyp": "let us go .", "ref": "sha1:eea995678ea03e2289f394584ae3b683df0dbd64", "self_ce": 0.5349677562713623, "self_rel": 1.7251356720924376}
+{"id": 436, "hyp": "sally can you help me please .", "ref": "sha1:6c79d65ffcd497f0744a7b0a3b1b124132929458", "self_ce": 0.7441617846488953, "self_rel": 1.8441126644611359}
+{"id": 437, "hyp": "i think it might be time for us to go now .", "ref": "sha1:950b11ebc676d00da1ac44d132d9da0b59c31542", "self_ce": 0.7139617479764498, "self_rel": 0.8210171552804802}
+{"id": 438, "hyp": "sally is this a square .", "ref": "sha1:e6d9a9ee5a3f23fd2b1562f5c2bc55d7c0dc3b15", "self_ce": 0.9374889646257673, "self_rel": 1.3072546720504756}
+{"id": 439, "hyp": "no .", "ref": "sha1:6fa0f1cd16da7c190bf61f147efc5dd6582fc0fa", "self_ce": 0.7514780362447103, "self_rel": 2.939751247564952}
+{"id": 440, "hyp": "yes please .", "ref": "sha1:e20caa56963b7a60f081e614aa7eba712378ecae", "self_ce": 0.8346505165100098, "self_rel": 1.4184337556362152}
+{"id": 441, "hyp": "sally i am so sorry .", "ref": "sha1:c05162a72f873fac98cb98a05d77587794146d39", "self_ce": 0.8128222056797573, "self_rel": 1.7185904809406827}
+{"id": 442, "hyp": "that is great .", "ref": "sha1:ea49856ebb5c3f2ecedf6a8baff10b96ecd2ae7c", "self_ce": 0.6570359230041504, "self_rel": 1.1549542665481565}
+{"id": 443, "hyp": "look at this .", "ref": "sha1:137bd7c3a2adbdd0938fa84920e739599e8189b9", "self_ce": 0.9849000930786133, "self_rel": 1.593078851699829}
+{"id": 444, "hyp": "it is hard to learn to ride .", "ref": "sha1:28687cc05b2da60a598afa819a0de04600e0dc8d", "self_ce": 1.1063565148247614, "self_rel": 0.9396062824461193}
+{"id": 445, "hyp": "i have an idea .", "ref": "sha1:bc18ceb37dcceb50de773c4aabc7f948bf70a69a", "self_ce": 0.7466511726379395, "self_rel": 1.290072431166967}
+{"id": 446, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.050828865596226284, "self_rel": 1.865228704043797}
+{"id": 447, "hyp": "that is great .", "ref": "sha1:bdcef89a7eccabdc9e598b91115a135b9ddd0c3a", "self_ce": 0.3497812509536743, "self_rel": 1.1622306108474731}
+{"id": 448, "hyp": "where is possum .", "ref": "sha1:5f2c025e3dc2d10152fb7b179fdcf48239191dcd", "self_ce": 1.0467390060424804, "self_rel": 1.2706184148788457}
+{"id": 449, "hyp": "why do not we go outside and have a look .", "ref": "sha1:35a3a8c87243545e1650c269616bdfb03b132d42", "self_ce": 0.5511188904444376, "self_rel": 1.100479900836945}
+{"id": 450, "hyp": "bye .", "ref": "sha1:84aa4eb0df62b11422460cae7628364be770699c", "self_ce": 0.24546557664871216, "self_rel": 3.6698140501976018}
+{"id": 451, "hyp": "i will go get the easel .", "ref": "sha1:013855b4c510f1ed83284c1964635dbb4b1a6e09", "self_ce": 1.1248706579208374, "self_rel": 1.1224758177995682}
+{"id": 452, "hyp": "why do not we go inside and have a look .", "ref": "sha1:a1a85fcb1d68b4e8ddb3b6bdb4be0542f7e8e1e5", "self_ce": 0.6222410202026367, "self_rel": 1.3629380663235984}
+{"id": 453, "hyp": "i can see the soccer ball .", "ref": "sha1:be942210e012c40abf9c7fc035ca946ce1848af3", "self_ce": 0.711087703704834, "self_rel": 1.3103103041648865}
+{"id": 454, "hyp": "that looks great .", "ref": "sha1:2d5503065c75342441a1af6b070c7e5e06e23277", "self_ce": 0.5749807357788086, "self_rel": 1.689140224456787}
+{"id": 455, "hyp": "it is so much fun .", "ref": "sha1:c1ab431ab3403b2b3ba42763465c3ad3f96d2e2a", "self_ce": 0.6057601656232562, "self_rel": 1.3127052443368092}
+{"id": 456, "hyp": "yes you are right .", "ref": "sha1:212f9cbe098f42806db9548e8f7867dfc9ea51f5", "self_ce": 0.5878522396087646, "self_rel": 1.0923088788986204}
+{"id": 457, "hyp": "well our time is up .", "ref": "sha1:8cb8178562d0cf502a877f7a3811dc6317fdc91d", "self_ce": 0.047326194388525825, "self_rel": 1.7137225823743003}
+{"id": 458, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.16202565601893834, "self_rel": 1.8990341935838975}
+{"id": 459, "hyp": "that is great .", "ref": "sha1:24258d960311449136a5c82cc369c6137e72a048", "self_ce": 0.4130229473114014, "self_rel": 1.3588312149047852}
+{"id": 460, "hyp": "yeah let us watch .", "ref": "sha1:a1293924378e26eeff65d27ec2eea32f679a1884", "self_ce": 0.42704224586486816, "self_rel": 1.755771815776825}
+{"id": 461, "hyp": "that is great .", "ref": "sha1:83882bf94b08542288dd6378688234a3c9a55205", "self_ce": 0.3290857315063477, "self_rel": 1.1578958481550217}
+{"id": 462, "hyp": "yeah let us watch .", "ref": "sha1:3d98ff55381c01428d0af96eddce251cf23fd33f", "self_ce": 0.29328105847040814, "self_rel": 1.7563654681046803}
+{"id": 463, "hyp": "this one .", "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "self_ce": 0.7735978960990906, "self_rel": 2.825934797525406}
+{"id": 464, "hyp": "thank you .", "ref": "sha1:ea7a376a4598ea4a737f96eb7f7d9141f6cbb1a5", "self_ce": 0.40325799584388733, "self_rel": 2.219401203095913}
+{"id": 465, "hyp": "thank you so much .", "ref": "sha1:140744500b8d886070be10ff21382ae9f3ab956b", "self_ce": 0.7542525927225748, "self_rel": 1.2579094370206199}
+{"id": 466, "hyp": "ok .", "ref": "sha1:74db7351fe04179d07e89dfeb9f550872c89009b", "self_ce": 0.9906605084737142, "self_rel": 2.0550840497016902}
+{"id": 467, "hyp": "yes that is right .", "ref": "sha1:c524d38c9fe2d02248efae95607c436b805d493a", "self_ce": 0.41880544026692706, "self_rel": 1.4160215059916181}
+{"id": 468, "hyp": "that is a great idea sally .", "ref": "sha1:5bf0af5e0c6387ca3f4ea43e7a3d22521addcfe9", "self_ce": 0.9059789180755615, "self_rel": 1.6573426276445389}
+{"id": 469, "hyp": "thank you .", "ref": "sha1:5b4946bcb137b868f3891290e81760191cbf6997", "self_ce": 0.6048595905303955, "self_rel": 2.0134332329034805}
+{"id": 470, "hyp": "right .", "ref": "sha1:8d96de1502b20aeead1efc860cd612dee86b9ba6", "self_ce": 1.072775920232137, "self_rel": 2.3078437447547913}
+{"id": 471, "hyp": "sally can i have a look at my tree .", "ref": "sha1:048f72769c996799cb32becdabac2c2bd2ed1ce4", "self_ce": 0.8496199521151456, "self_rel": 1.3658789613030171}
+{"id": 472, "hyp": "i know .", "ref": "sha1:8ca8c6511771a1f6a0b26fef1f318d136bc3afd8", "self_ce": 0.6449722051620483, "self_rel": 1.4254240840673447}
+{"id": 473, "hyp": "sally thank you so much .", "ref": "sha1:75719fc2ba56546099a2d23818f0fcaeca5f5fa0", "self_ce": 0.6250802448817662, "self_rel": 1.8462112631116594}
+{"id": 474, "hyp": "what is next .", "ref": "sha1:514b12cefeb5ea3ed17fb7884536d418b990bdee", "self_ce": 0.4984020233154297, "self_rel": 1.5562044978141785}
+{"id": 475, "hyp": "possum you are funny .", "ref": "sha1:72345b2e72d18ad381de936821fe53837146d235", "self_ce": 0.6435667276382446, "self_rel": 1.7802456816037497}
+{"id": 476, "hyp": "yes that is a great idea to go to skips shed .", "ref": "sha1:c5d8a18e088f486b3c5a1bce068b7ece57a6f0ec", "self_ce": 0.7953540361844577, "self_rel": 1.2793132158426137}
+{"id": 477, "hyp": "no i am not going to stay there .", "ref": "sha1:c725c810ea8d1fa4a0c44d9e93fca31cc37d5874", "self_ce": 0.659406042098999, "self_rel": 0.975435495376587}
+{"id": 478, "hyp": "yes .", "ref": "sha1:cc6054be8a8457c710a55d854282b3c195c87e4f", "self_ce": 0.31976819038391113, "self_rel": 2.443105181058248}
+{"id": 479, "hyp": "i have learned so much about cogs and how they can be careful .", "ref": "sha1:55da353cf5eb88f21214ad9a8721fafb79f5a7db", "self_ce": 0.8715024948120117, "self_rel": 1.9706753412882478}
+{"id": 480, "hyp": "it is a very special thing for us to do .", "ref": "sha1:f6a50cb13daeaa7b2cb619ef6ab1eb5639effcec", "self_ce": 0.6022905508677164, "self_rel": 1.4450722833474479}
+{"id": 481, "hyp": "it is a very special thing for us to do .", "ref": "sha1:67f4a9e4dffca14cc1a12bd5925035594e8763aa", "self_ce": 0.6363007624944051, "self_rel": 1.1647510329882302}
+{"id": 482, "hyp": "that is great .", "ref": "sha1:481e97b398c602b438e6a16fb6db839755640ae8", "self_ce": 0.8225926399230957, "self_rel": 0.8665507197380066}
+{"id": 483, "hyp": "now we just need a cup of water .", "ref": "sha1:ff7c81d4fe1f80c1e16e316783ae8dfd296c5e45", "self_ce": 0.6492958068847656, "self_rel": 1.3880824327468875}
+{"id": 484, "hyp": "would you like a cup of tea .", "ref": "sha1:f6f5310a665c862c8418cdf7aa87acbb08e7749c", "self_ce": 0.6189550823635526, "self_rel": 0.8460087908638849}
+{"id": 485, "hyp": "thank you .", "ref": "sha1:8cccffb0feea7276fe95d62dab5926ead85d4069", "self_ce": 0.42790859937667847, "self_rel": 1.9222595617175102}
+{"id": 486, "hyp": "yeah let us watch .", "ref": "sha1:a2f915dcfa81731056f3ae426cfdda5e49edfc04", "self_ce": 0.4446454445521037, "self_rel": 1.0675337115923562}
+{"id": 487, "hyp": "it is a very special thing for us to do .", "ref": "sha1:2077ee0ea25f31b32593416a8830f4ab85ee9ee8", "self_ce": 0.6310762564341227, "self_rel": 1.1254362165927887}
+{"id": 488, "hyp": "that is right possum .", "ref": "sha1:675a16c55898a5e3817d520afcbd37f722b6fb4d", "self_ce": 0.7792285283406576, "self_rel": 0.8233953764041265}
+{"id": 489, "hyp": "but it is not a bit too hot possum .", "ref": "sha1:fedc6e3c6eeb24bf8a97965a5920d88c5725eb13", "self_ce": 0.8031154112382368, "self_rel": 1.0196772813796997}
+{"id": 490, "hyp": "thank you so much .", "ref": "sha1:ff0c5dc0d708c12e988e7281520d62bb5d974400", "self_ce": 1.0605844656626384, "self_rel": 0.8440184593200684}
+{"id": 491, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.04888970511300223, "self_rel": 1.9036889587129866}
+{"id": 492, "hyp": "what is next .", "ref": "sha1:474a765b89d5c74bb1c8041f665f53f8fcf77862", "self_ce": 0.5766512870788574, "self_rel": 1.5727587103843688}
+{"id": 493, "hyp": "no not yet possum .", "ref": "sha1:1895bbe4f6d30319b18f992cfe6801f0bc935d9a", "self_ce": 0.8196711540222168, "self_rel": 2.246257563432058}
+{"id": 494, "hyp": "that is right .", "ref": "sha1:8972bdf7dd8b8acaa73017d551e78f5beb955a6d", "self_ce": 0.6280532360076905, "self_rel": 1.115290594100952}
+{"id": 495, "hyp": "great .", "ref": "sha1:d89281115fe6f58e86805d206eb0350b75c7b54a", "self_ce": 0.8964172999064127, "self_rel": 2.2803913553555812}
+{"id": 496, "hyp": "good job .", "ref": "sha1:42dac15c554bab51bf1db5b45f806e31c960f4f6", "self_ce": 0.9470340013504028, "self_rel": 2.155063718557358}
+{"id": 497, "hyp": "that is great .", "ref": "sha1:c4af9632faa4f392dbf80da22a8e69e53d501914", "self_ce": 0.7526062965393067, "self_rel": 0.966409993171692}
+{"id": 498, "hyp": "great .", "ref": "sha1:59993552e9a8c210594d3f493a9e73a288fcfd6c", "self_ce": 0.31624555587768555, "self_rel": 2.0374737878640494}
+{"id": 499, "hyp": "it looks great .", "ref": "sha1:f57ee67c6c6588ac1fc6c90fded4828cb42707fd", "self_ce": 0.7691218852996826, "self_rel": 1.4841041326522828}
+{"id": 500, "hyp": "that is a lot of fun possum .", "ref": "sha1:3e1b58383fee1000b76b36ed5253b45baca17a3c", "self_ce": 0.8407691319783529, "self_rel": 0.9385513597064551}
+{"id": 501, "hyp": "would you like to try possum .", "ref": "sha1:46e15dbb548e49bf9bc1b0cd5f8ea6ef876a69fa", "self_ce": 0.6783386468887329, "self_rel": 1.0529574304819107}
+{"id": 502, "hyp": "i know .", "ref": "sha1:2b98b3b21ae5cd19aaf19ff12f72f10ecd6bdef5", "self_ce": 0.6286723613739014, "self_rel": 1.5703510828316212}
+{"id": 503, "hyp": "thank you .", "ref": "sha1:c62bf41e789994bd090f40c1fbdeb3d46b1463bd", "self_ce": 0.7457616329193115, "self_rel": 1.4921709671616554}
+{"id": 504, "hyp": "possum what are you doing .", "ref": "sha1:4484e09b0302364ffe0aa7c194804b7b685001bf", "self_ce": 0.7108351162501744, "self_rel": 1.2040375215666637}
+{"id": 505, "hyp": "ok .", "ref": "sha1:11d4b7e5b5216a26b1d1e3bd946208fe7d8ac641", "self_ce": 0.6811850865681967, "self_rel": 1.4794030090173087}
+{"id": 506, "hyp": "that is great .", "ref": "sha1:09294b8dd34e4a7c21eb5276373644fedea70496", "self_ce": 0.6597945213317871, "self_rel": 1.0219178199768066}
+{"id": 507, "hyp": "but i do not know what i need to do .", "ref": "sha1:19bdc79c98a7c1f60d486fc98f36753e6f15b1cf", "self_ce": 0.6768345832824707, "self_rel": 1.0014352401097617}
+{"id": 508, "hyp": "one two three four five six seven eight nine ten .", "ref": "sha1:1cb2dccc1309e66ffdc86315bab5d155b9736ee2", "self_ce": 0.4446323712666829, "self_rel": 3.109393159548442}
+{"id": 509, "hyp": "i know .", "ref": "sha1:6c6cd4410ffb539c24357131453e3d5c6bbc451d", "self_ce": 0.8392800092697144, "self_rel": 1.0744006633758545}
+{"id": 510, "hyp": "let us go .", "ref": "sha1:7abe9280cc781c433c1e12167fbabcd1acba1cc7", "self_ce": 0.8932180404663086, "self_rel": 1.303575181961059}
+{"id": 511, "hyp": "hi sally .", "ref": "sha1:f6401659e36af4da326440709555fb6ef751b57e", "self_ce": 0.20771120488643646, "self_rel": 3.771081879734993}
+{"id": 512, "hyp": "yes that is right .", "ref": "sha1:e59b92a35be799f8f6a831f8ae853a5c28b9ec72", "self_ce": 0.42448123296101886, "self_rel": 1.3096633801857631}
+{"id": 513, "hyp": "that is great .", "ref": "sha1:0e1019d26a4dba73d37c46e5f58fec440907e35e", "self_ce": 0.3507590055465698, "self_rel": 1.1394814014434815}
+{"id": 514, "hyp": "thank you .", "ref": "sha1:c8acd6f9973fe59f068e2c77e23574509ac18dd7", "self_ce": 0.6874375939369202, "self_rel": 2.488742083311081}
+{"id": 515, "hyp": "sally look .", "ref": "sha1:61c07ec48a097bf62c9f05d99d46e37fa3fd7942", "self_ce": 0.8045568466186523, "self_rel": 2.598747804760933}
+{"id": 516, "hyp": "that is great .", "ref": "sha1:d365cf84e35dc93a4003c4d94aaf09b914250503", "self_ce": 0.3577563285827637, "self_rel": 1.9216891527175906}
+{"id": 517, "hyp": "what is it .", "ref": "sha1:129382a86c48624b9a322fb415c1a1ef74268475", "self_ce": 0.5109251499176025, "self_rel": 1.2090071439743042}
+{"id": 518, "hyp": "would you like to come and help me .", "ref": "sha1:f2f3e6148f3b1192175a816c17c9ef2c9236614b", "self_ce": 0.7078655242919922, "self_rel": 1.4469698429107665}
+{"id": 519, "hyp": "what is next .", "ref": "sha1:f9c529c29fcba12d78ee45f914c44a0eb9e61ff5", "self_ce": 0.5897329330444336, "self_rel": 1.4392472624778752}
+{"id": 520, "hyp": "ok .", "ref": "sha1:db6657e5502b07a224f4296f8acd0f1e6f4a17c1", "self_ce": 0.6432187557220459, "self_rel": 2.178168078263601}
+{"id": 521, "hyp": "that is great .", "ref": "sha1:93cce6bb2faa6d2d72e5eb82a8bb4a0b450713ae", "self_ce": 0.4376371383666992, "self_rel": 1.3792016863822933}
+{"id": 522, "hyp": "that was great .", "ref": "sha1:114ddbb67ee0ea25cc9dda8648bdcd513f061569", "self_ce": 0.5802572727203369, "self_rel": 1.5659960627555845}
+{"id": 523, "hyp": "i get it now .", "ref": "sha1:0aeb4697a738ae2038784b3bae8e0f6d700c3660", "self_ce": 0.6063386996587118, "self_rel": 1.1920431554317474}
+{"id": 524, "hyp": "that is lovely .", "ref": "sha1:279300e3360fa87e0e075f58862246d674f1bb0b", "self_ce": 0.7797059059143067, "self_rel": 1.19734160900116}
+{"id": 525, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.07671985455921718, "self_rel": 1.86049325977053}
+{"id": 526, "hyp": "what is next .", "ref": "sha1:115e7e0eb74f8272dc63def16eb3982cad75b6b1", "self_ce": 0.642848014831543, "self_rel": 1.4786571502685546}
+{"id": 527, "hyp": "that is great .", "ref": "sha1:9d2824daba0b4a85d333c841dfb7ffb16736ac9f", "self_ce": 0.7598823070526123, "self_rel": 0.8800747811794282}
+{"id": 528, "hyp": "yes that is right .", "ref": "sha1:b2a1558c9097de2f5fd8fc28ac9912aa218067b5", "self_ce": 0.5792147715886434, "self_rel": 1.425516496102015}
+{"id": 529, "hyp": "you are right possum .", "ref": "sha1:f1a687b9351384c44dcbc183dae08fef1ba733ba", "self_ce": 0.6262463728586832, "self_rel": 1.175720284382502}
+{"id": 530, "hyp": "yeah let us go .", "ref": "sha1:137bd7c3a2adbdd0938fa84920e739599e8189b9", "self_ce": 0.4652901490529378, "self_rel": 1.8709990580876672}
+{"id": 531, "hyp": "i have an idea .", "ref": "sha1:814597d7f4c3d280e3e1d77ab1d7492cf366d871", "self_ce": 0.8789237340291342, "self_rel": 0.7921375234921774}
+{"id": 532, "hyp": "i have an idea .", "ref": "sha1:088cd522761c1c0963572ef09e03621e59ac1389", "self_ce": 0.670451800028483, "self_rel": 0.9474693834781646}
+{"id": 533, "hyp": "thank you so much possum .", "ref": "sha1:da4bdc7b8ed0399db57afd750c68ed8b0e3e65bc", "self_ce": 0.5522216728755406, "self_rel": 1.6228738682610646}
+{"id": 534, "hyp": "that is right possum .", "ref": "sha1:91ba3b027c3aebd2e6e48f462a36ed71b2689aa4", "self_ce": 0.9866917928059896, "self_rel": 0.8768601616223651}
+{"id": 535, "hyp": "sally can you help me .", "ref": "sha1:6bfab8014b35013d080adfe87bc7085f69c8b8ee", "self_ce": 0.678358895438058, "self_rel": 1.7863400833947316}
+{"id": 536, "hyp": "can you please help me please .", "ref": "sha1:1e3c58bb0995d111ce7763c472792bdb8bfc7505", "self_ce": 0.8766688108444214, "self_rel": 1.1743977963924408}
+{"id": 537, "hyp": "there is plenty of food in the fridge .", "ref": "sha1:4bfef929dbbfa1fc3e31e483e5078c14c80b73c9", "self_ce": 0.6889989852905274, "self_rel": 0.37715319395065294}
+{"id": 538, "hyp": "that was so much fun .", "ref": "sha1:df10bf3c910717dbc451dbe42be9ea168df4b91f", "self_ce": 0.8395679337637765, "self_rel": 0.9863936219896587}
+{"id": 539, "hyp": "hello everyone .", "ref": "sha1:296a6d79f8582ad91ad66121a1317ece67f2d3a5", "self_ce": 0.6592668294906616, "self_rel": 2.710236981511116}
+{"id": 540, "hyp": "look it is a rectangle .", "ref": "sha1:041d2c07c87035539039c6a9bf5e10475d76ba3c", "self_ce": 0.8552382332938058, "self_rel": 1.4401735407965524}
+{"id": 541, "hyp": "great thank you so much .", "ref": "sha1:8968ccd5ff5d497e4dfc1cd84a1312cee5830dc9", "self_ce": 0.5948307854788644, "self_rel": 2.0439355713980545}
+{"id": 542, "hyp": "i am going to show you how to make it .", "ref": "sha1:6fdc6982576fb964c78c6c4366a1d03021cf8d62", "self_ce": 0.6773401896158854, "self_rel": 1.2372202376524606}
+{"id": 543, "hyp": "great now we need to add the milk .", "ref": "sha1:570324b1937a8cd105b6b67571763f7751af5c34", "self_ce": 0.7751550674438477, "self_rel": 1.2147681713104248}
+{"id": 544, "hyp": "i really enjoyed that .", "ref": "sha1:d3341b7b00081ff26b527ea5d8a2f0a189591479", "self_ce": 0.7607597510019938, "self_rel": 1.2942783832550049}
+{"id": 545, "hyp": "why do not we watch some children learning about different types of tools .", "ref": "sha1:49d87335f60f67ac29e39b1f5466acffa56555a8", "self_ce": 0.469483757019043, "self_rel": 1.6176433086395265}
+{"id": 546, "hyp": "hi everyone .", "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "self_ce": 0.20510435104370117, "self_rel": 3.2507426738739014}
+{"id": 547, "hyp": "that is great .", "ref": "sha1:a01c7e0657920d2889930910f798678b19c18c43", "self_ce": 0.8933556556701661, "self_rel": 0.9756809532642365}
+{"id": 548, "hyp": "look .", "ref": "sha1:98c03b082eb1dac511f81d8fc0e1d52b09ec14bb", "self_ce": 0.9228349526723226, "self_rel": 3.1123311718304945}
+{"id": 549, "hyp": "why do not we go inside and make a salad .", "ref": "sha1:0747295ebe515ea1708145db292b554787979efd", "self_ce": 0.7314372062683105, "self_rel": 1.5125009417533875}
+{"id": 550, "hyp": "that is great .", "ref": "sha1:75d536b1da4753a78c1f86595f6c692fa25f3e1a", "self_ce": 0.5857665061950683, "self_rel": 1.6167097330093385}
+{"id": 551, "hyp": "that is great .", "ref": "sha1:d68c0d9ca2ac2348b577aef9deaf2d193b55eebf", "self_ce": 0.5990841865539551, "self_rel": 0.6060715317726135}
+{"id": 552, "hyp": "yes .", "ref": "sha1:08d5ca8e694b3e9551eb346ff964f3e10957d696", "self_ce": 0.16398707032203674, "self_rel": 2.17472313841184}
+{"id": 553, "hyp": "that is right possum .", "ref": "sha1:2d1829b850ed6db3ba765349af08ef73d7c6cbab", "self_ce": 0.5412422815958658, "self_rel": 1.0168580611546836}
+{"id": 554, "hyp": "thank you .", "ref": "sha1:3f0cea09a9db4593f9dec4f0a805b8e08ecee3a4", "self_ce": 0.7692087888717651, "self_rel": 1.4160648509860039}
+{"id": 555, "hyp": "would you like to make one possum .", "ref": "sha1:9898048440b26eabbd744c15139e271523b36cb2", "self_ce": 0.5920121404859755, "self_rel": 1.4193964666790435}
+{"id": 556, "hyp": "i know .", "ref": "sha1:a711ae3bbe7d56a822f0c6cd411b8bc8ac0e74d8", "self_ce": 0.8566689491271973, "self_rel": 1.614390343427658}
+{"id": 557, "hyp": "let us go .", "ref": "sha1:22967ebb33b84407875088b5a771aac56da00825", "self_ce": 0.7073872566223145, "self_rel": 1.3950461745262144}
+{"id": 558, "hyp": "why do not we watch some children at school .", "ref": "sha1:3b8089955c2296e3f8ee41dad36c9446848db5a5", "self_ce": 0.4876557263461026, "self_rel": 1.2851879488338125}
+{"id": 559, "hyp": "it is a very important thing .", "ref": "sha1:863578a59adb1b906c5aa52dd69dd20bd840d5f9", "self_ce": 0.9755908250808716, "self_rel": 0.8766975700855255}
+{"id": 560, "hyp": "i love learning about different tools .", "ref": "sha1:223ed7a59523ab4d6f3682d3209e2442fde6fde4", "self_ce": 0.778386116027832, "self_rel": 2.1632698476314545}
+{"id": 561, "hyp": "that is a great idea to go and see skip .", "ref": "sha1:403c29c29979c46ebc7f319e2728052b30a30fc7", "self_ce": 0.7110679149627686, "self_rel": 0.7992796997229259}
+{"id": 562, "hyp": "that was great .", "ref": "sha1:8ef501384b06c09e5e3a7084ee678b147c2e8a2e", "self_ce": 0.8157692909240722, "self_rel": 1.7285450935363764}
+{"id": 563, "hyp": "it is a rectangle .", "ref": "sha1:afd4e947b7fa540c53a99ef0201428977d67a36a", "self_ce": 0.9764677683512369, "self_rel": 1.0727754036585493}
+{"id": 564, "hyp": "yes .", "ref": "sha1:d147d2a2b2266582fff89db1b88795566192ef50", "self_ce": 0.8560922940572103, "self_rel": 2.445443948109945}
+{"id": 565, "hyp": "that is great skip you have got so many tools .", "ref": "sha1:3b47f396b06c3c3f85f589bbc459f00c7f8ae19e", "self_ce": 0.7778768539428711, "self_rel": 1.6383113761742907}
+{"id": 566, "hyp": "where is it .", "ref": "sha1:20fb7c8fc8df6e42d246657222b5b19e70fceb0b", "self_ce": 0.6108187198638916, "self_rel": 2.038765168190002}
+{"id": 567, "hyp": "you are right sally .", "ref": "sha1:8e38f66e26a869c470f73a7a0a627eba21896411", "self_ce": 0.9272948106129965, "self_rel": 1.1094801227251687}
+{"id": 568, "hyp": "thank you possum .", "ref": "sha1:69794ed2dca9325ddea99add2c862318a5569236", "self_ce": 0.5182285308837891, "self_rel": 1.9149373292922975}
+{"id": 569, "hyp": "thank you .", "ref": "sha1:8fa28b82073e3c4b04da27b1c849c583245bd214", "self_ce": 0.582902193069458, "self_rel": 1.604517623782158}
+{"id": 570, "hyp": "why do not we go inside and have a look .", "ref": "sha1:a574271c0143fd7d239f44599d1fd5cade47858e", "self_ce": 0.5852677424748739, "self_rel": 1.0460599263509116}
+{"id": 571, "hyp": "sally what is it .", "ref": "sha1:b025dd1876002169f33b262e8bf54f09a101d333", "self_ce": 0.8986390431722006, "self_rel": 1.492979307969411}
+{"id": 572, "hyp": "what is next .", "ref": "sha1:4db135a1333f5f7f38fb0ac3f0c40fa6f683ac3a", "self_ce": 0.6667956829071044, "self_rel": 1.8803377389907838}
+{"id": 573, "hyp": "i do not know what i need to do .", "ref": "sha1:c956be073afa222b268c7e1bbb3caa9bcf23897d", "self_ce": 0.7609866749156605, "self_rel": 0.7807963869788431}
+{"id": 574, "hyp": "what is next .", "ref": "sha1:f1b2950694b2fee255175bcda03649b2d0baa23b", "self_ce": 0.7443929672241211, "self_rel": 1.3029115438461303}
+{"id": 575, "hyp": "let us go .", "ref": "sha1:118bebb28a75741fb65327ffce9f3da83bca4799", "self_ce": 0.19397573471069335, "self_rel": 2.266899394989014}
+{"id": 576, "hyp": "what is it .", "ref": "sha1:c7bb325e77f4598722801fcd446b20d6c1909ffa", "self_ce": 0.565924882888794, "self_rel": 1.0134832203388213}
+{"id": 577, "hyp": "sally what is a treasure .", "ref": "sha1:9db53a67be52f39431e395a708b52f4e2c3258f5", "self_ce": 0.6210835320608956, "self_rel": 1.9477166107722692}
+{"id": 578, "hyp": "that is great .", "ref": "sha1:ffa61b2a7f4cf989cbbd3addbbffa8b0a13bce6a", "self_ce": 0.7705462455749512, "self_rel": 1.0910289645195008}
+{"id": 579, "hyp": "let us have a look .", "ref": "sha1:ef3cbf24a91a41e33f23fe58b51ac4962f3fab3f", "self_ce": 0.6714181218828473, "self_rel": 1.0670167037418907}
+{"id": 580, "hyp": "have a look .", "ref": "sha1:4fe9137808bfc74f8ef96b7ae9ba52b912a4b5e0", "self_ce": 0.7506283283233642, "self_rel": 1.2579834103584289}
+{"id": 581, "hyp": "it is always hard to learn new things .", "ref": "sha1:eaec2ea5b1f4fcc106940ff736c060b5f8d66c9f", "self_ce": 0.6592337608337402, "self_rel": 1.2986697077751161}
+{"id": 582, "hyp": "i have got everything ready for lunch now .", "ref": "sha1:23a3d7f23f7431de41fb0dc3dfbe154a5b61d833", "self_ce": 0.8241103172302247, "self_rel": 1.9288908839225771}
+{"id": 583, "hyp": "can you please get the recipe possum .", "ref": "sha1:1ca0655415bc41c1431c2c3e8e3954f5ca86d035", "self_ce": 0.8085482915242513, "self_rel": 1.6010662184821238}
+{"id": 584, "hyp": "i have an idea .", "ref": "sha1:b02eb9c964b180693354050b1323946e38d8f99b", "self_ce": 0.8388571739196777, "self_rel": 1.200844625631968}
+{"id": 585, "hyp": "look .", "ref": "sha1:b9273013910f2c34b917d9f151082031e2c680b5", "self_ce": 0.5211157401402792, "self_rel": 3.5415857632954917}
+{"id": 586, "hyp": "good morning .", "ref": "sha1:38302d840c73f0094b51c314492e87e05819a889", "self_ce": 0.5970829725265503, "self_rel": 2.371170550584793}
+{"id": 587, "hyp": "it is a very special thing for us to do .", "ref": "sha1:d26feffd0579cba491b4bf6a2346f74533b5e51a", "self_ce": 0.6803091367085775, "self_rel": 1.1644812226295467}
+{"id": 588, "hyp": "that is great .", "ref": "sha1:d74974ac62890a8da363b6f367b09bbca05120c6", "self_ce": 0.7999310970306397, "self_rel": 1.3354269742965699}
+{"id": 589, "hyp": "let us have a look .", "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "self_ce": 0.6353374889918736, "self_rel": 0.867724869932447}
+{"id": 590, "hyp": "right here you go .", "ref": "sha1:a082f19067bb2834001ba148ad4025e2dc28d6da", "self_ce": 1.0441265106201172, "self_rel": 1.169252971808116}
+{"id": 591, "hyp": "good .", "ref": "sha1:2f7dd3f4d12b477e55d2d75b42dacc425866aaf5", "self_ce": 1.2827714284261067, "self_rel": 2.397139171759287}
+{"id": 592, "hyp": "yes that is right possum .", "ref": "sha1:42864e4490ed1df6b23ba611080eafc0b33bebfa", "self_ce": 0.6381252833775112, "self_rel": 0.9818140864372252}
+{"id": 593, "hyp": "let us see .", "ref": "sha1:57890d7abda275b0825d90e0e6d06172e390c3f9", "self_ce": 0.6401074886322021, "self_rel": 2.2649215698242187}
+{"id": 594, "hyp": "what is this .", "ref": "sha1:e97dbc8da29c4369c99c913ad1e266d45fcd70cb", "self_ce": 0.6972582817077637, "self_rel": 1.2739096283912656}
+{"id": 595, "hyp": "that looked like so much fun .", "ref": "sha1:6ee29ed980f34f9a8e23f17ac38990017f88bcdd", "self_ce": 0.6114063858985901, "self_rel": 1.2405783832073212}
+{"id": 596, "hyp": "i have got it .", "ref": "sha1:35abc0528c6f5fe1ffcdb7e8d0c6210b50f698c2", "self_ce": 0.6870935757954916, "self_rel": 1.84639302889506}
+{"id": 597, "hyp": "well our time is up .", "ref": "sha1:6970100a2f78571ba0adadf4521d495d3682cb1b", "self_ce": 0.3239830562046596, "self_rel": 1.330726214817592}
+{"id": 598, "hyp": "that is great .", "ref": "sha1:ecdc5655df3b4de5909cbb9c3686766d0ac7fe01", "self_ce": 0.6096482753753663, "self_rel": 1.5791529297828675}
+{"id": 599, "hyp": "well done possum .", "ref": "sha1:80d2a5d40bc4d207f42237fac76aa54423f27680", "self_ce": 1.0059715270996095, "self_rel": 1.275084912776947}
+{"id": 600, "hyp": "i know .", "ref": "sha1:945c38c81d3e233d915b5d021c86bb744bb5bead", "self_ce": 0.2990541160106659, "self_rel": 2.029524341225624}
+{"id": 601, "hyp": "thanks for watching .", "ref": "sha1:48d038a81d2b459ee2769f1546532f320d6f1810", "self_ce": 0.6560287475585938, "self_rel": 1.4386839389801023}
+{"id": 602, "hyp": "i have an idea .", "ref": "sha1:7e315d32bc301006710aa123bce1b00a3a02b46d", "self_ce": 0.6989812056223551, "self_rel": 0.9993409514427182}
+{"id": 603, "hyp": "that is great .", "ref": "sha1:f027893de1768b8d6db018fc955e1175289311c1", "self_ce": 0.39179513454437254, "self_rel": 1.1649963915348054}
+{"id": 604, "hyp": "i know .", "ref": "sha1:93c49b0dd970e0fff0ccad344faa334ff69054b8", "self_ce": 0.5474921464920044, "self_rel": 2.2258322536945343}
+{"id": 605, "hyp": "you are funny possum .", "ref": "sha1:50ccb8b2fd4f66cc082028daad1e6980582646bb", "self_ce": 0.5994354883829752, "self_rel": 1.5483412245909371}
+{"id": 606, "hyp": "i do love it .", "ref": "sha1:20daefca4b1b5a41fa0305c0a9b2229c36b22858", "self_ce": 0.9567248026529948, "self_rel": 1.4507679343223576}
+{"id": 607, "hyp": "yes please .", "ref": "sha1:ed826a49fa3c45235a08006dbe2ed5bf1bde520c", "self_ce": 0.7631710767745972, "self_rel": 1.7796142250299454}
+{"id": 608, "hyp": "now we need to fold it in half .", "ref": "sha1:26c07e295651b311384cdcec43a8bf03ea5d7936", "self_ce": 0.627561378479004, "self_rel": 1.4521504759788513}
+{"id": 609, "hyp": "just a little bit more .", "ref": "sha1:39ecfc70219269edee927de3c311ef4bb60160db", "self_ce": 0.6380937440054757, "self_rel": 1.3776264020374847}
+{"id": 610, "hyp": "that is great .", "ref": "sha1:433121ca0a39342a8e7945cd328e674f04e28ebc", "self_ce": 0.7123849868774415, "self_rel": 1.101653230190277}
+{"id": 611, "hyp": "look .", "ref": "sha1:865504c05439edbade12604b46a717e1b678e6f0", "self_ce": 0.04452164967854818, "self_rel": 3.5745553771654763}
+{"id": 612, "hyp": "it is very big .", "ref": "sha1:cc963576a6f828263119c61f2d1ad4ec20c661e2", "self_ce": 0.9249053796132406, "self_rel": 1.1261185606320696}
+{"id": 613, "hyp": "i know you love to sleep possum .", "ref": "sha1:160912fc21be89b8a972cf75ae44df67ba94ba81", "self_ce": 0.7794595294528537, "self_rel": 2.268351475397746}
+{"id": 614, "hyp": "that was great .", "ref": "sha1:c250e7168fd3a4eca1d805edb9699b046d8648aa", "self_ce": 0.4925595760345459, "self_rel": 1.1172824025154116}
+{"id": 615, "hyp": "you are funny .", "ref": "sha1:8e9033d7872c133a487d742dd5ebf06b0320d072", "self_ce": 0.8115056991577149, "self_rel": 1.0097048759460447}
+{"id": 616, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.05645357285227094, "self_rel": 1.7848245458943504}
+{"id": 617, "hyp": "can i go to bed now .", "ref": "sha1:25603ce9f9325dd58f95ccb58989f3159487096a", "self_ce": 0.889919638633728, "self_rel": 1.299354836344719}
+{"id": 618, "hyp": "i want to learn more about your tree .", "ref": "sha1:4183232ba034ba9cb86a05d8d88c83d75bb9722d", "self_ce": 0.8315194129943848, "self_rel": 1.4564601421356203}
+{"id": 619, "hyp": "yes that is right .", "ref": "sha1:79f3d4372bafd46642a83b7471e9c7495d446e9f", "self_ce": 0.45384955406188965, "self_rel": 0.9091858416795731}
+{"id": 620, "hyp": "yes .", "ref": "sha1:0c02ff247d2908eb9a120fd00598aa3c6a092bce", "self_ce": 0.9252557754516602, "self_rel": 2.1528170307477317}
+{"id": 621, "hyp": "they are called crutches .", "ref": "sha1:750edf74e604e408cfee2eff6353b2306faeaeb8", "self_ce": 0.7453683217366537, "self_rel": 1.8309470415115352}
+{"id": 622, "hyp": "yes .", "ref": "sha1:401edcc20b7645eb2ec49fe7be6af072f86742ad", "self_ce": 0.6183895667394003, "self_rel": 1.8026219209035235}
+{"id": 623, "hyp": "hello sally .", "ref": "sha1:16e434bd58e233c0ffb16531107e1d9b9d06ae8a", "self_ce": 0.5982478857040405, "self_rel": 2.759747624397278}
+{"id": 624, "hyp": "possum you are funny .", "ref": "sha1:2f8ca2184eac3f8d4e05bdc4a9dcce787c5546db", "self_ce": 0.8823862075805664, "self_rel": 1.2371489306290946}
+{"id": 625, "hyp": "look .", "ref": "sha1:1dbc18ecd20a3bdb0d1233dd50eb5e6ebc677665", "self_ce": 0.5953166484832764, "self_rel": 3.0361750026543937}
+{"id": 626, "hyp": "that is true .", "ref": "sha1:dd97c3f186d65caf2383d3b3a34d2a52952cb6eb", "self_ce": 1.1016444206237792, "self_rel": 1.1940703392028809}
+{"id": 627, "hyp": "me .", "ref": "sha1:f209e0efd2ce7c181185aa3fd124f148f8e5a40f", "self_ce": 0.8998541831970215, "self_rel": 3.1213466723759966}
+{"id": 628, "hyp": "can i go to the shop now .", "ref": "sha1:e58b75d0061a95b4639b587983dceb9bfb2482ea", "self_ce": 0.7392640643649631, "self_rel": 0.9022105667326188}
+{"id": 629, "hyp": "yes that is right possum .", "ref": "sha1:0bbb26b6b75e3e111ee4ce1ecc8acec28cc022fe", "self_ce": 0.9195267813546317, "self_rel": 0.936604252883366}
+{"id": 630, "hyp": "i will go see if he is awake .", "ref": "sha1:a9a5358a64a291324f51f369db28aa52be42e2e8", "self_ce": 0.8125823974609375, "self_rel": 0.848878264427185}
+{"id": 631, "hyp": "what a great idea .", "ref": "sha1:45507ebe9d48329a38b15dff288fd0028540285b", "self_ce": 0.8905620574951172, "self_rel": 0.6874717672665913}
+{"id": 632, "hyp": "sally what is a treasure hunt .", "ref": "sha1:86b0f21365a2377642eac2f056314d2bb1f7aca8", "self_ce": 0.6216052174568176, "self_rel": 1.269035279750824}
+{"id": 633, "hyp": "that is great .", "ref": "sha1:5f2c025e3dc2d10152fb7b179fdcf48239191dcd", "self_ce": 0.6231484413146973, "self_rel": 0.8883174329996106}
+{"id": 634, "hyp": "look .", "ref": "sha1:3ab9650ef0c0db5170dcc2cf67892038b1589f95", "self_ce": 0.9672909577687582, "self_rel": 2.848106404145559}
+{"id": 635, "hyp": "come on .", "ref": "sha1:85948c257af0d58f51127f9b966d814711c01c02", "self_ce": 0.8745314478874207, "self_rel": 2.1319890692830086}
+{"id": 636, "hyp": "where is possum .", "ref": "sha1:9619992743ddfc8a3f2255b7dac71c127c29757d", "self_ce": 0.7126079559326172, "self_rel": 1.681745290756226}
+{"id": 637, "hyp": "look at all the big trucks .", "ref": "sha1:30a78b7f2082616e610e4ac2b2b4e76dcf675163", "self_ce": 0.9296687841415405, "self_rel": 1.3692070990800858}
+{"id": 638, "hyp": "that is the end .", "ref": "sha1:30a78b7f2082616e610e4ac2b2b4e76dcf675163", "self_ce": 0.8940652211507162, "self_rel": 1.7214947740236912}
+{"id": 639, "hyp": "it is such a beautiful day .", "ref": "sha1:be8b42f0b1a163ec507ee53470f3d76d0abf04c2", "self_ce": 0.7824419140815735, "self_rel": 0.6995610371232033}
+{"id": 640, "hyp": "that is right possum .", "ref": "sha1:8fac5c735c384495d8dbf1c7a71e5792b5c1e627", "self_ce": 0.621637225151062, "self_rel": 1.2356490592161813}
+{"id": 641, "hyp": "i do not know why .", "ref": "sha1:9c53a5322ac7022892030cbf17a5998544832259", "self_ce": 1.0651517595563615, "self_rel": 0.45897115979875847}
+{"id": 642, "hyp": "i am so excited see you .", "ref": "sha1:d6d525501e14756316c6006e36ac8a781eaa1a2a", "self_ce": 0.8511850237846375, "self_rel": 1.3157109022140503}
+{"id": 643, "hyp": "that is right possum .", "ref": "sha1:d6c112cd02cd4ceb497195f20d04e7558bef6594", "self_ce": 1.0084314346313477, "self_rel": 1.0116291344165806}
+{"id": 644, "hyp": "i know .", "ref": "sha1:5dcab3a61e848782e2373876323f593c6cf7cfb1", "self_ce": 0.946857213973999, "self_rel": 0.9994633048772812}
+{"id": 645, "hyp": "this one .", "ref": "sha1:509acb049a01cd1a12686d091be45ac07cb80d0b", "self_ce": 1.1647065877914429, "self_rel": 1.5848436057567596}
+{"id": 646, "hyp": "thank you .", "ref": "sha1:00b77492bbe6f94101971f12fc1273600b1d0952", "self_ce": 0.4903290867805481, "self_rel": 1.9346536844968796}
+{"id": 647, "hyp": "i know .", "ref": "sha1:e67e9b0ef058a85d791d4cba82ac1cc6c7eca6e1", "self_ce": 0.9267479181289673, "self_rel": 1.264676183462143}
+{"id": 648, "hyp": "i love learning about different types of tools .", "ref": "sha1:31101ac080eb514159630d03e80996ad8470852d", "self_ce": 0.8736423492431641, "self_rel": 0.6900967478752135}
+{"id": 649, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.04570862225123814, "self_rel": 1.912232790674482}
+{"id": 650, "hyp": "that is great .", "ref": "sha1:b3bad9b97bbd0a27c7ca3cf19019445d3aae5e7a", "self_ce": 0.3222669124603271, "self_rel": 1.6298732280731199}
+{"id": 651, "hyp": "great .", "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "self_ce": 0.3889716863632202, "self_rel": 2.5507791837056475}
+{"id": 652, "hyp": "sally look .", "ref": "sha1:dc91a4f5db6734ced93025a38c022f62c2b311d4", "self_ce": 0.5279731750488281, "self_rel": 2.884801134467125}
+{"id": 653, "hyp": "yes please .", "ref": "sha1:04a50744c547f255e32ad16a768e9d607e4ffb51", "self_ce": 0.8496111631393433, "self_rel": 1.4690859764814377}
+{"id": 654, "hyp": "i have got my leaves here .", "ref": "sha1:68ee714534b9c71e52718a4b8f0232370013bc59", "self_ce": 0.8716441988945007, "self_rel": 1.5962872952222824}
+{"id": 655, "hyp": "you have been working very hard have not you .", "ref": "sha1:b449f52c68c2c9c24c7b387ddc5e04c068304bcd", "self_ce": 0.8540328632701527, "self_rel": 0.9557693763212723}
+{"id": 656, "hyp": "come on .", "ref": "sha1:bf5a962542bf120e4a5aae8b213c294097f0bfb0", "self_ce": 0.528874933719635, "self_rel": 2.939412161707878}
+{"id": 657, "hyp": "ok .", "ref": "sha1:0c02ff247d2908eb9a120fd00598aa3c6a092bce", "self_ce": 0.6646746397018433, "self_rel": 2.3116724888483686}
+{"id": 658, "hyp": "thank you so much skip .", "ref": "sha1:f95dae811da5a8d824a36b55972f5bc238252809", "self_ce": 0.4929530279976981, "self_rel": 1.8547260420663017}
+{"id": 659, "hyp": "look .", "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "self_ce": 0.04765003422896067, "self_rel": 2.8277576069037127}
+{"id": 660, "hyp": "that looks great .", "ref": "sha1:8d8d3322b812653875d9542cfc455f7e867d3f27", "self_ce": 0.5231022834777832, "self_rel": 1.4987831473350526}
+{"id": 661, "hyp": "but before we do that why do not we go now .", "ref": "sha1:1b8634af1684435ea09143da1861240105381e15", "self_ce": 0.7513597194965069, "self_rel": 0.9561334298207209}
+{"id": 662, "hyp": "there it is .", "ref": "sha1:d662fb9c856cdbd728b15bbc091b1fff4ae07c91", "self_ce": 0.6586181163787842, "self_rel": 1.5085704922676086}
+{"id": 663, "hyp": "one two three .", "ref": "sha1:04c6c14aaee2d20ff7c6d37877093a430510f3dd", "self_ce": 0.6646146774291992, "self_rel": 1.7847929000854488}
+{"id": 664, "hyp": "yes .", "ref": "sha1:fa45f83ad6f64b59e92eb3918b0516338f7849e2", "self_ce": 0.20774364471435547, "self_rel": 2.954812248547872}
+{"id": 665, "hyp": "these are the halves .", "ref": "sha1:40275cac67334028bde6964281e4a9be1add09f8", "self_ce": 0.721672534942627, "self_rel": 1.7458305160204568}
+{"id": 666, "hyp": "yes that is right .", "ref": "sha1:841f86b894d7de933ce27dd4f4af90255765f0c2", "self_ce": 0.5650221506754557, "self_rel": 1.192155877749125}
+{"id": 667, "hyp": "it was so much fun .", "ref": "sha1:eed78d99a5945e07cda2163b72bb6157d1a2ab93", "self_ce": 0.8671881130763462, "self_rel": 0.9118312086377828}
+{"id": 668, "hyp": "yeah let us watch .", "ref": "sha1:9a27c837f01d9836d0c95b11bb2eaccdb3a0a498", "self_ce": 0.7328977584838867, "self_rel": 1.3265994985898337}
+{"id": 669, "hyp": "i have an idea .", "ref": "sha1:77dc52dc623e60b6f4e1e07b8fdfcdc7e663f807", "self_ce": 0.7642196814219157, "self_rel": 0.8661592106024426}
+{"id": 670, "hyp": "yes you are right .", "ref": "sha1:887f0ea81b53d920e81bd60381eb3b64b741d253", "self_ce": 1.1191004117329915, "self_rel": 0.34112802147865273}
+{"id": 671, "hyp": "you are funny possum .", "ref": "sha1:6dd580f13d8c89c8ed153852462e82e22d083e3a", "self_ce": 0.5373264948527018, "self_rel": 1.302074134349823}
+{"id": 672, "hyp": "that is great .", "ref": "sha1:7cfedaa9aeac181167e74c820f0e6a751525baf2", "self_ce": 0.5560300827026368, "self_rel": 0.5966320872306823}
+{"id": 673, "hyp": "it is a lovely day .", "ref": "sha1:fd13525e6e9009d25c26ee384920912eccf07bae", "self_ce": 0.7577477182660785, "self_rel": 1.9219467469624107}
+{"id": 674, "hyp": "that looked great .", "ref": "sha1:5f4537269660647a3f26555a4b3a983cdaf31e5d", "self_ce": 0.6123966217041016, "self_rel": 1.589818847179413}
+{"id": 675, "hyp": "they are called crutches .", "ref": "sha1:9a8362bbc38bf739723e5c24e2ba692de97acfd1", "self_ce": 0.8499226570129395, "self_rel": 1.8065771857897435}
+{"id": 676, "hyp": "great job possum .", "ref": "sha1:f209e0efd2ce7c181185aa3fd124f148f8e5a40f", "self_ce": 0.919179630279541, "self_rel": 2.0984280586242674}
+{"id": 677, "hyp": "why do not we watch some children learning about space .", "ref": "sha1:5ca1a251f2148f2f7e53f110659a40a34ddc6c5e", "self_ce": 0.496168851852417, "self_rel": 1.5638453960418701}
+{"id": 678, "hyp": "thank you so much skip .", "ref": "sha1:47e9bc906ab29ce5d915206a15b5ac64ece51aa4", "self_ce": 0.5997556958879743, "self_rel": 1.446036900792803}
+{"id": 679, "hyp": "thanks for watching .", "ref": "sha1:47e9bc906ab29ce5d915206a15b5ac64ece51aa4", "self_ce": 0.3355665922164917, "self_rel": 2.1402981042861935}
+{"id": 680, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.06114148667880467, "self_rel": 1.7014594024845533}
+{"id": 681, "hyp": "yes that is right .", "ref": "sha1:f9a652b8035c7adca2a80b2d2f6307ea19f1d079", "self_ce": 0.7082890669504801, "self_rel": 1.0083205600579581}
+{"id": 682, "hyp": "it looks like it could be a bike .", "ref": "sha1:7cba39a372fdaec7db5ebbb3aaf50d66121e8f27", "self_ce": 0.9608099937438965, "self_rel": 1.00173077583313}
+{"id": 683, "hyp": "i know .", "ref": "sha1:bdc7e34c22c32410624f4cee45a3ec1eaf10a40f", "self_ce": 1.106101632118225, "self_rel": 0.8066385239362717}
+{"id": 684, "hyp": "yes please .", "ref": "sha1:aa627c8ea2156d47936a94f733ec94ab606f62ab", "self_ce": 1.0021800994873047, "self_rel": 1.0906199365854263}
+{"id": 685, "hyp": "yes please .", "ref": "sha1:b69985103deedee34d0f48cc7585a0321c435faf", "self_ce": 0.964358925819397, "self_rel": 1.1074145883321762}
+{"id": 686, "hyp": "well our time is up .", "ref": "sha1:87f67b7fafdc9faaea9cc5b2f1db3965b7a91e16", "self_ce": 0.20914275305611746, "self_rel": 1.7599077139581953}
+{"id": 687, "hyp": "let us go inside .", "ref": "sha1:7672a438b3bae4b243e42cb986fd880bfcb5bdbb", "self_ce": 0.7574710051218668, "self_rel": 1.4754112561543784}
+{"id": 688, "hyp": "what is that .", "ref": "sha1:0e320713612691aa175bb69eeae903c18a94b64c", "self_ce": 0.7769498825073242, "self_rel": 0.9825274467468263}
+{"id": 689, "hyp": "yes .", "ref": "sha1:e603efa176d06573850555394e2f6c3b9cefc0a0", "self_ce": 0.28927407662073773, "self_rel": 3.1315487225850425}
+{"id": 690, "hyp": "yes .", "ref": "sha1:4d1853dc48119d4188547353997c44162553fe83", "self_ce": 0.7179397741953532, "self_rel": 2.141064981619517}
+{"id": 691, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.10929617711475917, "self_rel": 1.9092485989843098}
+{"id": 692, "hyp": "good morning .", "ref": "sha1:2b2bb77de69ef4a0024c5c4d6cf666eb9e8bafbd", "self_ce": 0.5374999642372131, "self_rel": 2.373733416199684}
+{"id": 693, "hyp": "great .", "ref": "sha1:1b8124eb1e7df85db560d222bf421e7417ac3d2e", "self_ce": 0.6882499853769938, "self_rel": 1.985122635960579}
+{"id": 694, "hyp": "you are funny possum .", "ref": "sha1:11604ffeb1fafbb05e1523d6c7bc49e36acbb683", "self_ce": 0.6140357255935669, "self_rel": 1.3108483254909515}
+{"id": 695, "hyp": "thank you .", "ref": "sha1:61296fb98b2b79d054797cfd407e5c48d706cfcb", "self_ce": 1.1335047483444214, "self_rel": 1.7473836690187454}
+{"id": 696, "hyp": "that is right .", "ref": "sha1:cfb27f3b11b673f5fdaa096a3a611cc516f7222a", "self_ce": 1.1277315139770507, "self_rel": 0.740517508983612}
+{"id": 697, "hyp": "sally i am ready to make it now .", "ref": "sha1:bfcc17ea8e15c4fe9f36dfc55ba2249af64386a6", "self_ce": 0.8538455963134766, "self_rel": 1.816858625411987}
+{"id": 698, "hyp": "let us go inside .", "ref": "sha1:d40cadc26ad8c4ab603ebc29aee386026988e15c", "self_ce": 0.9245053927103678, "self_rel": 1.3973422050476074}
+{"id": 699, "hyp": "that is great .", "ref": "sha1:b1615750d18f29205605ea758fb30a0888979703", "self_ce": 0.7290319919586181, "self_rel": 0.6381077647209168}
+{"id": 700, "hyp": "thank you bye .", "ref": "sha1:209015fd2a140e771cf5b3da0b46542cc9181233", "self_ce": 1.0384384155273438, "self_rel": 1.5762225151062008}
+{"id": 701, "hyp": "let us go .", "ref": "sha1:952ee773387347183323896e3bec2ce16c63c64e", "self_ce": 0.2845159530639648, "self_rel": 1.7754324674606323}
+{"id": 702, "hyp": "i know .", "ref": "sha1:cc1f074511dbc3766c34574c992714befa8704a7", "self_ce": 0.526961624622345, "self_rel": 1.5396935641765594}
+{"id": 703, "hyp": "it is a bit different .", "ref": "sha1:4abe69349769d1efbc552b41a0294e0a57234cd7", "self_ce": 0.8729770524161202, "self_rel": 0.8825842653002056}
+{"id": 704, "hyp": "let us have a look .", "ref": "sha1:6f2075d7624b30163246612a645ab82ec61178fd", "self_ce": 0.6468572616577148, "self_rel": 0.8551203778811867}
+{"id": 705, "hyp": "where are you going .", "ref": "sha1:0751d67f5a0c9f56475890dc9234075b21c50c24", "self_ce": 0.6601731379826864, "self_rel": 1.6058902541796365}
+{"id": 706, "hyp": "that is great .", "ref": "sha1:9d5e2eafbdb89e132aa5a206ae84527f6c4abca6", "self_ce": 0.6783261299133301, "self_rel": 1.2338148713111876}
+{"id": 707, "hyp": "i love learning .", "ref": "sha1:680466ef846f75c95ab579ff7ff5439f349bbdb9", "self_ce": 0.8587480545043945, "self_rel": 2.1634778738021847}
+{"id": 708, "hyp": "it is a very big one is not it .", "ref": "sha1:08b7a1c87e230a7489d72c69b27ecaf913558fe1", "self_ce": 0.7452181902798739, "self_rel": 0.8199416507374157}
+{"id": 709, "hyp": "bye bye .", "ref": "sha1:a1000548c43aa156daef5be583146e5b683a6580", "self_ce": 0.5663211345672607, "self_rel": 3.070392742753029}
+{"id": 710, "hyp": "bye .", "ref": "sha1:fac902133f7874f18acf0ab647a96fdc87eb78dc", "self_ce": 0.21623380978902182, "self_rel": 4.090458313624064}
+{"id": 711, "hyp": "look .", "ref": "sha1:d1e0025574606fb1b54b59382773333251494e2b", "self_ce": 0.3774117628733317, "self_rel": 2.4029245277245836}
+{"id": 712, "hyp": "i really enjoyed that .", "ref": "sha1:93b66b518a49511d92c2068e56227bace205c301", "self_ce": 0.7736734549204508, "self_rel": 1.3556684851646428}
+{"id": 713, "hyp": "i know .", "ref": "sha1:91a366715e6ffc4ed48b05c52f65be34008a31df", "self_ce": 1.0779504776000977, "self_rel": 0.8652038276195526}
+{"id": 714, "hyp": "yeah let us watch .", "ref": "sha1:8a2df575d4a7c69155b5f5e7ceb4d81bed88a4ca", "self_ce": 0.666038990020752, "self_rel": 1.4479345877965293}
+{"id": 715, "hyp": "bye .", "ref": "sha1:54e4974562b271a5f640d4cf75b98670cd177a87", "self_ce": 0.705358107884725, "self_rel": 3.3331239024798074}
+{"id": 716, "hyp": "look .", "ref": "sha1:b2549f26be9c88ae5b0b73e229be4e906d3b820c", "self_ce": 0.20239351193110147, "self_rel": 2.9161466757456465}
+{"id": 717, "hyp": "that was great .", "ref": "sha1:e25511cd721f7515ebf965433f6bf723be291860", "self_ce": 0.4631455421447754, "self_rel": 1.2679303288459778}
+{"id": 718, "hyp": "that is great .", "ref": "sha1:02ccffafd0c08b391ca20cb61debe30837baf7b9", "self_ce": 1.0027822494506835, "self_rel": 0.8924943208694458}
+{"id": 719, "hyp": "ok and these are the quarters make a whole .", "ref": "sha1:d9b8ddae0a4453d7a6064029e6204371e01a6904", "self_ce": 0.4400360801003196, "self_rel": 2.628011746840044}
+{"id": 720, "hyp": "now we just need a piece of paper .", "ref": "sha1:dcfb5c26e32bf66583a24e856bc93a810b35b329", "self_ce": 0.6698768615722657, "self_rel": 1.6959052681922915}
+{"id": 721, "hyp": "sally look .", "ref": "sha1:4e3b85d3c12ce8ba8179553e835730a38be79353", "self_ce": 0.9335826635360718, "self_rel": 2.1330486536026}
+{"id": 722, "hyp": "we have had such a good time .", "ref": "sha1:9ed7dc3f3b9bc7db8862e3a06ad65cb8d9e16997", "self_ce": 0.8096692827012804, "self_rel": 0.815439740816752}
+{"id": 723, "hyp": "that is right possum .", "ref": "sha1:4e4d7a4dd101305a65a08c60bc06b71fb7bf4769", "self_ce": 0.6679919560750326, "self_rel": 1.0177611708641052}
+{"id": 724, "hyp": "i have got everything ready .", "ref": "sha1:b4aef8e4ae6d4bff62e45d673a36c88811b473a7", "self_ce": 0.9052298409598214, "self_rel": 1.5159193447657995}
+{"id": 725, "hyp": "bye .", "ref": "sha1:6eeac7aca997bdf349c6adf1c4431312e8706504", "self_ce": 1.0657458305358887, "self_rel": 2.190506786108017}
+{"id": 726, "hyp": "well our time is up .", "ref": "sha1:b7f398955806785e22383f0a0b14eece00a074e9", "self_ce": 0.0522992057459695, "self_rel": 1.8117999732494356}
+{"id": 727, "hyp": "i do love it .", "ref": "sha1:176cc96fea26fe8f0de4d6035c5233718a2f22af", "self_ce": 0.8250942230224609, "self_rel": 1.128155340751012}
+{"id": 728, "hyp": "thanks for watching .", "ref": "sha1:2c43b97b2b80fce40778db7f6b5d5a8cfc491e8e", "self_ce": 0.46381444931030275, "self_rel": 1.4308434963226315}
+{"id": 729, "hyp": "sally i think it is time for a break .", "ref": "sha1:cf5838232f228a90bebd6ea256ce7084d63966ea", "self_ce": 0.7763221047141335, "self_rel": 1.2018234838138928}
+{"id": 730, "hyp": "no .", "ref": "sha1:cdef12135accd11d9f79bdc800a4934ac76d3b82", "self_ce": 0.4182573954264323, "self_rel": 3.970627744992574}
+{"id": 731, "hyp": "we need to put them into the compost .", "ref": "sha1:4be02966eb15d7f3436f0fb651e8e98f80c758c7", "self_ce": 1.0335186958312987, "self_rel": 1.1942467927932738}
+{"id": 732, "hyp": "four .", "ref": "sha1:ad45c6f518b836cd929fa13fd1bf89ed165cdf52", "self_ce": 0.637076218922933, "self_rel": 2.7974823911984763}
+{"id": 733, "hyp": "ok .", "ref": "sha1:21bd7642161b3b7ce97da3f5d84be9a62698e9cc", "self_ce": 0.7063474655151367, "self_rel": 2.492587725321452}
+{"id": 734, "hyp": "that is great .", "ref": "sha1:425f4e377d36478ed67443983af2742994f453d5", "self_ce": 0.43241128921508787, "self_rel": 1.188457262516022}
+{"id": 735, "hyp": "one two three .", "ref": "sha1:a5d8989952656c35bf8fd7246e59e1788346e69f", "self_ce": 0.9938274383544922, "self_rel": 1.65105504989624}
+{"id": 736, "hyp": "let us go see if he is awake .", "ref": "sha1:ad6acd4bd3c6633cdc3d615ecf427c442d44c4a5", "self_ce": 0.7394958972930908, "self_rel": 1.2810903310775754}
+{"id": 737, "hyp": "we need to put it in the bowl .", "ref": "sha1:51b33e1d6929d9180873ab8d8974a25da7e38680", "self_ce": 0.892098331451416, "self_rel": 0.8783711552619936}
+{"id": 738, "hyp": "one two three four five six seven eight nine ten .", "ref": "sha1:451674a4dc12035fa875b2ac85bab2a9863440a3", "self_ce": 0.39869741598765057, "self_rel": 2.4199829995632176}
+{"id": 739, "hyp": "look .", "ref": "sha1:3a2e7acc1bef57cd11767663f39f37db799aea28", "self_ce": 0.5427376826604208, "self_rel": 3.1136671702067056}
+{"id": 740, "hyp": "one two three four five .", "ref": "sha1:3a2e7acc1bef57cd11767663f39f37db799aea28", "self_ce": 0.3623236247471401, "self_rel": 2.348833577973502}
+{"id": 741, "hyp": "bye .", "ref": "sha1:757555a3bb6a77a7ffe23fae526ddb60a1c56c19", "self_ce": 0.8069932460784912, "self_rel": 2.8626417318979898}
+{"id": 742, "hyp": "one two three four five six .", "ref": "sha1:6e0ee94a77f93a8f4e6e24e136cd0d36bec3fd16", "self_ce": 0.3900054395198822, "self_rel": 2.2735758423805237}
+{"id": 743, "hyp": "bye bye .", "ref": "sha1:3772df516b8a08e768cc8e4251ed5df748336e08", "self_ce": 0.20571035146713257, "self_rel": 3.55435211956501}
+{"id": 744, "hyp": "let us go .", "ref": "sha1:aac51bbba1045e82d5d72ca54f934ff1df42afa0", "self_ce": 0.7078193664550781, "self_rel": 1.0230235695838927}
+{"id": 745, "hyp": "look at what i have made for you .", "ref": "sha1:92487f122cd17ff675de207b8c51beb7a5278211", "self_ce": 0.7778297424316406, "self_rel": 0.969212293624878}
+{"id": 746, "hyp": "yeah let us watch .", "ref": "sha1:e5c9a1cf5ae047a7e0224198ec98bc3518790cb2", "self_ce": 0.7574645678202311, "self_rel": 1.1058833996454878}
+{"id": 747, "hyp": "how does that mean i am going to move my tree .", "ref": "sha1:f25c9f64b4005a2de8a081589aa5a51882abd252", "self_ce": 0.8379534207857572, "self_rel": 1.3449244866004357}
+{"id": 748, "hyp": "that is great .", "ref": "sha1:23c92a9c7ec183ad6ab83e5f96b5d936ee462b31", "self_ce": 0.9228572845458984, "self_rel": 1.0852530717849733}
+{"id": 749, "hyp": "i know .", "ref": "sha1:868f241b82d505dca8d6f7fc4502cb4094557c94", "self_ce": 0.6704258918762207, "self_rel": 0.9947444275021553}
+{"id": 750, "hyp": "what is the matter possum .", "ref": "sha1:2747de7b9729b8c93ac49458d2dbc45e23a29df5", "self_ce": 0.7508894375392369, "self_rel": 1.5433184078761508}
+{"id": 751, "hyp": "what is next .", "ref": "sha1:ad283541875a33f9cd8ba3114cb8398872c0b1e0", "self_ce": 0.7317440986633301, "self_rel": 1.521110427379608}
+{"id": 752, "hyp": "let us go outside and have a look .", "ref": "sha1:4e778b992d5b5f73a49cba3ce695a61cdcd20fd3", "self_ce": 0.7878418922424316, "self_rel": 0.965369474887848}
+{"id": 753, "hyp": "you are funny possum .", "ref": "sha1:a2495a091134cb612c45559a29f3070993b6c0f2", "self_ce": 0.8480619589487711, "self_rel": 1.1040140291055045}
+{"id": 754, "hyp": "look sally .", "ref": "sha1:58fb75a65bd6070e6b26cd1e1247970e363b1f3f", "self_ce": 0.6449387073516846, "self_rel": 2.035011798143387}
+{"id": 755, "hyp": "come on .", "ref": "sha1:bb6684be965b633ac16657c8418a5baef1028620", "self_ce": 0.3867748975753784, "self_rel": 2.999250590801239}
+{"id": 756, "hyp": "come on .", "ref": "sha1:c06b8e49cbdb16d574440fc9a36e8d5f49974abb", "self_ce": 0.4581214189529419, "self_rel": 2.539351850748062}
+{"id": 757, "hyp": "see you next time .", "ref": "sha1:edf27e829c21629535ede0ecf7a1d3bbcb0f0934", "self_ce": 0.6586372454961141, "self_rel": 1.2322842478752136}
+{"id": 758, "hyp": "that was great .", "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "self_ce": 0.40619382858276365, "self_rel": 1.4321241974830627}
+{"id": 759, "hyp": "i know .", "ref": "sha1:2b98b3b21ae5cd19aaf19ff12f72f10ecd6bdef5", "self_ce": 0.3691963851451874, "self_rel": 1.5339005142450333}
+{"id": 760, "hyp": "that is right possum .", "ref": "sha1:b01d94514d4a0764c3ec95f08205ec04f4f1a6f2", "self_ce": 0.502145250638326, "self_rel": 1.3782119552294412}
+{"id": 761, "hyp": "i am sally .", "ref": "sha1:d42754a38244caa0f27d83a7f27d48fb87cf8d13", "self_ce": 0.7448278427124023, "self_rel": 1.9491659164428707}
+{"id": 762, "hyp": "well i am going to go up to the top of my crows nest and look at my face and make it look good .", "ref": "sha1:80426453079042c131cd8331119d089d561eb545", "self_ce": 0.8021348806527945, "self_rel": 1.472299080628615}
+{"id": 763, "hyp": "four .", "ref": "sha1:9e4bb517e029b27c969fab2b701a04fcd663daf0", "self_ce": 0.7422348658243815, "self_rel": 2.0576667189598083}
+{"id": 764, "hyp": "i am making a menu of all my favorite sports .", "ref": "sha1:2bb74ddd1b73db7036213422079a290b43da1d33", "self_ce": 0.8370098272959391, "self_rel": 1.6127644975980124}
+{"id": 765, "hyp": "that was great .", "ref": "sha1:ff1bf56ea08ce9011efc24e9a3a158cd42613f99", "self_ce": 0.29436020851135253, "self_rel": 1.5460929691791534}
+{"id": 766, "hyp": "yes that is right .", "ref": "sha1:212f9cbe098f42806db9548e8f7867dfc9ea51f5", "self_ce": 0.36389299233754474, "self_rel": 1.3616456935803096}
+{"id": 767, "hyp": "look .", "ref": "sha1:9afe25705241d4c27fb64d08915c5163edc879ad", "self_ce": 0.8278916676839193, "self_rel": 2.218332439661026}
+{"id": 768, "hyp": "that is great .", "ref": "sha1:82164771f4336d74fec772b5b72b043bbf5f98bd", "self_ce": 0.31092884540557864, "self_rel": 1.1982872843742371}
+{"id": 769, "hyp": "they are going to have a look at what they are .", "ref": "sha1:fadf6ff6db18180a8cb7660faa6f2029d8469055", "self_ce": 0.9579749474158654, "self_rel": 1.0051112174987795}
+{"id": 770, "hyp": "yeah let us watch .", "ref": "sha1:a2f915dcfa81731056f3ae426cfdda5e49edfc04", "self_ce": 0.13298004865646362, "self_rel": 1.953751822312673}
+{"id": 771, "hyp": "that is called recycling .", "ref": "sha1:2d4f6f226c543f26f1af836313c8fabd25f55ab3", "self_ce": 0.758936882019043, "self_rel": 1.8833580215771994}
+{"id": 772, "hyp": "it is not sticky anymore it is nice and smooth and rough .", "ref": "sha1:28741983cc1b91f0bb04ceef0a530471e01148ae", "self_ce": 0.9248529842921666, "self_rel": 1.4553405897957936}
+{"id": 773, "hyp": "that is a great idea .", "ref": "sha1:2499a4c0b3cbf1d4a10e581fbe50ce87f295c40c", "self_ce": 0.7622087342398507, "self_rel": 0.771207400730678}
+{"id": 774, "hyp": "yes we have learnt lots of things today have not we .", "ref": "sha1:ead006efb937b90fc638031bfd8569a34c4c4d8b", "self_ce": 0.7134709725013146, "self_rel": 1.4680867745326118}
+{"id": 775, "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "self_ce": 0.06947010329791478, "self_rel": 2.025454159293856}
+{"id": 776, "hyp": "that is right .", "ref": "sha1:e6eec37bec154b7eba3ef4329ed3a1a47493ee7c", "self_ce": 0.9957403182983399, "self_rel": 0.5335149526596069}
+{"id": 777, "hyp": "thank you .", "ref": "sha1:fdb5d61605474a8674edf2895560020a93c34836", "self_ce": 0.991980254650116, "self_rel": 1.331158697605133}
+{"id": 778, "hyp": "i get it now .", "ref": "sha1:72ffd6d7a11643d733f428910676a0dc9990e513", "self_ce": 0.6842382748921713, "self_rel": 0.9386857549349464}
+{"id": 779, "hyp": "you are right possum .", "ref": "sha1:8cece1f2deb287b31fde6baea41c1771a55ce48f", "self_ce": 1.1049296061197917, "self_rel": 0.7819594740867615}
+{"id": 780, "hyp": "amanda is here .", "ref": "sha1:bb8c12f5e005f224d10130c5eeb01713ceab3fbc", "self_ce": 1.1493270874023438, "self_rel": 1.1178309679031375}
+{"id": 781, "hyp": "i know .", "ref": "sha1:de5aca9911f30ca28241576d86d9a623d49e0da5", "self_ce": 0.5976375341415405, "self_rel": 1.1072817146778107}
+{"id": 782, "hyp": "it looks very strange .", "ref": "sha1:40723d9d568bcf4d7f1adbb230dec4d1b4331eb0", "self_ce": 0.9635214805603027, "self_rel": 1.3163652420043945}
+{"id": 783, "hyp": "that is great .", "ref": "sha1:5c520264afc4196e17e99fcf7f1a2587ca2a5319", "self_ce": 0.6622565269470215, "self_rel": 0.6502009183168409}
+{"id": 784, "hyp": "sally what is this .", "ref": "sha1:813462a00068778a0e71cd40175248a978d75483", "self_ce": 1.0209888617197673, "self_rel": 1.2675963044166567}
+{"id": 785, "hyp": "can i have a look at it .", "ref": "sha1:d11fbf5ebb32ada00470620a8396e916010bfccb", "self_ce": 0.9623679055107964, "self_rel": 0.874473320113288}
+{"id": 786, "hyp": "i am going to give you a surprise .", "ref": "sha1:8417f855d333377412653c6f66bf7cf5f6bf3de4", "self_ce": 0.8704606056213379, "self_rel": 1.0437282085418702}
+{"id": 787, "hyp": "i know .", "ref": "sha1:d11fbf5ebb32ada00470620a8396e916010bfccb", "self_ce": 0.8164931535720825, "self_rel": 1.4052479714155197}
+{"id": 788, "hyp": "i know .", "ref": "sha1:c528130d4716e8a0a25e9622543312a3bbd09339", "self_ce": 0.71015465259552, "self_rel": 1.6599337607622147}
+{"id": 789, "hyp": "what is this .", "ref": "sha1:46b161f181e52b2619369d48a5ea911bfd68350b", "self_ce": 1.2575358390808105, "self_rel": 0.6918529510498046}
+{"id": 790, "hyp": "what are we going to do now .", "ref": "sha1:00d47b80dc1d7d232671aae04a9c465d3cd7466c", "self_ce": 0.7552593019273546, "self_rel": 1.0215127070744834}
+{"id": 791, "hyp": "would you like to do that .", "ref": "sha1:e89dfebbc2a26d459563f75af284ed8c2dd7cad5", "self_ce": 0.732530415058136, "self_rel": 0.510312870144844}
+{"id": 792, "hyp": "look .", "ref": "sha1:e80542ce082512fb0d090a40d1b04b33b8375f25", "self_ce": 0.5736337502797445, "self_rel": 2.810109376907348}
+{"id": 793, "hyp": "this is a surprise .", "ref": "sha1:585859306ccb91c213052053ea5fbff18c3edcc7", "self_ce": 0.799000104268392, "self_rel": 1.6662307977676392}
+{"id": 794, "hyp": "sally thank you so much for teaching me this bike .", "ref": "sha1:7ba6f1ded5b74ae82612363e58028880d563ad75", "self_ce": 0.5704495112101237, "self_rel": 1.3782901962598166}
+{"id": 795, "hyp": "i know i will go get my tree .", "ref": "sha1:bb890b7ffc4969abe39355ceabb9cb337ae85c34", "self_ce": 0.7875000476837158, "self_rel": 1.974955439567566}
+{"id": 796, "hyp": "i really enjoyed myself .", "ref": "sha1:47f02a206da3fd7114b695a9a3a1f65265716746", "self_ce": 0.7563379605611166, "self_rel": 1.571386873722076}
+{"id": 797, "hyp": "yes .", "ref": "sha1:bfc1f13a0c3734dbb7f0fa3d7e63254cdae1be67", "self_ce": 0.3558301130930583, "self_rel": 2.270936638116837}
+{"id": 798, "hyp": "well our time is up .", "ref": "sha1:07ff5a4084d1f934574efdc9e8caf6cb2dfd51c5", "self_ce": 0.10159904616219657, "self_rel": 1.575543868222407}
+{"id": 799, "hyp": "that is great .", "ref": "sha1:c99fd2aae587f2565dd08fabcccb47c7199fc787", "self_ce": 0.7105358123779297, "self_rel": 1.2913612365722658}

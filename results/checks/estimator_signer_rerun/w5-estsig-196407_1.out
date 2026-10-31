@@ -1,0 +1,110 @@
+node k031.hpc.uwa.edu.au | DET='--deterministic True'
+b3d65724c4624502f5b00a04824dde72  config.py
+1187c9ff21c8de97b6ba98dfedf3897f  slt/data.py
+749bbc62a27ca13c735e262959de2d03  train_ctc.py
+6553f52a3f0fbeb57feef6510289d66c  tools/eval_beam.py
+pinned DWPose clip video_1_0.npz md5 OK
+  train.tsv: 12439 rows | off-/group 0 | missing 0
+  val.tsv: 800 rows | off-/group 0 | missing 0
+  test.tsv: 800 rows | off-/group 0 | missing 0
+  ap_train.tsv: 12439 rows | off-/group 0 | missing 0
+  ap_val.tsv: 800 rows | off-/group 0 | missing 0
+  ap_test.tsv: 800 rows | off-/group 0 | missing 0
+=== ARM Edw (seed 101, 40 ep) ===
+[determinism] ON (seed 101, CUBLAS_WORKSPACE_CONFIG=:4096:8) -- runs are slower but reproducible
+[ctc] vocab=3063 gloss_vocab=2988 device=cuda feat_dim=177
+[ctc] params=9.76M train_batches=195 pseudo_token_drop=0.000
+[ctc ep 001] loss=18.681 ce=6.477 ctc=40.680 val_bleu4=0.000 wer=0.972 uniq=1
+[ctc ep 002] loss=6.748 ce=4.736 ctc=6.704 val_bleu4=0.953 wer=1.120 uniq=16
+[ctc ep 003] loss=6.270 ce=4.323 ctc=6.490 val_bleu4=2.371 wer=1.225 uniq=32
+[ctc ep 004] loss=6.020 ce=4.111 ctc=6.364 val_bleu4=2.012 wer=1.356 uniq=77
+[ctc ep 005] loss=5.860 ce=3.972 ctc=6.293 val_bleu4=2.465 wer=1.134 uniq=70
+[ctc ep 006] loss=5.711 ce=3.849 ctc=6.206 val_bleu4=2.968 wer=1.213 uniq=88
+[ctc ep 007] loss=5.577 ce=3.739 ctc=6.125 val_bleu4=1.688 wer=1.627 uniq=151
+[ctc ep 008] loss=5.458 ce=3.643 ctc=6.052 val_bleu4=2.672 wer=1.385 uniq=137
+[ctc ep 009] loss=5.352 ce=3.557 ctc=5.983 val_bleu4=3.050 wer=1.143 uniq=161
+[ctc ep 010] loss=5.254 ce=3.478 ctc=5.920 val_bleu4=5.148 wer=1.057 uniq=144
+[ctc ep 011] loss=5.154 ce=3.401 ctc=5.843 val_bleu4=6.811 wer=1.205 uniq=229
+[ctc ep 012] loss=5.058 ce=3.323 ctc=5.781 val_bleu4=6.535 wer=1.224 uniq=268
+[ctc ep 013] loss=4.965 ce=3.252 ctc=5.712 val_bleu4=7.053 wer=1.123 uniq=188
+[ctc ep 014] loss=4.872 ce=3.181 ctc=5.636 val_bleu4=6.190 wer=1.280 uniq=283
+[ctc ep 015] loss=4.782 ce=3.113 ctc=5.564 val_bleu4=7.706 wer=1.039 uniq=139
+[ctc ep 016] loss=4.699 ce=3.050 ctc=5.497 val_bleu4=7.496 wer=1.072 uniq=228
+[ctc ep 017] loss=4.614 ce=2.985 ctc=5.430 val_bleu4=7.903 wer=1.086 uniq=266
+[ctc ep 018] loss=4.530 ce=2.923 ctc=5.357 val_bleu4=8.428 wer=1.110 uniq=301
+[ctc ep 019] loss=4.452 ce=2.865 ctc=5.291 val_bleu4=8.565 wer=1.086 uniq=297
+[ctc ep 020] loss=4.370 ce=2.803 ctc=5.224 val_bleu4=8.860 wer=1.104 uniq=304
+[ctc ep 021] loss=4.302 ce=2.752 ctc=5.168 val_bleu4=7.645 wer=1.154 uniq=360
+[ctc ep 022] loss=4.232 ce=2.701 ctc=5.104 val_bleu4=9.096 wer=1.094 uniq=326
+[ctc ep 023] loss=4.163 ce=2.651 ctc=5.041 val_bleu4=8.769 wer=1.077 uniq=358
+[ctc ep 024] loss=4.102 ce=2.605 ctc=4.990 val_bleu4=8.818 wer=1.111 uniq=408
+[ctc ep 025] loss=4.043 ce=2.563 ctc=4.934 val_bleu4=9.531 wer=1.082 uniq=391
+[ctc ep 026] loss=3.982 ce=2.519 ctc=4.877 val_bleu4=8.884 wer=1.108 uniq=425
+[ctc ep 027] loss=3.927 ce=2.478 ctc=4.827 val_bleu4=9.295 wer=1.087 uniq=405
+[ctc ep 028] loss=3.877 ce=2.443 ctc=4.780 val_bleu4=8.535 wer=1.120 uniq=447
+[ctc ep 029] loss=3.830 ce=2.410 ctc=4.734 val_bleu4=9.230 wer=1.105 uniq=441
+[ctc ep 030] loss=3.786 ce=2.380 ctc=4.688 val_bleu4=9.154 wer=1.059 uniq=430
+[ctc ep 031] loss=3.746 ce=2.350 ctc=4.651 val_bleu4=9.582 wer=1.075 uniq=447
+[ctc ep 032] loss=3.711 ce=2.326 ctc=4.615 val_bleu4=9.621 wer=1.083 uniq=449
+[ctc ep 033] loss=3.675 ce=2.301 ctc=4.581 val_bleu4=9.283 wer=1.110 uniq=478
+[ctc ep 034] loss=3.646 ce=2.281 ctc=4.552 val_bleu4=9.301 wer=1.079 uniq=461
+[ctc ep 035] loss=3.622 ce=2.265 ctc=4.526 val_bleu4=9.054 wer=1.095 uniq=474
+[ctc ep 036] loss=3.601 ce=2.249 ctc=4.506 val_bleu4=9.570 wer=1.079 uniq=473
+[ctc ep 037] loss=3.583 ce=2.237 ctc=4.488 val_bleu4=9.108 wer=1.099 uniq=475
+[ctc ep 038] loss=3.566 ce=2.225 ctc=4.469 val_bleu4=9.281 wer=1.086 uniq=474
+[ctc ep 039] loss=3.554 ce=2.218 ctc=4.455 val_bleu4=8.790 wer=1.095 uniq=489
+[ctc ep 040] loss=3.548 ce=2.213 ctc=4.450 val_bleu4=9.382 wer=1.096 uniq=481
+[ctc TEST] bleu4=9.426 wer=1.079 distinct_outputs=455
+checkpoint cfg OK (every passed flag verified)
+[soup] averaged 5 checkpoints -> /group/pmc099/pprasad/wave4/runs_estrep_signer/Edw_s101/soup_last5.pt
+=== ARM Eap (seed 101, 40 ep) ===
+[determinism] ON (seed 101, CUBLAS_WORKSPACE_CONFIG=:4096:8) -- runs are slower but reproducible
+[ctc] vocab=3063 gloss_vocab=2988 device=cuda feat_dim=204
+[ctc] params=9.77M train_batches=195 pseudo_token_drop=0.000
+[ctc ep 001] loss=18.575 ce=6.449 ctc=40.419 val_bleu4=0.264 wer=1.622 uniq=4
+[ctc ep 002] loss=6.754 ce=4.730 ctc=6.747 val_bleu4=0.681 wer=1.232 uniq=29
+[ctc ep 003] loss=6.279 ce=4.323 ctc=6.522 val_bleu4=0.818 wer=1.170 uniq=28
+[ctc ep 004] loss=6.041 ce=4.118 ctc=6.410 val_bleu4=2.036 wer=1.340 uniq=61
+[ctc ep 005] loss=5.873 ce=3.977 ctc=6.320 val_bleu4=2.698 wer=1.159 uniq=38
+[ctc ep 006] loss=5.721 ce=3.852 ctc=6.232 val_bleu4=2.266 wer=1.222 uniq=104
+[ctc ep 007] loss=5.592 ce=3.741 ctc=6.168 val_bleu4=4.208 wer=1.276 uniq=117
+[ctc ep 008] loss=5.480 ce=3.651 ctc=6.098 val_bleu4=2.382 wer=1.199 uniq=110
+[ctc ep 009] loss=5.378 ce=3.567 ctc=6.038 val_bleu4=3.263 wer=1.221 uniq=110
+[ctc ep 010] loss=5.277 ce=3.485 ctc=5.973 val_bleu4=2.748 wer=1.203 uniq=156
+[ctc ep 011] loss=5.179 ce=3.405 ctc=5.913 val_bleu4=6.476 wer=1.100 uniq=159
+[ctc ep 012] loss=5.086 ce=3.332 ctc=5.847 val_bleu4=4.668 wer=1.212 uniq=206
+[ctc ep 013] loss=5.000 ce=3.264 ctc=5.787 val_bleu4=5.885 wer=1.250 uniq=241
+[ctc ep 014] loss=4.910 ce=3.194 ctc=5.718 val_bleu4=6.612 wer=1.238 uniq=271
+[ctc ep 015] loss=4.824 ce=3.129 ctc=5.649 val_bleu4=5.496 wer=1.188 uniq=237
+[ctc ep 016] loss=4.742 ce=3.064 ctc=5.593 val_bleu4=5.494 wer=1.221 uniq=283
+[ctc ep 017] loss=4.663 ce=3.004 ctc=5.530 val_bleu4=5.475 wer=1.261 uniq=304
+[ctc ep 018] loss=4.585 ce=2.945 ctc=5.465 val_bleu4=5.994 wer=1.267 uniq=335
+[ctc ep 019] loss=4.505 ce=2.884 ctc=5.403 val_bleu4=7.937 wer=1.088 uniq=270
+[ctc ep 020] loss=4.434 ce=2.829 ctc=5.347 val_bleu4=7.596 wer=1.203 uniq=366
+[ctc ep 021] loss=4.368 ce=2.779 ctc=5.296 val_bleu4=6.381 wer=1.190 uniq=332
+[ctc ep 022] loss=4.301 ce=2.728 ctc=5.244 val_bleu4=8.432 wer=1.095 uniq=317
+[ctc ep 023] loss=4.240 ce=2.683 ctc=5.190 val_bleu4=8.696 wer=1.094 uniq=334
+[ctc ep 024] loss=4.175 ce=2.634 ctc=5.137 val_bleu4=8.601 wer=1.103 uniq=368
+[ctc ep 025] loss=4.116 ce=2.591 ctc=5.084 val_bleu4=8.631 wer=1.081 uniq=387
+[ctc ep 026] loss=4.062 ce=2.550 ctc=5.039 val_bleu4=8.670 wer=1.054 uniq=327
+[ctc ep 027] loss=4.012 ce=2.514 ctc=4.993 val_bleu4=9.092 wer=1.069 uniq=353
+[ctc ep 028] loss=3.961 ce=2.477 ctc=4.947 val_bleu4=8.126 wer=1.151 uniq=420
+[ctc ep 029] loss=3.917 ce=2.445 ctc=4.907 val_bleu4=8.339 wer=1.110 uniq=436
+[ctc ep 030] loss=3.877 ce=2.415 ctc=4.874 val_bleu4=8.972 wer=1.083 uniq=420
+[ctc ep 031] loss=3.838 ce=2.387 ctc=4.836 val_bleu4=8.910 wer=1.090 uniq=430
+[ctc ep 032] loss=3.806 ce=2.366 ctc=4.802 val_bleu4=8.563 wer=1.096 uniq=409
+[ctc ep 033] loss=3.772 ce=2.341 ctc=4.772 val_bleu4=8.678 wer=1.092 uniq=441
+[ctc ep 034] loss=3.742 ce=2.320 ctc=4.742 val_bleu4=8.816 wer=1.085 uniq=444
+[ctc ep 035] loss=3.720 ce=2.303 ctc=4.721 val_bleu4=9.016 wer=1.097 uniq=447
+[ctc ep 036] loss=3.702 ce=2.291 ctc=4.704 val_bleu4=9.141 wer=1.091 uniq=446
+[ctc ep 037] loss=3.684 ce=2.278 ctc=4.688 val_bleu4=8.887 wer=1.094 uniq=473
+[ctc ep 038] loss=3.668 ce=2.266 ctc=4.671 val_bleu4=9.174 wer=1.079 uniq=461
+[ctc ep 039] loss=3.657 ce=2.258 ctc=4.663 val_bleu4=9.114 wer=1.082 uniq=460
+[ctc ep 040] loss=3.648 ce=2.252 ctc=4.653 val_bleu4=8.858 wer=1.097 uniq=456
+[ctc TEST] bleu4=8.954 wer=1.060 distinct_outputs=444
+checkpoint cfg OK (every passed flag verified)
+[soup] averaged 5 checkpoints -> /group/pmc099/pprasad/wave4/runs_estrep_signer/Eap_s101/soup_last5.pt
+Eap {"val_best": 9.174235637734494, "best_epoch": 38, "greedy_test": 8.954340779479216, "beam5_val": 10.41591467194172, "beam5_test": 10.245566819589145, "beam5_test_unique": 327, "soup_beam5_val": 9.857399569865612, "soup_beam5_test": 10.219240964675643}
+Edw {"val_best": 9.621452604472912, "best_epoch": 32, "greedy_test": 9.426010923134124, "beam5_val": 10.64059365411465, "beam5_test": 10.06205622263855, "beam5_test_unique": 345, "soup_beam5_val": 10.91303501423673, "soup_beam5_test": 10.280388531726214}
+Edw - Eap (seed 101): beam-5 val +0.225 | beam-5 test -0.184
+W5_ESTSIG_DONE

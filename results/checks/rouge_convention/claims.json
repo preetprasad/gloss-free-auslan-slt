@@ -1,5 +1,3 @@
-{
-  "gid": "rouge_convention",
-  "covered": ["c03-017", "c06-003", "c12-057", "c12-058", "c14-081", "c16-040", "c16-041", "c16-043", "c18-017"],
-  "not_covered": [{"id": "c16-038", "reason": "800 records and one saved output per model are checked; beam 5 is inferred from the dump script default, not independently authenticated from a per-run command record."}]
-}
+{"gid": "rouge_convention", "tagged": true,
+ "covered": ["c03-017","c06-003","c12-057","c12-058","c14-081","c16-038","c16-040","c16-041","c16-043","c18-017","c21-004"],
+ "not_covered": []}

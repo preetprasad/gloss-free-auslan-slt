@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # 25 Oct 2026 RE-RUN: the AlphaPose arm now reads Annotation["Signer"] (the first run read a non-signer in 88.4% of clips,
-# CLAUDE.md 2026-10-25g). Identical otherwise; Edw re-run in the same job as the in-batch control.
+# the project log 2026-10-25g). Identical otherwise; Edw re-run in the same job as the in-batch control.
 # W5-ESTREP: does the +4.45 estimator effect (DWPose 10.03 vs AlphaPose 5.58, ONE run per cell, 2026-08-22)
 # replicate across seeds? Matched body+hands keypoints, frame norm, plain DWPose+CTC recipe, no aug, 40 ep.
 # Seed 42 is run FRESH; the August pair is reported separately as a historical observation, never pooled.

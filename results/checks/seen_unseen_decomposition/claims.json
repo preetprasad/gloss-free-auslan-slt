@@ -1,0 +1,34 @@
+{
+ "gid": "seen_unseen_decomposition",
+ "tagged": true,
+ "covered": [
+  "c01-026",
+  "c05-053",
+  "c06-016",
+  "c07-060",
+  "c09-001",
+  "c09-007",
+  "c09-024",
+  "c10-038",
+  "c11-059",
+  "c11-066",
+  "c11-067",
+  "c14-010",
+  "c14-074",
+  "c14-075",
+  "c20-011",
+  "c21-016"
+ ],
+ "not_covered": [
+  {
+   "id": "c18-023",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says +2.2 to +4.1 (p 0.02 to 0.29); saved decodes give +2.147 to +4.085 (RGB-fusion gap 2.147 rounds to +2.1; the +2.15 in the project record is a rounding of it) and a 2000-draw within-video permutation gives p 0.03 to 0.30 (original 300-draw run, seed not kept, is not recoverable). Differences are rounding and permutation noise."
+  },
+  {
+   "id": "c18-024",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says unseen-target gap +1.1 to -0.3 for the single models; the three single models give +0.61 to -0.28. The +1.11 is the S6 ensemble's gap, which is not a single model."
+  }
+ ]
+}

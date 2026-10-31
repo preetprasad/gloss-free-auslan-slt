@@ -1,0 +1,53 @@
+###### (1) WEIGHT-AVERAGE the 3 DWPose+CTC seeds ######
+[soup] averaged 3 checkpoints -> /scratch/pmc099/pprasad/dwpose/runs/soup_seeds.pt
+--- souped seeds, TEST beam-5 ---
+[ensemble] 1 members (fusion=[False]) vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=0.162 wer=1.250 uniq=12 members=1
+###### (2) ENSEMBLE beam/LP re-tune (select on VAL) ######
+--- VAL beam=5 lp=0.6 ---
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 2 members (fusion=[True, False]) vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=11.292 wer=0.964 uniq=382 members=2
+--- VAL beam=5 lp=1.0 ---
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 2 members (fusion=[True, False]) vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=11.524 wer=1.008 uniq=410 members=2
+--- VAL beam=5 lp=1.2 ---
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 2 members (fusion=[True, False]) vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=11.126 wer=1.057 uniq=439 members=2
+--- VAL beam=10 lp=0.6 ---
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 2 members (fusion=[True, False]) vocab=3063 beam=10 dev=cpu
+[ENSEMBLE TEST] beam10_bleu4=11.037 wer=0.955 uniq=366 members=2
+--- VAL beam=10 lp=1.0 ---
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 2 members (fusion=[True, False]) vocab=3063 beam=10 dev=cpu
+[ENSEMBLE TEST] beam10_bleu4=10.807 wer=1.029 uniq=398 members=2
+--- VAL beam=10 lp=1.2 ---
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 2 members (fusion=[True, False]) vocab=3063 beam=10 dev=cpu
+[ENSEMBLE TEST] beam10_bleu4=10.271 wer=1.070 uniq=429 members=2
+###### best-looking configs on TEST (confirm) ######
+--- TEST beam=10 lp=1.0 ---
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 2 members (fusion=[True, False]) vocab=3063 beam=10 dev=cpu
+[ENSEMBLE TEST] beam10_bleu4=11.149 wer=0.995 uniq=387 members=2
+--- TEST beam=10 lp=1.2 ---
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 2 members (fusion=[True, False]) vocab=3063 beam=10 dev=cpu
+[ENSEMBLE TEST] beam10_bleu4=10.971 wer=1.034 uniq=417 members=2
+--- TEST beam=5 lp=1.0 ---
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 2 members (fusion=[True, False]) vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=10.714 wer=0.996 uniq=373 members=2
+TIER1_DONE

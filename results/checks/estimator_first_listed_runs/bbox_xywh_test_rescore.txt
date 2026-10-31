@@ -1,0 +1,7 @@
+n=800  unique_hyps=102 (12.8%)
+greedy decode | BLEU-4 under each protocol:
+  tokenize=none detok=False  BLEU-4= 2.13 <- paper-like (already tokenised)
+  tokenize=none detok=True   BLEU-4= 0.98
+  tokenize=13a  detok=False  BLEU-4= 2.13
+  tokenize=13a  detok=True   BLEU-4= 2.13 <- our reported protocol
+WER (detok) = 1.213

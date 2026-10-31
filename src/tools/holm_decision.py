@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The round-2 decision protocol, computed instead of hand-worked (CLAUDE.md section 9, rules 3-9).
+"""The round-2 decision protocol, computed instead of hand-worked (the project log section 9, rules 3-9).
 
 Every Holm-corrected claim in this project was arithmetic done by hand: `grep -rli holm` over the tree
 returns nothing.  This is the tool.  It implements, exactly as the pre-registrations state them:
@@ -141,7 +141,7 @@ def report(arms, alpha=0.05):
 # ---------------------------------------------------------------- the project's own recorded family
 
 def recorded_family():
-    """Rebuild {w2LF, w1H, L60, w3T} from the saved artefacts, not from CLAUDE.md.
+    """Rebuild {w2LF, w1H, L60, w3T} from the saved artefacts, not from the project log.
 
     w1H / L60 Stage 1 : results/hand_masking_and_longer_training/runs/<arm>_s<seed>/beam5_{val,test}_best.json
     L60 Stage 2       : results/letter_fix_and_longer_training_stage2/summary_s{303,404}.json   (fresh A2 control)
@@ -149,7 +149,7 @@ def recorded_family():
     w2LF Stage 1      : NOT read from disk -- no wave-2 Stage-1 summary exists under results/.  Only the
                         seed-42/101 VALIDATION deltas (-1.230, +0.611) are in a results artefact
                         (PREREG_WAVE3 line 70); seed 202 (+0.306) and all three TEST deltas are recorded
-                        only in CLAUDE.md, which is working memory and has carried wrong figures before.
+                        only in the project log, which is working memory and has carried wrong figures before.
                         Nothing here is load-bearing: the arm stops on the sign of the 3-seed validation
                         mean and enters Holm with p = 1, which PREREG_WAVE2_R2 and PREREG_WAVE3 both
                         record independently, and its test deltas enter no computation.  If a wave-2
@@ -178,9 +178,9 @@ def recorded_family():
         arms["w1L60"]["test"].append(t)
     w3 = [summ(f"{RESULTS}/person_tracking_stage2/summary_s{s}.json", "w3C", "w3T") for s in s1 + [303, 404]]
     arms["w3T"] = {"val": [v for v, _ in w3], "test": [t for _, t in w3]}
-    # w2LF: stopped at Stage 1 (PREREG_WAVE2_R2 OUTCOME / PREREG_WAVE3 line 70 + CLAUDE.md 09-22j(5))
+    # w2LF: stopped at Stage 1 (PREREG_WAVE2_R2 OUTCOME / PREREG_WAVE3 line 70 + the project log 09-22j(5))
     arms["w2LF"] = {"val": [-1.230, +0.611, +0.306], "test": [-0.243, +0.296, +0.026],
-                    "unsourced": "seed-202 val and all 3 test deltas are CLAUDE.md-only (see docstring)"}
+                    "unsourced": "seed-202 val and all 3 test deltas are the project log-only (see docstring)"}
     return {"w2LF": arms["w2LF"], "w1H": arms["w1H"], "L60": arms["w1L60"], "w3T": arms["w3T"]}
 
 
@@ -193,7 +193,7 @@ def reproduce():
         print(f"  {'':6s} test " + " ".join(f"{x:+6.3f}" for x in a["test"]) + f"  mean {st.mean(a['test']):+.3f}")
     rows = report(arms)
     got = {n: round(p, 2) for n, p, _, _ in rows}
-    want = {"w2LF": 1.0, "w1H": 1.0, "L60": 0.54, "w3T": 0.60}        # CLAUDE.md "Holm family final"
+    want = {"w2LF": 1.0, "w1H": 1.0, "L60": 0.54, "w3T": 0.60}        # the project log "Holm family final"
     assert got == want, f"does not reproduce the recorded family: {got} != {want}"
     assert not any(r for _, _, _, r in rows), "recorded outcome is: nothing adopted"
     print("\ncheck: reproduces the recorded {w2LF 1, w1H 1, L60 0.54, w3T 0.60}, nothing adopted")

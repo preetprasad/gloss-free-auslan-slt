@@ -6,7 +6,7 @@ from figures: the field's normal practice is a single-run point estimate. This p
 paired-seed replications and a measured same-config noise floor, so it can show the spread.
 
 Every number is a beam-5 BLEU-4 on the official Auslan-Daily Communication test split, sourced
-from CLAUDE.md's dated ledger or, for the Wave-1 control, re-read from the saved decode JSON in
+from the project log's dated ledger or, for the Wave-1 control, re-read from the saved decode JSON in
 results/hand_masking_and_longer_training/. Recipes are grouped by the BATCH they were run in, because the same
 configuration run in two different batches differs by up to 1.18 BLEU-4 (2026-09-16e), so only
 within-batch differences are meaningful.
@@ -31,7 +31,7 @@ ROWS = [
     ("1.1:1 stitch + augmentation\n(control of a later job)",       [10.637, 11.296, 11.345], "wave1",  "body"),
     ("1.1:1 stitch + augmentation\n(first job)",                  [11.443, 11.375, 11.193], "aug",    "sup"),
 ]
-# six same-config controls, two batches x three seeds (CLAUDE.md 2026-09-16e)
+# six same-config controls, two batches x three seeds (the project log 2026-09-16e)
 NOISE = dict(mean=10.891, sd=0.393, n=6)
 
 # built at printed width; constrained layout keeps the long row labels inside 6.30 in,

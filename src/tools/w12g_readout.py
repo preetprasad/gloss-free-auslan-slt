@@ -26,7 +26,7 @@ from stitch_lexicon import STOP                           # noqa: E402
 import w12g_signer_split as sp                            # noqa: E402
 
 # The stop list defines "content words". The file stitch_lexicon.py is edited by other experiments, so it is the list itself
-# that is pinned (71 words, as on record in CLAUDE.md 2026-09-22k), not the file.
+# that is pinned (71 words, as on record in the project log 2026-09-22k), not the file.
 assert len(STOP) == 71 and hashlib.md5(" ".join(sorted(STOP)).encode()).hexdigest() == "a73c33b6e39e7145a87f9c639b5c0a10", \
     "stitch_lexicon.STOP is not the verified 71-word stop list"
 

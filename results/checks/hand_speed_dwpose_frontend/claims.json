@@ -1,0 +1,34 @@
+{
+ "gid": "hand_speed_dwpose_frontend",
+ "tagged": true,
+ "covered": [
+  "c06-017",
+  "c06-028",
+  "c06-029",
+  "c08-002",
+  "c08-019",
+  "c08-023"
+ ],
+ "not_covered": [
+  {
+   "id": "c10-045",
+   "code": "no_saved_output",
+   "reason": "The tracked-versus-citation ratio (about three, not ten) needs the citation-clip mean of 0.044 and the 9.86 first-detection figure; the MM-WLAuslan citation clips are no longer on this machine and only the write-up (PREREG_HANDSPEED_TRACKED) holds them. The check does recompute that first-detection speed is 2.7 times the tracked speed on 591 shared clips (the 'inflated about threefold' part), untagged."
+  },
+  {
+   "id": "c10-046",
+   "code": "no_saved_output",
+   "reason": "News hand speed 1.10 times citation (first-detection keypoints) exists only in ALL_SPLITS_ANALYSIS_2026-09-09.md; neither the News per-clip speeds nor the citation speeds are saved locally."
+  },
+  {
+   "id": "c14-042",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says hand confidence 0.814 on correctly and 0.816 on incorrectly identified spans; the saved per-span probe output (pred_dwpose.csv, hands descriptor, 334 scored spans) with hand_stats on the same spans gives 0.817 correct against 0.814 wrong (correlation +0.019). Same conclusion (no difference), different digits; the 0.814/0.816 pair came from an earlier probe run that is not saved."
+  },
+  {
+   "id": "c14-045",
+   "code": "no_saved_output",
+   "reason": "The 9.86 times figure (first-detection, 600 clips per split, citation mean 0.044) exists only in the 9 September write-up; the 600-clip sample and citation speeds are not saved. On 591 clips the first-detection mean is 0.391 (gate) but its ratio to citation needs the unsaved 0.044."
+  }
+ ]
+}

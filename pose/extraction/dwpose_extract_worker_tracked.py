@@ -5,7 +5,7 @@ detection the model happens to return -- independently for every frame, with no 
 association of a person across frames. Auslan-Daily Communication is multi-person conversation and
 the shipped signer crops still contain bystanders, so in a frame with more than one person the
 saved skeleton can belong to someone else than in the previous frame. Measured over 2,128 locally
-held clips (CLAUDE.md 2026-09-22b): 25.2% of clips contain at least one such discontinuity, 2.31%
+held clips (the project log 2026-09-22b): 25.2% of clips contain at least one such discontinuity, 2.31%
 of all frame transitions, and of 552 sampled events 87.5% were identity switches rather than camera
 cuts. The official validation and test splits are affected too, so this is a defect in the
 evaluation inputs as well as the training inputs.
@@ -19,7 +19,7 @@ WHAT THIS DOES INSTEAD.
             camera cut re-seeds rather than dragging the track onto the wrong person.
   always    write a REAL bounding box from the accepted person's confident keypoints. The original
             wrote an all-zero dummy, which is why coord_norm="bbox" is degenerate on these npz
-            (CLAUDE.md 2026-08-22); a real box re-opens signer-relative normalisation for free.
+            (the project log 2026-08-22); a real box re-opens signer-relative normalisation for free.
 
 IT ALSO RECORDS WHAT IT CHANGED. `CHOSEN` is the detection index taken at each frame and `NDET` the
 number of detections available, so the corrected corpus carries its own evidence: frames where

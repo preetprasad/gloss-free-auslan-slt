@@ -1,0 +1,18 @@
+[preproc] OK: decode Config matches all 5 checkpoints on 10 preprocessing fields
+[mbr] 5 members fusion=[False, False, False, False, False] beam=10 manifest=news_val.tsv dev=cpu
+[mbr] decoded n-best for 700 samples (avg cands=10.9)
+[mbr] wrote n-best -> /group/pmc099/pprasad/news_ens/ens5_val/nbest.jsonl
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.2           BLEU-4= 2.328  WER=0.9978  S=6046 D=4412 I=715  uniq=387
+  LP=0.4           BLEU-4= 2.450  WER=1.0018  S=6211 D=4218 I=789  uniq=391
+  LP=0.6           BLEU-4= 2.527  WER=1.0108  S=6513 D=3906 I=900  uniq=391
+  LP=0.8           BLEU-4= 2.642  WER=1.0327  S=6967 D=3414 I=1183  uniq=396
+  LP=1.0           BLEU-4= 2.903  WER=1.0909  S=7651 D=2670 I=1895  uniq=425
+  LP=1.2           BLEU-4= 2.948  WER=1.1646  S=8152 D=2107 I=2782  uniq=454
+  LP=1.4           BLEU-4= 2.838  WER=1.1975  S=8441 D=1802 I=3167  uniq=497
+  LP=1.6           BLEU-4= 2.843  WER=1.2133  S=8505 D=1730 I=3351  uniq=513
+  LP=2.0           BLEU-4= 2.760  WER=1.2240  S=8601 D=1628 I=3477  uniq=527
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4= 2.803  WER=1.0748  S=7560 D=2788 I=1688  uniq=511
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4= 2.970  WER=1.1931  S=8474 D=1766 I=3120  uniq=560

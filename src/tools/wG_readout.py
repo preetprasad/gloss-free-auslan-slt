@@ -1,5 +1,5 @@
 """Wave G read-out: signer-guided DWPose (G) against C0 (detection 0) and V2 (tracker v2). Pre-registration:
-results/PREREG_WAVEG_SIGNERGUIDED_2026-10-26.md section 3 (decision rules = round 2, CLAUDE.md section 9).
+results/PREREG_WAVEG_SIGNERGUIDED_2026-10-26.md section 3 (decision rules = round 2, the project log section 9).
 
 Reuses the wave-12i statistics module unchanged (bleu, tstats, line, did, load_bins, ...). Runs in $G/waveG/runs: <arm>_s<seed> with arm in
 {c0, v2, g}; c0 and v2 read the wave-9 manifests, g reads waveG/manifests; every arm is decoded on its OWN pose.
