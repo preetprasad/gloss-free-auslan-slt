@@ -1,0 +1,3 @@
+{"gid": "recipe_and_settings", "tagged": true,
+ "covered": ["c06-011","c06-025","c06-037","c06-039","c06-040","c07-001","c07-002","c07-003","c07-004","c07-005","c07-006","c07-007","c07-008","c07-009","c07-010","c07-011","c07-012","c07-014","c07-042","c17-001","c17-002","c17-003","c21-019"],
+ "not_covered": [{"id": "c07-070", "code": "no_saved_output", "reason": "PyTorch 2.5.1 and CUDA 12: no saved job output prints the cluster torch version. jobs/slurm/env_build.sbatch installs torch unpinned from the cu121 index, and 2.5.1 appears only in a code comment of train_ctc.py and in setup documents (write-ups), so the number is not recomputable from a saved output."}]}

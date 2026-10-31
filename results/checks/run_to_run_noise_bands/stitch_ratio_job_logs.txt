@@ -1,0 +1,111 @@
+-rw-r--r-- 1 pprasad pmc099 52100 Sep 10 09:04 comm-long-1196386.out
+-rw-r--r-- 1 pprasad pmc099 37969 Sep 10 13:35 stitch-scale-1196567.out
+-rw-r--r-- 1 pprasad pmc099 38321 Sep 11 00:41 stitch-scl2-1199393.out
+##### stitch-scale-1196567.out
+21:=== ARM sc_ctrl_s42 (seed 42) ===
+123:    tokenize=13a  detok=True   BLEU-4= 8.51
+125:[beam5] n=800  unique=329 (41.1%)
+126:    tokenize=13a  detok=True   BLEU-4= 9.89
+128:=== ARM sc_r055_s42 (seed 42) ===
+230:    tokenize=13a  detok=True   BLEU-4= 9.61
+232:[beam5] n=800  unique=342 (42.8%)
+233:    tokenize=13a  detok=True   BLEU-4=10.90
+235:=== ARM sc_r111_s42 (seed 42) ===
+337:    tokenize=13a  detok=True   BLEU-4=10.83
+339:[beam5] n=800  unique=375 (46.9%)
+340:    tokenize=13a  detok=True   BLEU-4=11.52
+342:=== ARM sc_r166_s42 (seed 42) ===
+444:    tokenize=13a  detok=True   BLEU-4=10.90
+446:[beam5] n=800  unique=281 (35.1%)
+447:    tokenize=13a  detok=True   BLEU-4=10.67
+449:=== ARM sc_cm166_s42 (seed 42) ===
+551:    tokenize=13a  detok=True   BLEU-4= 8.57
+553:[beam5] n=800  unique=375 (46.9%)
+554:    tokenize=13a  detok=True   BLEU-4= 8.54
+556:=== ARM sc_ctrl_s101 (seed 101) ===
+658:    tokenize=13a  detok=True   BLEU-4= 8.73
+660:[beam5] n=800  unique=294 (36.8%)
+661:    tokenize=13a  detok=True   BLEU-4= 9.77
+663:=== ARM sc_r055_s101 (seed 101) ===
+765:    tokenize=13a  detok=True   BLEU-4=10.00
+767:[beam5] n=800  unique=329 (41.1%)
+768:    tokenize=13a  detok=True   BLEU-4=10.31
+770:=== ARM sc_r166_s101 (seed 101) ===
+872:    tokenize=13a  detok=True   BLEU-4=10.33
+874:[beam5] n=800  unique=301 (37.6%)
+875:    tokenize=13a  detok=True   BLEU-4=10.78
+878:sc_ctrl_s42    val_best= 9.818 @ep36   test_greedy= 8.511  wer=1.106
+879:sc_r055_s42    val_best=10.268 @ep31   test_greedy= 9.612  wer=1.013
+880:sc_r111_s42    val_best=10.271 @ep40   test_greedy=10.826  wer=1.051
+881:sc_r166_s42    val_best=10.109 @ep36   test_greedy=10.903  wer=0.997
+882:sc_cm166_s42   val_best= 9.428 @ep16   test_greedy= 8.570  wer=1.048
+883:sc_ctrl_s101   val_best= 9.608 @ep34   test_greedy= 8.729  wer=1.062
+884:sc_r055_s101   val_best=10.043 @ep29   test_greedy=10.004  wer=1.018
+885:sc_r166_s101   val_best= 9.925 @ep33   test_greedy=10.332  wer=1.020
+##### stitch-scl2-1199393.out
+21:=== ARM sc_ctrl_s101 (seed 101) ===
+123:    tokenize=13a  detok=True   BLEU-4= 9.14
+125:[beam5] n=800  unique=313 (39.1%)
+126:    tokenize=13a  detok=True   BLEU-4=10.10
+128:=== ARM sc_r055_s101 (seed 101) ===
+230:    tokenize=13a  detok=True   BLEU-4=10.09
+232:[beam5] n=800  unique=362 (45.2%)
+233:    tokenize=13a  detok=True   BLEU-4=10.80
+235:=== ARM sc_r111_s101 (seed 101) ===
+337:    tokenize=13a  detok=True   BLEU-4=10.53
+339:[beam5] n=800  unique=371 (46.4%)
+340:    tokenize=13a  detok=True   BLEU-4=11.03
+342:=== ARM sc_r166_s101 (seed 101) ===
+444:    tokenize=13a  detok=True   BLEU-4= 9.38
+446:[beam5] n=800  unique=263 (32.9%)
+447:    tokenize=13a  detok=True   BLEU-4=10.46
+449:=== ARM sc_ctrl_s202 (seed 202) ===
+551:    tokenize=13a  detok=True   BLEU-4= 8.91
+553:[beam5] n=800  unique=295 (36.9%)
+554:    tokenize=13a  detok=True   BLEU-4= 9.11
+556:=== ARM sc_r055_s202 (seed 202) ===
+658:    tokenize=13a  detok=True   BLEU-4=10.30
+660:[beam5] n=800  unique=400 (50.0%)
+661:    tokenize=13a  detok=True   BLEU-4=10.70
+663:=== ARM sc_r111_s202 (seed 202) ===
+765:    tokenize=13a  detok=True   BLEU-4= 9.71
+767:[beam5] n=800  unique=314 (39.2%)
+768:    tokenize=13a  detok=True   BLEU-4=10.87
+770:=== ARM sc_r166_s202 (seed 202) ===
+872:    tokenize=13a  detok=True   BLEU-4= 9.44
+874:[beam5] n=800  unique=279 (34.9%)
+875:    tokenize=13a  detok=True   BLEU-4=10.41
+883:sc_ctrl_s101   val_best= 9.347 @ep32   test_greedy= 9.143  wer=1.067
+884:sc_r055_s101   val_best= 9.643 @ep27   test_greedy=10.085  wer=1.049
+885:sc_r166_s101   val_best=10.346 @ep32   test_greedy= 9.381  wer=1.031
+##### comm-long-1196386.out
+6:=== ARM cl_e040_s42 (epochs=40, seed=42) ===
+108:    tokenize=13a  detok=True   BLEU-4= 8.56
+110:[beam5] n=800  unique=297 (37.1%)
+111:    tokenize=13a  detok=True   BLEU-4= 9.21
+113:=== ARM cl_e080_s42 (epochs=80, seed=42) ===
+255:    tokenize=13a  detok=True   BLEU-4= 8.76
+257:[beam5] n=800  unique=291 (36.4%)
+258:    tokenize=13a  detok=True   BLEU-4= 9.83
+260:=== ARM cl_e150_s42 (epochs=150, seed=42) ===
+472:    tokenize=13a  detok=True   BLEU-4= 8.68
+474:[beam5] n=800  unique=359 (44.9%)
+475:    tokenize=13a  detok=True   BLEU-4= 8.31
+477:=== ARM cl_e040_s101 (epochs=40, seed=101) ===
+579:    tokenize=13a  detok=True   BLEU-4= 8.39
+581:[beam5] n=800  unique=210 (26.2%)
+582:    tokenize=13a  detok=True   BLEU-4= 9.02
+584:=== ARM cl_e080_s101 (epochs=80, seed=101) ===
+726:    tokenize=13a  detok=True   BLEU-4= 8.75
+728:[beam5] n=800  unique=410 (51.2%)
+729:    tokenize=13a  detok=True   BLEU-4= 9.88
+731:=== ARM cl_e150_s101 (epochs=150, seed=101) ===
+943:    tokenize=13a  detok=True   BLEU-4= 9.33
+945:[beam5] n=800  unique=392 (49.0%)
+946:    tokenize=13a  detok=True   BLEU-4= 9.28
+949:cl_e040_s42    val_best= 9.791 @ep34   of 40   test_greedy= 8.562 wer=1.084
+951:cl_e080_s42    val_best= 9.009 @ep37   of 80   test_greedy= 8.764 wer=1.074
+953:cl_e150_s42    val_best= 9.856 @ep44   of 150  test_greedy= 8.677 wer=1.066
+955:cl_e040_s101   val_best= 9.069 @ep27   of 40   test_greedy= 8.388 wer=1.055
+957:cl_e080_s101   val_best= 9.626 @ep45   of 80   test_greedy= 8.752 wer=1.056
+959:cl_e150_s101   val_best= 9.725 @ep49   of 150  test_greedy= 9.334 wer=1.061

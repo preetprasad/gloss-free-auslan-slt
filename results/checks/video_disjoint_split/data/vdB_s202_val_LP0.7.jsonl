@@ -1,0 +1,1444 @@
+{"idx": 0, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 1, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "that is right ."}
+{"idx": 2, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 3, "ref": "sha1:3967146e05036825a653344613261a93917eda90", "hyp_beam": "i am sally ."}
+{"idx": 4, "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f", "hyp_beam": "i am possum ."}
+{"idx": 5, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 6, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 7, "ref": "sha1:23accccc5b5efa6b16c018c1e4c3918b564e12ab", "hyp_beam": "sally ."}
+{"idx": 8, "ref": "sha1:c5db88768664d2a35ee12a26cd3c463b541b11c4", "hyp_beam": "hello everyone ."}
+{"idx": 9, "ref": "sha1:5ab4e19fe9af53412e698fb39daba67ca59a1686", "hyp_beam": "i wonder what possum is up to ."}
+{"idx": 10, "ref": "sha1:fe6da9ea4e13ebc15ee4f5e6c0a240faba36d78f", "hyp_beam": "that is right ."}
+{"idx": 11, "ref": "sha1:52f0025c0d9258a955775c901da16be87aa292ff", "hyp_beam": "i have been working very hard in the garden have not i ."}
+{"idx": 12, "ref": "sha1:15bb4425bd89af1908aa12227adf077e8e099db1", "hyp_beam": "bye ."}
+{"idx": 13, "ref": "sha1:4681f59281863ac514a7fd92d71dea5fce80ffdb", "hyp_beam": "hello everyone ."}
+{"idx": 14, "ref": "sha1:bf1217d5c7502f10ec94a9b66bb8f12ec2993e99", "hyp_beam": "would you like to do that possum ."}
+{"idx": 15, "ref": "sha1:122cf016d5e28d9a50bd424c99d17369f2d9d5c3", "hyp_beam": "sally i am so happy to show you ."}
+{"idx": 16, "ref": "sha1:509cbb993ebeb71c8ce111a86eaed54ea2612a2e", "hyp_beam": "i wonder what it is ."}
+{"idx": 17, "ref": "sha1:be13bade3242beaf43db252f3bc3d12ba50d3a73", "hyp_beam": "sally what are you doing ."}
+{"idx": 18, "ref": "sha1:b34b8178771090ad9ef24d223d3ae69c8e731e54", "hyp_beam": "i have been working in the garden ."}
+{"idx": 19, "ref": "sha1:69ff22ff71775fe5658321d09a807177e9711050", "hyp_beam": "do you remember when i went up to the moon ."}
+{"idx": 20, "ref": "sha1:d3ae39c37b534e00ad07244daa4164e94ec50013", "hyp_beam": "well why do not we watch some children learning about trains ."}
+{"idx": 21, "ref": "sha1:a7e9252c749e52c5b5aa18196ab921d545de6bb6", "hyp_beam": "we can put them in the cupboard as they are ."}
+{"idx": 22, "ref": "sha1:d882c65889c8420a5005a64fe6aa73a5ccfc8742", "hyp_beam": "i wonder what it is ."}
+{"idx": 23, "ref": "sha1:c0ded6d89f0154be45e99db74a38e4737a0ec35f", "hyp_beam": "why do not we go inside and have a break ."}
+{"idx": 24, "ref": "sha1:94a8c025189c3a260ca1aa8b64cd7fc25508db60", "hyp_beam": "let us go ."}
+{"idx": 25, "ref": "sha1:e39cc9b25349bfe1c3218acc09380bcfbf2f6e41", "hyp_beam": "i am going to go around the tree ."}
+{"idx": 26, "ref": "sha1:99b0b352557e012496288597308d35b4e13754fd", "hyp_beam": "why do not we go outside and have a look at the leaves ."}
+{"idx": 27, "ref": "sha1:faf944c9dfa5d614ac3bda421c8428a0623e9946", "hyp_beam": "would you like to do that ."}
+{"idx": 28, "ref": "sha1:f05a012ddcb2bb802cee78f78eff111d8057092e", "hyp_beam": "thanks for watching ."}
+{"idx": 29, "ref": "sha1:985778992491cf2403eedbf2af6ccf33e009f908", "hyp_beam": "hi sally ."}
+{"idx": 30, "ref": "sha1:ab978ca855f88d668cbf608f8120d7cc6637042a", "hyp_beam": "i wonder where he is going to be ."}
+{"idx": 31, "ref": "sha1:7a475716cf9499601ee3ada84be87a1e2552e8ac", "hyp_beam": "you can see if you can draw a picture of it and you can eat it ."}
+{"idx": 32, "ref": "sha1:e21e2d7f44aa09e4b8324803fcd20578fb09a9e7", "hyp_beam": "why do not we have a look at what we do ."}
+{"idx": 33, "ref": "sha1:f39ad5529ccd4cf93e4fa7a9e6c7f88756a16bc1", "hyp_beam": "let us have a look ."}
+{"idx": 34, "ref": "sha1:aa663771b1113b4cbdd1543fb3fce5a92d37d7e9", "hyp_beam": "would you like to help me ."}
+{"idx": 35, "ref": "sha1:f027893de1768b8d6db018fc955e1175289311c1", "hyp_beam": "yes ."}
+{"idx": 36, "ref": "sha1:c61019c2e49b0cae23c9cd82e70524ccfb4d5eb1", "hyp_beam": "why do not we go inside and have a look ."}
+{"idx": 37, "ref": "sha1:5f069a06655e9e8f2bfd04e1bec931760b91f967", "hyp_beam": "i know ."}
+{"idx": 38, "ref": "sha1:3a2e7acc1bef57cd11767663f39f37db799aea28", "hyp_beam": "it is a very big one is not it ."}
+{"idx": 39, "ref": "sha1:16b1ab2a9ab079b5abd50faca50063f3c94aded5", "hyp_beam": "no possum ."}
+{"idx": 40, "ref": "sha1:ba353f7cc9d4fd7958f2b4c9c1cea1ee79029c99", "hyp_beam": "that is great ."}
+{"idx": 41, "ref": "sha1:e7ce64fdd44b0796cbdea74aac4631cd7f16a7af", "hyp_beam": "great ."}
+{"idx": 42, "ref": "sha1:fc26cbd84ce8454fd8a4c937c6bf8cf3c9c499b3", "hyp_beam": "well the three of us are going to have a surprise party for a friend ."}
+{"idx": 43, "ref": "sha1:5e11f5ec515f1223e93f3133505df496e52aa7a1", "hyp_beam": "now can you see where it is ."}
+{"idx": 44, "ref": "sha1:cc1f074511dbc3766c34574c992714befa8704a7", "hyp_beam": "i know ."}
+{"idx": 45, "ref": "sha1:54c711613d3927fdf8de920e24a9d023d9ffd2a0", "hyp_beam": "i am going to paint all these leaves ."}
+{"idx": 46, "ref": "sha1:698db38da431221b9619e56722c79099bf0a511d", "hyp_beam": "sally what are you doing now ."}
+{"idx": 47, "ref": "sha1:6594dad4f4512389911bca7377458a32b79398ac", "hyp_beam": "look at all the trees that are good fun ."}
+{"idx": 48, "ref": "sha1:f027893de1768b8d6db018fc955e1175289311c1", "hyp_beam": "that is great ."}
+{"idx": 49, "ref": "sha1:6fa96cd8d3cffbc0b349a9f6ee40e2adef4aa188", "hyp_beam": "yes that is right ."}
+{"idx": 50, "ref": "sha1:a1444fbe44827157308d749b5e510418837cf3f7", "hyp_beam": "that is a great idea possum ."}
+{"idx": 51, "ref": "sha1:c6df16317a305f9ae062e25279c16ab2476a5666", "hyp_beam": "ok ."}
+{"idx": 52, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "yes ."}
+{"idx": 53, "ref": "sha1:f0ccc42acf201928be73d0dcb4198e510b373906", "hyp_beam": "i can not do it ."}
+{"idx": 54, "ref": "sha1:f027893de1768b8d6db018fc955e1175289311c1", "hyp_beam": "i can not fly ."}
+{"idx": 55, "ref": "sha1:316ebb810c4486e4ce25ea921ae726bf5b90c80d", "hyp_beam": "no the possum is not here that is right ."}
+{"idx": 56, "ref": "sha1:d6de9efd83163bb46212791c901aa14893f1268b", "hyp_beam": "i need to get some food and put them on them ."}
+{"idx": 57, "ref": "sha1:cf746f55b96290835823c3230bb10aaf0ac7a418", "hyp_beam": "would you like to help you ."}
+{"idx": 58, "ref": "sha1:14a898b20635f5dd2da7035a692a9b1dc1edeaf6", "hyp_beam": "you put it on the table and then you put it in ."}
+{"idx": 59, "ref": "sha1:1b5b00d560784579aff5d82a801366b5b95f8148", "hyp_beam": "sally i have an idea ."}
+{"idx": 60, "ref": "sha1:df28d57cf06228090acc243c7784c80763a3297d", "hyp_beam": "i know ."}
+{"idx": 61, "ref": "sha1:32dc91a4fe52b986c7e2f66451c71da8b9f0b346", "hyp_beam": "i am going to take them off ."}
+{"idx": 62, "ref": "sha1:c459e2e70919f955d64346c16bd05b07e79fdbb5", "hyp_beam": "would you like to make something like that ."}
+{"idx": 63, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "yes ."}
+{"idx": 64, "ref": "sha1:9a373372f57f45f1081de738f947ccf884316cd4", "hyp_beam": "i have an idea ."}
+{"idx": 65, "ref": "sha1:f86957aa866981bf13b5d1294184cde1d32bf227", "hyp_beam": "why do not we make our own cards ."}
+{"idx": 66, "ref": "sha1:1eac634a2325a951a4b718dd633ee1409fabceb6", "hyp_beam": "why do not we watch some children learning about trains ."}
+{"idx": 67, "ref": "sha1:a2f915dcfa81731056f3ae426cfdda5e49edfc04", "hyp_beam": "yeah let us watch ."}
+{"idx": 68, "ref": "sha1:ff1bf56ea08ce9011efc24e9a3a158cd42613f99", "hyp_beam": "no possum ."}
+{"idx": 69, "ref": "sha1:58b9e7f842ac619e18ff00e748d15f9aef71d4cc", "hyp_beam": "i thought it was hard but now it is wet ."}
+{"idx": 70, "ref": "sha1:c2acba53410722716ea7ccda58f5efd7b8fb4344", "hyp_beam": "i wonder what it could be like ."}
+{"idx": 71, "ref": "sha1:d77c3af83820f3231ca4d4256fd1e270e245b4a8", "hyp_beam": "well why do not we watch some children learning about things inside ."}
+{"idx": 72, "ref": "sha1:27cbcaedffa246c7791614682388c861ee500b61", "hyp_beam": "that looks lovely ."}
+{"idx": 73, "ref": "sha1:016d01d65f32cbe755449c60ea6ad143c34ae280", "hyp_beam": "yes ."}
+{"idx": 74, "ref": "sha1:e3352d3fa470358b838d80cf2b0051d8c862e2a4", "hyp_beam": "i have made this for you ."}
+{"idx": 75, "ref": "sha1:f3396e99fdacf30acb653f285056ceea3ed591c7", "hyp_beam": "let us go ."}
+{"idx": 76, "ref": "sha1:f02f0458fc237ca9ce6419f67850c80fa34b8982", "hyp_beam": "yes we have got the instructions on how to make it in the drawer ."}
+{"idx": 77, "ref": "sha1:130b3fdfadb7006057832333bbd1c244c7b1ecec", "hyp_beam": "yes please ."}
+{"idx": 78, "ref": "sha1:46548737305fcbf65397eacf5ba964320d43c400", "hyp_beam": "would you like to help me ."}
+{"idx": 79, "ref": "sha1:ca6c28dd8c2eaa08d78948169c723a1bdf67e45a", "hyp_beam": "sally what are you doing ."}
+{"idx": 80, "ref": "sha1:0535b545786179a9b3cf9fb303097386114c4a42", "hyp_beam": "look at all the bright colors we have made ."}
+{"idx": 81, "ref": "sha1:88c322e08b79b6f199375367af4f4a6e676f5712", "hyp_beam": "well our time is up ."}
+{"idx": 82, "ref": "sha1:e70b10eefb4b55b5339edbe17bb8b2ea7dde6b58", "hyp_beam": "that is great ."}
+{"idx": 83, "ref": "sha1:de1305f2353216bc4754752df9e816e6745259ca", "hyp_beam": "we need one more thing for us to do ."}
+{"idx": 84, "ref": "sha1:e740452430239e2fb1908b130d5f2b6e61009a77", "hyp_beam": "now we need to mix it all together ."}
+{"idx": 85, "ref": "sha1:7ccd98d0f2e8816f5f771a2251e20a79b40a64dd", "hyp_beam": "now we need to mix it all together ."}
+{"idx": 86, "ref": "sha1:9202ff922561bf04342446e968346b96ef21992e", "hyp_beam": "that is right ."}
+{"idx": 87, "ref": "sha1:140744500b8d886070be10ff21382ae9f3ab956b", "hyp_beam": "that is great ."}
+{"idx": 88, "ref": "sha1:c5da6c55bfe183bac623a389c04b31cad6e42c40", "hyp_beam": "look at all the different colors ."}
+{"idx": 89, "ref": "sha1:f7abeec59c356076308a45fe0afb725cc494b215", "hyp_beam": "it is a sponge ."}
+{"idx": 90, "ref": "sha1:84d3b19946fa98ad48c5dbbcf9c793c44503f2ae", "hyp_beam": "that is great ."}
+{"idx": 91, "ref": "sha1:ad349e13f22e84d5b2b54be530f0050ae080ca9a", "hyp_beam": "now we are going to add the milk and the cream ."}
+{"idx": 92, "ref": "sha1:b538a80ca2db0382eebe63345ad886b1c7d97bf9", "hyp_beam": "that is great ."}
+{"idx": 93, "ref": "sha1:ba353f7cc9d4fd7958f2b4c9c1cea1ee79029c99", "hyp_beam": "yes please ."}
+{"idx": 94, "ref": "sha1:77c9ab48eadbf898dde6d585a62df0ab64ae2feb", "hyp_beam": "i want to make one more ."}
+{"idx": 95, "ref": "sha1:84d3b19946fa98ad48c5dbbcf9c793c44503f2ae", "hyp_beam": "that is great ."}
+{"idx": 96, "ref": "sha1:4b479c0add521d43c2f312b84b3a85f790df60cf", "hyp_beam": "now what we need to do is cut out in the middle ."}
+{"idx": 97, "ref": "sha1:ef0159748e132892926f8b07639f92b69403e581", "hyp_beam": "look at all that ."}
+{"idx": 98, "ref": "sha1:0e89cb0b9a7511cfca9922c68645f6a32e277bee", "hyp_beam": "it is almost ready ."}
+{"idx": 99, "ref": "sha1:3c3e3c8c5bce8fdc127b16db68dea104802f490f", "hyp_beam": "but there is something that we can put in there ."}
+{"idx": 100, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "that is great ."}
+{"idx": 101, "ref": "sha1:a0278e9c4416f18c3a7b3642eaaad9933266b990", "hyp_beam": "now we just need a little bit of water ."}
+{"idx": 102, "ref": "sha1:bcbc061e222f027a59cf3d1dc9b47cb5ca966d0d", "hyp_beam": "it is delicious ."}
+{"idx": 103, "ref": "sha1:d100ce74abf648b083cd56d5d35f9cf99a4a9d28", "hyp_beam": "can you see that ."}
+{"idx": 104, "ref": "sha1:a8d825968594187a6bb9e04b4ba51fae9a55a299", "hyp_beam": "possum that looks lovely ."}
+{"idx": 105, "ref": "sha1:6582a0b6dd8483871560ac83369a10a34e38f2e4", "hyp_beam": "you have done a great job possum ."}
+{"idx": 106, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "yeah let us go ."}
+{"idx": 107, "ref": "sha1:c66cc6a1186612c0d3ce27722edac6d8d0128716", "hyp_beam": "i am going to go inside and give you a few things ."}
+{"idx": 108, "ref": "sha1:ba353f7cc9d4fd7958f2b4c9c1cea1ee79029c99", "hyp_beam": "yes please ."}
+{"idx": 109, "ref": "sha1:0d7a06a62bf744e203963fb79dca9235e581ba14", "hyp_beam": "hi possum ."}
+{"idx": 110, "ref": "sha1:7ad52b69e1e7a973f4cb02e7d5d77b2fbf4b329e", "hyp_beam": "now i am going to get a piece of paper ."}
+{"idx": 111, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "that is right possum ."}
+{"idx": 112, "ref": "sha1:53d164588aec7803ba43872b2fbc54fef5ace215", "hyp_beam": "no it is not ready yet ."}
+{"idx": 113, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "yes ."}
+{"idx": 114, "ref": "sha1:e0e5260b0edfe9d11d33d5afb2bb56d2374adfa2", "hyp_beam": "sally i can not tell you more about this ."}
+{"idx": 115, "ref": "sha1:2348b38bad7675f4a513d8ac186316a77dc44ad5", "hyp_beam": "do you remember that day ."}
+{"idx": 116, "ref": "sha1:61774526d627169a1696d1659501d47aca4f8a50", "hyp_beam": "look possum ."}
+{"idx": 117, "ref": "sha1:2cbd8d8a8da7a4e7c571d15750c901447fcdc833", "hyp_beam": "you have done such a lovely painting ."}
+{"idx": 118, "ref": "sha1:c326c38a1d9cbb8d9955d4a2fd69ad16708598e7", "hyp_beam": "amanda is here ."}
+{"idx": 119, "ref": "sha1:e155e3464bcf41435491bf983bab32c900b4002d", "hyp_beam": "you are funny possum ."}
+{"idx": 120, "ref": "sha1:5b0e70f6273859f638e720a9814aee347136147c", "hyp_beam": "hello everyone ."}
+{"idx": 121, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hi sally ."}
+{"idx": 122, "ref": "sha1:b89b74ded54d505c3b09e8cff3583788a9d2a6fc", "hyp_beam": "come on ."}
+{"idx": 123, "ref": "sha1:7e0a41c74f164ad1ad3d2d8b615bea95a1ce0df4", "hyp_beam": "bye ."}
+{"idx": 124, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello possum ."}
+{"idx": 125, "ref": "sha1:799b6d2076394afa45cd9576515adbbe1dd5b3f7", "hyp_beam": "come on sally ."}
+{"idx": 126, "ref": "sha1:303a5076f63ecdb2ab2133cc6d074533eb37fac5", "hyp_beam": "thank you thank you ."}
+{"idx": 127, "ref": "sha1:5f2c025e3dc2d10152fb7b179fdcf48239191dcd", "hyp_beam": "that is great ."}
+{"idx": 128, "ref": "sha1:aaa12a5456fea17df65f9e28a1069029b0ad7f44", "hyp_beam": "let us have a look ."}
+{"idx": 129, "ref": "sha1:8cbe33f8035280c9c710228ad95c73ca9d7d1946", "hyp_beam": "why do not we watch some children and see what they do ."}
+{"idx": 130, "ref": "sha1:c731add0576b87c9d6f53c48896255fc97e86cb3", "hyp_beam": "why do not we go outside and have a look at the same time ."}
+{"idx": 131, "ref": "sha1:a3d840f3e18b82730ff5ed1de61bda6fdd7282a9", "hyp_beam": "thank you so much sally ."}
+{"idx": 132, "ref": "sha1:77ce0e0a50062ca336d4da8dd6553b81773d0a2b", "hyp_beam": "would you like to help me ."}
+{"idx": 133, "ref": "sha1:740746c4c49e8add6a0611fd41636632c3a69c05", "hyp_beam": "sally i am so excited ."}
+{"idx": 134, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "that is great ."}
+{"idx": 135, "ref": "sha1:74c9f20c7848b6eda399012e422b7750b37c5054", "hyp_beam": "possum you are funny ."}
+{"idx": 136, "ref": "sha1:46d3afd76b20e9611173f82ecbcdc4c27f71e7b6", "hyp_beam": "would you like to do that ."}
+{"idx": 137, "ref": "sha1:eb05e4a9dff04808c398c433a05a347fda4aa615", "hyp_beam": "we need to fold it in ."}
+{"idx": 138, "ref": "sha1:e5654a205b47de773f91110518779f60eed461e1", "hyp_beam": "sally look ."}
+{"idx": 139, "ref": "sha1:01b02e1795b9584242616dae85198f37a78c013a", "hyp_beam": "i wonder who it is ."}
+{"idx": 140, "ref": "sha1:222994e43829cb12d2a39318ad90e0697689aabf", "hyp_beam": "sally what do you want to do ."}
+{"idx": 141, "ref": "sha1:0d7a06a62bf744e203963fb79dca9235e581ba14", "hyp_beam": "possum ."}
+{"idx": 142, "ref": "sha1:29cb34120147a39704b85a780bbbdb20d3461ecc", "hyp_beam": "why do not we go into the garden ."}
+{"idx": 143, "ref": "sha1:349fa61e56c96297d416c4a7732b15a32d854894", "hyp_beam": "you are funny possum ."}
+{"idx": 144, "ref": "sha1:69d5e788ee7759aa047d5be1d61542591a61d930", "hyp_beam": "possum you are really a very special day at home ."}
+{"idx": 145, "ref": "sha1:6b01825090594a9effccec940676b79e60ab62b7", "hyp_beam": "i am going to show you how to make it ."}
+{"idx": 146, "ref": "sha1:bb6521e382f53b47ecd74ba3c962eb26633428fe", "hyp_beam": "you are welcome ."}
+{"idx": 147, "ref": "sha1:a5bf2fbc1ccb9d9a14dc39b420d43ef305934c0c", "hyp_beam": "sally what are you doing ."}
+{"idx": 148, "ref": "sha1:3602d71905600b717b4669002828bc353b43fec5", "hyp_beam": "can you do that ."}
+{"idx": 149, "ref": "sha1:8f5f87cb77b3b02feb0c43c0979acd7a91daa3b3", "hyp_beam": "thank you ."}
+{"idx": 150, "ref": "sha1:87f2169ee81ae1253aad46b98d878db809a5cd17", "hyp_beam": "yes of course i am possum ."}
+{"idx": 151, "ref": "sha1:b89b74ded54d505c3b09e8cff3583788a9d2a6fc", "hyp_beam": "no possum ."}
+{"idx": 152, "ref": "sha1:f44c5a706f5745a0e0cbd82a3da4d7e5863e8d8c", "hyp_beam": "now i am going to have a look at my tree ."}
+{"idx": 153, "ref": "sha1:b89b74ded54d505c3b09e8cff3583788a9d2a6fc", "hyp_beam": "thanks for watching ."}
+{"idx": 154, "ref": "sha1:491565918b3507b260545e6c3f16f1e75ff4d158", "hyp_beam": "yes it is ."}
+{"idx": 155, "ref": "sha1:cc1f074511dbc3766c34574c992714befa8704a7", "hyp_beam": "yes ."}
+{"idx": 156, "ref": "sha1:00b8256eb1c52109578c65faaf95884a0f5006d8", "hyp_beam": "hold on ."}
+{"idx": 157, "ref": "sha1:4127877e13c2887f05c8534dede35e0de9d94d6f", "hyp_beam": "i need to do it again ."}
+{"idx": 158, "ref": "sha1:b0f9fa27b7b1d79694155577bdf586e4248a8366", "hyp_beam": "yes please ."}
+{"idx": 159, "ref": "sha1:9a1342c4bad5f087afea8030bd71159c9934b6ac", "hyp_beam": "that is great possum ."}
+{"idx": 160, "ref": "sha1:b89b74ded54d505c3b09e8cff3583788a9d2a6fc", "hyp_beam": "thank you possum ."}
+{"idx": 161, "ref": "sha1:6daf3c73190836b42602f67124aa78bff5653f91", "hyp_beam": "let us watch ."}
+{"idx": 162, "ref": "sha1:8c67c92526304f7c80b4431b4ec203d30eee2608", "hyp_beam": "but i do not know i am going to be careful with it ."}
+{"idx": 163, "ref": "sha1:1db019f5754d4095013518b45f026d9aad01eb73", "hyp_beam": "i wonder what it is ."}
+{"idx": 164, "ref": "sha1:b89b74ded54d505c3b09e8cff3583788a9d2a6fc", "hyp_beam": "thank you ."}
+{"idx": 165, "ref": "sha1:310d5c7750b8549b1f7251f02d2fa26a4dabc861", "hyp_beam": "this is great ."}
+{"idx": 166, "ref": "sha1:562ff6f93a9b24cc45d02b1beba7794cb345a16d", "hyp_beam": "no ."}
+{"idx": 167, "ref": "sha1:17217b27fdc4e3d804dfad3d85440071450f4823", "hyp_beam": "hang on i need to push it ."}
+{"idx": 168, "ref": "sha1:562ff6f93a9b24cc45d02b1beba7794cb345a16d", "hyp_beam": "well that is not going to be ."}
+{"idx": 169, "ref": "sha1:562ff6f93a9b24cc45d02b1beba7794cb345a16d", "hyp_beam": "bye ."}
+{"idx": 170, "ref": "sha1:2a8dcde6c275c8ae150c0c1367687816cf7b205f", "hyp_beam": "well our time is up ."}
+{"idx": 171, "ref": "sha1:d8919c52409491fe6e17a9ff2b51bdcadfb30c66", "hyp_beam": "that is right ."}
+{"idx": 172, "ref": "sha1:b89b74ded54d505c3b09e8cff3583788a9d2a6fc", "hyp_beam": "that is delicious ."}
+{"idx": 173, "ref": "sha1:253fac453bb8cf0c377fa541dc88f73cbe3a274f", "hyp_beam": "it is a very special thing for you ."}
+{"idx": 174, "ref": "sha1:8e1cc50ae536525ab973d6db7610f19a36ccd40b", "hyp_beam": "would you like to do that ."}
+{"idx": 175, "ref": "sha1:d6891ed4607ef2811c5f271fab6f4d8a16fb6bbd", "hyp_beam": "why do not we go and have a look at all the things ."}
+{"idx": 176, "ref": "sha1:c903620e09f6a12663f87ffbd59cd435dff79111", "hyp_beam": "would you like to do that ."}
+{"idx": 177, "ref": "sha1:53eb7626f5bd3046912e7b9e87e9220155c47c47", "hyp_beam": "i like the one with the one ."}
+{"idx": 178, "ref": "sha1:8bdc0807f177ac39b7205cb19582e125c3418a3a", "hyp_beam": "that looks great ."}
+{"idx": 179, "ref": "sha1:d94227990f04f227da1ee35c649062a13b937973", "hyp_beam": "you know how to make one possum ."}
+{"idx": 180, "ref": "sha1:243422eec206f78f55c08207e049a21c80a03cb6", "hyp_beam": "yes that is right possum ."}
+{"idx": 181, "ref": "sha1:8215afd3daf449d804582a97e6467ce879e080f2", "hyp_beam": "that is what that is ."}
+{"idx": 182, "ref": "sha1:2921b10ce1d41dc5db2062b827a86b111ec530da", "hyp_beam": "let us have a look ."}
+{"idx": 183, "ref": "sha1:a250d30d5a4f9fd628ff0d96a11cd9a6ed0403f1", "hyp_beam": "would you like to make a cup of tea ."}
+{"idx": 184, "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "hyp_beam": "well our time is up ."}
+{"idx": 185, "ref": "sha1:b49d27b6673825e0e96a0ef06b599d057dcf7df8", "hyp_beam": "i know ."}
+{"idx": 186, "ref": "sha1:fa4b7793efc846eed9b55f855ce2d97c2fca47a7", "hyp_beam": "see you next time ."}
+{"idx": 187, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "hi everyone ."}
+{"idx": 188, "ref": "sha1:8fa28b82073e3c4b04da27b1c849c583245bd214", "hyp_beam": "ok let us go ."}
+{"idx": 189, "ref": "sha1:95b084919971c24ca9c382008de693aaa7847df2", "hyp_beam": "what about this ."}
+{"idx": 190, "ref": "sha1:cc1f074511dbc3766c34574c992714befa8704a7", "hyp_beam": "i know ."}
+{"idx": 191, "ref": "sha1:d1cd45ecefbc05385f9dc156eb471ec14597bdfe", "hyp_beam": "yes that is right possum ."}
+{"idx": 192, "ref": "sha1:49f221c0baa137a69805fe40d10e6be51e2a403a", "hyp_beam": "can you please get the recipe out of the instructions ."}
+{"idx": 193, "ref": "sha1:bce808d6829f75c24ad17926e1c736c2c39e22f0", "hyp_beam": "look ."}
+{"idx": 194, "ref": "sha1:89159343da237f64a1aa2802fbd217585b618e2c", "hyp_beam": "no ."}
+{"idx": 195, "ref": "sha1:ae39c7bea3d95f6da989614a333ca95c95dc3213", "hyp_beam": "hello ."}
+{"idx": 196, "ref": "sha1:bdd703cd4a3ab50568951ae2ca9b89cdd24e2652", "hyp_beam": "right ."}
+{"idx": 197, "ref": "sha1:d85420dc4a701f3a260eb3ddad9426f93a280ac2", "hyp_beam": "that is a lot of fruit ."}
+{"idx": 198, "ref": "sha1:8f9b2dc539255bb6de75262e4450df125e0e04a7", "hyp_beam": "no possum ."}
+{"idx": 199, "ref": "sha1:d9cd05aa4a55379a54907f2d7d1e1ee4ab427fd8", "hyp_beam": "why do not we watch some children ."}
+{"idx": 200, "ref": "sha1:121be4b5c8f02e6fb46820ec75825a752fc44362", "hyp_beam": "that is great ."}
+{"idx": 201, "ref": "sha1:5d86b434901ab6711c340ef4d5fb45286007aece", "hyp_beam": "thank you so much ."}
+{"idx": 202, "ref": "sha1:94762acc8767752155cd786f44102511c690d81e", "hyp_beam": "it is wet ."}
+{"idx": 203, "ref": "sha1:d02582b24a468ca443f81432cd67b1fad7a0a4b3", "hyp_beam": "hi sally ."}
+{"idx": 204, "ref": "sha1:06f7eed09d99a594fd7b97b12e8574046de4506c", "hyp_beam": "thank you so much ."}
+{"idx": 205, "ref": "sha1:e20446b96972c6515455e23361de55fa5f7331c9", "hyp_beam": "we need to add some butter ."}
+{"idx": 206, "ref": "sha1:4eeefb1758012bdec0ca3a461c6dd486594defc6", "hyp_beam": "i know ."}
+{"idx": 207, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 208, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 209, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 210, "ref": "sha1:3967146e05036825a653344613261a93917eda90", "hyp_beam": "i am sally ."}
+{"idx": 211, "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f", "hyp_beam": "i am possum ."}
+{"idx": 212, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 213, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 214, "ref": "sha1:c5db88768664d2a35ee12a26cd3c463b541b11c4", "hyp_beam": "bye ."}
+{"idx": 215, "ref": "sha1:c40ed538a5bdf969443540bec5d7ba0808d965ab", "hyp_beam": "i wonder what possum is up to ."}
+{"idx": 216, "ref": "sha1:0fa8b0b17ba58deb3213cdae45e0f15b187862bf", "hyp_beam": "no it does not matter possum ."}
+{"idx": 217, "ref": "sha1:15bb4425bd89af1908aa12227adf077e8e099db1", "hyp_beam": "hello ."}
+{"idx": 218, "ref": "sha1:2b2bb77de69ef4a0024c5c4d6cf666eb9e8bafbd", "hyp_beam": "bye ."}
+{"idx": 219, "ref": "sha1:a8de97a3a0bde91062b1a9a94ceb5a3e1ef5d21a", "hyp_beam": "hello everyone ."}
+{"idx": 220, "ref": "sha1:10c90bf3b68a04661993085eefa592f3103d0a39", "hyp_beam": "bye ."}
+{"idx": 221, "ref": "sha1:6818a57f2b8e9143c60da0cc374fadf9b2195fd5", "hyp_beam": "come on let us go ."}
+{"idx": 222, "ref": "sha1:79beed50a1dacdccddfbce382984625f0c31428c", "hyp_beam": "what were you doing up there ."}
+{"idx": 223, "ref": "sha1:5da6d5103d99c59044003959b6f0505a7d5fe6e8", "hyp_beam": "no possum it is amazing ."}
+{"idx": 224, "ref": "sha1:92d7b1c1a95812322d0abbdd71f386ab5cf7d01b", "hyp_beam": "come on sally ."}
+{"idx": 225, "ref": "sha1:806af998c625184e8100def446fbb0aa34c14abb", "hyp_beam": "why do not we go outside and have a look ."}
+{"idx": 226, "ref": "sha1:25319e53a934362f3e35f57230007e96d33efb78", "hyp_beam": "why do not we go outside and have a look at the top of your tree ."}
+{"idx": 227, "ref": "sha1:bcb522168fc0c166eafae3e388fe3abf75026c4e", "hyp_beam": "i am happy to show you possum ."}
+{"idx": 228, "ref": "sha1:b2f9d9fe9a1db683622d5ea585a341bdeea235bf", "hyp_beam": "it is such a beautiful day ."}
+{"idx": 229, "ref": "sha1:59ef2bfc05bc129f344c8147eaeee986ae464c3f", "hyp_beam": "yes that is right possum ."}
+{"idx": 230, "ref": "sha1:4c5d968e7b60452543e0975cef8a386bb1207a9d", "hyp_beam": "i wonder what it is ."}
+{"idx": 231, "ref": "sha1:bbc96ff43cc1d8d154dac45a82dc8b5e81423b24", "hyp_beam": "it is very big ."}
+{"idx": 232, "ref": "sha1:88ea8ace9bdbc93ace4eb8d2ecf3c8bfaf8af99e", "hyp_beam": "i am going to paint something ."}
+{"idx": 233, "ref": "sha1:75186c1199d9afd55104489c2c836ba941ae5513", "hyp_beam": "well i am going to play soccer but now i am ready ."}
+{"idx": 234, "ref": "sha1:acad72512963f436de4af7be2d25100ad8942929", "hyp_beam": "now i am going to go up to the top of my tree and i saw your tree house ."}
+{"idx": 235, "ref": "sha1:4f845c15dcc0a741399b56960f479c4f4afbb392", "hyp_beam": "you are a very special surprise ."}
+{"idx": 236, "ref": "sha1:09ce52f0d0c0083022f6836bb366897777e15059", "hyp_beam": "i am going to go through the gate ."}
+{"idx": 237, "ref": "sha1:1abbf9bbafdf92c0ad766cc21e791d862df81ab4", "hyp_beam": "no ."}
+{"idx": 238, "ref": "sha1:68abee595c1d9d6efce2ce8b1b2632bfaa5feb90", "hyp_beam": "why do not we watch some children going to school ."}
+{"idx": 239, "ref": "sha1:9a3504b49886859a5ec65d8c59b1c388c1a5c0e5", "hyp_beam": "i can not climb to the top of my tree ."}
+{"idx": 240, "ref": "sha1:f51bfa7ade888ee6c73e9852008d3a538eb9dab1", "hyp_beam": "are you ready to go now ."}
+{"idx": 241, "ref": "sha1:35da3cb99636c27f48efc2d8618cfd00cd162e5b", "hyp_beam": "well our time is up ."}
+{"idx": 242, "ref": "sha1:113dada2a660de0e52676910a58248209ae5f9f7", "hyp_beam": "you are funny possum ."}
+{"idx": 243, "ref": "sha1:c974eedf5e8d7c5c5955af5604455c8e540640fd", "hyp_beam": "yes i am finished ."}
+{"idx": 244, "ref": "sha1:0c5d2afe325ff475a78796cf8d75c1e26ea80a95", "hyp_beam": "look at all the beautiful colors ."}
+{"idx": 245, "ref": "sha1:0e760d1181dbbd475c236cbde7693c621dd09817", "hyp_beam": "i have got everything here ."}
+{"idx": 246, "ref": "sha1:6b9157d6b0e2f97cd684cab1451b5eb3f92b5b5c", "hyp_beam": "sally what does that mean ."}
+{"idx": 247, "ref": "sha1:f082098829f4962392919260611d7bab4435924f", "hyp_beam": "now we can put them in ."}
+{"idx": 248, "ref": "sha1:8befa5dec2c28454213ca543a2cc8dca3e903100", "hyp_beam": "that is like the one possum ."}
+{"idx": 249, "ref": "sha1:aac186e00fb1547afc5ddd213c83235c81e4b895", "hyp_beam": "i know you are right possum ."}
+{"idx": 250, "ref": "sha1:496c7e31683cb00ef725c7eec273421265b608b4", "hyp_beam": "i am going to put it in the cupboard ."}
+{"idx": 251, "ref": "sha1:10dbc73b74039af5deb565b3d326d738111954a2", "hyp_beam": "sally why do not you give it to you ."}
+{"idx": 252, "ref": "sha1:6ef3e6a34347a69c45b8a9a17b60afb2759b4c3a", "hyp_beam": "no not yet possum ."}
+{"idx": 253, "ref": "sha1:a1067168cfd544306126ea98e8f4d07e9504d6c2", "hyp_beam": "would you like to do that possum ."}
+{"idx": 254, "ref": "sha1:ed845a1a31fc4ca646e14fc0a87495a39bf854ab", "hyp_beam": "me too ."}
+{"idx": 255, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "yes that is right ."}
+{"idx": 256, "ref": "sha1:74aac7e6e16a7cb59e0c32316dbf3714d489d19f", "hyp_beam": "well why do not we watch some children learning how to ride a bike ."}
+{"idx": 257, "ref": "sha1:a9f041407e04a6fda644ef80d6e72188e40b6377", "hyp_beam": "can you please bring a piece of paper out of the box ."}
+{"idx": 258, "ref": "sha1:43be74e500fc2e14173dc30ef593df75e10f0275", "hyp_beam": "i am going to draw a picture of a picture ."}
+{"idx": 259, "ref": "sha1:c74ae74d856091ba94497503774e3513f86d91a3", "hyp_beam": "i am sally ."}
+{"idx": 260, "ref": "sha1:ddd2fb825ca81d8ae1fd0506af39ace3672503f6", "hyp_beam": "i am so excited what is it ."}
+{"idx": 261, "ref": "sha1:d3b9c479d82349c872c0f242c7ba180feacae393", "hyp_beam": "there is a few things that we could use ."}
+{"idx": 262, "ref": "sha1:8345c4dacc07c4cdf206cd820909ffadec1ec6b9", "hyp_beam": "now we are going to add the milk ."}
+{"idx": 263, "ref": "sha1:c5b65f0ec98dae5a8264e814702aa6ede6db237d", "hyp_beam": "that is right ."}
+{"idx": 264, "ref": "sha1:c7e89107add2a01f3103a6d69d2faf89b1f12141", "hyp_beam": "do you remember when you were looking at the big possum ."}
+{"idx": 265, "ref": "sha1:51d450d65a4834b471a098d90751bca3dd070aa4", "hyp_beam": "look at the top of my tree ."}
+{"idx": 266, "ref": "sha1:14aad2c97b0baae50237d03ec08913c235669b2f", "hyp_beam": "do you remember when you were working in the garden and i saw the birds eye view ."}
+{"idx": 267, "ref": "sha1:49a1eb5658a52d93e3bd7ee9925fda7185ead259", "hyp_beam": "are you here ."}
+{"idx": 268, "ref": "sha1:c88450496c1c6018a42c64319af005c60e50a91b", "hyp_beam": "sally i wish i could learn more about trains ."}
+{"idx": 269, "ref": "sha1:c408edb3943a960ac442ed55232d4a4eda1703d5", "hyp_beam": "i am going to go outside and watch some children learning about mirrors ."}
+{"idx": 270, "ref": "sha1:4c36dbd0eedf097cce1decbdf188f288b8c45c60", "hyp_beam": "i wonder what it is ."}
+{"idx": 271, "ref": "sha1:6157b8e4972ff9c3870233aa6732ebed762ea218", "hyp_beam": "sally i thought it was such a good day today ."}
+{"idx": 272, "ref": "sha1:0e125e52b5bfb55f7c44148fb07ce3aec370bd31", "hyp_beam": "yeah let us watch ."}
+{"idx": 273, "ref": "sha1:8cf6016c060df5a1cbfd52cafb899bd6aed15486", "hyp_beam": "i wonder what it is ."}
+{"idx": 274, "ref": "sha1:c5e6dd4d8f57ad6ce93c64dd0526355e97ff0d94", "hyp_beam": "sally i love learning new things ."}
+{"idx": 275, "ref": "sha1:630876302d26276044acb659d267be57d4e99128", "hyp_beam": "yes that is right ."}
+{"idx": 276, "ref": "sha1:fb7f08a760aeece601859923172c3a813dd3a862", "hyp_beam": "we can make a pattern ."}
+{"idx": 277, "ref": "sha1:b3554da1d389d9fdb3d1c4a298506014ddd5ef9a", "hyp_beam": "look sally ."}
+{"idx": 278, "ref": "sha1:4f5a895fc25b151fb88cf32045a8d23889874fac", "hyp_beam": "no i think i could become a long time ."}
+{"idx": 279, "ref": "sha1:d7e8dab4e0a695ab668a49a3c1fa393986fb7278", "hyp_beam": "look at all the leaves you have got ."}
+{"idx": 280, "ref": "sha1:b4ffbda26fdeea2f9c9ce7cbc447775c65a7ec62", "hyp_beam": "you can see all the different shapes that are up here ."}
+{"idx": 281, "ref": "sha1:1c8dcc01d62f701093482154672db9529a2c309f", "hyp_beam": "why do not we watch some children making things out of the garden ."}
+{"idx": 282, "ref": "sha1:3adaed06fc83f74bdfe2d0bbda6924502d17d7de", "hyp_beam": "can you please put that into the rubbish bin ."}
+{"idx": 283, "ref": "sha1:3d6d5ea61cbdbe377c298a09e7d6fd0875dcc105", "hyp_beam": "you are very careful possum ."}
+{"idx": 284, "ref": "sha1:0fab8a9396cbe6cb0cc08e1fb689e818c1724a76", "hyp_beam": "can you please get the recipe out of the box ."}
+{"idx": 285, "ref": "sha1:cdad9eebd3933c8d8cd8d723a6fd584237f252c2", "hyp_beam": "can you help me please ."}
+{"idx": 286, "ref": "sha1:af0b024fe9e2276bad87cae017907d9fe2f858a9", "hyp_beam": "yes that is right possum ."}
+{"idx": 287, "ref": "sha1:95941b671feddd5adab0ce7bc15252762bf2b7d1", "hyp_beam": "sally do you think it is time for me ."}
+{"idx": 288, "ref": "sha1:b468b75f1e513ad6652366022cb06f2871554220", "hyp_beam": "i will get it ."}
+{"idx": 289, "ref": "sha1:13d10873eb3d40a708459571694820da76eefc11", "hyp_beam": "that is a great idea possum ."}
+{"idx": 290, "ref": "sha1:6e400917f5bb332f9126a75603520e1a4708b179", "hyp_beam": "that is right and the three of us are going to be able to make a pattern ."}
+{"idx": 291, "ref": "sha1:5bc512d6bfbc82e727d6d13f177379ae9c643fbd", "hyp_beam": "what could we help ."}
+{"idx": 292, "ref": "sha1:ee8b0d0cf6f0c12337ebbd91f11b5ec7138130f2", "hyp_beam": "it is the right tool for the job to find it in the kitchen ."}
+{"idx": 293, "ref": "sha1:88d8c2001355ca4329d088797675ae3893ec6006", "hyp_beam": "you know when you look in the mirror you can see how you get there ."}
+{"idx": 294, "ref": "sha1:e4223c804c3e6e7e6198efd1ce3a2d3c505cefc1", "hyp_beam": "it is hard to learn how to ride a bike ."}
+{"idx": 295, "ref": "sha1:a67ffff8de578a35b9473ff1359aae9202efcb25", "hyp_beam": "why do not we make some ."}
+{"idx": 296, "ref": "sha1:56c7cfd392c24c7f16636bb7ed7dee7baa59ec80", "hyp_beam": "yes that is right possum ."}
+{"idx": 297, "ref": "sha1:6dab23a664d6f7fab001e9c5d3aeba9bdfe3ed7c", "hyp_beam": "possum why do not we sit down and have a long time to go around ."}
+{"idx": 298, "ref": "sha1:ff76475d9526817a0aca88e98f77c896fbc9a1f7", "hyp_beam": "why do not we watch some children and see what they are ."}
+{"idx": 299, "ref": "sha1:aec8b0aef802a752056e4d6ad563805ae3bb4e8c", "hyp_beam": "why do not we watch some children and see what they do ."}
+{"idx": 300, "ref": "sha1:d5ced1704d3553ee16405fab6127ea6b41fc2253", "hyp_beam": "you are funny possum ."}
+{"idx": 301, "ref": "sha1:4bdf71d62f63a8d7b6d63b445c7eb3f5c89795d0", "hyp_beam": "i wonder what possum is up to ."}
+{"idx": 302, "ref": "sha1:b811aa4433ee5618fa7b68a003b82f4be211e5fd", "hyp_beam": "sally what is this ."}
+{"idx": 303, "ref": "sha1:8e6095bce04123489d7f0e3d496ea2ed707d00b8", "hyp_beam": "i will show you ."}
+{"idx": 304, "ref": "sha1:5aee951bf1d743254daba9e8ffba9bc03a8d332b", "hyp_beam": "would you like to try it ."}
+{"idx": 305, "ref": "sha1:2ed2c294976abb7422e385b4eb35da73b115aeff", "hyp_beam": "but this is not going to be too hard ."}
+{"idx": 306, "ref": "sha1:ff1bf56ea08ce9011efc24e9a3a158cd42613f99", "hyp_beam": "one two three four ."}
+{"idx": 307, "ref": "sha1:ac896590159102ecdf9b0a77788fa6803f04d58b", "hyp_beam": "that is great ."}
+{"idx": 308, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "that is great ."}
+{"idx": 309, "ref": "sha1:d19bbaec129a84403badda487b5af3eb0b23a74f", "hyp_beam": "are you ready possum ."}
+{"idx": 310, "ref": "sha1:f242fdc03819fab72ae6e8c4ef28093ce426835b", "hyp_beam": "thank you so much for teaching me how to make a butterfly ."}
+{"idx": 311, "ref": "sha1:85c6c66e39e0f4762b9a953cf9f567caf8e4444d", "hyp_beam": "no i am happy to show you ."}
+{"idx": 312, "ref": "sha1:c01b508ffccec65356f0698a3ef3d8fbb1068d5f", "hyp_beam": "yes that is right ."}
+{"idx": 313, "ref": "sha1:4c9a9eeb49f4f426e7fcd03d352fc638bb5f7091", "hyp_beam": "it is like a triangle ."}
+{"idx": 314, "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "hyp_beam": "well our time is up ."}
+{"idx": 315, "ref": "sha1:b49d27b6673825e0e96a0ef06b599d057dcf7df8", "hyp_beam": "thanks for watching ."}
+{"idx": 316, "ref": "sha1:fa4b7793efc846eed9b55f855ce2d97c2fca47a7", "hyp_beam": "hi skip ."}
+{"idx": 317, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "bye ."}
+{"idx": 318, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "what is that ."}
+{"idx": 319, "ref": "sha1:7ac8b9fe521d728b162200f87777c36ac66734e8", "hyp_beam": "what a great idea possum ."}
+{"idx": 320, "ref": "sha1:6cfae7be4621f42a8f419d8a213e2b05a9343116", "hyp_beam": "look ."}
+{"idx": 321, "ref": "sha1:0f381dd6b3079e982e3fa505b9b66c1179715af3", "hyp_beam": "no possum it is too long is not it ."}
+{"idx": 322, "ref": "sha1:346f30c78ece8e97a935e7e886f6c35637601e5a", "hyp_beam": "that is amazing ."}
+{"idx": 323, "ref": "sha1:e703537b015e763e5a97bb78cf8de62bcd5cbb56", "hyp_beam": "no you are right possum ."}
+{"idx": 324, "ref": "sha1:e207e04e0bbfafdfc92af107b77a70da6c5730c3", "hyp_beam": "what are you doing possum ."}
+{"idx": 325, "ref": "sha1:646cf347ec4912ced1e030ce9d7328408fb44e86", "hyp_beam": "it is like a possum ."}
+{"idx": 326, "ref": "sha1:3f49d2905bcd5b00a5ba3964baa0277758e4cf6f", "hyp_beam": "no possum ."}
+{"idx": 327, "ref": "sha1:c2e923ed5928afd0561bc03d2e0cbdef03962670", "hyp_beam": "yeah let us watch ."}
+{"idx": 328, "ref": "sha1:a2f915dcfa81731056f3ae426cfdda5e49edfc04", "hyp_beam": "yeah let us watch ."}
+{"idx": 329, "ref": "sha1:9d91a9b924149a76801b87a7073b3f62afb8ca69", "hyp_beam": "yeah let us go ."}
+{"idx": 330, "ref": "sha1:bd1579433878e37f6f8e1674f786381507aea9fa", "hyp_beam": "yeah let us have a look ."}
+{"idx": 331, "ref": "sha1:347a17bd81fdca8e1f1a8bf79e93f2e9a3cfc057", "hyp_beam": "not yet ."}
+{"idx": 332, "ref": "sha1:f19cf3e6be075fa275391e4bf40124d0659cd6e5", "hyp_beam": "what is it ."}
+{"idx": 333, "ref": "sha1:329a083167d6de247fa6cbf4a2a43eb7c0dd7701", "hyp_beam": "i do not think i can do that too ."}
+{"idx": 334, "ref": "sha1:ed3f97ec2cdd82d77b5211cbb23bc1943c347758", "hyp_beam": "i am going to go around my tree ."}
+{"idx": 335, "ref": "sha1:e034d6461015464b5d8ac9a3540f10a626ebb7f0", "hyp_beam": "why do not we have a look at the door ."}
+{"idx": 336, "ref": "sha1:28fe75ce0f7f28990cd14ff83089a7cee0c1291b", "hyp_beam": "i have a look at my tree ."}
+{"idx": 337, "ref": "sha1:b2f47ebd7f54e795abbe594d09d4b3184efe2bed", "hyp_beam": "possum that is beautiful ."}
+{"idx": 338, "ref": "sha1:bae2ebb61feb5cd5f06650018bf483818914c97d", "hyp_beam": "you are funny possum ."}
+{"idx": 339, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "yes ."}
+{"idx": 340, "ref": "sha1:a5ef1dd195e38e34ab7e698f51abfc81f8b5c25b", "hyp_beam": "i do not know why ."}
+{"idx": 341, "ref": "sha1:49dcaa623edf821af18a7873a7a1201a37612a2a", "hyp_beam": "i know ."}
+{"idx": 342, "ref": "sha1:eaa0f58f8e39aed1553adc492c658c34b78913b8", "hyp_beam": "i will show you ."}
+{"idx": 343, "ref": "sha1:17cf858cdf95ed3cea3978b098161a74f8edfb23", "hyp_beam": "that is great ."}
+{"idx": 344, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 345, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "yeah let us watch ."}
+{"idx": 346, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 347, "ref": "sha1:3967146e05036825a653344613261a93917eda90", "hyp_beam": "i am sally ."}
+{"idx": 348, "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f", "hyp_beam": "i am possum ."}
+{"idx": 349, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 350, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 351, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "bye ."}
+{"idx": 352, "ref": "sha1:2b2bb77de69ef4a0024c5c4d6cf666eb9e8bafbd", "hyp_beam": "bye ."}
+{"idx": 353, "ref": "sha1:6100984189daa1c9180cc45c73ca673d0a0415cd", "hyp_beam": "i am making a paper plane ."}
+{"idx": 354, "ref": "sha1:ed1649544e470666e07aefe9a8a43463a4225989", "hyp_beam": "i love eggs ."}
+{"idx": 355, "ref": "sha1:5a8f0e5551a17b3383194039065f01890c9640d3", "hyp_beam": "sally can you help me please ."}
+{"idx": 356, "ref": "sha1:6e0009ba9cd8fa05a9d29376f68f80e7e21cede2", "hyp_beam": "now we need the flour ."}
+{"idx": 357, "ref": "sha1:b7ad2ea0cf2dcfd165428112c8dfa31c065ac7f4", "hyp_beam": "now it is the same as well ."}
+{"idx": 358, "ref": "sha1:b8f43bb26fcb7036106fc96e6dd53ef8f6b2b545", "hyp_beam": "this one ."}
+{"idx": 359, "ref": "sha1:13f76bbbee213b4155202015f5b4c98936cfe034", "hyp_beam": "why do not we watch some children making things out of paper ."}
+{"idx": 360, "ref": "sha1:67e905f79b28e9e8ba70c99354eb6996ab74bb66", "hyp_beam": "that is great ."}
+{"idx": 361, "ref": "sha1:7a2fb55b293abe789717c94f76bc7afe28a37eef", "hyp_beam": "that is great ."}
+{"idx": 362, "ref": "sha1:a64a27b9e909fed8e01524607fbcfb1f8adb0128", "hyp_beam": "no possum but there is one more thing missing ."}
+{"idx": 363, "ref": "sha1:24a96a4b629f2c2310dac4f7081249ef6467a38f", "hyp_beam": "one two three four five six ."}
+{"idx": 364, "ref": "sha1:fb1699408ae653f0c88ccf234f2117006d45edf9", "hyp_beam": "yes that is right ."}
+{"idx": 365, "ref": "sha1:29975164a826272edff21f0b54a6c6fe4cd610d5", "hyp_beam": "sally what are you doing ."}
+{"idx": 366, "ref": "sha1:a038e7751ee810281f9742063c8285c817c21929", "hyp_beam": "let us see what we are going to do ."}
+{"idx": 367, "ref": "sha1:64d226d70cd0371ddcb790b8e45d55bd0adf21d6", "hyp_beam": "this one ."}
+{"idx": 368, "ref": "sha1:5b2b4a8a9b7866bdc6232fc8e0ed2f2a3f330976", "hyp_beam": "there it is ."}
+{"idx": 369, "ref": "sha1:4c6e95d2a0b10e531a8f3f4087c8a5aee3591dee", "hyp_beam": "there it is ."}
+{"idx": 370, "ref": "sha1:d086dfed45235bff06c00368ccfe83277d8cb02d", "hyp_beam": "look sally ."}
+{"idx": 371, "ref": "sha1:c65c78b352c45b7dfafe2fd0d5f29a36d7b68301", "hyp_beam": "that is right ."}
+{"idx": 372, "ref": "sha1:89a5395bce94489bb848f07ba521069e42a59903", "hyp_beam": "well why do not we make a pattern ."}
+{"idx": 373, "ref": "sha1:a251b853b9da822c3bb811bea0508191290e81c3", "hyp_beam": "we are going to make a cup of flour ."}
+{"idx": 374, "ref": "sha1:161c937593b9042f88fcfdae4703009da035fc65", "hyp_beam": "it is like a boat ."}
+{"idx": 375, "ref": "sha1:79deb488efabc07d3cf83e24d221ce7fd86fe1ba", "hyp_beam": "now we need to put it in the rubbish bin ."}
+{"idx": 376, "ref": "sha1:425e183093c595fe7d912006e1fc639f91ec039a", "hyp_beam": "i wonder what it is ."}
+{"idx": 377, "ref": "sha1:9bdf11a51a2e80b6789aeb15dd8e026f7e85478d", "hyp_beam": "you can see all the different colors ."}
+{"idx": 378, "ref": "sha1:59fe63467b1e3dcc92be8c05a06996cc1d6a73b3", "hyp_beam": "i have got them ."}
+{"idx": 379, "ref": "sha1:b0a56075098ddd11405c885ffe4996f1fb459bc4", "hyp_beam": "that is great ."}
+{"idx": 380, "ref": "sha1:40762fe9f14d4ecbf358fdb4d86d61fc548436d4", "hyp_beam": "that looks great ."}
+{"idx": 381, "ref": "sha1:ca94713ee509e69703bee1cf5f5ee3bf5e4152e9", "hyp_beam": "that looks great ."}
+{"idx": 382, "ref": "sha1:ac395a1fb2d56583d3344ad1d32847938b05a124", "hyp_beam": "we need a cup of water ."}
+{"idx": 383, "ref": "sha1:604c5bb92ef0fe8bbebbb9c5bc281a04f912f834", "hyp_beam": "the surprise ."}
+{"idx": 384, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "that is great ."}
+{"idx": 385, "ref": "sha1:865504c05439edbade12604b46a717e1b678e6f0", "hyp_beam": "great ."}
+{"idx": 386, "ref": "sha1:059017de258e3c3870373cfd7823ac6b0435d48d", "hyp_beam": "that is a lovely drawing possum ."}
+{"idx": 387, "ref": "sha1:a0bf5b103615862a71dbf769d78432734d98f249", "hyp_beam": "this is a lovely thank you thank you so much for coming out of the door ."}
+{"idx": 388, "ref": "sha1:fc3c235c58feeb17e8bb12e480f361c3c83afe6c", "hyp_beam": "can you help me please ."}
+{"idx": 389, "ref": "sha1:b0a30de84c5b67820e9b43a5ea9b94c67e417b3f", "hyp_beam": "can you see that ."}
+{"idx": 390, "ref": "sha1:42c9c240a41b3cda5f66b2df61655ac593ade6d7", "hyp_beam": "sally why do not we go outside and have a look at all the things that i can do ."}
+{"idx": 391, "ref": "sha1:c95a22d0c60c9aa4b977c46c4263809157414f24", "hyp_beam": "ok let us go ."}
+{"idx": 392, "ref": "sha1:a4d1140634a3328fa8f0353c771f3663727b895d", "hyp_beam": "one two three ."}
+{"idx": 393, "ref": "sha1:bce808d6829f75c24ad17926e1c736c2c39e22f0", "hyp_beam": "look ."}
+{"idx": 394, "ref": "sha1:c1b86c44efd9c566baafc89d2eea302d7e409824", "hyp_beam": "hello sally ."}
+{"idx": 395, "ref": "sha1:7838ac5f47706399482f583ac6935321354d5eec", "hyp_beam": "thank you ."}
+{"idx": 396, "ref": "sha1:5a04fc860be7435ae31599d003d888bedf0fa09c", "hyp_beam": "sally skip is here for a surprise ."}
+{"idx": 397, "ref": "sha1:9393fe9e4c4a1b771f6db706f63e8685a7b606df", "hyp_beam": "sally i have an idea ."}
+{"idx": 398, "ref": "sha1:5254d1224f9a6c4f625c4cfc12917279354b9ec3", "hyp_beam": "can you help me please ."}
+{"idx": 399, "ref": "sha1:62241126b7145eb323ea1cf38d9b3170b342586b", "hyp_beam": "i wonder what it is ."}
+{"idx": 400, "ref": "sha1:c4366c59d4c542dc03ff99f8dd3cb24ea4c51b27", "hyp_beam": "it is a great day but it does not matter ."}
+{"idx": 401, "ref": "sha1:35553db763633e78c9a5b2245df594860a5bacf0", "hyp_beam": "yes you are right sally you are right ."}
+{"idx": 402, "ref": "sha1:e59b92a35be799f8f6a831f8ae853a5c28b9ec72", "hyp_beam": "yes ."}
+{"idx": 403, "ref": "sha1:90c3c2b18663348be868a8e76f66ab2440ee9f37", "hyp_beam": "that is right possum you can see the life cycle ."}
+{"idx": 404, "ref": "sha1:b6dc95295236ee3d76123bbe29b90ded1deffdae", "hyp_beam": "i have got some instructions on how to make it in the drawer ."}
+{"idx": 405, "ref": "sha1:5d7d07f95ec78e98309f338f83e9b5043a314850", "hyp_beam": "does that mean we are going to put them into the yard ."}
+{"idx": 406, "ref": "sha1:f027893de1768b8d6db018fc955e1175289311c1", "hyp_beam": "yes ."}
+{"idx": 407, "ref": "sha1:bd792e135f00fc7e540b9fd852006a2e34215735", "hyp_beam": "he is going to work hard work in the garden ."}
+{"idx": 408, "ref": "sha1:2706b70a2c87fbc418851359d8298ef286ea1df6", "hyp_beam": "could you tell me more about eggs ."}
+{"idx": 409, "ref": "sha1:008f533d843ea7fd9572c31fc5b3404ae7bb1a56", "hyp_beam": "that is great ."}
+{"idx": 410, "ref": "sha1:b83c6714c2f2f831fd43ae7e507d8c4622bd44bf", "hyp_beam": "do you remember that ."}
+{"idx": 411, "ref": "sha1:69a01829e2e9b9916226086bfd6de253647c9cb8", "hyp_beam": "it is such a beautiful day ."}
+{"idx": 412, "ref": "sha1:b2ec178e3e3581a813cb57a33e3769c9d992682e", "hyp_beam": "i am going to throw it all in the rubbish ."}
+{"idx": 413, "ref": "sha1:b6d034ab3237c13d87ce71500198d5f927989fc7", "hyp_beam": "it is the same as the bike ."}
+{"idx": 414, "ref": "sha1:c111995299bd2727307e7cd410b09ff30169642a", "hyp_beam": "you have been working very hard in the garden and i am going to make a cup of tea ."}
+{"idx": 415, "ref": "sha1:e94f7f98f215138060cab7865ee2d47bccfb6390", "hyp_beam": "i am going to go now ."}
+{"idx": 416, "ref": "sha1:c48debfcfd5ffe8f02249b83eaa7f61a2b50b4a5", "hyp_beam": "well i can show you how to do it ."}
+{"idx": 417, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "ok let us go ."}
+{"idx": 418, "ref": "sha1:90485e31fc3387ded635dafa938d3f5bee881078", "hyp_beam": "let us have a look ."}
+{"idx": 419, "ref": "sha1:6d965017eaf56f5699c7bf27a4c68178230d8f6e", "hyp_beam": "bye ."}
+{"idx": 420, "ref": "sha1:2f8b295f3ec4b3aec7bdcbfd3f35ebfd67816161", "hyp_beam": "yeah let us watch ."}
+{"idx": 421, "ref": "sha1:9b0d2ef0a9a0cbd44ab32099545a065f162a9da6", "hyp_beam": "i have an idea possum ."}
+{"idx": 422, "ref": "sha1:503eb029bdde716e48cacfb8dafa4516b96b051d", "hyp_beam": "i know ."}
+{"idx": 423, "ref": "sha1:d77396c1be85e8b438aa915a1ac430b680fbc70d", "hyp_beam": "i have made a cake ."}
+{"idx": 424, "ref": "sha1:2f17377fe47d27178d8fd204420c74bc4df291e5", "hyp_beam": "i do not want to have a look at it ."}
+{"idx": 425, "ref": "sha1:6752aaf63e6dbdcf51fbd1ff495ded2f40c679ef", "hyp_beam": "i have got an idea ."}
+{"idx": 426, "ref": "sha1:0dfa9a47b50ef1e86dfb1ce889e76be86e445fac", "hyp_beam": "i thought i would love to give you a few things ."}
+{"idx": 427, "ref": "sha1:564517235b5b0144927dc0f39bb3d27b612989d5", "hyp_beam": "there are all sorts of different ways that we can use ."}
+{"idx": 428, "ref": "sha1:74fd2343fc0c3d5575a74b2d897b203630b5a9a2", "hyp_beam": "well there is something that we can use ."}
+{"idx": 429, "ref": "sha1:b8f275176b81982090bbb408660c89810f55dc0f", "hyp_beam": "i am going to get some things from the top of my tree ."}
+{"idx": 430, "ref": "sha1:8c06139804fdb6cdfa5b36a67ea5a3110decbba7", "hyp_beam": "why do not we watch some children learning about butterflies and different ways to eat them ."}
+{"idx": 431, "ref": "sha1:1a8f7d453916b42a24bd4ccf56138ffecb9a4c34", "hyp_beam": "well i thought i would like to learn more about different ways that you can move ."}
+{"idx": 432, "ref": "sha1:7bf6b7489a38bad929d3095d4f722994192b65cf", "hyp_beam": "yes that is like a possum ."}
+{"idx": 433, "ref": "sha1:081abc2a129c7db1a7cca190e03cd56e7e51cba1", "hyp_beam": "let us have a look ."}
+{"idx": 434, "ref": "sha1:d086dfed45235bff06c00368ccfe83277d8cb02d", "hyp_beam": "have a look ."}
+{"idx": 435, "ref": "sha1:e90caf57d20fe8b3f4b5da29789238bb5adefd52", "hyp_beam": "it is like when i am sitting at the top of my tree ."}
+{"idx": 436, "ref": "sha1:1ba8643c953bc69ce0eb71e22bc2f87a1efada21", "hyp_beam": "some of them they are delicious ."}
+{"idx": 437, "ref": "sha1:d30765000de8dce4bec17a901aaa39de97ffb749", "hyp_beam": "i am going to play some soccer then and then i will put it away and then we will take it out ."}
+{"idx": 438, "ref": "sha1:3aaf8534875f885452a207d03b9950ed707999e2", "hyp_beam": "does that mean we are going to add the milk ."}
+{"idx": 439, "ref": "sha1:40abb47690546213e5ee667c34904225e3c4a2af", "hyp_beam": "bye ."}
+{"idx": 440, "ref": "sha1:b89b74ded54d505c3b09e8cff3583788a9d2a6fc", "hyp_beam": "thanks for watching ."}
+{"idx": 441, "ref": "sha1:578dafde61a50bc7b6939707a75803243c691361", "hyp_beam": "i thought it would be a very special surprise for sally ."}
+{"idx": 442, "ref": "sha1:5318764b32a32fbbd82f78f1d9a4d801e572e1c1", "hyp_beam": "it is a bit too hard to think of all the different ways that we could use ."}
+{"idx": 443, "ref": "sha1:c672fa3854c5b125e88cacfd9733ede541bfeb3e", "hyp_beam": "why do not we go inside and have a look at the garden ."}
+{"idx": 444, "ref": "sha1:f1e2678c8489b569d93750cb108ef86cc1b7af71", "hyp_beam": "what were you doing with your cricket ball ."}
+{"idx": 445, "ref": "sha1:f427bdea8b82d285e40f7cd541bdcba93da09c17", "hyp_beam": "i have got this ."}
+{"idx": 446, "ref": "sha1:31c3e46edf8a6a3fe571d868b9806e53130e49a4", "hyp_beam": "you need to be careful though ."}
+{"idx": 447, "ref": "sha1:cd8bf4bdc93a45e841ca79e2168f6af7b7e92f9b", "hyp_beam": "i am going to show you how to tell you ."}
+{"idx": 448, "ref": "sha1:8972bdf7dd8b8acaa73017d551e78f5beb955a6d", "hyp_beam": "would you like to help me ."}
+{"idx": 449, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "great ."}
+{"idx": 450, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hi everyone ."}
+{"idx": 451, "ref": "sha1:84d3b19946fa98ad48c5dbbcf9c793c44503f2ae", "hyp_beam": "that is great ."}
+{"idx": 452, "ref": "sha1:734c950f7b0db05c52c873e99824f20cb4fce092", "hyp_beam": "they can make different shapes out of them ."}
+{"idx": 453, "ref": "sha1:140aad3159aace50c453acfc9101256bfdf752e7", "hyp_beam": "well thank you so much for teaching me how to make a story ."}
+{"idx": 454, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "that is great ."}
+{"idx": 455, "ref": "sha1:88ad94bfff153b1d15ae50f805b4fcb454436512", "hyp_beam": "why do not we watch some children learning about different things ."}
+{"idx": 456, "ref": "sha1:ff1bf56ea08ce9011efc24e9a3a158cd42613f99", "hyp_beam": "that is great ."}
+{"idx": 457, "ref": "sha1:aacbef32a100bf81529de22beb5349631cc25325", "hyp_beam": "there is lots of things that i need to do ."}
+{"idx": 458, "ref": "sha1:2e807f4a95e906f46b5bfce84bad79a550e1c859", "hyp_beam": "thank you so much ."}
+{"idx": 459, "ref": "sha1:f54834a3e6850379ecbafc3eaf61e1d6ca086db0", "hyp_beam": "i am going to go through the gate ."}
+{"idx": 460, "ref": "sha1:80ad309f9c7d0706d88f2304ff9da5fb9bbdbdd3", "hyp_beam": "i am going to go inside and wash my hands ."}
+{"idx": 461, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "let us go ."}
+{"idx": 462, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "hello possum ."}
+{"idx": 463, "ref": "sha1:84b086fb2351052404278bcba19f406be7e19d3a", "hyp_beam": "let us go ."}
+{"idx": 464, "ref": "sha1:78f7a010e131638482cd59408f30f7e1cfc06b2d", "hyp_beam": "yeah let us go ."}
+{"idx": 465, "ref": "sha1:84d3b19946fa98ad48c5dbbcf9c793c44503f2ae", "hyp_beam": "great ."}
+{"idx": 466, "ref": "sha1:b6d8e2b4cbaaee1c75986486dc7dc41891865392", "hyp_beam": "well the moon is very small ."}
+{"idx": 467, "ref": "sha1:dc6ef076f21380419724fd4f572ede2c89e34af6", "hyp_beam": "one two three four five six ."}
+{"idx": 468, "ref": "sha1:9cf65c03e15125ac516d814860b26e3c469dd21e", "hyp_beam": "i think i am going to go into the tree and get my house ."}
+{"idx": 469, "ref": "sha1:0ef5c8ebdeff6d1eabb1da61cebf5d045fa0fe8f", "hyp_beam": "why do not we go inside and have a cup of tea and when we come inside and have a look ."}
+{"idx": 470, "ref": "sha1:30ad43a32cbad7b41c16f47da4b248fb8f368609", "hyp_beam": "in your tree house you have lots of different ways to do not you ."}
+{"idx": 471, "ref": "sha1:a3c529e3edd1d480ee8d163c1e480329bc19632a", "hyp_beam": "can you tell me more about your house ."}
+{"idx": 472, "ref": "sha1:584b33b605030193ff948868d8d981954188dd7e", "hyp_beam": "it is a lovely day is not it ."}
+{"idx": 473, "ref": "sha1:8d0ceca1d341fd06cee030627ad7e51300a2bfb1", "hyp_beam": "i have been looking for you ."}
+{"idx": 474, "ref": "sha1:927fe210d4cfa8564325bc66a705c052611bbc01", "hyp_beam": "you are funny ."}
+{"idx": 475, "ref": "sha1:8972bdf7dd8b8acaa73017d551e78f5beb955a6d", "hyp_beam": "ok let us go ."}
+{"idx": 476, "ref": "sha1:39f51e98ba6a88c9ae16aed508fbdc336b4add71", "hyp_beam": "that is a very important thing that you do ."}
+{"idx": 477, "ref": "sha1:561b93e030f4b19adc64421a55db6eb023fd9a4c", "hyp_beam": "one two three four five six seven eight nine ten steps ."}
+{"idx": 478, "ref": "sha1:804bc246289886b282ff3eb549020e0271a62396", "hyp_beam": "that is great ."}
+{"idx": 479, "ref": "sha1:8b345f8feb2da569f41c5557b420b220ef6ad72b", "hyp_beam": "i wonder what it is ."}
+{"idx": 480, "ref": "sha1:fa796a66d10f10d08ff7618ffe053d898d0e150f", "hyp_beam": "i can not fly ."}
+{"idx": 481, "ref": "sha1:fe72b34cf9c62dbc3f07cb76afa8db6d69020ceb", "hyp_beam": "i do not know ."}
+{"idx": 482, "ref": "sha1:46d3afd76b20e9611173f82ecbcdc4c27f71e7b6", "hyp_beam": "hang on ."}
+{"idx": 483, "ref": "sha1:6db162819be51396954a81a56c132ea75eb7d147", "hyp_beam": "sally is always helping me ."}
+{"idx": 484, "ref": "sha1:d860b05745e9ee60a4694391e07d31f64ac82f92", "hyp_beam": "thank you so much sally ."}
+{"idx": 485, "ref": "sha1:a36545053b3e3c6bd3e460c7249785fac9353209", "hyp_beam": "ok come on let us go ."}
+{"idx": 486, "ref": "sha1:86e5447dff7a335dae7fda16e759bcd9d2b80403", "hyp_beam": "sally it is all over there ."}
+{"idx": 487, "ref": "sha1:3fb00d00a80e9194c70f987ed715a3eacffc1e66", "hyp_beam": "that is great ."}
+{"idx": 488, "ref": "sha1:af792ec49d5603d4eeed60f28ca204cca07119b9", "hyp_beam": "why do not we watch some children learning about different things ."}
+{"idx": 489, "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "hyp_beam": "well our time is up ."}
+{"idx": 490, "ref": "sha1:b49d27b6673825e0e96a0ef06b599d057dcf7df8", "hyp_beam": "thanks for watching ."}
+{"idx": 491, "ref": "sha1:fa4b7793efc846eed9b55f855ce2d97c2fca47a7", "hyp_beam": "see you next time ."}
+{"idx": 492, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "hi everyone ."}
+{"idx": 493, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "bye ."}
+{"idx": 494, "ref": "sha1:e1c3b4cd8c96776fef08d8a1c15f7024f688a8be", "hyp_beam": "bye ."}
+{"idx": 495, "ref": "sha1:9aaba59ebb25249f073a43f5599c1daa4c23f950", "hyp_beam": "can you help me please ."}
+{"idx": 496, "ref": "sha1:61fb8b9d6068bcfc37ef4999fa26cb09a0f98382", "hyp_beam": "that is a great idea possum ."}
+{"idx": 497, "ref": "sha1:ac65253db1df8587e8f77d8afb3c76c8d5dfc2b0", "hyp_beam": "come on ."}
+{"idx": 498, "ref": "sha1:7e0a837d808623a9e72d22fa5740d5097f88cccb", "hyp_beam": "sally you are right ."}
+{"idx": 499, "ref": "sha1:df2836fd8be1f1ee97ec78b92a9d07fea3e8e796", "hyp_beam": "i am happy ."}
+{"idx": 500, "ref": "sha1:a3a57e0119e4714e0f6e5124dea0950943023902", "hyp_beam": "it is a very important thing that you do ."}
+{"idx": 501, "ref": "sha1:641311fa252758bff732ddb943f7c3b0d8be12aa", "hyp_beam": "that is great possum i am so excited ."}
+{"idx": 502, "ref": "sha1:4df468d877cffc096ed521748f3171210d7c8c2e", "hyp_beam": "would you like to do that ."}
+{"idx": 503, "ref": "sha1:cc1f074511dbc3766c34574c992714befa8704a7", "hyp_beam": "i know ."}
+{"idx": 504, "ref": "sha1:4abe69349769d1efbc552b41a0294e0a57234cd7", "hyp_beam": "it is delicious ."}
+{"idx": 505, "ref": "sha1:6f2075d7624b30163246612a645ab82ec61178fd", "hyp_beam": "let us have a look ."}
+{"idx": 506, "ref": "sha1:0751d67f5a0c9f56475890dc9234075b21c50c24", "hyp_beam": "there is another one ."}
+{"idx": 507, "ref": "sha1:9d5e2eafbdb89e132aa5a206ae84527f6c4abca6", "hyp_beam": "you are right possum ."}
+{"idx": 508, "ref": "sha1:680466ef846f75c95ab579ff7ff5439f349bbdb9", "hyp_beam": "i love it ."}
+{"idx": 509, "ref": "sha1:08b7a1c87e230a7489d72c69b27ecaf913558fe1", "hyp_beam": "i wonder what it is ."}
+{"idx": 510, "ref": "sha1:a1000548c43aa156daef5be583146e5b683a6580", "hyp_beam": "hello everyone ."}
+{"idx": 511, "ref": "sha1:fac902133f7874f18acf0ab647a96fdc87eb78dc", "hyp_beam": "bye ."}
+{"idx": 512, "ref": "sha1:d1e0025574606fb1b54b59382773333251494e2b", "hyp_beam": "hi sally ."}
+{"idx": 513, "ref": "sha1:93b66b518a49511d92c2068e56227bace205c301", "hyp_beam": "that is right ."}
+{"idx": 514, "ref": "sha1:91a366715e6ffc4ed48b05c52f65be34008a31df", "hyp_beam": "what a great idea ."}
+{"idx": 515, "ref": "sha1:8a2df575d4a7c69155b5f5e7ceb4d81bed88a4ca", "hyp_beam": "why do not we watch some children and see what they do ."}
+{"idx": 516, "ref": "sha1:54e4974562b271a5f640d4cf75b98670cd177a87", "hyp_beam": "look at the big tree ."}
+{"idx": 517, "ref": "sha1:b2549f26be9c88ae5b0b73e229be4e906d3b820c", "hyp_beam": "here he is ."}
+{"idx": 518, "ref": "sha1:e25511cd721f7515ebf965433f6bf723be291860", "hyp_beam": "that was great ."}
+{"idx": 519, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 520, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 521, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 522, "ref": "sha1:3967146e05036825a653344613261a93917eda90", "hyp_beam": "i am sally ."}
+{"idx": 523, "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f", "hyp_beam": "i am possum ."}
+{"idx": 524, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 525, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 526, "ref": "sha1:33829fb4dbbc2cad104f30d30d967c43334595f2", "hyp_beam": "hi sally ."}
+{"idx": 527, "ref": "sha1:4bf9d65a5c53270945d8f17cf6385dd5eca68f7f", "hyp_beam": "that is great ."}
+{"idx": 528, "ref": "sha1:f27a385f0ff1f93a971ccca66c809267d25c34aa", "hyp_beam": "bye ."}
+{"idx": 529, "ref": "sha1:9398156f1e227bddeaa4e14c60a1f65cfafe0283", "hyp_beam": "i am going to make something that does not matter ."}
+{"idx": 530, "ref": "sha1:020098c01b23330f117d6e28beb51eb26897db24", "hyp_beam": "why do not we go inside and have a look ."}
+{"idx": 531, "ref": "sha1:9c7e2f888273ff4eee33ea47e524ac5a4df0923f", "hyp_beam": "i know i will go inside and i will show you ."}
+{"idx": 532, "ref": "sha1:6b5ccd1ebf4fd0e95137ed03d3e972c88f6ce633", "hyp_beam": "sally i thought you would love to help me do that ."}
+{"idx": 533, "ref": "sha1:3d0b8cb78c8318a2ba53c17c7c9126a3d3184229", "hyp_beam": "now i am going to make a very special surprise for you ."}
+{"idx": 534, "ref": "sha1:d0ce9afee4cd1dd13d253549a1b49b4a0f6b6cd6", "hyp_beam": "i am so excited ."}
+{"idx": 535, "ref": "sha1:7c0812944f14c037c6b1b2de26033476057a10eb", "hyp_beam": "i do not think i am going to get a few things that i am going to ride too ."}
+{"idx": 536, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "great ."}
+{"idx": 537, "ref": "sha1:bbe8643d44668b1b2ab74a1be98fed5d5dd09269", "hyp_beam": "ok let us go ."}
+{"idx": 538, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "come on sally ."}
+{"idx": 539, "ref": "sha1:c5db88768664d2a35ee12a26cd3c463b541b11c4", "hyp_beam": "hello everyone ."}
+{"idx": 540, "ref": "sha1:96a0ec6c0fbd3353da8166600d6610f2a2f47db4", "hyp_beam": "why do not we go for a long time to do that possum ."}
+{"idx": 541, "ref": "sha1:628bef595607e7030e2b9e3d0af5e55dbf064059", "hyp_beam": "skip can i have a look ."}
+{"idx": 542, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "that is great ."}
+{"idx": 543, "ref": "sha1:70ba7dd2f9f14a2165da0aa0937289a57e98b5a1", "hyp_beam": "i am going to give you a special surprise ."}
+{"idx": 544, "ref": "sha1:921f7bc7902d6e8ecfb7de328500a8b38968672e", "hyp_beam": "yes i am ."}
+{"idx": 545, "ref": "sha1:34798b4fd62cdb24fef5471af7a2f877ba59e5bd", "hyp_beam": "i am going to have a look at the top of my tree ."}
+{"idx": 546, "ref": "sha1:8fbf111b1f2fc694cbc3c14e016f5a2cc605f3c3", "hyp_beam": "what a great idea ."}
+{"idx": 547, "ref": "sha1:4d67e47613ee650b46009afbbb4b782994abe992", "hyp_beam": "hi sally ."}
+{"idx": 548, "ref": "sha1:552c5543fd979947b1662e5fd444143788b3f1a4", "hyp_beam": "what is that ."}
+{"idx": 549, "ref": "sha1:3afabab3fd287935891e4d4bfc08de22634eb0f3", "hyp_beam": "possum why do not we watch some children learning how to tell stories ."}
+{"idx": 550, "ref": "sha1:fe66a63b71ec58bf0395f5b5bce58fa268bb19ff", "hyp_beam": "let us have a look ."}
+{"idx": 551, "ref": "sha1:17460ed26695eabf1c88f8a42bd2a5b1cab6ec52", "hyp_beam": "i am going to throw it all together ."}
+{"idx": 552, "ref": "sha1:c3df3aeecb612cc977fc6810ce310ac85dd3d4d0", "hyp_beam": "can you help me please ."}
+{"idx": 553, "ref": "sha1:e99ef6dc1091233add2b32cc3511f9f165f91539", "hyp_beam": "i am going to give it to you ."}
+{"idx": 554, "ref": "sha1:99f74a7a7c2df6f3a7761153ecf9f3aa9eba0571", "hyp_beam": "there is a instructions that i need to go inside ."}
+{"idx": 555, "ref": "sha1:e365d1a27d29ba356421b033578e89b20a3fcd91", "hyp_beam": "i have got everything ready for you ."}
+{"idx": 556, "ref": "sha1:3579a17b9c544e133bbe284b16495caaa717efd5", "hyp_beam": "how did he go ."}
+{"idx": 557, "ref": "sha1:a92ae9fcf88531206dbd041437d8f5b787230f6d", "hyp_beam": "i thought i would like to find a bike ."}
+{"idx": 558, "ref": "sha1:af095365ff5d104e39e5e63d12de86e7af567aa7", "hyp_beam": "now we need to fold it back ."}
+{"idx": 559, "ref": "sha1:ce53104129f0991176665792aa9ac6e996d3fc04", "hyp_beam": "yes we have got all sorts of different ways have not we ."}
+{"idx": 560, "ref": "sha1:e38b8eb512069bcbd808082b7d2778b4433708a3", "hyp_beam": "what is that ."}
+{"idx": 561, "ref": "sha1:2a9d8ce24de833396a24e77f9704d23bbb826f42", "hyp_beam": "this is a telescope ."}
+{"idx": 562, "ref": "sha1:7df5c91d5e4e3397bcb0112a545a28e42e80410b", "hyp_beam": "it is a very important thing that you do ."}
+{"idx": 563, "ref": "sha1:f4fe6d23297b7bca15c38dfabc87eb399a803c61", "hyp_beam": "why do not we go inside and have a look ."}
+{"idx": 564, "ref": "sha1:97a622faebb01761afc9f11a766e4006a9490d15", "hyp_beam": "can you please get the recipe out of the box ."}
+{"idx": 565, "ref": "sha1:8ca0cdbb1d5f15f5b81266034c093d3c8ce16b8c", "hyp_beam": "there are some instructions on how to make it grow ."}
+{"idx": 566, "ref": "sha1:5ce44e57ac4b35dc77900c019e770d2c8f2c4c11", "hyp_beam": "sally skip is here ."}
+{"idx": 567, "ref": "sha1:7c3acfe7aaf7e7ec8dc2cd00ebaba43d142643b9", "hyp_beam": "i want to learn more about the party ."}
+{"idx": 568, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "yes that is right ."}
+{"idx": 569, "ref": "sha1:1f608d510638fabd6cfd3f1ddb1468c6c3bff4f4", "hyp_beam": "those children learned so many different ways to learn about things ."}
+{"idx": 570, "ref": "sha1:bbab44b87909e6a03dd3c435ee0faa07b4acd834", "hyp_beam": "well i am going to bed now ."}
+{"idx": 571, "ref": "sha1:d6168d29dbb1fa2b0d3a975ec8ceeb1c5470ac42", "hyp_beam": "it is a very special surprise ."}
+{"idx": 572, "ref": "sha1:0cd48c6bd781a314c6b398d01372ed0d9a286dae", "hyp_beam": "why do not we watch some children learning about different shapes ."}
+{"idx": 573, "ref": "sha1:d3fbed231e6841fa7e93a8e7d797364240a31076", "hyp_beam": "yes that is right ."}
+{"idx": 574, "ref": "sha1:3822ce019c40b3a35daad8d50d7dcba2557f8f13", "hyp_beam": "why do not we go outside and see what we can do ."}
+{"idx": 575, "ref": "sha1:e386c60c5cc104d96cd12e30e6dc9908b74eb8a5", "hyp_beam": "that is great ."}
+{"idx": 576, "ref": "sha1:d450a98a3f2e7cdef62e5dc3b786c7f51920208c", "hyp_beam": "it is a l l y ."}
+{"idx": 577, "ref": "sha1:a9d6b83b6963cf62f749e77d645c36c9e5ad51fd", "hyp_beam": "that is great ."}
+{"idx": 578, "ref": "sha1:dfbe4090517af1510661c20bea00ff2c7fad34ac", "hyp_beam": "can you get the instructions out please ."}
+{"idx": 579, "ref": "sha1:52d30533d67c440f54860c99182ff85aac0522dd", "hyp_beam": "now we just need to cut them into different ways and then we can use them ."}
+{"idx": 580, "ref": "sha1:e7935ed29fff18ce5bbdb5397914c9ffd6d3d453", "hyp_beam": "ok let us go ."}
+{"idx": 581, "ref": "sha1:36411378d67e3382c5f70867134885113927efda", "hyp_beam": "why do not we go inside and have a look ."}
+{"idx": 582, "ref": "sha1:bf527372464f74ed2dedc0cc862cf032cfb525ca", "hyp_beam": "that is right possum ."}
+{"idx": 583, "ref": "sha1:16ec34c700a7d5b82f0ed46abd7ca992319d01d8", "hyp_beam": "i can not find it ."}
+{"idx": 584, "ref": "sha1:f035c073789a836f950b0eb1319ff1b36938e433", "hyp_beam": "why do not we watch some children learning about things and different ways that you can use ."}
+{"idx": 585, "ref": "sha1:641a83c34d24e7bd7f5ca86b544c934b5171ae16", "hyp_beam": "let us watch ."}
+{"idx": 586, "ref": "sha1:79871fe4daca3e8bfe14a746fb27620c2623d2bc", "hyp_beam": "i know how to do that ."}
+{"idx": 587, "ref": "sha1:92cf4d3e5a0c8649759bd080046d3ca51d70e765", "hyp_beam": "i think it might be the same thing ."}
+{"idx": 588, "ref": "sha1:4344c06365606b19a31a63f424b1f75bdf1dbc4f", "hyp_beam": "how did he go ."}
+{"idx": 589, "ref": "sha1:84d3b19946fa98ad48c5dbbcf9c793c44503f2ae", "hyp_beam": "ok let us go ."}
+{"idx": 590, "ref": "sha1:4904dba7b9962a71a4b57f8cdb2ee6e8ff7a54dd", "hyp_beam": "thank you so much for coming out of the tree ."}
+{"idx": 591, "ref": "sha1:234e0e0d83b72d01355fae07777c94015a70cbcf", "hyp_beam": "it is delicious ."}
+{"idx": 592, "ref": "sha1:8877d1506d5e2653e237bdbcc53b6dd438234a06", "hyp_beam": "i know ."}
+{"idx": 593, "ref": "sha1:5f5e60d67a8ce17c03e9c53ff33ce7d7115e4a79", "hyp_beam": "i wonder what possum is up to ."}
+{"idx": 594, "ref": "sha1:44f977ce524df55c3ba3c3a727876d88e546192d", "hyp_beam": "it is going to be the top of my tree ."}
+{"idx": 595, "ref": "sha1:9635c9e4cc145b19952f02bd489ab39534e17355", "hyp_beam": "that is great ."}
+{"idx": 596, "ref": "sha1:8e436deb8a1ad7bae49854775d644fbcc4852427", "hyp_beam": "that is right ."}
+{"idx": 597, "ref": "sha1:a664eb2c55009b394bed2dd67d1b041db1ac792a", "hyp_beam": "yeah let us watch ."}
+{"idx": 598, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "what is next ."}
+{"idx": 599, "ref": "sha1:6b8cb02d354992a244e0359dfe7f90758dac04f8", "hyp_beam": "now i know how to make a treasure hunt ."}
+{"idx": 600, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "that is great ."}
+{"idx": 601, "ref": "sha1:d1ebce7578408da5ba3bf1573c9cde9cd76503b5", "hyp_beam": "i need to go and get a few things ."}
+{"idx": 602, "ref": "sha1:b8f50d4ce8f2330d3ff4cb1855a5fc4112a876b5", "hyp_beam": "sally can i make more ."}
+{"idx": 603, "ref": "sha1:741dcad8a4effe16644f4a84f51e5a4d7e4fc6b0", "hyp_beam": "it is a very big pile of leaves ."}
+{"idx": 604, "ref": "sha1:38d906672e9dc91522eebc24584cf358c270ca2b", "hyp_beam": "i can see the moon too ."}
+{"idx": 605, "ref": "sha1:6ef65d088262ef867da717181ef4f2ec17a3cc80", "hyp_beam": "why do not we watch some children learning about things ."}
+{"idx": 606, "ref": "sha1:9c1608d665792cef938c65881e605e4ca7b7125b", "hyp_beam": "ok bye ."}
+{"idx": 607, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "good morning sally ."}
+{"idx": 608, "ref": "sha1:c43ca9f67f2aa8de7b0809bd6e045cbbefcfdb65", "hyp_beam": "no possum i am going to have a look at my crows nest ."}
+{"idx": 609, "ref": "sha1:bac96bef8d04bb5c6d7001d29bdc586c02f04c21", "hyp_beam": "well i am going to make something ."}
+{"idx": 610, "ref": "sha1:55dfb74fefe333a6974b0a57157847143cbab5f1", "hyp_beam": "i am going to go into the kitchen too ."}
+{"idx": 611, "ref": "sha1:ca7bd8b4890f56d621df8da8d5353dbd4a97080d", "hyp_beam": "it is a very special way to make a house ."}
+{"idx": 612, "ref": "sha1:f74a2c797bbabd8943b95dee522aa6653a533ee7", "hyp_beam": "sally ."}
+{"idx": 613, "ref": "sha1:45ee015c48ae566bbd0d5e49c695e22b9360c829", "hyp_beam": "why do not we watch some children learning about things ."}
+{"idx": 614, "ref": "sha1:570c5a71d439765878ceba9bf8bbc2dca0572158", "hyp_beam": "what a great idea possum ."}
+{"idx": 615, "ref": "sha1:86ec4ca20da5ec74428fb23ad1c85105846b708b", "hyp_beam": "i know i love learning new things ."}
+{"idx": 616, "ref": "sha1:91ee32943c22c9c474db9562df330a63cc82933e", "hyp_beam": "i have made this for you ."}
+{"idx": 617, "ref": "sha1:71a91ae660b0c72d6ae26e285a8c1ab124abaf6b", "hyp_beam": "i am going to throw it all in the rubbish ."}
+{"idx": 618, "ref": "sha1:d844905a2da8beaafc202cef59ad74523b6b13b0", "hyp_beam": "one two three four five six ."}
+{"idx": 619, "ref": "sha1:e9cfcc8b260cb8b58ea0856b629d63438c5baccc", "hyp_beam": "well i was up in my tree and i was very busy ."}
+{"idx": 620, "ref": "sha1:c9d6f62cb96314022ff74db6c5b626e265d3de9f", "hyp_beam": "i have been working very hard in the garden have not i ."}
+{"idx": 621, "ref": "sha1:236795ad81ad70f49db41eb3012303adb661cf37", "hyp_beam": "i really enjoyed it ."}
+{"idx": 622, "ref": "sha1:f84b75040ca0f3baa52399d75a81af6ce1b1f50a", "hyp_beam": "why do not we go outside and have a look ."}
+{"idx": 623, "ref": "sha1:9d6e4cab9abfc33f89e897c4d1962619563178a0", "hyp_beam": "i know ."}
+{"idx": 624, "ref": "sha1:74e3f35adbef724de3486ffa4f3fea9101dee7b8", "hyp_beam": "i was just thinking about going out in the garden and now i have a long time ."}
+{"idx": 625, "ref": "sha1:4bc850af5178cc29a97a2ee3bea31aa0c9527cb5", "hyp_beam": "yes that is right possum ."}
+{"idx": 626, "ref": "sha1:d147d2a2b2266582fff89db1b88795566192ef50", "hyp_beam": "i know ."}
+{"idx": 627, "ref": "sha1:b600c3975ef905ec8b0e43296d50d91d4eaaf10d", "hyp_beam": "what is this ."}
+{"idx": 628, "ref": "sha1:c909a389773f57ed7f0a51a89bf10ec869c20e0e", "hyp_beam": "i know ."}
+{"idx": 629, "ref": "sha1:9b2a805ea3e2ab7b039e868174f06c7f8423270c", "hyp_beam": "it is a very special surprise ."}
+{"idx": 630, "ref": "sha1:520ad1d794ae5848735e63f016a8a87b7b9a760c", "hyp_beam": "yes ."}
+{"idx": 631, "ref": "sha1:cc1025256106956319c291cbdcdf7f895dd25d8c", "hyp_beam": "i will show you how to make it ."}
+{"idx": 632, "ref": "sha1:f6632039be290b62052deb5de98a063096af0ca5", "hyp_beam": "that is a good idea possum ."}
+{"idx": 633, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "that is great ."}
+{"idx": 634, "ref": "sha1:3c566d2601a02af014b6a6c7b0ae28bfbc10d4fe", "hyp_beam": "sally have a look at my tree ."}
+{"idx": 635, "ref": "sha1:4f59a8b0530984a4c80a2f4bbb386f639e5783b7", "hyp_beam": "would you like to do that ."}
+{"idx": 636, "ref": "sha1:2a2221922cc4485ffebc7760e66590a291a425bb", "hyp_beam": "i have gone to bed ."}
+{"idx": 637, "ref": "sha1:0b7971c6d9d3f178be52b9149df514e393e3333d", "hyp_beam": "bye ."}
+{"idx": 638, "ref": "sha1:ec6f6953f2e081ebb7223e3aefc8f9dcdd60d28a", "hyp_beam": "i am sally ."}
+{"idx": 639, "ref": "sha1:0720937cbc0679bb0b04be5f51540e7efb273c94", "hyp_beam": "skip can i go get skip ."}
+{"idx": 640, "ref": "sha1:a7cb00c06ef05709d907d6ac77a0df9424b475b1", "hyp_beam": "great let us have a look ."}
+{"idx": 641, "ref": "sha1:c250e7168fd3a4eca1d805edb9699b046d8648aa", "hyp_beam": "i wonder what it is ."}
+{"idx": 642, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "that is great ."}
+{"idx": 643, "ref": "sha1:7e34b297eee186e9bf1d7ebb9b43e7b1c35b2d52", "hyp_beam": "i am going to make something special with you ."}
+{"idx": 644, "ref": "sha1:0f91d937ba6184976d2766bd836771a5c874822e", "hyp_beam": "no possum i have a look at my tree house ."}
+{"idx": 645, "ref": "sha1:52ccf970a19cad3267267df40a68fa89780ba927", "hyp_beam": "why do not we go inside and have a look ."}
+{"idx": 646, "ref": "sha1:8be6ac3628b21d62b8693d6da770bab37674f1dc", "hyp_beam": "it is so much fun ."}
+{"idx": 647, "ref": "sha1:61edc1e8838a207b967fc7055322e43dcc170e21", "hyp_beam": "would you like to make a paper ."}
+{"idx": 648, "ref": "sha1:f86687a8cd3e6516aad392552ac7a7129508d6cd", "hyp_beam": "i wonder if he is here he is here ."}
+{"idx": 649, "ref": "sha1:27e8c1b75daf0cf571afa9a22b8ba1d9e5864b9a", "hyp_beam": "no it does not matter possum ."}
+{"idx": 650, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "no ."}
+{"idx": 651, "ref": "sha1:71f056723967cfae29152b602aeb4038c9fb3d93", "hyp_beam": "thank you so much ."}
+{"idx": 652, "ref": "sha1:bf527372464f74ed2dedc0cc862cf032cfb525ca", "hyp_beam": "thank you ."}
+{"idx": 653, "ref": "sha1:782865bd07d3157bfe733e6400b13486d3971d76", "hyp_beam": "bye ."}
+{"idx": 654, "ref": "sha1:cc48ceb89c35033202de1ed6b7b8d79133804a44", "hyp_beam": "that is great ."}
+{"idx": 655, "ref": "sha1:be4579df37c800b62052cfd010690fecadb18991", "hyp_beam": "i know ."}
+{"idx": 656, "ref": "sha1:ff1bf56ea08ce9011efc24e9a3a158cd42613f99", "hyp_beam": "that was great ."}
+{"idx": 657, "ref": "sha1:ddcb295a3a943276df27096f537281ac31b61c73", "hyp_beam": "i can not do it again ."}
+{"idx": 658, "ref": "sha1:f7e9e66465edb0ee76acbf257ab948f18e2b4897", "hyp_beam": "sally i have made this for you ."}
+{"idx": 659, "ref": "sha1:0879be94849d84f88454c3765d2cea8b25925f74", "hyp_beam": "yes we have had a great job ."}
+{"idx": 660, "ref": "sha1:509fd92dd0cfa7445ff1a9d61395161cb675b3c7", "hyp_beam": "my tree is very strange ."}
+{"idx": 661, "ref": "sha1:da4be2dcff69c9c086617ef543a96078e0f33c6a", "hyp_beam": "i really enjoyed myself i really enjoyed myself ."}
+{"idx": 662, "ref": "sha1:8955d78e346063f50cf6fb992fd56eb2510dbd74", "hyp_beam": "sally look ."}
+{"idx": 663, "ref": "sha1:ecac1061a1ff3aca4ce09f7b8daa20e31e862046", "hyp_beam": "are you ready ."}
+{"idx": 664, "ref": "sha1:479f9cf12aa6d65def52a660ac4090f01594b57b", "hyp_beam": "sally look ."}
+{"idx": 665, "ref": "sha1:f920208dc4fe2a4b2a3d8078f34e76a443db7a31", "hyp_beam": "look ."}
+{"idx": 666, "ref": "sha1:e6eec37bec154b7eba3ef4329ed3a1a47493ee7c", "hyp_beam": "yeah let us go ."}
+{"idx": 667, "ref": "sha1:f5f37450e748570a136804ae4c2269bb7668f26a", "hyp_beam": "sally i know ."}
+{"idx": 668, "ref": "sha1:a3537803f7c50cf9d36133a8ced1c699d3b4dc52", "hyp_beam": "sally do you remember when you went over to the bench ."}
+{"idx": 669, "ref": "sha1:50b1ee3da3f936a3dba8b9d8d77c278684ca3c5b", "hyp_beam": "can you do that ."}
+{"idx": 670, "ref": "sha1:ff1bf56ea08ce9011efc24e9a3a158cd42613f99", "hyp_beam": "great ."}
+{"idx": 671, "ref": "sha1:98822cb869fb75cd4ef3950699ec9df21d0d7b06", "hyp_beam": "great ."}
+{"idx": 672, "ref": "sha1:5066ddae4598907b43f1f1cde5195733a2c62d07", "hyp_beam": "possum you have done a very special surprise party ."}
+{"idx": 673, "ref": "sha1:faed6785a1d42130e535069dcc943790870ce2ea", "hyp_beam": "why do not we go outside for a while we do that why do not we do that ."}
+{"idx": 674, "ref": "sha1:c102ad09b6d38597e226ab95f551d787fcdde834", "hyp_beam": "i am going to give you a surprise ."}
+{"idx": 675, "ref": "sha1:6343ede0ee3e3ecc22daa878012c5697587753be", "hyp_beam": "that is right ."}
+{"idx": 676, "ref": "sha1:4e1bbb89c702bca85defad6126b068ab739df5f7", "hyp_beam": "see you next time ."}
+{"idx": 677, "ref": "sha1:b49d27b6673825e0e96a0ef06b599d057dcf7df8", "hyp_beam": "thanks for watching ."}
+{"idx": 678, "ref": "sha1:fa4b7793efc846eed9b55f855ce2d97c2fca47a7", "hyp_beam": "see you next time ."}
+{"idx": 679, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "bye ."}
+{"idx": 680, "ref": "sha1:6ec24fb958ea612a50a6fb3ac4c598b4461b13d4", "hyp_beam": "hello everyone ."}
+{"idx": 681, "ref": "sha1:75245bf1f646d6f40a25b46bf917f4d0fef9c63a", "hyp_beam": "sally i am going to have a look at my garden ."}
+{"idx": 682, "ref": "sha1:4eb50200f9c8d2c7b5c82979757be1f046afde92", "hyp_beam": "what are you doing ."}
+{"idx": 683, "ref": "sha1:ae80c23788040055058fc2cb327399be536f54ab", "hyp_beam": "look ."}
+{"idx": 684, "ref": "sha1:1732a23a1930a5936da8cbe7cae24df562d68a55", "hyp_beam": "thank you so much for teaching me how to make it ."}
+{"idx": 685, "ref": "sha1:0faa96e92f4284dec95e88263f098b6614b8e3f4", "hyp_beam": "that is great ."}
+{"idx": 686, "ref": "sha1:a41a5d55b98b0cc8ad55cc74765497fa475dcd8b", "hyp_beam": "i have not used it for you ."}
+{"idx": 687, "ref": "sha1:49631cba36ac1c8135078a8d9c1a55725fc51be6", "hyp_beam": "it is such a great day ."}
+{"idx": 688, "ref": "sha1:bcc263079e031aaac0ba2b229ebfb32dd0be23f9", "hyp_beam": "yes that is right possum ."}
+{"idx": 689, "ref": "sha1:95804becf434330c583513fbd618e78381b422db", "hyp_beam": "that is great ."}
+{"idx": 690, "ref": "sha1:e6eec37bec154b7eba3ef4329ed3a1a47493ee7c", "hyp_beam": "that is right possum ."}
+{"idx": 691, "ref": "sha1:fdb5d61605474a8674edf2895560020a93c34836", "hyp_beam": "i am going to show you something ."}
+{"idx": 692, "ref": "sha1:72ffd6d7a11643d733f428910676a0dc9990e513", "hyp_beam": "what a great idea ."}
+{"idx": 693, "ref": "sha1:8cece1f2deb287b31fde6baea41c1771a55ce48f", "hyp_beam": "how did you do that ."}
+{"idx": 694, "ref": "sha1:bb8c12f5e005f224d10130c5eeb01713ceab3fbc", "hyp_beam": "i am going to make a house ."}
+{"idx": 695, "ref": "sha1:de5aca9911f30ca28241576d86d9a623d49e0da5", "hyp_beam": "that is me ."}
+{"idx": 696, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 697, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 698, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 699, "ref": "sha1:3967146e05036825a653344613261a93917eda90", "hyp_beam": "i am sally ."}
+{"idx": 700, "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f", "hyp_beam": "i am possum ."}
+{"idx": 701, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 702, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 703, "ref": "sha1:c5db88768664d2a35ee12a26cd3c463b541b11c4", "hyp_beam": "hello ."}
+{"idx": 704, "ref": "sha1:8225e7e020128c59ee24b2f880889c303cd81afb", "hyp_beam": "where did he go ."}
+{"idx": 705, "ref": "sha1:9619992743ddfc8a3f2255b7dac71c127c29757d", "hyp_beam": "where is possum ."}
+{"idx": 706, "ref": "sha1:96b0d25489179cd5fc90779863e28b1f8039b36e", "hyp_beam": "where is possum ."}
+{"idx": 707, "ref": "sha1:e111de890613e492db2c6dc882d2a3bd3b6db106", "hyp_beam": "look at the top of my tree ."}
+{"idx": 708, "ref": "sha1:bd5f03934cd5b72502076ad1b8fc03e4df9a3b1d", "hyp_beam": "thank you so much possum ."}
+{"idx": 709, "ref": "sha1:985778992491cf2403eedbf2af6ccf33e009f908", "hyp_beam": "bye ."}
+{"idx": 710, "ref": "sha1:b456cc8f276510f85f3aeea10833ed5071c2b978", "hyp_beam": "i have an idea ."}
+{"idx": 711, "ref": "sha1:ec81b358e14830385d7f581be17fe66e8d9000fc", "hyp_beam": "i love my tree ."}
+{"idx": 712, "ref": "sha1:45f167ba801545349aee013db13cd643a0d28d44", "hyp_beam": "i know he would love to climb his tree ."}
+{"idx": 713, "ref": "sha1:56b3cd7fe45db2b83c54ffad837651aab8957124", "hyp_beam": "look at the sky ."}
+{"idx": 714, "ref": "sha1:de5aca9911f30ca28241576d86d9a623d49e0da5", "hyp_beam": "i am ."}
+{"idx": 715, "ref": "sha1:9f4c6b8083d1ba86827b8069a3d3fb945c547ff0", "hyp_beam": "i am going to have a look from my tree ."}
+{"idx": 716, "ref": "sha1:cdbdf3899aae1ef5cade7ddd14a114f7de650bb0", "hyp_beam": "i was such a big day today ."}
+{"idx": 717, "ref": "sha1:2ada9219a066b9fa1e2f0b5338f6c3dbc674bf6c", "hyp_beam": "no i do not like a police officer possum ."}
+{"idx": 718, "ref": "sha1:06d953125f1d1109476e73a3900549d5b1687bae", "hyp_beam": "i like that ."}
+{"idx": 719, "ref": "sha1:cfb27f3b11b673f5fdaa096a3a611cc516f7222a", "hyp_beam": "hello ."}
+{"idx": 720, "ref": "sha1:f3cf407a70baae03474a305367295355491c2c08", "hyp_beam": "you are so funny ."}
+{"idx": 721, "ref": "sha1:58e27589969e42080afbd92ded4d5da3d00c3d4e", "hyp_beam": "there are plenty of vegetables in the garden ."}
+{"idx": 722, "ref": "sha1:2027379b36f32a649957c17381f80a043090df16", "hyp_beam": "possum what are you doing ."}
+{"idx": 723, "ref": "sha1:b20f6ec93ce990a5bbe7220ce1f87af189185d5c", "hyp_beam": "i am going to show you how to make a paper plane ."}
+{"idx": 724, "ref": "sha1:94d0027744046d096ea024cdcb8b0254cffd93a6", "hyp_beam": "i want to help you ."}
+{"idx": 725, "ref": "sha1:b31bf0cbb2e12fddf9173ffe03048124f4bb558c", "hyp_beam": "yes that is right ."}
+{"idx": 726, "ref": "sha1:4443d3fc6cd89215d8e5cfcd93654613d51e5bf1", "hyp_beam": "one two three four five six seven eight nine oclock ."}
+{"idx": 727, "ref": "sha1:a3fbf3e66b4204a9658ea09b5550d45ad049b1a0", "hyp_beam": "i am going to go around my tree ."}
+{"idx": 728, "ref": "sha1:44bbc9248fc296e782ab6fbed45943cb884f2c57", "hyp_beam": "i am going to go outside and play some soccer too ."}
+{"idx": 729, "ref": "sha1:4e4d7a4dd101305a65a08c60bc06b71fb7bf4769", "hyp_beam": "yeah let us watch ."}
+{"idx": 730, "ref": "sha1:ee313b65e44390308e7588a4766cbab4f42c33b1", "hyp_beam": "this is a great way that you can use a rake ."}
+{"idx": 731, "ref": "sha1:6e4667ce42ea44c048bbae6c2a2ee0c683959300", "hyp_beam": "sally i think it is time for me ."}
+{"idx": 732, "ref": "sha1:7b7b7df5064ad2f143864eefb489f3709fc28976", "hyp_beam": "why do not we watch some children learning how to do that ."}
+{"idx": 733, "ref": "sha1:42565a3bd4bb2e359f851b11b5fbab7e24e1ce30", "hyp_beam": "why do not we go outside and do that and we can cut them up ."}
+{"idx": 734, "ref": "sha1:e819deb0463a011e7bcdc390e10f98e0e5cb7819", "hyp_beam": "why do not we go outside and have a look at the top of your tree ."}
+{"idx": 735, "ref": "sha1:6cfda3ee71c00464a3eb82c63b2a3e3b91ae721a", "hyp_beam": "that looks great ."}
+{"idx": 736, "ref": "sha1:3a2e7acc1bef57cd11767663f39f37db799aea28", "hyp_beam": "why do not we go and see if there is a few things that i can find ."}
+{"idx": 737, "ref": "sha1:9a57f49bc35afea17e2596836cff1bb138cb6fb9", "hyp_beam": "be careful ."}
+{"idx": 738, "ref": "sha1:02aa28cd7af3d8ebcf9a5cae81ab4c5d7cfca5ac", "hyp_beam": "i am going to go up to the top of my tree ."}
+{"idx": 739, "ref": "sha1:130b3fdfadb7006057832333bbd1c244c7b1ecec", "hyp_beam": "that is great ."}
+{"idx": 740, "ref": "sha1:4e3b85d3c12ce8ba8179553e835730a38be79353", "hyp_beam": "one two three four five six ."}
+{"idx": 741, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "that is great ."}
+{"idx": 742, "ref": "sha1:23361ea1bc4dd2834a3f187d31098e5923772fe3", "hyp_beam": "thank you so much for teaching me how to make it ."}
+{"idx": 743, "ref": "sha1:207adea8be1f45956ad33fb4e52d85f9ff6cb8af", "hyp_beam": "sally what does that mean ."}
+{"idx": 744, "ref": "sha1:0307a688e78507b6d823e404d90d67eb63249f5a", "hyp_beam": "no i have to go inside and make something that does not matter ."}
+{"idx": 745, "ref": "sha1:520ad1d794ae5848735e63f016a8a87b7b9a760c", "hyp_beam": "yes ."}
+{"idx": 746, "ref": "sha1:763c51d3b4c65142e5cbc2299a5cdf0b526f2f1a", "hyp_beam": "well i am going to make sure we have got everything ready for our story ."}
+{"idx": 747, "ref": "sha1:b7728f1c04d0ea17da3b47a93dd0dd90aa3d1308", "hyp_beam": "that is great ."}
+{"idx": 748, "ref": "sha1:4604bf8b4b1afad6f1a030ad6bca30cb7cda002c", "hyp_beam": "possum what are you doing with your tree ."}
+{"idx": 749, "ref": "sha1:5798eba71b92a3de816ac564ce8e18a05c7dfde7", "hyp_beam": "i have an idea ."}
+{"idx": 750, "ref": "sha1:64ca94963e738fc2e2f9bbc9d8e9dccbe986ccb7", "hyp_beam": "why do not we go inside and have a look ."}
+{"idx": 751, "ref": "sha1:ff1bf56ea08ce9011efc24e9a3a158cd42613f99", "hyp_beam": "sally ."}
+{"idx": 752, "ref": "sha1:6cffd978dd898ff652816a0710ff3943b60a2808", "hyp_beam": "yeah let us go ."}
+{"idx": 753, "ref": "sha1:50725050908e9a3dcfb2c089d88283fd6f79d314", "hyp_beam": "hello everyone ."}
+{"idx": 754, "ref": "sha1:04934b1a3368d7e3ab897a4547f1d7fe87bf2eaa", "hyp_beam": "that is great ."}
+{"idx": 755, "ref": "sha1:b2fc350332d255aefaa2b397f381629d9adb65e9", "hyp_beam": "sally where are we going to make it ."}
+{"idx": 756, "ref": "sha1:24f522fe3c8afd738baf27ae41f93dbb4f00a838", "hyp_beam": "well possum why do not we watch some children making things out of the shapes ."}
+{"idx": 757, "ref": "sha1:e251295856545a902b1865bd1e2e8c51e339e13a", "hyp_beam": "sally what are you doing up there ."}
+{"idx": 758, "ref": "sha1:d147d2a2b2266582fff89db1b88795566192ef50", "hyp_beam": "yes that is right possum ."}
+{"idx": 759, "ref": "sha1:e8dd115a0ae673a83d65379e1fbe2d17451b93c9", "hyp_beam": "this is a friend of mine ."}
+{"idx": 760, "ref": "sha1:59878a1c9bbf527b3e25754b3d54603e3ae64b82", "hyp_beam": "why do not we watch some children learning about shapes ."}
+{"idx": 761, "ref": "sha1:afc956c6fec25ed4004c3c7abf621dfe1e2a97c3", "hyp_beam": "but it is like a bird as a bird ."}
+{"idx": 762, "ref": "sha1:74db7351fe04179d07e89dfeb9f550872c89009b", "hyp_beam": "ok ."}
+{"idx": 763, "ref": "sha1:39e73538fa78923826c91995d3262f48128471c9", "hyp_beam": "sally is your garden ."}
+{"idx": 764, "ref": "sha1:266871c6d3bee56a9b11a2bc36248536357be2b4", "hyp_beam": "hello everyone ."}
+{"idx": 765, "ref": "sha1:130b3fdfadb7006057832333bbd1c244c7b1ecec", "hyp_beam": "i know ."}
+{"idx": 766, "ref": "sha1:d1a2dc8a89c11bf853d86fd9639508b2236375ef", "hyp_beam": "well why do not we make a pie ."}
+{"idx": 767, "ref": "sha1:b302c942c3fff35584a34d636c66df0e68623aa7", "hyp_beam": "if you look at the mirror you can see how many steps it is ."}
+{"idx": 768, "ref": "sha1:91ed54df4669628a81f5443649f334fbbc9b9fec", "hyp_beam": "ok ."}
+{"idx": 769, "ref": "sha1:5c42d466bef722b3172bc2b5d1876b0ccfc277b9", "hyp_beam": "well why do not we watch some children and see what they do ."}
+{"idx": 770, "ref": "sha1:a2f915dcfa81731056f3ae426cfdda5e49edfc04", "hyp_beam": "yeah let us watch ."}
+{"idx": 771, "ref": "sha1:2a95de0015b20e28d2c2f5bbca4a9995725e2c4a", "hyp_beam": "i am making a paper ."}
+{"idx": 772, "ref": "sha1:9c0fc96f640e4c4755a9a859785ab4fa4bd9a6a6", "hyp_beam": "let us think ."}
+{"idx": 773, "ref": "sha1:28a09ad711b6f9144740d1265e9cd9df450f8a1c", "hyp_beam": "this one is soft and this one is hard ."}
+{"idx": 774, "ref": "sha1:8b4f8063915b545610a30b4c5dce2eff06c2b04b", "hyp_beam": "they look like they had so much fun ."}
+{"idx": 775, "ref": "sha1:b5471bb6b54e14569622252f820d0b5fcb0082dc", "hyp_beam": "that looked like so much fun ."}
+{"idx": 776, "ref": "sha1:ff60971d1eac0f1c9e84fefee4f23df3fbe4eea2", "hyp_beam": "sally what do we make ."}
+{"idx": 777, "ref": "sha1:6fb003a34b2161b13e9d4cbe6b509f7304742dae", "hyp_beam": "have a look at all of them ."}
+{"idx": 778, "ref": "sha1:4e0359d3e8f061433a96954c92d901691b1fdba5", "hyp_beam": "i have got some instructions on how to make a paper plane in the drawer ."}
+{"idx": 779, "ref": "sha1:3ae02fa1166566917e42dd6a44e37e0931611bae", "hyp_beam": "it is like when you have done a tent ."}
+{"idx": 780, "ref": "sha1:bce808d6829f75c24ad17926e1c736c2c39e22f0", "hyp_beam": "look ."}
+{"idx": 781, "ref": "sha1:3ca5833aded784807f91da9d9acde3f4e69206be", "hyp_beam": "that is great but it is not a very important thing is it ."}
+{"idx": 782, "ref": "sha1:8c9db42e5510755be3c1899ffe1358f6add7a571", "hyp_beam": "look ."}
+{"idx": 783, "ref": "sha1:d79d6177511b66fb0b20e5670bbd777e8c298222", "hyp_beam": "they are the same do not they ."}
+{"idx": 784, "ref": "sha1:130b3fdfadb7006057832333bbd1c244c7b1ecec", "hyp_beam": "that is great ."}
+{"idx": 785, "ref": "sha1:5f93005de7b22f8f35f9b11ae8db17dfe74768cf", "hyp_beam": "why do not we watch some children making paper plane in the garden and the kitchen ."}
+{"idx": 786, "ref": "sha1:ee376a23ac954dfafa5c6bb5562122792fba3106", "hyp_beam": "would you like to help me get ready ."}
+{"idx": 787, "ref": "sha1:4a8342e8cfea7b4ba73f00b18420e973b355923a", "hyp_beam": "now we need to mix it all together ."}
+{"idx": 788, "ref": "sha1:2c45db52a876e338222231ac6bd61c6899ac2ea3", "hyp_beam": "why do not we watch some children and see what they do ."}
+{"idx": 789, "ref": "sha1:130b3fdfadb7006057832333bbd1c244c7b1ecec", "hyp_beam": "that is great ."}
+{"idx": 790, "ref": "sha1:ae1eb87a500deaff56b96bb5ea0b6750f114f241", "hyp_beam": "well i am going to cut the clouds and make it nice and strong ."}
+{"idx": 791, "ref": "sha1:9a82e6a5bfd1011741e117e23baa61aabb5dfe04", "hyp_beam": "great ."}
+{"idx": 792, "ref": "sha1:4e27045ef371107e9278a79a5542406ab57082a3", "hyp_beam": "now we just need a piece of paper ."}
+{"idx": 793, "ref": "sha1:dbe60991d3b601b6c820abf9d80589488565cf9c", "hyp_beam": "yes we can make a salad too ."}
+{"idx": 794, "ref": "sha1:40f6abbec9455656336ee37e342bd7685e3f3b37", "hyp_beam": "would you like to do that ."}
+{"idx": 795, "ref": "sha1:5e50cb0399d5a78857d7f226524c1d509649ae6b", "hyp_beam": "would you like to help me ."}
+{"idx": 796, "ref": "sha1:292e64f2512bbd00531ce8b14ed761de425c1497", "hyp_beam": "would you like to help me ."}
+{"idx": 797, "ref": "sha1:130b3fdfadb7006057832333bbd1c244c7b1ecec", "hyp_beam": "yes please ."}
+{"idx": 798, "ref": "sha1:29efe7ca5d51288545795465ee57541cfd295616", "hyp_beam": "thank you so much for teaching me how to make it ."}
+{"idx": 799, "ref": "sha1:bb38bc4f6557f18a7f04e77c762841c5b1b588fd", "hyp_beam": "you are funny possum ."}
+{"idx": 800, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "it is a bit different ."}
+{"idx": 801, "ref": "sha1:c80f74f62059335dc8bd1733c04f51fa2fd9928b", "hyp_beam": "let us watch ."}
+{"idx": 802, "ref": "sha1:44ca34aeeb2897468fc791500e778c0dd83bd31b", "hyp_beam": "i am ready ."}
+{"idx": 803, "ref": "sha1:943b43eee97c08ec6df46a660e5bf3023e8a920d", "hyp_beam": "would you like to try possum ."}
+{"idx": 804, "ref": "sha1:93cce6bb2faa6d2d72e5eb82a8bb4a0b450713ae", "hyp_beam": "ok ."}
+{"idx": 805, "ref": "sha1:3b1a2b7edafca8400f5228d73e34ecd0e009054d", "hyp_beam": "sally can i have a look at my tree ."}
+{"idx": 806, "ref": "sha1:07adba7c2a7346568fb25bd905dcfafa98b09075", "hyp_beam": "yes we can ."}
+{"idx": 807, "ref": "sha1:6e835905000558eeb3f7162e94225c28b3d682ea", "hyp_beam": "i think i have been on top of my tree and now i have a look at the top of my tree and we can see how many steps ."}
+{"idx": 808, "ref": "sha1:8cf208894435d0383929fffe2d00a672b62fabe8", "hyp_beam": "yeah let us have a look ."}
+{"idx": 809, "ref": "sha1:268647c2e4c08b87e3c392a606083cf263c33139", "hyp_beam": "wait wait wait ."}
+{"idx": 810, "ref": "sha1:c4989ef4007a6ff9f06fc4da58df309cfcf989e3", "hyp_beam": "thank you ."}
+{"idx": 811, "ref": "sha1:3c0c93bd11bc118a2f14c545ec27a9e2451a88cd", "hyp_beam": "one two three four five six ."}
+{"idx": 812, "ref": "sha1:cc1a04bd5bc79b13061fb384174f231e6d7a3f01", "hyp_beam": "that is great ."}
+{"idx": 813, "ref": "sha1:5f069a06655e9e8f2bfd04e1bec931760b91f967", "hyp_beam": "thank you ."}
+{"idx": 814, "ref": "sha1:9a57f49bc35afea17e2596836cff1bb138cb6fb9", "hyp_beam": "bye ."}
+{"idx": 815, "ref": "sha1:c7a3eb8c7a6cd1907b038164b589bd7553068b91", "hyp_beam": "possum what are you doing ."}
+{"idx": 816, "ref": "sha1:a88926d250e1ff106dfbf9d0c7f3837f410aed03", "hyp_beam": "i will show you ."}
+{"idx": 817, "ref": "sha1:130b3fdfadb7006057832333bbd1c244c7b1ecec", "hyp_beam": "come on sally ."}
+{"idx": 818, "ref": "sha1:2a3195d69f69e861e8e0c8e03a409d5c19869753", "hyp_beam": "it is such a beautiful day today ."}
+{"idx": 819, "ref": "sha1:cc1a04bd5bc79b13061fb384174f231e6d7a3f01", "hyp_beam": "six ."}
+{"idx": 820, "ref": "sha1:0a54dcce6ce53288ee0e312717b2063b66837a76", "hyp_beam": "here he is ."}
+{"idx": 821, "ref": "sha1:9eff42600a8aaf3d8507d16a769dfcc91822878c", "hyp_beam": "thank you amanda ."}
+{"idx": 822, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "bye ."}
+{"idx": 823, "ref": "sha1:fa4b7793efc846eed9b55f855ce2d97c2fca47a7", "hyp_beam": "that is great ."}
+{"idx": 824, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "look ."}
+{"idx": 825, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "look ."}
+{"idx": 826, "ref": "sha1:2b98b3b21ae5cd19aaf19ff12f72f10ecd6bdef5", "hyp_beam": "let us see ."}
+{"idx": 827, "ref": "sha1:54ea53f8d6944b2c53792639daa55a372752d1e7", "hyp_beam": "where is possum ."}
+{"idx": 828, "ref": "sha1:1e5e4991082be5eb345a6e1b33b54c19d57e12a9", "hyp_beam": "here he is ."}
+{"idx": 829, "ref": "sha1:7fcd2b1fc64dd42f6151d7a66656adca71d6ed82", "hyp_beam": "why do not we make a toast ."}
+{"idx": 830, "ref": "sha1:793efbfb2e1cd3710222960b50b87a3bfad78f48", "hyp_beam": "come on sally ."}
+{"idx": 831, "ref": "sha1:1920e8abf59468f74640db61218eaf8271f15deb", "hyp_beam": "yes that is right i can see my tree ."}
+{"idx": 832, "ref": "sha1:9d81242fee83254ed6876f2f5a752194a935a02c", "hyp_beam": "that is great ."}
+{"idx": 833, "ref": "sha1:c51f3b9d1e8a2e00b2292eb62f06692ccb652702", "hyp_beam": "sally look ."}
+{"idx": 834, "ref": "sha1:d33e40c5ef135a33343d7403ecfd1707c1bcc205", "hyp_beam": "why do not we watch some children and see what they do ."}
+{"idx": 835, "ref": "sha1:f05b3936ef819ca8c28402eac26d55685968dc01", "hyp_beam": "yes i did ."}
+{"idx": 836, "ref": "sha1:6efa862b19c8760a4e942ad4a403f950d7aa438e", "hyp_beam": "how would you like to do that ."}
+{"idx": 837, "ref": "sha1:178b75bb115ea4864f9607f2f0f73ac2fa17f908", "hyp_beam": "what is it ."}
+{"idx": 838, "ref": "sha1:676b2596c3a819129b426cb34af97ff790f573a1", "hyp_beam": "ok ."}
+{"idx": 839, "ref": "sha1:1d441b149b4b0529214e1991d977e7751edaf1d9", "hyp_beam": "well our time is up ."}
+{"idx": 840, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 841, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 842, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 843, "ref": "sha1:3967146e05036825a653344613261a93917eda90", "hyp_beam": "i am sally ."}
+{"idx": 844, "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f", "hyp_beam": "i am possum ."}
+{"idx": 845, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 846, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 847, "ref": "sha1:c5db88768664d2a35ee12a26cd3c463b541b11c4", "hyp_beam": "bye ."}
+{"idx": 848, "ref": "sha1:81fde6e658bde2e219dfbb6d7ea790eb983adc93", "hyp_beam": "there is another one ."}
+{"idx": 849, "ref": "sha1:c3644db53079c4592e95ea5fda7ccfdbb34a11b9", "hyp_beam": "possum why do not we go outside and see if there is a few things that i can go on there for a few things that you can eat ."}
+{"idx": 850, "ref": "sha1:b5e0b9c58285231f5aa737b1d7df912e42f90479", "hyp_beam": "let us have a look ."}
+{"idx": 851, "ref": "sha1:f166c10d6c0c5d1f2ecd97566f980e1e0faaf587", "hyp_beam": "that is beautiful ."}
+{"idx": 852, "ref": "sha1:56af5d2b73d4bed10efed17936e9f3e42f0d0343", "hyp_beam": "that is what this is ."}
+{"idx": 853, "ref": "sha1:1a1b21f27d2e488b0c57c617a70068839c6fb0e2", "hyp_beam": "possum you are funny ."}
+{"idx": 854, "ref": "sha1:cc509f8de8a85140a2e69cf6bd316cbc747dd9c1", "hyp_beam": "thank you ."}
+{"idx": 855, "ref": "sha1:f76386338e3c03cacb2165677a9103c239fddff6", "hyp_beam": "i am going to have a look at my tree house ."}
+{"idx": 856, "ref": "sha1:4d5e6137c5891931ae922f5b5a0315e8d4d2f237", "hyp_beam": "it is beautiful ."}
+{"idx": 857, "ref": "sha1:c38ce97f94d89705d8c54d4eee752b78c4b03259", "hyp_beam": "i really enjoyed it ."}
+{"idx": 858, "ref": "sha1:c6c44280d0c3972131f06ac2e290c3633184323f", "hyp_beam": "i am going to have a look at the top of my tree ."}
+{"idx": 859, "ref": "sha1:8f318a0eb1afd6997d626a37f47c394930f4ac3b", "hyp_beam": "bye ."}
+{"idx": 860, "ref": "sha1:75e0b507c102348a75c9fa6df10e39e54efe2de2", "hyp_beam": "no not yet possum ."}
+{"idx": 861, "ref": "sha1:ee07bc1b078e3a021b1b56aa73239d61ea72a1d0", "hyp_beam": "i am going to become a bird ."}
+{"idx": 862, "ref": "sha1:20965025bbe4a3b6f5223f249fd09a1db45d27fc", "hyp_beam": "hi sally ."}
+{"idx": 863, "ref": "sha1:85ea22a56d595e46cc3a0ad29b0176648da7aefa", "hyp_beam": "alright i will show you how to do it ."}
+{"idx": 864, "ref": "sha1:84a9e126310a4e623eada4668cca63ec2a97a63b", "hyp_beam": "great ."}
+{"idx": 865, "ref": "sha1:f7a3b08fd5a60e39b89991ff99cea48a69b3884d", "hyp_beam": "what is that ."}
+{"idx": 866, "ref": "sha1:97d68bd538599f5f120ffe7afc90691c456a8885", "hyp_beam": "i am sally ."}
+{"idx": 867, "ref": "sha1:4120459c3d7cc3c522579fbd6f1df263d158a84e", "hyp_beam": "that is great ."}
+{"idx": 868, "ref": "sha1:d046c683dd28b4aa84f8d736fb3bec603c4daba4", "hyp_beam": "can you tell me more about that ."}
+{"idx": 869, "ref": "sha1:74db7351fe04179d07e89dfeb9f550872c89009b", "hyp_beam": "the bench ."}
+{"idx": 870, "ref": "sha1:5f2e0bc9dc5e1bed1d13886d8222357712f6e52c", "hyp_beam": "that is right possum ."}
+{"idx": 871, "ref": "sha1:b8a8dab9ecc226420b59d82d603d9b826d473ba5", "hyp_beam": "it is like my tree house ."}
+{"idx": 872, "ref": "sha1:f632746de9065114006ad8841e3ff42c7d057100", "hyp_beam": "that is a great idea possum ."}
+{"idx": 873, "ref": "sha1:3bf222393c17e094ce84927810c1f91888fd59e5", "hyp_beam": "i have been working out the garden ."}
+{"idx": 874, "ref": "sha1:a6e8bf118c5a187caaed6909926c2fbf7ba49cf9", "hyp_beam": "look ."}
+{"idx": 875, "ref": "sha1:aecd97dc4b39a585d9faea1f3c0389bf3bf44e66", "hyp_beam": "look at all the different colors ."}
+{"idx": 876, "ref": "sha1:d7e32b9930eb2175a745d571700f4cab879c2716", "hyp_beam": "can you please go and ask him if he would love to help ."}
+{"idx": 877, "ref": "sha1:be29e4e7df50d1244cf3d1d9c9becbfc2a5df409", "hyp_beam": "you have learned so much about me ."}
+{"idx": 878, "ref": "sha1:c3f169cdb60422c4b758f07cd5b217c3f42fd336", "hyp_beam": "there is water in the garden ."}
+{"idx": 879, "ref": "sha1:98e928702043a540660f49f5b7672538c2611b72", "hyp_beam": "let us have a look ."}
+{"idx": 880, "ref": "sha1:f5dcf2282bccd7e7801dc5a1db83db23e6373967", "hyp_beam": "i like making a boat out of wood ."}
+{"idx": 881, "ref": "sha1:71e12ddb61abb08d652c8026db72e1c9ff7d6c42", "hyp_beam": "possum your tree is very important ."}
+{"idx": 882, "ref": "sha1:5f86955838616815d68a94a55fb894bd2e28aca0", "hyp_beam": "it is such a beautiful day today ."}
+{"idx": 883, "ref": "sha1:f677a2a9e72c1198303fb3e0671a65d481f4bee5", "hyp_beam": "why do not we watch some children and see what they do ."}
+{"idx": 884, "ref": "sha1:9aee7374c6a6b14d256080458a4eadbdaf61766e", "hyp_beam": "why do not we watch some children and see what they do ."}
+{"idx": 885, "ref": "sha1:6874d93f7955cc502945b7e1395c64d9623db9bb", "hyp_beam": "i do not think i would like to go outside too ."}
+{"idx": 886, "ref": "sha1:f5df92eaf10330b1f768490c0f7f85e85aab7833", "hyp_beam": "yes that is right possum ."}
+{"idx": 887, "ref": "sha1:b6a984e40d61f590f03daf58f9770d7575bb48dc", "hyp_beam": "the police officer possum ."}
+{"idx": 888, "ref": "sha1:98371e923223845a9662f68d01e0784415f4b15d", "hyp_beam": "would you like to help ."}
+{"idx": 889, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "yes ."}
+{"idx": 890, "ref": "sha1:b0dd635ae62dff77cc98ea909fec29a2d76310e0", "hyp_beam": "it is like when you were in the kitchen ."}
+{"idx": 891, "ref": "sha1:b21ce21e7aa66fc78548ddbec0f3ac2e17c473e5", "hyp_beam": "it is a great idea to go to school ."}
+{"idx": 892, "ref": "sha1:644e8dbb411c455a7b4a03fa170fa2efc242155a", "hyp_beam": "that is delicious ."}
+{"idx": 893, "ref": "sha1:ea1cac56b4d36ec446fa017124fb01fc47f5b03c", "hyp_beam": "i thought it was going to get wet ."}
+{"idx": 894, "ref": "sha1:8320144ae467c63b1f6b12d33a9fb99a3523f680", "hyp_beam": "i wonder where it is ."}
+{"idx": 895, "ref": "sha1:c8dd7ec442304709cecdfa4788b628358f9c3d3d", "hyp_beam": "why do not we watch some children making things out of paper ."}
+{"idx": 896, "ref": "sha1:520ad1d794ae5848735e63f016a8a87b7b9a760c", "hyp_beam": "yeah that is great ."}
+{"idx": 897, "ref": "sha1:b09e8600df628bfb9e67d41244b136786c2ee82f", "hyp_beam": "why do not we watch some children learning about mirrors ."}
+{"idx": 898, "ref": "sha1:a2f915dcfa81731056f3ae426cfdda5e49edfc04", "hyp_beam": "yeah let us watch ."}
+{"idx": 899, "ref": "sha1:db8699f05fe2ec3272d17918afe1a1abd537f700", "hyp_beam": "that is great ."}
+{"idx": 900, "ref": "sha1:38c1f7356b59f62b6ffffdfb58a4eb2ba9f4f8f0", "hyp_beam": "i really enjoyed myself ."}
+{"idx": 901, "ref": "sha1:9f27f117eb4bde32ad79c1fa5c639f31be13be23", "hyp_beam": "i have made a pie for sally ."}
+{"idx": 902, "ref": "sha1:147a8805334c53b1122214e3105722907e77841f", "hyp_beam": "look at all the beautiful colors ."}
+{"idx": 903, "ref": "sha1:12cf8aff6e57ad71056aa00384f6aa55aeac5ec7", "hyp_beam": "i know i will show you how to do it ."}
+{"idx": 904, "ref": "sha1:f2b988e34915a94156fb83e6029c1f8ad89675d3", "hyp_beam": "sally look at all the different colors ."}
+{"idx": 905, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "yes ."}
+{"idx": 906, "ref": "sha1:1bac1c2a490b5a7ba480c002a5da816d3ef97425", "hyp_beam": "well our time is up and we will be able to see the full moon ."}
+{"idx": 907, "ref": "sha1:5a9eb9b490cadf9683783d1e0f209fc0c4f05019", "hyp_beam": "possum you are so funny ."}
+{"idx": 908, "ref": "sha1:380dae2107abd665252e14bf12afa64e93a63ab1", "hyp_beam": "but when you were in your tree house you were in your tree house and you did not you ."}
+{"idx": 909, "ref": "sha1:e2e5180133232c5ac58786cbebb5d3177634c156", "hyp_beam": "yes that is right ."}
+{"idx": 910, "ref": "sha1:dbabdb5a52aa9f5e51cb7f9b04a5aa2a3d6c6b5a", "hyp_beam": "i have been working out here so there is no water in the house ."}
+{"idx": 911, "ref": "sha1:50d46b8e98508f6a4598d4660cfd29e9ec0040f5", "hyp_beam": "i want to learn everything ."}
+{"idx": 912, "ref": "sha1:edfbbe211cbceddf2bf960c8114258dfd8930f28", "hyp_beam": "that is great ."}
+{"idx": 913, "ref": "sha1:55f1ffedcdb3bdf94095263bbd5db555de78d582", "hyp_beam": "look at all the different shapes we have made ."}
+{"idx": 914, "ref": "sha1:e61c117c0b916d1c12fa68b1a3736568893606b8", "hyp_beam": "well our time is up ."}
+{"idx": 915, "ref": "sha1:cd0737fbd323d5e122b380cce72c4ef7c104bfeb", "hyp_beam": "you are so funny possum ."}
+{"idx": 916, "ref": "sha1:d3b1eb7ce07a3f84a8491c4cad712d509b3466ce", "hyp_beam": "what are you doing ."}
+{"idx": 917, "ref": "sha1:d5dba4ae946bd4992ff97c14ba92377acc78ee01", "hyp_beam": "i am going to have a surprise for you ."}
+{"idx": 918, "ref": "sha1:c1f5182f92d052518b8531a84147489fbd72d227", "hyp_beam": "what are you doing up there ."}
+{"idx": 919, "ref": "sha1:3b4e9cdccf03ad5cc92375e11a3415d79a88c63e", "hyp_beam": "that is a good idea possum ."}
+{"idx": 920, "ref": "sha1:f727b05af0460c4b8a9b08e7e89e183d7aaf9b11", "hyp_beam": "sally look at all the food ."}
+{"idx": 921, "ref": "sha1:077b38ad834ad41be1bb38b2118b60f38163cca0", "hyp_beam": "that is a good idea possum ."}
+{"idx": 922, "ref": "sha1:e43d12df61c842a138908bc9dcee60177aa162aa", "hyp_beam": "well why do not we make our own butter in here ."}
+{"idx": 923, "ref": "sha1:5082da5fccc5b4c304f6d536cc72eec813b22508", "hyp_beam": "can you get the butter from the fridge ."}
+{"idx": 924, "ref": "sha1:bd8899f57535c9f1b40e4d49893fee261930dd7b", "hyp_beam": "why do not we go outside and get the things out of the box ."}
+{"idx": 925, "ref": "sha1:628cab56e70e414bfa4fb8182bae5ea7f990079b", "hyp_beam": "no possum ."}
+{"idx": 926, "ref": "sha1:cad3498ee50f9e33e3f766cd5f86cdce2ab6c0f8", "hyp_beam": "yeah come on ."}
+{"idx": 927, "ref": "sha1:df17156504ae2950dd2f220bb81ba62454521ddc", "hyp_beam": "i know ."}
+{"idx": 928, "ref": "sha1:01bca600e7995a67a97402c84da0fd3aef9295e9", "hyp_beam": "i need to give you a few more ."}
+{"idx": 929, "ref": "sha1:2afc1417d16ae39adc92a202f5df8a321d7bb715", "hyp_beam": "yes that is right ."}
+{"idx": 930, "ref": "sha1:0a167c448461de76ca94da763528c1ff30c58895", "hyp_beam": "yes that is right ."}
+{"idx": 931, "ref": "sha1:d30ab11b9695d0dee227635853dd0d5f22d3992b", "hyp_beam": "i wonder what it is ."}
+{"idx": 932, "ref": "sha1:944220a7566bf1f1ec6e34622950c78aff955e76", "hyp_beam": "yes it is fun to sit on it but it is not going to be hot ."}
+{"idx": 933, "ref": "sha1:fe27052db831d0a6131e3dae8e2cf9f8a3e7044a", "hyp_beam": "look sally this one is hard ."}
+{"idx": 934, "ref": "sha1:aeb6dc78c5243542f78aaac6ee7ae8725357713f", "hyp_beam": "yes ."}
+{"idx": 935, "ref": "sha1:d022427f295d88ac8a9dc05e4dafca630ff6db2d", "hyp_beam": "it is a very special thing to do ."}
+{"idx": 936, "ref": "sha1:a10d401b8d9d77af1d612a0e893c9dfc4b14949b", "hyp_beam": "yes ."}
+{"idx": 937, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "that looks great ."}
+{"idx": 938, "ref": "sha1:dfc2450327b3b1a33c24023637e9646ff304bde3", "hyp_beam": "that is a great way to see possum ."}
+{"idx": 939, "ref": "sha1:5ff0a60bd419b96fcb1f32cc5612727f3bd06990", "hyp_beam": "why do not we put them in the kitchen ."}
+{"idx": 940, "ref": "sha1:b2f1fa1f9fa38610b6f0f6ac04502027eaaba26f", "hyp_beam": "can you help me please ."}
+{"idx": 941, "ref": "sha1:1a5c09037447f4fdaf3e056cef3ca624c377e84e", "hyp_beam": "that is the instructions possum ."}
+{"idx": 942, "ref": "sha1:74ba4c40398ab4794756e1c1798ccfb29ba2a7b8", "hyp_beam": "possum why do not we go and make some different colors ."}
+{"idx": 943, "ref": "sha1:edf894b00468f5dd0640ac1875acbdc07c424942", "hyp_beam": "we are going to paint something that is going to make ."}
+{"idx": 944, "ref": "sha1:82e4fe50913ac4419d335fe16dd04b011c08670c", "hyp_beam": "it is a bit small but it does not matter ."}
+{"idx": 945, "ref": "sha1:eaf59efe312f46fd8b3da6387e2cab2f5ec5b6c4", "hyp_beam": "we need to make a pattern ."}
+{"idx": 946, "ref": "sha1:f44a795a3143e3938b22b0d7151c202bced4cd1a", "hyp_beam": "great now can you please get the recipe out ."}
+{"idx": 947, "ref": "sha1:77e39b924a6c1e84616ab701556f58f0eff2dd83", "hyp_beam": "can you do that please ."}
+{"idx": 948, "ref": "sha1:c2614246eef7ad90b257eba84e9c2dcd94bc9913", "hyp_beam": "it is a bit different though is not it ."}
+{"idx": 949, "ref": "sha1:5d2c7d4f3bffb1a239c7804778dca699d269d28f", "hyp_beam": "that is good but we are going to be able to make a different colors ."}
+{"idx": 950, "ref": "sha1:d89281115fe6f58e86805d206eb0350b75c7b54a", "hyp_beam": "great ."}
+{"idx": 951, "ref": "sha1:16c3940957a51fb12d4f7a484a8357a8d88739ec", "hyp_beam": "that is great ."}
+{"idx": 952, "ref": "sha1:0e0f71fce1a10267d82420ae2ac407fdc949a83b", "hyp_beam": "now we need to make a paper plane ."}
+{"idx": 953, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "good ."}
+{"idx": 954, "ref": "sha1:68809546ce1902d6ae0245678c557bbdf30667dd", "hyp_beam": "i think i need to water them ."}
+{"idx": 955, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "one two ."}
+{"idx": 956, "ref": "sha1:d662fb9c856cdbd728b15bbc091b1fff4ae07c91", "hyp_beam": "one two three four five ."}
+{"idx": 957, "ref": "sha1:5b61e544c03e6eb7670140894c0720f4e952bdad", "hyp_beam": "how did you do that ."}
+{"idx": 958, "ref": "sha1:6f17f1fbe54aaf68cdf2807b728260f76d9de94c", "hyp_beam": "that is great ."}
+{"idx": 959, "ref": "sha1:810250e050a8faa54929ff0519307c049919c39c", "hyp_beam": "sally i am going to go through the tree ."}
+{"idx": 960, "ref": "sha1:1e8b5c04a0b57c60d72d1ef77e73eb40d83595db", "hyp_beam": "i have made this ."}
+{"idx": 961, "ref": "sha1:c5f28b01add555d1b7bdfb38b5c5c0834d87eac3", "hyp_beam": "i know ."}
+{"idx": 962, "ref": "sha1:e288de5ee1a948a247e75e5427d3021848a0da95", "hyp_beam": "i am going to go outside and ask him ."}
+{"idx": 963, "ref": "sha1:1e752ebc2d1dd58a4749362e18e19703b2b26655", "hyp_beam": "why do not we go outside and have a look ."}
+{"idx": 964, "ref": "sha1:e75daf10ce901d667faadea300b9472ab0fd8e8a", "hyp_beam": "it is a very big tree ."}
+{"idx": 965, "ref": "sha1:405fa86141b7b294d4029d7b10e854f4ad414cfb", "hyp_beam": "yes that is good ."}
+{"idx": 966, "ref": "sha1:08ce843c2f02ef0df8d79d6a424b19c5dec7a241", "hyp_beam": "thank you so much for teaching me how to make a cup of tea ."}
+{"idx": 967, "ref": "sha1:fc04ad199459744ef7b6ce2d12d9b932931c5ed7", "hyp_beam": "yes that is right possum ."}
+{"idx": 968, "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "hyp_beam": "well our time is up ."}
+{"idx": 969, "ref": "sha1:b49d27b6673825e0e96a0ef06b599d057dcf7df8", "hyp_beam": "thanks for watching ."}
+{"idx": 970, "ref": "sha1:fa4b7793efc846eed9b55f855ce2d97c2fca47a7", "hyp_beam": "see you next time ."}
+{"idx": 971, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "bye ."}
+{"idx": 972, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "bye ."}
+{"idx": 973, "ref": "sha1:be8b42f0b1a163ec507ee53470f3d76d0abf04c2", "hyp_beam": "hello everyone it is such a beautiful day ."}
+{"idx": 974, "ref": "sha1:82f85a5dd67c7936d3c461b6f1a6d087e9ac1b13", "hyp_beam": "well this is going to have a nice cold drink of water in it ."}
+{"idx": 975, "ref": "sha1:e3d74283da22d0e7d87fe15355346c4a8582d396", "hyp_beam": "no possum ."}
+{"idx": 976, "ref": "sha1:20f291b4f37ddf3c032f325a792ad94ec1afaa6c", "hyp_beam": "yes please ."}
+{"idx": 977, "ref": "sha1:d027dc0b0e228673da8297155c79664561933195", "hyp_beam": "yeah let us watch ."}
+{"idx": 978, "ref": "sha1:cef9405048a1eed5e2d70d1846f2ef159fe905fb", "hyp_beam": "that was great ."}
+{"idx": 979, "ref": "sha1:4435215543f5b69825cab6e2e137550075855e63", "hyp_beam": "yeah that was great ."}
+{"idx": 980, "ref": "sha1:cd908b2b698402a5eb56159ac7a3971e8ae7540f", "hyp_beam": "that is lovely ."}
+{"idx": 981, "ref": "sha1:fdbb992fe5de13f727539b218aa3f225702cedc6", "hyp_beam": "yes that is right ."}
+{"idx": 982, "ref": "sha1:7ef7041c7b11299514ba161326423f06bb350731", "hyp_beam": "i think i know ."}
+{"idx": 983, "ref": "sha1:c5d8a18e088f486b3c5a1bce068b7ece57a6f0ec", "hyp_beam": "that is right and we are going to have a look after that ."}
+{"idx": 984, "ref": "sha1:c725c810ea8d1fa4a0c44d9e93fca31cc37d5874", "hyp_beam": "no there are no food that does not matter ."}
+{"idx": 985, "ref": "sha1:cc6054be8a8457c710a55d854282b3c195c87e4f", "hyp_beam": "yes ."}
+{"idx": 986, "ref": "sha1:55da353cf5eb88f21214ad9a8721fafb79f5a7db", "hyp_beam": "i can see the moon but there is no one more thing ."}
+{"idx": 987, "ref": "sha1:f6a50cb13daeaa7b2cb619ef6ab1eb5639effcec", "hyp_beam": "it is such a beautiful day ."}
+{"idx": 988, "ref": "sha1:67f4a9e4dffca14cc1a12bd5925035594e8763aa", "hyp_beam": "why do not we watch some children learning about what to do ."}
+{"idx": 989, "ref": "sha1:481e97b398c602b438e6a16fb6db839755640ae8", "hyp_beam": "one two three ."}
+{"idx": 990, "ref": "sha1:ff7c81d4fe1f80c1e16e316783ae8dfd296c5e45", "hyp_beam": "that is nice of you possum that looks lovely ."}
+{"idx": 991, "ref": "sha1:f6f5310a665c862c8418cdf7aa87acbb08e7749c", "hyp_beam": "that looks lovely ."}
+{"idx": 992, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 993, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 994, "ref": "sha1:3967146e05036825a653344613261a93917eda90", "hyp_beam": "i am sally ."}
+{"idx": 995, "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f", "hyp_beam": "i am possum ."}
+{"idx": 996, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 997, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 998, "ref": "sha1:c5db88768664d2a35ee12a26cd3c463b541b11c4", "hyp_beam": "bye ."}
+{"idx": 999, "ref": "sha1:727a93869600ce7a284f51af9e4d28b9a739ebff", "hyp_beam": "you are different ."}
+{"idx": 1000, "ref": "sha1:b9fc7f90aa55a220af4b41c4251db11a06a73664", "hyp_beam": "i can remember when i went up to bed ."}
+{"idx": 1001, "ref": "sha1:b468b75f1e513ad6652366022cb06f2871554220", "hyp_beam": "ok ."}
+{"idx": 1002, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hi possum ."}
+{"idx": 1003, "ref": "sha1:985778992491cf2403eedbf2af6ccf33e009f908", "hyp_beam": "hi everyone ."}
+{"idx": 1004, "ref": "sha1:2b2bb77de69ef4a0024c5c4d6cf666eb9e8bafbd", "hyp_beam": "that is great ."}
+{"idx": 1005, "ref": "sha1:2d8fce89ccf3aa73627133f3f10fe29f0a061a4f", "hyp_beam": "yes it is beautiful ."}
+{"idx": 1006, "ref": "sha1:eb23efe26e98c6409c1062af76190c89f2571b09", "hyp_beam": "i am going to have a look from my tree house ."}
+{"idx": 1007, "ref": "sha1:5541545f2e94b138ae1b756ac9b17e42b37ccb2a", "hyp_beam": "i will make a bed after sally ."}
+{"idx": 1008, "ref": "sha1:9b56a7d1438f718dd1b9665488d1474297794d08", "hyp_beam": "i have got lots of things to do in there ."}
+{"idx": 1009, "ref": "sha1:f51118e6b971d5ff2c6d9b800f44e6503fe99d80", "hyp_beam": "ok let us go ."}
+{"idx": 1010, "ref": "sha1:996cb8f993a29e1d411051f30379901413cdc9dc", "hyp_beam": "before we do that why do not we do that ."}
+{"idx": 1011, "ref": "sha1:bbaaf07dd16f92d86a201800b672e2f769e732eb", "hyp_beam": "i am going to have a look at my tree ."}
+{"idx": 1012, "ref": "sha1:25a3a3436eb42697705404ae7b91b6d3e3683dcb", "hyp_beam": "i do not know why do not we watch some children learning about them ."}
+{"idx": 1013, "ref": "sha1:f17e397e59f5ce0313e54b53e2e026f90a05bdb2", "hyp_beam": "now i am ready to go outside and see skip ."}
+{"idx": 1014, "ref": "sha1:5adebf86f5ea1ce716b45e446e73479be0cff27b", "hyp_beam": "would you like to come inside ."}
+{"idx": 1015, "ref": "sha1:93bc5b40ab735789531fa921eaa6a92de6a5df2e", "hyp_beam": "thank you sally ."}
+{"idx": 1016, "ref": "sha1:b19a0626ae5ddb81c00f08c3321f2db7c1129136", "hyp_beam": "why do not we make a treasure hunt ."}
+{"idx": 1017, "ref": "sha1:21d894e90657f600424a0be7c30e57b865b635b0", "hyp_beam": "possum is here ."}
+{"idx": 1018, "ref": "sha1:2dcdbed43215cd042e55a9701ee6ec9742a4a8de", "hyp_beam": "why do not we watch some children and see what they do ."}
+{"idx": 1019, "ref": "sha1:47e9bc906ab29ce5d915206a15b5ac64ece51aa4", "hyp_beam": "but there is something that we can use ."}
+{"idx": 1020, "ref": "sha1:fe715642d206e98a8eae4bcaa15571e2ae84e285", "hyp_beam": "it is a bit wet but it is not going to be hot ."}
+{"idx": 1021, "ref": "sha1:cff94079379e29e383e819a3a71399bbee4cd099", "hyp_beam": "why do not you and i draw a picture of it ."}
+{"idx": 1022, "ref": "sha1:ec992dc02296ee7c18365c1ed383757c3d00656a", "hyp_beam": "why do not we go inside and have a look ."}
+{"idx": 1023, "ref": "sha1:0c02ff247d2908eb9a120fd00598aa3c6a092bce", "hyp_beam": "great ."}
+{"idx": 1024, "ref": "sha1:b9724cdfa07beab37da3ba753983501a75ee47c5", "hyp_beam": "that is lovely ."}
+{"idx": 1025, "ref": "sha1:57a4beefdbe5d3f9e07e1d88202a16570f6651af", "hyp_beam": "it is great ."}
+{"idx": 1026, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "that is great ."}
+{"idx": 1027, "ref": "sha1:cd4a5bff6cf8198ed72a0835dc1745e0811d228d", "hyp_beam": "yes it is sharp ."}
+{"idx": 1028, "ref": "sha1:39db36539e920535e44414e7f1785035abebe65f", "hyp_beam": "we need to fold it into there ."}
+{"idx": 1029, "ref": "sha1:8963300fa7eb70c731179df02b12ca26acfd8761", "hyp_beam": "these are called recycling ."}
+{"idx": 1030, "ref": "sha1:e0b09964c632742f3f73294faadc24edeef140bc", "hyp_beam": "well i know you love learning about words ."}
+{"idx": 1031, "ref": "sha1:8f5b260d8179c8fb4dc37385b8690c5fa138918e", "hyp_beam": "there is some instructions on how to make it ."}
+{"idx": 1032, "ref": "sha1:33a4fea7dfb962ddb31064b069e4135fcc671db5", "hyp_beam": "i really enjoyed myself ."}
+{"idx": 1033, "ref": "sha1:8422d43ff788c99b0d6a6c4ed72dcfd337d32697", "hyp_beam": "i am going to go inside and make a salad too ."}
+{"idx": 1034, "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796", "hyp_beam": "that is great ."}
+{"idx": 1035, "ref": "sha1:bb3edbab3b3419284d301730e6220a4ec48307eb", "hyp_beam": "what else is in there ."}
+{"idx": 1036, "ref": "sha1:cde16f71f4c2a3b3077fbf1abbe8661495d8de99", "hyp_beam": "i know there is something very important outside in your tree ."}
+{"idx": 1037, "ref": "sha1:3ac513f72cbb05b45cd4675fca8e5bf888ce511f", "hyp_beam": "that was a great idea possum ."}
+{"idx": 1038, "ref": "sha1:8b0ee83c4b36bf41fda80aa1b9e78db3e55cb993", "hyp_beam": "they are called crutches ."}
+{"idx": 1039, "ref": "sha1:a7c248c979ab950f3e4162427cdb554f16d817c3", "hyp_beam": "sally i am going to go up to the top of my tree ."}
+{"idx": 1040, "ref": "sha1:f8c239fb60c357df6d952ce97e85c299df45d23b", "hyp_beam": "i do not think i can have a look at my tree ."}
+{"idx": 1041, "ref": "sha1:4bd2379e175678450a981dd56806ac4be899485f", "hyp_beam": "it is a bit different though is not it ."}
+{"idx": 1042, "ref": "sha1:a02ae668702d9db26275ceae656b8560c81beaa5", "hyp_beam": "well our time is up ."}
+{"idx": 1043, "ref": "sha1:b3dafe96d2f56b34883ebf122e8e941a13cb8ec8", "hyp_beam": "i think i need to get something out of my tree ."}
+{"idx": 1044, "ref": "sha1:64186aea0e320a5ee2d14b7cf7dc136c325e331a", "hyp_beam": "yes it is cold ."}
+{"idx": 1045, "ref": "sha1:96204f9d9af7ead46ca2ac0d875129f8bc4ad736", "hyp_beam": "that is right possum ."}
+{"idx": 1046, "ref": "sha1:ac60e636d19e62187a724e76b8777e9bcda01474", "hyp_beam": "can you please get the recipe out of the box ."}
+{"idx": 1047, "ref": "sha1:a5cbbac23d539990990f6f092fe1235eadbbca5b", "hyp_beam": "the bike has been there for a break ."}
+{"idx": 1048, "ref": "sha1:285261001292a20555ea767eab6be82bd06624e7", "hyp_beam": "well i am going to have a look at my tree ."}
+{"idx": 1049, "ref": "sha1:0973d219fb1b22aae6480be4cc9910c1ac685c55", "hyp_beam": "yes that is right ."}
+{"idx": 1050, "ref": "sha1:eec3e8eabf9f9585039dc0fefc991cc402ffc2d1", "hyp_beam": "it is a bit too big is not it ."}
+{"idx": 1051, "ref": "sha1:868a3cda1b2117b956568ccb2a1e6161cb975af8", "hyp_beam": "it is hard ."}
+{"idx": 1052, "ref": "sha1:4b56aeeda439be6fd710c16137108ee9c3f668f4", "hyp_beam": "look it is like a triangle ."}
+{"idx": 1053, "ref": "sha1:d147d2a2b2266582fff89db1b88795566192ef50", "hyp_beam": "no ."}
+{"idx": 1054, "ref": "sha1:71030db53284ae4e21f40c7a17565680ee33c8da", "hyp_beam": "i wonder what it is ."}
+{"idx": 1055, "ref": "sha1:df7e0708a7403341430eb642331cd8199166807a", "hyp_beam": "i wonder what it is ."}
+{"idx": 1056, "ref": "sha1:3fbb81cb3bc9e57a940980a596e2312836e6af11", "hyp_beam": "i wonder what it is ."}
+{"idx": 1057, "ref": "sha1:35c62e5984a2feb6f6a685e5234b423e328aa4e2", "hyp_beam": "we need to fold it in ."}
+{"idx": 1058, "ref": "sha1:f59b23135779ff92a6ac05f7b99ffd874e0d98a5", "hyp_beam": "i wonder what it is ."}
+{"idx": 1059, "ref": "sha1:40dbbe769df9fb6f30f1a56e358fc6606678fb39", "hyp_beam": "why do not we watch some children making things out of wood ."}
+{"idx": 1060, "ref": "sha1:f58a88c14d7dce804a91909c9889fedc31d32149", "hyp_beam": "i wonder what possum is up to ."}
+{"idx": 1061, "ref": "sha1:62083c201892aab78b14cd24accd2ff40dcceccc", "hyp_beam": "i wonder what it is ."}
+{"idx": 1062, "ref": "sha1:05df881834555c91ad5477469083c9cbe9c942bc", "hyp_beam": "it is amazing ."}
+{"idx": 1063, "ref": "sha1:96cfa481e5dcd8cba9f883b01762239ab1844ff2", "hyp_beam": "one two three four five six ."}
+{"idx": 1064, "ref": "sha1:140744500b8d886070be10ff21382ae9f3ab956b", "hyp_beam": "that is great ."}
+{"idx": 1065, "ref": "sha1:964bdd463023cf81f670cfd775cfda076a993b88", "hyp_beam": "that is beautiful ."}
+{"idx": 1066, "ref": "sha1:4437f14f37bf0797d14ea47de19ed8a38c99ecfb", "hyp_beam": "yes ."}
+{"idx": 1067, "ref": "sha1:3bfa49e701719f415d2a66cf2bf157e90e14f9ba", "hyp_beam": "sally what is next ."}
+{"idx": 1068, "ref": "sha1:0f59749b13bf62b418b015d40ea72a47d2634320", "hyp_beam": "it is a very special thing for you ."}
+{"idx": 1069, "ref": "sha1:c15952df1c5053e1bacb3e90558849aa1c79233a", "hyp_beam": "now we need to add a bit of water ."}
+{"idx": 1070, "ref": "sha1:550255d092d89a71b5e70c4592b16dfffff8933e", "hyp_beam": "you can see all sorts of different shapes can not you ."}
+{"idx": 1071, "ref": "sha1:d6e4c0b1c20b38063dbe3cd44e705982ad2dbb2f", "hyp_beam": "now we need to plant some of them in the basket ."}
+{"idx": 1072, "ref": "sha1:ff4b3e0619a8814b32c45bab8134926aefd4e9cf", "hyp_beam": "you have got so many of them ."}
+{"idx": 1073, "ref": "sha1:14132c9931ff45ca5c225c0966289066d19bfc63", "hyp_beam": "it is the right tool for the job to find it ."}
+{"idx": 1074, "ref": "sha1:22226cef9f73f0223f080ef003ebe1e207c92507", "hyp_beam": "sally can we make a paper ball ."}
+{"idx": 1075, "ref": "sha1:6b5acae54747de05270828ed4cee01ca0a86802d", "hyp_beam": "hang on ."}
+{"idx": 1076, "ref": "sha1:3764302477a300e00e47ac3ec191a5b2807ec375", "hyp_beam": "hello everyone ."}
+{"idx": 1077, "ref": "sha1:eaf171f6a472a85225decd038e1ecc1acfea75e5", "hyp_beam": "well there is a instructions that how to do that in the drawer ."}
+{"idx": 1078, "ref": "sha1:a9d10eb19f95f17591d61d1b448bad32ae3f373f", "hyp_beam": "look at all the different shapes that have made ."}
+{"idx": 1079, "ref": "sha1:d64450c6570075415f5d1fab825eeb3fe55f9415", "hyp_beam": "it is like when you have done a great job possum ."}
+{"idx": 1080, "ref": "sha1:3977d61c22cbc560ae95aa7f0f59b75feaa25825", "hyp_beam": "that looks great ."}
+{"idx": 1081, "ref": "sha1:a2f915dcfa81731056f3ae426cfdda5e49edfc04", "hyp_beam": "let us make something for you ."}
+{"idx": 1082, "ref": "sha1:45fa2e0df1f193dcc2396f82bef98bec79f781be", "hyp_beam": "i wonder what it is ."}
+{"idx": 1083, "ref": "sha1:0012e661a91c7e5f7c1b268a6d4a3514a31e743a", "hyp_beam": "i want to make different things out of the garden ."}
+{"idx": 1084, "ref": "sha1:f39cbf8fda6d5ce33254f34ba41a65192bb21303", "hyp_beam": "great there is all sorts of different things that i can make ."}
+{"idx": 1085, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "yes ."}
+{"idx": 1086, "ref": "sha1:2cac0a22cc93bbc1e389c242210572365fa4e23f", "hyp_beam": "why do not we go and have a look ."}
+{"idx": 1087, "ref": "sha1:f37bab0c841ec264325a0ba73c3fc5d8b3fa7e4d", "hyp_beam": "can you get the recipe out of the box ."}
+{"idx": 1088, "ref": "sha1:8ae846d0ad52b8e4d4588143d0be6ad57279e694", "hyp_beam": "sally i think it is time now ."}
+{"idx": 1089, "ref": "sha1:1ea8c40f1558007fd76c4509ca63215509f2d311", "hyp_beam": "do you remember when i went up to the top of my tree ."}
+{"idx": 1090, "ref": "sha1:1195262973d98bc4b83ea5aedec35652a8a2e892", "hyp_beam": "no ."}
+{"idx": 1091, "ref": "sha1:e472a827d74837868070df32570b91637d6610e5", "hyp_beam": "look at all the different colors ."}
+{"idx": 1092, "ref": "sha1:b8aa05c03a19a690ea6507883eb1d2d038e13be2", "hyp_beam": "i wonder what it is ."}
+{"idx": 1093, "ref": "sha1:5a1e3bd47aadf5f6f1ea6da58020c2db54fadba7", "hyp_beam": "let us have a look ."}
+{"idx": 1094, "ref": "sha1:33fb707be218dc1f5676de90fa5d3ba55164030b", "hyp_beam": "that looks lovely ."}
+{"idx": 1095, "ref": "sha1:a816ae1573f2fcc03efc90e1ac3400ba382656aa", "hyp_beam": "yeah let us watch ."}
+{"idx": 1096, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "that is great ."}
+{"idx": 1097, "ref": "sha1:e430f978128a6192c5e7147d9e6e900f8eae2c67", "hyp_beam": "why do not we go outside and draw a picture of the map ."}
+{"idx": 1098, "ref": "sha1:6458af1286fe8c622fafffc4225f912bb2c6ba0b", "hyp_beam": "great ."}
+{"idx": 1099, "ref": "sha1:3fa66a09f9d8f055bfdb9422c4c5112f14c8cd67", "hyp_beam": "i will show you how to do it ."}
+{"idx": 1100, "ref": "sha1:71a529a3b1c91711225a33cd0ca8a6be01974eb3", "hyp_beam": "that is great ."}
+{"idx": 1101, "ref": "sha1:69d0273c069ec465777428ce2e8ea8c11030f7f6", "hyp_beam": "i wonder what it is up there ."}
+{"idx": 1102, "ref": "sha1:0992d5ce9a63c1bbd3d89a0844992e3db68afc9f", "hyp_beam": "i know ."}
+{"idx": 1103, "ref": "sha1:c86cae523df8c5a2c1058a661235fbc308567a7d", "hyp_beam": "possum thank you possum ."}
+{"idx": 1104, "ref": "sha1:b4d72c00a278bbe870980439a5daf32f2aa91215", "hyp_beam": "i am going to need a cup of flour ."}
+{"idx": 1105, "ref": "sha1:72d64216d412d5aefa98c16f2e9069dc3e0c84d3", "hyp_beam": "yeah let us watch ."}
+{"idx": 1106, "ref": "sha1:34cf53353967b5584ddbdc26fa78eaf60b688aca", "hyp_beam": "that is great ."}
+{"idx": 1107, "ref": "sha1:609d0102622d7f7cf49a58a7b904cff266c61417", "hyp_beam": "that is great sally it is so much fun is not it ."}
+{"idx": 1108, "ref": "sha1:59c7bf019225dd1920e9cdea1b7857eee4215c99", "hyp_beam": "that is right possum ."}
+{"idx": 1109, "ref": "sha1:fcc9aa2ebe89e4171273169d5480c24436affc95", "hyp_beam": "i will show you ."}
+{"idx": 1110, "ref": "sha1:9c8d843fe4db424cd608c3d7f609ddaa36a9777f", "hyp_beam": "yes that is beautiful ."}
+{"idx": 1111, "ref": "sha1:c5356048a065ae2d7184e5d36aa443b87389c1f9", "hyp_beam": "well our time is up ."}
+{"idx": 1112, "ref": "sha1:96e0026b92242c19185e8296b8a9aceaf09718f0", "hyp_beam": "would you like to try possum ."}
+{"idx": 1113, "ref": "sha1:dfa7a0b93bfdbf9f1502f2872d67f5d1c27986ae", "hyp_beam": "now we are going to need to wash my hands ."}
+{"idx": 1114, "ref": "sha1:3931c0435d7c2db3853a81a0d240ab026021f038", "hyp_beam": "now we need to get the recipe out of the cupboard ."}
+{"idx": 1115, "ref": "sha1:3e07425efa6f3acdd4a22a72ae55a02853bd7579", "hyp_beam": "one two three four five six seven eight nine oclock ."}
+{"idx": 1116, "ref": "sha1:3312f7021dce188e79aa706c681cf3e6efb6b77a", "hyp_beam": "look at all the bright colors ."}
+{"idx": 1117, "ref": "sha1:30e68dc55b922757af4253f36e4fc5a8457d7ca7", "hyp_beam": "that was so much fun sally ."}
+{"idx": 1118, "ref": "sha1:d499a37451b9d1a3c64495d537fceb342b767f30", "hyp_beam": "sally can we make one more ."}
+{"idx": 1119, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "it is all sticky ."}
+{"idx": 1120, "ref": "sha1:589505bddf6ab7472fdb831f13dac2f80cbef653", "hyp_beam": "yes we can make something out of them ."}
+{"idx": 1121, "ref": "sha1:79548ffb7958ab0ddb3c2190be572fb1879f905b", "hyp_beam": "i am going to go outside and make a salad too ."}
+{"idx": 1122, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "that is great ."}
+{"idx": 1123, "ref": "sha1:b0e9b4b07176e70efd4debee695d8420f8f8b84e", "hyp_beam": "sally why do not we go outside and have a look ."}
+{"idx": 1124, "ref": "sha1:0326206358148ab816d2efc3a3e35d1f1753f008", "hyp_beam": "no i am first ."}
+{"idx": 1125, "ref": "sha1:7e96e206e484da7a27422e1b17f3c09100040862", "hyp_beam": "before we do that why do not we watch some children ."}
+{"idx": 1126, "ref": "sha1:b16479bcfff697a79550e8820a96d52cdb1340ef", "hyp_beam": "i am going to show you how to make it ."}
+{"idx": 1127, "ref": "sha1:3921be77b446341c2a912d9ca32fb37180001af3", "hyp_beam": "now we know how to make our bread ."}
+{"idx": 1128, "ref": "sha1:64a9d379a7e94a2c0f02f1ff6eefd8cba463dbdc", "hyp_beam": "well i think i need to go up to the top of my tree and get some paper and look at the top of my tree ."}
+{"idx": 1129, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "that is great ."}
+{"idx": 1130, "ref": "sha1:38f40c034f4b275f6b7c20f6912883528ce4256d", "hyp_beam": "sally can i make something special with you ."}
+{"idx": 1131, "ref": "sha1:e3db36dd17a112d58756837275bcd4167be93412", "hyp_beam": "that is lovely ."}
+{"idx": 1132, "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "hyp_beam": "well our time is up ."}
+{"idx": 1133, "ref": "sha1:b49d27b6673825e0e96a0ef06b599d057dcf7df8", "hyp_beam": "thanks for watching ."}
+{"idx": 1134, "ref": "sha1:fa4b7793efc846eed9b55f855ce2d97c2fca47a7", "hyp_beam": "see you next time ."}
+{"idx": 1135, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "bye ."}
+{"idx": 1136, "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57", "hyp_beam": "bye ."}
+{"idx": 1137, "ref": "sha1:6a1bd4023cd11cb7a032f8f0b35cb1f87f0d9401", "hyp_beam": "right ."}
+{"idx": 1138, "ref": "sha1:e59b92a35be799f8f6a831f8ae853a5c28b9ec72", "hyp_beam": "it is a bit different ."}
+{"idx": 1139, "ref": "sha1:58795813d75176a564eded0bfbf198965eb09cd8", "hyp_beam": "that looks great ."}
+{"idx": 1140, "ref": "sha1:0351e42428319e6458b3f1612e739a17c8c4008b", "hyp_beam": "i know you love learning how to make it ."}
+{"idx": 1141, "ref": "sha1:3c0834afb98ba133b8286c3e62f02e59e978c7ac", "hyp_beam": "alright let us go ."}
+{"idx": 1142, "ref": "sha1:75def8b500196f06bf518b0671f31c4e0841ca2e", "hyp_beam": "now we just need to cut them down ."}
+{"idx": 1143, "ref": "sha1:9a40d3949ee7bd43fadf68409df45a19652ca9a5", "hyp_beam": "this one ."}
+{"idx": 1144, "ref": "sha1:bdd7ffaf30dbce83f612117305dd4224db2de851", "hyp_beam": "me too ."}
+{"idx": 1145, "ref": "sha1:eb9724cc62a8a4c81dfda0524520e51049b710c6", "hyp_beam": "now we need to cut them out of the rubbish ."}
+{"idx": 1146, "ref": "sha1:1814d101b89c4c7a3fa0f6c32bd2099515144d7e", "hyp_beam": "that is great ."}
+{"idx": 1147, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 1148, "ref": "sha1:8d8d3322b812653875d9542cfc455f7e867d3f27", "hyp_beam": "that is right ."}
+{"idx": 1149, "ref": "sha1:1b8634af1684435ea09143da1861240105381e15", "hyp_beam": "possum what are you doing with your tree ."}
+{"idx": 1150, "ref": "sha1:d662fb9c856cdbd728b15bbc091b1fff4ae07c91", "hyp_beam": "one two three ."}
+{"idx": 1151, "ref": "sha1:04c6c14aaee2d20ff7c6d37877093a430510f3dd", "hyp_beam": "now can you see that ."}
+{"idx": 1152, "ref": "sha1:fa45f83ad6f64b59e92eb3918b0516338f7849e2", "hyp_beam": "yes that is right ."}
+{"idx": 1153, "ref": "sha1:40275cac67334028bde6964281e4a9be1add09f8", "hyp_beam": "bye ."}
+{"idx": 1154, "ref": "sha1:841f86b894d7de933ce27dd4f4af90255765f0c2", "hyp_beam": "that is right ."}
+{"idx": 1155, "ref": "sha1:eed78d99a5945e07cda2163b72bb6157d1a2ab93", "hyp_beam": "can you do that please ."}
+{"idx": 1156, "ref": "sha1:9a27c837f01d9836d0c95b11bb2eaccdb3a0a498", "hyp_beam": "i can do it sally ."}
+{"idx": 1157, "ref": "sha1:77dc52dc623e60b6f4e1e07b8fdfcdc7e663f807", "hyp_beam": "that is right possum ."}
+{"idx": 1158, "ref": "sha1:887f0ea81b53d920e81bd60381eb3b64b741d253", "hyp_beam": "yes i am ready to make sure it is ready ."}
+{"idx": 1159, "ref": "sha1:6dd580f13d8c89c8ed153852462e82e22d083e3a", "hyp_beam": "yes that is right possum ."}
+{"idx": 1160, "ref": "sha1:7cfedaa9aeac181167e74c820f0e6a751525baf2", "hyp_beam": "that is great ."}
+{"idx": 1161, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 1162, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 1163, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 1164, "ref": "sha1:3967146e05036825a653344613261a93917eda90", "hyp_beam": "i am sally ."}
+{"idx": 1165, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 1166, "ref": "sha1:c5db88768664d2a35ee12a26cd3c463b541b11c4", "hyp_beam": "hello ."}
+{"idx": 1167, "ref": "sha1:2322003da9c4252f2ad18690912838182e741524", "hyp_beam": "it is such a beautiful day today ."}
+{"idx": 1168, "ref": "sha1:142b57ce9ae7fb6e49be3f8ffd96dce31bb1aca6", "hyp_beam": "the sun is shining ."}
+{"idx": 1169, "ref": "sha1:21de41ab7b36c51260cd9f15ca3f23f122bb352f", "hyp_beam": "i am going to learn more about trains ."}
+{"idx": 1170, "ref": "sha1:2bcd43d341e4478175629b91363c0e85289ec5e4", "hyp_beam": "good morning possum ."}
+{"idx": 1171, "ref": "sha1:7fa541588c3c40e246aa3393149e4273ab62c1f0", "hyp_beam": "it is a bit too long is not it ."}
+{"idx": 1172, "ref": "sha1:0e7af66dd27808db0bd9209413cbe7c6e730eb97", "hyp_beam": "it is a very big pile of leaves ."}
+{"idx": 1173, "ref": "sha1:544d729ec85ebd0999a573b472a3a1618ff88c40", "hyp_beam": "it is such a beautiful day ."}
+{"idx": 1174, "ref": "sha1:281469e9d19cbe354e1bf9bcc867f4c1d1e0ff2c", "hyp_beam": "well there is something that we can use ."}
+{"idx": 1175, "ref": "sha1:a33d3b01d58e496c83b348cde18a9cc93536923b", "hyp_beam": "i am gonna go and see if he is asleep ."}
+{"idx": 1176, "ref": "sha1:a76617b156a8e0c37088e9eadf5ab03aaf42008b", "hyp_beam": "possum what is this for ."}
+{"idx": 1177, "ref": "sha1:ccc5652ccd4827f34347199d46844a1935348df4", "hyp_beam": "sally you are so tall ."}
+{"idx": 1178, "ref": "sha1:e0f3f0ba1381b68184e65932a2e0e0a7c589c28d", "hyp_beam": "yes it is nice and smooth ."}
+{"idx": 1179, "ref": "sha1:ad2b1760ca69d6ae90ac21480c96bbbfbfd11841", "hyp_beam": "sally i am so strong ."}
+{"idx": 1180, "ref": "sha1:70b73512ec8a1bea58b85ca4b1eebb3be13d81ce", "hyp_beam": "no not yet ."}
+{"idx": 1181, "ref": "sha1:9c36593ce88c4cfc24815ba7056df437aa116561", "hyp_beam": "i will show you how to do it ."}
+{"idx": 1182, "ref": "sha1:8ae4f5fb7fe47ddddd362bd090e85b7961960d1d", "hyp_beam": "that is a great idea possum ."}
+{"idx": 1183, "ref": "sha1:11e0878a6455af70a1516af8ec64b78f2b0764c6", "hyp_beam": "i really do love your tree ."}
+{"idx": 1184, "ref": "sha1:afbdc3f1540e5e81af0f13fa2866127d18bb2bb8", "hyp_beam": "i have got some instructions on how to make it ."}
+{"idx": 1185, "ref": "sha1:e44bb8d9ef9fb471da2702b539310deef45d4d09", "hyp_beam": "what is it ."}
+{"idx": 1186, "ref": "sha1:dca8681f5f8df259cdf20b682320fe1d6c4af925", "hyp_beam": "but there is something wrong with all sorts of different things ."}
+{"idx": 1187, "ref": "sha1:a2f915dcfa81731056f3ae426cfdda5e49edfc04", "hyp_beam": "yeah let us watch ."}
+{"idx": 1188, "ref": "sha1:644d0703c3adfc6c6cb8d838af3f80138d789ecb", "hyp_beam": "why do not we watch the time travel to school and when the move ."}
+{"idx": 1189, "ref": "sha1:b10e7a00fabcd0b3033349091d7d029b13a894fc", "hyp_beam": "i love my cricket ball ."}
+{"idx": 1190, "ref": "sha1:28ab8d71ec6991d0630a9278cc61f26b696da31a", "hyp_beam": "there he is ."}
+{"idx": 1191, "ref": "sha1:0e24f081219456ce1e1eb88d8118920b2e026d73", "hyp_beam": "that looked like a lot of fun ."}
+{"idx": 1192, "ref": "sha1:838f59323eb1b67b7b6002c6bba731ebb287ac85", "hyp_beam": "would you like to do that ."}
+{"idx": 1193, "ref": "sha1:eeddfc0031cca052d3ed2d06167759b7891f4634", "hyp_beam": "sally what does that mean ."}
+{"idx": 1194, "ref": "sha1:7a4317f95bfb91e2007bd6d19b3226711f603b34", "hyp_beam": "when you take it out of the road you can eat it ."}
+{"idx": 1195, "ref": "sha1:b9aed117bff2e1eaed00c99bba517eb55560575d", "hyp_beam": "the police officers go to help them grow ."}
+{"idx": 1196, "ref": "sha1:eeaa40fd0008c740c598069cd084870e5f47c03b", "hyp_beam": "under the bench ."}
+{"idx": 1197, "ref": "sha1:162372bd2b66dfe0814fb05980bba24f3fbb4fac", "hyp_beam": "when you get to take it out and you can take it out of the rubbish ."}
+{"idx": 1198, "ref": "sha1:7a3fdabe0d1ea09b510ff00476f2807c2528f439", "hyp_beam": "sally i have learned so much about different things ."}
+{"idx": 1199, "ref": "sha1:fd357c3977a07c91684e8de7329512551137780d", "hyp_beam": "no possum ."}
+{"idx": 1200, "ref": "sha1:862b518e74f897d9ed1c3dfa5d7e3fa9932f795a", "hyp_beam": "it is a very important thing for us to do ."}
+{"idx": 1201, "ref": "sha1:6d9d941669107b95b8f3d4132141911537e70ae4", "hyp_beam": "can you please get the paper for me ."}
+{"idx": 1202, "ref": "sha1:5f83ccdec36bf8d92c8efabadb735af5b9004b2d", "hyp_beam": "yeah what do you want to make ."}
+{"idx": 1203, "ref": "sha1:7b713a297982a87d1568fc285a3dc5b67a31ed0d", "hyp_beam": "now we need to get the recipe and we can go inside ."}
+{"idx": 1204, "ref": "sha1:13fc4426ced840f2069dd74cc59190d852c95cf6", "hyp_beam": "sally what are we doing ."}
+{"idx": 1205, "ref": "sha1:b7d25d605b2331c6e2d95dcd2ec68c87041b2a3a", "hyp_beam": "thank you so much for teaching me how to make it ."}
+{"idx": 1206, "ref": "sha1:ca94f8aec2501f7bee73ded16d049449e67884ed", "hyp_beam": "hello possum ."}
+{"idx": 1207, "ref": "sha1:0f6e96a0d46a7d0e8785c0ce52effc12bc99d468", "hyp_beam": "great ."}
+{"idx": 1208, "ref": "sha1:73639722d54fd2d20fa60dff775bd307039c10b6", "hyp_beam": "i will get a few things from the garden ."}
+{"idx": 1209, "ref": "sha1:7e107fc79d2b1d039d81bd84e6da85f37f2282a7", "hyp_beam": "possum ."}
+{"idx": 1210, "ref": "sha1:b1dd349a5b248acd58523438020de3c44f283bc6", "hyp_beam": "there are other things that are going to do ."}
+{"idx": 1211, "ref": "sha1:c2bfe1d413a5ed804342b4b7be51a8026a21ea89", "hyp_beam": "i am going to go up to the top of my tree ."}
+{"idx": 1212, "ref": "sha1:cb50b7e7fd45a05ef5d1f773010f3d409dab46cb", "hyp_beam": "well our time is up and i will go up and get it ."}
+{"idx": 1213, "ref": "sha1:6ec6017bd2ff95b134edbae875b253e6f5363c9a", "hyp_beam": "you have done such a great job possum ."}
+{"idx": 1214, "ref": "sha1:618e113886fa80eca70451b591432f2089d24691", "hyp_beam": "i wonder who it is ."}
+{"idx": 1215, "ref": "sha1:257d2309394103dcfb66276b82906fc59c977e24", "hyp_beam": "i am going to keep this morning ."}
+{"idx": 1216, "ref": "sha1:2747de7b9729b8c93ac49458d2dbc45e23a29df5", "hyp_beam": "yes that is right ."}
+{"idx": 1217, "ref": "sha1:9250d28fc32f2d7dfbb34bf3386511e7095dc05c", "hyp_beam": "no possum does not like that too ."}
+{"idx": 1218, "ref": "sha1:5a881db51771c8b00e34d3fbee2ecf7b6755f917", "hyp_beam": "sally what are you doing ."}
+{"idx": 1219, "ref": "sha1:06cbf8f752540fb3b838b61b48d63ad4797bc335", "hyp_beam": "that is right possum ."}
+{"idx": 1220, "ref": "sha1:b17bb11e4470ef8880d21bb590a35c7724b1d85f", "hyp_beam": "i would love to help ."}
+{"idx": 1221, "ref": "sha1:d582c83788bce75f82501dc5bc5e7cfc63e32298", "hyp_beam": "it was so much fun did not it ."}
+{"idx": 1222, "ref": "sha1:c834f21fcf07e9bc5a8d4311afcc2f50096389ab", "hyp_beam": "i love learning new things ."}
+{"idx": 1223, "ref": "sha1:d4c9d31b5db1bf25a52db0add67b6d195018e3b6", "hyp_beam": "that does not matter possum ."}
+{"idx": 1224, "ref": "sha1:9a2f582e3662630a241fb95948ee5729795e96a8", "hyp_beam": "why do not we watch some children making things out of different shapes ."}
+{"idx": 1225, "ref": "sha1:1f5fdaa01346d99e82c6aa23a48d7f23c720820b", "hyp_beam": "would you like to do that ."}
+{"idx": 1226, "ref": "sha1:65080c604155db0f1d249b56ec4a4a894b377e09", "hyp_beam": "yeah what did you do ."}
+{"idx": 1227, "ref": "sha1:6a0ece7606a0e7c0341e27dfcf101fd62e8481fc", "hyp_beam": "that is right possum ."}
+{"idx": 1228, "ref": "sha1:da19c961be35b7005a96c219b7c755f023837c2d", "hyp_beam": "it is delicious ."}
+{"idx": 1229, "ref": "sha1:520ad1d794ae5848735e63f016a8a87b7b9a760c", "hyp_beam": "i know what that is ."}
+{"idx": 1230, "ref": "sha1:3948409b5fa7a4351edd632eb1e651d8c9e12835", "hyp_beam": "now i am going to need to make a cup of tea ."}
+{"idx": 1231, "ref": "sha1:df016a17cdde4c2804ef7527264c0b9ea3384b5e", "hyp_beam": "yeah let us watch ."}
+{"idx": 1232, "ref": "sha1:1d9b4bcd8223e66ade5f57512db9875fc7287247", "hyp_beam": "it is such a beautiful day is not it ."}
+{"idx": 1233, "ref": "sha1:aae9b4061918ee2d00f8269429eb422461583d82", "hyp_beam": "because it is a bit wet but it is still wet ."}
+{"idx": 1234, "ref": "sha1:486170d475a2f12e19ac35179200d3af82e7aaa3", "hyp_beam": "sally i am so excited but now i am ready ."}
+{"idx": 1235, "ref": "sha1:3c3d2e2c3c70db5896b297c0453704772ec46b3d", "hyp_beam": "i am going to make a cup of tea too ."}
+{"idx": 1236, "ref": "sha1:98d74c4d129ff9cac9801711fd6f2fa0bbc1a14e", "hyp_beam": "well i have been working very hard in the garden and i have a look at the same time ."}
+{"idx": 1237, "ref": "sha1:31dab5605a715dc5516aca88906e3108c0b8a614", "hyp_beam": "come on ."}
+{"idx": 1238, "ref": "sha1:380f0b09c3fa980e675bf1bef944cbde6b4117cd", "hyp_beam": "can you please put that in the bowl please ."}
+{"idx": 1239, "ref": "sha1:0613356db6b796aa79a1571ec4901f0c248f3d63", "hyp_beam": "those children learned so many different ways to use these leaves ."}
+{"idx": 1240, "ref": "sha1:7d7f860e370533ea05524ffbe04aa6b2e599fbd5", "hyp_beam": "would you like to try possum ."}
+{"idx": 1241, "ref": "sha1:2ecd729065e059639943fe0bd8519f2223652131", "hyp_beam": "that is right and it is sharp ."}
+{"idx": 1242, "ref": "sha1:5db5961e9a72a3df7fe205e15f466566ff8193ca", "hyp_beam": "well why do not we go inside and have a cup of tea ."}
+{"idx": 1243, "ref": "sha1:584720bacdc0f5b2010f33d7efb34773079c0ddc", "hyp_beam": "i will show you ."}
+{"idx": 1244, "ref": "sha1:19f2d63853bd2ef6796e297924707a312b5ef23d", "hyp_beam": "it is delicious ."}
+{"idx": 1245, "ref": "sha1:b70da3448b88d32965d36e39acc69ab4b098d411", "hyp_beam": "let us see if we can eat it ."}
+{"idx": 1246, "ref": "sha1:b5fe9d34c4475d72b11f7e52d0a910fa4d71b730", "hyp_beam": "now can you please put them in the bowl please ."}
+{"idx": 1247, "ref": "sha1:3ba20c4ab39cc45e169a671d6761bb98ca946bf7", "hyp_beam": "now we just need to add the lid to the water ."}
+{"idx": 1248, "ref": "sha1:07f2dbf6dc24bc0156b79f9fb26560a176e5257b", "hyp_beam": "does not that look great ."}
+{"idx": 1249, "ref": "sha1:0faebe7cd112c8bb217325fd29d470a6256dbc20", "hyp_beam": "that is great ."}
+{"idx": 1250, "ref": "sha1:4e9180daabf2254d76b03b1a681eaa0b8a408095", "hyp_beam": "what is that ."}
+{"idx": 1251, "ref": "sha1:574e45fd0f3a3b078f2f600e6fad2ff3085f865c", "hyp_beam": "possum that looks lovely ."}
+{"idx": 1252, "ref": "sha1:634011a9d70bfab1a22ff18f1f228b8c54601161", "hyp_beam": "that is lovely ."}
+{"idx": 1253, "ref": "sha1:b08e6f4ecd5c45e61f4e025cd0c44ed2268390e4", "hyp_beam": "that is great ."}
+{"idx": 1254, "ref": "sha1:599fef3740fcc89e3677911cbf9174bc755cef0d", "hyp_beam": "i am going to go outside and ask him ."}
+{"idx": 1255, "ref": "sha1:45c6780de023fcaab7508622d3b1246b3d5bd331", "hyp_beam": "no i know ."}
+{"idx": 1256, "ref": "sha1:8ccefd0968ca3f281fb3d39b5772d46382aeb98e", "hyp_beam": "no possum it is not a lovely day ."}
+{"idx": 1257, "ref": "sha1:d147d2a2b2266582fff89db1b88795566192ef50", "hyp_beam": "yes ."}
+{"idx": 1258, "ref": "sha1:70ad5381516f292643f00ff49461530e9cbad9b1", "hyp_beam": "no possum it is nice and soft is not it ."}
+{"idx": 1259, "ref": "sha1:ad625ccccdb8b337d8e026e0d79c79ae0a6e00ef", "hyp_beam": "why do not we go and see if there is plenty of water in there ."}
+{"idx": 1260, "ref": "sha1:050aaf67aa545f895c095d082161d3ec7645cd1b", "hyp_beam": "your name is sally ."}
+{"idx": 1261, "ref": "sha1:14b578c7ec845825f3fc0c072e156b8b04d140fa", "hyp_beam": "i wonder what possum is up to ."}
+{"idx": 1262, "ref": "sha1:2404b87c8770abf0537c7a223f9f22a74e0aef5f", "hyp_beam": "it is a little bit too small and it is a bit different ."}
+{"idx": 1263, "ref": "sha1:6bd0d6a793e5a5db18f4aa8650f0a650a019b4b5", "hyp_beam": "i know i will make something too ."}
+{"idx": 1264, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "yes that is right ."}
+{"idx": 1265, "ref": "sha1:7135d999938fe099c28e0d9fe4986f9e1018ab3c", "hyp_beam": "that is delicious ."}
+{"idx": 1266, "ref": "sha1:5e55f8efb656c241592a75f8e2c51bcbd19420ea", "hyp_beam": "that is right possum i can see the birds eye view from up there ."}
+{"idx": 1267, "ref": "sha1:38e8ff7d2199112c7b2b41e632d760e69a23be79", "hyp_beam": "what is next ."}
+{"idx": 1268, "ref": "sha1:baa8e27ca0f7ff433eb99b18147c04059e1a5fb2", "hyp_beam": "well our time is up ."}
+{"idx": 1269, "ref": "sha1:823c96a54b748e9c143c05f08e1cea2ff43d5a01", "hyp_beam": "that was a good idea possum ."}
+{"idx": 1270, "ref": "sha1:6ab37607ddfe6258508531e87c817c73de627282", "hyp_beam": "there is lots of things that i could show you ."}
+{"idx": 1271, "ref": "sha1:9fa25aeb0021adfb686fd6173d3fc860af7c8acb", "hyp_beam": "let us watch ."}
+{"idx": 1272, "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "hyp_beam": "well our time is up ."}
+{"idx": 1273, "ref": "sha1:b49d27b6673825e0e96a0ef06b599d057dcf7df8", "hyp_beam": "thanks for watching ."}
+{"idx": 1274, "ref": "sha1:fa4b7793efc846eed9b55f855ce2d97c2fca47a7", "hyp_beam": "see you next time ."}
+{"idx": 1275, "ref": "sha1:3772df516b8a08e768cc8e4251ed5df748336e08", "hyp_beam": "bye ."}
+{"idx": 1276, "ref": "sha1:367f8a9cfe5dde867c7c193f12754847fad1f2be", "hyp_beam": "would you like to come in ."}
+{"idx": 1277, "ref": "sha1:ef0a40112a90d1a6beccb4deee319bc69b27b41d", "hyp_beam": "why do not we go inside and have a look ."}
+{"idx": 1278, "ref": "sha1:e24c8231f32fa367f22fa2fb32f48915f34da93e", "hyp_beam": "i am going to go and get a surprise ."}
+{"idx": 1279, "ref": "sha1:e2a0af6f95a254c255478536d6b51e62b2cecf66", "hyp_beam": "yes it is really amazing to look at all the different colors ."}
+{"idx": 1280, "ref": "sha1:46d3afd76b20e9611173f82ecbcdc4c27f71e7b6", "hyp_beam": "that is great ."}
+{"idx": 1281, "ref": "sha1:6cd8e26a6942a55647221f60ce16516b14ae572b", "hyp_beam": "why do not we go ."}
+{"idx": 1282, "ref": "sha1:faf395285a34b04e1fc06a12fec537eec079fa05", "hyp_beam": "i am making myself too ."}
+{"idx": 1283, "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f", "hyp_beam": "i am possum ."}
+{"idx": 1284, "ref": "sha1:0580869881cfa0555295bdd2be5956120250be5c", "hyp_beam": "it is a very special surprise ."}
+{"idx": 1285, "ref": "sha1:c8e0066243d1df8c0adcbee85fbb13c094715bbd", "hyp_beam": "what are you doing possum ."}
+{"idx": 1286, "ref": "sha1:f37bbed1da12db92ca2b633f91c9894edecaaf82", "hyp_beam": "no not yet possum ."}
+{"idx": 1287, "ref": "sha1:4f040325eb07886f258fdd64f1b1472e76ccbde2", "hyp_beam": "possum what is this ."}
+{"idx": 1288, "ref": "sha1:5e4106cc75ddb5b94de7b7ff463c449b96571801", "hyp_beam": "i do not know why do not we go inside and make a cup of tea ."}
+{"idx": 1289, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 1290, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "look ."}
+{"idx": 1291, "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45", "hyp_beam": "hi everyone ."}
+{"idx": 1292, "ref": "sha1:3967146e05036825a653344613261a93917eda90", "hyp_beam": "that is right ."}
+{"idx": 1293, "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f", "hyp_beam": "i am possum ."}
+{"idx": 1294, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 1295, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "hello ."}
+{"idx": 1296, "ref": "sha1:2b2bb77de69ef4a0024c5c4d6cf666eb9e8bafbd", "hyp_beam": "hello everyone ."}
+{"idx": 1297, "ref": "sha1:b015b15cf753a0e3999fc25b479449f842462b8b", "hyp_beam": "i think it is time for a break ."}
+{"idx": 1298, "ref": "sha1:3c067905f62c74a7e69365c5de507654e266a003", "hyp_beam": "i wonder what it is ."}
+{"idx": 1299, "ref": "sha1:865504c05439edbade12604b46a717e1b678e6f0", "hyp_beam": "bye ."}
+{"idx": 1300, "ref": "sha1:c5db88768664d2a35ee12a26cd3c463b541b11c4", "hyp_beam": "hello everyone ."}
+{"idx": 1301, "ref": "sha1:9680ab21a1049da80042783037b947b08c9f837b", "hyp_beam": "i have an idea ."}
+{"idx": 1302, "ref": "sha1:83af3456aebbd4cc5170c27e1ad9f7b45dc72e6d", "hyp_beam": "thank you so much for teaching me ."}
+{"idx": 1303, "ref": "sha1:0689d50183c24bde5a31022bfcba7adfc69d092d", "hyp_beam": "you are funny possum ."}
+{"idx": 1304, "ref": "sha1:89031e217a98814f936841eea926885c4691c605", "hyp_beam": "what is that ."}
+{"idx": 1305, "ref": "sha1:d69fd640ad583806a32dfd55807147f43103bb28", "hyp_beam": "no we have got everything that we need ."}
+{"idx": 1306, "ref": "sha1:5d1bab7fc42119964985ec14968411a47b3bed02", "hyp_beam": "i am going to have a friend of mine possum ."}
+{"idx": 1307, "ref": "sha1:fbe386e2d1b8a647dd4b58de61ff3b3e73db0001", "hyp_beam": "i thought i would have to put it in the kitchen ."}
+{"idx": 1308, "ref": "sha1:93b7b4eb038deb28d455c2e31b91c692fd52f249", "hyp_beam": "no ."}
+{"idx": 1309, "ref": "sha1:3b5d0c660718e2a5fdbcf6ebb2583cf893efc65b", "hyp_beam": "well thank you so much but thank you so much ."}
+{"idx": 1310, "ref": "sha1:3c19a070e0af0f7fdc5cf9e231acce5e7f5754f8", "hyp_beam": "why do not we go inside and have a look ."}
+{"idx": 1311, "ref": "sha1:0c139720673c19ced6d6b6aef497e7525be641e3", "hyp_beam": "that is a great idea possum ."}
+{"idx": 1312, "ref": "sha1:572bcfb0a5f523c8bb5e5da98ec0f0ecd92ac061", "hyp_beam": "i know ."}
+{"idx": 1313, "ref": "sha1:1f29de1f1f361b5623425edb79bb9eb74c1254aa", "hyp_beam": "hey possum would you like to help me make this ."}
+{"idx": 1314, "ref": "sha1:dbfd3efd8b540b5dc57cc8e9260e96f8457e37a8", "hyp_beam": "that was great ."}
+{"idx": 1315, "ref": "sha1:cc28957708278df6db5cdb447d5d17e4eecfb12e", "hyp_beam": "i can see the moon too ."}
+{"idx": 1316, "ref": "sha1:a315ce759d1eb2a467bf67d677c5408d2cbdc472", "hyp_beam": "sally can you help me make the bed ."}
+{"idx": 1317, "ref": "sha1:173907c3287541624cc4b27e80a8bf818dbd9c51", "hyp_beam": "i have an idea ."}
+{"idx": 1318, "ref": "sha1:276c933c80ca56152255e5cbf5463dad3e171740", "hyp_beam": "but i thought it was a bit too hard but i do not know why do not we do that ."}
+{"idx": 1319, "ref": "sha1:c90c8de5fef1c6e298f0c14f964304530d67f007", "hyp_beam": "why do not we go inside and make a salad ."}
+{"idx": 1320, "ref": "sha1:2c9443145636b65958d59794f44b101c92dfa0b1", "hyp_beam": "what is next ."}
+{"idx": 1321, "ref": "sha1:aba97e6c7eba543d3f25b42f1b07aee23444502e", "hyp_beam": "i know i can draw a picture ."}
+{"idx": 1322, "ref": "sha1:5ff7e48d2dee00983daa7dfdced128b50f630abf", "hyp_beam": "i would like to make something that does not matter ."}
+{"idx": 1323, "ref": "sha1:733d51fd42302abccbf387d7cd572c99884efa6c", "hyp_beam": "i am going to draw a picture of my tree ."}
+{"idx": 1324, "ref": "sha1:41a6bac44695c9a0281c299fcff1c448bc13584a", "hyp_beam": "why do not we go inside and have a lunch ."}
+{"idx": 1325, "ref": "sha1:e201beda62d773cb54e236bf5da6a340d6e65457", "hyp_beam": "well before we do that why do not we go and make a map ."}
+{"idx": 1326, "ref": "sha1:d147d2a2b2266582fff89db1b88795566192ef50", "hyp_beam": "that is right ."}
+{"idx": 1327, "ref": "sha1:069bc023d22dc24781b8604a97e0bb6ed953ae99", "hyp_beam": "well you have been working so hard to make sure that i have been making lunch out ."}
+{"idx": 1328, "ref": "sha1:8bb2db900b278f93f6a5a18f5c0e00e2b22a0b69", "hyp_beam": "why do not we go outside and see if there is a few things that i can eat too ."}
+{"idx": 1329, "ref": "sha1:4a708e32d68f42c3c272b90f94678b5a85d468a9", "hyp_beam": "well i am going to go and get a few things ."}
+{"idx": 1330, "ref": "sha1:d47eac1204891c4f822e4f6d4af9c213ad00e223", "hyp_beam": "i wonder what possum is up to ."}
+{"idx": 1331, "ref": "sha1:08ace9303a804627cd7368c77c92a1cd685a016e", "hyp_beam": "i wonder what possum is up to ."}
+{"idx": 1332, "ref": "sha1:ad9fc3031713baefc1d1d1fda7c3d6b855919138", "hyp_beam": "i know ."}
+{"idx": 1333, "ref": "sha1:05b4e19c3321e0794393273159e9a9940dab2a25", "hyp_beam": "it is a bit cold ."}
+{"idx": 1334, "ref": "sha1:4853d9075ea2d91cd7dae1cea3ceba2ca7d0e860", "hyp_beam": "why do not we go outside and have a look ."}
+{"idx": 1335, "ref": "sha1:5d8a6862cda2bf6ba25f0b50089701d35e720120", "hyp_beam": "but before we do that why do not we do that ."}
+{"idx": 1336, "ref": "sha1:c5f835c1251dd00c5c738a4f469cf006b3929828", "hyp_beam": "that is a great idea why do not we watch some children learning about shapes ."}
+{"idx": 1337, "ref": "sha1:b47aab380a0ab100192a0745feee201d57dc9a21", "hyp_beam": "why do not we watch some children playing outside and i can eat it ."}
+{"idx": 1338, "ref": "sha1:76de3706cf27bc7194e246d09a57e246c995b2dd", "hyp_beam": "i think it is time for us to go now ."}
+{"idx": 1339, "ref": "sha1:b0d44a511fd0c70775444e438ed91cc34dc9f968", "hyp_beam": "that is why do not we do the same thing ."}
+{"idx": 1340, "ref": "sha1:93c49b0dd970e0fff0ccad344faa334ff69054b8", "hyp_beam": "i know ."}
+{"idx": 1341, "ref": "sha1:9696a7ceff4c9bf348e42cee71796d33878fec6e", "hyp_beam": "you are funny sally ."}
+{"idx": 1342, "ref": "sha1:ade2a59885f77c7dab051c2f66cdf9aa52cdbc2e", "hyp_beam": "you are funny sally ."}
+{"idx": 1343, "ref": "sha1:687b155ad65ec3f7876639555fd40ba2b1978e8d", "hyp_beam": "i am going to need to wash my hands ."}
+{"idx": 1344, "ref": "sha1:ca109a7afe0ebd4879df211f327dc7a4ba93c531", "hyp_beam": "i wonder what it is ."}
+{"idx": 1345, "ref": "sha1:1ff402d44d84ed9d4eba289b468f2efb9fdef87a", "hyp_beam": "that is a l l y ."}
+{"idx": 1346, "ref": "sha1:c52401b356dbcc9b593881440d75e3f3de9b2a5e", "hyp_beam": "i think there is something that we can use ."}
+{"idx": 1347, "ref": "sha1:cd172253cf1a64112c51326e78a6e86a369e032a", "hyp_beam": "there are some instructions that we need to learn how to ride ."}
+{"idx": 1348, "ref": "sha1:c16c34e10a6ed2f1b6e394a09ffd3b85f95b4e33", "hyp_beam": "it is a very important thing that you need to do ."}
+{"idx": 1349, "ref": "sha1:df78778d5f34f039ebedb59ae42f467c5c942cde", "hyp_beam": "possum why do not we watch some children learning about trains ."}
+{"idx": 1350, "ref": "sha1:383ba7d3a1a708c683dd7fa49b5b0667081e2b74", "hyp_beam": "sally can you see all sorts of different things ."}
+{"idx": 1351, "ref": "sha1:64044fbfc6c7371ec1d89b2d949c1770ffcf7bb1", "hyp_beam": "i want to learn more about different things ."}
+{"idx": 1352, "ref": "sha1:5b9b5577c8105a62d5174ebf7fb95d9eb493e613", "hyp_beam": "i did not know that ."}
+{"idx": 1353, "ref": "sha1:4eebe007046c94a111e06e7f058292f15a5898a9", "hyp_beam": "i have learned so much about butterflies and all sorts of different things ."}
+{"idx": 1354, "ref": "sha1:d9d25768fdece916dd80850c6d21119ac985431e", "hyp_beam": "that is lovely ."}
+{"idx": 1355, "ref": "sha1:ff1bf56ea08ce9011efc24e9a3a158cd42613f99", "hyp_beam": "that is great ."}
+{"idx": 1356, "ref": "sha1:9d216def23c342eae1f43a243778085e0ca36163", "hyp_beam": "why do not we watch some children learning about ."}
+{"idx": 1357, "ref": "sha1:2d09920e05f28db4458c51bf78527524d28bac91", "hyp_beam": "would you like to do that ."}
+{"idx": 1358, "ref": "sha1:0ac6787ca97d75a179ab76943f19a1de58cf3372", "hyp_beam": "sally do you remember all sorts of different shapes ."}
+{"idx": 1359, "ref": "sha1:e21f46eac7d20037af17b14925f35bb42c8c6e64", "hyp_beam": "well the moon is very important ."}
+{"idx": 1360, "ref": "sha1:8cb2d93f87e8dbaae1ebcd771dee40332be985bd", "hyp_beam": "there is a very important thing that you need to do ."}
+{"idx": 1361, "ref": "sha1:de517472c0cca58d90d788551e7010689b137d8a", "hyp_beam": "why do not we watch some children learning about words ."}
+{"idx": 1362, "ref": "sha1:ba62107849a34d7b57984321cd17e8e0290a4417", "hyp_beam": "like the pie is ready ."}
+{"idx": 1363, "ref": "sha1:01efac1e90cb7cb75e6a22489c7128e66f881af5", "hyp_beam": "we are going to put it in half an hour ."}
+{"idx": 1364, "ref": "sha1:3b29f41f9568dbda155a575c627231169cbc2bed", "hyp_beam": "there is lots of things that need to do ."}
+{"idx": 1365, "ref": "sha1:bf527372464f74ed2dedc0cc862cf032cfb525ca", "hyp_beam": "that is great ."}
+{"idx": 1366, "ref": "sha1:8f2524c25ae21ef0d3b916150e865986ae863947", "hyp_beam": "one two three four five six seven eight nine ten ."}
+{"idx": 1367, "ref": "sha1:fedb58c7a4519561d0b6c23fffe84505183ae977", "hyp_beam": "we need a spoon ."}
+{"idx": 1368, "ref": "sha1:4b373f98439a9b2970a8d13164b829d9faaa3765", "hyp_beam": "one cup of water in this one ."}
+{"idx": 1369, "ref": "sha1:8ce1bfb1644498d1956840fc4d27d2621c4649b8", "hyp_beam": "it is a bit different ."}
+{"idx": 1370, "ref": "sha1:125f8f0931cb059866c6399bd1af0dd353e52589", "hyp_beam": "that is an angle ."}
+{"idx": 1371, "ref": "sha1:0c0f04728db2c5ad379d06b8481cd98c8c624eb7", "hyp_beam": "yes ."}
+{"idx": 1372, "ref": "sha1:897570d89f5fa5ba3aa532f70051ebac4cee5a02", "hyp_beam": "what is next ."}
+{"idx": 1373, "ref": "sha1:d147d2a2b2266582fff89db1b88795566192ef50", "hyp_beam": "yes ."}
+{"idx": 1374, "ref": "sha1:d9a67ab013ee9754d8e61928896a143775fdb9e1", "hyp_beam": "sally what is it ."}
+{"idx": 1375, "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8", "hyp_beam": "yes ."}
+{"idx": 1376, "ref": "sha1:ba353f7cc9d4fd7958f2b4c9c1cea1ee79029c99", "hyp_beam": "that is great ."}
+{"idx": 1377, "ref": "sha1:97f37369439101aa122b2b721d5f3daf8c7dd51e", "hyp_beam": "that is great ."}
+{"idx": 1378, "ref": "sha1:278b447ac291deb67bbfc2722b178a529799f9fb", "hyp_beam": "look at all the things that are ready ."}
+{"idx": 1379, "ref": "sha1:7c2368fd57111968f059ecab48631467fbf3c686", "hyp_beam": "now we need to put it back ."}
+{"idx": 1380, "ref": "sha1:75b862dd577d2664d345e7eb00121a966da397d3", "hyp_beam": "what is next ."}
+{"idx": 1381, "ref": "sha1:f1ee525e8cb832e37929450db4798f62ff2e049f", "hyp_beam": "no it does not matter ."}
+{"idx": 1382, "ref": "sha1:7eeba02d24f300125df8120c283600563d0db1b5", "hyp_beam": "i know ."}
+{"idx": 1383, "ref": "sha1:7eeba02d24f300125df8120c283600563d0db1b5", "hyp_beam": "that is great ."}
+{"idx": 1384, "ref": "sha1:d815137c0ef9eeb5e0a6496ca566a8343f47131b", "hyp_beam": "that is great ."}
+{"idx": 1385, "ref": "sha1:c0fa3cc0bd73d42ad89e6bbba6b2d2d5452380a0", "hyp_beam": "yeah let us watch ."}
+{"idx": 1386, "ref": "sha1:f391c1af0f2bafaa52ed3f140a2c33d793f2f294", "hyp_beam": "yes that is right ."}
+{"idx": 1387, "ref": "sha1:430a00991e2248fc3128c9f6e3b64c5d8caf86cb", "hyp_beam": "great ."}
+{"idx": 1388, "ref": "sha1:547032293ade41d385aa50ba7b245011071fda76", "hyp_beam": "that is great ."}
+{"idx": 1389, "ref": "sha1:92a3383a03aed9958835e61f34c0cf0900e64bab", "hyp_beam": "do you remember ."}
+{"idx": 1390, "ref": "sha1:760c70eaa080b20ef4f84afdf77df27fed9d2d05", "hyp_beam": "would you like a cup of tea ."}
+{"idx": 1391, "ref": "sha1:ee103882093d9b8a227e19675dcc068d46d49103", "hyp_beam": "look ."}
+{"idx": 1392, "ref": "sha1:d662fb9c856cdbd728b15bbc091b1fff4ae07c91", "hyp_beam": "that looks great ."}
+{"idx": 1393, "ref": "sha1:7819a9666cb3ab2efd69d4cc852f4d480a98a91d", "hyp_beam": "great ."}
+{"idx": 1394, "ref": "sha1:59ad580758118570dca86d9275de951be5e62560", "hyp_beam": "that is beautiful ."}
+{"idx": 1395, "ref": "sha1:a7a4d86cd92d4a0cc6f17cf068e25aab85920c05", "hyp_beam": "that is not the right tool for this job ."}
+{"idx": 1396, "ref": "sha1:b96f714490c59a851ce20b566e8334dff609a778", "hyp_beam": "yes that is right possum ."}
+{"idx": 1397, "ref": "sha1:01f48d07b312abffa5428e94c2117abfe795a0fc", "hyp_beam": "would you like to do that ."}
+{"idx": 1398, "ref": "sha1:8fcde2f13cc4800682359bd4ae717b2d2f34c457", "hyp_beam": "now i am going to show you how to make it ."}
+{"idx": 1399, "ref": "sha1:ee6b04e2939092c59d8658d71d5d28fd44234869", "hyp_beam": "possum why do not you think about your book ."}
+{"idx": 1400, "ref": "sha1:afcb90b37a1838ef39ab854e603267b9b8331d64", "hyp_beam": "i know ."}
+{"idx": 1401, "ref": "sha1:766dc7ae29094e3841275905f9321c1d2bee1530", "hyp_beam": "i need to put them on the table and then i can put them in ."}
+{"idx": 1402, "ref": "sha1:7beefb755c182f7dba2c08a13f7cb1f29408be9f", "hyp_beam": "that looks great ."}
+{"idx": 1403, "ref": "sha1:554e04c9c4a6e30627fae717cc5da36d2c2fac97", "hyp_beam": "yes that is right ."}
+{"idx": 1404, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "yeah that is great ."}
+{"idx": 1405, "ref": "sha1:b2e5260a0437b72cc4c2ed11d48431408ba3f476", "hyp_beam": "would you like a butterfly ."}
+{"idx": 1406, "ref": "sha1:5437163f0b5dae0292f2010cc3c01c38c93a6b26", "hyp_beam": "this is the instructions possum ."}
+{"idx": 1407, "ref": "sha1:80451a2085da7b96284dda830dfa5bd7c25b967e", "hyp_beam": "those children learned so much about mirrors because they were so good and they are so much fun ."}
+{"idx": 1408, "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27", "hyp_beam": "yes ."}
+{"idx": 1409, "ref": "sha1:82c6536a251e3877a0a69b557fcc008e0003284e", "hyp_beam": "look at all these different things ."}
+{"idx": 1410, "ref": "sha1:ea09f9860146b378052fe6cd68d0de826f15b924", "hyp_beam": "i am making a paper ball ."}
+{"idx": 1411, "ref": "sha1:a61ce0064cb6c3d97e2755b83a8f2a145e034a35", "hyp_beam": "that is a great idea possum ."}
+{"idx": 1412, "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce", "hyp_beam": "thank you ."}
+{"idx": 1413, "ref": "sha1:bf91c631aa6368336d60a5cacbf755a7a2b0ff2c", "hyp_beam": "that is beautiful ."}
+{"idx": 1414, "ref": "sha1:3783b4ed4d96333df70ae6b0e090f79e60998348", "hyp_beam": "that is great ."}
+{"idx": 1415, "ref": "sha1:dc98185be84eb7d62ba94ef160bd9354027161f1", "hyp_beam": "thank you possum ."}
+{"idx": 1416, "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f", "hyp_beam": "well our time is up ."}
+{"idx": 1417, "ref": "sha1:b49d27b6673825e0e96a0ef06b599d057dcf7df8", "hyp_beam": "thanks for watching ."}
+{"idx": 1418, "ref": "sha1:fa4b7793efc846eed9b55f855ce2d97c2fca47a7", "hyp_beam": "see you next time ."}
+{"idx": 1419, "ref": "sha1:3772df516b8a08e768cc8e4251ed5df748336e08", "hyp_beam": "bye ."}
+{"idx": 1420, "ref": "sha1:22d835d4e974ae04a894aa50b37bfdaa0dddb649", "hyp_beam": "thank you ."}
+{"idx": 1421, "ref": "sha1:10ba908455a1d8ce5a78583fb24654265c435ea7", "hyp_beam": "that looks lovely ."}
+{"idx": 1422, "ref": "sha1:562ff6f93a9b24cc45d02b1beba7794cb345a16d", "hyp_beam": "i am possum ."}
+{"idx": 1423, "ref": "sha1:fca7da0c3c886a10575973821b24bd1276fc5cc0", "hyp_beam": "what do you think is possum ."}
+{"idx": 1424, "ref": "sha1:ee186d94d793c29d9facd5df43ddcdc3ab3b4887", "hyp_beam": "thank you so much for teaching me how to play ."}
+{"idx": 1425, "ref": "sha1:31e8da5c9e0434325b4b122f75286fabc4b9b2ab", "hyp_beam": "i am going to have a look at my tree ."}
+{"idx": 1426, "ref": "sha1:1cc7b557684ef2802f1df8e78510759af256ce82", "hyp_beam": "how does it go ."}
+{"idx": 1427, "ref": "sha1:850a1c197d7377ef63cd3a27ffc16fb38c308c37", "hyp_beam": "what is next ."}
+{"idx": 1428, "ref": "sha1:1be8d244f1c67b219a94f6bbc53aec8e3dcce9b6", "hyp_beam": "that looks great ."}
+{"idx": 1429, "ref": "sha1:27feb3958d87a8753f69754677456985da88cce6", "hyp_beam": "now can you please get the recipe out of the box ."}
+{"idx": 1430, "ref": "sha1:230171ebe4052950eb226b63290b34136e0fbd36", "hyp_beam": "come on let us go ."}
+{"idx": 1431, "ref": "sha1:7265a87ff22e92f25136429d89c454f5f0988a48", "hyp_beam": "yes that is right ."}
+{"idx": 1432, "ref": "sha1:80d2a5d40bc4d207f42237fac76aa54423f27680", "hyp_beam": "you are right possum ."}
+{"idx": 1433, "ref": "sha1:945c38c81d3e233d915b5d021c86bb744bb5bead", "hyp_beam": "i know ."}
+{"idx": 1434, "ref": "sha1:48d038a81d2b459ee2769f1546532f320d6f1810", "hyp_beam": "i have an idea ."}
+{"idx": 1435, "ref": "sha1:7e315d32bc301006710aa123bce1b00a3a02b46d", "hyp_beam": "i do not know why i have an idea ."}
+{"idx": 1436, "ref": "sha1:f027893de1768b8d6db018fc955e1175289311c1", "hyp_beam": "i know ."}
+{"idx": 1437, "ref": "sha1:93c49b0dd970e0fff0ccad344faa334ff69054b8", "hyp_beam": "that is great ."}
+{"idx": 1438, "ref": "sha1:50ccb8b2fd4f66cc082028daad1e6980582646bb", "hyp_beam": "i wonder what possum is up to ."}
+{"idx": 1439, "ref": "sha1:20daefca4b1b5a41fa0305c0a9b2229c36b22858", "hyp_beam": "would you like to do that ."}
+{"idx": 1440, "ref": "sha1:ed826a49fa3c45235a08006dbe2ed5bf1bde520c", "hyp_beam": "would you like to do that ."}
+{"idx": 1441, "ref": "sha1:26c07e295651b311384cdcec43a8bf03ea5d7936", "hyp_beam": "now we need to mix it all together ."}
+{"idx": 1442, "ref": "sha1:39ecfc70219269edee927de3c311ef4bb60160db", "hyp_beam": "no it does not matter ."}
+{"idx": 1443, "ref": "sha1:433121ca0a39342a8e7945cd328e674f04e28ebc", "hyp_beam": "that is great ."}

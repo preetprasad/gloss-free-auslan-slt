@@ -1,0 +1,1 @@
+  V6          1.0    6.444    7.123   vdA s42/101/202 + vdB s42/101/202  (t2-vdens 10674; vd_val from its log, 3 dp)

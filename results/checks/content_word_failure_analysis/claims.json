@@ -1,0 +1,3 @@
+{"gid":"failure_analysis","tagged":true,
+"covered":["c06-009","c06-012","c10-023","c10-024","c10-027","c10-028","c10-030","c10-031","c10-032","c10-033","c10-036","c11-061","c14-038","c14-039","c21-008","c21-009"],
+"not_covered":[{"id":"c16-026","code":"no_saved_output","reason":"The retrieval baseline (2.72, 1.47 excluding same-video neighbours) was run locally on first-listed AlphaPose clips and only RETRIEVAL_BASELINE_2026-09-08.md records it; no per-clip output was saved. The 10.27 comparison score is recomputed in A13-style checks (gate line of this check)."}]}

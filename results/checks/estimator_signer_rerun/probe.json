@@ -1,0 +1,49 @@
+{
+ "n_spans": 382,
+ "n_clips": 361,
+ "n_scored_spans": {
+  "dwpose": 337,
+  "alphapose_signer": 336,
+  "alphapose_wrong_person": 333
+ },
+ "dwpose": {
+  "hands_top1": 18.1,
+  "hands_top5": 34.7,
+  "body_hands_top1": 18.7
+ },
+ "alphapose_signer": {
+  "hands_top1": 13.1,
+  "hands_top5": 32.7,
+  "body_hands_top1": 11.9,
+  "body_hands_top5": 32.1
+ },
+ "alphapose_wrong_person_check": {
+  "hands_top1": 4.2,
+  "hands_top5": 14.1,
+  "body_hands_top1": 6.2
+ },
+ "mcnemar_hands": {
+  "n_shared": 335,
+  "dw_only_right": 35,
+  "ap_only_right": 17,
+  "p": 0.0175
+ },
+ "mcnemar_body_hands": {
+  "n_shared": 335,
+  "dw_only_right": 40,
+  "ap_only_right": 17,
+  "p": 0.0032
+ },
+ "mcnemar_hands_wrong_person_check": {
+  "n_shared": 322,
+  "dw_only_right": 59,
+  "ap_only_right": 14,
+  "p": 1.01e-07
+ },
+ "hand_conf_alphapose_signer": {
+  "mean": 0.11559316052339494,
+  "n_clips": 14041
+ },
+ "harness_gate": true,
+ "note": "AlphaPose signer p is exact two-sided binomtest; n_shared 335 differs from 337/336 scored since each arm drops spans separately. Settings: --max_per_class 8, seed 42, 45 glosses."
+}

@@ -1,0 +1,11 @@
+# Sources
+- make_stats.py: written here; run once in the private tree to make data/stats.json (needs the News references, so it is not run by make).
+- data/stats.json: programmatic subset of results/news_decoding_length_check/runs_news/<arm>_s<seed>/beam5_{val,test}_best.json (local copies of Kaya wave4/runs_news; Stage 1 job 7950, Stage 2 job 16398) and of the length-penalty sweeps results/news_decoding_length_check/{news_decode,news_ens}/ (decode job 27382; nSA validation sweeps and the five-member ensemble: job 21744). Fields kept: per-corpus n-gram statistics, the recorded BLEU-4 and the job log's LP value. No hypotheses or references.
+- data/signable_recall.txt: byte copy of results/news_stage2_decision/signable_recall.txt (tools/news_signable_recall.py output, job 16398 secondary).
+- data/ens_phase1.txt: byte copy of results/news_decoding_length_check/news_ens/phase1.txt (job 21744 gate output).
+- output.txt: exact output of the command in fragment.md.
+- Recipe facts for c11-035 and c11-037 are read at run time from jobs/slurm/w4_news.sbatch (job 7950) and jobs/slurm/w4_news_s2.sbatch (job 16398); nothing is copied.
+- make_extra.py: written here; run once in the private tree.
+- data/news_clip_frames.csv: End_Frame - Begin_Frame of every row of data/raw/Auslan-Daily/Dataset Split Table/Sign Language Alignment/Auslan_Daily_News.xlsx (numbers only, no text).
+- data/real_train_count.json: line count of results/real_data_learning_curve/manifests/R100_s42.tsv (real Communication training list of Kaya job 21734, the 12,439-clip DWPose list).
+- data/ens5_val.log: byte copy of results/news_decoding_length_check/news_ens/ens5_val.log (five-member ensemble decode, job 21744).

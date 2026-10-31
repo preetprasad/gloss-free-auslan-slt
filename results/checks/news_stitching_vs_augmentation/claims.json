@@ -4,12 +4,8 @@
   "c18-064",
   "c18-065",
   "c18-067",
-  "c18-068"
+  "c18-068",
+  "c18-066"
  ],
- "not_covered": [
-  {
-   "id": "c18-066",
-   "reason": "DISAGREES (rounding only): dissertation says +0.22, saved data gives +0.215 (+0.21497), which is +0.21 at two decimals; the interval -0.84 to +1.27 agrees"
-  }
- ]
+ "not_covered": []
 }

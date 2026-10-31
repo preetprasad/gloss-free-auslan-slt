@@ -1,0 +1,2 @@
+- `dwpose_ctc.log`, `vlp.log`, `rgbfusion.log`, `s6.log`: byte copies of `results/semantic_regrade_10288/<name>.log` (re-grading job 10288 on Kaya; the DWPose+CTC, RGB-fusion, 40-epoch pre-trained and final-ensemble outputs, graded with Qwen2.5-3B-Instruct).
+- `grades.jsonl`: programmatic subset (system, idx, adequacy) of `results/semantic_regrade_10288/<name>.graded_hf.csv`, written by `prepare_data.py` (run once, not by make). No text is kept.

@@ -1,0 +1,88 @@
+[gate] vd_train 11341 / vd_val 1444 / vd_test 1254 rows; clip overlap 0 (val-test, train-val/test)
+       vd_train.tsv md5 7020389531c0b94cd1e61ad025821885
+       vd_val.tsv md5 1d93fa6dfa3aa4d0518467b0aa4aba2a
+       vd_test.tsv md5 e7e6ee86e835210289f7b11763a1a350
+[gate] fus_s303: warm-started 129/132 from vdB_s303; only tok_emb.weight, generator.weight, generator.bias (2,867 -> 2,805 rows) re-initialised
+[gate] fus_s404: warm-started 129/132 from vdB_s404; only tok_emb.weight, generator.weight, generator.bias (2,867 -> 2,805 rows) re-initialised
+[gate] RGB guard printed '(14041 feature files)' and the preprocessing guard passed in all 6 decodes of 31205
+[gate] 154 swept dumps (LP 0.2..1.0 + MBR-WER + MBR-chrF, val and test, 7 systems) re-score to their logs exactly at printed precision; references equal the manifests in order
+[gate] t2-vdens vd_test dumps re-score: V6 7.123 @LP1.0 (rec 7.123), V3B 7.807 @LP0.8 (rec 7.807), best single vdB_s101 7.287 @LP0.9 (rec 7.287); V3A 6.531 @LP0.9 (rec 6.531). Each test LP = the vd_val-log argmax.
+[gate] vdB s42/101/202 and ens5 selections reproduce job 21736's recorded val/test values
+
+Selection: LP = vd_val argmax (full precision, first in grid); vd_test read at that LP. Beam 10.
+  system       LP   vd_val  vd_test   members
+  vdB_s42     1.0    6.600    7.407   single
+  vdB_s101    0.9    6.718    7.287   single
+  vdB_s202    0.7    6.373    7.149   single
+  fus_s303    0.9    5.996    6.144   single
+  fus_s404    1.0    6.033    6.818   single
+  vdB_ens5    0.8    6.552    7.844   vdB s42/101/202/303/404
+  VD5         0.9    7.202    7.841   vdB s42/101/202 + fus_s303 + fus_s404
+  V6          1.0    6.444    7.123   vdA s42/101/202 + vdB s42/101/202  (t2-vdens 10674; vd_val from its log, 3 dp)
+  V3A         0.9    5.898    6.531   vdA s42/101/202  (t2-vdens 10674; vd_val from its log, 3 dp)
+  V3B         0.8    6.691    7.807   vdB s42/101/202  (t2-vdens 10674; vd_val from its log, 3 dp)
+
+Baseline (best-on-vd_val single among VD5's members): vdB_s101 @LP0.9  vd_val 6.718  vd_test 7.287
+  (descriptive: its CPU dump (job 21736) and the GPU dump of the same checkpoint in t2-vdens share 1254/1254 identical hypotheses at the same LP; both score 7.287 / 7.287)
+
+vd_val deltas (reported, NOT a gate):
+  V6        - vdB_s101: -0.274
+  V3A       - vdB_s101: -0.820
+  V3B       - vdB_s101: -0.027
+  vdB_ens5  - vdB_s101: -0.166
+  VD5       - vdB_s101: +0.484
+  VD5       - V3B     : +0.511
+  VD5       - vdB_ens5: +0.650
+vd_test point deltas:
+  V6        - vdB_s101: -0.164
+  V3A       - vdB_s101: -0.756
+  V3B       - vdB_s101: +0.520
+  vdB_ens5  - vdB_s101: +0.556
+  VD5       - vdB_s101: +0.554
+  VD5       - V3B     : +0.034
+  VD5       - vdB_ens5: -0.002
+
+=== C1: .venv/bin/python src/tools/holm_decision.py --maxt --baseline vdB_s101 --n 2000 --seed 0 --alpha 0.05 --system vdB_s101=./results/video_disjoint_cross_modal_ensemble/prior/seedens_vdB/s101_test/hyps_LP=0.9.jsonl --expect vdB_s101=7.287 --system V6=./results/t2_vdens_10674/dumps_V6_test/hyps_LP=1.0.jsonl --expect V6=7.123 --system V3A=./results/t2_vdens_10674/dumps_V3A_test/hyps_LP=0.9.jsonl --expect V3A=6.531 --system V3B=./results/t2_vdens_10674/dumps_V3B_test/hyps_LP=0.8.jsonl --expect V3B=7.807 --system vdB_ens5=./results/video_disjoint_cross_modal_ensemble/prior/seedens_vdB/ens5_test/hyps_LP=0.8.jsonl --expect vdB_ens5=7.844 --system VD5=./results/video_disjoint_cross_modal_ensemble/decode/VD5_test/hyps_LP=0.9.jsonl --expect VD5=7.841
+check: vdB_s101 reproduces the recorded 7.287
+check: V6 reproduces the recorded 7.123
+check: V3A reproduces the recorded 6.531
+check: V3B reproduces the recorded 7.807
+check: vdB_ens5 reproduces the recorded 7.844
+check: VD5 reproduces the recorded 7.841
+
+max-T over 5 correlated looks at the same 1254 test sentences (baseline vdB_s101, B=2000, alpha=0.05)
+  look        observed      se   per-comparison 95%      max-T simultaneous 95%
+  V6            -0.164   0.368   [-0.876, +0.548]          [-1.065, +0.737]
+  V3A           -0.756   0.414   [-1.561, +0.049]          [-1.768, +0.256]
+  V3B           +0.520   0.293   [-0.045, +1.085]          [-0.196, +1.236]
+  vdB_ens5      +0.556   0.305   [-0.032, +1.144]          [-0.190, +1.303]
+  VD5           +0.554   0.322   [-0.074, +1.182]          [-0.233, +1.341]
+  q(max-T) = 2.447 over these 5 looks.  A further look enters a family of 6, and q is non-decreasing in family size (self-test), so re-run this with the new look's own column included: at se ~ 0.340 the bar is AT LEAST ~+0.83, not exactly it.
+  * = interval excludes 0.  Protocol rule 9: an official-test ensemble claim needs the max-T column.
+
+=== C2: .venv/bin/python src/tools/paired_bootstrap.py --system VD5=./results/video_disjoint_cross_modal_ensemble/decode/VD5_test/hyps_LP=0.9.jsonl --system V3B=./results/t2_vdens_10674/dumps_V3B_test/hyps_LP=0.8.jsonl --pairs VD5:V3B --n 2000 --seed 0 --expect VD5=7.841 --expect V3B=7.807
+VD5          BLEU-4   7.841
+V3B          BLEU-4   7.807
+check: VD5 reproduces the recorded 7.841
+check: V3B reproduces the recorded 7.807
+[all n=1254] VD5 vs V3B: observed +0.034  95% CI [-0.481, +0.560]  P(VD5>V3B) 57.1%  -> not resolvable
+
+=== DECISION (pre-registered rule)
+  C1  VD5 - vdB_s101 = +0.554, max-T simultaneous 95% [-0.233, +1.341] -> includes 0: NOT met
+  C2  VD5 - V3B = +0.034, paired bootstrap 95% [-0.481, +0.560]; VD5 > V3B: True -> NOT met
+  CLAIM: neither: a bounded estimate (no claim)
+
+=== SECONDARY (descriptive). unseen = vd_test reference never in vd_train text (lowercased, whitespace-collapsed); content words exclude stitch_lexicon.STOP
+  vdB_s101  BLEU  7.287  unseen(886)  3.969  content P  16.84  R  15.44  len ratio 0.9569  WER 1.0155  distinct 654
+  V3B       BLEU  7.807  unseen(886)  4.546  content P  18.74  R  16.04  len ratio 0.9039  WER 0.9839  distinct 587
+  VD5       BLEU  7.841  unseen(886)  4.599  content P  18.35  R  16.27  len ratio 0.9594  WER 1.0068  distinct 556
+  VD5 - V3B      : unseen BLEU +0.053  content P -0.39  R +0.23  len ratio +0.0555  WER +0.0229
+  VD5 - vdB_s101 : unseen BLEU +0.630  content P +1.50  R +0.84  len ratio +0.0026  WER -0.0087
+
+  unseen-subset paired bootstrap (descriptive): src/tools/paired_bootstrap.py --system VD5=./results/video_disjoint_cross_modal_ensemble/decode/VD5_test/hyps_LP=0.9.jsonl --system V3B=./results/t2_vdens_10674/dumps_V3B_test/hyps_LP=0.8.jsonl --system vdB_s101=./results/video_disjoint_cross_modal_ensemble/prior/seedens_vdB/s101_test/hyps_LP=0.9.jsonl --pairs VD5:V3B,VD5:vdB_s101 --train_manifest results/video_disjoint_cross_modal_ensemble/manifests/vd_train.tsv --subset unseen --n 2000 --seed 0
+  test n=1254  seen-in-train=368  unseen=886
+  VD5          BLEU-4   7.841  seen  29.99  unseen  4.60
+  V3B          BLEU-4   7.807  seen  32.26  unseen  4.55
+  vdB_s101     BLEU-4   7.287  seen  30.44  unseen  3.97
+  [unseen n=886] VD5 vs V3B: observed +0.053  95% CI [-0.526, +0.607]  P(VD5>V3B) 55.6%  -> not resolvable
+  [unseen n=886] VD5 vs vdB_s101: observed +0.630  95% CI [-0.060, +1.307]  P(VD5>vdB_s101) 96.0%  -> not resolvable

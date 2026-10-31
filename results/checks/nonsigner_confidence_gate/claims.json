@@ -1,6 +1,7 @@
 {
  "gid": "nonsigner_gate",
  "covered": [
+  "c21-024",
   "c03-014",
   "c13-043",
   "c13-044",

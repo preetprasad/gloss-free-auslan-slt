@@ -1,0 +1,122 @@
+{
+ "gid": "posestitch_scrambled",
+ "tagged": true,
+ "covered": [
+  "c17-063",
+  "c17-064",
+  "c16-032",
+  "c16-033",
+  "c16-034",
+  "c17-079",
+  "c17-080",
+  "c17-048",
+  "c17-049"
+ ],
+ "not_covered": [
+  {
+   "id": "c01-016",
+   "code": "needs_kaya",
+   "reason": "Scrambled-sign control (job 1193231, stitch-scram): per-run outputs are on Kaya, not local; the only local record is the write-up results/STITCH_SCRAMBLE_2026-09-10.md"
+  },
+  {
+   "id": "c02-018",
+   "code": "needs_kaya",
+   "reason": "Scrambled-sign control (job 1193231, stitch-scram): per-run outputs are on Kaya, not local; the only local record is the write-up results/STITCH_SCRAMBLE_2026-09-10.md"
+  },
+  {
+   "id": "c09-053",
+   "code": "needs_kaya",
+   "reason": "Scrambled-sign control (job 1193231, stitch-scram): per-run outputs are on Kaya, not local; the only local record is the write-up results/STITCH_SCRAMBLE_2026-09-10.md"
+  },
+  {
+   "id": "c09-054",
+   "code": "needs_kaya",
+   "reason": "Scrambled-sign control (job 1193231, stitch-scram): per-run outputs are on Kaya, not local; the only local record is the write-up results/STITCH_SCRAMBLE_2026-09-10.md"
+  },
+  {
+   "id": "c09-055",
+   "code": "needs_kaya",
+   "reason": "Scrambled-sign control (job 1193231, stitch-scram): per-run outputs are on Kaya, not local; the only local record is the write-up results/STITCH_SCRAMBLE_2026-09-10.md"
+  },
+  {
+   "id": "c09-056",
+   "code": "needs_kaya",
+   "reason": "Scrambled-sign control (job 1193231, stitch-scram): per-run outputs are on Kaya, not local; the only local record is the write-up results/STITCH_SCRAMBLE_2026-09-10.md"
+  },
+  {
+   "id": "c14-023",
+   "code": "needs_kaya",
+   "reason": "Scrambled-sign control (job 1193231, stitch-scram): per-run outputs are on Kaya, not local; the only local record is the write-up results/STITCH_SCRAMBLE_2026-09-10.md"
+  },
+  {
+   "id": "c14-024",
+   "code": "needs_kaya",
+   "reason": "Scrambled-sign control (job 1193231, stitch-scram): per-run outputs are on Kaya, not local; the only local record is the write-up results/STITCH_SCRAMBLE_2026-09-10.md"
+  },
+  {
+   "id": "c07-041",
+   "code": "needs_kaya",
+   "reason": "200/200 clips and 99.9% of glosses changed: verification output of job 1193231 / its builder run is on Kaya; only the write-up is local"
+  },
+  {
+   "id": "c01-014",
+   "code": "needs_kaya",
+   "reason": "PoseStitch v2 seed replication (job 1173725, posestitch_v2_seeds): per-run outputs are on Kaya, not local; the 79.4-frame clip length needs the MM-WLAuslan clips"
+  },
+  {
+   "id": "c09-035",
+   "code": "needs_kaya",
+   "reason": "PoseStitch v2 seed replication (job 1173725, posestitch_v2_seeds): per-run outputs are on Kaya, not local; the 79.4-frame clip length needs the MM-WLAuslan clips"
+  },
+  {
+   "id": "c09-036",
+   "code": "needs_kaya",
+   "reason": "PoseStitch v2 seed replication (job 1173725, posestitch_v2_seeds): per-run outputs are on Kaya, not local; the 79.4-frame clip length needs the MM-WLAuslan clips"
+  },
+  {
+   "id": "c07-028",
+   "code": "not_own_number",
+   "reason": "name and size of a third-party language model (a setting, not a measurement)"
+  },
+  {
+   "id": "c07-029",
+   "code": "needs_kaya",
+   "reason": "PARTIAL: the 20,608 unique constrained sentences is read from the saved corpus audit (results/stitched_corpus_audit/stitch_corpus_audit.json) and printed untagged by check.py; the 6,880 sentences from unconstrained generation are not saved locally (earlier generation job, on Kaya)"
+  },
+  {
+   "id": "c07-048",
+   "code": "no_saved_output",
+   "reason": "configuration row of the methodology table (dose, epochs, beam, length penalty); a setting recorded only in the job scripts and write-ups"
+  },
+  {
+   "id": "c07-053",
+   "code": "no_saved_output",
+   "reason": "which comparisons used only seeds 42 and 101 is a design statement; the stitch-scram, comm-long and news-xfer outputs are on Kaya"
+  },
+  {
+   "id": "c10-007",
+   "code": "needs_kaya",
+   "reason": "the wave-5 mean test difference +0.04 (P200 vs C) is from job 16397; wave-5 outputs are not local. The wave-6 +0.09 is recomputed under c16-032"
+  },
+  {
+   "id": "c16-028",
+   "code": "needs_kaya",
+   "reason": "wave-5 sizes 25,000 to 300,000 sentences: corpus-building jobs 12627-12630 and 16397 are on Kaya"
+  },
+  {
+   "id": "c16-029",
+   "code": "needs_kaya",
+   "reason": "wave-5 P200 vs C, five seeds (job 16397): per-run outputs on Kaya, not local"
+  },
+  {
+   "id": "c16-030",
+   "code": "needs_kaya",
+   "reason": "wave-5 P200 vs C test +0.04: job 16397, on Kaya"
+  },
+  {
+   "id": "c16-031",
+   "code": "no_saved_output",
+   "reason": "the 1.9 times wider sign vocabulary (1,787 against 942 glosses) and the 1.1:1 mixing ratio of the wave 6 arms are recorded only in PREREG_WAVE6; the wave 6 manifests (job 16435) are on Kaya. The five seeds are counted from the saved summaries and printed untagged"
+  }
+ ]
+}

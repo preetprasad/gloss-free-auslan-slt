@@ -1,0 +1,42 @@
+{
+ "A": {
+  "val_best": 10.59450859491644,
+  "best_epoch": 32,
+  "greedy_test": 10.4465119937968,
+  "beam5_val": 10.655855818238159,
+  "beam5_test": 11.715239196360335,
+  "beam5_test_unique": 313,
+  "soup_beam5_val": 10.916063664485204,
+  "soup_beam5_test": 11.822382626900126
+ },
+ "S": {
+  "val_best": 9.611913372800368,
+  "best_epoch": 35,
+  "greedy_test": 9.071299884850488,
+  "beam5_val": 10.199700776828925,
+  "beam5_test": 10.165575519169018,
+  "beam5_test_unique": 301,
+  "soup_beam5_val": 10.615409420269115,
+  "soup_beam5_test": 10.134107383255296
+ },
+ "SC": {
+  "val_best": 10.759517443971328,
+  "best_epoch": 39,
+  "greedy_test": 10.26400993743835,
+  "beam5_val": 11.446841111042112,
+  "beam5_test": 10.915212828166993,
+  "beam5_test_unique": 352,
+  "soup_beam5_val": 10.997307287833364,
+  "soup_beam5_test": 11.395336722894113
+ },
+ "R": {
+  "val_best": 9.311972140692175,
+  "best_epoch": 30,
+  "greedy_test": 8.140129179249382,
+  "beam5_val": 10.011184476176414,
+  "beam5_test": 8.91296733929237,
+  "beam5_test_unique": 280,
+  "soup_beam5_val": 9.98350219172154,
+  "soup_beam5_test": 9.231433213600367
+ }
+}

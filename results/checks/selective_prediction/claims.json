@@ -1,0 +1,39 @@
+{
+ "gid": "selective_prediction",
+ "tagged": true,
+ "covered": [
+  "c01-029",
+  "c01-030",
+  "c02-029",
+  "c02-030",
+  "c06-010",
+  "c07-073",
+  "c13-001",
+  "c13-002",
+  "c13-003",
+  "c13-004",
+  "c13-005",
+  "c13-006",
+  "c13-007",
+  "c13-008",
+  "c13-012",
+  "c13-018",
+  "c14-092",
+  "c16-044",
+  "c16-046",
+  "c16-047",
+  "c16-048",
+  "c18-035",
+  "c18-036",
+  "c18-037",
+  "c18-038",
+  "c18-039"
+ ],
+ "not_covered": [
+  {
+   "id": "c08-025",
+   "code": "not_own_number",
+   "reason": "Keypoint-confidence cut-off used when drawing the estimator-comparison figure (a rendering setting), not a selective-prediction measurement."
+  }
+ ]
+}

@@ -41,8 +41,8 @@ max-T over the family of four (B = 2000, alpha 0.05), q = 2.379; observed on tes
   E*-meanS  +2.75  max-T 95% [+1.54, +3.95]  (paired-bootstrap 95% [+1.81, +3.80])
   E*-bestS  +3.18  max-T 95% [+1.43, +4.92]  (paired-bootstrap 95% [+1.72, +4.59])
   member mean 17.86; member best on validation 17.43
-claim rule E0: both max-T intervals exclude 0 = True; predicted power 0.63 (>= 0.50: True) -> CLAIM
-claim rule E*: both max-T intervals exclude 0 = True; predicted power 0.72 (>= 0.50: True) -> CLAIM
+claim rule E0: both max-T intervals exclude 0 = True; predicted power 0.63 (>= 0.5: True) -> CLAIM
+claim rule E*: both max-T intervals exclude 0 = True; predicted power 0.72 (>= 0.5: True) -> CLAIM
 descriptive, outside the family: E* minus E0 +0.40 [-0.18, +1.13]
 unseen-570 test BLEU-4 (references absent from training, n = 570):
   member mean unseen 13.49

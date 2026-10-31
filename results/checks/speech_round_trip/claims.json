@@ -1,0 +1,27 @@
+{
+ "gid": "speech_roundtrip",
+ "tagged": true,
+ "covered": [
+  "c07-072",
+  "c14-095",
+  "c18-054",
+  "c20-012",
+  "c20-013",
+  "c20-015",
+  "c20-016",
+  "c20-018",
+  "c20-019"
+ ],
+ "not_covered": [
+  {
+   "id": "c20-014",
+   "code": "disagrees",
+   "reason": "DISAGREES: appendix says that in every variant the round trip added at most half a percentage point to the translator's output; recomputed upper bound is +0.5 for the 40-epoch output (A) but +0.8 for the final ensemble (A6, strict scoring, 757 scramblable clips); the original job's recorded file gives the same +0.8"
+  },
+  {
+   "id": "c20-017",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says strict interval [1.8, 4.5] for the final ensemble; recomputed upper bound is 4.446 (4.4); the original job's recorded file also has 0.04446. Other numbers of the row agree (3.0, 1.8, 1.6, 1.0, 2.6)"
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "gid": "dataset_statistics",
+ "tagged": true,
+ "covered": [
+  "c03-016",
+  "c04-010",
+  "c04-022",
+  "c06-014",
+  "c06-015",
+  "c06-027",
+  "c08-001",
+  "c10-049",
+  "c10-050",
+  "c15-009",
+  "c15-010",
+  "c15-011",
+  "c15-012",
+  "c15-013"
+ ],
+ "not_covered": [
+  {
+   "id": "c04-011",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says 9,665 News training clips, 18/17/17 signers, vocabulary 12,346 (the Auslan-Daily paper's Table 2 figure), the released spreadsheets give 9,669 clips (700/700 dev/test agree), 22/21/21 signers, vocabulary 18,893 (lower-cased whitespace tokens)"
+  },
+  {
+   "id": "c04-023",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says 9,665 News training clips, 18/17/17 signers, vocabulary 12,346 (the Auslan-Daily paper's Table 2 figure), the released spreadsheets give 9,669 clips (700/700 agree), 22/21/21 signers, vocabulary 18,893"
+  },
+  {
+   "id": "c04-025",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says 25,106 clips (the Auslan-Daily paper's Table 2 figure), the released spreadsheets give 25,110 (14,041 Communication + 11,069 News)"
+  },
+  {
+   "id": "c04-037",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says 25,106 clips, 22,106 in the training splits (the Auslan-Daily paper's Table 2 figure), the released spreadsheets give 25,110 clips, 22,110 in the training splits"
+  },
+  {
+   "id": "c05-028",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says 22,106 training clips (the Auslan-Daily paper's Table 2 figure), the released spreadsheets give 22,110 training clips (12,441 + 9,669)"
+  }
+ ]
+}

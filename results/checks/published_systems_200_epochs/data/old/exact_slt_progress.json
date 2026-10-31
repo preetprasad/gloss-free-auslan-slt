@@ -1,0 +1,19 @@
+{
+  "status": "stopped_at_epoch_25_gate",
+  "epoch": 25,
+  "epochs": 60,
+  "latest": {
+    "epoch": 25,
+    "loss": 28.2923,
+    "bleu4": 1.54,
+    "wer": 1.3306
+  },
+  "best": {
+    "bleu4": 2.1575485511633796,
+    "wer": 1.147842947164324,
+    "epoch": 4
+  },
+  "device": "mps",
+  "architecture": "signjoey_slt",
+  "bbox_format": "xywh"
+}

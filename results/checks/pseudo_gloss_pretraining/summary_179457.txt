@@ -1,0 +1,249 @@
+node k008.hpc.uwa.edu.au | DET='--deterministic True'
+fac385cfe1c9d79736053c278e0d337b  config.py
+924f93b37b4b4150030e31c66d2e9d6f  slt/data.py
+2f8d4866f4633577864147ba4222374c  slt/model.py
+74078f8f543251da47bc7a7fc715a48b  train_ctc.py
+6553f52a3f0fbeb57feef6510289d66c  tools/eval_beam.py
+94ded6621d5717673cc35dc2a7d032ed  tools/w23_ctc_pretrain.py
+C_s101
+C_s202
+C_s42
+w23_train.sbatch.ran_task0
+w23_train.sbatch.ran_task1
+w23_train.sbatch.ran_task2
+w23_train.sbatch.ran_task3
+w23_train.sbatch.ran_task4
+w23_train.sbatch.ran_task5
+X1_s101
+X1_s202
+X1_s42
+X_s101
+X_s202
+X_s42
+Y_s101
+Y_s202
+Y_s42
+selftest passed
+GATE: GATE NOT REPRODUCED EXACTLY, UNGATED: C beam-5 test 11.711 11.366 10.411; differences from wave 5's control (seed: got - control) {42: 0.0, 101: 0.621, 202: 0.0}, all within the +-1.2 cross-job band (job set 179456); contrasts are in-batch and are printed, every verdict is labelled UNGATED
+WER reference points (test, 2026-09-09l): the best input-blind constant string scores 0.9526 and silence 1.000, so a WER change smaller than the change in output length that comes with it is not evidence. Brevity penalty (bp) is printed beside the length ratio for the same reason.
+--- stage 1 of X (CTC only), validation (G-stage1: TRAINED only if the LOWEST validation CTC <= 0.50 x the pre-training CTC v0)
+  X1_s42: TRAINED: lowest validation CTC 5.4374 (epoch 22) is 0.026 of the pre-training value 212.5901 (line 0.5); descriptive: 0.823 of epoch 1 (6.6036), 0.918 of the input-blind plateau 5.92; final-epoch value 5.4631 | val CTC epoch 0/1/lowest/final 212.590/6.604/5.437/5.463 | final blank-frame share 0.993, greedy-CTC pseudo-gloss recall 5.4% precision 36.3% | 1.37 h
+  X1_s101: TRAINED: lowest validation CTC 5.4182 (epoch 24) is 0.027 of the pre-training value 202.0921 (line 0.5); descriptive: 0.832 of epoch 1 (6.5100), 0.915 of the input-blind plateau 5.92; final-epoch value 5.4705 | val CTC epoch 0/1/lowest/final 202.092/6.510/5.418/5.471 | final blank-frame share 0.993, greedy-CTC pseudo-gloss recall 5.4% precision 37.7% | 1.37 h
+  X1_s202: TRAINED: lowest validation CTC 5.4245 (epoch 26) is 0.026 of the pre-training value 209.3287 (line 0.5); descriptive: 0.825 of epoch 1 (6.5749), 0.916 of the input-blind plateau 5.92; final-epoch value 5.5062 | val CTC epoch 0/1/lowest/final 209.329/6.575/5.425/5.506 | final blank-frame share 0.993, greedy-CTC pseudo-gloss recall 6.2% precision 39.4% | 1.42 h
+  C beam-5 val/test s42 11.307/11.711  s101 11.939/11.366  s202 11.338/10.411 | means 11.528 / 11.163 | best epoch 38 40 39 | job set 179456
+  X beam-5 val/test s42 11.845/12.185  s101 12.162/12.045  s202 12.453/11.372 | means 12.153 / 11.867 | best epoch 38 40 39 | job set 179456
+  Y beam-5 val/test s42 11.879/12.136  s101 11.871/11.491  s202 11.534/10.827 | means 11.761 / 11.485 | best epoch 37 39 29 | job set 179456
+=== X - Y: PRIMARY (stage-1 objective: CTC only vs the full joint loss, matched epochs; quote only beside Y - C) [UNGATED] ===
+  beam5_val          n=3 per-seed -0.034 +0.291 +0.919 | positive 2/3 | mean +0.392 | 95% t [-0.811, +1.595]
+  beam5_test         n=3 per-seed +0.049 +0.555 +0.545 | positive 3/3 | mean +0.383 | 95% t [-0.336, +1.102]
+  beam5_val_unseen   n=3 per-seed +0.254 +0.295 +0.772 | positive 3/3 | mean +0.440 | 95% t [-0.275, +1.156]
+  beam5_test_unseen  n=3 per-seed +0.666 +0.502 +0.347 | positive 3/3 | mean +0.505 | 95% t [+0.109, +0.900]
+  content_precision  n=3 per-seed -0.932 +1.318 -0.677 | positive 1/3 | mean -0.097 | 95% t [-3.158, +2.964]
+  content_recall     n=3 per-seed -1.811 +0.881 +1.224 | positive 2/3 | mean +0.098 | 95% t [-4.031, +4.227]
+  len_ratio          n=3 per-seed +0.007 -0.014 +0.045 | positive 2/3 | mean +0.013 | 95% t [-0.063, +0.088]
+  bp                 n=3 per-seed +0.006 -0.014 +0.046 | positive 2/3 | mean +0.013 | 95% t [-0.063, +0.089]
+  wer                n=3 per-seed +0.012 -0.019 +0.006 | positive 2/3 | mean -0.000 | 95% t [-0.042, +0.041]
+  distinct           n=3 per-seed +11.000 +13.000 +52.000 | positive 3/3 | mean +25.333 | 95% t [-32.094, +82.760]
+  val_best           n=3 per-seed +0.470 -0.196 -0.201 | positive 1/3 | mean +0.025 | 95% t [-0.934, +0.983]
+  greedy_test        n=3 per-seed +0.161 +0.432 +0.812 | positive 3/3 | mean +0.468 | 95% t [-0.345, +1.281]
+  [val] column: X mean | Y mean | per-seed difference | mean | sign
+    D1 brevity penalty                       0.820 |     0.809 |   -0.026   +0.005   +0.052 |   +0.011 | 2/3
+    D1 length ratio                          0.834 |     0.826 |   -0.022   +0.005   +0.044 |   +0.009 | 2/3
+    D2 BP-free geometric precision          14.824 |    14.539 |   +0.427   +0.255   +0.172 |   +0.285 | 3/3
+    D3 verbatim-training %                  64.042 |    65.375 |   -0.125   +1.125   -5.000 |   -1.333 | 1/3
+    D4 precision, 2-grams                   14.629 |    14.364 |   +0.199   +0.646   -0.051 |   +0.264 | 2/3
+    D4 precision, 3-grams                   10.106 |     9.681 |   +0.472   +0.382   +0.422 |   +0.425 | 3/3
+    D4 matched 2-grams                     484.333 |   469.000 |   -9.000  +25.000  +30.000 |  +15.333 | 2/3
+    D4 matched 3-grams                     253.667 |   238.667 |   +1.000  +12.000  +32.000 |  +15.000 | 3/3
+    D4 matched 1-grams                    1718.000 |  1714.000 |  -38.000  +14.000  +36.000 |   +4.000 | 2/3
+    D4 matched 4-grams                     144.333 |   138.333 |   -1.000   -2.000  +21.000 |   +6.000 | 1/3
+    D5 content recall %                     20.107 |    20.140 |   -1.122   +0.195   +0.830 |   -0.033 | 2/3
+    D5 content precision %                  25.070 |    25.170 |   -0.124   +0.634   -0.809 |   -0.100 | 1/3
+    D5 recall, frequency 0                   0.000 |     0.000 |   +0.000   +0.000   +0.000 |   +0.000 | 0/3
+    D5 recall, frequency 1-10                0.813 |     1.084 |   +0.000   -0.813   +0.000 |   -0.271 | 0/3
+    D5 recall, frequency 11-50               4.541 |     4.087 |   +0.545   +0.000   +0.817 |   +0.454 | 2/3
+    D5 recall, frequency 51-200             19.514 |    18.209 |   +1.246   +1.068   +1.601 |   +1.305 | 3/3
+    D5 recall, frequency >200               28.783 |    29.727 |   -3.236   -0.101   +0.506 |   -0.944 | 1/3
+    D5 recall, frequency 11-200             13.599 |    12.630 |   +0.969   +0.646   +1.292 |   +0.969 | 3/3
+    D6 recall, switch clean                 20.516 |    20.430 |   -0.710   +0.065   +0.903 |   +0.086 | 2/3
+    D6 recall, switch light                 17.934 |    18.811 |   -3.509   -0.877   +1.754 |   -0.877 | 1/3
+    D6 recall, switch heavy                 20.807 |    20.170 |   +0.000   +3.822   -1.911 |   +0.637 | 1/3
+    D6 BLEU, switch clean                   12.504 |    12.190 |   -0.286   -0.022   +1.250 |   +0.314 | 1/3
+    D6 BLEU, switch light                   11.058 |    10.363 |   +0.941   +1.206   -0.063 |   +0.695 | 2/3
+    D6 BLEU, switch heavy                   10.652 |    10.067 |   +0.594   +1.867   -0.706 |   +0.585 | 2/3
+    D7 distinct hypotheses                 432.000 |   414.000 |   +1.000   +7.000  +46.000 |  +18.000 | 3/3
+    D7 exact-match %                         5.958 |     5.750 |   -0.250   +0.125   +0.750 |   +0.208 | 2/3
+    D2b BLEU at the control's brevity penalty     11.993 |    11.761 |   +0.352   +0.211   +0.133 |   +0.232  (arithmetic, not a decode)
+  [test] column: X mean | Y mean | per-seed difference | mean | sign
+    D1 brevity penalty                       0.802 |     0.790 |   +0.006   -0.014   +0.046 |   +0.013 | 2/3
+    D1 length ratio                          0.819 |     0.809 |   +0.005   -0.012   +0.038 |   +0.010 | 2/3
+    D2 BP-free geometric precision          14.796 |    14.546 |   -0.062   +0.944   -0.134 |   +0.250 | 1/3
+    D3 verbatim-training %                  65.292 |    67.042 |   -1.500   +0.125   -3.875 |   -1.750 | 1/3
+    D4 precision, 2-grams                   14.637 |    14.212 |   +0.003   +1.181   +0.090 |   +0.425 | 3/3
+    D4 precision, 3-grams                    9.820 |     9.607 |   -0.159   +0.803   -0.005 |   +0.213 | 1/3
+    D4 matched 2-grams                     472.333 |   451.333 |   +4.000  +30.000  +29.000 |  +21.000 | 3/3
+    D4 matched 3-grams                     238.333 |   228.333 |   -1.000  +14.000  +17.000 |  +10.000 | 2/3
+    D4 matched 1-grams                    1714.333 |  1702.667 |  -14.000  +23.000  +26.000 |  +11.667 | 2/3
+    D4 matched 4-grams                     137.667 |   131.333 |   +4.000   +5.000  +10.000 |   +6.333 | 3/3
+    D5 content recall %                     20.729 |    20.680 |   -1.741   +0.725   +1.161 |   +0.048 | 2/3
+    D5 content precision %                  26.434 |    26.572 |   -1.130   +1.283   -0.566 |   -0.137 | 1/3
+    D5 recall, frequency 0                   0.000 |     0.000 |   +0.000   +0.000   +0.000 |   +0.000 | 0/3
+    D5 recall, frequency 1-10                1.180 |     2.360 |   -0.885   -2.655   +0.000 |   -1.180 | 0/3
+    D5 recall, frequency 11-50               7.645 |     6.830 |   +0.000   +1.223   +1.223 |   +0.815 | 2/3
+    D5 recall, frequency 51-200             18.519 |    19.146 |   -2.825   -0.565   +1.507 |   -0.628 | 1/3
+    D5 recall, frequency >200               27.993 |    27.716 |   -1.842   +1.565   +1.105 |   +0.276 | 2/3
+    D5 recall, frequency 11-200             14.375 |    14.452 |   -1.748   +0.117   +1.399 |   -0.078 | 2/3
+    D6 recall, switch clean                 21.846 |    21.477 |   -1.564   +0.651   +2.020 |   +0.369 | 2/3
+    D6 recall, switch light                 18.529 |    17.893 |   -1.362   +2.725   +0.545 |   +0.636 | 2/3
+    D6 recall, switch heavy                 15.261 |    19.478 |   -4.217   -3.012   -5.422 |   -4.217 | 0/3
+    D6 BLEU, switch clean                   12.535 |    12.133 |   +0.260   +0.210   +0.737 |   +0.402 | 3/3
+    D6 BLEU, switch light                   10.777 |     9.749 |   +0.358   +2.337   +0.391 |   +1.029 | 3/3
+    D6 BLEU, switch heavy                    7.665 |     8.832 |   -2.813   +0.336   -1.024 |   -1.167 | 1/3
+    D7 distinct hypotheses                 431.667 |   406.333 |  +11.000  +13.000  +52.000 |  +25.333 | 3/3
+    D7 exact-match %                         5.125 |     5.250 |   -0.250   +0.250   -0.375 |   -0.125 | 1/3
+    D2b BLEU at the control's brevity penalty     11.691 |    11.485 |   -0.049   +0.770   -0.102 |   +0.206  (arithmetic, not a decode)
+  R-B (validation): prec2: +0.018 rel (2/3 seeds) -> no; prec3: +0.044 rel (3/3 seeds) -> no; verbatim: -1.333 (2/3 seeds) -> no  => NO movement
+=== X - C: descriptive (stage plus the extra epochs) [UNGATED] ===
+  beam5_val          n=3 per-seed +0.537 +0.223 +1.115 | positive 3/3 | mean +0.625 | 95% t [-0.499, +1.749]
+  beam5_test         n=3 per-seed +0.474 +0.679 +0.960 | positive 3/3 | mean +0.704 | 95% t [+0.097, +1.311]
+  beam5_val_unseen   n=3 per-seed +0.537 +0.473 +1.260 | positive 3/3 | mean +0.757 | 95% t [-0.329, +1.843]
+  beam5_test_unseen  n=3 per-seed +0.974 +1.017 +0.305 | positive 3/3 | mean +0.765 | 95% t [-0.227, +1.758]
+  content_precision  n=3 per-seed +1.142 +1.703 +2.922 | positive 3/3 | mean +1.922 | 95% t [-0.339, +4.184]
+  content_recall     n=3 per-seed +0.441 +0.979 +2.154 | positive 3/3 | mean +1.191 | 95% t [-0.985, +3.367]
+  len_ratio          n=3 per-seed -0.000 -0.009 +0.013 | positive 1/3 | mean +0.001 | 95% t [-0.025, +0.028]
+  bp                 n=3 per-seed -0.000 -0.008 +0.013 | positive 1/3 | mean +0.001 | 95% t [-0.026, +0.028]
+  wer                n=3 per-seed -0.003 -0.018 -0.017 | positive 0/3 | mean -0.013 | 95% t [-0.034, +0.008]
+  distinct           n=3 per-seed +76.000 +75.000 +78.000 | positive 3/3 | mean +76.333 | 95% t [+72.538, +80.128]
+  val_best           n=3 per-seed +0.913 +0.208 -0.091 | positive 2/3 | mean +0.344 | 95% t [-0.937, +1.624]
+  greedy_test        n=3 per-seed +0.371 +0.474 +0.493 | positive 3/3 | mean +0.446 | 95% t [+0.282, +0.609]
+  [val] column: X mean | C mean | per-seed difference | mean | sign
+    D1 brevity penalty                       0.820 |     0.820 |   -0.043   +0.019   +0.024 |   -0.000 | 2/3
+    D1 length ratio                          0.834 |     0.834 |   -0.036   +0.016   +0.020 |   +0.000 | 2/3
+    D2 BP-free geometric precision          14.824 |    14.067 |   +1.391   -0.067   +0.947 |   +0.757 | 2/3
+    D3 verbatim-training %                  64.042 |    72.708 |   -5.375  -11.000   -9.625 |   -8.667 | 0/3
+    D4 precision, 2-grams                   14.629 |    13.491 |   +1.700   +0.463   +1.252 |   +1.138 | 3/3
+    D4 precision, 3-grams                   10.106 |     9.354 |   +1.233   +0.044   +0.978 |   +0.752 | 3/3
+    D4 matched 2-grams                     484.333 |   446.333 |  +32.000  +27.000  +55.000 |  +38.000 | 3/3
+    D4 matched 3-grams                     253.667 |   234.667 |  +14.000   +9.000  +34.000 |  +19.000 | 3/3
+    D4 matched 1-grams                    1718.000 |  1681.000 |  +17.000  +46.000  +48.000 |  +37.000 | 3/3
+    D4 matched 4-grams                     144.333 |   139.333 |   +1.000   -2.000  +16.000 |   +5.000 | 2/3
+    D5 content recall %                     20.107 |    18.920 |   +1.903   +0.927   +0.732 |   +1.188 | 3/3
+    D5 content precision %                  25.070 |    23.433 |   +3.104   +1.126   +0.682 |   +1.637 | 3/3
+    D5 recall, frequency 0                   0.000 |     0.000 |   +0.000   +0.000   +0.000 |   +0.000 | 0/3
+    D5 recall, frequency 1-10                0.813 |     1.084 |   +0.000   +0.000   -0.813 |   -0.271 | 0/3
+    D5 recall, frequency 11-50               4.541 |     2.997 |   +1.635   +0.817   +2.180 |   +1.544 | 3/3
+    D5 recall, frequency 51-200             19.514 |    16.607 |   +4.093   +1.957   +2.669 |   +2.906 | 3/3
+    D5 recall, frequency >200               28.783 |    28.514 |   +1.011   +0.506   -0.708 |   +0.270 | 2/3
+    D5 recall, frequency 11-200             13.599 |    11.231 |   +3.122   +1.507   +2.476 |   +2.368 | 3/3
+    D6 recall, switch clean                 20.516 |    18.946 |   +2.000   +1.032   +1.677 |   +1.570 | 3/3
+    D6 recall, switch light                 17.934 |    18.226 |   +2.632   -1.462   -2.047 |   -0.292 | 1/3
+    D6 recall, switch heavy                 20.807 |    20.170 |   -0.637   +5.096   -2.548 |   +0.637 | 1/3
+    D6 BLEU, switch clean                   12.504 |    11.835 |   +0.360   +0.070   +1.578 |   +0.669 | 3/3
+    D6 BLEU, switch light                   11.058 |    11.082 |   +0.793   +0.225   -1.089 |   -0.024 | 2/3
+    D6 BLEU, switch heavy                   10.652 |     9.048 |   +2.027   +2.029   +0.756 |   +1.604 | 3/3
+    D7 distinct hypotheses                 432.000 |   363.333 |  +40.000  +89.000  +77.000 |  +68.667 | 3/3
+    D7 exact-match %                         5.958 |     5.875 |   +0.500   -0.375   +0.125 |   +0.083 | 2/3
+    D2b BLEU at the control's brevity penalty     12.153 |    11.528 |   +1.169   -0.055   +0.761 |   +0.625  (arithmetic, not a decode)
+  [test] column: X mean | C mean | per-seed difference | mean | sign
+    D1 brevity penalty                       0.802 |     0.801 |   -0.000   -0.008   +0.013 |   +0.001 | 1/3
+    D1 length ratio                          0.819 |     0.818 |   -0.000   -0.007   +0.011 |   +0.001 | 1/3
+    D2 BP-free geometric precision          14.796 |    13.936 |   +0.603   +0.997   +0.979 |   +0.860 | 3/3
+    D3 verbatim-training %                  65.292 |    73.667 |   -9.500   -9.000   -6.625 |   -8.375 | 0/3
+    D4 precision, 2-grams                   14.637 |    13.333 |   +0.695   +1.388   +1.828 |   +1.304 | 3/3
+    D4 precision, 3-grams                    9.820 |     8.998 |   +0.711   +0.876   +0.880 |   +0.822 | 3/3
+    D4 matched 2-grams                     472.333 |   429.667 |  +22.000  +40.000  +66.000 |  +42.667 | 3/3
+    D4 matched 3-grams                     238.333 |   218.000 |  +17.000  +18.000  +26.000 |  +20.333 | 3/3
+    D4 matched 1-grams                    1714.333 |  1690.333 |  -13.000  +38.000  +47.000 |  +24.000 | 2/3
+    D4 matched 4-grams                     137.667 |   131.000 |   +8.000   +5.000   +7.000 |   +6.667 | 3/3
+    D5 content recall %                     20.729 |    19.536 |   +0.532   +0.967   +2.079 |   +1.193 | 3/3
+    D5 content precision %                  26.434 |    24.534 |   +1.019   +1.784   +2.897 |   +1.900 | 3/3
+    D5 recall, frequency 0                   0.000 |     0.000 |   +0.000   +0.000   +0.000 |   +0.000 | 0/3
+    D5 recall, frequency 1-10                1.180 |     1.770 |   -1.770   +0.885   -0.885 |   -0.590 | 1/3
+    D5 recall, frequency 11-50               7.645 |     5.505 |   +1.835   +2.141   +2.446 |   +2.141 | 3/3
+    D5 recall, frequency 51-200             18.519 |    16.447 |   +1.130   +0.000   +5.085 |   +2.072 | 2/3
+    D5 recall, frequency >200               27.993 |    27.317 |   +0.092   +1.105   +0.829 |   +0.675 | 3/3
+    D5 recall, frequency 11-200             14.375 |    12.277 |   +1.399   +0.816   +4.079 |   +2.098 | 3/3
+    D6 recall, switch clean                 21.846 |    20.282 |   +0.651   +1.173   +2.866 |   +1.564 | 3/3
+    D6 recall, switch light                 18.529 |    17.439 |   +0.545   +1.907   +0.817 |   +1.090 | 3/3
+    D6 recall, switch heavy                 15.261 |    17.269 |   -0.602   -3.012   -2.410 |   -2.008 | 0/3
+    D6 BLEU, switch clean                   12.535 |    11.840 |   +0.726   +0.537   +0.822 |   +0.695 | 3/3
+    D6 BLEU, switch light                   10.777 |     9.685 |   +0.055   +1.323   +1.900 |   +1.093 | 3/3
+    D6 BLEU, switch heavy                    7.665 |     7.677 |   -1.179   +0.897   +0.249 |   -0.011 | 2/3
+    D7 distinct hypotheses                 431.667 |   355.333 |  +76.000  +75.000  +78.000 |  +76.333 | 3/3
+    D7 exact-match %                         5.125 |     5.125 |   -0.125   +0.375   -0.250 |   +0.000 | 1/3
+    D2b BLEU at the control's brevity penalty     11.852 |    11.163 |   +0.481   +0.807   +0.779 |   +0.689  (arithmetic, not a decode)
+=== Y - C: descriptive (the extra epochs alone; the analogue of wave 5's PJ - C) [UNGATED] ===
+  beam5_val          n=3 per-seed +0.571 -0.068 +0.196 | positive 2/3 | mean +0.233 | 95% t [-0.565, +1.031]
+  beam5_test         n=3 per-seed +0.425 +0.124 +0.416 | positive 3/3 | mean +0.322 | 95% t [-0.103, +0.746]
+  beam5_val_unseen   n=3 per-seed +0.283 +0.178 +0.488 | positive 3/3 | mean +0.317 | 95% t [-0.075, +0.708]
+  beam5_test_unseen  n=3 per-seed +0.309 +0.515 -0.043 | positive 2/3 | mean +0.260 | 95% t [-0.440, +0.961]
+  content_precision  n=3 per-seed +2.074 +0.385 +3.599 | positive 3/3 | mean +2.019 | 95% t [-1.975, +6.014]
+  content_recall     n=3 per-seed +2.252 +0.098 +0.930 | positive 3/3 | mean +1.093 | 95% t [-1.605, +3.791]
+  len_ratio          n=3 per-seed -0.007 +0.006 -0.033 | positive 1/3 | mean -0.011 | 95% t [-0.060, +0.037]
+  bp                 n=3 per-seed -0.007 +0.006 -0.033 | positive 1/3 | mean -0.011 | 95% t [-0.061, +0.038]
+  wer                n=3 per-seed -0.016 +0.001 -0.023 | positive 1/3 | mean -0.013 | 95% t [-0.043, +0.018]
+  distinct           n=3 per-seed +65.000 +62.000 +26.000 | positive 3/3 | mean +51.000 | 95% t [-2.916, +104.916]
+  val_best           n=3 per-seed +0.443 +0.404 +0.110 | positive 3/3 | mean +0.319 | 95% t [-0.134, +0.772]
+  greedy_test        n=3 per-seed +0.210 +0.042 -0.319 | positive 2/3 | mean -0.022 | 95% t [-0.694, +0.649]
+  [val] column: Y mean | C mean | per-seed difference | mean | sign
+    D1 brevity penalty                       0.809 |     0.820 |   -0.017   +0.014   -0.029 |   -0.011 | 1/3
+    D1 length ratio                          0.826 |     0.834 |   -0.014   +0.012   -0.024 |   -0.009 | 1/3
+    D2 BP-free geometric precision          14.539 |    14.067 |   +0.964   -0.322   +0.775 |   +0.472 | 2/3
+    D3 verbatim-training %                  65.375 |    72.708 |   -5.250  -12.125   -4.625 |   -7.333 | 0/3
+    D4 precision, 2-grams                   14.364 |    13.491 |   +1.501   -0.183   +1.304 |   +0.874 | 2/3
+    D4 precision, 3-grams                    9.681 |     9.354 |   +0.760   -0.338   +0.556 |   +0.326 | 2/3
+    D4 matched 2-grams                     469.000 |   446.333 |  +41.000   +2.000  +25.000 |  +22.667 | 3/3
+    D4 matched 3-grams                     238.667 |   234.667 |  +13.000   -3.000   +2.000 |   +4.000 | 2/3
+    D4 matched 1-grams                    1714.000 |  1681.000 |  +55.000  +32.000  +12.000 |  +33.000 | 3/3
+    D4 matched 4-grams                     138.333 |   139.333 |   +2.000   +0.000   -5.000 |   -1.000 | 1/3
+    D5 content recall %                     20.140 |    18.920 |   +3.026   +0.732   -0.098 |   +1.220 | 2/3
+    D5 content precision %                  25.170 |    23.433 |   +3.228   +0.492   +1.491 |   +1.737 | 3/3
+    D5 recall, frequency 0                   0.000 |     0.000 |   +0.000   +0.000   +0.000 |   +0.000 | 0/3
+    D5 recall, frequency 1-10                1.084 |     1.084 |   +0.000   +0.813   -0.813 |   +0.000 | 1/3
+    D5 recall, frequency 11-50               4.087 |     2.997 |   +1.090   +0.817   +1.362 |   +1.090 | 3/3
+    D5 recall, frequency 51-200             18.209 |    16.607 |   +2.847   +0.890   +1.068 |   +1.601 | 3/3
+    D5 recall, frequency >200               29.727 |    28.514 |   +4.247   +0.607   -1.213 |   +1.213 | 2/3
+    D5 recall, frequency 11-200             12.630 |    11.231 |   +2.153   +0.861   +1.184 |   +1.399 | 3/3
+    D6 recall, switch clean                 20.430 |    18.946 |   +2.710   +0.968   +0.774 |   +1.484 | 3/3
+    D6 recall, switch light                 18.811 |    18.226 |   +6.140   -0.585   -3.801 |   +0.585 | 1/3
+    D6 recall, switch heavy                 20.170 |    20.170 |   -0.637   +1.274   -0.637 |   +0.000 | 1/3
+    D6 BLEU, switch clean                   12.190 |    11.835 |   +0.645   +0.092   +0.328 |   +0.355 | 3/3
+    D6 BLEU, switch light                   10.363 |    11.082 |   -0.148   -0.982   -1.026 |   -0.719 | 0/3
+    D6 BLEU, switch heavy                   10.067 |     9.048 |   +1.432   +0.162   +1.462 |   +1.019 | 3/3
+    D7 distinct hypotheses                 414.000 |   363.333 |  +39.000  +82.000  +31.000 |  +50.667 | 3/3
+    D7 exact-match %                         5.750 |     5.875 |   +0.750   -0.500   -0.625 |   -0.125 | 1/3
+    D2b BLEU at the control's brevity penalty     11.918 |    11.528 |   +0.810   -0.263   +0.623 |   +0.390  (arithmetic, not a decode)
+  [test] column: Y mean | C mean | per-seed difference | mean | sign
+    D1 brevity penalty                       0.790 |     0.801 |   -0.007   +0.006   -0.033 |   -0.011 | 1/3
+    D1 length ratio                          0.809 |     0.818 |   -0.006   +0.005   -0.027 |   -0.009 | 1/3
+    D2 BP-free geometric precision          14.546 |    13.936 |   +0.665   +0.053   +1.112 |   +0.610 | 3/3
+    D3 verbatim-training %                  67.042 |    73.667 |   -8.000   -9.125   -2.750 |   -6.625 | 0/3
+    D4 precision, 2-grams                   14.212 |    13.333 |   +0.693   +0.207   +1.738 |   +0.879 | 3/3
+    D4 precision, 3-grams                    9.607 |     8.998 |   +0.869   +0.073   +0.885 |   +0.609 | 3/3
+    D4 matched 2-grams                     451.333 |   429.667 |  +18.000  +10.000  +37.000 |  +21.667 | 3/3
+    D4 matched 3-grams                     228.333 |   218.000 |  +18.000   +4.000   +9.000 |  +10.333 | 3/3
+    D4 matched 1-grams                    1702.667 |  1690.333 |   +1.000  +15.000  +21.000 |  +12.333 | 3/3
+    D4 matched 4-grams                     131.333 |   131.000 |   +4.000   +0.000   -3.000 |   +0.333 | 1/3
+    D5 content recall %                     20.680 |    19.536 |   +2.273   +0.242   +0.919 |   +1.144 | 3/3
+    D5 content precision %                  26.572 |    24.534 |   +2.149   +0.501   +3.463 |   +2.038 | 3/3
+    D5 recall, frequency 0                   0.000 |     0.000 |   +0.000   +0.000   +0.000 |   +0.000 | 0/3
+    D5 recall, frequency 1-10                2.360 |     1.770 |   -0.885   +3.540   -0.885 |   +0.590 | 1/3
+    D5 recall, frequency 11-50               6.830 |     5.505 |   +1.835   +0.917   +1.223 |   +1.325 | 3/3
+    D5 recall, frequency 51-200             19.146 |    16.447 |   +3.955   +0.565   +3.578 |   +2.699 | 3/3
+    D5 recall, frequency >200               27.716 |    27.317 |   +1.934   -0.460   -0.276 |   +0.399 | 1/3
+    D5 recall, frequency 11-200             14.452 |    12.277 |   +3.147   +0.699   +2.681 |   +2.176 | 3/3
+    D6 recall, switch clean                 21.477 |    20.282 |   +2.215   +0.521   +0.847 |   +1.194 | 3/3
+    D6 recall, switch light                 17.893 |    17.439 |   +1.907   -0.817   +0.272 |   +0.454 | 2/3
+    D6 recall, switch heavy                 19.478 |    17.269 |   +3.614   +0.000   +3.012 |   +2.209 | 2/3
+    D6 BLEU, switch clean                   12.133 |    11.840 |   +0.466   +0.327   +0.085 |   +0.293 | 3/3
+    D6 BLEU, switch light                    9.749 |     9.685 |   -0.303   -1.015   +1.509 |   +0.064 | 1/3
+    D6 BLEU, switch heavy                    8.832 |     7.677 |   +1.634   +0.560   +1.273 |   +1.156 | 3/3
+    D7 distinct hypotheses                 406.333 |   355.333 |  +65.000  +62.000  +26.000 |  +51.000 | 3/3
+    D7 exact-match %                         5.250 |     5.125 |   +0.125   +0.125   +0.125 |   +0.125 | 3/3
+    D2b BLEU at the control's brevity penalty     11.649 |    11.163 |   +0.530   +0.043   +0.886 |   +0.486  (arithmetic, not a decode)
+  QUOTING: X - Y is quoted only together with Y - C (pre-registration section 5); the soup files (soup_last5) are never read.
+  RULE (pre-registration section 5): UNGATED CONTINUES (3-seed mean X - Y beam-5 validation difference +0.392 > 0). Nothing is adopted at three seeds; Stage 2 (seeds 303/404) only by a dated addendum
+  READING (descriptive): R-continues-noise-compatible
+  LENGTH: LENGTH-DRIVEN: no 2-/3-gram precision and no verbatim-share movement; the difference is mostly output length
+  NOISE-COMPATIBLE: the 3-seed validation interval includes zero; with a paired sd of about 0.55 the half-width at three seeds is about 1.4
+W23_SUMMARY_DONE

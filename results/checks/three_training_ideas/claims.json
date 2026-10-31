@@ -18,7 +18,8 @@
  "not_covered": [
   {
    "id": "c17-066",
-   "reason": "the 0.7 to 1.3 re-timing range is set in unpublished training code (and in the pre-registration); no saved output records it, so it cannot be recomputed from data"
+   "reason": "the 0.7 to 1.3 re-timing range is set in unpublished training code (and in the pre-registration); no saved output records it, so it cannot be recomputed from data",
+   "code": "no_saved_output"
   }
  ]
 }

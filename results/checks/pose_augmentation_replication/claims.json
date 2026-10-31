@@ -1,0 +1,37 @@
+{
+ "gid": "pose_augmentation",
+ "tagged": true,
+ "covered": [
+  "c06-034",
+  "c06-035",
+  "c06-036",
+  "c09-018",
+  "c09-052",
+  "c09-074",
+  "c09-076",
+  "c09-077",
+  "c14-026"
+ ],
+ "not_covered": [
+  {
+   "id": "c17-081",
+   "code": "no_saved_output",
+   "reason": "Settings of the dose-sweep arms (twice and half the adopted strength; job 6612, w3-augdose): the job script is not saved anywhere in the repository (searched results/ and jobs/slurm/ for the job id and the arm names; only seedens.sbatch names the run directory wave3_augdose/runs/a3ctl). The only local record is the PREREG_WAVE3 write-up, which is not a saved output."
+  },
+  {
+   "id": "c17-082",
+   "code": "needs_kaya",
+   "reason": "Validation deltas of the dose sweep are computed from the summaries in the run directories of job 6612 (w3-augdose) on Kaya, /group/pmc099/pprasad/wave3_augdose/runs/{a3ctl,a3dbl,a3half,a3spd}; no local copy of the summaries or hypotheses exists (searched the whole tree). The only local record is the PREREG_WAVE3 write-up."
+  },
+  {
+   "id": "c09-075",
+   "code": "disagrees",
+   "reason": "DISAGREES: dissertation says the second seed rose to 11.38; the saved hypotheses and the saved job output beam5_test.json give 11.3749, which rounds to 11.37. All other values (10.34, 11.44, 10.93, 10.66, 11.19, mean 10.64) reproduce."
+  },
+  {
+   "id": "c09-078",
+   "code": "disagrees",
+   "reason": "DISAGREES: the dissertation says the pooled content-word precision rose by 1.6 to 2.3 points; with the 71-word content list its method chapter defines (stitch_lexicon.STOP) the saved hypotheses give rises of about +2.38, +1.72, +1.73 (the 75-word train_ctc.STOP list is printed as a labelled second line)."
+  }
+ ]
+}

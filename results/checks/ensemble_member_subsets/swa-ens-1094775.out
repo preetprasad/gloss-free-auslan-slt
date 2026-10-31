@@ -1,0 +1,43 @@
+########## VAL ##########
+### A:SV+R0 (A) ###
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 2 members (fusion=[False, True]) weights=uniform vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=11.095 wer=1.016 uniq=412 members=2
+### B:SV+R0+V0+C2+F1+F2 (B) ###
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 6 members (fusion=[False, True, False, False, True, True]) weights=uniform vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=12.237 wer=0.996 uniq=382 members=6
+### C:SV+SF+V0+C2+F1+F2 (C) ###
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 6 members (fusion=[False, True, False, False, True, True]) weights=uniform vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=12.334 wer=1.008 uniq=406 members=6
+### D:SV+VL+R0+V0+C2+F1+F2 (D) ###
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 7 members (fusion=[False, False, True, False, False, True, True]) weights=uniform vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=12.042 wer=0.999 uniq=375 members=7
+########## TEST ##########
+### A:SV+R0 (A) ###
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 2 members (fusion=[False, True]) weights=uniform vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=10.855 wer=1.002 uniq=399 members=2
+### B:SV+R0+V0+C2+F1+F2 (B) ###
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 6 members (fusion=[False, True, False, False, True, True]) weights=uniform vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=11.192 wer=0.991 uniq=387 members=6
+### C:SV+SF+V0+C2+F1+F2 (C) ###
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 6 members (fusion=[False, True, False, False, True, True]) weights=uniform vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=11.259 wer=0.988 uniq=391 members=6
+### D:SV+VL+R0+V0+C2+F1+F2 (D) ###
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ensemble] 7 members (fusion=[False, False, True, False, False, True, True]) weights=uniform vocab=3063 beam=5 dev=cpu
+[ENSEMBLE TEST] beam5_bleu4=11.514 wer=0.987 uniq=374 members=7
+SWA_ENS_DONE

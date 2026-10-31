@@ -1,0 +1,80 @@
+{
+ "gid": "estimator_firstlisted_old",
+ "tagged": true,
+ "covered": [
+  "c02-006",
+  "c02-007",
+  "c06-030",
+  "c06-032",
+  "c06-033",
+  "c08-015",
+  "c08-020",
+  "c08-049",
+  "c09-008",
+  "c17-009",
+  "c17-010",
+  "c17-011"
+ ],
+ "not_covered": [
+  {
+   "id": "c09-023",
+   "code": "needs_kaya",
+   "reason": "2.87 is recomputed here (tagged c02-006 and c09-008), but 8.78 is the beam-5 score of the DWPose re-extraction run (comm_dwpose_full, Kaya, Aug 2026), not saved locally"
+  },
+  {
+   "id": "c08-021",
+   "code": "needs_kaya",
+   "reason": "DWPose re-extraction run (beam 8.78, greedy 7.92, 309 distinct): output on Kaya, comm_dwpose_full, Aug 2026; no local copy"
+  },
+  {
+   "id": "c09-010",
+   "code": "needs_kaya",
+   "reason": "same DWPose re-extraction run (comm_dwpose_full, Kaya): 7.92, 8.78, 309 not saved locally"
+  },
+  {
+   "id": "c08-028",
+   "code": "needs_kaya",
+   "reason": "table caption: beam width 5 and body-and-hand keypoints only for the four cells of the 2x2 (job 1101250, Kaya); the 800 clips and beam 5 are recomputed only for the first-listed AlphaPose control (tagged c02-006), which is not the 2x2 run"
+  },
+  {
+   "id": "c08-032",
+   "code": "needs_kaya",
+   "reason": "estimator 2x2, Kaya, job 1101250 (estimator 2x2 array, Aug 2026; outputs under the cluster group folder); no local copy of its decodes or metrics: first-listed AlphaPose 4.60 / 5.58"
+  },
+  {
+   "id": "c08-040",
+   "code": "needs_kaya",
+   "reason": "estimator 2x2, Kaya, job 1101250 (estimator 2x2 array, Aug 2026; outputs under the cluster group folder); no local copy of its decodes or metrics: 4.60 / 5.58"
+  },
+  {
+   "id": "c08-033",
+   "code": "needs_kaya",
+   "reason": "estimator 2x2, Kaya, job 1101250 (estimator 2x2 array, Aug 2026; outputs under the cluster group folder); no local copy of its decodes or metrics: DWPose 1.45 / 10.03"
+  },
+  {
+   "id": "c08-036",
+   "code": "needs_kaya",
+   "reason": "1 distinct output of the DWPose body-and-hands box-normalisation cell, Kaya, job 1101250 (estimator 2x2 array, Aug 2026; outputs under the cluster group folder); no local copy of its decodes or metrics"
+  },
+  {
+   "id": "c08-045",
+   "code": "needs_kaya",
+   "reason": "10.03 (job 1101250 DWPose body-and-hands, frame normalisation) and 9.63 (three-seed DWPose + CTC mean, Kaya) are not saved locally"
+  },
+  {
+   "id": "c21-021",
+   "code": "needs_kaya",
+   "reason": "5.58 and 10.03 are cells of job 1101250 (Kaya); no local copy"
+  },
+  {
+   "id": "c06-031",
+   "code": "not_own_number",
+   "reason": "names the 2x2 design (two estimators x two normalisations); a design label"
+  },
+  {
+   "id": "c08-027",
+   "code": "not_own_number",
+   "reason": "names the matched 2x2 comparison; a design label"
+  }
+ ]
+}

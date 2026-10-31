@@ -1,0 +1,24 @@
+{
+ "gid": "pseudo_gloss_pretrain_w23",
+ "tagged": true,
+ "covered": [
+  "c17-101",
+  "c17-102",
+  "c17-103",
+  "c17-104",
+  "c17-105",
+  "c17-106"
+ ],
+ "not_covered": [
+  {
+   "id": "c17-099",
+   "code": "needs_kaya",
+   "reason": "The 40-epoch CTC-only first stage ran as stage 1 of the array tasks on Kaya (job set 179456, run folders X1_s*); only the read-out's summary text (validation CTC, hours) and the job script state it, no per-epoch output of it is saved locally and the summary does not give its length."
+  },
+  {
+   "id": "c17-100",
+   "code": "no_saved_output",
+   "reason": "That arm Y's 40 epochs are a continuation of the control's 40 epochs (encoder tensors of the control's last checkpoint, so 40 + 40 epochs of the full loss) is stated by the job script and the pre-registration only; the saved outputs (progress.json, decodes) record that each run trained 40 epochs but not where Y started. The job script is not part of the published repository."
+  }
+ ]
+}

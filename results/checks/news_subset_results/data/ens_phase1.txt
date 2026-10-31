@@ -1,0 +1,2 @@
+ENSEMBLE val 2.948 @LP1.2 | best single s2 val 2.872
+FUTILITY: ensemble val <= best single + 0.10 -> ensembling does not transfer to News on validation; no test decode

@@ -1,0 +1,65 @@
+{
+  "status": "stopped_at_predeclared_epoch_25_gate",
+  "architecture": "signjoey_slt",
+  "architecture_parity": {
+    "pinned_repository": "neccam/slt",
+    "pinned_commit": "90588825f6229474bc19ac7a6b30ea3116635ba3",
+    "official_state_tensors_mapped": 146,
+    "max_absolute_forward_logit_difference": 0.0
+  },
+  "input_adapter": {
+    "keypoints": "HALPE-136 body+hands",
+    "features_per_joint": "x,y,confidence",
+    "raw_feature_dim": 204,
+    "normalization": "per-frame signer bbox",
+    "bbox_format": "xywh",
+    "drop_zero_frames": true,
+    "max_src_frames": 256,
+    "text_tokenization": "legacy_ascii_regex"
+  },
+  "model": {
+    "parameters": 25315840,
+    "d_model": 512,
+    "encoder_layers": 3,
+    "decoder_layers": 3,
+    "attention_heads": 8,
+    "feed_forward_dim": 2048
+  },
+  "training": {
+    "device": "mps",
+    "physical_batch": 16,
+    "gradient_accumulation": 2,
+    "effective_batch": 32,
+    "planned_epochs": 60,
+    "completed_epochs": 25,
+    "stop_reason": "best validation BLEU-4 remained below both the historical 3.12 validation baseline and the 9.20 paper target"
+  },
+  "best_validation": {
+    "bleu4": 2.1575485511633796,
+    "wer": 1.147842947164324,
+    "epoch": 4
+  },
+  "selected_checkpoint_decode": {
+    "validation": {
+      "greedy_bleu4": 2.16,
+      "greedy_unique": "20/800",
+      "beam5_bleu4": 2.48,
+      "beam5_unique": "15/800"
+    },
+    "test": {
+      "greedy_bleu4": 1.55,
+      "greedy_unique": "23/800",
+      "beam5_bleu4": 2.08,
+      "beam5_unique": "13/800"
+    },
+    "beam_width": 5,
+    "length_penalty": 0.6
+  },
+  "epoch_25": {
+    "loss": 28.2923,
+    "bleu4": 1.54,
+    "wer": 1.3306
+  },
+  "checkpoint": "comm_signjoey_direct_xywh_full/out/latest.pt",
+  "conclusion": "The exact SL-Transformer architecture does not generalize with this local bbox-normalised x/y/confidence adapter, and beam search increases collapse. This rejects the adapter/training reconstruction, not the public architecture."
+}

@@ -1,0 +1,73 @@
+node k029.hpc.uwa.edu.au | DET='--deterministic True'
+fac385cfe1c9d79736053c278e0d337b  config.py
+924f93b37b4b4150030e31c66d2e9d6f  slt/data.py
+2f8d4866f4633577864147ba4222374c  slt/model.py
+74078f8f543251da47bc7a7fc715a48b  train_ctc.py
+6553f52a3f0fbeb57feef6510289d66c  tools/eval_beam.py
+94ded6621d5717673cc35dc2a7d032ed  tools/w23_ctc_pretrain.py
+08e27e6130c69060e436e7c436a4f3c0  tools/w28_pose_mae.py
+task 2 -> arm S seed 202 | runs /group/pmc099/pprasad/wave28/runs | log /group/pmc099/pprasad/code/logs/w28-train-239449_2.out | array job 239449 | job set 239449
+G-set OK: set 239449; 0 finished marker(s) carry it
+time limit of this task: 24 h 0 min; asks for 2 h
+/group/pmc099/pprasad/stitch_scale2/joint_13760.tsv: OK
+/group/pmc099/pprasad/scratch_backup/dwpose/manifests/train.tsv: OK
+/group/pmc099/pprasad/scratch_backup/dwpose/manifests/val.tsv: OK
+/group/pmc099/pprasad/scratch_backup/dwpose/manifests/test.tsv: OK
+/group/pmc099/pprasad/wave5/manifests/vocab.json: OK
+pinned DWPose clip video_1_0.npz md5 OK
+  joint_13760.tsv: 26199 rows | off-/group 0 | missing 0
+  val.tsv: 800 rows | off-/group 0 | missing 0
+  test.tsv: 800 rows | off-/group 0 | missing 0
+G-data OK: joint 26199 = real 12439 + stitched 13760; val 800, test 800; 0 held-out clips in training
+=== ARM S (seed 202, 40 ep) ===
+[determinism] ON (seed 202, CUBLAS_WORKSPACE_CONFIG=:4096:8) -- reproducible; A/A job 6952 was not slower
+[vocab] fixed vocabulary from /group/pmc099/pprasad/wave5/manifests/vocab.json: 4695 entries, 0 training tokens outside it
+[ctc] vocab=4695 gloss_vocab=2988 device=cuda feat_dim=399
+[aug] pose augmentation ON (train only): speed ±0.2, rotation ±10.0 deg, x/y scale ±0.1, hand drop 0.0, hand span 0.0
+[ctc] params=10.65M train_batches=410 pseudo_token_drop=0.000
+[ctc ep 001] loss=13.169 ce=5.867 ctc=24.340 val_bleu4=1.903 wer=1.139 uniq=9
+[ctc ep 002] loss=6.151 ce=4.253 ctc=6.327 val_bleu4=1.126 wer=1.308 uniq=40
+[ctc ep 003] loss=5.591 ce=3.847 ctc=5.814 val_bleu4=2.396 wer=1.680 uniq=164
+[ctc ep 004] loss=5.112 ce=3.520 ctc=5.306 val_bleu4=3.201 wer=1.095 uniq=128
+[ctc ep 005] loss=4.710 ce=3.245 ctc=4.884 val_bleu4=3.340 wer=1.344 uniq=158
+[ctc ep 006] loss=4.411 ce=3.043 ctc=4.562 val_bleu4=3.554 wer=1.358 uniq=351
+[ctc ep 007] loss=4.205 ce=2.903 ctc=4.341 val_bleu4=5.291 wer=1.299 uniq=296
+[ctc ep 008] loss=4.051 ce=2.798 ctc=4.177 val_bleu4=6.418 wer=1.141 uniq=276
+[ctc ep 009] loss=3.924 ce=2.714 ctc=4.034 val_bleu4=7.247 wer=1.008 uniq=220
+[ctc ep 010] loss=3.824 ce=2.648 ctc=3.918 val_bleu4=7.337 wer=1.141 uniq=321
+[ctc ep 011] loss=3.746 ce=2.598 ctc=3.826 val_bleu4=6.171 wer=1.271 uniq=435
+[ctc ep 012] loss=3.674 ce=2.552 ctc=3.738 val_bleu4=7.961 wer=1.146 uniq=276
+[ctc ep 013] loss=3.609 ce=2.510 ctc=3.662 val_bleu4=7.000 wer=1.218 uniq=343
+[ctc ep 014] loss=3.550 ce=2.472 ctc=3.592 val_bleu4=7.753 wer=1.110 uniq=392
+[ctc ep 015] loss=3.498 ce=2.439 ctc=3.530 val_bleu4=8.551 wer=1.173 uniq=392
+[ctc ep 016] loss=3.444 ce=2.405 ctc=3.462 val_bleu4=8.331 wer=1.158 uniq=408
+[ctc ep 017] loss=3.400 ce=2.377 ctc=3.410 val_bleu4=8.235 wer=1.153 uniq=419
+[ctc ep 018] loss=3.355 ce=2.347 ctc=3.360 val_bleu4=8.778 wer=1.066 uniq=330
+[ctc ep 019] loss=3.313 ce=2.320 ctc=3.309 val_bleu4=8.738 wer=1.039 uniq=390
+[ctc ep 020] loss=3.274 ce=2.296 ctc=3.260 val_bleu4=8.177 wer=1.144 uniq=488
+[ctc ep 021] loss=3.239 ce=2.272 ctc=3.223 val_bleu4=10.044 wer=1.044 uniq=380
+[ctc ep 022] loss=3.203 ce=2.249 ctc=3.181 val_bleu4=9.251 wer=1.047 uniq=386
+[ctc ep 023] loss=3.167 ce=2.225 ctc=3.139 val_bleu4=9.265 wer=1.091 uniq=457
+[ctc ep 024] loss=3.137 ce=2.205 ctc=3.104 val_bleu4=8.943 wer=1.008 uniq=393
+[ctc ep 025] loss=3.105 ce=2.184 ctc=3.068 val_bleu4=9.464 wer=1.078 uniq=435
+[ctc ep 026] loss=3.072 ce=2.163 ctc=3.028 val_bleu4=9.468 wer=1.028 uniq=404
+[ctc ep 027] loss=3.042 ce=2.144 ctc=2.996 val_bleu4=10.457 wer=1.081 uniq=429
+[ctc ep 028] loss=3.016 ce=2.126 ctc=2.969 val_bleu4=10.174 wer=1.054 uniq=458
+[ctc ep 029] loss=2.987 ce=2.107 ctc=2.934 val_bleu4=10.054 wer=1.073 uniq=466
+[ctc ep 030] loss=2.962 ce=2.089 ctc=2.908 val_bleu4=9.795 wer=1.051 uniq=441
+[ctc ep 031] loss=2.939 ce=2.075 ctc=2.878 val_bleu4=9.997 wer=1.049 uniq=451
+[ctc ep 032] loss=2.916 ce=2.060 ctc=2.852 val_bleu4=9.636 wer=1.081 uniq=457
+[ctc ep 033] loss=2.897 ce=2.047 ctc=2.832 val_bleu4=10.253 wer=1.038 uniq=436
+[ctc ep 034] loss=2.875 ce=2.033 ctc=2.807 val_bleu4=10.180 wer=1.043 uniq=437
+[ctc ep 035] loss=2.860 ce=2.023 ctc=2.791 val_bleu4=10.804 wer=1.036 uniq=466
+[ctc ep 036] loss=2.847 ce=2.014 ctc=2.776 val_bleu4=10.042 wer=1.054 uniq=480
+[ctc ep 037] loss=2.836 ce=2.007 ctc=2.766 val_bleu4=10.459 wer=1.038 uniq=458
+[ctc ep 038] loss=2.825 ce=2.000 ctc=2.751 val_bleu4=10.359 wer=1.054 uniq=455
+[ctc ep 039] loss=2.818 ce=1.995 ctc=2.743 val_bleu4=10.590 wer=1.036 uniq=466
+[ctc ep 040] loss=2.813 ce=1.992 ctc=2.736 val_bleu4=10.763 wer=1.027 uniq=457
+[ctc TEST] bleu4=9.193 wer=1.034 distinct_outputs=487
+checkpoint cfg OK (every passed flag verified)
+[soup] averaged 5 checkpoints -> /group/pmc099/pprasad/wave28/runs/S_s202/soup_last5.pt
+G-cfg OK: best.pt: 40 epochs, deterministic, pose_aug, wave-5 vocabulary, init_encoder (none)
+FAIL: G-ep1: arm S seed 202 epoch-1 line is 'loss=13.169 ce=5.867 ctc=24.340', wave 5's control C has 'loss=13.169 ce=5.867 ctc=24.341': this is not the wave-5 recipe
+FAIL: arm S seed 202

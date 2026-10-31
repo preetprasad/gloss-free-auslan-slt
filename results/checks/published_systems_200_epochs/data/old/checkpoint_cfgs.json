@@ -1,0 +1,32 @@
+{
+ "signjoey_reference": {
+  "checkpoint": "comm_slt_signjoey_reference/out/best.pt",
+  "model_arch": "signjoey_slt",
+  "lr": 0.001,
+  "epochs": 60,
+  "lr_schedule": "plateau",
+  "batch_size": 16,
+  "grad_accum_steps": 2,
+  "d_model": 512,
+  "num_encoder_layers": 3,
+  "num_decoder_layers": 3,
+  "num_keypoints": 136,
+  "coord_norm": "bbox",
+  "bbox_format": "xyxy"
+ },
+ "accum2": {
+  "checkpoint": "comm_slt_1024_512_3x3_accum2/out/best.pt",
+  "model_arch": null,
+  "lr": 0.0003,
+  "epochs": 60,
+  "lr_schedule": "cosine",
+  "batch_size": 16,
+  "grad_accum_steps": 2,
+  "d_model": 512,
+  "num_encoder_layers": 3,
+  "num_decoder_layers": 3,
+  "num_keypoints": 136,
+  "coord_norm": "bbox",
+  "bbox_format": "xyxy"
+ }
+}

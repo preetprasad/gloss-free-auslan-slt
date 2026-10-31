@@ -1,0 +1,7 @@
+{
+ "voice": "Karen               en_AU    # Hello! My name is Karen.",
+ "rate": 180,
+ "utterances": 3200,
+ "armA_duration_match": 800,
+ "wav_format": "16000 Hz mono Int16, all 3200"
+}

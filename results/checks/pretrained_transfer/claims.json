@@ -1,0 +1,65 @@
+{
+ "gid": "pretrained_transfer",
+ "tagged": true,
+ "covered": [
+  "c01-022",
+  "c03-008",
+  "c03-010",
+  "c11-014",
+  "c11-045",
+  "c11-046",
+  "c11-047",
+  "c11-048",
+  "c11-049",
+  "c13-055",
+  "c19-009",
+  "c19-019",
+  "c19-020",
+  "c19-021",
+  "c19-029",
+  "c19-031",
+  "c19-032",
+  "c19-049",
+  "c21-002",
+  "c21-005",
+  "c21-006",
+  "c21-012"
+ ],
+ "not_covered": [
+  {
+   "id": "c11-057",
+   "code": "no_saved_output",
+   "reason": "The 10,327 resolvable / 769 offline YouTube-ASL identifiers were counted by a one-off lookup of each video; only the write-up W12NB_CONTAMINATION_AUDIT_2026-10-21.md records the counts."
+  },
+  {
+   "id": "c19-045",
+   "code": "no_saved_output",
+   "reason": "11,096 listed / 10,327 looked up: the lookup output was not saved; only the write-up has the counts."
+  },
+  {
+   "id": "c19-046",
+   "code": "no_saved_output",
+   "reason": "769 deleted or private identifiers: lookup output not saved; only the write-up."
+  },
+  {
+   "id": "c19-050",
+   "code": "no_saved_output",
+   "reason": "769 offline identifiers: lookup output not saved; only the write-up."
+  },
+  {
+   "id": "c19-047",
+   "code": "no_saved_output",
+   "reason": "13 of 570 unseen references occur in external How2Sign/OpenASL text: needs those label files (read-only, unlicensed, not saved); only the write-up has the count."
+  },
+  {
+   "id": "c19-048",
+   "code": "no_saved_output",
+   "reason": "4.37 on the 13 and 13.75 on the other 557 clips: depends on the same external-text overlap list; only the write-up has the numbers."
+  },
+  {
+   "id": "c19-030",
+   "code": "disagrees",
+   "reason": "DISAGREES (rounding only): dissertation says the length-adjusted interval is +4.82 to +6.77; saved decodes give +5.79 [+4.8187, +6.7648], which rounds to +6.76. All other numbers of the claim (5 of 5 seeds, +5.79, +4.82) agree."
+  }
+ ]
+}

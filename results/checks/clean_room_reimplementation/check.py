@@ -79,6 +79,7 @@ gate(gk["passed"] and gk["logits_dev"] < gk["tolerances"]["logits_abs"], "parity
 print("\n[1] Independent implementation vs the private port, released checkpoint (read from the saved job summary gk_job186422.json)")
 print(f"  clips compared: {len(names)}; all in the validation manifest: {names <= val_names if val_names else 'manifest not found'}")
 print(f"  max |logit difference| = {gk['logits_dev']:.1e}  (rounds to {float('%.0e' % gk['logits_dev']):.0e}; tolerance {gk['tolerances']['logits_abs']:.0e})")
+print(f"  exponent form: {gk['logits_dev']/10**int(np.floor(np.log10(gk['logits_dev']))):.1f} x 10^{int(np.floor(np.log10(gk['logits_dev'])))}; tolerance exponent {int(np.floor(np.log10(gk['tolerances']['logits_abs'])))}")
 print(f"  max relative embedding difference = {gk['emb_dev']:.1e}; passed = {gk['passed']}")
 
 # ---- 2. clean re-decode of the five port-fine-tuned models
@@ -94,7 +95,7 @@ for sp in SPL:
     print(f"  {sp}: port mean {mean(port[sp]):.2f} / our code {mean(clean[sp]):.2f}; "
           f"unseen-570 {mean(port[sp],1):.2f} / {mean(clean[sp],1):.2f}")
 print(f"  identical hypotheses over the ten seed x split comparisons: {min(fr):.1f}% to {max(fr):.1f}%")
-print(f"  (dissertation text: 'test mean of 17.86 against the port's 18.21, with 82 to 85% identical')")
+print(f"  rounded as in the dissertation: {min(fr):.0f} to {max(fr):.0f}% of outputs identical")
 
 # ---- 3. own-code fine-tuning: K and KSA
 print("\n[3] Fine-tuning with our own code, 3 seeds (42/101/202): K = plain, KSA = + stitched data and pose augmentation")

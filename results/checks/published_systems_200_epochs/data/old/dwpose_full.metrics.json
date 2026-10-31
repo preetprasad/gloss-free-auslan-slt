@@ -1,0 +1,340 @@
+{
+  "best": {
+    "bleu4": 8.25955096858693,
+    "wer": 1.1204556471158507,
+    "epoch": 28
+  },
+  "test": {
+    "bleu4": 7.920233509032329,
+    "wer": 1.088456865127582,
+    "n": 800,
+    "from_epoch": 28
+  },
+  "gate": {
+    "metric": "BLEU-4",
+    "value": 7.92,
+    "threshold": 2.0,
+    "basis": "fixed placeholder 2.0",
+    "passed": true,
+    "verdict": "PASS \u2014 gloss-free pose baseline reached BLEU-4 7.92 (>= 2.00 [fixed placeholder 2.0]); proceed to scale/transfer-learning.",
+    "split": "test"
+  },
+  "bleu_signature": "sacreBLEU|4-gram|tokenize=13a|detok=True|smooth=exp",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 6.4272,
+      "bleu4": 0.0,
+      "wer": 0.9615
+    },
+    {
+      "epoch": 2,
+      "loss": 4.8149,
+      "bleu4": 1.338,
+      "wer": 1.3749
+    },
+    {
+      "epoch": 3,
+      "loss": 4.3507,
+      "bleu4": 0.546,
+      "wer": 1.0109
+    },
+    {
+      "epoch": 4,
+      "loss": 4.1363,
+      "bleu4": 1.978,
+      "wer": 0.9884
+    },
+    {
+      "epoch": 5,
+      "loss": 3.9865,
+      "bleu4": 1.679,
+      "wer": 1.0451
+    },
+    {
+      "epoch": 6,
+      "loss": 3.8527,
+      "bleu4": 1.522,
+      "wer": 1.1205
+    },
+    {
+      "epoch": 7,
+      "loss": 3.7404,
+      "bleu4": 2.95,
+      "wer": 1.1953
+    },
+    {
+      "epoch": 8,
+      "loss": 3.6404,
+      "bleu4": 2.491,
+      "wer": 1.2681
+    },
+    {
+      "epoch": 9,
+      "loss": 3.5522,
+      "bleu4": 1.749,
+      "wer": 1.1779
+    },
+    {
+      "epoch": 10,
+      "loss": 3.4681,
+      "bleu4": 1.687,
+      "wer": 1.4947
+    },
+    {
+      "epoch": 11,
+      "loss": 3.3894,
+      "bleu4": 2.672,
+      "wer": 1.2043
+    },
+    {
+      "epoch": 12,
+      "loss": 3.313,
+      "bleu4": 4.513,
+      "wer": 1.1667
+    },
+    {
+      "epoch": 13,
+      "loss": 3.2375,
+      "bleu4": 2.737,
+      "wer": 1.2225
+    },
+    {
+      "epoch": 14,
+      "loss": 3.1668,
+      "bleu4": 4.53,
+      "wer": 1.3311
+    },
+    {
+      "epoch": 15,
+      "loss": 3.0973,
+      "bleu4": 3.94,
+      "wer": 1.2976
+    },
+    {
+      "epoch": 16,
+      "loss": 3.0301,
+      "bleu4": 5.753,
+      "wer": 1.0431
+    },
+    {
+      "epoch": 17,
+      "loss": 2.9689,
+      "bleu4": 4.52,
+      "wer": 1.3277
+    },
+    {
+      "epoch": 18,
+      "loss": 2.9069,
+      "bleu4": 4.384,
+      "wer": 1.1069
+    },
+    {
+      "epoch": 19,
+      "loss": 2.8516,
+      "bleu4": 6.188,
+      "wer": 1.1949
+    },
+    {
+      "epoch": 20,
+      "loss": 2.7949,
+      "bleu4": 6.302,
+      "wer": 1.1932
+    },
+    {
+      "epoch": 21,
+      "loss": 2.7425,
+      "bleu4": 6.392,
+      "wer": 1.1173
+    },
+    {
+      "epoch": 22,
+      "loss": 2.6936,
+      "bleu4": 7.201,
+      "wer": 1.1306
+    },
+    {
+      "epoch": 23,
+      "loss": 2.6479,
+      "bleu4": 7.681,
+      "wer": 1.0885
+    },
+    {
+      "epoch": 24,
+      "loss": 2.603,
+      "bleu4": 6.835,
+      "wer": 1.1558
+    },
+    {
+      "epoch": 25,
+      "loss": 2.5601,
+      "bleu4": 7.427,
+      "wer": 1.1512
+    },
+    {
+      "epoch": 26,
+      "loss": 2.526,
+      "bleu4": 6.984,
+      "wer": 1.1377
+    },
+    {
+      "epoch": 27,
+      "loss": 2.4874,
+      "bleu4": 7.043,
+      "wer": 1.1166
+    },
+    {
+      "epoch": 28,
+      "loss": 2.4567,
+      "bleu4": 8.26,
+      "wer": 1.1205
+    },
+    {
+      "epoch": 29,
+      "loss": 2.4269,
+      "bleu4": 6.583,
+      "wer": 1.1617
+    },
+    {
+      "epoch": 30,
+      "loss": 2.4003,
+      "bleu4": 7.529,
+      "wer": 1.1803
+    },
+    {
+      "epoch": 31,
+      "loss": 2.3754,
+      "bleu4": 7.261,
+      "wer": 1.1214
+    },
+    {
+      "epoch": 32,
+      "loss": 2.3501,
+      "bleu4": 7.711,
+      "wer": 1.1222
+    },
+    {
+      "epoch": 33,
+      "loss": 2.3352,
+      "bleu4": 7.316,
+      "wer": 1.1408
+    },
+    {
+      "epoch": 34,
+      "loss": 2.3195,
+      "bleu4": 7.233,
+      "wer": 1.1035
+    },
+    {
+      "epoch": 35,
+      "loss": 2.3038,
+      "bleu4": 7.555,
+      "wer": 1.1275
+    },
+    {
+      "epoch": 36,
+      "loss": 2.2909,
+      "bleu4": 7.286,
+      "wer": 1.1248
+    },
+    {
+      "epoch": 37,
+      "loss": 2.279,
+      "bleu4": 7.661,
+      "wer": 1.1173
+    },
+    {
+      "epoch": 38,
+      "loss": 2.2731,
+      "bleu4": 7.586,
+      "wer": 1.1236
+    },
+    {
+      "epoch": 39,
+      "loss": 2.2661,
+      "bleu4": 7.702,
+      "wer": 1.1115
+    },
+    {
+      "epoch": 40,
+      "loss": 2.26,
+      "bleu4": 7.879,
+      "wer": 1.1268
+    }
+  ],
+  "config": {
+    "train_manifest": "/scratch/pmc099/pprasad/dwpose/manifests/train.tsv",
+    "val_manifest": "/scratch/pmc099/pprasad/dwpose/manifests/val.tsv",
+    "test_manifest": "/scratch/pmc099/pprasad/dwpose/manifests/test.tsv",
+    "num_keypoints": 133,
+    "keypoint_subset": "all",
+    "use_confidence": true,
+    "use_velocity": false,
+    "coord_norm": "frame",
+    "bbox_format": "xywh",
+    "legacy_abs_bbox_validity": false,
+    "center_to_unit": true,
+    "conf_threshold": 0.0,
+    "hierarchical_pose_norm": false,
+    "drop_zero_frames": true,
+    "max_src_frames": 256,
+    "max_tgt_tokens": 64,
+    "decode_max_len": 0,
+    "text_tokenization": "regex",
+    "sentencepiece_model": "",
+    "pretrained_target_embeddings": "",
+    "input_representation": "pose",
+    "precomputed_feature_key": "FEATURES",
+    "precomputed_feature_dim": 0,
+    "model_arch": "generic",
+    "visual_feature_dim": 0,
+    "d_model": 256,
+    "nhead": 8,
+    "num_encoder_layers": 4,
+    "num_decoder_layers": 4,
+    "dim_feedforward": 1024,
+    "dropout": 0.1,
+    "embedding_dropout": 0.1,
+    "source_embedding_activation": "softsign",
+    "target_embedding_dim": 512,
+    "target_embedding_activation": "softsign",
+    "position_max_len": 4096,
+    "gaslt_num_keys": 7,
+    "gaslt_similarity_weight": 0.0,
+    "semantic_model": "sentence-transformers/distiluse-base-multilingual-cased-v1",
+    "semantic_cache": "",
+    "batch_size": 64,
+    "length_bucket_batches": false,
+    "grad_accum_steps": 1,
+    "lr": 0.0005,
+    "weight_decay": 0.0001,
+    "epochs": 40,
+    "warmup_steps": 800,
+    "lr_schedule": "cosine",
+    "plateau_patience": 8,
+    "plateau_factor": 0.7,
+    "lr_min": 1e-07,
+    "label_smoothing": 0.1,
+    "loss_normalization": "tokens",
+    "grad_clip": 1.0,
+    "min_freq": 1,
+    "encoder_lr_scale": 1.0,
+    "vlp_aux_checkpoint": "",
+    "vlp_aux_weight": 0.0,
+    "signcl_weight": 0.0,
+    "signcl_margin": 1.0,
+    "signcl_zipf": 2.3,
+    "reference_bleu4": null,
+    "gate_fraction": 0.9,
+    "bleu4_gate": 2.0,
+    "bleu_tokenize": "13a",
+    "detokenize": true,
+    "seed": 42,
+    "num_workers": 8,
+    "device": "cuda",
+    "out_dir": "/scratch/pmc099/pprasad/dwpose/runs/comm_dwpose_full",
+    "resume_checkpoint": "",
+    "init_encoder": "",
+    "freeze_encoder": false
+  }
+}

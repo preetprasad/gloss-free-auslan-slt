@@ -1,0 +1,8 @@
+counts: {'clips': 13760, 'signs': 94428, 'wrong': 3257, 'removed': 3254, 'changed': 2889, 'short': 70, 'whole': 1, 'per_gloss': {'be (not be)': 537, 'believe (not believe)': 20, 'bother (no bother)': 3, 'can (tin)': 991, 'enough (not enough)': 42, 'good (no good)': 770, 'know (not know)': 412, 'matter (not matter)': 13, 'mind (not mind)': 30, 'want (not want)': 321, 'yet (not yet)': 118}}
+word forms rendered with a wrong-sense sign: {'can': 990, 'good': 770, 'be': 489, 'know': 386, 'want': 273, 'yet': 118, 'being': 48, 'enough': 42, 'mind': 30, 'wanted': 28, 'believe': 20, 'wants': 19, 'knew': 14, 'matter': 13, 'knowing': 9, 'bothered': 3, 'known': 2, 'wanting': 1, 'knows': 1, 'cans': 1} | total 3257
+in W: content words left without a sign 1727 of 68731 (2.51%); stop words whose sign is removed 1527; clips below 0.9 content coverage 1605
+signs left per clip (1, 2, 3): 7 63 794 | clips with 0: 0
+other bracketed labels: 93 labels, 5577 signs (5.9%); most frequent: [('day (the next day)', 633), ('right (legal)', 447), ('well (palm up)', 381), ('park (vehicle)', 349), ('run (engine)', 332), ('cold (illness)', 297), ('idea (get idea)', 186), ('pick up (someone)', 183)]
+train: 12439 texts | synthetic sentences equal to one: 0 [] | affected-word tokens 2535 of 100592
+val: 800 texts | synthetic sentences equal to one: 0 [] | affected-word tokens 123 of 4926
+test: 800 texts | synthetic sentences equal to one: 1 ['b0577ddd157ebeaebdb5d872d22e8c3c8d97c3e0'] | affected-word tokens 139 of 4915

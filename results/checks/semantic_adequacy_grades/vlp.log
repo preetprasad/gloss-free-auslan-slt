@@ -1,0 +1,12 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:32<00:32, 32.67s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:59<00:00, 29.30s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:59<00:00, 29.81s/it]
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:590: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:595: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:612: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+
+===== SEMANTIC ADEQUACY (0-4) =====
+file=/group/pmc099/pprasad/semantic_hyps/hyps_vlp.jsonl model=Qwen/Qwen2.5-3B-Instruct field=hyp_beam graded=800/800
+mean=1.232 | %adequate(>=3)=10.4% | %partial+(>=2)=35.4% | dist={0: 239, 1: 278, 2: 200, 3: 24, 4: 59}
+per-clip -> /group/pmc099/pprasad/semantic_regrade/vlp.graded_hf.csv

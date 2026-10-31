@@ -1,0 +1,49 @@
+{
+  "experiment": "Communication SignJoey-compatible SL-Transformer reconstruction",
+  "status": "stopped_after_epoch_10_negative_result",
+  "target_reference_bleu4": 9.20,
+  "architecture": {
+    "model_arch": "signjoey_slt",
+    "raw_pose_dim": 204,
+    "visual_interface_dim": 1024,
+    "d_model": 512,
+    "encoder_layers": 3,
+    "decoder_layers": 3,
+    "attention_heads": 8,
+    "feed_forward_dim": 2048,
+    "parameters": 25945600
+  },
+  "training": {
+    "completed_epochs": 10,
+    "planned_epochs": 60,
+    "physical_batch": 16,
+    "gradient_accumulation": 2,
+    "effective_batch": 32,
+    "best_validation": {
+      "epoch": 8,
+      "bleu4": 1.57,
+      "wer": 1.444
+    },
+    "last_epoch": {
+      "epoch": 10,
+      "loss": 29.3902,
+      "bleu4": 1.49,
+      "wer": 1.271
+    },
+    "termination_evidence": "Python trainer absent with no traceback; log ended after epoch 10. The run was not alive when audited."
+  },
+  "best_checkpoint_test": {
+    "n": 800,
+    "greedy_bleu4_13a_detokenized": 1.03,
+    "greedy_bleu4_tokenize_none": 1.03,
+    "wer_detokenized": 1.435,
+    "unique_hypotheses": 9,
+    "unique_hypotheses_percent": 1.1
+  },
+  "comparators": {
+    "original_baseline_greedy_bleu4": 2.465,
+    "original_baseline_unique_hypotheses": 143,
+    "vlp_beam5_bleu4": 3.50
+  },
+  "conclusion": "Negative result. Public SL-Transformer architecture plus the current reconstructed raw-pose-to-1024 interface increased output collapse and did not close the published 9.20 gap. Do not resume this exact configuration."
+}

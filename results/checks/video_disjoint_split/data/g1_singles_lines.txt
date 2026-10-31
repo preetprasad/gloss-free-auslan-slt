@@ -1,0 +1,3 @@
+  vdB_s42     1.0    6.600    7.407   single
+  vdB_s101    0.9    6.718    7.287   single
+  vdB_s202    0.7    6.373    7.149   single

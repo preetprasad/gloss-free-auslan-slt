@@ -1,0 +1,42 @@
+{
+ "A": {
+  "val_best": 10.482402147247731,
+  "best_epoch": 38,
+  "greedy_test": 10.048341297399613,
+  "beam5_val": 11.106808611498744,
+  "beam5_test": 11.205968174471364,
+  "beam5_test_unique": 337,
+  "soup_beam5_val": 10.926661179576515,
+  "soup_beam5_test": 11.2183088843179
+ },
+ "S": {
+  "val_best": 9.838001304700196,
+  "best_epoch": 33,
+  "greedy_test": 9.91834624651885,
+  "beam5_val": 10.189911220234503,
+  "beam5_test": 10.543502522566309,
+  "beam5_test_unique": 289,
+  "soup_beam5_val": 10.548850826879667,
+  "soup_beam5_test": 11.1142396419606
+ },
+ "SC": {
+  "val_best": 10.045394353065616,
+  "best_epoch": 31,
+  "greedy_test": 10.30757939231333,
+  "beam5_val": 11.373274321700112,
+  "beam5_test": 11.276502775254029,
+  "beam5_test_unique": 304,
+  "soup_beam5_val": 11.288896926680687,
+  "soup_beam5_test": 11.59796278820779
+ },
+ "R": {
+  "val_best": 8.644078468038932,
+  "best_epoch": 32,
+  "greedy_test": 8.58020742260461,
+  "beam5_val": 9.140619551495984,
+  "beam5_test": 9.503745681832383,
+  "beam5_test_unique": 296,
+  "soup_beam5_val": 9.604617007277943,
+  "soup_beam5_test": 10.157781224514462
+ }
+}

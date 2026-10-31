@@ -1,0 +1,22 @@
+[preproc] OK: decode Config matches all 5 checkpoints on 10 preprocessing fields
+/group/pmc099/pprasad/envs/auslan/lib/python3.12/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+[ens] remapped 2 member(s) into member 0's vocabulary: [3, 4]
+[mbr] 5 members fusion=[False, False, False, True, True] beam=10 manifest=vd_test.tsv dev=cpu
+[mbr] rgb_feat_dir=/group/pmc099/pprasad/scratch_backup/dwpose/rgb_feats (14041 feature files)
+[mbr] decoded n-best for 1254 samples (avg cands=11.3)
+[mbr] wrote n-best -> /group/pmc099/pprasad/vd_xmodal/decode/VD5_test/nbest.jsonl
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.2           BLEU-4= 7.556  WER=0.9227  S=4027 D=2682 I=501  uniq=466
+  LP=0.3           BLEU-4= 7.697  WER=0.9277  S=4117 D=2565 I=567  uniq=462
+  LP=0.4           BLEU-4= 7.738  WER=0.9352  S=4228 D=2443 I=637  uniq=473
+  LP=0.5           BLEU-4= 7.903  WER=0.9405  S=4343 D=2294 I=712  uniq=491
+  LP=0.6           BLEU-4= 7.919  WER=0.9524  S=4456 D=2171 I=815  uniq=507
+  LP=0.7           BLEU-4= 8.018  WER=0.9620  S=4585 D=2006 I=926  uniq=514
+  LP=0.8           BLEU-4= 8.161  WER=0.9794  S=4703 D=1849 I=1101  uniq=536
+  LP=0.9           BLEU-4= 7.841  WER=1.0068  S=4902 D=1641 I=1324  uniq=556
+  LP=1.0           BLEU-4= 7.877  WER=1.0257  S=5053 D=1481 I=1481  uniq=581
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4= 7.604  WER=0.9749  S=4649 D=1912 I=1057  uniq=645
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4= 6.942  WER=1.1335  S=5515 D=908 I=2434  uniq=860

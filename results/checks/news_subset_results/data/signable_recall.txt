@@ -1,0 +1,14 @@
+types: signable 934 / unsignable 1821 | in-vocab 2379 (signable 878 / not 1501)
+GATE OK: reproduces the pre-registered type counts
+nA  s42: signable 4.49% | unsignable 1.84%
+nA  s101: signable 4.53% | unsignable 2.37%
+nA  s202: signable 4.39% | unsignable 2.03%
+nA  s303: signable 4.32% | unsignable 1.71%
+nA  s404: signable 5.05% | unsignable 1.84%
+nSA s42: signable 5.43% | unsignable 2.69%
+nSA s101: signable 6.10% | unsignable 2.09%
+nSA s202: signable 5.89% | unsignable 3.10%
+nSA s303: signable 5.57% | unsignable 2.31%
+nSA s404: signable 5.61% | unsignable 2.60%
+nSA - nA signable  : +0.94 +1.57 +1.50 +1.25 +0.56 | mean +1.16 [+0.64, +1.68] | same sign as mean 5/5
+nSA - nA unsignable: +0.85 -0.28 +1.08 +0.60 +0.76 | mean +0.60 [-0.05, +1.25] | same sign as mean 4/5

@@ -35,8 +35,8 @@ print(f"GATE all 800 voiced: BLEU-4 {b_all:.4f} (recorded 10.27 for the 40-epoch
 if round(b_all, 2) != 10.27:
     sys.exit("GATE FAILED")
 
-print(f"\nSetting: {n} official test clips, beam {meta['beam']}, estimated pose time = frames / 25.4 fps")
 POSE_FPS = round(thr_json["pose_only_cpu"]["fps_from_mean"], 1)
+print(f"\nSetting: {n} official test clips, beam {meta['beam']}, estimated pose time = frames / {POSE_FPS} fps")
 print(f"pose-only CPU rate {POSE_FPS} frames/s (read from the saved job summary pose_throughput_subset.json)")
 pose = fr / POSE_FPS * 1000.0
 whole = pose + tr + sy

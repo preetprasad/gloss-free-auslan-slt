@@ -1,0 +1,204 @@
+{
+ "n_clips": 14039,
+ "n_multi": 12409,
+ "n_single": 1630,
+ "dw_missing": 2,
+ "kps_eq_chosen_share": 1.0,
+ "idx0_eq_kps_share": 0.7638008405157063,
+ "gate_stored_KPS": {
+  "n": 12409,
+  "share_r_gt_0p5": 0.9493915706342171,
+  "share_r_gt_0p5_of_defined": 0.9508474576271186,
+  "median_r": 0.9756776586616378,
+  "n_undefined": 19
+ },
+ "gate_true_index0": {
+  "n": 12409,
+  "share_r_gt_0p5": 0.8068337496978,
+  "share_r_gt_0p5_of_defined": 0.8082014853083629,
+  "median_r": 0.9672446436021689,
+  "n_undefined": 21
+ },
+ "gate_note": "today's reference: 95.4% / 0.977 on 12,411 multi clips (file KPS). Mine has 12,409: 2 clips lack an alldet npz.",
+ "A_stored_KPS_v1tracked": {
+  "thresholds": {
+   "p5_rms_ap_matched": 0.09317368383470707,
+   "p5_rms_dw_matched": 0.08746670816165457,
+   "nconf_min": 8
+  },
+  "table": {
+   "all": {
+    "n_multi": 12409,
+    "n_mismatch": 628,
+    "1_too_short_or_few_confident": 26,
+    "1_too_short_or_few_confident_share": 0.0020952534450801837,
+    "2_low_arm_motion": 73,
+    "2_low_arm_motion_share": 0.005882826980417439,
+    "3_switch_explained": 215,
+    "3_switch_explained_share": 0.01732613425739383,
+    "4_other_person_matches": 44,
+    "4_other_person_matches_share": 0.0035458135224433877,
+    "5_unexplained": 270,
+    "5_unexplained_share": 0.02175840116044806,
+    "mismatch_share": 0.0506084293657829
+   },
+   "train": {
+    "n_multi": 11014,
+    "n_mismatch": 543,
+    "1_too_short_or_few_confident": 24,
+    "1_too_short_or_few_confident_share": 0.002179044852006537,
+    "2_low_arm_motion": 63,
+    "2_low_arm_motion_share": 0.00571999273651716,
+    "3_switch_explained": 187,
+    "3_switch_explained_share": 0.016978391138550934,
+    "4_other_person_matches": 39,
+    "4_other_person_matches_share": 0.0035409478845106227,
+    "5_unexplained": 230,
+    "5_unexplained_share": 0.020882513165062646,
+    "mismatch_share": 0.0493008897766479
+   },
+   "val": {
+    "n_multi": 689,
+    "n_mismatch": 38,
+    "1_too_short_or_few_confident": 2,
+    "1_too_short_or_few_confident_share": 0.002902757619738752,
+    "2_low_arm_motion": 6,
+    "2_low_arm_motion_share": 0.008708272859216255,
+    "3_switch_explained": 13,
+    "3_switch_explained_share": 0.018867924528301886,
+    "4_other_person_matches": 2,
+    "4_other_person_matches_share": 0.002902757619738752,
+    "5_unexplained": 15,
+    "5_unexplained_share": 0.02177068214804064,
+    "mismatch_share": 0.055152394775036286
+   },
+   "test": {
+    "n_multi": 706,
+    "n_mismatch": 47,
+    "1_too_short_or_few_confident": 0,
+    "1_too_short_or_few_confident_share": 0.0,
+    "2_low_arm_motion": 4,
+    "2_low_arm_motion_share": 0.0056657223796034,
+    "3_switch_explained": 15,
+    "3_switch_explained_share": 0.021246458923512748,
+    "4_other_person_matches": 3,
+    "4_other_person_matches_share": 0.00424929178470255,
+    "5_unexplained": 25,
+    "5_unexplained_share": 0.03541076487252125,
+    "mismatch_share": 0.06657223796033994
+   }
+  }
+ },
+ "B_true_index0": {
+  "thresholds": {
+   "p5_rms_ap_matched": 0.08889515004453981,
+   "p5_rms_dw_matched": 0.08404008211813649,
+   "nconf_min": 8
+  },
+  "table": {
+   "all": {
+    "n_multi": 12409,
+    "n_mismatch": 2397,
+    "1_too_short_or_few_confident": 29,
+    "1_too_short_or_few_confident_share": 0.0023370134579740512,
+    "2_low_arm_motion": 63,
+    "2_low_arm_motion_share": 0.005076960270771215,
+    "3_switch_explained": 1983,
+    "3_switch_explained_share": 0.15980336852284632,
+    "4_other_person_matches": 44,
+    "4_other_person_matches_share": 0.0035458135224433877,
+    "5_unexplained": 278,
+    "5_unexplained_share": 0.02240309452816504,
+    "mismatch_share": 0.19316625030220003
+   },
+   "train": {
+    "n_multi": 11014,
+    "n_mismatch": 2139,
+    "1_too_short_or_few_confident": 26,
+    "1_too_short_or_few_confident_share": 0.002360631923007082,
+    "2_low_arm_motion": 53,
+    "2_low_arm_motion_share": 0.004812057381514436,
+    "3_switch_explained": 1783,
+    "3_switch_explained_share": 0.16188487379698566,
+    "4_other_person_matches": 39,
+    "4_other_person_matches_share": 0.0035409478845106227,
+    "5_unexplained": 238,
+    "5_unexplained_share": 0.021608861449064827,
+    "mismatch_share": 0.19420737243508263
+   },
+   "val": {
+    "n_multi": 689,
+    "n_mismatch": 118,
+    "1_too_short_or_few_confident": 3,
+    "1_too_short_or_few_confident_share": 0.0043541364296081275,
+    "2_low_arm_motion": 5,
+    "2_low_arm_motion_share": 0.00725689404934688,
+    "3_switch_explained": 93,
+    "3_switch_explained_share": 0.13497822931785197,
+    "4_other_person_matches": 2,
+    "4_other_person_matches_share": 0.002902757619738752,
+    "5_unexplained": 15,
+    "5_unexplained_share": 0.02177068214804064,
+    "mismatch_share": 0.17126269956458637
+   },
+   "test": {
+    "n_multi": 706,
+    "n_mismatch": 140,
+    "1_too_short_or_few_confident": 0,
+    "1_too_short_or_few_confident_share": 0.0,
+    "2_low_arm_motion": 5,
+    "2_low_arm_motion_share": 0.007082152974504249,
+    "3_switch_explained": 107,
+    "3_switch_explained_share": 0.15155807365439095,
+    "4_other_person_matches": 3,
+    "4_other_person_matches_share": 0.00424929178470255,
+    "5_unexplained": 25,
+    "5_unexplained_share": 0.03541076487252125,
+    "mismatch_share": 0.19830028328611898
+   }
+  }
+ },
+ "analogue_AlphaPose_bug": {
+  "multi": {
+   "n": 12409,
+   "index0_wrong_person_any_alternative": 0.16528326214844064,
+   "count": 2051,
+   "index0_wrong_person_tracked_path_matches": 0.16165686195503265,
+   "count_tracked": 2006,
+   "index0_undefined": 0.0016923200902570715,
+   "index0_r_le_0p5_any_cause": 0.19179851469163706
+  },
+  "single": {
+   "n": 1630,
+   "index0_wrong_person_any_alternative": 0.06196319018404908,
+   "count": 101,
+   "index0_wrong_person_tracked_path_matches": 0.05337423312883435,
+   "count_tracked": 87,
+   "index0_undefined": 0.01411042944785276,
+   "index0_r_le_0p5_any_cause": 0.1462352209085252
+  },
+  "all": {
+   "n": 14039,
+   "index0_wrong_person_any_alternative": 0.1532872711731605,
+   "count": 2152,
+   "index0_wrong_person_tracked_path_matches": 0.14908469264192606,
+   "count_tracked": 2093,
+   "index0_undefined": 0.0031341263622765153,
+   "index0_r_le_0p5_any_cause": 0.18656663093962128
+  }
+ },
+ "switch": {
+  "share_multi_clips_with_CHOSEN_ne_0_frames": 0.24635345313885085,
+  "mean_share_frames_CHOSEN_ne_0": 0.05896773634266336
+ },
+ "nonsigner_crops_A": {
+  "n_mismatched_with_nonsigner_crop": 85,
+  "dw_path_matches_a_nonsigner_gt0p5": 14,
+  "ap_signer_matches_a_nonsigner_gt0p5": 2
+ },
+ "nonsigner_crops_B": {
+  "n_mismatched_with_nonsigner_crop": 258,
+  "dw_path_matches_a_nonsigner_gt0p5": 13,
+  "ap_signer_matches_a_nonsigner_gt0p5": 6
+ }
+}

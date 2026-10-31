@@ -1,0 +1,17 @@
+# Sources
+- prepare_data.py: written here; run once in the private tree (not by make) to make data/ from the saved run folders.
+- data/hyps_wave10.json: beam-5 hypotheses (val and test) of runs A/S/SC x seeds 42/101/202, from results/wave10_49135/runs/<run>/beam5_{val,test}_best.json (Kaya /group/pmc099/pprasad/wave10/runs, array 49135).
+- data/hyps_wave7.json: runs A/D x seeds 42/101/202, from results/sign_density_stage1/runs/ (job 31220). data/hyps_wave7s2.json: runs A/D/DL x seeds 303/404, from results/sign_density_stage2/runs/ (job 66644).
+- data/hyps_wave6.json: runs A/B x seeds 42-404 and C x seeds 42/101/202, from results/wider_corpus_joint_training/runs/ (jobs 16435 and 25863).
+- data/refs_val.json, data/refs_test.json: the official references from the same files (identical in every run; checked by prepare_data.py).
+- data/wave10_summary_s*.json: byte copies of results/wave10_49135/runs/summary_A_S_SC_R_s*.json.
+- data/wave7_summary_s*.json: byte copies of results/sign_density_stage1/summary_A_D_s*.json (42, 101, 202) and results/sign_density_stage2/summary_s*.json (303, 404).
+- data/wave7_readout_output.txt: byte copy of results/sign_density_stage2/readout_output.txt (job output of w7s2_readout.py; content-precision line).
+- data/wave7_prep_66643.out: byte copy of results/sign_density_stage2/logs/w7s2-prep-66643.out (prep job 66643, drop_function_signs line).
+- data/wave6_summary_s*.json: byte copies of results/wider_corpus_joint_training/summary_s*.json.
+- data/wave2_summary_s*.json: byte copies of results/wave2_r2_5403/summary_s*.json (job 5403, wave 2 stage 1). data/wave2_stage2_summary_s*.json: byte copies of results/letter_fix_and_longer_training_stage2/summary_s*.json (job 7966; not used in the output).
+- data/wave12b_corpus_facts_output.txt: byte copy of results/wave12b_prereg/w12b_corpus_facts_output.txt (output of w12b_corpus_facts.py on the adopted corpus).
+- data/wave12b_summary_138381.out: byte copy of results/wave12_build_2026-10-13/readout_logs/w12b-summary-138381.out (summary job 138381 of the wave 12b array 138380: per-run records of arms A and W, seed_decision.py lines).
+- data/adopted_corpus_gloss_counts.json: sign counts per gloss, counted by prepare_data.py from results/stitched_corpus_audit/audit_A.jsonl (adopted 13,760-clip corpus, audit job on wave-4 corpus A).
+- output.txt: not kept; fragment.md holds the output.
+- results/stitched_corpus_audit/stitch_corpus_audit.json is read in place (published path; corpus audit job on the 20,608-sentence pool).

@@ -1,0 +1,43 @@
+{
+ "gid": "wer_bleu_nullmodels",
+ "tagged": true,
+ "covered": [
+  "c02-016",
+  "c04-004",
+  "c04-005",
+  "c06-001",
+  "c06-002",
+  "c06-006",
+  "c06-007",
+  "c06-008",
+  "c07-067",
+  "c07-068",
+  "c10-022",
+  "c12-045",
+  "c12-046",
+  "c12-050",
+  "c12-051",
+  "c12-053",
+  "c12-054",
+  "c12-055",
+  "c14-009",
+  "c14-079",
+  "c18-013",
+  "c18-014",
+  "c18-015",
+  "c18-088",
+  "c21-003"
+ ],
+ "not_covered": [
+  {
+   "id": "c18-086",
+   "code": "no_saved_output",
+   "reason": "the identification simulation (recall 0.15 to 0.66 at fixed length; WER 0.8685, BLEU-4 12.45) has no committed tool or saved output; only results/WER_BLEU_JOINT_2026-09-09.md describes it"
+  },
+  {
+   "id": "c18-087",
+   "code": "no_saved_output",
+   "reason": "the identification simulation (recall 0.15 to 0.66 at fixed length; WER 0.8685, BLEU-4 12.45) has no committed tool or saved output; only results/WER_BLEU_JOINT_2026-09-09.md describes it"
+  }
+ ]
+}

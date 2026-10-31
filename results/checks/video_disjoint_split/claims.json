@@ -1,0 +1,61 @@
+{
+ "gid": "video_disjoint",
+ "tagged": true,
+ "covered": [
+  "c07-061",
+  "c11-070",
+  "c11-073",
+  "c11-075",
+  "c11-076",
+  "c11-078",
+  "c14-035",
+  "c18-018"
+ ],
+ "not_covered": [
+  {
+   "id": "c07-062",
+   "code": "no_saved_output",
+   "reason": "'retrain the baseline once' (the single baseline run) has no local output; five-seed part is checked under c18-018"
+  },
+  {
+   "id": "c11-069",
+   "code": "needs_kaya",
+   "reason": "single video-disjoint DWPose+CTC baseline run (6.39): output on Kaya, job 1100624; only a write-up exists locally"
+  },
+  {
+   "id": "c11-071",
+   "code": "needs_kaya",
+   "reason": "Two numbers, neither local. 6.39: the single video-disjoint DWPose+CTC baseline run, output on Kaya (job 1100624), only a write-up exists locally. 9.63: the three-seed official-test mean of DWPose+CTC; the per-seed test scores/decodes of that three-seed set are on Kaya (the other checks that quote 9.63 list it as not local too), and no local per-seed output reproduces the mean."
+  },
+  {
+   "id": "c11-072",
+   "code": "needs_kaya",
+   "reason": "that the vdB (adopted-recipe) arm adds 13,760 duration-modelled stitched clips: the arm's own joint manifest is on Kaya (job 6596; manifests vd_*.tsv / joint manifest built by jobs/slurm/video_disjoint.sbatch). Locally only a write-up (PREREG_WAVE3_2026-09-22.md) states the composition; the adopted 13,760-clip corpus is not tied to the vdB runs by any saved output, and 'duration-modelled' is not checked"
+  },
+  {
+   "id": "c11-077",
+   "code": "needs_kaya",
+   "reason": "per-seed beam-5 test decodes of vdA/vdB (886-clip subset 3.04 to 3.97) are on Kaya (jobs 6596, 7965); only a write-up holds the numbers"
+  },
+  {
+   "id": "c14-078",
+   "code": "needs_kaya",
+   "reason": "same as c11-077: per-seed decodes on Kaya (jobs 6596, 7965)"
+  },
+  {
+   "id": "c18-019",
+   "code": "needs_kaya",
+   "reason": "content-word precision per seed needs the per-seed decodes on Kaya (jobs 6596, 7965)"
+  },
+  {
+   "id": "c18-020",
+   "code": "needs_kaya",
+   "reason": "content-word recall per seed needs the per-seed decodes on Kaya (jobs 6596, 7965)"
+  },
+  {
+   "id": "c18-021",
+   "code": "needs_kaya",
+   "reason": "WER per seed needs the per-seed decodes on Kaya (jobs 6596, 7965)"
+  }
+ ]
+}

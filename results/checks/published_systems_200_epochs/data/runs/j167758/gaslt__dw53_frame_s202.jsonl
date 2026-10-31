@@ -1,0 +1,800 @@
+{"id": "video_1_4", "hyp": "i am possum .", "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f"}
+{"id": "video_1_31", "hyp": "you are funny possum .", "ref": "sha1:fd1905cc929440961c474a6411deecef28be2c63"}
+{"id": "video_1_47", "hyp": "okay .", "ref": "sha1:13c7f603acbc732858eb4999c9923a83e219ff6c"}
+{"id": "video_2_4", "hyp": "i am possum .", "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f"}
+{"id": "video_2_8", "hyp": "he has been working very hard .", "ref": "sha1:0580869881cfa0555295bdd2be5956120250be5c"}
+{"id": "video_2_18", "hyp": "that is the same .", "ref": "sha1:c8e0066243d1df8c0adcbee85fbb13c094715bbd"}
+{"id": "video_2_23", "hyp": "just wait there .", "ref": "sha1:f37bbed1da12db92ca2b633f91c9894edecaaf82"}
+{"id": "video_2_27", "hyp": "no possum the shadow is the same<pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:4f040325eb07886f258fdd64f1b1472e76ccbde2"}
+{"id": "video_2_105", "hyp": "i have an idea why do not you go and see if you come back .", "ref": "sha1:5e4106cc75ddb5b94de7b7ff463c449b96571801"}
+{"id": "video_3_36", "hyp": "thank you so much thank you .", "ref": "sha1:5b4946bcb137b868f3891290e81760191cbf6997"}
+{"id": "video_3_49", "hyp": "that is right .", "ref": "sha1:39adb1b2b6e760a4d5dfef0318f2521fe0e23141"}
+{"id": "video_3_67", "hyp": "if i have a half then half then half then half then half again .", "ref": "sha1:846b191ba41813119badc55a82fcee6e8cc4df39"}
+{"id": "video_3_78", "hyp": "great .", "ref": "sha1:bf6b468fe31e7e05b9dd99f9ad0bcec18d701023"}
+{"id": "video_3_96", "hyp": "can you please get some please .", "ref": "sha1:f6cb3b8152243f1c267c957f8124f8995991b935"}
+{"id": "video_3_115", "hyp": "what is next .", "ref": "sha1:646e6f8717782e83996f92e61f37feb648830885"}
+{"id": "video_4_8", "hyp": "that is right .", "ref": "sha1:e3099d82beaab3f1458212b4ee588066646df51c"}
+{"id": "video_4_9", "hyp": "look .", "ref": "sha1:b468b75f1e513ad6652366022cb06f2871554220"}
+{"id": "video_4_45", "hyp": "let us watch .", "ref": "sha1:641a83c34d24e7bd7f5ca86b544c934b5171ae16"}
+{"id": "video_4_53", "hyp": "yes that is right .", "ref": "sha1:b12dae20332e41d1e21629a9eb74fb1df839bfa1"}
+{"id": "video_4_72", "hyp": "look at all the different colors .", "ref": "sha1:5294ec8ef8ae492153698430bf6c25a4d6e491d1"}
+{"id": "video_4_82", "hyp": "yes that is right it is a<pad><pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:0b8209167716b376d8d70f7e088b6adbeea09903"}
+{"id": "video_4_86", "hyp": "it is wet .", "ref": "sha1:62e4fbdb630486d27681a778a99434d4e9cd5ff3"}
+{"id": "video_4_100", "hyp": "that is lovely .", "ref": "sha1:1355ef1359c03bb3ec820d336218af0f52cf236b"}
+{"id": "video_4_126", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_5_9", "hyp": "i have not seen him .", "ref": "sha1:97c68113945876a02bcc5e999bccd0f19eb453f0"}
+{"id": "video_5_14", "hyp": "i will go possum .", "ref": "sha1:75df3c4192e1234d626b400a59a85dddd3a76cfd"}
+{"id": "video_5_42", "hyp": "what .", "ref": "sha1:520ad1d794ae5848735e63f016a8a87b7b9a760c"}
+{"id": "video_5_47", "hyp": "ok i have got everything ready .", "ref": "sha1:7c3f25c2e679fc6ae0539adaa51d5144a4bf7aa3"}
+{"id": "video_5_56", "hyp": "i will show you .", "ref": "sha1:db3a7d49a24f1c0cbb5ececb2e492743d83c79c6"}
+{"id": "video_5_61", "hyp": "would you like to try possum .", "ref": "sha1:1a31c00e09992e20fb15e4128c7e34d2b867c365"}
+{"id": "video_5_90", "hyp": "yes that is right possum .", "ref": "sha1:e69c46e1ba4b9b50c19141e4668cae1ddcdd42c3"}
+{"id": "video_5_102", "hyp": "that looks lovely .", "ref": "sha1:4c2bedb3eb0ae14ef5fa61a59e8d72df05f06d14"}
+{"id": "video_5_130", "hyp": "what is next .", "ref": "sha1:8b67b2afd9ca0d8a9d4860e8c5512070aae6d82c"}
+{"id": "video_5_137", "hyp": "no .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_6_37", "hyp": "hello everyone .", "ref": "sha1:07861778a061b79de7d9a38d1961e46ce8c623e9"}
+{"id": "video_6_65", "hyp": "great .", "ref": "sha1:d52a94c898bb5ae3afbeeec83823ad11c9bab200"}
+{"id": "video_6_90", "hyp": "there is another one .", "ref": "sha1:2c681c68fdd619f1c51af3ba24c5ed88d61c78b7"}
+{"id": "video_6_92", "hyp": "this is my name is my name<pad><pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:01437fac3f0cbf14331065546d3cf802aa1e75a9"}
+{"id": "video_7_6", "hyp": "hello everyone .", "ref": "sha1:c2228079921e8850860d42869edc11de78bf621f"}
+{"id": "video_7_11", "hyp": "you are right sally .", "ref": "sha1:1ab2cfb46bc47e3061badf1096b795282ef93cc6"}
+{"id": "video_7_30", "hyp": "where is possum .", "ref": "sha1:9619992743ddfc8a3f2255b7dac71c127c29757d"}
+{"id": "video_7_84", "hyp": "but before possum why do not you sally .", "ref": "sha1:6b4b9667b56eafa81ab1593d389a879c36cecfbc"}
+{"id": "video_7_90", "hyp": "no not yet possum .", "ref": "sha1:e1caef162e07f7db7b06e53aa99ee4d9e9cd103a"}
+{"id": "video_7_106", "hyp": "then we can draw the picture in the story in there .", "ref": "sha1:4ed91fdbf1e2ef29fb97fcc94b946b3808680c73"}
+{"id": "video_7_111", "hyp": "but how do we make something like .", "ref": "sha1:d5a85c390194a486c94f7a759db86b2df8f1b5ce"}
+{"id": "video_8_10", "hyp": "that looks lovely .", "ref": "sha1:ef634fc23dc1127168dfa2f1591477f5ceb2f541"}
+{"id": "video_8_20", "hyp": "sally what are you doing here .", "ref": "sha1:2b53139bb24b3e47866459434513e224c877dc3c"}
+{"id": "video_8_33", "hyp": "good morning possum .", "ref": "sha1:d56694c0402101a742a656471694fecb39c6d969"}
+{"id": "video_8_62", "hyp": "it is very heavy .", "ref": "sha1:74c445c9046755cac3c5b285607488a703274884"}
+{"id": "video_8_70", "hyp": "you are funny .", "ref": "sha1:e234ddee2fa8c02699127244046974902f68e154"}
+{"id": "video_9_6", "hyp": "hi everyone .", "ref": "sha1:9e2b228fcac8571fd05c43410f776212a50c05e6"}
+{"id": "video_9_41", "hyp": "sally sally i am so excited but now i am very fast .", "ref": "sha1:1aaed643ff41a50e0fb2b0d2d5daeba76ee96157"}
+{"id": "video_9_53", "hyp": "that is great .", "ref": "sha1:83fcaa04a81781c42c39c74d031481358263ea4b"}
+{"id": "video_9_61", "hyp": "yes .", "ref": "sha1:50a720edab9921dbf1920f672bc3d76ccbf9a9a8"}
+{"id": "video_10_6", "hyp": "hello .", "ref": "sha1:c5db88768664d2a35ee12a26cd3c463b541b11c4"}
+{"id": "video_10_24", "hyp": "you can not be careful sally .", "ref": "sha1:b5e3c69506a21d56d2cd5aec9656ea6c7d0ba116"}
+{"id": "video_10_28", "hyp": "that is right possum .", "ref": "sha1:a5bc2a0cccee57fa1ce41f09e131ef6f58e86f71"}
+{"id": "video_10_33", "hyp": "yeah let us watch .", "ref": "sha1:85718fe5395ede5919775f0cb6d1368f78da3bc1"}
+{"id": "video_10_49", "hyp": "yes .", "ref": "sha1:39259a91c764273e9f6b2642aafd24ae9f035bf5"}
+{"id": "video_10_111", "hyp": "hello possum .", "ref": "sha1:77aa376d525e831a5d84edb6d4e6c3890c7ab8d2"}
+{"id": "video_10_121", "hyp": "that is great .", "ref": "sha1:520ad1d794ae5848735e63f016a8a87b7b9a760c"}
+{"id": "video_10_141", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_11_59", "hyp": "yeah let us watch .", "ref": "sha1:a574271c0143fd7d239f44599d1fd5cade47858e"}
+{"id": "video_11_103", "hyp": "that looks great .", "ref": "sha1:272248731c51727dcc5d1a63dd30fdd1ab07b46b"}
+{"id": "video_12_15", "hyp": "yes .", "ref": "sha1:115e7e0eb74f8272dc63def16eb3982cad75b6b1"}
+{"id": "video_12_97", "hyp": "hang on .", "ref": "sha1:5e7227009f385eed48936faaad6ef0dbd21b0fb2"}
+{"id": "video_12_99", "hyp": "bye bye .", "ref": "sha1:565ce7c5e862a52e67947c49ddf3e217ee36b461"}
+{"id": "video_12_101", "hyp": "hi possum .", "ref": "sha1:d331128e1fa8a8ccac592153b1205c11ee6b6346"}
+{"id": "video_12_103", "hyp": "that looks lovely .", "ref": "sha1:2742f529f1cd4de40f7676de12364a2260194635"}
+{"id": "video_12_112", "hyp": "it is very big .", "ref": "sha1:d8278c918dcf4d28f893072f2bfb5ea8005f6b2e"}
+{"id": "video_13_44", "hyp": "that is right possum we need to cut the right tool for the job .", "ref": "sha1:d33e40c5ef135a33343d7403ecfd1707c1bcc205"}
+{"id": "video_13_64", "hyp": "yeah let us watch .", "ref": "sha1:f05b3936ef819ca8c28402eac26d55685968dc01"}
+{"id": "video_13_89", "hyp": "how do we make it .", "ref": "sha1:6efa862b19c8760a4e942ad4a403f950d7aa438e"}
+{"id": "video_13_100", "hyp": "what is next .", "ref": "sha1:178b75bb115ea4864f9607f2f0f73ac2fa17f908"}
+{"id": "video_13_109", "hyp": "okay .", "ref": "sha1:676b2596c3a819129b426cb34af97ff790f573a1"}
+{"id": "video_13_154", "hyp": "well our time is up .", "ref": "sha1:1d441b149b4b0529214e1991d977e7751edaf1d9"}
+{"id": "video_14_24", "hyp": "great .", "ref": "sha1:203ccfdcd5e4bde8d4a05f80d5619f1583a01e45"}
+{"id": "video_14_43_1", "hyp": "hello .", "ref": "sha1:985778992491cf2403eedbf2af6ccf33e009f908"}
+{"id": "video_14_54", "hyp": "i have made some scrambled eggs .", "ref": "sha1:0f77e5bc1129a35147bd119ae440da4e165e781b"}
+{"id": "video_14_63", "hyp": "i know .", "ref": "sha1:7b358c946962c7609bff82fd4f996ae16fa48c19"}
+{"id": "video_15_15", "hyp": "come on .", "ref": "sha1:bf527372464f74ed2dedc0cc862cf032cfb525ca"}
+{"id": "video_15_42", "hyp": "thank you .", "ref": "sha1:f0cb9266628ee92e0d0355abf0ba430e3dbd673c"}
+{"id": "video_15_51", "hyp": "yes .", "ref": "sha1:15ee673f8eef6ac98393c4a77c6b4bf2ca99f39c"}
+{"id": "video_15_64", "hyp": "yeah sally .", "ref": "sha1:11d4b7e5b5216a26b1d1e3bd946208fe7d8ac641"}
+{"id": "video_15_65", "hyp": "great .", "ref": "sha1:6eeac7aca997bdf349c6adf1c4431312e8706504"}
+{"id": "video_15_81", "hyp": "hi sally .", "ref": "sha1:bd076cb0d53166b47da7a7b03276631332c086f3"}
+{"id": "video_15_97", "hyp": "look .", "ref": "sha1:c37aae0fe450870cc307683f6eba5d8a1712126d"}
+{"id": "video_15_118", "hyp": "great .", "ref": "sha1:444a24267ee4cda1f9d17fda9a182921044b9af0"}
+{"id": "video_15_125", "hyp": "yeah .", "ref": "sha1:10c31327868c72c20455998b08ecb36a3126e4b5"}
+{"id": "video_15_132", "hyp": "have a look .", "ref": "sha1:45605e99f0b7479975aa7f1b1218e2cc7b0ff418"}
+{"id": "video_15_138", "hyp": "you are funny sally .", "ref": "sha1:e74a0b9e9168bceb40ba3a229c024353edc36a64"}
+{"id": "video_15_143", "hyp": "it is a great day today .", "ref": "sha1:538cdacae4f8b3f81b8f2d712ddb35bac590c0d1"}
+{"id": "video_16_15", "hyp": "possum i am going to go outside and ask him .", "ref": "sha1:bec2beaae92403b32437abfdba4e158bfb3e077c"}
+{"id": "video_16_30", "hyp": "why do not we go outside and have a look .", "ref": "sha1:5c03cc196249add925559707b0251b793cc297e4"}
+{"id": "video_16_72", "hyp": "come on .", "ref": "sha1:8fa28b82073e3c4b04da27b1c849c583245bd214"}
+{"id": "video_16_124", "hyp": "now we need to get the easel .", "ref": "sha1:6742630e1c7db72713313712fc28f9187a6dda9e"}
+{"id": "video_16_150", "hyp": "yes .", "ref": "sha1:a601538aa80d23eb14a1eb884ee3cada7af7eddd"}
+{"id": "video_16_161", "hyp": "what is possum .", "ref": "sha1:33f110e4c40fe5626808bb084a3a4cadf3d299e8"}
+{"id": "video_16_174", "hyp": "i really enjoyed it .", "ref": "sha1:f25a164182a199e87a02963f869f12a485c17946"}
+{"id": "video_16_189", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_17_43", "hyp": "where is it .", "ref": "sha1:bd59b2ed098fdf58b8995ce37e2586eb5c317ead"}
+{"id": "video_17_90", "hyp": "that is great .", "ref": "sha1:cef9405048a1eed5e2d70d1846f2ef159fe905fb"}
+{"id": "video_17_119", "hyp": "right .", "ref": "sha1:44afa6c90bc2b7860c64d1e6c4b7bcae7437dc26"}
+{"id": "video_18_86", "hyp": "i know that sally .", "ref": "sha1:8f79d5fa5cf06416008c863890e3e985dd1fb5f9"}
+{"id": "video_18_94", "hyp": "that is right .", "ref": "sha1:9759272241498eb0366c3653d820a7979f7a1ce4"}
+{"id": "video_18_110", "hyp": "yes .", "ref": "sha1:89ede291567dba7ed9c99557f4ff801cb95e32c5"}
+{"id": "video_18_115", "hyp": "that is great .", "ref": "sha1:e59b92a35be799f8f6a831f8ae853a5c28b9ec72"}
+{"id": "video_18_121", "hyp": "sally i am going to go outside and up my tree .", "ref": "sha1:16b8b1094adcac519f6d599ca5e278175307fcc3"}
+{"id": "video_18_153", "hyp": "that was great .", "ref": "sha1:c480a93b4546848d1363d15a1b99b770171bb1e1"}
+{"id": "video_18_157", "hyp": "hello .", "ref": "sha1:9a441098dfdc82bbe9226ed415acab4c07bb2ea3"}
+{"id": "video_18_164", "hyp": "i really enjoyed learning about different tools .", "ref": "sha1:d406cd89e233dccb4bb64b3985f8d0a57fffbe83"}
+{"id": "video_19_9", "hyp": "hi sally .", "ref": "sha1:cda37f2ea589fe833fe92d5176af5237d8a85185"}
+{"id": "video_19_26", "hyp": "it is a lovely day .", "ref": "sha1:0d62dce2bb9a6c748fba53a293eb229812c6fe69"}
+{"id": "video_19_33", "hyp": "it is like learning about different shapes and different shapes .", "ref": "sha1:d73d6196d4c0e69f8509a2a090f094d86387b2d7"}
+{"id": "video_19_45", "hyp": "no i possum i am possum .", "ref": "sha1:9aba900de128a786f030cf956b83aab15326e347"}
+{"id": "video_19_63", "hyp": "i am sally .", "ref": "sha1:4d08688a5ac2e3c513f3c0df323da17e67ffc9af"}
+{"id": "video_19_75", "hyp": "they are so happy to learn .", "ref": "sha1:b36d789a3966fd5c8132fd295e15cd1243b68691"}
+{"id": "video_19_88", "hyp": "thank you possum .", "ref": "sha1:2c147a41a66d9640eeb29a9e2a6ba3a29ca533aa"}
+{"id": "video_19_90", "hyp": "that is great .", "ref": "sha1:2484c60d65a23d36047f2c12b4efb4717d4d25a6"}
+{"id": "video_19_106", "hyp": "right now fold that down .", "ref": "sha1:9138e03ee5a43dd8d799957fdc4527e47d1b5d17"}
+{"id": "video_19_111", "hyp": "it is like a rectangle .", "ref": "sha1:c6a85ef418c393387700bd67ba54ba73f14f89d2"}
+{"id": "video_19_121", "hyp": "we can cut it in half .", "ref": "sha1:fd48cc7f76037b70545fba1ff50cdecd488f8fdc"}
+{"id": "video_19_132", "hyp": "it looks lovely .", "ref": "sha1:56a6622ecadf3067e408cb92a1041f47a6856e11"}
+{"id": "video_19_149", "hyp": "i do not want my tree to see it .", "ref": "sha1:b7eb49b9c67cd7ec529e125cc6cc005a3d36d8e3"}
+{"id": "video_20_17", "hyp": "you will be very fast possum .", "ref": "sha1:df5864df0d3dc54c3761edc7c7b52a97a07f5a4d"}
+{"id": "video_20_89", "hyp": "look .", "ref": "sha1:15bb4425bd89af1908aa12227adf077e8e099db1"}
+{"id": "video_20_113", "hyp": "i have just finished .", "ref": "sha1:af0eaf37c57886407f1960b4d1e8759308087de3"}
+{"id": "video_20_114", "hyp": "what is this .", "ref": "sha1:2c324448967f92fc01da75757ec4731e75a86e4b"}
+{"id": "video_20_120", "hyp": "possum you are funny .", "ref": "sha1:5c03cc196249add925559707b0251b793cc297e4"}
+{"id": "video_20_124", "hyp": "let us go over there .", "ref": "sha1:205db68443f9e16b911b6127e952551e97805566"}
+{"id": "video_21_3", "hyp": "i am sally .", "ref": "sha1:3967146e05036825a653344613261a93917eda90"}
+{"id": "video_21_43", "hyp": "are we ready now .", "ref": "sha1:e1966880a33d738f87d0145baa3ec9c1772649a3"}
+{"id": "video_21_78", "hyp": "can you please get the<pad><pad><pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:ef12520abde84b685f71ff7adc73b87c55b6fd52"}
+{"id": "video_21_86", "hyp": "that is like that .", "ref": "sha1:1aa6cc3dfbfa5df7d50e27a90e0dcc52c8faef4a"}
+{"id": "video_21_102", "hyp": "that is right possum .", "ref": "sha1:b250355d6d3be5463a4e53f2e11c530568c8f995"}
+{"id": "video_21_113", "hyp": "we have got everything we need to add the milk .", "ref": "sha1:18c515230de535efe7fc4b0bb73c3e0d51c35dd9"}
+{"id": "video_21_118", "hyp": "where is it .", "ref": "sha1:7b698ce83b56506921894fc79a37f08538f7e355"}
+{"id": "video_21_130", "hyp": "can you please put them into the bowl please .", "ref": "sha1:6184ea1983addeabc522ecae617d80e8b80716ad"}
+{"id": "video_21_133", "hyp": "now we need two tablespoon of flour .", "ref": "sha1:53b2976eec1dee58c411a75669384cc09ada840f"}
+{"id": "video_21_152", "hyp": "that is the next clue .", "ref": "sha1:ad337158676fddaaef1e5c4cf81f430a4e065e88"}
+{"id": "video_21_155", "hyp": "that is right it is right .", "ref": "sha1:e2e5180133232c5ac58786cbebb5d3177634c156"}
+{"id": "video_21_163", "hyp": "that looks lovely .", "ref": "sha1:15029d275ad5ccff6a393dcccef5fafd93b77a46"}
+{"id": "video_22_16", "hyp": "that is great .", "ref": "sha1:45cdbd7ec589f746504f7bfb1f08ec5e28d69890"}
+{"id": "video_22_21", "hyp": "you are right possum .", "ref": "sha1:cb9d698038f7b97394ebe573b71e3ecb51d1dba9"}
+{"id": "video_22_30", "hyp": "that is right .", "ref": "sha1:d276fdf2e07b1f013d7d876d227a95e37854d9b1"}
+{"id": "video_22_42", "hyp": "would you like to help me .", "ref": "sha1:7cac3f7d5afa82927fc363139531106752c0e6c2"}
+{"id": "video_22_51", "hyp": "sally can we make some paper plane .", "ref": "sha1:c8bbef86fdd3928d2da39e713f53fb360740a012"}
+{"id": "video_22_59", "hyp": "great .", "ref": "sha1:e244945ec039d23b12480bdffd4deb8097c4780e"}
+{"id": "video_22_60", "hyp": "it is ready .", "ref": "sha1:652cfa805b3a779f77e028eb921ef0c150e79110"}
+{"id": "video_22_113", "hyp": "that is right .", "ref": "sha1:50d5255a5a0a2fc743575ac72172af7356df15c0"}
+{"id": "video_22_120", "hyp": "great .", "ref": "sha1:a61ce0064cb6c3d97e2755b83a8f2a145e034a35"}
+{"id": "video_22_165", "hyp": "it is the clue possum .", "ref": "sha1:aee32365af2f1c37db71ceb27827e2a4e49fe79c"}
+{"id": "video_22_189", "hyp": "sally look .", "ref": "sha1:24fca701d86c71869fbf5d5fb4eda0896ae248e8"}
+{"id": "video_22_194", "hyp": "thank you .", "ref": "sha1:1073d2debfba03eae27d1afde95d363adce17979"}
+{"id": "video_22_218", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_22_222", "hyp": "look sally .", "ref": "sha1:73ee5c8419acce638e634caf4efd489642e32c92"}
+{"id": "video_23_5", "hyp": "hello .", "ref": "sha1:0edb43084d1b3190790eefd9557c07a55a9256ce"}
+{"id": "video_23_18", "hyp": "come on sally .", "ref": "sha1:b857c4199b84a5d1b9bfdf0cc57428de8378129f"}
+{"id": "video_23_25", "hyp": "that is right possum .", "ref": "sha1:6cc06616100fbacbab409315f2ce21b4e9542165"}
+{"id": "video_23_47", "hyp": "that is great .", "ref": "sha1:1b1363068a1dcf33afd0fb95e9384c3a353dc25c"}
+{"id": "video_23_50", "hyp": "possum .", "ref": "sha1:631b03a68cf51fcb3e632d3f488152f345ecdfbe"}
+{"id": "video_23_59", "hyp": "great .", "ref": "sha1:89159343da237f64a1aa2802fbd217585b618e2c"}
+{"id": "video_23_62", "hyp": "that is great .", "ref": "sha1:c1f5182f92d052518b8531a84147489fbd72d227"}
+{"id": "video_23_66", "hyp": "that was great .", "ref": "sha1:c1f5182f92d052518b8531a84147489fbd72d227"}
+{"id": "video_23_85", "hyp": "yes .", "ref": "sha1:e09325b24201dd2978c777e9328ba349d306bed2"}
+{"id": "video_23_87", "hyp": "thank you .", "ref": "sha1:68e89ad1a8e77262b23537eac5c6a22d6efab7e7"}
+{"id": "video_23_103", "hyp": "yeah what is next .", "ref": "sha1:13a244b06c21e5db1f1723a7db8592b6ba28bcc0"}
+{"id": "video_23_128", "hyp": "yes .", "ref": "sha1:5b454f3e6fd0f9a775ff03e8df74c20ec6edc22e"}
+{"id": "video_23_137", "hyp": "possum what are you doing .", "ref": "sha1:3462254f59fbc9680f520b1a5411ae81a8506be7"}
+{"id": "video_23_157", "hyp": "sally .", "ref": "sha1:d9b771df67fc0adcec297393beb3c19d5a9c17f3"}
+{"id": "video_24_13", "hyp": "i have just got a few things in the garden .", "ref": "sha1:51ab4bbc0ebbd39017115fe21d7238a1fd46a241"}
+{"id": "video_24_51", "hyp": "you can see possum .", "ref": "sha1:63996664077d9f37a811298f6ab2dd0b05783940"}
+{"id": "video_24_55", "hyp": "that looks great .", "ref": "sha1:5cc11a03e5b2539774c440e19c2bddab269ec671"}
+{"id": "video_24_60", "hyp": "what is next .", "ref": "sha1:952ee773387347183323896e3bec2ce16c63c64e"}
+{"id": "video_24_77", "hyp": "i was just thinking about the different types of balls .", "ref": "sha1:89de78f45c6d212db7f75f1376aceab38e654c7f"}
+{"id": "video_24_82", "hyp": "why do not we watch some children going to school .", "ref": "sha1:152022bd686e72c1fa9faa0e9b7cd9cb9beb979c"}
+{"id": "video_24_106", "hyp": "you are right .", "ref": "sha1:013723da0f86ebfa931e2287657406cd71a33271"}
+{"id": "video_24_144", "hyp": "let us watch .", "ref": "sha1:b918fe1646fd0d07a1da7733be7e28e10fe9f326"}
+{"id": "video_24_146", "hyp": "no possum .", "ref": "sha1:f09ae8a930ef2c6d24289f7ff879de0a5b35661a"}
+{"id": "video_25_7", "hyp": "hi possum .", "ref": "sha1:6e5516caf152e83f6da960a3dda1095bd2206009"}
+{"id": "video_25_21", "hyp": "thank you .", "ref": "sha1:0561d156277eb449639263d0ba638d036566058f"}
+{"id": "video_25_56", "hyp": "look .", "ref": "sha1:ce7bf20ef68b66458a737a3f9197d95c5d08f78b"}
+{"id": "video_25_120", "hyp": "that is right possum we can look at the top of your tree .", "ref": "sha1:babb08bec5a565b758f5718a30026fec29e21d73"}
+{"id": "video_25_123", "hyp": "come on let us go .", "ref": "sha1:65c1b64d3aa6b71bd6250dc2a2bc39c2968fd7d8"}
+{"id": "video_25_124", "hyp": "it is a very special surprise for skip .", "ref": "sha1:546c0db32a948f1373ba7650bb60a843cdd8aaec"}
+{"id": "video_26_9", "hyp": "hello .", "ref": "sha1:041e8e0d0c542800906aef1c56e749e9fe24d54e"}
+{"id": "video_26_10", "hyp": "that looks great .", "ref": "sha1:a46de8d4904e466035e797a66dd67bc8feef8546"}
+{"id": "video_26_17", "hyp": "how are you going to help .", "ref": "sha1:e1378a3b7ee52d844f8d332dda49f6215841eac5"}
+{"id": "video_26_39", "hyp": "no .", "ref": "sha1:5e5912f26882fef19afc3e89a41ea5f203827209"}
+{"id": "video_26_48", "hyp": "well why do not we go inside now .", "ref": "sha1:450d43acc93734bdf4725b78a0b74867230fb440"}
+{"id": "video_26_79", "hyp": "i have got my new fridge .", "ref": "sha1:5066bc1f64cb8be79218e66435f5a0cf5068f56c"}
+{"id": "video_26_128", "hyp": "that looked great .", "ref": "sha1:16d56b6dc9c10879307fc1e8949963a2b17286cb"}
+{"id": "video_26_138", "hyp": "that is great .", "ref": "sha1:3ef41c3020c41c00494f08b11864f23bbbca3e16"}
+{"id": "video_27_17", "hyp": "but skip can you do that possum .", "ref": "sha1:596bec87fcbf4b873acf861d18daba252ad3d038"}
+{"id": "video_27_47", "hyp": "sally what are we ready .", "ref": "sha1:b0f9fa27b7b1d79694155577bdf586e4248a8366"}
+{"id": "video_27_75", "hyp": "that is right possum that is great .", "ref": "sha1:63f7e90d0faba30b6319287aed52692fecd3e780"}
+{"id": "video_27_83", "hyp": "that is right possum you do not know that possum .", "ref": "sha1:febd54fd5f1d4278f4689e92e941dbf02e9b1b8d"}
+{"id": "video_27_113", "hyp": "are you ready possum .", "ref": "sha1:947a9734dd422debef79ac63abcd11008e236e8a"}
+{"id": "video_27_118", "hyp": "that is great .", "ref": "sha1:f7427e39e4e0563d65b018cd7c99c464f59fb808"}
+{"id": "video_27_127", "hyp": "yes it is very heavy .", "ref": "sha1:fc534a2b2d1d6c988a632098438da00962a976a9"}
+{"id": "video_27_133", "hyp": "look at your tree .", "ref": "sha1:562ff6f93a9b24cc45d02b1beba7794cb345a16d"}
+{"id": "video_27_150", "hyp": "look .", "ref": "sha1:255c5e4252fb8ae98d2b7e387f2d5176de38da3a"}
+{"id": "video_28_32", "hyp": "yes that is right possum that is great<pad><pad><pad><pad><pad>", "ref": "sha1:2b7e9e1081ce1f3dad2e725120323407575c54eb"}
+{"id": "video_28_39", "hyp": "can you put the lid on .", "ref": "sha1:fab66a8cf40a67cc6851b4641187af2f84750294"}
+{"id": "video_28_75", "hyp": "hi sally .", "ref": "sha1:787ab2bef428d20e79a1d2c264c01b31b3914b48"}
+{"id": "video_28_104", "hyp": "let us go .", "ref": "sha1:0a66ec0063b683ad72a2bf82c201746023711c1c"}
+{"id": "video_28_124", "hyp": "can you please get the recipe out of the drawer please .", "ref": "sha1:a5e54943fe031e90c7a5ea6245187628a5733f74"}
+{"id": "video_28_166", "hyp": "great now can you write the name of paper .", "ref": "sha1:3cc39ef4562fa6ed22b10291fc745834f6f0da62"}
+{"id": "video_29_19", "hyp": "that is great .", "ref": "sha1:a41a5d55b98b0cc8ad55cc74765497fa475dcd8b"}
+{"id": "video_29_30", "hyp": "sally what are you going to do you want to do<pad><pad><pad>", "ref": "sha1:05b46410669fc667f9439f3c711566871a732890"}
+{"id": "video_29_36", "hyp": "but i do not want to play yet .", "ref": "sha1:e27b7dea458ff0af52956b9b9479c3c7ee16af0b"}
+{"id": "video_29_72", "hyp": "that was great .", "ref": "sha1:79ca340d240616dc4b3ac3b7dd81610a31b9b79f"}
+{"id": "video_29_103", "hyp": "i need to do it now .", "ref": "sha1:b520c37918e5a423572306eeedfa397b45597752"}
+{"id": "video_29_114", "hyp": "you are different possum .", "ref": "sha1:26224530c247598ed75b48413d44bc2a0ca7d4d7"}
+{"id": "video_29_127", "hyp": "can you put that on the table .", "ref": "sha1:53b959bcba7f2d7896944539329936386497b21e"}
+{"id": "video_29_147", "hyp": "yes that is right .", "ref": "sha1:a10d401b8d9d77af1d612a0e893c9dfc4b14949b"}
+{"id": "video_29_149", "hyp": "well why do not we go inside now .", "ref": "sha1:84d40819b181e73795a42a13369fbf13b96ce956"}
+{"id": "video_29_168", "hyp": "that looked great .", "ref": "sha1:ff1bf56ea08ce9011efc24e9a3a158cd42613f99"}
+{"id": "video_29_211", "hyp": "that looks great .", "ref": "sha1:c250e7168fd3a4eca1d805edb9699b046d8648aa"}
+{"id": "video_30_45", "hyp": "what are we going to learn .", "ref": "sha1:40be8d20522a410985a6b27a6d9457ea145d63bc"}
+{"id": "video_30_51", "hyp": "ready to go first .", "ref": "sha1:d30085b8e3d7eb3a931bb992f338ea0a5bc8f5e9"}
+{"id": "video_30_65", "hyp": "sally what is next .", "ref": "sha1:4b3c81fa884cecd20813d4d962ba8523ba7c0ffc"}
+{"id": "video_30_77", "hyp": "yeah let us watch .", "ref": "sha1:db8699f05fe2ec3272d17918afe1a1abd537f700"}
+{"id": "video_30_81", "hyp": "would you like to help me .", "ref": "sha1:3e475d66c8de16405f5f36d0ca1ea8a1e59d08bb"}
+{"id": "video_30_86", "hyp": "what .", "ref": "sha1:667b4b6866088c7e4706d932d43a62d7a0a67f95"}
+{"id": "video_30_87", "hyp": "i know .", "ref": "sha1:41fc2e88cb408b755dfa0fe867f31b73bc20739b"}
+{"id": "video_30_92", "hyp": "i have an idea .", "ref": "sha1:bd76b50b9f826ed465067711f328dcc63bdb1ffa"}
+{"id": "video_30_122", "hyp": "great what is this .", "ref": "sha1:9d91a9b924149a76801b87a7073b3f62afb8ca69"}
+{"id": "video_30_181", "hyp": "sally look .", "ref": "sha1:8fa28b82073e3c4b04da27b1c849c583245bd214"}
+{"id": "video_30_185", "hyp": "thank you .", "ref": "sha1:af0eaf37c57886407f1960b4d1e8759308087de3"}
+{"id": "video_30_191", "hyp": "that is right .<pad><pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:199640c253db080309311d10b02bf079914abfef"}
+{"id": "video_30_193", "hyp": "thank you .", "ref": "sha1:3e4301d51f528c4e6a801a51f034bf7eea045c49"}
+{"id": "video_30_197", "hyp": "bye .", "ref": "sha1:503454043355f1148e5d2c0f11a7249faa7ba72c"}
+{"id": "video_30_221", "hyp": "one .", "ref": "sha1:503454043355f1148e5d2c0f11a7249faa7ba72c"}
+{"id": "video_31_19", "hyp": "that is right possum .", "ref": "sha1:7cba39a372fdaec7db5ebbb3aaf50d66121e8f27"}
+{"id": "video_31_50", "hyp": "sally i was here .", "ref": "sha1:a2acad48c1096d7f37bb2a68faee38e81abffd10"}
+{"id": "video_31_60", "hyp": "yes that is a very good idea .", "ref": "sha1:f5aaa155e640c08e517948d8bbe5d95e8796c2b0"}
+{"id": "video_31_90", "hyp": "why do not you go and have a look at my tree .", "ref": "sha1:0f09133c55d6bf4e0af68b693c86f2061472fb78"}
+{"id": "video_31_106", "hyp": "where is the same .", "ref": "sha1:fdb19dd035a06f21c48cfe67ede2de7b09c1d719"}
+{"id": "video_31_134", "hyp": "it is a very long time .", "ref": "sha1:6c436188477a54b5d5bc1ae7379d4903120c5760"}
+{"id": "video_32_14", "hyp": "great .", "ref": "sha1:bd5f03934cd5b72502076ad1b8fc03e4df9a3b1d"}
+{"id": "video_32_23", "hyp": "i know .", "ref": "sha1:f76de17cfb00d34d0deb53fd5db8adda752b29d1"}
+{"id": "video_32_28", "hyp": "sally .", "ref": "sha1:bce808d6829f75c24ad17926e1c736c2c39e22f0"}
+{"id": "video_32_78", "hyp": "you are right possum .", "ref": "sha1:a17af19597971502366d04c2e858f2464415498c"}
+{"id": "video_32_94", "hyp": "yeah let us watch .", "ref": "sha1:db8699f05fe2ec3272d17918afe1a1abd537f700"}
+{"id": "video_32_100", "hyp": "hang on sally i am<pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:4ae707b3c3a5e0ebd77da4a8f8ce7112efbf4957"}
+{"id": "video_32_105", "hyp": "that is how it is the cream it is the<pad><pad><pad><pad>", "ref": "sha1:ccdabfdc92dd8ca9553abaec9a233810590d0fd2"}
+{"id": "video_32_111", "hyp": "look .", "ref": "sha1:cfa368d2d01e7c8b49f5f4c28971a383e74ca53c"}
+{"id": "video_32_158", "hyp": "i need to go to the top of my tree house .", "ref": "sha1:1617c3b9076eb4fd633a337c87d1606aff057278"}
+{"id": "video_32_162", "hyp": "that is great .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_33_48", "hyp": "that is right .", "ref": "sha1:f027893de1768b8d6db018fc955e1175289311c1"}
+{"id": "video_33_55", "hyp": "why do not we go inside and have a look for you .", "ref": "sha1:5afc27344475f37d1ae3373ecae14bde33750344"}
+{"id": "video_33_64", "hyp": "hi sally hi everyone .", "ref": "sha1:24f99375a9c7bfe6da4a8e63ef4f539acea4c959"}
+{"id": "video_33_75", "hyp": "this one .", "ref": "sha1:d147d2a2b2266582fff89db1b88795566192ef50"}
+{"id": "video_33_95", "hyp": "what would you like to make .", "ref": "sha1:d9c099d3f930ce53f41258303f3331f4ef19a8c9"}
+{"id": "video_33_99", "hyp": "why do not we watch some children making things out .", "ref": "sha1:684ee21ce58d36b8c98d3d6a6c313c30853dd740"}
+{"id": "video_33_125", "hyp": "would you like to possum .", "ref": "sha1:b4d3b24b1725072a4ffe801c453b3ef924503bca"}
+{"id": "video_33_153", "hyp": "that looks great .", "ref": "sha1:492631be49f4a65ef2f2ceaeac2d6d8e34312972"}
+{"id": "video_34_10", "hyp": "what he is up there .", "ref": "sha1:f19cf3e6be075fa275391e4bf40124d0659cd6e5"}
+{"id": "video_34_29", "hyp": "i was just thinking about the same thing .", "ref": "sha1:329a083167d6de247fa6cbf4a2a43eb7c0dd7701"}
+{"id": "video_34_43", "hyp": "they are like the same as they are in the kitchen .", "ref": "sha1:ed3f97ec2cdd82d77b5211cbb23bc1943c347758"}
+{"id": "video_34_49", "hyp": "i will go to the top of my tree .", "ref": "sha1:e034d6461015464b5d8ac9a3540f10a626ebb7f0"}
+{"id": "video_34_72", "hyp": "i have just been outside at the time .<pad><pad><pad><pad><pad><pad>", "ref": "sha1:28fe75ce0f7f28990cd14ff83089a7cee0c1291b"}
+{"id": "video_34_80", "hyp": "that is such a beautiful day possum .", "ref": "sha1:b2f47ebd7f54e795abbe594d09d4b3184efe2bed"}
+{"id": "video_34_107", "hyp": "you are so funny .", "ref": "sha1:bae2ebb61feb5cd5f06650018bf483818914c97d"}
+{"id": "video_34_114", "hyp": "yes .", "ref": "sha1:51a193f1b672b3978a9e64bb403845f7962a3fc8"}
+{"id": "video_34_117", "hyp": "that is right possum .", "ref": "sha1:a5ef1dd195e38e34ab7e698f51abfc81f8b5c25b"}
+{"id": "video_34_129", "hyp": "i was watching .", "ref": "sha1:49dcaa623edf821af18a7873a7a1201a37612a2a"}
+{"id": "video_34_137", "hyp": "can you please get it now .", "ref": "sha1:eaa0f58f8e39aed1553adc492c658c34b78913b8"}
+{"id": "video_34_147", "hyp": "that is great .", "ref": "sha1:17cf858cdf95ed3cea3978b098161a74f8edfb23"}
+{"id": "video_35_7", "hyp": "bye .", "ref": "sha1:30bc12a667b8fb6986be2e6bf20c2b774b760182"}
+{"id": "video_35_21", "hyp": "you are funny sally .", "ref": "sha1:9a4125305f4b74c59e7bc61822a53c57a4abcfb7"}
+{"id": "video_35_33", "hyp": "but there is something else that story .", "ref": "sha1:7ce8f2ec9cf7a5077ad92e0ef3e119f8ce4530a4"}
+{"id": "video_35_36", "hyp": "see sally .", "ref": "sha1:aefc33590b0744b0cbec5601e528d90a94ccfb6e"}
+{"id": "video_35_39", "hyp": "bye .", "ref": "sha1:0d7a06a62bf744e203963fb79dca9235e581ba14"}
+{"id": "video_35_44", "hyp": "no possum you are not here possum .", "ref": "sha1:1e94e40c0d04a2fdcf9d11065e9988d36053ac23"}
+{"id": "video_35_57", "hyp": "i will go inside and get some food<pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:aaf2ec86be73855a2dcab710cd3ce127dbcb1c61"}
+{"id": "video_35_59", "hyp": "there is plenty of food in the fridge .<pad><pad><pad><pad><pad>", "ref": "sha1:cde5e1423e8fa35207c0062091e5144650c4c6ec"}
+{"id": "video_35_96", "hyp": "this one is one half one half .<pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:7b69f380d5d2bc0ca84c5ff9eb645607c316dd70"}
+{"id": "video_35_133", "hyp": "why do not we go inside and draw a picture .", "ref": "sha1:c3ac72e7e6d55cdaf834bc91095d21e31072854a"}
+{"id": "video_35_135", "hyp": "now i am going to cut the top of my tree i am going to", "ref": "sha1:93371808f0b410fda443787de1a01c0009adf7c7"}
+{"id": "video_35_143", "hyp": "that was lovely .", "ref": "sha1:5e110760c156bd8f7f9c1b5cee8a36e1f763423f"}
+{"id": "video_36_34", "hyp": "that is great .", "ref": "sha1:121be4b5c8f02e6fb46820ec75825a752fc44362"}
+{"id": "video_36_37", "hyp": "i do not know what i do<pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:5d86b434901ab6711c340ef4d5fb45286007aece"}
+{"id": "video_36_61", "hyp": "it is a very special thing for you .", "ref": "sha1:94762acc8767752155cd786f44102511c690d81e"}
+{"id": "video_36_145", "hyp": "hi possum .", "ref": "sha1:d02582b24a468ca443f81432cd67b1fad7a0a4b3"}
+{"id": "video_36_168", "hyp": "thank you so much .", "ref": "sha1:06f7eed09d99a594fd7b97b12e8574046de4506c"}
+{"id": "video_36_190", "hyp": "thank you thank you .", "ref": "sha1:e20446b96972c6515455e23361de55fa5f7331c9"}
+{"id": "video_36_213", "hyp": "i need the box .", "ref": "sha1:4eeefb1758012bdec0ca3a461c6dd486594defc6"}
+{"id": "video_37_3", "hyp": "i am possum .", "ref": "sha1:3cc51a9e5694bd2905d0e7100bc6bbefea0b051f"}
+{"id": "video_37_9", "hyp": "well i think i am ready .", "ref": "sha1:30c2135a452c622cc323ca12ff47c8c8ed479bda"}
+{"id": "video_37_34", "hyp": "yes .", "ref": "sha1:e2e5180133232c5ac58786cbebb5d3177634c156"}
+{"id": "video_37_48", "hyp": "yes that is right possum .", "ref": "sha1:2e1023851db4c8284194853c36e1bafa595aefe4"}
+{"id": "video_37_72", "hyp": "you are funny possum .", "ref": "sha1:68304219748f020e67d0ee74f8967b3054113cca"}
+{"id": "video_37_82", "hyp": "that is right .", "ref": "sha1:43625febae1d116df0dae662a5e509ed9378e52d"}
+{"id": "video_37_99", "hyp": "possum look at the top of your tree .", "ref": "sha1:aa627c8ea2156d47936a94f733ec94ab606f62ab"}
+{"id": "video_37_105", "hyp": "it is right possum it is round .", "ref": "sha1:560b4ec580789cf0c4bb88e9b4a45439585188db"}
+{"id": "video_37_166", "hyp": "ok .", "ref": "sha1:be09d763a57f35ce70160d714ebbc357d15683fa"}
+{"id": "video_37_168", "hyp": "that is great .", "ref": "sha1:46d3afd76b20e9611173f82ecbcdc4c27f71e7b6"}
+{"id": "video_37_172", "hyp": "the sun is shiny .", "ref": "sha1:04a50744c547f255e32ad16a768e9d607e4ffb51"}
+{"id": "video_37_178", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_38_28", "hyp": "it has gone .", "ref": "sha1:e72605cf7d2d9fd43198b2ef65ba7c47490cbdc2"}
+{"id": "video_38_29", "hyp": "i do not want it .<pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:be61e6d15cd4b5cdab416b37c27057950cef0d9b"}
+{"id": "video_38_52", "hyp": "it is very big .", "ref": "sha1:029039dba6a082f67463f52c494186d92ee79bb7"}
+{"id": "video_38_56", "hyp": "you are funny possum .", "ref": "sha1:859f0776e925b9840b8af8aa16a47fca22bd31c1"}
+{"id": "video_38_105", "hyp": "we need to go and get the easel and we can put<pad><pad>", "ref": "sha1:bb87c0b2fe1c805032ced92681fa06ee53edd3ef"}
+{"id": "video_38_116", "hyp": "yes that is a circle .", "ref": "sha1:924647a3b8f13a9f80dff82a58b9183068aed61e"}
+{"id": "video_39_12", "hyp": "that was great .", "ref": "sha1:bd5f03934cd5b72502076ad1b8fc03e4df9a3b1d"}
+{"id": "video_39_34", "hyp": "i know i can do that now .", "ref": "sha1:77b991f1ca755b127170672de44a5df3615c2ff0"}
+{"id": "video_39_45", "hyp": "yeah let us watch .", "ref": "sha1:c8c8961d2b38f9fe539264903fc6822a0bb267d2"}
+{"id": "video_39_67", "hyp": "that looked great .", "ref": "sha1:28e301b93d73f23cbec7e4f9cae39c4381befa6f"}
+{"id": "video_39_79", "hyp": "no possum .", "ref": "sha1:71e035a62cb5f7ee4fda8c6c8c9e0247c02e25fd"}
+{"id": "video_39_135", "hyp": "we need a spoon .", "ref": "sha1:3d1c0a39fce2cd2d7a9d345d5661eeeb6eeed23c"}
+{"id": "video_39_152", "hyp": "it was so much fun .", "ref": "sha1:5f4537269660647a3f26555a4b3a983cdaf31e5d"}
+{"id": "video_39_159", "hyp": "look .", "ref": "sha1:d3ad117fa0e4bac4f11bfe5b8290060851208763"}
+{"id": "video_40_54", "hyp": "yes you are right possum .", "ref": "sha1:433ee8cc3d067d58750b23f85871c863b6bcb8f3"}
+{"id": "video_40_83", "hyp": "no we do not need a water .", "ref": "sha1:1de0c44b37cda2f51a492fe6be60420c45a93289"}
+{"id": "video_40_111", "hyp": "can you please get the recipe out .", "ref": "sha1:3d960a2555a454cec346d50a213802ac1e6ef458"}
+{"id": "video_40_120", "hyp": "great .", "ref": "sha1:d95943d01d95ff87fd263a7036614cd3d5d2859a"}
+{"id": "video_40_135", "hyp": "did you see possum in the tree .", "ref": "sha1:8a32ad73ac754f867ba60e800fc80dd7e35bc4b9"}
+{"id": "video_40_147", "hyp": "that looks great possum .", "ref": "sha1:3c14e6cd0c28904410cc58021109f31a0ee37aa0"}
+{"id": "video_40_152", "hyp": "you are funny possum .", "ref": "sha1:4e4d7a4dd101305a65a08c60bc06b71fb7bf4769"}
+{"id": "video_40_153", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_41_11", "hyp": "great .", "ref": "sha1:bd59b2ed098fdf58b8995ce37e2586eb5c317ead"}
+{"id": "video_41_25", "hyp": "this is great .", "ref": "sha1:47633e3578dba4b5447337f13c82737ec06992fb"}
+{"id": "video_41_30", "hyp": "yes that is right possum .", "ref": "sha1:1ec3fd60996eb3526fd09542b6c72ad8b3488597"}
+{"id": "video_41_46", "hyp": "that is right possum .", "ref": "sha1:4187a76525488c3dfa95cfc35ec79b4f085aa09b"}
+{"id": "video_41_54", "hyp": "yes that is right .", "ref": "sha1:9a795743cbe9e406d2f51fece89ee41fe4188282"}
+{"id": "video_41_57", "hyp": "look .", "ref": "sha1:6814962b7f4a428fdb8c111d0f305d7a7a8c38e1"}
+{"id": "video_41_73", "hyp": "now can you please get the recipe out please .", "ref": "sha1:80ba34f209b21cb25d3d44fe95eef1ba3f471865"}
+{"id": "video_41_74", "hyp": "great .", "ref": "sha1:ee685758c98dcc01743c169fbdd0e75ef1245bcd"}
+{"id": "video_41_77", "hyp": "what is this .", "ref": "sha1:fa100e7d27a9d2deb45c2ff7974f134a39b0af32"}
+{"id": "video_41_84", "hyp": "what .", "ref": "sha1:ab48f1944a9984684dd8d385f4ad96ca34e5532c"}
+{"id": "video_41_102", "hyp": "great .", "ref": "sha1:b29480caa2d65e6e72aeedcefeef56af29189be5"}
+{"id": "video_41_103", "hyp": "no possum .", "ref": "sha1:1a909c26cd47c052d2ade34fb028f24b18735e1a"}
+{"id": "video_41_110", "hyp": "that one .", "ref": "sha1:b29480caa2d65e6e72aeedcefeef56af29189be5"}
+{"id": "video_41_145", "hyp": "why do not we do that .", "ref": "sha1:cec9b08a579cb4767fea02b6b4136afa8b80ffc0"}
+{"id": "video_41_168", "hyp": "where is it .", "ref": "sha1:63a9da3f0f0a605492bd6e108ad5291eb60b0763"}
+{"id": "video_41_184", "hyp": "thank you .", "ref": "sha1:5f069a06655e9e8f2bfd04e1bec931760b91f967"}
+{"id": "video_41_204", "hyp": "that looks great possum .", "ref": "sha1:21c43bef2368cb983a409730cb33a9ee9c6e2651"}
+{"id": "video_41_206", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_41_207", "hyp": "thanks for watching .", "ref": "sha1:b49d27b6673825e0e96a0ef06b599d057dcf7df8"}
+{"id": "video_42_24", "hyp": "that looks lovely .", "ref": "sha1:25a60c8c633702e8a59d478bdca34725e00ec08f"}
+{"id": "video_42_28", "hyp": "sally before you do that why do not you do that i have a big<pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:d54c825a3c9728a4fabb1e2dca035c7cc98302f2"}
+{"id": "video_42_51", "hyp": "that is great .", "ref": "sha1:c99cae4920873a2aea92f96f71e47d00b78c7376"}
+{"id": "video_42_74", "hyp": "hello .", "ref": "sha1:264929e536594abf0ccbe5704f1be48f3a848b48"}
+{"id": "video_42_109", "hyp": "you are right possum .", "ref": "sha1:b0577ddd157ebeaebdb5d872d22e8c3c8d97c3e0"}
+{"id": "video_43_24", "hyp": "it is a great idea .", "ref": "sha1:981b97e2746020ec79e0174be27bc00376b2ecc7"}
+{"id": "video_43_65", "hyp": "i want to do that too .", "ref": "sha1:057649119c55bac600930a9e1e464a35cfd39b5e"}
+{"id": "video_43_69", "hyp": "yes it is there .", "ref": "sha1:16770b80bd3e36d234686b0f1e513bf958514952"}
+{"id": "video_43_76", "hyp": "yeah let us watch .", "ref": "sha1:641a83c34d24e7bd7f5ca86b544c934b5171ae16"}
+{"id": "video_43_99", "hyp": "that looks great .", "ref": "sha1:0735b4df171f48b29e17ef09edb23eac3bf43256"}
+{"id": "video_43_134", "hyp": "see you next time .", "ref": "sha1:fa4b7793efc846eed9b55f855ce2d97c2fca47a7"}
+{"id": "video_44_41", "hyp": "that is right possum i am so excited<pad><pad><pad><pad><pad><pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:15abaead3633296eb03b62d3856a651e1e97285c"}
+{"id": "video_44_56", "hyp": "let us watch .", "ref": "sha1:2cca112c0451da407896da93e68af1199c9b2d2e"}
+{"id": "video_44_74", "hyp": "sally has sally got one more thing missing .", "ref": "sha1:1c9ff935711f65daad8152ca65615788741a90c2"}
+{"id": "video_44_111", "hyp": "you are right possum that is right here .", "ref": "sha1:e661c487c49cec7e75c0b09cdb5a67131d8080d2"}
+{"id": "video_44_136", "hyp": "great .", "ref": "sha1:84d3b19946fa98ad48c5dbbcf9c793c44503f2ae"}
+{"id": "video_44_146", "hyp": "can you please put that on the table possum .", "ref": "sha1:0c31422b4e2ae00f0ca10d2aca07cd402cdfbcbb"}
+{"id": "video_44_160", "hyp": "yes i am right .", "ref": "sha1:9d5e2eafbdb89e132aa5a206ae84527f6c4abca6"}
+{"id": "video_45_21", "hyp": "they are different they fly like they .", "ref": "sha1:7d4e5120dcbdaa2f5a6e6f81526ca1ecddc0af57"}
+{"id": "video_45_25", "hyp": "sally i remember i had so much fun .", "ref": "sha1:e90f0404951d9ad158fcef332a31c04ac073764b"}
+{"id": "video_45_36", "hyp": "yeah let us watch .", "ref": "sha1:c2e923ed5928afd0561bc03d2e0cbdef03962670"}
+{"id": "video_45_69_1", "hyp": "why do not we go and have a look .", "ref": "sha1:a7a834e548a897e4bb46115ccce6fbeed3d2fffa"}
+{"id": "video_45_76", "hyp": "great .", "ref": "sha1:51b33e1d6929d9180873ab8d8974a25da7e38680"}
+{"id": "video_45_80", "hyp": "why do not we watch .", "ref": "sha1:574f426016f4dfd952386a23673117ef8bd91604"}
+{"id": "video_46_11", "hyp": "hi sally .", "ref": "sha1:f4235faa9a1c415e934ac696c6a12906161e552d"}
+{"id": "video_46_12", "hyp": "bye bye .", "ref": "sha1:9c962373196a28671bae28dd809f6e0526132c93"}
+{"id": "video_46_19", "hyp": "sally do you know .", "ref": "sha1:9c37e2a5a9f658bcce7db3b8cc88747b783e5efb"}
+{"id": "video_46_26", "hyp": "no .", "ref": "sha1:1db17ee1503551f671a2aacb0aa4205319281e58"}
+{"id": "video_46_35", "hyp": "it is a bit too hot but i do not want it to think i could be able to see it .", "ref": "sha1:2b12758faad5e64606fd86f019912534e1080118"}
+{"id": "video_46_54", "hyp": "that is a great idea .", "ref": "sha1:ed63624617275ea523d5af9cf5a46b194ac34e77"}
+{"id": "video_46_67", "hyp": "would you like to help me .", "ref": "sha1:b954cd5faf5050dcc73203bbbe81eefb497c7132"}
+{"id": "video_46_81", "hyp": "what is possum .", "ref": "sha1:2b62d3ec445c1263eb00d58877a1a97e818f37af"}
+{"id": "video_46_95", "hyp": "great .", "ref": "sha1:0e621dc054be0710f65cc38d01be2dcdf8981518"}
+{"id": "video_46_129", "hyp": "i do not like it .", "ref": "sha1:8e8ec67169c98427a824abad0409526e6d8d98d9"}
+{"id": "video_46_131", "hyp": "great .", "ref": "sha1:47410df70a1ce530417c17ffcadcc6c91c2a5705"}
+{"id": "video_46_146", "hyp": "what are you doing .", "ref": "sha1:a082a21c2b8fd6a0b5eafade1f3b0609f9f7a3ee"}
+{"id": "video_47_19", "hyp": "that is great .", "ref": "sha1:351c924d08527235b6ad3ea035234593d0b4a326"}
+{"id": "video_47_27", "hyp": "yes that is right possum .", "ref": "sha1:b6dd3d5c9e0268666e534b3c039613105e68917d"}
+{"id": "video_47_43", "hyp": "i have an idea .", "ref": "sha1:8d66fe9f2262cfd2acf38dfe0426c644ae7b933a"}
+{"id": "video_47_47", "hyp": "that looks lovely .", "ref": "sha1:dfd128b0de37d138974201e419bb19b3708ff797"}
+{"id": "video_47_70", "hyp": "that looks lovely .", "ref": "sha1:cef9405048a1eed5e2d70d1846f2ef159fe905fb"}
+{"id": "video_47_80", "hyp": "would you like to have a look .", "ref": "sha1:c2e923ed5928afd0561bc03d2e0cbdef03962670"}
+{"id": "video_47_88", "hyp": "that is a great idea possum .", "ref": "sha1:45bf46f54078349c489a73571d7737b9aa2a70e9"}
+{"id": "video_47_95", "hyp": "what a great idea .", "ref": "sha1:128916035e57fd23fa309723ad08b3bcfcef1b90"}
+{"id": "video_47_107", "hyp": "i will get the easel and we will make the paper .", "ref": "sha1:d0c043784e8031ed9a974ca0804ce6bc753547a6"}
+{"id": "video_47_132", "hyp": "thank you so much .", "ref": "sha1:08ace9303a804627cd7368c77c92a1cd685a016e"}
+{"id": "video_47_133", "hyp": "that is great .", "ref": "sha1:90a5204b3e6564e84c1422b91196b64c96431419"}
+{"id": "video_47_147", "hyp": "i have an idea .", "ref": "sha1:3d251efe0c1c5621f70b0d6d7fd2c87381c8e49d"}
+{"id": "video_48_6", "hyp": "there .", "ref": "sha1:7d39d618281cba0afcb6295090043833ada8315d"}
+{"id": "video_48_27", "hyp": "would you like to do that .", "ref": "sha1:1f3e2360b132d560b732896727cddd648aee6428"}
+{"id": "video_48_70", "hyp": "thank you .", "ref": "sha1:db6657e5502b07a224f4296f8acd0f1e6f4a17c1"}
+{"id": "video_48_76", "hyp": "look possum .", "ref": "sha1:7b848c0e6382160d92f1afbf9c93025dde777241"}
+{"id": "video_48_83", "hyp": "what is next .", "ref": "sha1:27c480c4319bc169a59c86405c2a426f038074c6"}
+{"id": "video_48_94", "hyp": "i am possum .", "ref": "sha1:ba353f7cc9d4fd7958f2b4c9c1cea1ee79029c99"}
+{"id": "video_48_111", "hyp": "that was great .", "ref": "sha1:aa294b675e3d0df6f8e57fab09d0150fada1fdee"}
+{"id": "video_49_19", "hyp": "it is a rectangle .", "ref": "sha1:be8afedf3c0f037c3d5ccb28b9438453d48c5ffc"}
+{"id": "video_49_20", "hyp": "hello possum .", "ref": "sha1:9bdbaae5ae4855ced4df0f85ede9867680bf264c"}
+{"id": "video_49_23", "hyp": "they are lovely .", "ref": "sha1:ebf1c48cf4bc388533b9a0981b1b4fb63b2193b9"}
+{"id": "video_49_40", "hyp": "then we can put it on the ground<pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:5dc1aab0820f444e88b6b8181e2b19ca7ef0c91e"}
+{"id": "video_49_49", "hyp": "great .", "ref": "sha1:cb3f9297682f5ec832245524e522bf83031a635f"}
+{"id": "video_49_106", "hyp": "possum i think it is just<pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:48be0e8135f08ff4f75432921ce5922c0ea1a386"}
+{"id": "video_49_114", "hyp": "that is great .", "ref": "sha1:89f8aea4e4289e4a3dc0069ff9751a33a719999d"}
+{"id": "video_49_122", "hyp": "that is right possum .", "ref": "sha1:98bf02f8ea3cc8177a5a1c654f6a4f86942ee98c"}
+{"id": "video_49_129", "hyp": "see you next time .", "ref": "sha1:b49d27b6673825e0e96a0ef06b599d057dcf7df8"}
+{"id": "video_50_31", "hyp": "but now we have finished yet though .", "ref": "sha1:23aaf41a7f0f8f1cb86affcd84d4340a783542ff"}
+{"id": "video_50_48", "hyp": "this is great .", "ref": "sha1:5745ad42eaf8d5027e68536732fae13f1e49d660"}
+{"id": "video_50_69", "hyp": "sally i am sally .", "ref": "sha1:d2f892319c52693f73023d1ebfec46b39d5e70be"}
+{"id": "video_50_70", "hyp": "that was great .", "ref": "sha1:2a8b15badc07ec71aad70f6d9034b8002c4223e5"}
+{"id": "video_51_13", "hyp": "hello possum in the morning you were not<pad><pad><pad><pad><pad><pad>", "ref": "sha1:d47987ecf63ca4c67680dcf943e783fd62a94af2"}
+{"id": "video_51_19", "hyp": "this is a surprise .", "ref": "sha1:eb36e367f6028206e65943436b4572936eb2d72e"}
+{"id": "video_51_23", "hyp": "i will show you how to make one more thing .", "ref": "sha1:bee6397dfb6038762d13f80d7fbf02328629560a"}
+{"id": "video_51_81", "hyp": "that is right possum .", "ref": "sha1:473be356ea43902984aba7e1c3c5f52db33537da"}
+{"id": "video_51_93", "hyp": "that looked great .", "ref": "sha1:35c1f7dc795af31b498461aa6921d8423352baf6"}
+{"id": "video_51_152", "hyp": "what were you doing .", "ref": "sha1:016d01d65f32cbe755449c60ea6ad143c34ae280"}
+{"id": "video_51_167", "hyp": "you are funny sally .", "ref": "sha1:b27d60f5ebd3e3a7287768bf72bbacfa2bb8fde3"}
+{"id": "video_52_27", "hyp": "ok what is next .", "ref": "sha1:feed12be78f4b02aec029d83cdc508d9fc75dc98"}
+{"id": "video_52_38", "hyp": "would you like to see the moon .", "ref": "sha1:b2df267822c0187be95269853d88c5377f438c1f"}
+{"id": "video_52_74", "hyp": "what .", "ref": "sha1:2159981ac854abd1f8cfc44b76378dd10d59e178"}
+{"id": "video_52_90", "hyp": "that is the right tool for the job .", "ref": "sha1:2a1a234c41b0c99fdfa3f5a9904cc602dce27d0f"}
+{"id": "video_52_122", "hyp": "great .", "ref": "sha1:ef3cbf24a91a41e33f23fe58b51ac4962f3fab3f"}
+{"id": "video_52_133", "hyp": "hello .", "ref": "sha1:9d6589a2ac514aa884daec7b00a92bd5dff2ba2b"}
+{"id": "video_52_135", "hyp": "you are right possum .", "ref": "sha1:75f1fe56e16116401beabc778aa90d14f223c170"}
+{"id": "video_52_156", "hyp": "me .", "ref": "sha1:0e1970d91bbe061c9818878f1d65e1d318586bcd"}
+{"id": "video_52_162", "hyp": "ok .", "ref": "sha1:10c90bf3b68a04661993085eefa592f3103d0a39"}
+{"id": "video_53_18", "hyp": "bye bye .<pad><pad><pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:6e0ee94a77f93a8f4e6e24e136cd0d36bec3fd16"}
+{"id": "video_53_19", "hyp": "it is like a bike .", "ref": "sha1:055d64135e4fe85a8a26b0b46809ec1da7be3224"}
+{"id": "video_53_20", "hyp": "sally what is this .", "ref": "sha1:5f340b6b7a86534dc8824f3575e812ea4f18e5f9"}
+{"id": "video_53_64", "hyp": "i know you are right it is ready .", "ref": "sha1:b2a0ca6d5f0dbea11a932ee0afdae1a822d5aa5a"}
+{"id": "video_53_70", "hyp": "how do i draw it .", "ref": "sha1:acb608c9754ffe044644af9ec42b04d3923ec80c"}
+{"id": "video_53_82", "hyp": "look sally .", "ref": "sha1:b4254a4e67e8516483948a3c0192ac06b18bcc1a"}
+{"id": "video_53_86", "hyp": "come on .", "ref": "sha1:a8a32e029173caf6884a20a59403cbc277fcf18f"}
+{"id": "video_54_24", "hyp": "look .", "ref": "sha1:542490bdf6ce3a663dc6efd483bd36df0b0c6a05"}
+{"id": "video_54_47", "hyp": "you can just wait for your tree .", "ref": "sha1:654ea760fef9ea94f09234226d2bf6707b9cbe9d"}
+{"id": "video_54_70", "hyp": "you are funny possum .", "ref": "sha1:eea995678ea03e2289f394584ae3b683df0dbd64"}
+{"id": "video_54_74", "hyp": "yes please can you please help me please .<pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:6c79d65ffcd497f0744a7b0a3b1b124132929458"}
+{"id": "video_54_89", "hyp": "that is a great idea possum .", "ref": "sha1:950b11ebc676d00da1ac44d132d9da0b59c31542"}
+{"id": "video_54_117", "hyp": "this is sally .", "ref": "sha1:e6d9a9ee5a3f23fd2b1562f5c2bc55d7c0dc3b15"}
+{"id": "video_54_143", "hyp": "no .", "ref": "sha1:6fa0f1cd16da7c190bf61f147efc5dd6582fc0fa"}
+{"id": "video_55_18", "hyp": "yes .", "ref": "sha1:e20caa56963b7a60f081e614aa7eba712378ecae"}
+{"id": "video_55_73", "hyp": "i do not think i could play some soccer too .", "ref": "sha1:c05162a72f873fac98cb98a05d77587794146d39"}
+{"id": "video_55_89", "hyp": "no possum .", "ref": "sha1:ea49856ebb5c3f2ecedf6a8baff10b96ecd2ae7c"}
+{"id": "video_55_96", "hyp": "one two three four five .", "ref": "sha1:137bd7c3a2adbdd0938fa84920e739599e8189b9"}
+{"id": "video_55_124", "hyp": "when you are in the kitchen you are right the right tool the job .", "ref": "sha1:28687cc05b2da60a598afa819a0de04600e0dc8d"}
+{"id": "video_55_145", "hyp": "we will just take one off and then you will come back down .", "ref": "sha1:bc18ceb37dcceb50de773c4aabc7f948bf70a69a"}
+{"id": "video_55_179", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_55_182", "hyp": "that is lovely .", "ref": "sha1:bdcef89a7eccabdc9e598b91115a135b9ddd0c3a"}
+{"id": "video_56_10", "hyp": "i know how to do it .", "ref": "sha1:5f2c025e3dc2d10152fb7b179fdcf48239191dcd"}
+{"id": "video_56_13", "hyp": "i think there is one more thing there .", "ref": "sha1:35a3a8c87243545e1650c269616bdfb03b132d42"}
+{"id": "video_56_53", "hyp": "look .", "ref": "sha1:84aa4eb0df62b11422460cae7628364be770699c"}
+{"id": "video_56_78", "hyp": "no no sally .", "ref": "sha1:013855b4c510f1ed83284c1964635dbb4b1a6e09"}
+{"id": "video_56_83", "hyp": "i have just finished my tree .", "ref": "sha1:a1a85fcb1d68b4e8ddb3b6bdb4be0542f7e8e1e5"}
+{"id": "video_56_140", "hyp": "i have to go now .", "ref": "sha1:be942210e012c40abf9c7fc035ca946ce1848af3"}
+{"id": "video_56_143", "hyp": "that looks great .", "ref": "sha1:2d5503065c75342441a1af6b070c7e5e06e23277"}
+{"id": "video_56_145", "hyp": "that was great .", "ref": "sha1:c1ab431ab3403b2b3ba42763465c3ad3f96d2e2a"}
+{"id": "video_56_149", "hyp": "you are right .", "ref": "sha1:212f9cbe098f42806db9548e8f7867dfc9ea51f5"}
+{"id": "video_56_155", "hyp": "well our time is up .", "ref": "sha1:8cb8178562d0cf502a877f7a3811dc6317fdc91d"}
+{"id": "video_56_156", "hyp": "see you next time .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_57_18", "hyp": "you are funny .", "ref": "sha1:24258d960311449136a5c82cc369c6137e72a048"}
+{"id": "video_57_78", "hyp": "yes you are right .", "ref": "sha1:a1293924378e26eeff65d27ec2eea32f679a1884"}
+{"id": "video_57_91", "hyp": "that was great .", "ref": "sha1:83882bf94b08542288dd6378688234a3c9a55205"}
+{"id": "video_57_105", "hyp": "that is great .", "ref": "sha1:3d98ff55381c01428d0af96eddce251cf23fd33f"}
+{"id": "video_57_108", "hyp": "okay .", "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45"}
+{"id": "video_57_120", "hyp": "thank you .", "ref": "sha1:ea7a376a4598ea4a737f96eb7f7d9141f6cbb1a5"}
+{"id": "video_57_142", "hyp": "we need one more thing to be careful .", "ref": "sha1:140744500b8d886070be10ff21382ae9f3ab956b"}
+{"id": "video_57_152", "hyp": "what .", "ref": "sha1:74db7351fe04179d07e89dfeb9f550872c89009b"}
+{"id": "video_57_154", "hyp": "yes that is right possum .", "ref": "sha1:c524d38c9fe2d02248efae95607c436b805d493a"}
+{"id": "video_58_28", "hyp": "this is a great idea .", "ref": "sha1:5bf0af5e0c6387ca3f4ea43e7a3d22521addcfe9"}
+{"id": "video_58_32", "hyp": "thank you possum .", "ref": "sha1:5b4946bcb137b868f3891290e81760191cbf6997"}
+{"id": "video_58_39", "hyp": "the blue .", "ref": "sha1:8d96de1502b20aeead1efc860cd612dee86b9ba6"}
+{"id": "video_58_63", "hyp": "there is plenty of food in there .", "ref": "sha1:048f72769c996799cb32becdabac2c2bd2ed1ce4"}
+{"id": "video_58_68", "hyp": "that was great .", "ref": "sha1:8ca8c6511771a1f6a0b26fef1f318d136bc3afd8"}
+{"id": "video_58_114", "hyp": "sally you need to be careful .", "ref": "sha1:75719fc2ba56546099a2d23818f0fcaeca5f5fa0"}
+{"id": "video_58_140", "hyp": "what is next .", "ref": "sha1:514b12cefeb5ea3ed17fb7884536d418b990bdee"}
+{"id": "video_58_141", "hyp": "possum you are funny .", "ref": "sha1:72345b2e72d18ad381de936821fe53837146d235"}
+{"id": "video_59_20", "hyp": "yes that is right one half an hour hand goes on the moon .", "ref": "sha1:c5d8a18e088f486b3c5a1bce068b7ece57a6f0ec"}
+{"id": "video_59_25", "hyp": "no i have just finished my tree .", "ref": "sha1:c725c810ea8d1fa4a0c44d9e93fca31cc37d5874"}
+{"id": "video_59_74", "hyp": "yes .", "ref": "sha1:cc6054be8a8457c710a55d854282b3c195c87e4f"}
+{"id": "video_59_86", "hyp": "they are like different shapes they are different ways and they are different .", "ref": "sha1:55da353cf5eb88f21214ad9a8721fafb79f5a7db"}
+{"id": "video_59_89", "hyp": "but now we need to take them out .", "ref": "sha1:f6a50cb13daeaa7b2cb619ef6ab1eb5639effcec"}
+{"id": "video_59_127", "hyp": "that is right we have got the right tool the job .", "ref": "sha1:67f4a9e4dffca14cc1a12bd5925035594e8763aa"}
+{"id": "video_59_138", "hyp": "let us see .", "ref": "sha1:481e97b398c602b438e6a16fb6db839755640ae8"}
+{"id": "video_59_139", "hyp": "thank you possum .", "ref": "sha1:ff7c81d4fe1f80c1e16e316783ae8dfd296c5e45"}
+{"id": "video_59_143", "hyp": "let us have a look .", "ref": "sha1:f6f5310a665c862c8418cdf7aa87acbb08e7749c"}
+{"id": "video_60_8", "hyp": "that is great .", "ref": "sha1:8cccffb0feea7276fe95d62dab5926ead85d4069"}
+{"id": "video_60_71", "hyp": "yeah let us watch .", "ref": "sha1:a2f915dcfa81731056f3ae426cfdda5e49edfc04"}
+{"id": "video_60_87", "hyp": "you are right possum you are funny .", "ref": "sha1:2077ee0ea25f31b32593416a8830f4ab85ee9ee8"}
+{"id": "video_60_108", "hyp": "would you like to start with me .", "ref": "sha1:675a16c55898a5e3817d520afcbd37f722b6fb4d"}
+{"id": "video_60_124", "hyp": "but how do we eat it .", "ref": "sha1:fedc6e3c6eeb24bf8a97965a5920d88c5725eb13"}
+{"id": "video_60_150", "hyp": "that is great .", "ref": "sha1:ff0c5dc0d708c12e988e7281520d62bb5d974400"}
+{"id": "video_60_161", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_61_11", "hyp": "what about this one .", "ref": "sha1:474a765b89d5c74bb1c8041f665f53f8fcf77862"}
+{"id": "video_61_14", "hyp": "well possum you have learnt so much .", "ref": "sha1:1895bbe4f6d30319b18f992cfe6801f0bc935d9a"}
+{"id": "video_61_53", "hyp": "that is great .", "ref": "sha1:8972bdf7dd8b8acaa73017d551e78f5beb955a6d"}
+{"id": "video_61_133", "hyp": "great .", "ref": "sha1:d89281115fe6f58e86805d206eb0350b75c7b54a"}
+{"id": "video_61_135", "hyp": "there it is .", "ref": "sha1:42dac15c554bab51bf1db5b45f806e31c960f4f6"}
+{"id": "video_61_149", "hyp": "look .", "ref": "sha1:c4af9632faa4f392dbf80da22a8e69e53d501914"}
+{"id": "video_61_163", "hyp": "great .", "ref": "sha1:59993552e9a8c210594d3f493a9e73a288fcfd6c"}
+{"id": "video_61_187", "hyp": "all those children were very careful they were very careful .", "ref": "sha1:f57ee67c6c6588ac1fc6c90fded4828cb42707fd"}
+{"id": "video_61_190", "hyp": "it is very big .", "ref": "sha1:3e1b58383fee1000b76b36ed5253b45baca17a3c"}
+{"id": "video_61_191", "hyp": "it looks lovely .", "ref": "sha1:46e15dbb548e49bf9bc1b0cd5f8ea6ef876a69fa"}
+{"id": "video_62_13", "hyp": "that is great .", "ref": "sha1:2b98b3b21ae5cd19aaf19ff12f72f10ecd6bdef5"}
+{"id": "video_62_50", "hyp": "see how it next .", "ref": "sha1:c62bf41e789994bd090f40c1fbdeb3d46b1463bd"}
+{"id": "video_62_77", "hyp": "you possum possum .", "ref": "sha1:4484e09b0302364ffe0aa7c194804b7b685001bf"}
+{"id": "video_62_121", "hyp": "you are funny sally .", "ref": "sha1:11d4b7e5b5216a26b1d1e3bd946208fe7d8ac641"}
+{"id": "video_62_148", "hyp": "have a look .", "ref": "sha1:09294b8dd34e4a7c21eb5276373644fedea70496"}
+{"id": "video_62_153", "hyp": "it is still wet .", "ref": "sha1:19bdc79c98a7c1f60d486fc98f36753e6f15b1cf"}
+{"id": "video_62_180", "hyp": "one two three four five six seven eight nine ten .", "ref": "sha1:1cb2dccc1309e66ffdc86315bab5d155b9736ee2"}
+{"id": "video_62_199", "hyp": "that is funny .", "ref": "sha1:6c6cd4410ffb539c24357131453e3d5c6bbc451d"}
+{"id": "video_62_201", "hyp": "i will just wait .", "ref": "sha1:7abe9280cc781c433c1e12167fbabcd1acba1cc7"}
+{"id": "video_63_7", "hyp": "hi sally .", "ref": "sha1:f6401659e36af4da326440709555fb6ef751b57e"}
+{"id": "video_63_10", "hyp": "yes .", "ref": "sha1:e59b92a35be799f8f6a831f8ae853a5c28b9ec72"}
+{"id": "video_63_37", "hyp": "that was great .", "ref": "sha1:0e1019d26a4dba73d37c46e5f58fec440907e35e"}
+{"id": "video_63_47", "hyp": "let us go first .", "ref": "sha1:c8acd6f9973fe59f068e2c77e23574509ac18dd7"}
+{"id": "video_63_61", "hyp": "this one .", "ref": "sha1:61c07ec48a097bf62c9f05d99d46e37fa3fd7942"}
+{"id": "video_63_75", "hyp": "it is delicious .", "ref": "sha1:d365cf84e35dc93a4003c4d94aaf09b914250503"}
+{"id": "video_63_84", "hyp": "what is it .", "ref": "sha1:129382a86c48624b9a322fb415c1a1ef74268475"}
+{"id": "video_63_92", "hyp": "i will get the easel .", "ref": "sha1:f2f3e6148f3b1192175a816c17c9ef2c9236614b"}
+{"id": "video_63_111", "hyp": "that is great .", "ref": "sha1:f9c529c29fcba12d78ee45f914c44a0eb9e61ff5"}
+{"id": "video_63_112", "hyp": "yes .", "ref": "sha1:db6657e5502b07a224f4296f8acd0f1e6f4a17c1"}
+{"id": "video_63_126", "hyp": "great .", "ref": "sha1:93cce6bb2faa6d2d72e5eb82a8bb4a0b450713ae"}
+{"id": "video_63_151", "hyp": "that was great .", "ref": "sha1:114ddbb67ee0ea25cc9dda8648bdcd513f061569"}
+{"id": "video_63_154", "hyp": "i have an idea .", "ref": "sha1:0aeb4697a738ae2038784b3bae8e0f6d700c3660"}
+{"id": "video_63_168", "hyp": "that is lovely .", "ref": "sha1:279300e3360fa87e0e075f58862246d674f1bb0b"}
+{"id": "video_63_187", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_64_17", "hyp": "you are funny sally .", "ref": "sha1:115e7e0eb74f8272dc63def16eb3982cad75b6b1"}
+{"id": "video_64_38", "hyp": "that was great .", "ref": "sha1:9d2824daba0b4a85d333c841dfb7ffb16736ac9f"}
+{"id": "video_64_78", "hyp": "yeah .", "ref": "sha1:b2a1558c9097de2f5fd8fc28ac9912aa218067b5"}
+{"id": "video_64_96", "hyp": "yes it is right .", "ref": "sha1:f1a687b9351384c44dcbc183dae08fef1ba733ba"}
+{"id": "video_64_101", "hyp": "no no sally .", "ref": "sha1:137bd7c3a2adbdd0938fa84920e739599e8189b9"}
+{"id": "video_64_118", "hyp": "you can see possum .", "ref": "sha1:814597d7f4c3d280e3e1d77ab1d7492cf366d871"}
+{"id": "video_64_135", "hyp": "you are funny possum .", "ref": "sha1:088cd522761c1c0963572ef09e03621e59ac1389"}
+{"id": "video_64_138", "hyp": "i am ready .", "ref": "sha1:da4bdc7b8ed0399db57afd750c68ed8b0e3e65bc"}
+{"id": "video_64_149", "hyp": "it is very strange .", "ref": "sha1:91ba3b027c3aebd2e6e48f462a36ed71b2689aa4"}
+{"id": "video_64_155", "hyp": "sally do you want to do it possum .", "ref": "sha1:6bfab8014b35013d080adfe87bc7085f69c8b8ee"}
+{"id": "video_64_156", "hyp": "do you remember that .", "ref": "sha1:1e3c58bb0995d111ce7763c472792bdb8bfc7505"}
+{"id": "video_64_181", "hyp": "why do not we do that .", "ref": "sha1:4bfef929dbbfa1fc3e31e483e5078c14c80b73c9"}
+{"id": "video_65_28", "hyp": "that was great but i do not want to cut it .", "ref": "sha1:df10bf3c910717dbc451dbe42be9ea168df4b91f"}
+{"id": "video_65_47", "hyp": "the sun is shining down .", "ref": "sha1:296a6d79f8582ad91ad66121a1317ece67f2d3a5"}
+{"id": "video_65_71", "hyp": "the caterpillar is very important because i want to do it .<pad>", "ref": "sha1:041d2c07c87035539039c6a9bf5e10475d76ba3c"}
+{"id": "video_65_78", "hyp": "thank you so much of the story .", "ref": "sha1:8968ccd5ff5d497e4dfc1cd84a1312cee5830dc9"}
+{"id": "video_65_92", "hyp": "would you like to show you .", "ref": "sha1:6fdc6982576fb964c78c6c4366a1d03021cf8d62"}
+{"id": "video_65_128", "hyp": "yes we have got all sorts of different things<pad><pad><pad><pad><pad><pad>", "ref": "sha1:570324b1937a8cd105b6b67571763f7751af5c34"}
+{"id": "video_65_135", "hyp": "that is right i am very busy .", "ref": "sha1:d3341b7b00081ff26b527ea5d8a2f0a189591479"}
+{"id": "video_66_70", "hyp": "why do not we watch some children learning about different things .", "ref": "sha1:49d87335f60f67ac29e39b1f5466acffa56555a8"}
+{"id": "video_66_81", "hyp": "hello .", "ref": "sha1:f38fb4ade6ba76edfd15b93e6a67533cbf84cf57"}
+{"id": "video_66_86", "hyp": "i know .", "ref": "sha1:a01c7e0657920d2889930910f798678b19c18c43"}
+{"id": "video_66_118", "hyp": "look at all the big one .", "ref": "sha1:98c03b082eb1dac511f81d8fc0e1d52b09ec14bb"}
+{"id": "video_66_125", "hyp": "why do not we go inside and have a look at the door .", "ref": "sha1:0747295ebe515ea1708145db292b554787979efd"}
+{"id": "video_67_7", "hyp": "that is great .", "ref": "sha1:75d536b1da4753a78c1f86595f6c692fa25f3e1a"}
+{"id": "video_67_8", "hyp": "that was great .", "ref": "sha1:d68c0d9ca2ac2348b577aef9deaf2d193b55eebf"}
+{"id": "video_67_67", "hyp": "yes .", "ref": "sha1:08d5ca8e694b3e9551eb346ff964f3e10957d696"}
+{"id": "video_67_135", "hyp": "that looks great .", "ref": "sha1:2d1829b850ed6db3ba765349af08ef73d7c6cbab"}
+{"id": "video_67_160", "hyp": "where did he go .", "ref": "sha1:3f0cea09a9db4593f9dec4f0a805b8e08ecee3a4"}
+{"id": "video_67_161", "hyp": "would you like to possum .", "ref": "sha1:9898048440b26eabbd744c15139e271523b36cb2"}
+{"id": "video_67_212", "hyp": "it does not matter .", "ref": "sha1:a711ae3bbe7d56a822f0c6cd411b8bc8ac0e74d8"}
+{"id": "video_67_213", "hyp": "you are funny sally .", "ref": "sha1:22967ebb33b84407875088b5a771aac56da00825"}
+{"id": "video_67_215", "hyp": "yes it is a rectangle .", "ref": "sha1:3b8089955c2296e3f8ee41dad36c9446848db5a5"}
+{"id": "video_68_28", "hyp": "they are very important .", "ref": "sha1:863578a59adb1b906c5aa52dd69dd20bd840d5f9"}
+{"id": "video_68_73", "hyp": "it is a very special way to solve the case .", "ref": "sha1:223ed7a59523ab4d6f3682d3209e2442fde6fde4"}
+{"id": "video_68_74", "hyp": "possum you have learnt so much about time .", "ref": "sha1:403c29c29979c46ebc7f319e2728052b30a30fc7"}
+{"id": "video_68_90", "hyp": "that is right .", "ref": "sha1:8ef501384b06c09e5e3a7084ee678b147c2e8a2e"}
+{"id": "video_68_107", "hyp": "now we need the ball .", "ref": "sha1:afd4e947b7fa540c53a99ef0201428977d67a36a"}
+{"id": "video_68_139", "hyp": "yeah let us watch .", "ref": "sha1:d147d2a2b2266582fff89db1b88795566192ef50"}
+{"id": "video_68_141", "hyp": "skip you need to be very careful though .", "ref": "sha1:3b47f396b06c3c3f85f589bbc459f00c7f8ae19e"}
+{"id": "video_68_148", "hyp": "how do we make .", "ref": "sha1:20fb7c8fc8df6e42d246657222b5b19e70fceb0b"}
+{"id": "video_68_154", "hyp": "that looks great .", "ref": "sha1:8e38f66e26a869c470f73a7a0a627eba21896411"}
+{"id": "video_68_170", "hyp": "come on let us go .", "ref": "sha1:69794ed2dca9325ddea99add2c862318a5569236"}
+{"id": "video_68_175", "hyp": "great .", "ref": "sha1:8fa28b82073e3c4b04da27b1c849c583245bd214"}
+{"id": "video_68_189", "hyp": "i was just playing soccer .", "ref": "sha1:a574271c0143fd7d239f44599d1fd5cade47858e"}
+{"id": "video_69_46", "hyp": "how are we wet .", "ref": "sha1:b025dd1876002169f33b262e8bf54f09a101d333"}
+{"id": "video_69_82", "hyp": "that is where it is .", "ref": "sha1:4db135a1333f5f7f38fb0ac3f0c40fa6f683ac3a"}
+{"id": "video_69_90", "hyp": "we need to make a boat for .", "ref": "sha1:c956be073afa222b268c7e1bbb3caa9bcf23897d"}
+{"id": "video_69_94", "hyp": "we are going to do the<pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:f1b2950694b2fee255175bcda03649b2d0baa23b"}
+{"id": "video_69_123", "hyp": "it is just ready .", "ref": "sha1:118bebb28a75741fb65327ffce9f3da83bca4799"}
+{"id": "video_69_128", "hyp": "yeah let us watch .", "ref": "sha1:c7bb325e77f4598722801fcd446b20d6c1909ffa"}
+{"id": "video_69_130", "hyp": "possum .", "ref": "sha1:9db53a67be52f39431e395a708b52f4e2c3258f5"}
+{"id": "video_69_136", "hyp": "it is very important .", "ref": "sha1:ffa61b2a7f4cf989cbbd3addbbffa8b0a13bce6a"}
+{"id": "video_69_145", "hyp": "i have got an idea .", "ref": "sha1:ef3cbf24a91a41e33f23fe58b51ac4962f3fab3f"}
+{"id": "video_69_158", "hyp": "what is next .", "ref": "sha1:4fe9137808bfc74f8ef96b7ae9ba52b912a4b5e0"}
+{"id": "video_70_69", "hyp": "that is right you are right .", "ref": "sha1:eaec2ea5b1f4fcc106940ff736c060b5f8d66c9f"}
+{"id": "video_70_70", "hyp": "it is like the same as the bike .", "ref": "sha1:23a3d7f23f7431de41fb0dc3dfbe154a5b61d833"}
+{"id": "video_70_96", "hyp": "can you please possum .", "ref": "sha1:1ca0655415bc41c1431c2c3e8e3954f5ca86d035"}
+{"id": "video_70_101", "hyp": "possum i have an idea .", "ref": "sha1:b02eb9c964b180693354050b1323946e38d8f99b"}
+{"id": "video_70_122", "hyp": "right .", "ref": "sha1:b9273013910f2c34b917d9f151082031e2c680b5"}
+{"id": "video_70_138", "hyp": "that was great .", "ref": "sha1:38302d840c73f0094b51c314492e87e05819a889"}
+{"id": "video_70_139", "hyp": "you have learned so much .", "ref": "sha1:d26feffd0579cba491b4bf6a2346f74533b5e51a"}
+{"id": "video_70_144", "hyp": "that is a very special thing .", "ref": "sha1:d74974ac62890a8da363b6f367b09bbca05120c6"}
+{"id": "video_70_157", "hyp": "let us see .", "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796"}
+{"id": "video_70_160", "hyp": "hang on possum i am ready .", "ref": "sha1:a082f19067bb2834001ba148ad4025e2dc28d6da"}
+{"id": "video_70_174", "hyp": "yes .", "ref": "sha1:2f7dd3f4d12b477e55d2d75b42dacc425866aaf5"}
+{"id": "video_70_181", "hyp": "that looks great possum .", "ref": "sha1:42864e4490ed1df6b23ba611080eafc0b33bebfa"}
+{"id": "video_70_192", "hyp": "thank you .", "ref": "sha1:57890d7abda275b0825d90e0e6d06172e390c3f9"}
+{"id": "video_71_11", "hyp": "where did he go .", "ref": "sha1:e97dbc8da29c4369c99c913ad1e266d45fcd70cb"}
+{"id": "video_71_29", "hyp": "i know you are right sally you are right .", "ref": "sha1:6ee29ed980f34f9a8e23f17ac38990017f88bcdd"}
+{"id": "video_71_56", "hyp": "that is great .", "ref": "sha1:35abc0528c6f5fe1ffcdb7e8d0c6210b50f698c2"}
+{"id": "video_71_66", "hyp": "that is right sally .", "ref": "sha1:6970100a2f78571ba0adadf4521d495d3682cb1b"}
+{"id": "video_71_99", "hyp": "that is great possum .", "ref": "sha1:ecdc5655df3b4de5909cbb9c3686766d0ac7fe01"}
+{"id": "video_72_21", "hyp": "did you know that sally .", "ref": "sha1:80d2a5d40bc4d207f42237fac76aa54423f27680"}
+{"id": "video_72_22", "hyp": "sally .", "ref": "sha1:945c38c81d3e233d915b5d021c86bb744bb5bead"}
+{"id": "video_72_36", "hyp": "we can go to school .", "ref": "sha1:48d038a81d2b459ee2769f1546532f320d6f1810"}
+{"id": "video_72_40", "hyp": "i have an idea i have an idea .", "ref": "sha1:7e315d32bc301006710aa123bce1b00a3a02b46d"}
+{"id": "video_72_42", "hyp": "yes i did jay .", "ref": "sha1:f027893de1768b8d6db018fc955e1175289311c1"}
+{"id": "video_72_61", "hyp": "i have a look .", "ref": "sha1:93c49b0dd970e0fff0ccad344faa334ff69054b8"}
+{"id": "video_72_66", "hyp": "you are funny possum .", "ref": "sha1:50ccb8b2fd4f66cc082028daad1e6980582646bb"}
+{"id": "video_72_89", "hyp": "thank you .", "ref": "sha1:20daefca4b1b5a41fa0305c0a9b2229c36b22858"}
+{"id": "video_72_98", "hyp": "where are we going .", "ref": "sha1:ed826a49fa3c45235a08006dbe2ed5bf1bde520c"}
+{"id": "video_72_106", "hyp": "that is a very good job possum .", "ref": "sha1:26c07e295651b311384cdcec43a8bf03ea5d7936"}
+{"id": "video_72_130", "hyp": "it looks ready .", "ref": "sha1:39ecfc70219269edee927de3c311ef4bb60160db"}
+{"id": "video_72_147", "hyp": "that was great .", "ref": "sha1:433121ca0a39342a8e7945cd328e674f04e28ebc"}
+{"id": "video_73_7", "hyp": "look .", "ref": "sha1:865504c05439edbade12604b46a717e1b678e6f0"}
+{"id": "video_73_86", "hyp": "yes it is very big .", "ref": "sha1:cc963576a6f828263119c61f2d1ad4ec20c661e2"}
+{"id": "video_73_119", "hyp": "you need to be careful .", "ref": "sha1:160912fc21be89b8a972cf75ae44df67ba94ba81"}
+{"id": "video_73_139", "hyp": "that looks great .", "ref": "sha1:c250e7168fd3a4eca1d805edb9699b046d8648aa"}
+{"id": "video_73_143", "hyp": "you are funny possum .", "ref": "sha1:8e9033d7872c133a487d742dd5ebf06b0320d072"}
+{"id": "video_73_189", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_74_13", "hyp": "that was great .", "ref": "sha1:25603ce9f9325dd58f95ccb58989f3159487096a"}
+{"id": "video_74_43", "hyp": "but i can not do the same as you .", "ref": "sha1:4183232ba034ba9cb86a05d8d88c83d75bb9722d"}
+{"id": "video_74_106", "hyp": "that is right possum .", "ref": "sha1:79f3d4372bafd46642a83b7471e9c7495d446e9f"}
+{"id": "video_74_137", "hyp": "yes .", "ref": "sha1:0c02ff247d2908eb9a120fd00598aa3c6a092bce"}
+{"id": "video_74_142", "hyp": "we need to put the flour in the bowl .", "ref": "sha1:750edf74e604e408cfee2eff6353b2306faeaeb8"}
+{"id": "video_74_171", "hyp": "yes .", "ref": "sha1:401edcc20b7645eb2ec49fe7be6af072f86742ad"}
+{"id": "video_74_182", "hyp": "hi sally .", "ref": "sha1:16e434bd58e233c0ffb16531107e1d9b9d06ae8a"}
+{"id": "video_74_186", "hyp": "no possum you can<pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:2f8ca2184eac3f8d4e05bdc4a9dcce787c5546db"}
+{"id": "video_74_188", "hyp": "hi possum .", "ref": "sha1:1dbc18ecd20a3bdb0d1233dd50eb5e6ebc677665"}
+{"id": "video_75_13", "hyp": "you are right possum you love to help .", "ref": "sha1:dd97c3f186d65caf2383d3b3a34d2a52952cb6eb"}
+{"id": "video_75_69", "hyp": "i am so excited .", "ref": "sha1:f209e0efd2ce7c181185aa3fd124f148f8e5a40f"}
+{"id": "video_75_73", "hyp": "but how do i do it .", "ref": "sha1:e58b75d0061a95b4639b587983dceb9bfb2482ea"}
+{"id": "video_75_116", "hyp": "you are right possum .", "ref": "sha1:0bbb26b6b75e3e111ee4ce1ecc8acec28cc022fe"}
+{"id": "video_75_151", "hyp": "possum .", "ref": "sha1:a9a5358a64a291324f51f369db28aa52be42e2e8"}
+{"id": "video_75_169", "hyp": "why do not we go inside .", "ref": "sha1:45507ebe9d48329a38b15dff288fd0028540285b"}
+{"id": "video_75_184", "hyp": "what is next clue .", "ref": "sha1:86b0f21365a2377642eac2f056314d2bb1f7aca8"}
+{"id": "video_75_191", "hyp": "it is a bit different .", "ref": "sha1:5f2c025e3dc2d10152fb7b179fdcf48239191dcd"}
+{"id": "video_75_200", "hyp": "look at the leaves .", "ref": "sha1:3ab9650ef0c0db5170dcc2cf67892038b1589f95"}
+{"id": "video_75_202", "hyp": "what are you doing .", "ref": "sha1:85948c257af0d58f51127f9b966d814711c01c02"}
+{"id": "video_75_207", "hyp": "where is possum .", "ref": "sha1:9619992743ddfc8a3f2255b7dac71c127c29757d"}
+{"id": "video_75_211", "hyp": "it is all the way up to the top of my tree .", "ref": "sha1:30a78b7f2082616e610e4ac2b2b4e76dcf675163"}
+{"id": "video_75_235", "hyp": "look at the top .", "ref": "sha1:30a78b7f2082616e610e4ac2b2b4e76dcf675163"}
+{"id": "video_76_13", "hyp": "hi everyone .", "ref": "sha1:be8b42f0b1a163ec507ee53470f3d76d0abf04c2"}
+{"id": "video_76_25", "hyp": "you are funny .", "ref": "sha1:8fac5c735c384495d8dbf1c7a71e5792b5c1e627"}
+{"id": "video_76_72", "hyp": "why do not we watch some children .", "ref": "sha1:9c53a5322ac7022892030cbf17a5998544832259"}
+{"id": "video_76_91", "hyp": "this is a surprise for you .", "ref": "sha1:d6d525501e14756316c6006e36ac8a781eaa1a2a"}
+{"id": "video_76_110", "hyp": "that is a great idea .", "ref": "sha1:d6c112cd02cd4ceb497195f20d04e7558bef6594"}
+{"id": "video_76_142", "hyp": "look .", "ref": "sha1:5dcab3a61e848782e2373876323f593c6cf7cfb1"}
+{"id": "video_76_147", "hyp": "that is right .", "ref": "sha1:509acb049a01cd1a12686d091be45ac07cb80d0b"}
+{"id": "video_76_154", "hyp": "look .", "ref": "sha1:00b77492bbe6f94101971f12fc1273600b1d0952"}
+{"id": "video_76_172", "hyp": "yes i really enjoyed<pad><pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:e67e9b0ef058a85d791d4cba82ac1cc6c7eca6e1"}
+{"id": "video_76_175", "hyp": "that is great .", "ref": "sha1:31101ac080eb514159630d03e80996ad8470852d"}
+{"id": "video_76_179", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_77_55", "hyp": "that is great .", "ref": "sha1:b3bad9b97bbd0a27c7ca3cf19019445d3aae5e7a"}
+{"id": "video_77_82", "hyp": "great .", "ref": "sha1:1004d420e1c2ace8d5afe03b09bb5f9d6401ac27"}
+{"id": "video_77_92", "hyp": "that is great .", "ref": "sha1:dc91a4f5db6734ced93025a38c022f62c2b311d4"}
+{"id": "video_77_117", "hyp": "that is a great idea .", "ref": "sha1:04a50744c547f255e32ad16a768e9d607e4ffb51"}
+{"id": "video_77_133", "hyp": "why do not we watch some children learning about different tools .", "ref": "sha1:68ee714534b9c71e52718a4b8f0232370013bc59"}
+{"id": "video_77_136", "hyp": "that is a great idea to go and get a few things .", "ref": "sha1:b449f52c68c2c9c24c7b387ddc5e04c068304bcd"}
+{"id": "video_77_162", "hyp": "ok .", "ref": "sha1:bf5a962542bf120e4a5aae8b213c294097f0bfb0"}
+{"id": "video_77_187", "hyp": "that is great .", "ref": "sha1:0c02ff247d2908eb9a120fd00598aa3c6a092bce"}
+{"id": "video_77_209", "hyp": "thank you thank you .", "ref": "sha1:f95dae811da5a8d824a36b55972f5bc238252809"}
+{"id": "video_78_2", "hyp": "look .", "ref": "sha1:4967adde3a1680270e2654557fdaf619c201ad45"}
+{"id": "video_78_15", "hyp": "do you remember .", "ref": "sha1:8d8d3322b812653875d9542cfc455f7e867d3f27"}
+{"id": "video_78_22", "hyp": "possum why do not you go inside the tree house .", "ref": "sha1:1b8634af1684435ea09143da1861240105381e15"}
+{"id": "video_78_39", "hyp": "great .", "ref": "sha1:d662fb9c856cdbd728b15bbc091b1fff4ae07c91"}
+{"id": "video_78_46", "hyp": "that is great .", "ref": "sha1:04c6c14aaee2d20ff7c6d37877093a430510f3dd"}
+{"id": "video_78_56", "hyp": "yes .", "ref": "sha1:fa45f83ad6f64b59e92eb3918b0516338f7849e2"}
+{"id": "video_78_68", "hyp": "one two three four five six seven eight nine ten .", "ref": "sha1:40275cac67334028bde6964281e4a9be1add09f8"}
+{"id": "video_78_71", "hyp": "yes that is right .", "ref": "sha1:841f86b894d7de933ce27dd4f4af90255765f0c2"}
+{"id": "video_78_82", "hyp": "that is right sally .", "ref": "sha1:eed78d99a5945e07cda2163b72bb6157d1a2ab93"}
+{"id": "video_78_98", "hyp": "i know .", "ref": "sha1:9a27c837f01d9836d0c95b11bb2eaccdb3a0a498"}
+{"id": "video_78_111", "hyp": "yes that is right possum .", "ref": "sha1:77dc52dc623e60b6f4e1e07b8fdfcdc7e663f807"}
+{"id": "video_78_163", "hyp": "it is a bit different though is not it .", "ref": "sha1:887f0ea81b53d920e81bd60381eb3b64b741d253"}
+{"id": "video_78_166", "hyp": "yes .", "ref": "sha1:6dd580f13d8c89c8ed153852462e82e22d083e3a"}
+{"id": "video_78_180", "hyp": "that is right .", "ref": "sha1:7cfedaa9aeac181167e74c820f0e6a751525baf2"}
+{"id": "video_79_8", "hyp": "it is a beautiful day .", "ref": "sha1:fd13525e6e9009d25c26ee384920912eccf07bae"}
+{"id": "video_79_76", "hyp": "hi sally .", "ref": "sha1:5f4537269660647a3f26555a4b3a983cdaf31e5d"}
+{"id": "video_79_86", "hyp": "we are going to have a look at the moon .", "ref": "sha1:9a8362bbc38bf739723e5c24e2ba692de97acfd1"}
+{"id": "video_79_107", "hyp": "that is great .", "ref": "sha1:f209e0efd2ce7c181185aa3fd124f148f8e5a40f"}
+{"id": "video_79_111", "hyp": "why do not we watch some children and see how they are .", "ref": "sha1:5ca1a251f2148f2f7e53f110659a40a34ddc6c5e"}
+{"id": "video_79_134", "hyp": "possum can you help skip .", "ref": "sha1:47e9bc906ab29ce5d915206a15b5ac64ece51aa4"}
+{"id": "video_79_171", "hyp": "that looks lovely .", "ref": "sha1:47e9bc906ab29ce5d915206a15b5ac64ece51aa4"}
+{"id": "video_79_188", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_79_194", "hyp": "that is right sally .", "ref": "sha1:f9a652b8035c7adca2a80b2d2f6307ea19f1d079"}
+{"id": "video_80_9", "hyp": "it is like the next clue .", "ref": "sha1:7cba39a372fdaec7db5ebbb3aaf50d66121e8f27"}
+{"id": "video_80_16", "hyp": "i will go see if you can find it .", "ref": "sha1:bdc7e34c22c32410624f4cee45a3ec1eaf10a40f"}
+{"id": "video_80_37", "hyp": "i wonder .", "ref": "sha1:aa627c8ea2156d47936a94f733ec94ab606f62ab"}
+{"id": "video_80_51", "hyp": "then you put it in the oven .", "ref": "sha1:b69985103deedee34d0f48cc7585a0321c435faf"}
+{"id": "video_80_92", "hyp": "see you next time .", "ref": "sha1:87f67b7fafdc9faaea9cc5b2f1db3965b7a91e16"}
+{"id": "video_80_96", "hyp": "let us go inside .", "ref": "sha1:7672a438b3bae4b243e42cb986fd880bfcb5bdbb"}
+{"id": "video_80_160", "hyp": "yes that is right .", "ref": "sha1:0e320713612691aa175bb69eeae903c18a94b64c"}
+{"id": "video_80_163", "hyp": "yes .", "ref": "sha1:e603efa176d06573850555394e2f6c3b9cefc0a0"}
+{"id": "video_80_170", "hyp": "yes possum .", "ref": "sha1:4d1853dc48119d4188547353997c44162553fe83"}
+{"id": "video_80_192", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_81_7", "hyp": "great .", "ref": "sha1:2b2bb77de69ef4a0024c5c4d6cf666eb9e8bafbd"}
+{"id": "video_81_8", "hyp": "that is great .", "ref": "sha1:1b8124eb1e7df85db560d222bf421e7417ac3d2e"}
+{"id": "video_81_24", "hyp": "you are funny .", "ref": "sha1:11604ffeb1fafbb05e1523d6c7bc49e36acbb683"}
+{"id": "video_81_56", "hyp": "i will show you how to make the<pad><pad><pad><pad><pad><pad>", "ref": "sha1:61296fb98b2b79d054797cfd407e5c48d706cfcb"}
+{"id": "video_81_74", "hyp": "that is right it was so much<pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:cfb27f3b11b673f5fdaa096a3a611cc516f7222a"}
+{"id": "video_81_84", "hyp": "that looks like a cog .", "ref": "sha1:bfcc17ea8e15c4fe9f36dfc55ba2249af64386a6"}
+{"id": "video_81_96", "hyp": "i just need possum .", "ref": "sha1:d40cadc26ad8c4ab603ebc29aee386026988e15c"}
+{"id": "video_81_118", "hyp": "that is great .", "ref": "sha1:b1615750d18f29205605ea758fb30a0888979703"}
+{"id": "video_81_120", "hyp": "hello .", "ref": "sha1:209015fd2a140e771cf5b3da0b46542cc9181233"}
+{"id": "video_81_148", "hyp": "let us go .", "ref": "sha1:952ee773387347183323896e3bec2ce16c63c64e"}
+{"id": "video_82_43", "hyp": "i .", "ref": "sha1:cc1f074511dbc3766c34574c992714befa8704a7"}
+{"id": "video_82_56", "hyp": "be careful possum .", "ref": "sha1:4abe69349769d1efbc552b41a0294e0a57234cd7"}
+{"id": "video_82_65", "hyp": "can you do that please .", "ref": "sha1:6f2075d7624b30163246612a645ab82ec61178fd"}
+{"id": "video_82_66", "hyp": "no possum .", "ref": "sha1:0751d67f5a0c9f56475890dc9234075b21c50c24"}
+{"id": "video_82_69", "hyp": "you are right possum .", "ref": "sha1:9d5e2eafbdb89e132aa5a206ae84527f6c4abca6"}
+{"id": "video_82_86", "hyp": "i love playing police officer possum .", "ref": "sha1:680466ef846f75c95ab579ff7ff5439f349bbdb9"}
+{"id": "video_82_140", "hyp": "sally i am going to use this one .", "ref": "sha1:08b7a1c87e230a7489d72c69b27ecaf913558fe1"}
+{"id": "video_82_142", "hyp": "the sun is up .", "ref": "sha1:a1000548c43aa156daef5be583146e5b683a6580"}
+{"id": "video_82_144", "hyp": "bye .", "ref": "sha1:fac902133f7874f18acf0ab647a96fdc87eb78dc"}
+{"id": "video_82_147", "hyp": "look .", "ref": "sha1:d1e0025574606fb1b54b59382773333251494e2b"}
+{"id": "video_82_154", "hyp": "that is great possum .<pad><pad><pad><pad><pad><pad><pad><pad><pad>", "ref": "sha1:93b66b518a49511d92c2068e56227bace205c301"}
+{"id": "video_82_160", "hyp": "hi everyone .", "ref": "sha1:91a366715e6ffc4ed48b05c52f65be34008a31df"}
+{"id": "video_82_165", "hyp": "you are funny possum .", "ref": "sha1:8a2df575d4a7c69155b5f5e7ceb4d81bed88a4ca"}
+{"id": "video_82_176", "hyp": "hi sally .", "ref": "sha1:54e4974562b271a5f640d4cf75b98670cd177a87"}
+{"id": "video_82_181", "hyp": "look .", "ref": "sha1:b2549f26be9c88ae5b0b73e229be4e906d3b820c"}
+{"id": "video_82_184", "hyp": "that was great .", "ref": "sha1:e25511cd721f7515ebf965433f6bf723be291860"}
+{"id": "video_83_61", "hyp": "but i do not need one more thing .", "ref": "sha1:02ccffafd0c08b391ca20cb61debe30837baf7b9"}
+{"id": "video_83_124", "hyp": "one two three quarters make one whole .", "ref": "sha1:d9b8ddae0a4453d7a6064029e6204371e01a6904"}
+{"id": "video_83_129", "hyp": "that is a great idea why do not we watch some children learning .", "ref": "sha1:dcfb5c26e32bf66583a24e856bc93a810b35b329"}
+{"id": "video_83_172", "hyp": "one two three four .", "ref": "sha1:4e3b85d3c12ce8ba8179553e835730a38be79353"}
+{"id": "video_83_182", "hyp": "then you put a few things on the table<pad><pad><pad><pad><pad><pad>", "ref": "sha1:9ed7dc3f3b9bc7db8862e3a06ad65cb8d9e16997"}
+{"id": "video_83_185", "hyp": "yes that is right possum .", "ref": "sha1:4e4d7a4dd101305a65a08c60bc06b71fb7bf4769"}
+{"id": "video_83_186", "hyp": "i have learnt so many different tools .", "ref": "sha1:b4aef8e4ae6d4bff62e45d673a36c88811b473a7"}
+{"id": "video_83_191", "hyp": "that looks great possum .", "ref": "sha1:6eeac7aca997bdf349c6adf1c4431312e8706504"}
+{"id": "video_83_197", "hyp": "well our time is up .", "ref": "sha1:b7f398955806785e22383f0a0b14eece00a074e9"}
+{"id": "video_84_16", "hyp": "i love playing soccer .", "ref": "sha1:176cc96fea26fe8f0de4d6035c5233718a2f22af"}
+{"id": "video_84_19", "hyp": "it is day .", "ref": "sha1:2c43b97b2b80fce40778db7f6b5d5a8cfc491e8e"}
+{"id": "video_84_22", "hyp": "i have made a pie .", "ref": "sha1:cf5838232f228a90bebd6ea256ce7084d63966ea"}
+{"id": "video_84_35", "hyp": "no possum .", "ref": "sha1:cdef12135accd11d9f79bdc800a4934ac76d3b82"}
+{"id": "video_84_38", "hyp": "that is right possum we have got the milk .", "ref": "sha1:4be02966eb15d7f3436f0fb651e8e98f80c758c7"}
+{"id": "video_84_69", "hyp": "one two .", "ref": "sha1:ad45c6f518b836cd929fa13fd1bf89ed165cdf52"}
+{"id": "video_84_71", "hyp": "that looks great possum .", "ref": "sha1:21bd7642161b3b7ce97da3f5d84be9a62698e9cc"}
+{"id": "video_84_94", "hyp": "that was great .", "ref": "sha1:425f4e377d36478ed67443983af2742994f453d5"}
+{"id": "video_84_121", "hyp": "this one is the same .", "ref": "sha1:a5d8989952656c35bf8fd7246e59e1788346e69f"}
+{"id": "video_84_123", "hyp": "you are funny sally .", "ref": "sha1:ad6acd4bd3c6633cdc3d615ecf427c442d44c4a5"}
+{"id": "video_84_133", "hyp": "what is this .", "ref": "sha1:51b33e1d6929d9180873ab8d8974a25da7e38680"}
+{"id": "video_84_135", "hyp": "well i have got a come on let us go inside .", "ref": "sha1:451674a4dc12035fa875b2ac85bab2a9863440a3"}
+{"id": "video_84_150", "hyp": "they are all different .", "ref": "sha1:3a2e7acc1bef57cd11767663f39f37db799aea28"}
+{"id": "video_84_155", "hyp": "bye .", "ref": "sha1:3a2e7acc1bef57cd11767663f39f37db799aea28"}
+{"id": "video_84_173", "hyp": "hello .", "ref": "sha1:757555a3bb6a77a7ffe23fae526ddb60a1c56c19"}
+{"id": "video_84_182", "hyp": "one two three four five .", "ref": "sha1:6e0ee94a77f93a8f4e6e24e136cd0d36bec3fd16"}
+{"id": "video_84_197", "hyp": "bye bye .", "ref": "sha1:3772df516b8a08e768cc8e4251ed5df748336e08"}
+{"id": "video_85_31", "hyp": "i am going to go and get the things .", "ref": "sha1:aac51bbba1045e82d5d72ca54f934ff1df42afa0"}
+{"id": "video_85_78", "hyp": "that is great .", "ref": "sha1:92487f122cd17ff675de207b8c51beb7a5278211"}
+{"id": "video_85_120", "hyp": "yeah let us watch .", "ref": "sha1:e5c9a1cf5ae047a7e0224198ec98bc3518790cb2"}
+{"id": "video_85_141", "hyp": "this is a surprise for skip .", "ref": "sha1:f25c9f64b4005a2de8a081589aa5a51882abd252"}
+{"id": "video_85_142", "hyp": "it is very small .", "ref": "sha1:23c92a9c7ec183ad6ab83e5f96b5d936ee462b31"}
+{"id": "video_86_45", "hyp": "it is delicious .", "ref": "sha1:868f241b82d505dca8d6f7fc4502cb4094557c94"}
+{"id": "video_86_46", "hyp": "but what is next .", "ref": "sha1:2747de7b9729b8c93ac49458d2dbc45e23a29df5"}
+{"id": "video_86_47", "hyp": "what are you doing now .", "ref": "sha1:ad283541875a33f9cd8ba3114cb8398872c0b1e0"}
+{"id": "video_86_83", "hyp": "can you get the recipe out .", "ref": "sha1:4e778b992d5b5f73a49cba3ce695a61cdcd20fd3"}
+{"id": "video_86_90", "hyp": "then we can make the pie .", "ref": "sha1:a2495a091134cb612c45559a29f3070993b6c0f2"}
+{"id": "video_86_94", "hyp": "look .", "ref": "sha1:58fb75a65bd6070e6b26cd1e1247970e363b1f3f"}
+{"id": "video_86_98", "hyp": "come on sally come on .", "ref": "sha1:bb6684be965b633ac16657c8418a5baef1028620"}
+{"id": "video_86_105", "hyp": "come on let us go .", "ref": "sha1:c06b8e49cbdb16d574440fc9a36e8d5f49974abb"}
+{"id": "video_86_115", "hyp": "let us watch .", "ref": "sha1:edf27e829c21629535ede0ecf7a1d3bbcb0f0934"}
+{"id": "video_86_156", "hyp": "that was great .", "ref": "sha1:9b0921ab9c260fd270f2c384628d786bcad69796"}
+{"id": "video_87_13", "hyp": "that is a great idea .", "ref": "sha1:2b98b3b21ae5cd19aaf19ff12f72f10ecd6bdef5"}
+{"id": "video_87_39", "hyp": "that is great .", "ref": "sha1:b01d94514d4a0764c3ec95f08205ec04f4f1a6f2"}
+{"id": "video_87_58", "hyp": "i am sally .", "ref": "sha1:d42754a38244caa0f27d83a7f27d48fb87cf8d13"}
+{"id": "video_87_85", "hyp": "why do not you go up the top of your crows nest .", "ref": "sha1:80426453079042c131cd8331119d089d561eb545"}
+{"id": "video_87_115", "hyp": "one .", "ref": "sha1:9e4bb517e029b27c969fab2b701a04fcd663daf0"}
+{"id": "video_87_169", "hyp": "it is a very special way to make a treasure hunt .", "ref": "sha1:2bb74ddd1b73db7036213422079a290b43da1d33"}
+{"id": "video_87_177", "hyp": "that was great .", "ref": "sha1:ff1bf56ea08ce9011efc24e9a3a158cd42613f99"}
+{"id": "video_87_184", "hyp": "that is right .", "ref": "sha1:212f9cbe098f42806db9548e8f7867dfc9ea51f5"}
+{"id": "video_88_72", "hyp": "no possum .", "ref": "sha1:9afe25705241d4c27fb64d08915c5163edc879ad"}
+{"id": "video_88_107", "hyp": "great .", "ref": "sha1:82164771f4336d74fec772b5b72b043bbf5f98bd"}
+{"id": "video_88_115", "hyp": "that is right possum .", "ref": "sha1:fadf6ff6db18180a8cb7660faa6f2029d8469055"}
+{"id": "video_88_120", "hyp": "yeah let us watch .", "ref": "sha1:a2f915dcfa81731056f3ae426cfdda5e49edfc04"}
+{"id": "video_88_125", "hyp": "i am sally .", "ref": "sha1:2d4f6f226c543f26f1af836313c8fabd25f55ab3"}
+{"id": "video_88_127", "hyp": "it is an s .", "ref": "sha1:28741983cc1b91f0bb04ceef0a530471e01148ae"}
+{"id": "video_88_192", "hyp": "the minute hand is sally .", "ref": "sha1:2499a4c0b3cbf1d4a10e581fbe50ce87f295c40c"}
+{"id": "video_88_215", "hyp": "that is right it is a great day today possum .", "ref": "sha1:ead006efb937b90fc638031bfd8569a34c4c4d8b"}
+{"id": "video_88_226", "hyp": "well our time is up .", "ref": "sha1:636ebd35c0929c80790e3b0c57919dfb05157d7f"}
+{"id": "video_89_46", "hyp": "that is right possum .", "ref": "sha1:e6eec37bec154b7eba3ef4329ed3a1a47493ee7c"}
+{"id": "video_89_64", "hyp": "i have to show you .", "ref": "sha1:fdb5d61605474a8674edf2895560020a93c34836"}
+{"id": "video_89_73", "hyp": "that was great .", "ref": "sha1:72ffd6d7a11643d733f428910676a0dc9990e513"}
+{"id": "video_89_144", "hyp": "now we just need to put it in .", "ref": "sha1:8cece1f2deb287b31fde6baea41c1771a55ce48f"}
+{"id": "video_89_166", "hyp": "no i am not going to the tree .", "ref": "sha1:bb8c12f5e005f224d10130c5eeb01713ceab3fbc"}
+{"id": "video_89_174", "hyp": "look .", "ref": "sha1:de5aca9911f30ca28241576d86d9a623d49e0da5"}
+{"id": "video_90_11", "hyp": "you are funny possum .", "ref": "sha1:40723d9d568bcf4d7f1adbb230dec4d1b4331eb0"}
+{"id": "video_90_12", "hyp": "possum is here .", "ref": "sha1:5c520264afc4196e17e99fcf7f1a2587ca2a5319"}
+{"id": "video_90_15", "hyp": "i know sally .", "ref": "sha1:813462a00068778a0e71cd40175248a978d75483"}
+{"id": "video_90_25", "hyp": "i have got an idea .", "ref": "sha1:d11fbf5ebb32ada00470620a8396e916010bfccb"}
+{"id": "video_90_49", "hyp": "we need to work out a surprise .", "ref": "sha1:8417f855d333377412653c6f66bf7cf5f6bf3de4"}
+{"id": "video_90_51", "hyp": "i know .", "ref": "sha1:d11fbf5ebb32ada00470620a8396e916010bfccb"}
+{"id": "video_90_60", "hyp": "i know .", "ref": "sha1:c528130d4716e8a0a25e9622543312a3bbd09339"}
+{"id": "video_90_78", "hyp": "that is right it is a bit too hard work what is it .", "ref": "sha1:46b161f181e52b2619369d48a5ea911bfd68350b"}
+{"id": "video_90_85", "hyp": "that was great possum .", "ref": "sha1:00d47b80dc1d7d232671aae04a9c465d3cd7466c"}
+{"id": "video_90_120", "hyp": "i do not know where it is .", "ref": "sha1:e89dfebbc2a26d459563f75af284ed8c2dd7cad5"}
+{"id": "video_90_121", "hyp": "thank you .", "ref": "sha1:e80542ce082512fb0d090a40d1b04b33b8375f25"}
+{"id": "video_90_161", "hyp": "i love surprise .", "ref": "sha1:585859306ccb91c213052053ea5fbff18c3edcc7"}
+{"id": "video_90_195", "hyp": "hi sally come here .", "ref": "sha1:7ba6f1ded5b74ae82612363e58028880d563ad75"}
+{"id": "video_90_242", "hyp": "i need to do what i need .", "ref": "sha1:bb890b7ffc4969abe39355ceabb9cb337ae85c34"}
+{"id": "video_90_248", "hyp": "i really enjoyed learning so much .", "ref": "sha1:47f02a206da3fd7114b695a9a3a1f65265716746"}
+{"id": "video_90_249", "hyp": "yes .", "ref": "sha1:bfc1f13a0c3734dbb7f0fa3d7e63254cdae1be67"}
+{"id": "video_90_251", "hyp": "you are right possum you are right .<pad><pad><pad><pad><pad><pad>", "ref": "sha1:07ff5a4084d1f934574efdc9e8caf6cb2dfd51c5"}
+{"id": "video_90_266", "hyp": "it is ready possum .", "ref": "sha1:c99fd2aae587f2565dd08fabcccb47c7199fc787"}

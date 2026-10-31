@@ -1,0 +1,5 @@
+{"gid":"wave28_masked_pose","tagged":true,
+"covered":["c03-021","c17-109","c17-110"],
+"not_covered":[
+{"id":"c17-107","code":"no_saved_output","reason":"The 16,800 updates agree with the last held-out evaluation (update 16800) and a label in the summary, but that is not a stated total; the count of 44,010 dictionary clips appears only in the pre-registration write-up, and no saved job output prints it (the prep job 239447 output is on Kaya)."},
+{"id":"c17-108","code":"no_saved_output","reason":"The number of unlabelled Auslan-Daily training clips added to the pre-training pool of arm MDR is printed by no saved job output. The only 12,439 in the saved outputs is the fine-tuning manifest (G-data line of the training log), which is not the pre-training data. The pre-training pool size sits in the pre-registration write-up and in the prep job 239447 output on Kaya."}]}

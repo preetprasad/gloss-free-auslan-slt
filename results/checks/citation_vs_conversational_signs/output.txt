@@ -1,0 +1,21 @@
+GATE train-split mean clip length 75.2 frames (recorded 75.2)
+
+Auslan-Daily Communication clip length (shipped tensors, signer entry)
+clips 14041; mean 73.1 frames (train 75.2, dev 57.1, test 56.9)  [c09-037 c09-045 c07-031]
+alignment table End - Begin: mean 72.7 frames
+Auslan-Daily frames per second from the alignment table: 25.00 (25 expected)  [c10-044]
+
+MM-WLAuslan pose clips (Train+Valid): 45010; mean 80.27 frames; dissertation says 79.4  [c07-031]
+DISAGREES (c07-031): shipped pose gives 80.3 frames, not 79.4 (79.4 may come from the DWPose re-extraction, not saved locally); the 73.1 half agrees. Ratio citation/sentence 1.10  [c07-031]
+
+Sign_Spotting: 1069 instances, 61 on official validation and test clips, mean 22.49 and median 20 frames at 25 fps (End - Begin)  [c07-034]
+
+GOAL citation form: n=14, median 92.5 frames = 3.08 s at 30 fps  [c07-038]
+GOAL conversation:  n=10, median 12 frames = 0.48 s at 25 fps  [c07-038]
+ratio 6.4 times (dissertation: 6.4, medians 3.08 s and 0.48 s, n=12 and n=6)  [c07-038]
+DISAGREES (c07-038) on n only: saved data give n=14 and n=10, dissertation says 12 and 6; medians and ratio agree  [c07-038]
+
+Glosses present in both datasets (exact name match): 45  [c07-032]
+citation 78.6 frames = 2.62 s (n=630); conversation 22.7 frames = 0.91 s (n=400)  [c07-032]
+conversation is 65% shorter in seconds (2.89 times); dissertation says 72% (3.60 times)  [c07-032]
+DISAGREES (c07-032): pooled by sign the saved spans give 65% shorter, not 72% (the original paired per-gloss selection is not saved)  [c07-032]

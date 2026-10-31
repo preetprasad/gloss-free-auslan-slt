@@ -1,0 +1,14 @@
+./src/slt/rgb_fusion.py:165: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.rgb_encoder = nn.TransformerEncoder(layer, num_layers=n_rgb)
+[ens] remapped 2 member(s) into member 0's vocabulary: [3, 4]
+[mbr] 5 members fusion=[False, False, False, True, True] beam=10 manifest=TEST_manifest_official.tsv dev=mps
+[mbr] rgb_feat_dir=./results/rgb_feats_test (800 feature files)
+[mbr] decoded n-best for 800 samples (avg cands=11.2)
+[mbr] wrote n-best -> ./results/dumps_Faug_test/nbest.jsonl
+[mbr] === length-penalty sweep (argmax) ===
+  LP=0.8           BLEU-4=12.727  WER=0.9473  S=2326 D=986 I=586  uniq=339
+[mbr] === MBR (minimise expected WER) ===
+  MBR-WER          BLEU-4=11.937  WER=0.9366  S=2206 D=1155 I=493  uniq=403
+[mbr] === MBR (maximise expected chrF) ===
+  MBR-chrF         BLEU-4=10.346  WER=1.0938  S=2745 D=476 I=1280  uniq=530
+EXIT 0

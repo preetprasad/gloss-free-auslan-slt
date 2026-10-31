@@ -1,0 +1,18 @@
+test n=800  seen-in-train=230  unseen=570
+CTC          BLEU-4   9.522  seen  29.72  unseen  4.88
+VLP          BLEU-4  10.272  seen  29.91  unseen  5.31
+RGBF         BLEU-4  10.335  seen  30.22  unseen  5.81
+S6           BLEU-4  11.802  seen  35.00  unseen  6.60
+F            BLEU-4  12.114  seen  33.40  unseen  6.92
+G1           BLEU-4  11.562  seen  32.54  unseen  6.14
+Fprime       BLEU-4  12.836  seen  35.00  unseen  7.44
+check: S6 reproduces the recorded 11.802
+check: F reproduces the recorded 12.114
+check: G1 reproduces the recorded 11.562
+[all n=800] VLP vs CTC: observed +0.749  95% CI [-0.218, +1.708]  P(VLP>CTC) 93.2%  -> not resolvable
+[all n=800] RGBF vs CTC: observed +0.812  95% CI [-0.337, +1.970]  P(RGBF>CTC) 91.5%  -> not resolvable
+[all n=800] S6 vs RGBF: observed +1.467  95% CI [+0.396, +2.563]  P(S6>RGBF) 99.4%  -> significant
+[all n=800] F vs S6: observed +0.313  95% CI [-0.887, +1.498]  P(F>S6) 69.3%  -> not resolvable
+[all n=800] G1 vs S6: observed -0.240  95% CI [-1.339, +0.763]  P(G1>S6) 31.7%  -> not resolvable
+[all n=800] Fprime vs S6: observed +1.034  95% CI [-0.102, +2.153]  P(Fprime>S6) 96.2%  -> not resolvable
+[all n=800] Fprime vs F: observed +0.722  95% CI [-0.301, +1.809]  P(Fprime>F) 91.1%  -> not resolvable

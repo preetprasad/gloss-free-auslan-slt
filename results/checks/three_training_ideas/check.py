@@ -128,6 +128,7 @@ G = json.load(open(DATA / "g1_alignment_summary.json"))
 a = G["mean_over_checkpoints"]["all"]
 print(f"\nAlignment of the adopted CTC head (read from the saved job summary g1_alignment_summary.json; needs the checkpoints): "
       f"{G['n_all']} annotated sign spans: {100 * a['hit']:.1f}% hit against {100 * a['random']:.1f}% for random placement")
-print(f"Gate rule: {G['rule']}; hit >= 0.50: {a['hit'] >= 0.5}; hit >= 2 x random: {a['hit'] >= 2 * a['random']} -> "
+THR = 0.5  # threshold stated in the saved gate rule
+print(f"Gate rule: {G['rule']}; hit >= {THR*100:.0f}%: {a['hit'] >= THR}; hit >= 2 x random: {a['hit'] >= 2 * a['random']} -> "
       + ("gate failed" if not (a['hit'] >= 0.5 and a['hit'] >= 2 * a['random']) else "gate passed")
       + f" (saved verdict {G['verdict']})")

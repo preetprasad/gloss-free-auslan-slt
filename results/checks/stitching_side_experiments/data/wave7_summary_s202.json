@@ -1,0 +1,22 @@
+{
+ "A": {
+  "val_best": 10.086993722338761,
+  "best_epoch": 33,
+  "greedy_test": 9.555940954331541,
+  "beam5_val": 10.928038427955887,
+  "soup_beam5_val": 11.265590840515374,
+  "beam5_test": 10.55525434762802,
+  "beam5_test_unique": 283,
+  "soup_beam5_test": 10.81645179065553
+ },
+ "D": {
+  "val_best": 10.12948938845528,
+  "best_epoch": 30,
+  "greedy_test": 8.889910281821507,
+  "beam5_val": 11.123230833657933,
+  "soup_beam5_val": 11.161287070742627,
+  "beam5_test": 10.180775213310481,
+  "beam5_test_unique": 303,
+  "soup_beam5_test": 11.592682041645736
+ }
+}
