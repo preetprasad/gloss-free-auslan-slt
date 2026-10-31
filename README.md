@@ -174,7 +174,7 @@ All code is included, together with the saved outputs needed to re-derive the re
 The following material is not included:
 
 - **The datasets.** Auslan-Daily and MM-WLAuslan video, pose and subtitle files are not redistributed. The datasets are distributed by their authors under their own licence terms, and the recordings show identifiable signers.
-- **Material derived from the datasets.** This covers extracted pose files, RGB features, clip-to-reference manifests, example clips and test fixtures. Derived files carry the same signer and licence considerations as the source data. `demo/tests/fixtures/` therefore contains only the scripts that generate the fixtures.
+- **Material derived from the datasets.** This covers extracted pose files, RGB features, clip-to-reference manifests, example clips and test fixtures. Derived files carry the same signer and licence considerations as the source data. `demo/tests/fixtures/` therefore contains only the scripts that generate the fixtures. The annotation extracts that some checks need are listed in `ATTRIBUTION.md`.
 - **Code that stays private.** The code that fine-tuned a released pre-trained model, the authors' own code of the published systems that were re-run, and an independent re-implementation of the pre-trained model are not published here. Their saved hypotheses, logits and per-seed summaries are included under `results/checks/`, and the checks A36 to A38 re-score them with this repository's own code.
 - **Model checkpoints.** They are not included because of their size. The weights used by the live demonstrator are published separately (see Licence).
 - **The project's private laboratory notebook.** Comments in the code that cite dated entries such as "09-10m", or that cite "the project log", refer to this notebook. References to pre-registration documents, and to result folders that are absent from `results/`, also point to material that is not part of this repository.
@@ -529,7 +529,7 @@ Generative AI (Claude, Anthropic) was used for brainstorming, refining structure
 
 ## Licence
 
-The code is released under the MIT licence. The model weights for the live demonstrator are published separately at <https://huggingface.co/preetprasad/auslan-slt-live> under CC BY-NC-SA 4.0. The live demonstrator runs at <https://auslan-research.vercel.app>. The datasets are not covered by either licence and remain subject to their providers' terms.
+The code is released under the MIT licence. The model weights for the live demonstrator are published separately at <https://huggingface.co/preetprasad/auslan-slt-live> under CC BY-NC-SA 4.0. The live demonstrator runs at <https://auslan-research.vercel.app>. The datasets, and the annotation extracts under `results/checks/` listed in `ATTRIBUTION.md`, are not covered by either licence and remain subject to their providers' terms.
 
 ## How to cite
 
