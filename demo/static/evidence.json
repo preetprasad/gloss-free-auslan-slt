@@ -1,6 +1,6 @@
 {
   "title": "Gloss-free Auslan translation: evidence snapshot",
-  "updated": "2026-09-30",
+  "updated": "2026-10-31",
   "author": "Preet Prasad",
   "dataset": "Auslan-Daily conversational split",
   "metric": "BLEU-4 (not an accuracy percentage)",
@@ -15,6 +15,7 @@
     {"name": "S6 ensemble", "official": 11.802, "unseen_target": 6.60, "seen_target": 35.00, "official_wer": 0.907, "decoding": "beam 10, length penalty 0.3 chosen on validation", "live": true, "source": "results/final_ensemble_test_decodes/hyps_LP=0.3.jsonl"}
   ],
   "ensemble_vs_rgb": {"delta": 1.467, "paired_bootstrap_95_ci": [0.396, 2.563], "p_better": 0.994, "resamples": 2000, "seed": 0, "tool": "src/tools/paired_bootstrap.py", "source": "docs/CLAIMS.md", "scope": "test-sentence sampling only"},
+  "pretrained_transfer": {"model": "Released pose-input checkpoint, named in the dissertation, fine-tuned on Auslan-Daily", "weights_licence": "non-commercial use only", "single_mean_five_runs": 18.21, "from_scratch_control_same_jobs": 10.37, "difference": 7.84, "difference_95_ci": [7.04, 8.64], "ensemble_of_five": 20.60, "ensemble_unseen_target": 16.39, "own_code_mean_three_runs": 18.27, "own_code_ensemble_of_three": 19.77, "in_live_system": false, "caveat": "A different kind of system from the 11.80 ensemble; overlap of pre-training data with the test set could not be fully excluded."},
   "reproduction": {"directory": "src", "command": "python tools/reproduce_headline.py", "bootstrap": "docs/REPRODUCIBILITY.md section 0.3", "protocol": "docs/PROTOCOL.md", "report": "docs/REPORT.md", "live_demo_record": "results/live_demo_2026-09-24/README.md"},
   "live_system": {
     "contract": "Utterance-final translation: sign one short utterance, select Finish, then review the English. Recording ends at 10 s or at the frame cap, whichever comes first. The user chooses one of two operating points for each utterance.",

@@ -2,12 +2,12 @@
   'use strict';
   const $=id=>document.getElementById(id);
   const text=(id,value)=>{$(id).textContent=value;};
-  const values={official:[9.522,10.272,10.335,11.802],unseen:[4.88,5.31,5.81,6.60]};
-  const labels=['Movement only','With extra pretraining','Movement and images','Six models combined'];
+  const values={official:[9.522,10.272,10.3348,11.802,20.604],unseen:[4.88,5.31,5.81,6.60,16.39]};
+  const labels=['Movement only','With extra pretraining','Movement and images','Six models combined','Five pre-trained models combined'];
   document.querySelectorAll('input[name="subset"]').forEach(input=>input.addEventListener('change',()=>{
-    document.querySelectorAll('.bar').forEach((bar,i)=>{bar.style.width=values[input.value][i]/12.5*100+'%';bar.querySelector('b').textContent=values[input.value][i].toFixed(2);});
+    document.querySelectorAll('.bar').forEach((bar,i)=>{bar.style.width=values[input.value][i]/21*100+'%';bar.querySelector('b').textContent=values[input.value][i].toFixed(2);});
     $('resultsChart').setAttribute('aria-label',(input.value==='unseen'?'Unseen English targets':'Official test')+' BLEU-4: '+labels.map((label,i)=>label+' '+values[input.value][i].toFixed(2)).join(', ')+'.');
-    text('chartCaption',input.value==='unseen'?'570 clips with English reference sentences absent from training. This tests new sentences, not new signers.':'800 recorded test clips. The combined system uses three movement-only translators and three that also see images.');
+    text('chartCaption',input.value==='unseen'?'570 clips with English reference sentences absent from training. This tests new sentences, not new signers. The last bar starts from a released pre-trained model.':'800 recorded test clips. The six-model system uses three movement-only translators and three that also see images. The last bar starts from a released pre-trained model and is a different kind of system.');
   }));
   // Current operating points come from the audited snapshot, not duplicated numbers.
   fetch('/static/evidence.json').then(r=>{if(!r.ok)throw new Error();return r.json();}).then(data=>{
