@@ -14,6 +14,8 @@ Two qualifiers apply to these results:
 - The reported system is not pose-only. It is an ensemble of three pose-only translators and three translators that also use RGB image features.
 - Generalisation is lower than the headline score suggests. On the 570 test clips whose reference does not occur verbatim in the training set (unseen targets), the ensemble scores 6.60 BLEU-4. In addition, paired-bootstrap 95% intervals of about ±1.2 BLEU-4 include zero for most individual improvements.
 
+Commits dated before 31 October 2026 were reconstructed afterwards from dated records; see [Commit history](#commit-history).
+
 ## Repository layout
 
 The code folder `src/` was called `phase2_baseline/` on the UWA Kaya cluster. The job scripts in `jobs/slurm/` record the cluster paths that actually ran, so they still say `phase2_baseline`; read that as `src/`. Each of `src/`, `jobs/slurm/` (which also covers `jobs/local/`), `pose/` and `results/` has its own README that lists every script.
@@ -526,6 +528,10 @@ Several tools have a built-in self-test:
 ## Use of AI tools
 
 Generative AI (Claude, Anthropic) was used for brainstorming, refining structure and improving clarity of expression. It was also used for writing and checking the experiment and analysis code, running and checking analyses, searching for and summarising related work, and drafting and condensing the text. The final research direction, technical content, literature selection and wording were reviewed and verified by the student. Separately, a small language model (Qwen2.5-3B) is part of the method: it generates sentences for the synthetic training data and grades translation adequacy.
+
+## Commit history
+
+The project was developed in a private working repository and published here on 31 October 2026. The commits dated before then, whose subjects begin "Reconstructed:", were rebuilt on 3 November 2026 from the project's dated working records, one or two per progress-report week from July to October 2026. For each file, a reconstructed commit holds the latest state that a record shows existed by its date, in the released layout. Edits that left no usable record are missing, so the files of one reconstructed commit may not match each other or run together, and file states that failed the release's content checks were left out. The four commits of 31 October 2026, "Code, saved outputs and reproduction checks for the dissertation" and the three after it, were re-created on top with their original messages and dates: their commit identifiers changed, and mentions of private working notes and local folders in them were redacted. Every result refers to the release, from the first of those four commits on.
 
 ## Licence
 
